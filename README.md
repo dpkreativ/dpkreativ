@@ -2,10 +2,6 @@
 My name is **Divine Philip.**<br>
 I am a UI designer and Software Developer.<br><br>
 
-**Let's talk:**<br>
-[Twitter](https://twitter.com/dpkreativ)<br>
-[WhatsApp](https://wa.me/2349021824073)<br><br>
-
 **Here are a couple of projects I am really proud of:**<br><br>
 **_Code Projects:_**<br>
 [CAMeasure App Frontend](https://github.com/dpkreativ/CAMeasure-app)<br>
