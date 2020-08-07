@@ -20,7 +20,6 @@ I am a UI designer and Software Developer.<br><br>
 [Geo Search UI](https://www.figma.com/file/gGw8vhqRUlBRNAnxsDzK0V/GeoSearch-UI-design?node-id=0%3A1)<br>
 [Pharmacy Landing Page](https://www.figma.com/file/qA0EPsDXZzd8IVIcmrAANz/Design-Task-3?node-id=0%3A1)<br>
 
-I'm currently working freelance while improving my skills on HTML, CSS, JavaScript, Node, and PHP.<br>
 
 **You can reach me on:**<br>
 [Twitter](https://twitter.com/dpkreativ)<br>
