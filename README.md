@@ -1,23 +1,21 @@
-### Hi there 👋
+### Hi 👋
 My name is **Divine Philip.**<br>
-I am a UI designer and Software Developer.<br><br>
+I am a Frontend Developer.<br><br>
 
-**Here are a couple of projects I am really proud of:**<br><br>
+🔭 I’m currently working at PayVest with a team of developers to build products for Nigeria's Fintech space.
+
+🌱 I am also actively improving my skills on React and Node.js, and picking up other relevant skills I need to get my job done efficiently and on time.
+
+**⚡ Here are a couple of personal projects I've worked on recently:**<br><br>
 **_Code Projects:_**<br>
-[CAMeasure App Frontend](https://github.com/dpkreativ/CAMeasure-app)<br>
+[Fylo Landing Page](https://github.com/dpkreativ/fylo)<br>
 [Base Apparel](https://github.com/dpkreativ/base-apparel)<br>
-[Geo Search App](https://github.com/dpkreativ/Geo-Search)<br>
+[Magazine Page](https://github.com/dpkreativ/magazine-page)<br>
 [CRUD API](https://github.com/dpkreativ/crud-app-api)<br>
 [E-Learning App Backend](https://github.com/dpkreativ/e-learning-app)
 
-**_Design Projects:_**<br>
-[Projecta UI Design](https://www.figma.com/file/IKX5ji9eGWaQ15P6HDFY4h/Projecta)<br>
-[Checkout Page UI](https://www.figma.com/file/hdT4rcxhVRkJ53knKfyq1S/Day-2-(%23DailyUI)?node-id=0%3A1)<br>
-[Geo Search UI](https://www.figma.com/file/gGw8vhqRUlBRNAnxsDzK0V/GeoSearch-UI-design?node-id=0%3A1)<br>
-[Pharmacy Landing Page](https://www.figma.com/file/qA0EPsDXZzd8IVIcmrAANz/Design-Task-3?node-id=0%3A1)<br>
 
-
-**You can reach me on:**<br>
+**📫 How to reach me:**<br>
 [Twitter](https://twitter.com/dpkreativ)<br>
 [WhatsApp](https://wa.me/2349021824073)
 <!--
