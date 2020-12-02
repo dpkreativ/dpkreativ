@@ -3,7 +3,7 @@ My name is Divine Philip. I am a Frontend Developer based in Nigeria.<br>
 
 🔭 I’m currently working at PayVest with a team of developers to build products for Nigeria's Fintech space.
 
-🌱 Im also actively improving my skills on React and Node.js, and picking up other relevant skills I need to get my job done efficiently and on time.
+🌱 I'm also actively improving my skills on React and Node.js, and picking up other relevant skills I need to get my job done efficiently and on time.
 
 **⚡ Here are a couple of personal projects I've worked on recently:**<br>
 - [Fylo Landing Page](https://github.com/dpkreativ/fylo)(Frontend)<br>
