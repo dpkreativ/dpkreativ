@@ -19,7 +19,7 @@ My name is Divine Philip. I am a Frontend Developer based in Nigeria.<br>
   <img src="https://devicons.github.io/devicon/devicon.git/icons/html5/html5-original-wordmark.svg" alt="html5" width="auto" height="25"/>
   <img src="https://devicons.github.io/devicon/devicon.git/icons/css3/css3-original-wordmark.svg" alt="css3" width="auto" height="25"/>
   <img src="https://devicons.github.io/devicon/devicon.git/icons/javascript/javascript-original.svg" alt="javascript" width="auto" height="25"/>
-  %20
+  &nbsp;
   <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="figma" width="auto" height="25"/>
   <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="auto" height="25"/>
   <img src="https://devicons.github.io/devicon/devicon.git/icons/linux/linux-original.svg" alt="linux" width="auto" height="25"/>
