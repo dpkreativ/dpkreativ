@@ -15,9 +15,10 @@ My name is Divine Philip. I am a Frontend Developer based in Nigeria.<br>
 - [E-Learning App Backend](https://github.com/dpkreativ/e-learning-app)(Backend)
 
 **Some tools and technologies I actively use or have some experience with:**
+![](https://devicons.github.io/devicon/devicon.git/icons/html5/html5-original-wordmark.svg =25x25)
 <p align="left">
   <img src="https://devicons.github.io/devicon/devicon.git/icons/html5/html5-original-wordmark.svg" alt="html5" width="25" height="25"/>
-  ![](https://devicons.github.io/devicon/devicon.git/icons/html5/html5-original-wordmark.svg =25x25)
+  
   <img src="https://devicons.github.io/devicon/devicon.git/icons/css3/css3-original-wordmark.svg" alt="css3" width="25" height="25"/>
   <img src="https://devicons.github.io/devicon/devicon.git/icons/javascript/javascript-original.svg" alt="javascript" width="25" height="25"/>
   
