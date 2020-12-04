@@ -12,6 +12,8 @@ My name is Divine Philip. I am a Frontend Developer based in Nigeria.<br>
 - [CRUD API](https://github.com/dpkreativ/crud-app-api)(Backend)<br>
 - [E-Learning App Backend](https://github.com/dpkreativ/e-learning-app)(Backend)
 
+src="https://devicons.github.io/devicon/devicon.git/icons/webpack/webpack-original.svg" alt="webpack" width="25" height="25"/></p><p><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=dpkreativ&layout=compact&hide=html" alt="dpkreativ" /></p>
+
 
 **📫 How to reach me:**<br>
 - [Twitter](https://twitter.com/dpkreativ)<br>
