@@ -29,7 +29,6 @@ My name is Divine Philip. I am a Frontend Developer based in Nigeria.<br>
   <img src="https://devicons.github.io/devicon/devicon.git/icons/sass/sass-original.svg" alt="sass" width="auto" height="35"/> 
   <img src="https://devicons.github.io/devicon/devicon.git/icons/bootstrap/bootstrap-plain.svg" alt="bootstrap" width="auto" height="35"/>
   <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="tailwind" width="auto" height="35"/>
-  <img src="https://www.chartjs.org/media/logo-title.svg" alt="chartjs" width="25" height="35"/>
   &emsp;
   <img src="https://devicons.github.io/devicon/devicon.git/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="auto" height="35"/>
   <img src="https://devicons.github.io/devicon/devicon.git/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="auto" height="35"/>
@@ -41,6 +40,7 @@ My name is Divine Philip. I am a Frontend Developer based in Nigeria.<br>
   <img src="https://devicons.github.io/devicon/devicon.git/icons/vuejs/vuejs-original-wordmark.svg" alt="vuejs" width="auto" height="35"/>
   <img src="https://www.vectorlogo.zone/logos/nuxtjs/nuxtjs-icon.svg" alt="nuxtjs" width="auto" height="35"/> 
   <img src="https://devicons.github.io/devicon/devicon.git/icons/webpack/webpack-original.svg" alt="webpack" width="auto" height="35"/>
+  <img src="https://www.chartjs.org/media/logo-title.svg" alt="chartjs" width="25" height="35"/>
   &emsp;
   <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase" width="auto" height="35"/>
   <img src="https://www.vectorlogo.zone/logos/google_cloud/google_cloud-icon.svg" alt="gcp" width="auto" height="35"/>
