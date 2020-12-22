@@ -46,7 +46,7 @@ My name is Divine Philip. I am a Frontend Developer based in Nigeria.<br>
   <img src="https://www.vectorlogo.zone/logos/google_cloud/google_cloud-icon.svg" alt="gcp" width="auto" height="35"/>
 </p>
 
-![Divine's Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=dpkreativ&layout=compact)]
+![Divine's Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=dpkreativ&layout=compactlangs_count=6)
 
 
 **📫 How to reach me:**
