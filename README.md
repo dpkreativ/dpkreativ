@@ -7,12 +7,12 @@ My name is Divine Philip. I am a Software Engineer based in Nigeria.<br>
 
 📝 I sometimes write articles on [dpkreativ.hashnode.dev](https://dpkreativ.hashnode.dev).
 
-// **⚡ Here are a couple of personal projects I've worked on recently:**
-// - [Fylo Landing Page](https://github.com/dpkreativ/fylo)(Frontend)
-// - [Base Apparel](https://github.com/dpkreativ/base-apparel)(Frontend)
-// - [Magazine Page](https://github.com/dpkreativ/magazine-page)(Frontend)
-// - [CRUD API](https://github.com/dpkreativ/crud-app-api)(Backend)
-// - [E-Learning App Backend](https://github.com/dpkreativ/e-learning-app)(Backend)
+<!--- **⚡ Here are a couple of personal projects I've worked on recently:**
+- [Fylo Landing Page](https://github.com/dpkreativ/fylo)(Frontend)
+- [Base Apparel](https://github.com/dpkreativ/base-apparel)(Frontend)
+- [Magazine Page](https://github.com/dpkreativ/magazine-page)(Frontend)
+- [CRUD API](https://github.com/dpkreativ/crud-app-api)(Backend)
+- [E-Learning App Backend](https://github.com/dpkreativ/e-learning-app)(Backend) --->
 
 
 ![Divine's Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=dpkreativ&layout=compact&langs_count=6)
