@@ -15,7 +15,7 @@ My name is Divine Philip. I am a Software Engineer based in Nigeria.<br>
 - [E-Learning App Backend](https://github.com/dpkreativ/e-learning-app)(Backend) --->
 
 
-<!-- ![Divine's Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=dpkreativ&layout=compact&langs_count=6) -->
+![Divine's Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=dpkreativ&layout=compact&langs_count=6)
 📫 DM me on: [Twitter](https://twitter.com/dpkreativ) || [WhatsApp](https://wa.me/2349021824073)
 <!--
 **dpkreativ/dpkreativ** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
