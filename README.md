@@ -3,7 +3,7 @@ My name is Divine Philip. I am a Software Engineer based in Nigeria.<br>
 
 🔭 I’m currently working at TruParse with a team of developers to build products.
 
-🌱 I'm also improving my skills on React and Node.js, and picking up other relevant skills I need to get my job done efficiently and on time.
+🌱 I'm also improving my skills on React, Node.js and TypeScript, and picking up other relevant skills I need to get my job done efficiently and on time.
 
 📝 I sometimes write articles on [dpkreativ.hashnode.dev](https://dpkreativ.hashnode.dev).
 
