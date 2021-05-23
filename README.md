@@ -1,34 +1,37 @@
-### Hi 👋
-My name is Divine Orji. I am a Software Engineer based in Nigeria.<br>
+![Devcover logo](https://devcover.me/devcover-logo-bg.png)
 
-🔭 I’m currently working at TruParse with a team of developers to build products.
+🌐 [Open Website](https://devcover.me)
 
-🌱 I'm also improving my skills on React, Node.js and TypeScript, and picking up other relevant skills I need to get my job done efficiently and on time.
+📚 [Read blog](https://blog.jrgarciadev.com/devcover-easiest-way-to-generate-a-developer-portfolio)
 
-📝 I sometimes write articles on [dpkreativ.hashnode.dev](https://dpkreativ.hashnode.dev).
+Devcover is an open source application which allows developers to create a portfolio in less than 2 minutes with just their **username**.
 
-<!--- **⚡ Here are a couple of personal projects I've worked on recently:**
-- [Fylo Landing Page](https://github.com/dpkreativ/fylo)(Frontend)
-- [Base Apparel](https://github.com/dpkreativ/base-apparel)(Frontend)
-- [Magazine Page](https://github.com/dpkreativ/magazine-page)(Frontend)
-- [CRUD API](https://github.com/dpkreativ/crud-app-api)(Backend)
-- [E-Learning App Backend](https://github.com/dpkreativ/e-learning-app)(Backend) --->
+## Inspiration
 
-![Divine's Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=dpkreativ&layout=compact&langs_count=6)
+I decided to do this project for 2 reasons, the first is that as a developer I know that in most cases we spend very little time creating our portfolio or we don't even have it, the second reason is that I like to participate in hackathons so I built this project for [Hashnode](https://hashnode.com) and [Vercel](https://vercel.com) hackathon two companies which I admire.
 
-📫 DM me on: [Twitter](https://twitter.com/dpkreativ) || [WhatsApp](https://wa.me/2349021824073)
+## Deploy your own Portfolio on Vercel
 
-<!--
-**dpkreativ/dpkreativ** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+If you want to customize your portfolio colours, name, bio a put your Google Analytics code, I suggest you create your portfolio on [Devcover](https://devcover.me) website.
 
-Here are some ideas to get you started:
+If you prefer to go faster and accept the default parameters you can click on the following button and the only thing you have to do is put your [Github](https://github.com) or [Hashnode](https://hashnode.com) username in the **NEXT_PUBLIC_USERNAME**.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fjrgarciadev%2Fdev-cover&env=NEXT_PUBLIC_USERNAME&project-name=my-awesome-portfolio&repository-name=my-awesome-portfolio&envDescription=&envDescription=Enter%20your%20Github%20or%20Hashnode%20username%20.&demo-title=APM%20Story&A%20statically%20generated%portfolio%created%20using%20Devcover)
+
+## Getting Started
+
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+
+
+Check out Vercel deployment process [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+Built by [Junior García](https://jrgarciadev.com)
