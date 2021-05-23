@@ -93,7 +93,7 @@ const About = ({ user = {}, theme }) => {
           <EditContainer>
             <Input
               required
-              placeholder="## Hi there 👋🏼"
+              placeholder="## Hello there 👋🏼"
               size="lg"
               fullWidth
               multiline
