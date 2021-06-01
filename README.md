@@ -1,7 +1,7 @@
 ### Hi 👋
 My name is Divine Orji. I am a Software Engineer based in Nigeria.<br>
 
-🔭 I’m currently working at TruParse with a team of developers to build products.
+<!--- 🔭 I’m currently working at TruParse with a team of developers to build products. --->
 
 🌱 I'm also improving my skills on React, Node.js and TypeScript, and picking up other relevant skills I need to get my job done efficiently and on time.
 
