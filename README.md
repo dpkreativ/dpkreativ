@@ -1,4 +1,4 @@
-### 👋 Hi there. I'm Divine.
+# 👋 Hi there. I'm Divine.
 
 👨‍💻 I'm a Software Engineer based in Nigeria.<br>
 
