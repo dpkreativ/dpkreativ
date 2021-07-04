@@ -1,5 +1,5 @@
-### Hi 👋
-My name is Divine Orji. I am a Software Engineer based in Nigeria.<br>
+### Hi there 👋. I'm Divine.
+I'm a Software Engineer based in Nigeria.<br>
 
 <!--- 🔭 I’m currently working at TruParse with a team of developers to build products. --->
 
