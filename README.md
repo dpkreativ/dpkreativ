@@ -1,4 +1,4 @@
-### Hi there 👋. I'm Divine.
+### 👋 Hi there. I'm Divine.
 I'm a Software Engineer based in Nigeria.<br>
 
 <!--- 🔭 I’m currently working at TruParse with a team of developers to build products. --->
