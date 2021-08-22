@@ -2,7 +2,7 @@
 
 👨‍💻 I'm a Software Engineer based in Nigeria.<br>
 
-🌱 I'm currently building projects in HTML/CSS, JavaScript, React, Node.js and TypeScript, and picking up other relevant skills I need to get things done efficiently.
+🌱 I'm currently building projects in JavaScript, React, Node.js and TypeScript, and picking up other relevant skills I need to get things done efficiently.
 
 📝 I sometimes write articles on [dpkreativ.hashnode.dev](https://dpkreativ.hashnode.dev).
 
