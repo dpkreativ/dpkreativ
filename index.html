@@ -4,20 +4,328 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Divine Philip - Software Engineer</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@300&family=Lora:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        font-family: "IBM Plex Sans Thai Looped", sans-serif;
+      }
+
+      .head-font {
+        font-family: "Lora", serif;
+      }
+    </style>
+    <script
+      src="https://kit.fontawesome.com/b883ed44ff.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Divine Orji | Frontend Developer</title>
   </head>
-  <body>
-    <div>Hi! I'm <strong>Divine Philip</strong></div>
-    <div>A software engineer based in Nigeria.</div>
-    <div>
-      Welcome to my temporary portfolio website. I'm currently working on a
-      better one so check back often
-    </div>
-    <div>
-      You can check me out on
-      <a href="https://twitter.com/dpkreativ">Twitter</a>,
-      <a href="https://www.linkedin.com/in/dpkreativ">LinkedIn</a>, or
-      <a href="https://github.com/dpkreativ">Github</a>
-    </div>
+  <body class="bg-gray-50">
+    <nav class="flex sticky top-0">
+      <a
+        href="#header"
+        class="text-white text-xs text-center w-1/6 bg-green-500 p-0.5"
+        ><i class="fas fa-home"></i
+      ></a>
+      <a
+        href="#about-me"
+        class="text-white text-xs text-center w-1/6 bg-red-500 p-0.5"
+        ><i class="fas fa-user"></i
+      ></a>
+      <a
+        href="#my-skills"
+        class="text-white text-xs text-center w-1/6 bg-yellow-500 p-0.5"
+        ><i class="fas fa-hand-sparkles"></i
+      ></a>
+      <a
+        href="#my-experience"
+        class="text-white text-xs text-center w-1/6 bg-purple-500 p-0.5"
+        ><i class="fas fa-briefcase"></i
+      ></a>
+      <a
+        href="#my-projects"
+        class="text-white text-xs text-center w-1/6 bg-indigo-900 p-0.5"
+        ><i class="fas fa-cogs"></i
+      ></a>
+      <a
+        href="#hng-logos"
+        class="text-white text-xs text-center w-1/6 bg-blue-500 p-0.5"
+        ><i class="fas fa-rocket"></i
+      ></a>
+    </nav>
+
+    <!-- Header -->
+    <header
+      class="
+        py-12
+        px-4
+        max-w-screen-lg
+        mx-auto
+        flex flex-col
+        md:flex-row
+        items-center
+        md:justify-between
+      "
+      id="header"
+    >
+      <section class="md:order-last py-4">
+        <div
+          class="
+            h-52
+            w-52
+            md:h-80 md:w-80
+            rounded-full
+            p-1
+            md:p-3
+            border-2
+            md:border-4
+            border-green-500
+            shadow-lg
+          "
+        >
+          <img
+            src="https://res.cloudinary.com/dpkreativ/image/upload/c_crop,h_652,w_652/v1628134029/divi_g5qpop.jpg"
+            alt="Divine Orji's picture"
+            class="h-full w-full rounded-full"
+          />
+        </div>
+        <div class="mt-4 flex space-x-4 justify-center">
+          <a href="https://github.com/dpkreativ"
+            ><i class="fab fa-github text-xl text-gray-900"></i
+          ></a>
+          <a href="https://www.linkedin.com/in/dpkreativ"
+            ><i class="fab fa-linkedin text-xl text-blue-500"></i
+          ></a>
+          <a href="https://twitter.com/dpkreativ"
+            ><i class="fab fa-twitter text-xl text-blue-400"></i
+          ></a>
+        </div>
+      </section>
+
+      <section class="text-center py-4 md:text-left">
+        <p class="mb-3 md:ml-1">Hi 👋, I'm</p>
+        <h1 class="text-5xl md:text-7xl mb-2 head-font my-name">
+          Replace with JS
+        </h1>
+        <h2 class="md:ml-1">Frontend Engineer</h2>
+        <a href="mailto:dpkreativ@gmail.com"
+          ><button
+            class="
+              border-2 border-green-500
+              text-green-500
+              rounded-xl
+              px-4
+              py-2
+              mt-4
+              shadow-lg
+              hover:bg-green-500 hover:text-white
+            "
+          >
+            Get in touch
+            <span class="text-xs ml-1"
+              ><i class="fas fa-paper-plane"></i
+            ></span></button
+        ></a>
+      </section>
+    </header>
+
+    <main class="max-w-screen-lg mx-auto py-12 px-4">
+      <!-- About Me Section -->
+      <section id="about-me" class="pt-4 mb-24">
+        <h2 class="text-red-500 head-font text-2xl mb-4">
+          About Me <span class="text-sm"><i class="fas fa-user"></i></span>
+        </h2>
+        <p>
+          I'm a pretty chill software engineer and <i>part-time otaku.</i> When
+          I'm not coding or looking at beautiful UI designs on Dribbble, I love
+          taking long walks in cool, airy places. I also love watching anime,
+          playing video games, or trying out new food.
+        </p>
+        <p>
+          I take pride in what I do, and I love to get things done excellently.
+        </p>
+        <p>
+          I think cats are adorable, but I don't see myself having one anytime
+          soon.
+        </p>
+      </section>
+
+      <!-- My Skills -->
+      <section id="my-skills" class="pt-4 mb-24">
+        <h2 class="text-yellow-500 head-font text-2xl mb-4">
+          My Skills
+          <span class="text-sm"><i class="fas fa-hand-sparkles"></i></span>
+        </h2>
+        <p><b>Coding:</b> HTML, CSS, JavaScript, TypeScript</p>
+        <p>
+          <b>Frameworks/Systems:</b> React, Tailwind CSS, Styled Components,
+          Bootstrap, Git, Next.js, Node.js, MongoDB, FaunaDB
+        </p>
+        <p>
+          <b>Soft Skills:</b> Collaboration, Critical thinking, Willingness to
+          learn, Adaptability
+        </p>
+      </section>
+
+      <!-- My Experience -->
+      <section id="my-experience" class="pt-4 mb-24">
+        <h2 class="text-purple-500 head-font text-2xl mb-4">
+          My Experience
+          <span class="text-sm"><i class="fas fa-briefcase"></i></span>
+        </h2>
+        <div class="mb-3">
+          <h3 class="font-bold text-lg">Truparse Nigeria</h3>
+          <p class="mb-1">
+            <span>Software Engineer</span> |
+            <span class="text-xs">Feb 2021 - Jul 2021</span>
+          </p>
+          <ul class="ml-5 list-disc">
+            <li>
+              I handled regular tasks on software development, and collaborated
+              with other developers to create apps and functionalities that
+              improve user experience.
+            </li>
+          </ul>
+        </div>
+        <div class="mb-3">
+          <h3 class="font-bold text-lg">Payvest Global</h3>
+          <p class="mb-1">
+            <span>FullStack Engineer</span> |
+            <span class="text-xs">Oct 2020 - Jan 2021</span>
+          </p>
+          <ul class="ml-5 list-disc">
+            <li>Structured, wrote and maintained multiple project codebases</li>
+            <li>
+              Converted whiteboard ideas, solutions from wireframes and final
+              designs into code
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- My Projects -->
+      <section id="my-projects" class="pt-4 mb-24">
+        <h2 class="text-indigo-900 head-font text-2xl mb-4">
+          My Projects
+          <span class="text-sm"><i class="fas fa-cogs"></i></span>
+        </h2>
+        <div class="grid md:grid-cols-2 gap-y-4 md:gap-4">
+          <div
+            class="
+              border-2 border-indigo-900
+              rounded-xl
+              p-8
+              h-96
+              flex flex-col
+              justify-between
+              shadow-lg
+              text-white
+            "
+            style="
+              background-image: url(https://res.cloudinary.com/dpkreativ/image/upload/b_rgb:4c1d95,o_3/v1629489733/divi-crm_f3oajn.jpg);
+            "
+          >
+            <div class="mb-8 justify-end flex space-x-4">
+              <a href="https://github.com/dpkreativ/divi-crm"
+                ><i class="fab fa-github text-xl"></i
+              ></a>
+              <a href="https://divi-crm.vercel.app"
+                ><i class="fas fa-link"></i
+              ></a>
+            </div>
+            <div>
+              <div class="h-8 md;h-7">
+                <h3 class="text-lg font-bold">Divi-CRM</h3>
+              </div>
+              <div class="h-14 md:h-12">
+                <p>A customer relationship management app</p>
+              </div>
+              <div class="h-20 md:h-16">
+                <p class="text-xs">
+                  A simple open-source web app that enables users to store
+                  client details and business history, and easily access them
+                  from any browser.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="
+              border-2 border-indigo-900
+              rounded-xl
+              p-8
+              h-96
+              flex flex-col
+              justify-between
+              shadow-lg
+              text-white
+            "
+            style="
+              background-image: url(https://res.cloudinary.com/dpkreativ/image/upload/b_rgb:4c1d95,o_3/v1629490959/devsources_sywejc.jpg);
+            "
+          >
+            <div class="mb-8 justify-end flex space-x-4">
+              <a href="https://github.com/dpkreativ/devsources"
+                ><i class="fab fa-github text-xl"></i
+              ></a>
+              <a href="https://devsources.netlify.app/"
+                ><i class="fas fa-link"></i
+              ></a>
+            </div>
+            <div>
+              <div class="h-8 md:7">
+                <h3 class="text-lg font-bold">Devsources</h3>
+              </div>
+              <div class="h-14 md:h-12">
+                <p>
+                  A community-vetted curation of learning resources for techies
+                </p>
+              </div>
+              <div class="h-20 md:h-16">
+                <p class="text-xs">
+                  On this platform, developers can suggest learning resources
+                  that are vetted and upvoted by other members of the community,
+                  to enable beginners and experts quickly find the best
+                  resources for learning a particular concept in tech
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HNG Logos -->
+      <section id="hng-logos" class="pt-4 mb-10">
+        <h2 class="text-blue-500 text-2xl head-font mb-4">
+          HNG Logos
+          <span class="text-sm"><i class="fas fa-rocket"></i></span>
+        </h2>
+        <div class="flex space-x-4">
+          <div class="h-12 md:h-16">
+            <img src="./logos/hng.png" alt="hng logo" class="h-full" />
+          </div>
+          <div class="h-12 md:h-16">
+            <img src="./logos/zuri.jpg" alt="zuri logo" class="h-full" />
+          </div>
+          <div class="h-12 md:h-16">
+            <img
+              src="./logos/ingressive.png"
+              alt="ingressive logo"
+              class="h-full"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
   </body>
+  <script src="./index.js"></script>
 </html>
