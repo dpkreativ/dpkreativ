@@ -1,5 +1,6 @@
 import { useState } from "react";
 import HamburgerMenu from "./HamburgerMenu";
+import Logo from "./Logo";
 
 const Nav = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -11,7 +12,9 @@ const Nav = () => {
   return (
     <nav className="p-5 lg:p-10">
       <div className="flex justify-between items-center">
-        <div className="font-bold text-3xl">Divine.</div>
+        <div className="font-bold text-3xl text-purple-600">
+          <Logo />
+        </div>
         <div>
           <div className="relative">
             <HamburgerMenu

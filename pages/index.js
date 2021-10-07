@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Divine Orji - Software Engineer</title>
+        <title>Divine Orji - Frontend Developer</title>
         <meta name="description" content="Divine Orji's portfolio website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
