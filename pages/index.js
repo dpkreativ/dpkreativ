@@ -1,4 +1,5 @@
 import Head from "next/head";
+import LandingPage from "../components/LandingPage";
 
 export default function Home() {
   return (
@@ -8,10 +9,7 @@ export default function Home() {
         <meta name="description" content="Divine Orji's portfolio website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <main>
-        <h1>Divine Orji</h1>
-      </main>
+      <LandingPage />
     </div>
   );
 }
