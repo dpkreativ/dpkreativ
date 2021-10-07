@@ -21,12 +21,12 @@ const Nav = () => {
             <div
               className={`${
                 openMenu ? "block" : "hidden"
-              } absolute bg-gray-300 w-72 right-0 p-5 shadow-lg rounded-xl`}
+              } absolute bg-purple-50 w-72 right-0 p-5 shadow-lg rounded-2xl`}
             >
               <ul className="flex flex-col space-y-6">
-                <li>Work</li>
-                <li>Blog</li>
-                <li>Resume</li>
+                <li className="text-lg">Work</li>
+                <li className="text-lg">Blog</li>
+                <li className="text-lg">Resume</li>
               </ul>
             </div>
           </div>

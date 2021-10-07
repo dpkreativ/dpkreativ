@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .custom-container {
+    @apply p-10 lg:p-20;
+  }
+}

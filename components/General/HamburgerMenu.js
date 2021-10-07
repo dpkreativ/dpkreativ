@@ -2,7 +2,7 @@ const HamburgerMenu = ({ onClick, className }) => {
   return (
     <>
       <button
-        className={`menu ${className} outline-none`}
+        className={`menu ${className} outline-none text-purple-600`}
         id="hamburgerMenu"
         onClick={onClick}
       >
@@ -29,37 +29,38 @@ const HamburgerMenu = ({ onClick, className }) => {
           }
           .line {
             fill: none;
-            stroke: black;
-            stroke-width: 3;
+            stroke: currentColor;
+            stroke-linecap: round;
+            stroke-width: 5;
             transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
               stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
           }
           .line1 {
             stroke-dasharray: 60 207;
-            stroke-width: 3;
+            stroke-width: 5;
           }
           .line2 {
             stroke-dasharray: 60 60;
-            stroke-width: 3;
+            stroke-width: 5;
           }
           .line3 {
             stroke-dasharray: 60 207;
-            stroke-width: 3;
+            stroke-width: 5;
           }
           .opened .line1 {
             stroke-dasharray: 90 207;
             stroke-dashoffset: -134;
-            stroke-width: 3;
+            stroke-width: 5;
           }
           .opened .line2 {
             stroke-dasharray: 1 60;
             stroke-dashoffset: -30;
-            stroke-width: 3;
+            stroke-width: 5;
           }
           .opened .line3 {
             stroke-dasharray: 90 207;
             stroke-dashoffset: -134;
-            stroke-width: 3;
+            stroke-width: 5;
           }
         `}
       </style>
