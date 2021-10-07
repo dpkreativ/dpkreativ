@@ -33,7 +33,7 @@ const HamburgerMenu = ({ onClick, className }) => {
             stroke-linecap: round;
             stroke-width: 5;
             transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
-              stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+              stroke-dashoffset 50ms cubic-bezier(0.4, 0, 0.2, 1);
           }
           .line1 {
             stroke-dasharray: 60 207;
