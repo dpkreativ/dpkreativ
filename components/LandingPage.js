@@ -38,14 +38,14 @@ const LandingPage = () => {
             </div>
             <div>
               <h3 className="font-bold text-4xl mb-5">
-                Hi 👋, I'm Divine Orji.
+                Hi 👋, I&apos;m Divine Orji.
               </h3>
               <p className="text-xl lg:text-2xl leading-relaxed my-5">
                 I have over 2 years of experience building user-focused
                 interfaces.
               </p>
               <p className="text-xl lg:text-2xl leading-relaxed my-5">
-                Currently I'm working as a technical writer at Hackmamba.
+                Currently I&apos;m working as a technical writer at Hackmamba.
               </p>
               <p className="text-xl lg:text-2xl leading-relaxed my-5">
                 Before now, I was a software engineer at Truparse, where I

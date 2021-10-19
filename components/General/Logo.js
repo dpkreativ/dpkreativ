@@ -4,7 +4,7 @@ const Logo = () => {
       version="1.1"
       id="Layer_1"
       viewBox="0 0 595.3 595.3"
-      enable-background="new 0 0 595.3 595.3"
+      enableBackground="new 0 0 595.3 595.3"
       width="40"
       height="40"
     >
