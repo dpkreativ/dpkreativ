@@ -4,6 +4,6 @@
 
 @layer utilities {
   .custom-container {
-    @apply p-10 lg:p-20;
+    @apply p-10 lg:max-w-screen-xl lg:mx-auto;
   }
 }

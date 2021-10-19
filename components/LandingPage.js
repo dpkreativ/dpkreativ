@@ -23,7 +23,7 @@ const LandingPage = () => {
               </div>
             </div>
 
-            <div className="hidden lg:flex justify-center items-center">
+            <div className="hidden lg:flex justify-end items-center">
               <div className="w-60 h-60 bg-purple-300 rounded-2xl"></div>
             </div>
           </div>
@@ -52,6 +52,16 @@ const LandingPage = () => {
                 collaborated with other members of the team to build interfaces
                 for outsourced client projects.
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* My Work */}
+        <section>
+          <div className="custom-container">
+            <div className="flex items-center space-x-3 mb-10">
+              <div className="w-16 h-0.5 bg-purple-600"></div>
+              <h2 className="text-xl uppercase">My Work</h2>
             </div>
           </div>
         </section>
