@@ -5,8 +5,8 @@ const Navlink = ({ active, children, url }) => {
     <Link href={url} passHref>
       <a>
         <li
-          className={`text-base border-b-4 border-white py-1 ${
-            active ? "border-purple-600" : ""
+          className={`text-sm md:text-base border-b md:border-b-4 py-1 ${
+            active ? "border-purple-600" : "border-white"
           }`}
         >
           {children}
