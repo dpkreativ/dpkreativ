@@ -1,9 +1,10 @@
 import { useState } from "react";
-import HamburgerMenu from "./HamburgerMenu";
-import Logo from "./Logo";
+import HamburgerMenu from "../atoms/HamburgerMenu";
+import Logo from "../atoms/Logo";
 
-const Nav = () => {
+const Nav = ({ active = 1 }) => {
   const [openMenu, setOpenMenu] = useState(false);
+  const [activeTab, setActiveTab] = useState(active);
 
   const handleClick = () => {
     setOpenMenu(!openMenu);
@@ -43,11 +44,41 @@ const Nav = () => {
           </div>
           <div className="hidden lg:block">
             <ul className="flex space-x-5">
-              <li className="text-base">About Me</li>
-              <li className="text-base">Resume</li>
-              <li className="text-base">Projects</li>
-              <li className="text-base">Blog</li>
-              <li className="text-base">Contact</li>
+              <li
+                className={`text-base border-b-4 border-white py-1 ${
+                  activeTab === 1 ? "border-purple-600" : ""
+                }`}
+              >
+                About Me
+              </li>
+              <li
+                className={`text-base border-b-4 border-white py-1 ${
+                  activeTab === 2 ? "border-purple-600" : ""
+                }`}
+              >
+                Resume
+              </li>
+              <li
+                className={`text-base border-b-4 border-white py-1 ${
+                  activeTab === 3 ? "border-purple-600" : ""
+                }`}
+              >
+                Projects
+              </li>
+              <li
+                className={`text-base border-b-4 border-white py-1 ${
+                  activeTab === 4 ? "border-purple-600" : ""
+                }`}
+              >
+                Blog
+              </li>
+              <li
+                className={`text-base border-b-4 border-white py-1 ${
+                  activeTab === 5 ? "border-purple-600" : ""
+                }`}
+              >
+                Contact
+              </li>
             </ul>
           </div>
         </div>
