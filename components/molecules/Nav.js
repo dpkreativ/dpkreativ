@@ -1,6 +1,7 @@
 import { useState } from "react";
 import HamburgerMenu from "../atoms/HamburgerMenu";
 import Logo from "../atoms/Logo";
+import Navlink from "../atoms/Navlink";
 
 const Nav = ({ active = 1 }) => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -35,7 +36,7 @@ const Nav = ({ active = 1 }) => {
             >
               <ul className="flex flex-col space-y-5">
                 <li className="text-base">About Me</li>
-                <li className="text-base">Resume</li>
+                <li className="text-base">Résumé</li>
                 <li className="text-base">Projects</li>
                 <li className="text-base">Blog</li>
                 <li className="text-base">Contact</li>
@@ -44,41 +45,21 @@ const Nav = ({ active = 1 }) => {
           </div>
           <div className="hidden lg:block">
             <ul className="flex space-x-5">
-              <li
-                className={`text-base border-b-4 border-white py-1 ${
-                  activeTab === 1 ? "border-purple-600" : ""
-                }`}
-              >
+              <Navlink url="/" active={activeTab === 1}>
                 About Me
-              </li>
-              <li
-                className={`text-base border-b-4 border-white py-1 ${
-                  activeTab === 2 ? "border-purple-600" : ""
-                }`}
-              >
-                Resume
-              </li>
-              <li
-                className={`text-base border-b-4 border-white py-1 ${
-                  activeTab === 3 ? "border-purple-600" : ""
-                }`}
-              >
+              </Navlink>
+              <Navlink url="/resume" active={activeTab === 2}>
+                Résumé
+              </Navlink>
+              <Navlink url="/projects" active={activeTab === 3}>
                 Projects
-              </li>
-              <li
-                className={`text-base border-b-4 border-white py-1 ${
-                  activeTab === 4 ? "border-purple-600" : ""
-                }`}
-              >
+              </Navlink>
+              <Navlink url="/blog" active={activeTab === 4}>
                 Blog
-              </li>
-              <li
-                className={`text-base border-b-4 border-white py-1 ${
-                  activeTab === 5 ? "border-purple-600" : ""
-                }`}
-              >
+              </Navlink>
+              <Navlink url="/contact" active={activeTab === 5}>
                 Contact
-              </li>
+              </Navlink>
             </ul>
           </div>
         </div>
