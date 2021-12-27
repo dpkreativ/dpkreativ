@@ -30,10 +30,14 @@ export default function Home() {
               </h2>
               <div className="flex space-x-3 w-max">
                 <div>
-                  <Button>Résumé</Button>
+                  <Button onClick={() => (location.href = "/resume")}>
+                    Résumé
+                  </Button>
                 </div>
                 <div>
-                  <Button filled>Projects</Button>
+                  <Button onClick={() => (location.href = "/projects")} filled>
+                    Projects
+                  </Button>
                 </div>
               </div>
             </div>
