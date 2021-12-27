@@ -43,11 +43,11 @@ const Nav = () => {
           </div>
           <div className="hidden lg:block">
             <ul className="flex space-x-5">
-              <li className="text-lg">About Me</li>
-              <li className="text-lg">Resume</li>
-              <li className="text-lg">Projects</li>
-              <li className="text-lg">Blog</li>
-              <li className="text-lg">Contact</li>
+              <li className="text-base">About Me</li>
+              <li className="text-base">Resume</li>
+              <li className="text-base">Projects</li>
+              <li className="text-base">Blog</li>
+              <li className="text-base">Contact</li>
             </ul>
           </div>
         </div>
