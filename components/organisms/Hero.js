@@ -28,7 +28,7 @@ const Hero = () => {
 
       <div className="relative h-96">
         <div className="bg-purple-600 h-full w-full absolute md:w-4/5 md:right-0"></div>
-        <div className="w-60 h-72 md:w-64 md:h-80 md:absolute z-10 top-1/2 -translate-y-1/2">
+        <div className="w-60 h-72 md:w-64 md:h-80 absolute z-10 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 md:left-auto md:-translate-x-0">
           <ProfileImage />
         </div>
       </div>
