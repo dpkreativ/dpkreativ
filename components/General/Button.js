@@ -1,6 +1,12 @@
-const Button = ({ children }) => {
+const Button = ({ children, filled }) => {
   return (
-    <button className="text-purple-600 border-2 border-purple-600 py-5 px-10 rounded-2xl text-lg hover:text-white hover:bg-purple-600">
+    <button
+      className={`py-2 px-5 border border-purple-600 text-lg font-semibold hover:border-purple-700 hover:shadow-lg ${
+        filled
+          ? "bg-purple-600 text-white hover:bg-purple-700"
+          : "text-purple-600 hover:text-purple-700"
+      }`}
+    >
       {children}
     </button>
   );
