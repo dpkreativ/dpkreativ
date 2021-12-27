@@ -4,9 +4,8 @@ import HamburgerMenu from "../atoms/HamburgerMenu";
 import Logo from "../atoms/Logo";
 import Navlink from "../atoms/Navlink";
 
-const Nav = ({ active = 1 }) => {
+const Nav = ({ activeTab = 1 }) => {
   const [openMenu, setOpenMenu] = useState(false);
-  const [activeTab, setActiveTab] = useState(active);
 
   const handleClick = () => {
     setOpenMenu(!openMenu);
@@ -37,14 +36,24 @@ const Nav = ({ active = 1 }) => {
             <div
               className={`${
                 openMenu ? "block" : "hidden"
-              } absolute bg-gray-50 w-48 right-0 p-5 shadow-lg`}
+              } absolute bg-gray-50 w-44 md:w-48 right-0 p-5 shadow-lg`}
             >
               <ul className="flex flex-col space-y-5">
-                <li className="text-base">About Me</li>
-                <li className="text-base">Résumé</li>
-                <li className="text-base">Projects</li>
-                <li className="text-base">Blog</li>
-                <li className="text-base">Contact</li>
+                <Navlink url="/" active={activeTab === 1}>
+                  About Me
+                </Navlink>
+                <Navlink url="/resume" active={activeTab === 2}>
+                  Résumé
+                </Navlink>
+                <Navlink url="/projects" active={activeTab === 3}>
+                  Projects
+                </Navlink>
+                <Navlink url="/blog" active={activeTab === 4}>
+                  Blog
+                </Navlink>
+                <Navlink url="/contact" active={activeTab === 5}>
+                  Contact
+                </Navlink>
               </ul>
             </div>
           </div>
