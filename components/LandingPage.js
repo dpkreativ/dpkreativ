@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Button from "./General/Button";
 import Header from "./General/Header";
 
@@ -8,23 +9,38 @@ const LandingPage = () => {
       <main>
         {/* Hero Section */}
         <section>
-          <div className="custom-container grid lg:grid-cols-2 gap-5">
-            <div className="py-12">
-              <h1 className="font-bold text-6xl lg:text-7xl leading-tight mb-5">
-                Frontend Developer
-                <span className="text-purple-600 text-3xl lg:text-7xl">.</span>
-              </h1>
-              <p className="text-2xl lg:w-4/5 mb-10">
-                I like to craft solid and scalable frontend products with great
-                user experiences.
-              </p>
-              <div>
-                <Button>Get in touch</Button>
+          <div className="grid lg:grid-cols-5 gap-5">
+            <div className="py-12 flex flex-col items-end col-span-2">
+              <h2 className="text-4xl text-right lg:w-4/5 mb-10 leading-normal">
+                <span className="bg-purple-600 text-white">Passionate</span>
+                <span> about building </span>
+                <span className="italic font-semibold">fast</span>,
+                <span className="italic font-semibold"> scalable</span>
+                <span> web apps, while creating </span>
+                <span className="italic font-semibold">beautiful</span>
+                <span> user interfaces.</span>
+              </h2>
+              <div className="flex space-x-3 w-max">
+                <div>
+                  <Button>Resume</Button>
+                </div>
+                <div>
+                  <Button filled>Projects</Button>
+                </div>
               </div>
             </div>
 
-            <div className="hidden lg:flex justify-end items-center">
-              <div className="w-60 h-60 bg-purple-300 rounded-2xl"></div>
+            <div className="relative col-span-3">
+              <div className="bg-purple-600 w-4/5 h-full absolute right-0"></div>
+              <div className="w-60 h-72 bg-purple-300 absolute z-10 top-1/2 -translate-y-1/2 shadow-xl">
+                <div className="relative h-72 w-60">
+                  <Image
+                    src="/assets/divi.jpg"
+                    layout="fill"
+                    objectFit="cover"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </section>
