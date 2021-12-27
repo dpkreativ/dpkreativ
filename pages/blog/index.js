@@ -12,7 +12,7 @@ export default function Home() {
       </Head>
 
       {/* Page Body */}
-      <PageTemplate activeIndex={5}>
+      <PageTemplate activeIndex={4}>
         <section>Hi, this is the blog</section>
       </PageTemplate>
     </div>
