@@ -8,7 +8,7 @@ const PageTemplate = ({ activeIndex, children }) => {
       <Header active={activeIndex} />
 
       {/* Main Content */}
-      {children}
+      <main className="min-h-screen">{children}</main>
 
       {/* Footer Section */}
       <Footer />
