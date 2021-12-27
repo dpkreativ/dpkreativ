@@ -1,12 +1,12 @@
-const Logo = () => {
+const Logo = ({ width = "40", height = "40" }) => {
   return (
     <svg
       version="1.1"
       id="Layer_1"
       viewBox="0 0 595.3 595.3"
       enableBackground="new 0 0 595.3 595.3"
-      width="40"
-      height="40"
+      width={width}
+      height={height}
     >
       <g>
         <polygon points="401.6,143.4 401.6,195.3 462.4,195.3 343,460.5 248.4,234 219.1,298.6 341.2,590.9 542.7,143.4 	" />
