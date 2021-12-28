@@ -1,4 +1,5 @@
 import Head from "next/head";
+import About from "../components/organisms/About";
 import Hero from "../components/organisms/Hero";
 import PageTemplate from "../components/templates/PageTemplate";
 
@@ -16,6 +17,9 @@ export default function Home() {
       <PageTemplate activeIndex={1}>
         {/* Hero Section */}
         <Hero />
+
+        {/* About Section */}
+        <About />
 
         {/* About Me */}
         {/* <section>
