@@ -1,4 +1,5 @@
 import Head from "next/head";
+import PageTitle from "../../components/molecules/PageTitle";
 import PageTemplate from "../../components/templates/PageTemplate";
 
 export default function Home() {
@@ -13,7 +14,9 @@ export default function Home() {
 
       {/* Page Body */}
       <PageTemplate activeIndex={3}>
-        <section>Hi, this is the projects page</section>
+        <section>
+          <PageTitle title="Projects" />
+        </section>
       </PageTemplate>
     </div>
   );
