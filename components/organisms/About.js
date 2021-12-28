@@ -39,7 +39,7 @@ const About = () => {
         <p className="leading-normal">
           I am looking for my next set of opportunities to{" "}
           <span className="bg-gray-300 font-semibold px-0.5">grow</span> in my
-          career, and contribute to solving challenges that have a lot of{" "}
+          career, and contribute to solving challenges that make a lot of{" "}
           <span className="bg-black text-white font-semibold px-0.5">
             positive impact.
           </span>
