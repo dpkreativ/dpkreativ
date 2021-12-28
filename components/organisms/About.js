@@ -29,7 +29,7 @@ const About = () => {
           </span>{" "}
           for a number of publications, and help to{" "}
           <span className="bg-gray-300 font-semibold px-0.5">mentor</span>{" "}
-          budding software engineers as part of GDSC MOUAU's core team.
+          budding software engineers as part of GDSC MOUAU&apos;s core team.
         </p>
         <p className="leading-normal">
           In the past, I worked for brands such as Payvest - a Fintech company
