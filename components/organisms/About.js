@@ -2,7 +2,7 @@ import SectionTitle from "../molecules/SectionTitle";
 
 const About = () => {
   return (
-    <section className="px-6 py-12 lg:px-12">
+    <section className="px-6 py-12 lg:px-12 max-w-5xl mx-auto">
       <SectionTitle
         title={
           <>
@@ -11,7 +11,7 @@ const About = () => {
           </>
         }
       />
-      <div className="lg:text-2xl flex flex-col space-y-4 md:space-y-8 py-6 max-w-5xl mx-auto">
+      <div className="lg:text-2xl flex flex-col space-y-4 md:space-y-8 py-6">
         <p className="leading-normal">
           I have{" "}
           <span className="bg-gray-300 font-semibold px-0.5">learned</span>,

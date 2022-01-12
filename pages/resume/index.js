@@ -1,5 +1,6 @@
 import Head from "next/head";
 import PageTitle from "../../components/molecules/PageTitle";
+import Resume from "../../components/organisms/Resume";
 import PageTemplate from "../../components/templates/PageTemplate";
 
 export default function Home() {
@@ -17,6 +18,9 @@ export default function Home() {
         <section>
           <PageTitle title="Résumé" />
         </section>
+
+        {/* Resume Content */}
+        <Resume />
       </PageTemplate>
     </div>
   );
