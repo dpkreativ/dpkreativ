@@ -1,4 +1,5 @@
 import Button from "../atoms/Button";
+import Experience from "../molecules/Experience";
 import SectionTitle from "../molecules/SectionTitle";
 
 const Resume = () => {
@@ -32,15 +33,18 @@ const Resume = () => {
           title={<span className="font-semibold">Experience</span>}
         />
         <div className="lg:text-2xl flex flex-col space-y-4 md:space-y-8 py-6 max-w-5xl mx-auto">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
-          fugiat accusantium iste dolorum quidem veniam debitis error facere
-          officiis expedita labore, reiciendis libero, magni voluptas itaque,
-          aspernatur mollitia maiores quia.
+          <Experience
+            title="Software Engineer"
+            org="Truparse"
+            duration="Feb 2021 - July 2021"
+          >
+            Hello Amigo
+          </Experience>
         </div>
       </section>
 
       {/* Education */}
-      <section className="mb-24">
+      {/* <section className="mb-24">
         <SectionTitle
           title={<span className="font-semibold">Education</span>}
         />
@@ -50,7 +54,7 @@ const Resume = () => {
           officiis expedita labore, reiciendis libero, magni voluptas itaque,
           aspernatur mollitia maiores quia.
         </div>
-      </section>
+      </section> */}
     </section>
   );
 };
