@@ -1,4 +1,5 @@
 import Head from "next/head";
+import ComingSoon from "../../components/atoms/ComingSoon";
 import PageTitle from "../../components/molecules/PageTitle";
 import ContactForm from "../../components/organisms/ContactForm";
 import PageTemplate from "../../components/templates/PageTemplate";
@@ -19,7 +20,8 @@ export default function Home() {
           <PageTitle title="Contact" />
         </section>
         <section className="px-6 py-12 lg:px-12 max-w-5xl mx-auto">
-          <ContactForm />
+          {/* <ContactForm /> */}
+          <ComingSoon />
         </section>
       </PageTemplate>
     </div>
