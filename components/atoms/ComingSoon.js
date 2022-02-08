@@ -20,7 +20,7 @@ const ComingSoon = () => {
         ></iframe>
       </div>
       <p className="text-center mt-5">
-        We're currently working on this page, please check back later. Thanks!
+        We are currently working on this page, please check back later. Thanks!
       </p>
     </div>
   );
