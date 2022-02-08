@@ -17,7 +17,7 @@ const Nav = ({ activeTab = 1 }) => {
         <Link href="/" passHref>
           <a>
             <div className="flex space-x-2 items-center">
-              <div className="text-purple-600">
+              <div className="text-primary-normal">
                 <Logo width="32" height="32" />
               </div>
               <div className="md:flex md:items-baseline md:space-x-2">

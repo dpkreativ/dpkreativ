@@ -2,7 +2,7 @@ const HamburgerMenu = ({ onClick, className, width = "40", height = "40" }) => {
   return (
     <>
       <button
-        className={`menu ${className} outline-none text-purple-600`}
+        className={`menu ${className} outline-none text-primary-normal`}
         id="hamburgerMenu"
         onClick={onClick}
       >

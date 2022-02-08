@@ -1,10 +1,10 @@
 const Button = ({ children, filled, onClick }) => {
   return (
     <button
-      className={`py-2 px-5 border border-purple-600 text-lg font-semibold hover:border-purple-700 hover:shadow-lg ${
+      className={`py-2 px-5 border border-primary-normal text-lg font-semibold hover:border-primary-dark hover:shadow-lg ${
         filled
-          ? "bg-purple-600 text-white hover:bg-purple-700"
-          : "text-purple-600 hover:text-purple-700"
+          ? "bg-primary-normal text-white hover:bg-primary-dark"
+          : "text-primary-normal hover:text-primary-dark"
       }`}
       onClick={onClick}
     >

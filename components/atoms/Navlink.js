@@ -6,7 +6,7 @@ const Navlink = ({ active, children, url }) => {
       <a>
         <li
           className={`text-sm md:text-base border-b md:border-b-4 py-1 ${
-            active ? "border-purple-600" : "border-white"
+            active ? "border-primary-normal" : "border-white"
           }`}
         >
           {children}
