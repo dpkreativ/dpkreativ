@@ -2,7 +2,11 @@ import SectionTitle from "../molecules/SectionTitle";
 
 const About = () => {
   return (
-    <section className="px-6 py-12 lg:px-12 max-w-5xl mx-auto">
+    <section
+      className="px-6 py-12 lg:px-12 max-w-5xl mx-auto"
+      data-aos="fade-up"
+      data-aos-anchor-placement="center-bottom"
+    >
       <SectionTitle
         title={
           <>

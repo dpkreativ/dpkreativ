@@ -17,7 +17,7 @@ export default function Home() {
       <PageTemplate activeIndex={1}>
         {/* Hero Section */}
         <Hero />
-
+        <section className="lg:my-32"></section>
         {/* About Section */}
         <About />
       </PageTemplate>
