@@ -9,13 +9,20 @@ const Resume = () => {
       <section className="mb-24">
         <SectionTitle title={<span className="font-semibold">Summary</span>} />
         <div className="lg:text-2xl flex flex-col space-y-4 md:space-y-8 py-6">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
-          fugiat accusantium iste dolorum quidem veniam debitis error facere
-          officiis expedita labore, reiciendis libero, magni voluptas itaque,
-          aspernatur mollitia maiores quia.
+          Innovative software engineer offering over two years of expertise in
+          web development. Seasoned professional with background in full
+          software development lifecycle. Quickly learns and masters new
+          technologies while working in both team and self-directed settings.
         </div>
         <div>
-          <Button>Download Resume</Button>
+          <Link
+            href="https://docs.google.com/document/d/1RRHUjOkSa-Cpm03VZjfnYqvDMdbhrP3sn_G8dg22IBA/edit?usp=sharing"
+            passHref
+          >
+            <a>
+              <Button>Download Resume</Button>
+            </a>
+          </Link>
         </div>
       </section>
 
