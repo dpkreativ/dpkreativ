@@ -66,18 +66,27 @@ const Resume = () => {
               <Experience
                 title="DevRel / Community Manager (Volunteer)"
                 org="GDSC MOUAU"
+                location="Umudike, Nigeria"
                 duration="Oct 2021 - Present"
               >
                 <div className="pl-10">
                   <ul className="list-disc">
-                    <li>Create technical content</li>
-                    <li>Organize hackathons</li>
+                    <li>
+                      Train over 200 students on web development through
+                      bootcamps and one-to-one mentorships.
+                    </li>
+                    <li>
+                      Work together with a team to organize community events for
+                      Google Developer Student Clubs, Michael Okpara University
+                      of Agriculture, Umudike.
+                    </li>
                   </ul>
                 </div>
               </Experience>
               <Experience
                 title="Contributing Technical Content Writer and Frontend Engineer"
                 org="Hackmamba"
+                location="Remote"
                 duration="Jan 2021 - Present"
               >
                 <div className="pl-10">
@@ -95,6 +104,7 @@ const Resume = () => {
               <Experience
                 title="Software Engineer (Frontend)"
                 org="Truparse"
+                location="Remote"
                 duration="Feb 2021 - July 2021"
               >
                 <div className="pl-10">
@@ -110,6 +120,7 @@ const Resume = () => {
               <Experience
                 title="Software Engineer (Frontend)"
                 org="Payvest Global"
+                location="Port Harcourt, Nigeria"
                 duration="Oct 2020 - Jan 2021"
               >
                 <div className="pl-10">
