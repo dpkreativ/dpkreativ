@@ -5,7 +5,6 @@ const About = () => {
     <section
       className="px-6 py-12 lg:px-12 max-w-5xl mx-auto"
       data-aos="fade-up"
-      data-aos-anchor-placement="top-center"
     >
       <SectionTitle
         title={
