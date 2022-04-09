@@ -1,7 +1,5 @@
-import Head from "next/head";
-import About from "../components/organisms/About";
-import Hero from "../components/organisms/Hero";
-import PageTemplate from "../components/templates/PageTemplate";
+import Head from 'next/head';
+import Button from '../components/UI/atoms/Button';
 
 export default function Home() {
   return (
@@ -14,13 +12,8 @@ export default function Home() {
       </Head>
 
       {/* Page Body */}
-      <PageTemplate activeIndex={1}>
-        {/* Hero Section */}
-        <Hero />
-
-        {/* About Section */}
-        <About />
-      </PageTemplate>
+      <div>Hello Divine. Let's begin!</div>
+      <Button>Hehe</Button>
     </div>
   );
 }
