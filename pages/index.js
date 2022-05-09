@@ -14,7 +14,7 @@ export default function Home() {
 
       {/* Page Body */}
       <PageTemplate>
-        <div>Hello Divine. Let's begin!</div>
+        <div className="text-primary-04">Hello Divine. Let's begin!</div>
         <Button>start-game</Button>
       </PageTemplate>
     </div>
