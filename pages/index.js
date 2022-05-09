@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import PageTemplate from '../components/templates/PageTemplate';
 import Button from '../components/UI/atoms/Button';
 
 export default function Home() {
@@ -12,8 +13,10 @@ export default function Home() {
       </Head>
 
       {/* Page Body */}
-      <div>Hello Divine. Let's begin!</div>
-      <Button>start-game</Button>
+      <PageTemplate>
+        <div>Hello Divine. Let's begin!</div>
+        <Button>start-game</Button>
+      </PageTemplate>
     </div>
   );
 }
