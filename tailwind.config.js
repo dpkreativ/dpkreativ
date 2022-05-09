@@ -9,12 +9,26 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          normal: '#03499A',
-          dark: '#03438C',
-          light: '#87BEFD',
+          '01': '#01080E',
+          '02': '#011627',
+          '03': '#011627',
         },
-        secondary: {},
-        accent: {},
+        secondary: {
+          '01': '#607B96',
+          '02': '#3C9D93',
+          '03': '#4D5BCE',
+        },
+        accent: {
+          '01': '#FEA55F',
+          '02': '#43D9AD',
+          '03': '#E99287',
+          '04': '#C98BDF',
+        },
+        line: '#1E2D3D',
+        gradient: {
+          '01': '#4D5BCE',
+          '02': '#43D9AD',
+        },
       },
     },
   },
