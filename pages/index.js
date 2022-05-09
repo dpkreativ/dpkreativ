@@ -13,7 +13,7 @@ export default function Home() {
 
       {/* Page Body */}
       <div>Hello Divine. Let's begin!</div>
-      <Button>Hello</Button>
+      <Button>start-game</Button>
     </div>
   );
 }

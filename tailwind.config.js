@@ -11,7 +11,7 @@ module.exports = {
         primary: {
           '01': '#01080E',
           '02': '#011627',
-          '03': '#011627',
+          '03': '#011221',
         },
         secondary: {
           '01': '#607B96',
@@ -28,6 +28,11 @@ module.exports = {
         gradient: {
           '01': '#4D5BCE',
           '02': '#43D9AD',
+        },
+        btn: {
+          default: '#1C2B3A',
+          'default-hover': '#263B50',
+          'primary-hover': '#FFAC6B',
         },
       },
     },
