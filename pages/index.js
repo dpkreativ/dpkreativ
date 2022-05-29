@@ -14,8 +14,8 @@ export default function Home() {
 
       {/* Page Body */}
       <PageTemplate>
-        <div className="text-primary-04">Hello Divine. Let's begin!</div>
-        <Button>start-game</Button>
+        {/* <div className="text-primary-04">Hello Divine. Let's begin!</div>
+        <Button>start-game</Button> */}
       </PageTemplate>
     </div>
   );
