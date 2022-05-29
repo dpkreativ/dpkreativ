@@ -11,21 +11,35 @@ const Header = () => {
       </div>
       <Navbar>
         <div className="flex">
-          <NavLink rightBorder active>
+          <NavLink url="/" rightBorder active>
             _hello
           </NavLink>
-          <NavLink rightBorder>_about-me</NavLink>
-          <NavLink rightBorder>_projects</NavLink>
+          <NavLink url="/about-me" rightBorder>
+            _about-me
+          </NavLink>
+          <NavLink url="/projects" rightBorder>
+            _projects
+          </NavLink>
         </div>
         <div className="flex">
-          <NavLink leftBorder>_contact-me</NavLink>
+          <NavLink url="/contact-me" leftBorder>
+            _contact-me
+          </NavLink>
         </div>
       </Navbar>
       <MobileNavbar>
-        <NavLink bottomBorder>_hello</NavLink>
-        <NavLink bottomBorder>_about-me</NavLink>
-        <NavLink bottomBorder>_projects</NavLink>
-        <NavLink bottomBorder>_contact-me</NavLink>
+        <NavLink url="/" bottomBorder>
+          _hello
+        </NavLink>
+        <NavLink url="/about-me" bottomBorder>
+          _about-me
+        </NavLink>
+        <NavLink url="/projects" bottomBorder>
+          _projects
+        </NavLink>
+        <NavLink url="/contact-me" bottomBorder>
+          _contact-me
+        </NavLink>
       </MobileNavbar>
     </header>
   );

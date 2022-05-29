@@ -10,15 +10,27 @@ const Footer = () => {
       </div>
       <Navbar>
         <div className="flex">
-          <NavLink rightBorder>
+          <NavLink
+            url="https://twitter.com/dpkreativ"
+            target="_blank"
+            rightBorder
+          >
             <Twitter />
           </NavLink>
-          <NavLink rightBorder>
+          <NavLink
+            url="https://www.linkedin.com/in/dpkreativ"
+            target="_blank"
+            rightBorder
+          >
             <LinkedIn />
           </NavLink>
         </div>
         <div className="flex">
-          <NavLink leftBorder>
+          <NavLink
+            url="https://github.com/dpkreativ"
+            target="_blank"
+            leftBorder
+          >
             <GitHub />
           </NavLink>
         </div>
@@ -27,13 +39,25 @@ const Footer = () => {
       {/* Mobile Navlinks. Might refactor later */}
       <section className="md:hidden">
         <div className="flex">
-          <NavLink leftBorder>
+          <NavLink
+            url="https://twitter.com/dpkreativ"
+            target="_blank"
+            leftBorder
+          >
             <Twitter />
           </NavLink>
-          <NavLink leftBorder>
+          <NavLink
+            url="https://www.linkedin.com/in/dpkreativ"
+            target="_blank"
+            leftBorder
+          >
             <LinkedIn />
           </NavLink>
-          <NavLink leftBorder>
+          <NavLink
+            url="https://github.com/dpkreativ"
+            target="_blank"
+            leftBorder
+          >
             <GitHub />
           </NavLink>
         </div>
