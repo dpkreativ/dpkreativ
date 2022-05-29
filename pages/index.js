@@ -20,7 +20,7 @@ export default function Home() {
               <h3 className="text-lg leading-loose">Hi there! I'm</h3>
               <h1 className="text-6xl">Divine Orji</h1>
               <p className="text-accent-02 md:text-secondary-03 text-xl md:text-3xl mt-2">
-                &#62; Sofware Engineer && Technical Writer
+                &#62; Sofware Engineer
               </p>
             </div>
             {/* <Button>start-game</Button> */}
