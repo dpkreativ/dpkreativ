@@ -1,5 +1,6 @@
 import Brand from '../atoms/Brand';
 import NavLink from '../atoms/NavLink';
+import MobileNavbar from '../molecules/MobileNavbar';
 import Navbar from '../molecules/Navbar';
 
 const Header = () => {
@@ -20,6 +21,7 @@ const Header = () => {
           <NavLink leftBorder>_contact-me</NavLink>
         </div>
       </Navbar>
+      <MobileNavbar></MobileNavbar>
     </header>
   );
 };
