@@ -34,7 +34,11 @@ export default function Home() {
                 <span> = </span>
                 <span className="text-accent-03">
                   <a href="https://github.com/dpkreativ" target="_blank">
-                    "https://github.com/dpkreativ"
+                    "
+                    <span className="underline">
+                      https://github.com/dpkreativ
+                    </span>
+                    "
                   </a>
                 </span>
               </p>
