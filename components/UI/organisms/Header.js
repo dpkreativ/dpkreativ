@@ -21,7 +21,12 @@ const Header = () => {
           <NavLink leftBorder>_contact-me</NavLink>
         </div>
       </Navbar>
-      <MobileNavbar>Hello</MobileNavbar>
+      <MobileNavbar>
+        <NavLink bottomBorder>_hello</NavLink>
+        <NavLink bottomBorder>_about-me</NavLink>
+        <NavLink bottomBorder>_projects</NavLink>
+        <NavLink bottomBorder>_contact-me</NavLink>
+      </MobileNavbar>
     </header>
   );
 };
