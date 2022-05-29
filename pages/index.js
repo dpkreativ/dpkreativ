@@ -17,7 +17,7 @@ export default function Home() {
         <section className="p-5 my-20 md:my-32 mx-auto w-full max-w-5xl grid gap-5 md:grid-cols-2">
           <article>
             <div className="text-primary-04">
-              <h3 className="text-lg leading-loose">Hi there! I'm</h3>
+              <h3 className="text-lg leading-loose">Hi there! I am</h3>
               <h1 className="text-6xl">Divine Orji</h1>
               <p className="text-accent-02 md:text-secondary-03 text-xl md:text-3xl mt-2">
                 &#62; Sofware Engineer
@@ -33,12 +33,16 @@ export default function Home() {
                 <span className="text-accent-02"> githubLink</span>
                 <span> = </span>
                 <span className="text-accent-03">
-                  <a href="https://github.com/dpkreativ" target="_blank">
-                    "
+                  <a
+                    href="https://github.com/dpkreativ"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    &#34;
                     <span className="underline">
                       https://github.com/dpkreativ
                     </span>
-                    "
+                    &#34;
                   </a>
                 </span>
               </p>

@@ -13,6 +13,7 @@ const NavLink = ({
     <Link href={url}>
       <a
         target={target}
+        rel="noreferrer"
         className={`text-secondary-01 border-line relative block ${
           rightBorder && 'border-r'
         } ${leftBorder && 'border-l'} ${bottomBorder && 'border-b'}`}
