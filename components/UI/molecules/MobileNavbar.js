@@ -9,7 +9,7 @@ const MobileNavbar = ({ children }) => {
         <HamburgerIcon />
       </section>
       <section>
-        <Modal className="top-16 text-secondary-01 bg-white">{children}</Modal>
+        <Modal className="top-16 text-secondary-01 md:hidden">{children}</Modal>
       </section>
     </nav>
   );
