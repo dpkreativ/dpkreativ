@@ -4,6 +4,7 @@ import Modal from '../atoms/Modal';
 
 const MobileNavbar = ({ children }) => {
   const [showMenu, setShowMenu] = useState(false);
+
   return (
     <nav className="md:hidden">
       {/* Hamburger Menu */}
