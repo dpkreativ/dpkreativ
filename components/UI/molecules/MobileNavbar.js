@@ -1,4 +1,5 @@
 import { HamburgerIcon } from '../atoms/Icons';
+import Modal from '../atoms/Modal';
 
 const MobileNavbar = ({ children }) => {
   return (
@@ -7,7 +8,9 @@ const MobileNavbar = ({ children }) => {
       <section className="p-5 text-secondary-01">
         <HamburgerIcon />
       </section>
-      <section>{children}</section>
+      <section>
+        <Modal className="top-16 text-secondary-01 bg-white">{children}</Modal>
+      </section>
     </nav>
   );
 };
