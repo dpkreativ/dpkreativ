@@ -1,5 +1,7 @@
 const Navbar = ({ children }) => {
-  return <nav className="flex justify-between w-full">{children}</nav>;
+  return (
+    <nav className="hidden md:flex justify-between w-full">{children}</nav>
+  );
 };
 
 export default Navbar;
