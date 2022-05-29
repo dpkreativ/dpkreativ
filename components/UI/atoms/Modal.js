@@ -10,9 +10,7 @@ const Modal = ({ children, className, show = true }) => {
 
   // Modal Content
   const modalContent = show ? (
-    <div className={`p-5 absolute w-full max-w-lg ${className}`}>
-      {children}
-    </div>
+    <div className={`absolute w-full max-w-lg ${className}`}>{children}</div>
   ) : null;
 
   if (isBrowser) {
