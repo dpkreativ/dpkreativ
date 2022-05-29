@@ -1,7 +1,7 @@
-import "../styles/globals.css";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import { useEffect } from "react";
+import '../styles/globals.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -9,7 +9,11 @@ function MyApp({ Component, pageProps }) {
       duration: 2000,
     });
   }, []);
-  return <Component {...pageProps} />;
+  return (
+    <div className="bg-primary-02 text-white">
+      <Component {...pageProps} />
+    </div>
+  );
 }
 
 export default MyApp;
