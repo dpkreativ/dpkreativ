@@ -4,7 +4,7 @@
 
 🌱 I'm currently building projects in JavaScript, React, NextJS and TypeScript, and picking up other relevant skills I need to get things done efficiently.
 
-📝 I sometimes write articles on [dpkreativ.hashnode.dev](https://dpkreativ.hashnode.dev).
+📝 I often share my thoughts on [Hashnode](https://dpkreativ.hashnode.dev).
 
 ![Divine's Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=dpkreativ&layout=compact&langs_count=6)
 
