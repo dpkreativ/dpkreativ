@@ -37,7 +37,7 @@ const Footer = () => {
       </Navbar>
 
       {/* Mobile Navlinks. Might refactor later */}
-      <section className="md:hidden">
+      <section className="lg:hidden">
         <div className="flex">
           <NavLink
             url="https://twitter.com/dpkreativ"

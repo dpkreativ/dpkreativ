@@ -11,7 +11,7 @@ const Modal = ({ children, className }) => {
   // === MODAL CONTENT ===
   // Set up the basic layout of the modal
   const modalContent = (
-    <div className={`absolute w-full max-w-lg ${className}`}>{children}</div>
+    <div className={`absolute w-full ${className}`}>{children}</div>
   );
 
   // === DISPLAY MODAL ===
