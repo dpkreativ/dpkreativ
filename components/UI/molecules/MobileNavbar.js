@@ -16,7 +16,7 @@ const MobileNavbar = ({ children }) => {
       </section>
       {showMenu ? (
         <section>
-          <Modal className="top-16 h-screen text-secondary-01 bg-primary-02 border-t border-secondary-01 md:hidden">
+          <Modal className="top-[65px] h-4/5 text-secondary-01 bg-primary-02 md:hidden">
             {children}
           </Modal>
         </section>
