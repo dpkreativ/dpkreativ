@@ -3,7 +3,7 @@ import NavLink from '../atoms/NavLink';
 import MobileNavbar from '../molecules/MobileNavbar';
 import Navbar from '../molecules/Navbar';
 
-const Header = () => {
+const Header = ({ activeTab = 1 }) => {
   return (
     <header className="border-b border-line flex">
       <div className="w-full max-w-xs p-5 md:border-r border-line">
@@ -11,33 +11,33 @@ const Header = () => {
       </div>
       <Navbar>
         <div className="flex">
-          <NavLink url="/" rightBorder active>
+          <NavLink url="/" rightBorder active={activeTab === 1}>
             _hello
           </NavLink>
-          <NavLink url="/about-me" rightBorder>
+          <NavLink url="/about-me" rightBorder active={activeTab === 2}>
             _about-me
           </NavLink>
-          <NavLink url="/projects" rightBorder>
+          <NavLink url="/projects" rightBorder active={activeTab === 3}>
             _projects
           </NavLink>
         </div>
         <div className="flex">
-          <NavLink url="/contact-me" leftBorder>
+          <NavLink url="/contact-me" leftBorder active={activeTab === 4}>
             _contact-me
           </NavLink>
         </div>
       </Navbar>
       <MobileNavbar>
-        <NavLink url="/" bottomBorder>
+        <NavLink url="/" bottomBorder active={activeTab === 1}>
           _hello
         </NavLink>
-        <NavLink url="/about-me" bottomBorder>
+        <NavLink url="/about-me" bottomBorder active={activeTab === 2}>
           _about-me
         </NavLink>
-        <NavLink url="/projects" bottomBorder>
+        <NavLink url="/projects" bottomBorder active={activeTab === 3}>
           _projects
         </NavLink>
-        <NavLink url="/contact-me" bottomBorder>
+        <NavLink url="/contact-me" bottomBorder active={activeTab === 4}>
           _contact-me
         </NavLink>
       </MobileNavbar>

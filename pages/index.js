@@ -13,7 +13,7 @@ export default function Home() {
       </Head>
 
       {/* Page Body */}
-      <PageTemplate>
+      <PageTemplate activeIndex={1}>
         <section className="p-5 my-20 md:my-32 mx-auto w-full max-w-5xl grid gap-5 md:grid-cols-2">
           <article>
             <div className="text-primary-04">
