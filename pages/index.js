@@ -13,7 +13,7 @@ export default function Home() {
 
       {/* Page Body */}
       <PageLayout activeIndex={1}>
-        <section className="h-full w-full max-w-5xl p-5 m-auto grid gap-5 md:grid-cols-2">
+        <section className="h-full w-full max-w-5xl p-5 m-auto grid items-center gap-5 md:grid-cols-2">
           <article>
             <div className="text-primary-04">
               <h3 className="text-lg leading-loose">Hi there! I am</h3>
