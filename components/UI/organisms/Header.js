@@ -4,7 +4,7 @@ import NavLink from '../atoms/NavLink';
 import MobileNavbar from '../molecules/MobileNavbar';
 import Navbar from '../molecules/Navbar';
 
-const Header = ({ activeTab = 1 }) => {
+const Header = ({ activeTab = null }) => {
   return (
     <header className="border-b border-line flex">
       <Link href="/" passHref>
