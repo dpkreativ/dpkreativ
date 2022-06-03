@@ -6,7 +6,7 @@ import Navbar from '../molecules/Navbar';
 
 const Header = ({ activeTab = null }) => {
   return (
-    <header className="border-b border-line flex">
+    <header className="border-b border-line flex justify-between h-max">
       <Link href="/" passHref>
         <a className="w-full max-w-xs p-5 md:border-r border-line block">
           <Brand />
