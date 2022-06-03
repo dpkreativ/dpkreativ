@@ -1,12 +1,12 @@
 import Link from 'next/link';
-import PageTemplate from '../components/templates/PageTemplate';
+import PageLayout from '../components/layouts/PageLayout';
 import Button from '../components/UI/atoms/Button';
 import { Lost } from '../components/UI/atoms/Icons';
 
 const NotFound = () => {
   return (
     <div>
-      <PageTemplate>
+      <PageLayout>
         <section className="p-5 my-20 md:my-32 mx-auto w-full max-w-5xl grid items-center gap-20 md:grid-cols-2 text-primary-04">
           <article className="w-full">
             <div className="w-40 md:w-72 mx-auto md:mx-0">
@@ -28,7 +28,7 @@ const NotFound = () => {
             </Link>
           </article>
         </section>
-      </PageTemplate>
+      </PageLayout>
     </div>
   );
 };

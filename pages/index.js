@@ -1,6 +1,5 @@
 import Head from 'next/head';
-import PageTemplate from '../components/templates/PageTemplate';
-import Button from '../components/UI/atoms/Button';
+import PageLayout from '../components/layouts/PageLayout';
 
 export default function Home() {
   return (
@@ -13,8 +12,8 @@ export default function Home() {
       </Head>
 
       {/* Page Body */}
-      <PageTemplate activeIndex={1}>
-        <section className="p-5 my-20 md:my-32 mx-auto w-full max-w-5xl grid gap-5 md:grid-cols-2">
+      <PageLayout activeIndex={1}>
+        <section className="h-full w-full max-w-5xl p-5 m-auto grid gap-5 md:grid-cols-2">
           <article>
             <div className="text-primary-04">
               <h3 className="text-lg leading-loose">Hi there! I am</h3>
@@ -52,7 +51,7 @@ export default function Home() {
             {/* Put a sample project here */}
           </article>
         </section>
-      </PageTemplate>
+      </PageLayout>
     </div>
   );
 }

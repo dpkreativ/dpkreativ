@@ -1,10 +1,10 @@
 import React from 'react';
-import PageTemplate from '../../components/templates/PageTemplate';
+import PageLayout from '../../components/layouts/PageLayout';
 
 export default function AboutMe() {
   return (
     <div>
-      <PageTemplate activeIndex={2}>AboutMe</PageTemplate>
+      <PageLayout activeIndex={2}>AboutMe</PageLayout>
     </div>
   );
 }
