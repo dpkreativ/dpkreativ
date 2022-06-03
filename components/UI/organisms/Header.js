@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Brand from '../atoms/Brand';
 import NavLink from '../atoms/NavLink';
 import MobileNavbar from '../molecules/MobileNavbar';
@@ -6,9 +7,11 @@ import Navbar from '../molecules/Navbar';
 const Header = ({ activeTab = 1 }) => {
   return (
     <header className="border-b border-line flex">
-      <div className="w-full max-w-xs p-5 md:border-r border-line">
-        <Brand />
-      </div>
+      <Link href="/" passHref>
+        <a className="w-full max-w-xs p-5 md:border-r border-line block">
+          <Brand />
+        </a>
+      </Link>
       <Navbar>
         <div className="flex">
           <NavLink url="/" rightBorder active={activeTab === 1}>
