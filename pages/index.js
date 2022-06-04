@@ -18,9 +18,10 @@ export default function Home() {
             <div className="text-primary-04">
               <h3 className="text-lg leading-loose">Hi there! I am</h3>
               <h1 className="text-6xl">Divine Orji</h1>
-              <p className="text-accent-02 md:text-secondary-03 text-xl md:text-3xl mt-2">
-                &#62; Sofware Engineer
-              </p>
+              <div className="text-accent-02 md:text-secondary-03 text-xl lg:text-3xl mt-2 flex space-x-2">
+                <p>&#62; $ Sofware Engineer</p>
+                <div className="w-2.5 h-0.5 lg:w-5 lg:h-1 self-end bg-accent-01 animate-pulse"></div>
+              </div>
             </div>
             {/* <Button>start-game</Button> */}
             <div className="text-sm mt-20">
