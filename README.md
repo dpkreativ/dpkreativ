@@ -1,6 +1,6 @@
 # 👋 Hi there. I'm Divine.
 
-👨‍💻 I'm a Software Engineer based in Nigeria.<br>
+👨‍💻 I'm a Software Engineer and Technical Writer.<br>
 
 🌱 I'm currently building projects in JavaScript, React, NextJS and TypeScript, and picking up other relevant skills I need to get things done efficiently.
 
