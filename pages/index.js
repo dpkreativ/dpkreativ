@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import PageLayout from '../components/Layouts/PageLayout';
+import PageLayout from '../components/Templates/PageLayout';
 
 export default function Home() {
   return (

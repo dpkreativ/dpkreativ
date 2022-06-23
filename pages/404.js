@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import PageLayout from '../components/layouts/PageLayout';
+import PageLayout from '../components/Templates/PageLayout';
 import Button from '../components/UI/atoms/Button';
 import { Lost } from '../components/UI/atoms/Icons';
 
