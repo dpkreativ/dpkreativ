@@ -1,5 +1,5 @@
 import React from 'react';
-import PageLayout from '../../components/layouts/PageLayout';
+import PageLayout from '../../components/Templates/PageLayout';
 
 export default function AboutMe() {
   return (
