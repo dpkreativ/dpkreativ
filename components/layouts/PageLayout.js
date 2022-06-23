@@ -3,7 +3,7 @@ import Header from '../UI/organisms/Header';
 
 const PageLayout = ({ activeIndex, children }) => {
   return (
-    <div className="grid grid-rows-[max-content_1fr_max-content] min-h-screen h-full">
+    <div className="grid grid-rows-[max-content_minmax(0,100%)_max-content] min-h-screen h-full">
       {/* Header Section */}
       <Header activeTab={activeIndex} />
 
