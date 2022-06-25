@@ -4,7 +4,7 @@ import Navbar from '../molecules/Navbar';
 
 const Footer = () => {
   return (
-    <footer className="border-t border-line text-secondary-01 flex justify-between h-max">
+    <footer className="border-t border-line text-secondary-01 flex justify-between h-max sticky bottom-0 bg-primary-02">
       <div className="p-5 w-full max-w-max md:border-r border-line">
         find me on:
       </div>
