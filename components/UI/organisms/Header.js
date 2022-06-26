@@ -17,7 +17,11 @@ const Header = ({ activeTab = null }) => {
           <NavLink url="/" rightBorder active={activeTab === 1}>
             _hello
           </NavLink>
-          <NavLink url="/about-me" rightBorder active={activeTab === 2}>
+          <NavLink
+            url="/about-me/personal-info/bio"
+            rightBorder
+            active={activeTab === 2}
+          >
             _about-me
           </NavLink>
           <NavLink url="/projects" rightBorder active={activeTab === 3}>
@@ -34,7 +38,11 @@ const Header = ({ activeTab = null }) => {
         <NavLink url="/" bottomBorder active={activeTab === 1}>
           _hello
         </NavLink>
-        <NavLink url="/about-me" bottomBorder active={activeTab === 2}>
+        <NavLink
+          url="/about-me/personal-info/bio"
+          bottomBorder
+          active={activeTab === 2}
+        >
           _about-me
         </NavLink>
         <NavLink url="/projects" bottomBorder active={activeTab === 3}>
