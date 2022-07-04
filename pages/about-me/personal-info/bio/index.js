@@ -22,20 +22,13 @@ export default function AboutMe() {
             <article className="lg:border-r border-line h-full py-4 px-8 text-secondary-01 flex space-x-5">
               <div className="text-right">
                 {displayNumbers(10).map((el, idx) => (
-                  <div key={idx}>
-                    {el}, {idx}
-                  </div>
+                  <div key={idx}>{el}</div>
                 ))}
               </div>
               <div>
                 <p>{`/*`}</p>
                 <p>ABOUT ME:</p>
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Accusamus similique impedit unde vero obcaecati deleniti
-                  ratione commodi, eaque aspernatur assumenda! Deleniti beatae
-                  sint obcaecati velit fugit consequuntur quae ducimus ea.
-                </p>
+                <p>Software Engineer and Technical Writer</p>
                 <p>{`/*`}</p>
               </div>
             </article>
