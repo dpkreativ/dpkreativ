@@ -27,6 +27,9 @@ const Header = ({ activeTab = null }) => {
           <NavLink url="/projects" rightBorder active={activeTab === 3}>
             _projects
           </NavLink>
+          <NavLink url="https://blog.dpkreativ.dev" rightBorder>
+            _blog
+          </NavLink>
         </div>
         <div className="flex">
           <NavLink url="/contact-me" leftBorder active={activeTab === 4}>
@@ -47,6 +50,9 @@ const Header = ({ activeTab = null }) => {
         </NavLink>
         <NavLink url="/projects" bottomBorder active={activeTab === 3}>
           _projects
+        </NavLink>
+        <NavLink url="https://blog.dpkreativ.dev" rightBorder>
+          _blog
         </NavLink>
         <NavLink url="/contact-me" bottomBorder active={activeTab === 4}>
           _contact-me
