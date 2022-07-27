@@ -2,7 +2,7 @@
 
 👨‍💻 I'm a Software Engineer and Technical Writer.<br>
 
-🌱 I'm currently building projects in JavaScript, React, NextJS and TypeScript, and picking up other relevant skills I need to get things done efficiently.
+🌱 I'm currently building projects and picking up other relevant skills I need to get things done efficiently.
 
 📝 I often share my thoughts on [Hashnode](https://dpkreativ.hashnode.dev).
 
