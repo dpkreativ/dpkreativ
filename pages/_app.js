@@ -15,6 +15,9 @@ function MyApp({ Component, pageProps }) {
           .dance {
             font-family: ${dancingScript.style.fontFamily};
           }
+          .gray {
+            color: #7c7c7c;
+          }
         `}
       </style>
       <Component {...pageProps} />

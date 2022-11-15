@@ -7,7 +7,7 @@ export function LineDivider() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <line x1="1" y1="36" x2="1" stroke="black" stroke-width="2" />
+      <line x1="1" y1="36" x2="1" stroke="black" strokeWidth="2" />
     </svg>
   );
 }
