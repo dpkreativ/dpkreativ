@@ -7,18 +7,17 @@
 
 I'm a Software Engineer and Content Creator who currently works as a Technical Writer at [Hackmamba](https://hackmamba.io/).
 
-I'm passionate about sharing knowledge, documentation, web engineering, JAMStack, headless commerce and others.
+I'm passionate about sharing knowledge on documentation, web engineering, JAMStack, headless commerce and others.
 
-I create technical content on my [blog](https://blog.dpkreativ.dev/), build useful [open-source projects](https://github.com/dpkreativ?tab=repositories), speak at some meetups/conferences, and build technical communities.
+I create technical content on my [blog](https://blog.dpkreativ.dev/), build useful [open-source projects](https://github.com/dpkreativ?tab=repositories), speak at meetups/conferences, and build technical communities.
 
 **Here's a quick summary about me**:
 
-- 😊 Pronouns: He/him
-- 💡 Fun fact: I'm currently studying at AltSchool Africa's [School of Software Engineering](https://altschoolafrica.com/schools/engineering) - Class of 2022.
 - 🌱 I’m currently improving my skills in JavaScript, Nodejs, and Rust.
 - 🤝 I’m looking for help with open source projects, hackathons, internships, and entry-level opportunities.
-- 💼 Job interests: Software Engineer, Front Engineer, UI Engineer, Backend Engineer (Intern or Junior level).
+- 💼 Job interests: Software Engineer, Frontend Engineer, UI Engineer, Backend Engineer, and Fullstack Engineer roles.
 - 📫 You can [view my resume](https://docs.google.com/document/d/1S7N_PcO5x1rcPXQI3yh-WBMySJB4v6foVd-rU0VGrYk/edit?usp=sharing) and contact me by emailing dpkreativ@gmail.com.
+- 😊 Pronouns: He/him
 
 ---
 

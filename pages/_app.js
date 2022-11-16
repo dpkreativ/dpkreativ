@@ -1,18 +1,28 @@
+import { Dancing_Script, Inter } from '@next/font/google';
 import '../styles/globals.css';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import { useEffect } from 'react';
+
+const inter = Inter();
+const dancingScript = Dancing_Script();
 
 function MyApp({ Component, pageProps }) {
-  useEffect(() => {
-    AOS.init({
-      duration: 2000,
-    });
-  }, []);
   return (
-    <div className="bg-primary-02 text-white">
+    <>
+      <style jsx global>
+        {`
+          html {
+            font-family: ${inter.style.fontFamily};
+            font-weight: 300;
+          }
+          .dance {
+            font-family: ${dancingScript.style.fontFamily};
+          }
+          .gray {
+            color: #7c7c7c;
+          }
+        `}
+      </style>
       <Component {...pageProps} />
-    </div>
+    </>
   );
 }
 
