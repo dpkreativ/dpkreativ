@@ -11,6 +11,7 @@ function MyApp({ Component, pageProps }) {
         {`
           html {
             font-family: ${inter.style.fontFamily};
+            font-weight: 300;
           }
           .dance {
             font-family: ${dancingScript.style.fontFamily};
