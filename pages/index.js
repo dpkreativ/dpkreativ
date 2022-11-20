@@ -2,9 +2,14 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { ArrowDown } from '../components/assets/Icons';
 import HomeLayout from '../components/layouts/HomeLayout';
+import Button from '../components/ui/atoms/Button';
+import { Input, TextArea } from '../components/ui/atoms/Inputs';
+import ProjectCard from '../components/ui/atoms/ProjectCard';
 import Section from '../components/ui/organisms/Section';
 
 export default function Home() {
+  const year = new Date().getFullYear();
+
   return (
     <div>
       <Head>
@@ -19,8 +24,9 @@ export default function Home() {
         <Section>
           <article className="flex justify-between items-end relative">
             <div className="text-5xl leading-normal font-semibold">
-              Hi, I’m Divine — a software engineer who enjoys creating
-              applications that are <span className="gray">fast</span>,{' '}
+              Hi, I’m Divine — <span className="gray">a software engineer</span>{' '}
+              who enjoys creating applications that are{' '}
+              <span className="gray">fast</span>,{' '}
               <span className="gray">robust</span>, and{' '}
               <span className="gray">user-friendly</span>.
             </div>
@@ -76,6 +82,69 @@ export default function Home() {
               am an active member of multiple tech communities such as GDG Aba,
               GDSC MOUAU, and Polygon Guild Abuja.
             </div>
+          </article>
+        </Section>
+
+        {/* Work Section */}
+        <Section title={`Featured Projects`}>
+          <article className="grid gap-8">
+            <div className="text-8xl font-semibold mb-16">
+              <span className="gray">2019 - </span>
+              {year}
+            </div>
+            <ProjectCard title={`Wkkly`} topCategory={`productivity`} />
+            <ProjectCard title={`Bicode`} topCategory={`collaboration`} />
+            <ProjectCard title={`AfroChops`} topCategory={`ecommerce`} />
+            <ProjectCard title={`Inaaga`} topCategory={`transportation`} />
+          </article>
+        </Section>
+
+        {/* Contact Section */}
+        <Section>
+          <article>
+            <div className="text-5xl font-semibold mb-6">
+              Wanna collab <span className="gray">with me?</span>
+            </div>
+            <div>
+              <div className="text-2xl flex relative w-80">
+                <div>
+                  <span className="dance gray">Please, </span>
+                  <span className="font-semibold mr-48">send me a message</span>
+                </div>
+                <div className="absolute right-6 bottom-0 -mb-4">
+                  <div className="relative w-48 h-16">
+                    <Image
+                      src={`/images/paper_plane.png`}
+                      alt="a paper plane"
+                      fill
+                      style={{ objectFit: 'contain' }}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article>
+            <form className="mt-12 grid gap-5">
+              <div className="grid gap-5">
+                <Input
+                  type={`text`}
+                  id={`fullname`}
+                  placeholder={`Your full name`}
+                />
+                <Input
+                  type={`email`}
+                  id={`emailAddress`}
+                  placeholder={`Your email address`}
+                />
+              </div>
+              <div>
+                <TextArea id={`yourMessage`} placeholder={`Your message`} />
+              </div>
+              <div className="flex justify-end">
+                <Button type={`submit`}>Send message</Button>
+              </div>
+            </form>
           </article>
         </Section>
       </HomeLayout>
