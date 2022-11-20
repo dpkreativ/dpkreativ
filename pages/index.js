@@ -38,8 +38,8 @@ export default function Home() {
 
         {/* Bio Section */}
         <Section title={`Bio`}>
-          <section className="md:grid grid-cols-2 gap-6">
-            <article>
+          <section className="md:flex md:space-x-6">
+            <article className="w-full">
               <div className="font-semibold text-4xl md:hidden gray mb-2">
                 <span className="dance">circa </span>'97
               </div>
@@ -67,6 +67,8 @@ export default function Home() {
                 interest in graphic design.
               </div>
             </article>
+          </section>
+          <section className="max-w-6xl mx-auto">
             <article className="text-2xl lg:text-3xl leading-normal lg:leading-snug grid gap-6 pt-6 col-span-2">
               <div>
                 <span className="font-semibold">In 2019,</span> I enrolled in a
@@ -92,15 +94,45 @@ export default function Home() {
 
         {/* Work Section */}
         <Section title={`Featured Projects`}>
-          <article className="grid gap-8">
-            <div className="text-8xl font-semibold mb-16">
+          <article className="grid md:grid-cols-2 gap-8 md:gap-20">
+            <div className="text-8xl md:text-[120px] md:leading-[80px] lg:text-[144px] lg:leading-[96px] font-semibold mb-16 md:mb-0">
               <span className="gray">2019 - </span>
               {year}
             </div>
-            <ProjectCard title={`Wkkly`} topCategory={`productivity`} />
-            <ProjectCard title={`Bicode`} topCategory={`collaboration`} />
-            <ProjectCard title={`AfroChops`} topCategory={`ecommerce`} />
-            <ProjectCard title={`Inaaga`} topCategory={`transportation`} />
+            <div className="md:row-span-2 md:-ml-12">
+              <ProjectCard
+                title={`Wkkly`}
+                topCategory={`productivity`}
+                height={`md:h-96 lg:h-[450px]`}
+                width={`md:max-w-lg`}
+              />
+            </div>
+            <div>
+              <ProjectCard
+                title={`Bicode`}
+                topCategory={`collaboration`}
+                height={`md:h-[300px] lg:h-[400px]`}
+              />
+            </div>
+            <div className="md:row-span-2 md:justify-self-end">
+              <ProjectCard
+                title={`AfroChops`}
+                topCategory={`ecommerce`}
+                width={`lg:w-[325px]`}
+                height={`md:h-[300px] lg:h-[375px]`}
+              />
+            </div>
+            <div className="hidden md:block md:-mt-24 md:justify-self-end">
+              More projects
+            </div>
+            <div className="md:justify-self-center md:-ml-12">
+              <ProjectCard
+                title={`Inaaga`}
+                topCategory={`transportation`}
+                width={`lg:w-[425px]`}
+                height={`md:h-[300px] lg:h-[400px]`}
+              />
+            </div>
           </article>
         </Section>
 
