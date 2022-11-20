@@ -23,7 +23,7 @@ export default function Home() {
         {/* Hero Section */}
         <Section>
           <article className="flex justify-between items-end relative">
-            <div className="text-5xl leading-normal font-semibold">
+            <div className="text-5xl md:text-6xl lg:text-7xl leading-normal md:leading-normal lg:leading-normal md:w-4/5 font-semibold">
               Hi, I’m Divine — <span className="gray">a software engineer</span>{' '}
               who enjoys creating applications that are{' '}
               <span className="gray">fast</span>,{' '}
