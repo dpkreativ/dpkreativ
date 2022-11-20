@@ -28,7 +28,7 @@ export function LogoName() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_20_207)">
+      <g clipPath="url(#clip0_20_207)">
         <path
           d="M112.798 7.68408V10.4783H116.079L109.616 24.7984L104.481 12.5739L102.903 16.0666L109.516 31.8338L120.438 7.68408H112.798Z"
           fill="white"
