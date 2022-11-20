@@ -38,51 +38,56 @@ export default function Home() {
 
         {/* Bio Section */}
         <Section title={`Bio`}>
-          <article>
-            <div className="font-semibold text-4xl gray mb-2">
-              <span className="dance">circa </span>'97
-            </div>
-            <div className="relative w-full h-96 rounded-lg overflow-clip">
-              <Image
-                src={`/images/profile.jpg`}
-                alt={`Divine Orji`}
-                fill
-                priority
-                style={{ objectFit: 'cover' }}
-              />
-            </div>
-          </article>
-          <article className="text-2xl leading-normal grid gap-6 pt-6">
-            <div>
-              My dad owned a cybercafe and a printing business, so I had access
-              to computers from childhood.
-            </div>
-            <div>
-              I played around with Mavis Beacon, significantly improving my
-              typing speed over the years, and with time I developed an interest
-              in graphic design.
-            </div>
-          </article>
-          <article className="text-2xl leading-normal grid gap-6 pt-6">
-            <div>
-              <span className="font-semibold">In 2019,</span> I enrolled in a
-              tech bootcamp to learn frontend development, and since then I’ve
-              worked on small and large applications, websites and APIs.
-            </div>
-            <div>
-              I like to <span className="gray">think strategically</span> and
-              solve problems in{' '}
-              <span className="gray">small, iterative steps</span>, and I love{' '}
-              <span className="gray">pairing up</span> with smart people to
-              build great things.
-            </div>
-            <div>
-              I also love <span className="gray">sharing knowledge</span> as
-              part of a <span className="gray">community</span>, and I am an
-              active member of multiple tech communities such as GDG Aba, GDSC
-              MOUAU, and Polygon Guild Abuja.
-            </div>
-          </article>
+          <section className="md:grid grid-cols-2 gap-6">
+            <article>
+              <div className="font-semibold text-4xl md:hidden gray mb-2">
+                <span className="dance">circa </span>'97
+              </div>
+              <div className="relative w-full h-96 md:h-full rounded-lg overflow-clip">
+                <Image
+                  src={`/images/profile.jpg`}
+                  alt={`Divine Orji`}
+                  fill
+                  priority
+                  style={{ objectFit: 'cover' }}
+                />
+              </div>
+            </article>
+            <article className="text-2xl lg:text-3xl leading-normal lg:leading-snug grid gap-6 pt-6">
+              <div className="font-semibold text-7xl lg:text-9xl hidden md:block gray mb-2">
+                <span className="dance">circa </span>'97
+              </div>
+              <div>
+                My dad owned a cybercafe and a printing business, so I had
+                access to computers from childhood.
+              </div>
+              <div>
+                I played around with Mavis Beacon, significantly improving my
+                typing speed over the years, and with time I developed an
+                interest in graphic design.
+              </div>
+            </article>
+            <article className="text-2xl lg:text-3xl leading-normal lg:leading-snug grid gap-6 pt-6 col-span-2">
+              <div>
+                <span className="font-semibold">In 2019,</span> I enrolled in a
+                tech bootcamp to learn frontend development, and since then I’ve
+                worked on small and large applications, websites and APIs.
+              </div>
+              <div>
+                I like to <span className="gray">think strategically</span> and
+                solve problems in{' '}
+                <span className="gray">small, iterative steps</span>, and I love{' '}
+                <span className="gray">pairing up</span> with smart people to
+                build great things.
+              </div>
+              <div>
+                I also love <span className="gray">sharing knowledge</span> as
+                part of a <span className="gray">community</span>, and I am an
+                active member of multiple tech communities such as GDG Aba, GDSC
+                MOUAU, and Polygon Guild Abuja.
+              </div>
+            </article>
+          </section>
         </Section>
 
         {/* Work Section */}
