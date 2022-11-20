@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { ArrowDown } from '../components/assets/Icons';
 import HomeLayout from '../components/layouts/HomeLayout';
+import Button from '../components/ui/atoms/Button';
 import { Input, TextArea } from '../components/ui/atoms/Inputs';
 import ProjectCard from '../components/ui/atoms/ProjectCard';
 import Section from '../components/ui/organisms/Section';
@@ -123,22 +124,27 @@ export default function Home() {
               </div>
             </div>
           </article>
-          <article className="mt-12 grid gap-5">
-            <div className="grid gap-5">
-              <Input
-                type={`text`}
-                id={`fullname`}
-                placeholder={`Your full name`}
-              />
-              <Input
-                type={`email`}
-                id={`emailAddress`}
-                placeholder={`Your email address`}
-              />
-            </div>
-            <div>
-              <TextArea id={`yourMessage`} placeholder={`Your message`} />
-            </div>
+          <article>
+            <form className="mt-12 grid gap-5">
+              <div className="grid gap-5">
+                <Input
+                  type={`text`}
+                  id={`fullname`}
+                  placeholder={`Your full name`}
+                />
+                <Input
+                  type={`email`}
+                  id={`emailAddress`}
+                  placeholder={`Your email address`}
+                />
+              </div>
+              <div>
+                <TextArea id={`yourMessage`} placeholder={`Your message`} />
+              </div>
+              <div className="flex justify-end">
+                <Button type={`submit`}>Send message</Button>
+              </div>
+            </form>
           </article>
         </Section>
       </HomeLayout>
