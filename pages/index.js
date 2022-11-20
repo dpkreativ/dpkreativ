@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { ArrowDown } from '../components/assets/Icons';
 import HomeLayout from '../components/layouts/HomeLayout';
+import { Input, TextArea } from '../components/ui/atoms/Inputs';
 import ProjectCard from '../components/ui/atoms/ProjectCard';
 import Section from '../components/ui/organisms/Section';
 
@@ -94,6 +95,50 @@ export default function Home() {
             <ProjectCard title={`Bicode`} topCategory={`collaboration`} />
             <ProjectCard title={`AfroChops`} topCategory={`ecommerce`} />
             <ProjectCard title={`Inaaga`} topCategory={`transportation`} />
+          </article>
+        </Section>
+
+        {/* Contact Section */}
+        <Section>
+          <article>
+            <div className="text-5xl font-semibold mb-6">
+              Wanna collab <span className="gray">with me?</span>
+            </div>
+            <div>
+              <div className="text-2xl flex relative w-80">
+                <div>
+                  <span className="dance gray">Please, </span>
+                  <span className="font-semibold mr-48">send me a message</span>
+                </div>
+                <div className="absolute right-6 bottom-0 -mb-4">
+                  <div className="relative w-48 h-16">
+                    <Image
+                      src={`/images/paper_plane.png`}
+                      alt="a paper plane"
+                      fill
+                      style={{ objectFit: 'contain' }}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article className="mt-12 grid gap-5">
+            <div className="grid gap-5">
+              <Input
+                type={`text`}
+                id={`fullname`}
+                placeholder={`Your full name`}
+              />
+              <Input
+                type={`email`}
+                id={`emailAddress`}
+                placeholder={`Your email address`}
+              />
+            </div>
+            <div>
+              <TextArea id={`yourMessage`} placeholder={`Your message`} />
+            </div>
           </article>
         </Section>
       </HomeLayout>
