@@ -70,17 +70,17 @@ export default function Home() {
               worked on small and large applications, websites and APIs.
             </div>
             <div>
-              I like to <span className="gray italic">think strategically</span>{' '}
-              and solve problems in{' '}
-              <span className="gray italic">small, iterative steps</span>, and I
-              love <span className="gray italic">pairing up</span> with smart
-              people to build great things.
+              I like to <span className="gray">think strategically</span> and
+              solve problems in{' '}
+              <span className="gray">small, iterative steps</span>, and I love{' '}
+              <span className="gray">pairing up</span> with smart people to
+              build great things.
             </div>
             <div>
-              I also love <span className="gray italic">sharing knowledge</span>{' '}
-              as part of a <span className="gray italic">community</span>, and I
-              am an active member of multiple tech communities such as GDG Aba,
-              GDSC MOUAU, and Polygon Guild Abuja.
+              I also love <span className="gray">sharing knowledge</span> as
+              part of a <span className="gray">community</span>, and I am an
+              active member of multiple tech communities such as GDG Aba, GDSC
+              MOUAU, and Polygon Guild Abuja.
             </div>
           </article>
         </Section>
