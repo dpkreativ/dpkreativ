@@ -2,9 +2,12 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { ArrowDown } from '../components/assets/Icons';
 import HomeLayout from '../components/layouts/HomeLayout';
+import ProjectCard from '../components/ui/atoms/ProjectCard';
 import Section from '../components/ui/organisms/Section';
 
 export default function Home() {
+  const year = new Date().getFullYear();
+
   return (
     <div>
       <Head>
@@ -19,8 +22,9 @@ export default function Home() {
         <Section>
           <article className="flex justify-between items-end relative">
             <div className="text-5xl leading-normal font-semibold">
-              Hi, I’m Divine — a software engineer who enjoys creating
-              applications that are <span className="gray">fast</span>,{' '}
+              Hi, I’m Divine — <span className="gray">a software engineer</span>{' '}
+              who enjoys creating applications that are{' '}
+              <span className="gray">fast</span>,{' '}
               <span className="gray">robust</span>, and{' '}
               <span className="gray">user-friendly</span>.
             </div>
@@ -76,6 +80,20 @@ export default function Home() {
               am an active member of multiple tech communities such as GDG Aba,
               GDSC MOUAU, and Polygon Guild Abuja.
             </div>
+          </article>
+        </Section>
+
+        {/* Work Section */}
+        <Section title={`Featured Projects`}>
+          <article className="grid gap-8">
+            <div className="text-8xl font-semibold mb-16">
+              <span className="gray">2019 - </span>
+              {year}
+            </div>
+            <ProjectCard title={`Wkkly`} topCategory={`productivity`} />
+            <ProjectCard title={`Bicode`} topCategory={`collaboration`} />
+            <ProjectCard title={`AfroChops`} topCategory={`ecommerce`} />
+            <ProjectCard title={`Inaaga`} topCategory={`transportation`} />
           </article>
         </Section>
       </HomeLayout>
