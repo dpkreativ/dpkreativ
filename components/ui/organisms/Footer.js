@@ -8,7 +8,7 @@ import { LogoName } from '../../assets/Logos';
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white p-4 grid gap-24">
+    <footer className="bg-black text-white p-4 grid gap-24 max-w-[1440px] mx-auto">
       <div className="flex flex-col space-y-6 items-center">
         <div className="text-2xl">dpkreativ@gmail.com</div>
         <div className="flex items-center space-x-4">

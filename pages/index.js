@@ -23,7 +23,7 @@ export default function Home() {
         {/* Hero Section */}
         <Section>
           <article className="flex justify-between items-end relative">
-            <div className="text-5xl leading-normal font-semibold">
+            <div className="text-5xl md:text-6xl lg:text-7xl leading-normal md:leading-normal lg:leading-normal md:w-4/5 font-semibold">
               Hi, I’m Divine — <span className="gray">a software engineer</span>{' '}
               who enjoys creating applications that are{' '}
               <span className="gray">fast</span>,{' '}
@@ -38,64 +38,101 @@ export default function Home() {
 
         {/* Bio Section */}
         <Section title={`Bio`}>
-          <article>
-            <div className="font-semibold text-4xl gray mb-2">
-              <span className="dance">circa </span>'97
-            </div>
-            <div className="relative w-full h-96 rounded-lg overflow-clip">
-              <Image
-                src={`/images/profile.jpg`}
-                alt={`Divine Orji`}
-                fill
-                priority
-                style={{ objectFit: 'cover' }}
-              />
-            </div>
-          </article>
-          <article className="text-2xl leading-normal grid gap-6 pt-6">
-            <div>
-              My dad owned a cybercafe and a printing business, so I had access
-              to computers from childhood.
-            </div>
-            <div>
-              I played around with Mavis Beacon, significantly improving my
-              typing speed over the years, and with time I developed an interest
-              in graphic design.
-            </div>
-          </article>
-          <article className="text-2xl leading-normal grid gap-6 pt-6">
-            <div>
-              <span className="font-semibold">In 2019,</span> I enrolled in a
-              tech bootcamp to learn frontend development, and since then I’ve
-              worked on small and large applications, websites and APIs.
-            </div>
-            <div>
-              I like to <span className="gray">think strategically</span> and
-              solve problems in{' '}
-              <span className="gray">small, iterative steps</span>, and I love{' '}
-              <span className="gray">pairing up</span> with smart people to
-              build great things.
-            </div>
-            <div>
-              I also love <span className="gray">sharing knowledge</span> as
-              part of a <span className="gray">community</span>, and I am an
-              active member of multiple tech communities such as GDG Aba, GDSC
-              MOUAU, and Polygon Guild Abuja.
-            </div>
-          </article>
+          <section className="md:flex md:space-x-6">
+            <article className="w-full">
+              <div className="font-semibold text-4xl md:hidden gray mb-2">
+                <span className="dance">circa </span>'97
+              </div>
+              <div className="relative w-full h-96 md:h-full rounded-lg overflow-clip">
+                <Image
+                  src={`/images/profile.jpg`}
+                  alt={`Divine Orji`}
+                  fill
+                  priority
+                  style={{ objectFit: 'cover' }}
+                />
+              </div>
+            </article>
+            <article className="text-2xl lg:text-3xl leading-normal lg:leading-snug grid gap-6 pt-6">
+              <div className="font-semibold text-7xl lg:text-9xl hidden md:block gray mb-2">
+                <span className="dance">circa </span>'97
+              </div>
+              <div>
+                My dad owned a cybercafe and a printing business, so I had
+                access to computers from childhood.
+              </div>
+              <div>
+                I played around with Mavis Beacon, significantly improving my
+                typing speed over the years, and with time I developed an
+                interest in graphic design.
+              </div>
+            </article>
+          </section>
+          <section className="max-w-6xl mx-auto">
+            <article className="text-2xl lg:text-3xl leading-normal lg:leading-snug grid gap-6 pt-6 col-span-2">
+              <div>
+                <span className="font-semibold">In 2019,</span> I enrolled in a
+                tech bootcamp to learn frontend development, and since then I’ve
+                worked on small and large applications, websites and APIs.
+              </div>
+              <div>
+                I like to <span className="gray">think strategically</span> and
+                solve problems in{' '}
+                <span className="gray">small, iterative steps</span>, and I love{' '}
+                <span className="gray">pairing up</span> with smart people to
+                build great things.
+              </div>
+              <div>
+                I also love <span className="gray">sharing knowledge</span> as
+                part of a <span className="gray">community</span>, and I am an
+                active member of multiple tech communities such as GDG Aba, GDSC
+                MOUAU, and Polygon Guild Abuja.
+              </div>
+            </article>
+          </section>
         </Section>
 
         {/* Work Section */}
         <Section title={`Featured Projects`}>
-          <article className="grid gap-8">
-            <div className="text-8xl font-semibold mb-16">
+          <article className="grid md:grid-cols-2 gap-8 md:gap-20">
+            <div className="text-8xl md:text-[120px] md:leading-[80px] lg:text-[144px] lg:leading-[96px] font-semibold mb-16 md:mb-0">
               <span className="gray">2019 - </span>
               {year}
             </div>
-            <ProjectCard title={`Wkkly`} topCategory={`productivity`} />
-            <ProjectCard title={`Bicode`} topCategory={`collaboration`} />
-            <ProjectCard title={`AfroChops`} topCategory={`ecommerce`} />
-            <ProjectCard title={`Inaaga`} topCategory={`transportation`} />
+            <div className="md:row-span-2 md:-ml-12">
+              <ProjectCard
+                title={`Wkkly`}
+                topCategory={`productivity`}
+                height={`md:h-96 lg:h-[450px]`}
+                width={`md:max-w-lg`}
+              />
+            </div>
+            <div>
+              <ProjectCard
+                title={`Bicode`}
+                topCategory={`collaboration`}
+                height={`md:h-[300px] lg:h-[400px]`}
+              />
+            </div>
+            <div className="md:row-span-2 md:justify-self-end">
+              <ProjectCard
+                title={`AfroChops`}
+                topCategory={`ecommerce`}
+                width={`lg:w-[325px]`}
+                height={`md:h-[300px] lg:h-[375px]`}
+              />
+            </div>
+            <div className="hidden md:block md:-mt-24 md:justify-self-end">
+              More projects
+            </div>
+            <div className="md:justify-self-center md:-ml-12">
+              <ProjectCard
+                title={`Inaaga`}
+                topCategory={`transportation`}
+                width={`lg:w-[425px]`}
+                height={`md:h-[300px] lg:h-[400px]`}
+              />
+            </div>
           </article>
         </Section>
 
