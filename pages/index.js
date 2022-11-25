@@ -163,7 +163,7 @@ export default function Home() {
           </article>
           <article>
             <form className="mt-12 grid gap-5">
-              <div className="grid gap-5">
+              <div className="grid gap-5 md:grid-cols-2">
                 <Input
                   type={`text`}
                   id={`fullname`}
