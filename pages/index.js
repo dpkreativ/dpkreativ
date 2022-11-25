@@ -37,7 +37,7 @@ export default function Home() {
         </Section>
 
         {/* Bio Section */}
-        <Section title={`Bio`}>
+        {/* <Section title={`Bio`}>
           <section className="md:flex md:space-x-6">
             <article className="w-full">
               <div className="font-semibold text-4xl md:hidden gray mb-2">
@@ -90,7 +90,7 @@ export default function Home() {
               </div>
             </article>
           </section>
-        </Section>
+        </Section> */}
 
         {/* Work Section */}
         <Section title={`Featured Projects`}>
@@ -139,16 +139,16 @@ export default function Home() {
         {/* Contact Section */}
         <Section>
           <article>
-            <div className="text-5xl font-semibold mb-6">
+            <div className="text-5xl md:text-6xl lg:text-7xl font-semibold mb-6">
               Wanna collab <span className="gray">with me?</span>
             </div>
             <div>
-              <div className="text-2xl flex relative w-80">
+              <div className="text-2xl md:text-3xl lg:text-4xl flex relative w-80 md:w-max">
                 <div>
                   <span className="dance gray">Please, </span>
                   <span className="font-semibold mr-48">send me a message</span>
                 </div>
-                <div className="absolute right-6 bottom-0 -mb-4">
+                <div className="absolute right-6 lg:right-0  bottom-0 -mb-4 md:-mb-3">
                   <div className="relative w-48 h-16">
                     <Image
                       src={`/images/paper_plane.png`}
