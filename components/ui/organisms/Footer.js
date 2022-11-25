@@ -8,9 +8,11 @@ import { LogoName } from '../../assets/Logos';
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white p-4 grid gap-24 max-w-[1440px] mx-auto">
-      <div className="flex flex-col space-y-6 items-center">
-        <div className="text-2xl">dpkreativ@gmail.com</div>
+    <footer className="bg-black text-white p-4 py-8 lg:px-8 xl:px-16 grid gap-24 max-w-[1440px] mx-auto">
+      <div className="flex flex-col space-y-6 items-center md:flex-row md:justify-between">
+        <div className="text-2xl md:text-4xl lg:text-7xl">
+          dpkreativ@gmail.com
+        </div>
         <div className="flex items-center space-x-4">
           <div>
             <HashnodeIcon />
@@ -23,7 +25,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col space-y-6 items-center">
+      <div className="flex flex-col space-y-6 items-center md:flex-row md:justify-between">
         <div className="text-2xl dance flex space-x-2 items-center">
           <div>made with</div>
           <div>
