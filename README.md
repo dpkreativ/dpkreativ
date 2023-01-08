@@ -13,7 +13,7 @@ I create technical content on my [blog](https://blog.dpkreativ.dev/), build usef
 
 **Here's a quick summary about me**:
 
-- 🌱 I’m currently improving my skills in JavaScript, Nodejs, and Rust.
+- 🌱 I’m currently improving my skills in TypeScript, Nodejs, Go, and Rust.
 - 🤝 I’m looking for help with open source projects, hackathons, internships, and entry-level opportunities.
 - 💼 Job interests: Software Engineer, Frontend Engineer, UI Engineer, Backend Engineer, and Fullstack Engineer roles.
 - 📫 You can [view my resume](https://docs.google.com/document/d/1S7N_PcO5x1rcPXQI3yh-WBMySJB4v6foVd-rU0VGrYk/edit?usp=sharing) and contact me by emailing dpkreativ@gmail.com.
