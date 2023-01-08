@@ -6,7 +6,7 @@
 
 I'm a Software Engineer and Content Creator who currently works as a Technical Writer at [Hackmamba](https://hackmamba.io/).
 
-I'm passionate about sharing knowledge on documentation, web engineering, JAMStack, headless commerce and others.
+I'm passionate about sharing knowledge on documentation, web engineering, jamstack, serverless architecture and others.
 
 I create technical content on my [blog](https://blog.dpkreativ.dev/), build useful [open-source projects](https://github.com/dpkreativ?tab=repositories), speak at meetups/conferences, and build technical communities.
 
