@@ -71,7 +71,7 @@ export default function Home() {
         </a>
 
         <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          href="https://linkedin.com/in/dpkreativ"
           className={styles.card}
           target="_blank"
           rel="noopener noreferrer"
