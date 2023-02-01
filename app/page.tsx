@@ -14,20 +14,19 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           <p>
-            Click to view my&nbsp;
             <code className={styles.code}>GitHub</code>
           </p>
         </a>
         <div>
           <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+            href="https://linkedin.com/in/dpkreativ"
             target="_blank"
             rel="noopener noreferrer"
           >
             Powered By{' '}
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
+              src="/Logo-02.svg"
+              alt="Kreativ Logo"
               className={styles.vercelLogo}
               width={100}
               height={24}
@@ -38,7 +37,11 @@ export default function Home() {
       </div>
 
       <div className={styles.center}>
-        <h2 className={inter.className}>Divine Orji</h2>
+        <h2 className={inter.className}>
+          <div>Divine Orji</div>
+          <div>software engineer</div>
+          <div>technical writer</div>
+        </h2>
       </div>
 
       <div className={styles.grid}>
