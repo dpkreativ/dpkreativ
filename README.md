@@ -12,7 +12,7 @@ I create technical content on my [blog](https://blog.dpkreativ.dev/), build usef
 
 - 🌱 I’m currently improving my skills in TypeScript, Nodejs, Go, and Rust.
 - 🤝 I’m looking for open source projects, hackathons, and mid-level software engineering opportunities.
-- 💼 Job interests: Software Engineer, Frontend Engineer, UI Engineer, and Fullstack Engineer roles.
+- 💼 I'm interested in Software Engineer, Frontend Engineer, UI Engineer, and Fullstack Engineer roles.
 - 📫 You can [view my resume](https://docs.google.com/document/d/1S7N_PcO5x1rcPXQI3yh-WBMySJB4v6foVd-rU0VGrYk/edit?usp=sharing) and contact me by emailing dpkreativ@gmail.com.
 - 😊 Pronouns: He/him
 
