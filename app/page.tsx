@@ -1,8 +1,8 @@
-import Image from 'next/image';
-import { Inter } from '@next/font/google';
-import styles from './page.module.css';
+import Image from "next/image";
+import { Inter } from "@next/font/google";
+import styles from "@/styles/page.module.css";
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
@@ -23,7 +23,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Powered By{' '}
+            Powered By{" "}
             <Image
               src="/Logo-02.svg"
               alt="Kreativ Logo"
@@ -46,7 +46,7 @@ export default function Home() {
 
       <div className={styles.grid}>
         <a
-          href="https://blog.dpkreativ.dev"
+          href="/blog"
           className={styles.card}
           target="_blank"
           rel="noopener noreferrer"
