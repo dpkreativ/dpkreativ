@@ -1,92 +1,41 @@
-import Image from "next/image";
-import { Inter } from "@next/font/google";
-import styles from "@/styles/page.module.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import { blogData } from "@/lib/data";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <a
-          href="https://github.com/dpkreativ"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <p>
-            <code className={styles.code}>GitHub</code>
-          </p>
-        </a>
-        <div>
-          <a
-            href="https://linkedin.com/in/dpkreativ"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Powered By{" "}
-            <Image
-              src="/Logo-02.svg"
-              alt="Kreativ Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      <section>
+        <div className="flex gap-3 flex-wrap">
+          <span className="card">All</span>
+          <span className="card">Dev.to</span>
+          <span className="card">Hashnode</span>
+          <span className="card">FreeCodeCamp</span>
+          <span className="card">Others</span>
         </div>
-      </div>
 
-      <div className={styles.center}>
-        <h2 className={inter.className}>
-          <div>Divine Orji</div>
-          <div>software engineer</div>
-          <div>technical writer</div>
-        </h2>
-      </div>
+        {/* Search here */}
+        <div className="my-5">
+          <p className="text-xs">Wanna find something more specific?</p>
+          <h2>Search</h2>
+          {/* Add search input here */}
+        </div>
 
-      <div className={styles.grid}>
-        <a
-          href="/blog"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Blog <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            A collection of all my technical articles. Check them out.
-          </p>
-        </a>
-
-        <a
-          href="https://twitter.com/dpkreativ"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Twitter <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Shitposts, memes, and the occasional geeky stuff.
-          </p>
-        </a>
-
-        <a
-          href="https://linkedin.com/in/dpkreativ"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            LinkedIn <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Professional posts about software development.
-          </p>
-        </a>
-      </div>
-    </main>
+        {/* All articles here */}
+        <div className="my-5 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {blogData &&
+            blogData.map((post) => (
+              <a
+                href={post.src}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card"
+                key={post.id}
+              >
+                <h2 className="text-xl font-semibold">{post.title}</h2>
+                <p className="my-2 text-sm">{post.description}</p>
+              </a>
+            ))}
+        </div>
+      </section>
+    </>
   );
 }
