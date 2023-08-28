@@ -57,13 +57,11 @@ export default function Home() {
           <h2 className={`text-5xl font-semibold ${inter.className}`}>Hi!</h2>
 
           <p className={`mt-10 ${styles.code}`}>
-            I'm Divine. I began coding in 2019, and since then I've been
-            exploring different technologies to make helpful software.
+            I'm Divine. In 2019, I wrote my first "Hello World" and discovered my passion for creating beautiful, user-friendly interfaces.
           </p>
           <p className={`my-10 ${styles.code}`}>
-            I love creating attractive, user-friendly interfaces, and
-            documenting my experiences with different aspects of software
-            engineering.
+            These days I tinker around with different technologies, combining them in interesting ways to create helpful software. 
+            I am also active in developer communities (remote and physical) where I collaborate with other techies, properly document, and share my experiences.
           </p>
         </div>
       </div>
@@ -86,8 +84,7 @@ export default function Home() {
             My blog <span>-&gt;</span>
           </h2>
           <p className={inter.className}>
-            All my musings on tech tools, developer experience, and one or two
-            wacky stories.
+            All my musings on tech tools, developer experience, and a few wacky stories.
           </p>
         </Link>
 
