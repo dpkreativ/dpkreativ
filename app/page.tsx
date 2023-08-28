@@ -3,6 +3,7 @@ import { Inter } from "@next/font/google";
 import styles from "@/styles/page.module.css";
 import Link from "next/link";
 import { GitHub, LinkedIn, Twitter } from "@/components/icons";
+import { profileImage } from "@/lib/data";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -55,8 +56,17 @@ export default function Home() {
       <div className={styles.center}>
         <div>
           <h2 className={`text-5xl font-semibold ${inter.className}`}>Hi!</h2>
-
           <p className={`mt-10 ${styles.code}`}>I'm Divine.</p>
+          <div
+            className={`relative overflow-clip w-40 h-40 rounded-full mx-auto mt-10 ${styles.profile}`}
+          >
+            {profileImage ? <Image
+              src={profileImage}
+              alt="Divine Orji's profile"
+              fill
+              className="object-cover"
+            /> : <div className="hidden"></div>}
+          </div>
           <p className={`mt-10 ${inter.className}`}>
             In 2019, I wrote my first "Hello World" and discovered my passion
             for creating beautiful, user-friendly interfaces.

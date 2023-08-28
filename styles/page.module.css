@@ -65,6 +65,11 @@
   max-width: 34ch;
 }
 
+.profile {
+  background: rgba(var(--card-rgb), 1);
+  border: 1px solid rgba(var(--card-border-rgb), 0.1);
+}
+
 .center {
   display: flex;
   justify-content: center;
