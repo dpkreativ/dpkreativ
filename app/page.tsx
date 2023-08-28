@@ -1,107 +1,55 @@
 import Image from "next/image";
-import { Inter } from "@next/font/google";
-import styles from "@/styles/page.module.css";
 import Link from "next/link";
-import { GitHub, LinkedIn, Twitter } from "@/components/icons";
 import { profileImage } from "@/lib/data";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <div className={styles.top}>
-          <Link href="/">
+    <section>
+      <section className="max-w-md mx-auto text-center">
+        <h2 className="text-5xl font-semibold">Hi!</h2>
+        <p className="mt-10 code">I'm Divine.</p>
+        <div className="profile">
+          {profileImage ? (
             <Image
-              src="/Logo-01.svg"
-              alt="Divine's logo"
-              className="logo"
-              width={36}
-              height={36}
-              priority
+              src={profileImage}
+              alt="Divine Orji's profile"
+              fill
+              className="object-cover"
             />
-          </Link>
+          ) : (
+            <div className="hidden"></div>
+          )}
         </div>
-        <nav>
-          <div className="flex gap-5">
-            <a
-              href="https://github.com/dpkreativ"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="nav-icon"
-            >
-              <GitHub />
-            </a>
-            <a
-              href="https://linkedin.com/in/dpkreativ"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="nav-icon"
-            >
-              <LinkedIn />
-            </a>
-            <a
-              href="https://twitter.com/dpkreativ"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="nav-icon"
-            >
-              <Twitter />
-            </a>
-          </div>
-        </nav>
-      </div>
+        <p className="mt-10">
+          In 2019, I wrote my first "Hello World" and discovered my passion for
+          creating beautiful, user-friendly interfaces.
+        </p>
+        <p className="my-10">
+          I like to experiment with different technologies and combine them to
+          create useful software. I also participate in developer communities
+          where I collaborate with other developers, document my work, and share
+          my knowledge.
+        </p>
+      </section>
 
-      <div className={styles.center}>
-        <div>
-          <h2 className={`text-5xl font-semibold ${inter.className}`}>Hi!</h2>
-          <p className={`mt-10 ${styles.code}`}>I'm Divine.</p>
-          <div
-            className={`relative overflow-clip w-40 h-40 rounded-full mx-auto mt-10 ${styles.profile}`}
-          >
-            {profileImage ? (
-              <Image
-                src={profileImage}
-                alt="Divine Orji's profile"
-                fill
-                className="object-cover"
-              />
-            ) : (
-              <div className="hidden"></div>
-            )}
-          </div>
-          <p className={`mt-10 ${inter.className}`}>
-            In 2019, I wrote my first "Hello World" and discovered my passion
-            for creating beautiful, user-friendly interfaces.
-          </p>
-          <p className={`my-10 ${inter.className}`}>
-            I like to experiment with different technologies and combine them to
-            create useful software. I also participate in developer communities
-            where I collaborate with other developers, document my work, and
-            share my knowledge.
-          </p>
-        </div>
-      </div>
-
-      <div className={styles.grid}>
+      <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
         <Link
           href="/projects"
-          className={styles.card}
+          className="card"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <h2 className={inter.className}>
+          <h2>
             My projects <span>-&gt;</span>
           </h2>
-          <p className={styles.code}>Cool stuff I've worked on.</p>
+          <p className="code text-xs">Cool stuff I've worked on.</p>
         </Link>
 
-        <Link href="/blog" className={styles.card}>
-          <h2 className={inter.className}>
+        <Link href="/blog" className="card">
+          <h2>
             My blog <span>-&gt;</span>
           </h2>
-          <p className={styles.code}>
+          <p className="code text-xs">
             All my musings on tech tools, developer experience, and a few wacky
             stories.
           </p>
@@ -109,16 +57,16 @@ export default function Home() {
 
         <Link
           href="/contact"
-          className={styles.card}
+          className="card"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <h2 className={inter.className}>
+          <h2>
             Contact me <span>-&gt;</span>
           </h2>
-          <p className={styles.code}>Let's get schwifty!</p>
+          <p className="code text-xs">Let's get schwifty!</p>
         </Link>
-      </div>
-    </main>
+      </section>
+    </section>
   );
 }

@@ -105,6 +105,11 @@ a {
   text-decoration: none;
 }
 
+.code {
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+
 .nav-icon {
   @apply text-black;
 }
@@ -118,6 +123,15 @@ a {
   border-radius: var(--border-radius);
   border: 1px solid rgba(var(--card-border-rgb), 0.15);
   transition: background 200ms, border 200ms;
-  /* Hover state */
+
+  /* Tailwind grid */
+  @apply grid gap-3;
+
+  /* Tailwind hover state */
   @apply hover:bg-[rgba(var(--card-rgb),0.1)] hover:border-[1px_solid_rgba(var(--card-border-rgb),0.15)];
+}
+
+.profile {
+  background: rgba(var(--card-rgb), 1);
+  @apply relative overflow-clip w-40 h-40 rounded-full mx-auto mt-10;
 }
