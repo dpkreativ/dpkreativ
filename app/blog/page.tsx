@@ -1,6 +1,10 @@
-import { blogData } from "@/lib/data";
+import { getData } from "@/lib/data";
 
-export default function Home() {
+export default async function Page() {
+  const blogData = await getData(
+    "https://dev.to/api/articles?username=dpkreativ"
+  );
+
   return (
     <>
       <section>
@@ -22,9 +26,9 @@ export default function Home() {
         {/* All articles here */}
         <div className="my-5 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {blogData &&
-            blogData.map((post) => (
+            blogData.map((post: any) => (
               <a
-                href={post.src}
+                href={post.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="card"
