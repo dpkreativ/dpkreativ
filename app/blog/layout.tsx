@@ -2,6 +2,7 @@ import { AnalyticsWrapper } from "@/components/analytics";
 import Image from "next/image";
 import { Inter } from "@next/font/google";
 import "@/styles/globals.css";
+import styles from "@/styles/page.module.css";
 import Link from "next/link";
 import { GitHub, LinkedIn, Twitter } from "@/components/icons";
 
@@ -18,17 +19,17 @@ export default function RootLayout({
       <head />
 
       {/* Body (main website layout) */}
-      <body className={inter.className}>
+      <body className={`${inter.className} ${styles.main}`}>
         {/* Header and navigation */}
         <header className="box">
           <div>
             <Link href="/">
               <Image
-                src="/Logo-02.svg"
-                alt="Kreativ Logo"
+                src="/Logo-01.svg"
+                alt="Divine's logo"
                 className="logo"
-                width={100}
-                height={24}
+                width={36}
+                height={36}
                 priority
               />
             </Link>
@@ -65,7 +66,7 @@ export default function RootLayout({
         </header>
 
         {/* Main content */}
-        <main className="box">{children}</main>
+        <main className={styles.center}>{children}</main>
 
         {/* Vercel analytics */}
         <AnalyticsWrapper />

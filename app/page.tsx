@@ -14,11 +14,11 @@ export default function Home() {
         <div className={styles.top}>
           <Link href="/">
             <Image
-              src="/Logo-02.svg"
-              alt="Kreativ Logo"
+              src="/Logo-01.svg"
+              alt="Divine's logo"
               className="logo"
-              width={100}
-              height={24}
+              width={36}
+              height={36}
               priority
             />
           </Link>
@@ -60,12 +60,16 @@ export default function Home() {
           <div
             className={`relative overflow-clip w-40 h-40 rounded-full mx-auto mt-10 ${styles.profile}`}
           >
-            {profileImage ? <Image
-              src={profileImage}
-              alt="Divine Orji's profile"
-              fill
-              className="object-cover"
-            /> : <div className="hidden"></div>}
+            {profileImage ? (
+              <Image
+                src={profileImage}
+                alt="Divine Orji's profile"
+                fill
+                className="object-cover"
+              />
+            ) : (
+              <div className="hidden"></div>
+            )}
           </div>
           <p className={`mt-10 ${inter.className}`}>
             In 2019, I wrote my first "Hello World" and discovered my passion

@@ -6,8 +6,8 @@ export default async function Page() {
   );
 
   return (
-    <>
-      <section>
+    <section>
+      <section className="mb-10">
         {/* Filters */}
         {/* <div className="flex gap-3 flex-wrap">
           <span className="card">All</span>
@@ -20,8 +20,13 @@ export default async function Page() {
         {/* Search */}
         <div className="my-5">
           <p className="text-xs">Wanna find something more specific?</p>
-          <h2>Search</h2>
-          {/* Add search input here */}
+          <form className="card w-max mx-auto">
+            <input
+              type="text"
+              placeholder="Search"
+              // className="bg-transparent"
+            />
+          </form>
         </div>
       </section>
 
@@ -41,6 +46,6 @@ export default async function Page() {
             </a>
           ))}
       </section>
-    </>
+    </section>
   );
 }
