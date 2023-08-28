@@ -9,4 +9,4 @@ export async function getData(api: string) {
 }
 
 export const profileImage =
-  "https://res.cloudinary.com/dpkreativ/image/upload/v1598755150/Personal%20Files/IMG_3pa6vc_ngay0b.jpg";
+  "https://res.cloudinary.com/dpkreativ/image/upload/v1693216925/Personal%20Files/IMG-20220924-WA0013_2_htjy5p.jpg";
