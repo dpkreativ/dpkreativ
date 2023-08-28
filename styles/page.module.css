@@ -35,13 +35,14 @@
   grid-template-columns: repeat(3, minmax(33%, auto));
   width: var(--max-width);
   max-width: 100%;
+  @apply gap-10;
 }
 
 .card {
   padding: 1rem 1.2rem;
   border-radius: var(--border-radius);
   background: rgba(var(--card-rgb), 0);
-  border: 1px solid rgba(var(--card-border-rgb), 0);
+  border: 1px solid rgba(var(--card-border-rgb), 0.1);
   transition: background 200ms, border 200ms;
   text-align: center;
 }
@@ -69,7 +70,7 @@
   justify-content: center;
   /* align-items: center; */
   position: relative;
-  padding: 4rem 0;
+  padding: 2rem 0;
   text-align: center;
   max-width: 480px;
 }
@@ -189,10 +190,6 @@
     margin-bottom: 0.5rem;
   }
 
-  .center {
-    padding: 8rem 0 6rem;
-  }
-
   .center::before {
     transform: none;
     height: 300px;
@@ -217,10 +214,10 @@
   .top {
     align-items: center;
     inset: 0 0 auto;
-    padding: 2rem 1rem 1.4rem;
+    /* padding: 2rem; */
     border-radius: 0;
     border: none;
-    border-bottom: 1px solid rgba(var(--callout-border-rgb), 0.25);
+    /* border-bottom: 1px solid rgba(var(--callout-border-rgb), 0.25); */
     background: linear-gradient(
       to bottom,
       rgba(var(--background-start-rgb), 1),

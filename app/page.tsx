@@ -57,11 +57,11 @@ export default function Home() {
           <h2 className={`text-5xl font-semibold ${inter.className}`}>Hi!</h2>
 
           <p className={`mt-10 ${styles.code}`}>I'm Divine.</p>
-          <p className={`mt-10 ${styles.code}`}>
+          <p className={`mt-10 ${inter.className}`}>
             In 2019, I wrote my first "Hello World" and discovered my passion
             for creating beautiful, user-friendly interfaces.
           </p>
-          <p className={`my-10 ${styles.code}`}>
+          <p className={`my-10 ${inter.className}`}>
             I like to experiment with different technologies and combine them to
             create useful software. I also participate in developer communities
             where I collaborate with other developers, document my work, and
@@ -80,14 +80,14 @@ export default function Home() {
           <h2 className={inter.className}>
             My projects <span>-&gt;</span>
           </h2>
-          <p className={inter.className}>Cool stuff I've worked on.</p>
+          <p className={styles.code}>Cool stuff I've worked on.</p>
         </Link>
 
         <Link href="/blog" className={styles.card}>
           <h2 className={inter.className}>
             My blog <span>-&gt;</span>
           </h2>
-          <p className={inter.className}>
+          <p className={styles.code}>
             All my musings on tech tools, developer experience, and a few wacky
             stories.
           </p>
@@ -102,7 +102,7 @@ export default function Home() {
           <h2 className={inter.className}>
             Contact me <span>-&gt;</span>
           </h2>
-          <p className={inter.className}>Let's get schwifty!</p>
+          <p className={styles.code}>Let's get schwifty!</p>
         </Link>
       </div>
     </main>
