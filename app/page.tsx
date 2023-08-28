@@ -4,10 +4,10 @@ import { profileImage } from "@/lib/data";
 
 export default function Home() {
   return (
-    <section>
-      <section className="max-w-md mx-auto text-center">
+    <section className="grid gap-16">
+      <section className="max-w-md mx-auto text-center grid gap-5">
         <h2 className="text-5xl font-semibold">Hi!</h2>
-        <p className="mt-10 code">I'm Divine.</p>
+        <p className="code">I'm Divine.</p>
         <div className="profile">
           {profileImage ? (
             <Image
@@ -20,19 +20,26 @@ export default function Home() {
             <div className="hidden"></div>
           )}
         </div>
-        <p className="mt-10">
-          In 2019, I wrote my first "Hello World" and discovered my passion for
-          creating beautiful, user-friendly interfaces.
+        <p>
+          I am a web developer with a passion for creating interactive and
+          engaging websites.
         </p>
-        <p className="my-10">
-          I like to experiment with different technologies and combine them to
-          create useful software. I also participate in developer communities
-          where I collaborate with other developers, document my work, and share
-          my knowledge.
+        <p>
+          I started coding in 2019 and have a strong understanding of HTML, CSS,
+          JavaScript, and frontend frameworks. I also have experience with CMS
+          platforms, backend technologies, and serverless functions. I enjoy
+          experimenting with different technologies to create useful software.
+        </p>
+
+        <p>
+          In addition to my coding skills, I am a technical writer with a knack
+          for explaining complex concepts in a clear and concise way. I am also
+          active in developer communities, collaborating with others,
+          documenting my work, and sharing my experiences.
         </p>
       </section>
 
-      <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 text-center py-10">
         <Link
           href="/projects"
           className="card"
