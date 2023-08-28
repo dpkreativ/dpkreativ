@@ -7,6 +7,8 @@ export default async function Page() {
 
   return (
     <section>
+      {/* Page title */}
+      <h1 className="text-3xl text-center mb-10">Blog</h1>
       {/* Search */}
       {/* <aside className="my-5">
         <p className="text-xs">Wanna find something more specific?</p>

@@ -40,12 +40,7 @@ export default function Home() {
       </section>
 
       <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 text-center py-10">
-        <Link
-          href="/projects"
-          className="card"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <Link href="/projects" className="card">
           <h2>
             My projects <span>-&gt;</span>
           </h2>
@@ -62,12 +57,7 @@ export default function Home() {
           </p>
         </Link>
 
-        <Link
-          href="/contact"
-          className="card"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <Link href="/contact" className="card">
           <h2>
             Contact me <span>-&gt;</span>
           </h2>
