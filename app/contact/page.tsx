@@ -11,11 +11,6 @@ export default function Page() {
         <p className="text-center">
           This page is still in development. Please check back later. Thank you!
         </p>
-        <Link href="/" className="card my-10 w-max mx-auto">
-          <p>
-            go to home <span>-&gt;</span>
-          </p>
-        </Link>
       </section>
     </section>
   );
