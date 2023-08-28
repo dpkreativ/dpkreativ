@@ -114,10 +114,6 @@ a {
   @apply text-black;
 }
 
-.box {
-  @apply w-full mx-auto p-5 max-w-[var(--max-width)] flex justify-between items-center;
-}
-
 .card {
   padding: 1rem 1.2rem;
   border-radius: var(--border-radius);
