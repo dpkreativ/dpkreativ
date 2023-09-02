@@ -31,6 +31,7 @@
   border-radius: 50%;
   width: 480px;
   height: 360px;
+  z-index: -1;
   margin-left: -400px;
 }
 
@@ -38,7 +39,7 @@
   background: var(--primary-glow);
   width: 240px;
   height: 180px;
-  z-index: -1;
+  z-index: -2;
 }
 
 .content::before,
