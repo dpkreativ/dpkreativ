@@ -1,92 +1,69 @@
-import Image from 'next/image';
-import { Inter } from '@next/font/google';
-import styles from './page.module.css';
-
-const inter = Inter({ subsets: ['latin'] });
+import Image from "next/image";
+import Link from "next/link";
+import { profileImage } from "@/lib/data";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <a
-          href="https://github.com/dpkreativ"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <p>
-            <code className={styles.code}>GitHub</code>
-          </p>
-        </a>
-        <div>
-          <a
-            href="https://linkedin.com/in/dpkreativ"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Powered By{' '}
+    <section className="grid gap-16">
+      <section className="max-w-md mx-auto text-center grid gap-5">
+        <h2 className="text-5xl font-semibold">Hi!</h2>
+        <p className="code">I'm Divine.</p>
+        <div className="profile">
+          {profileImage ? (
             <Image
-              src="/Logo-02.svg"
-              alt="Kreativ Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
+              src={profileImage}
+              alt="Divine Orji's profile"
+              fill
+              className="object-cover"
             />
-          </a>
+          ) : (
+            <div className="hidden"></div>
+          )}
         </div>
-      </div>
+        <p>
+          I am a web developer with a passion for creating interactive and
+          engaging websites.
+        </p>
+        <p>
+          I started coding in 2019 and have a strong understanding of HTML, CSS,
+          JavaScript, and frontend frameworks. I also have experience with CMS
+          platforms, backend technologies, and serverless functions. I enjoy
+          experimenting with different technologies to create useful software.
+        </p>
 
-      <div className={styles.center}>
-        <h2 className={inter.className}>
-          <div>Divine Orji</div>
-          <div>software engineer</div>
-          <div>technical writer</div>
-        </h2>
-      </div>
+        <p>
+          In addition to my coding skills, I am a technical writer with a knack
+          for explaining complex concepts in a clear and concise way. I am also
+          active in developer communities, collaborating with others,
+          documenting my work, and sharing my experiences.
+        </p>
+      </section>
 
-      <div className={styles.grid}>
-        <a
-          href="https://blog.dpkreativ.dev"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Blog <span>-&gt;</span>
+      <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 text-center py-10">
+        <Link href="/projects" className="card">
+          <h2>
+            My projects <span>-&gt;</span>
           </h2>
-          <p className={inter.className}>
-            A collection of all my technical articles. Check them out.
-          </p>
-        </a>
+          <p className="code text-xs">Cool stuff I've worked on.</p>
+        </Link>
 
-        <a
-          href="https://twitter.com/dpkreativ"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Twitter <span>-&gt;</span>
+        <Link href="/blog" className="card">
+          <h2>
+            My blog <span>-&gt;</span>
           </h2>
-          <p className={inter.className}>
-            Shitposts, memes, and the occasional geeky stuff.
+          <p className="code text-xs">
+            All my musings on tech tools, developer experience, and a few wacky
+            stories.
           </p>
-        </a>
+        </Link>
 
-        <a
-          href="https://linkedin.com/in/dpkreativ"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            LinkedIn <span>-&gt;</span>
+        <Link href="/contact" className="card">
+          <h2>
+            Contact me <span>-&gt;</span>
           </h2>
-          <p className={inter.className}>
-            Professional posts about software development.
-          </p>
-        </a>
-      </div>
-    </main>
+          <p className="code text-xs">Let's get schwifty!</p>
+        </Link>
+      </section>
+    </section>
   );
 }
