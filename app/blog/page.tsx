@@ -1,4 +1,4 @@
-import { getData } from "@/lib/data";
+import { getData } from "@/lib/utils";
 
 export default async function Page() {
   const blogData = await getData(
