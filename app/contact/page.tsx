@@ -8,9 +8,7 @@ export default function Page() {
 
       {/* Contact form here */}
       <section>
-        <p className="text-center">
-          This page is still in development. Please check back later. Thank you!
-        </p>
+        <p className="text-center">Hello world</p>
       </section>
     </section>
   );
