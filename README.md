@@ -6,14 +6,14 @@
 
 I'm a software engineer and content creator passionate about sharing knowledge on documentation, web engineering, JAMstack, serverless architecture, and others.
 
-I create technical content on my [blog](https://blog.dpkreativ.dev/), build useful [open-source projects](https://github.com/dpkreativ?tab=repositories), speak at meetups/conferences, and build technical communities.
+I create technical content on my [blog](https://dpkreativ.hashnode.dev/), build useful [open-source projects](https://github.com/dpkreativ?tab=repositories), speak at meetups/conferences, and build technical communities.
 
 **Here's a quick summary about me**:
 
-- 🌱 I’m currently improving my skills in TypeScript, Nodejs, Go, and Rust.
-- 🤝 I’m looking for open source projects, hackathons, and mid-level software engineering opportunities.
+- 🌱 I’m improving my TypeScript, Nodejs, Go, and Rust skills.
+- 🤝 I’m seeking open-source projects, hackathons, and mid-level software engineering opportunities.
 - 💼 I'm interested in Software Engineer, Frontend Engineer, UI Engineer, and Fullstack Engineer roles.
-- 📫 You can [view my resume](https://docs.google.com/document/d/1S7N_PcO5x1rcPXQI3yh-WBMySJB4v6foVd-rU0VGrYk/edit?usp=sharing) and contact me by emailing dpkreativ@gmail.com.
+- 📫 You can [view my resume](https://www.linkedin.com/in/dpkreativ/) and contact me by emailing dpkreativ@gmail.com.
 - 😊 Pronouns: He/him
 
 ---
