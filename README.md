@@ -6,15 +6,13 @@
 
 I'm a software engineer and content creator passionate about sharing knowledge on documentation, web engineering, JAMstack, serverless architecture, and others.
 
-I create technical content on my [blog](https://dpkreativ.vercel.app/blog/), build useful [open-source projects](https://github.com/dpkreativ?tab=repositories), speak at meetups/conferences, and build technical communities.
+I create technical content on my [blog](https://dpkreativ.vercel.app/blog/), build useful [open-source projects](https://github.com/dpkreativ?tab=repositories), speak at meetups/conferences, and build [technical communities](https://github.com/Community-OSS).
 
 **Here's a quick summary about me**:
 
-- 🌱 I’m improving my TypeScript, Nodejs, Go, and Rust skills.
-- 🤝 I’m seeking open-source projects, hackathons, and mid-level software engineering opportunities.
-- 💼 I'm interested in Software Engineer, Frontend Engineer, UI Engineer, and Fullstack Engineer roles.
+- 🌱 I build a lot of shit. Most of them become obsolete; others evolve to become really cool projects.
 - 📫 You can [view my resume](https://www.linkedin.com/in/dpkreativ/) and contact me by emailing dpkreativ@gmail.com.
-- 😊 Pronouns: He/him
+- 🇳🇬 Proudly Nigerian.
 
 ---
 
