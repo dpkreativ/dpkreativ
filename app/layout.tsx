@@ -60,7 +60,7 @@ export default function RootLayout({
         </header>
 
         {/* Main content */}
-        <main className="py-32 grid gap-16">{children}</main>
+        <main className="py-28 grid gap-16">{children}</main>
 
         {/* Vercel analytics */}
         <AnalyticsWrapper />
