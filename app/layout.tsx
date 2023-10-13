@@ -1,12 +1,10 @@
+import { fonts, logo } from "@/assets";
 import { AnalyticsWrapper } from "@/components/analytics";
 import { GitHub, LinkedIn, Twitter } from "@/components/icons";
 import "@/styles/globals.css";
 import styles from "@/styles/layout.module.css";
-import { Inter } from "@next/font/google";
 import Image from "next/image";
 import Link from "next/link";
-
-const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 export default function RootLayout({
   children,
@@ -14,26 +12,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.className}>
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
+    <html lang="en" className={fonts.className}>
       <head />
 
       <body className={styles.layout}>
         {/* Header */}
         <header className={styles.header}>
           <div className={styles.top}>
-            <Link href="/">
+            <Link href="/" className="flex gap-3 items-center">
               <Image
-                src="/Logo-01.svg"
+                src={logo}
                 alt="Divine's logo"
                 className="logo"
-                width={36}
-                height={36}
+                width={30}
+                height={30}
                 priority
               />
+              {/* <div className="text-4xl font-bold">Divi</div> */}
             </Link>
           </div>
           <nav>
@@ -67,7 +62,10 @@ export default function RootLayout({
         </header>
 
         {/* Main content */}
-        <main className={styles.content}>{children}</main>
+        <main>
+          {/* <div className={styles.content}></div> */}
+          {children}
+        </main>
 
         {/* Vercel analytics */}
         <AnalyticsWrapper />
