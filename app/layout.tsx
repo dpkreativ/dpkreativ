@@ -17,7 +17,7 @@ export default function RootLayout({
 
       <body className={styles.layout}>
         {/* Header */}
-        <header className={`max-w-4xl mx-auto ${styles.header}`}>
+        <header className={`max-w-4xl mx-auto z-50 ${styles.header}`}>
           <div className={styles.top}>
             <Link href="/" className="flex gap-3 items-center">
               <Image

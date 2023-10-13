@@ -1,4 +1,5 @@
 import { getData } from "@/lib/utils";
+import Image from "next/image";
 
 export default async function Page() {
   const blogData = await getData(
@@ -25,7 +26,7 @@ export default async function Page() {
       </section>
 
       {/* All articles here */}
-      <section className="w-full max-w-4xl mx-auto p-5 grid md:grid-cols-2 gap-5">
+      <section className="w-full max-w-4xl mx-auto p-5 grid md:grid-cols-2 gap-10">
         {blogData?.map((post: any) => (
           <a
             href={post.url}
@@ -34,6 +35,18 @@ export default async function Page() {
             className="card"
             key={post.id}
           >
+            <div className="card relative w-full aspect-video overflow-clip">
+              {
+                <Image
+                  src={post.social_image}
+                  alt={post.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover object-center"
+                  priority
+                />
+              }
+            </div>
             <h2 className="text-xl font-semibold">{post.title}</h2>
             <p className="my-2 text-sm">{post.description}</p>
           </a>
