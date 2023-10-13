@@ -17,7 +17,7 @@ export default function RootLayout({
 
       <body className={styles.layout}>
         {/* Header */}
-        <header className={styles.header}>
+        <header className={`max-w-4xl ${styles.header}`}>
           <div className={styles.top}>
             <Link href="/" className="flex gap-3 items-center">
               <Image
@@ -26,9 +26,7 @@ export default function RootLayout({
                 className="logo"
                 width={30}
                 height={30}
-                priority
               />
-              {/* <div className="text-4xl font-bold">Divi</div> */}
             </Link>
           </div>
           <nav>
@@ -62,10 +60,7 @@ export default function RootLayout({
         </header>
 
         {/* Main content */}
-        <main>
-          {/* <div className={styles.content}></div> */}
-          {children}
-        </main>
+        <main className="py-16">{children}</main>
 
         {/* Vercel analytics */}
         <AnalyticsWrapper />
