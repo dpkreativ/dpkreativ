@@ -17,7 +17,7 @@ export default function RootLayout({
 
       <body className={styles.layout}>
         {/* Header */}
-        <header className={`max-w-4xl ${styles.header}`}>
+        <header className={`max-w-4xl mx-auto ${styles.header}`}>
           <div className={styles.top}>
             <Link href="/" className="flex gap-3 items-center">
               <Image
@@ -60,7 +60,7 @@ export default function RootLayout({
         </header>
 
         {/* Main content */}
-        <main className="py-16">{children}</main>
+        <main className="py-32 grid gap-16">{children}</main>
 
         {/* Vercel analytics */}
         <AnalyticsWrapper />

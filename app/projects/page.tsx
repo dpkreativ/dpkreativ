@@ -2,16 +2,18 @@ import Link from "next/link";
 
 export default function Page() {
   return (
-    <section>
-      {/* Page title */}
-      <h1 className="text-3xl text-center mb-10">Projects</h1>
+    <>
+      <section className="w-full max-w-4xl mx-auto p-5">
+        {/* Page title */}
+        <h1 className="text-3xl text-center">Projects</h1>
+      </section>
 
       {/* All projects here */}
-      <section>
+      <section className="w-full max-w-4xl mx-auto p-5">
         <p className="text-center">
           This page is still in development. Please check back later. Thank you!
         </p>
       </section>
-    </section>
+    </>
   );
 }

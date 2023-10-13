@@ -4,13 +4,16 @@ import { profileImage } from "@/lib/data";
 
 export default function Home() {
   return (
-    <section className="grid gap-16">
-      <section className="w-full max-w-4xl mx-auto grid gap-10">
+    <>
+      {/* Hero */}
+      <section className="w-full max-w-4xl mx-auto p-5 grid gap-10">
         {/* Intro */}
-        <h2 className="text-5xl text-center code font-semibold">
+        <h1 className="text-5xl text-center code font-semibold">
           Hi!
           {/* Animation idea: loop through different languages saying hi */}
-        </h2>
+        </h1>
+
+        {/* Code with my name */}
         <div className="card w-max mx-auto">
           <p className="code text-xs">
             <span className="text-purple-800 dark:text-purple-600">const </span>
@@ -22,6 +25,7 @@ export default function Home() {
 
         {/* About Me */}
         <div className="grid md:flex gap-10">
+          {/* Picture */}
           <div className="relative w-full aspect-square">
             {profileImage ? (
               <Image
@@ -33,6 +37,8 @@ export default function Home() {
               />
             ) : null}
           </div>
+
+          {/* Text */}
           <div className="grid gap-5 h-max text-lg text-slate-800/90 dark:text-slate-300">
             <p>
               I am a<span className="font-bold"> web developer </span>with a
@@ -45,7 +51,6 @@ export default function Home() {
               functions. I enjoy experimenting with different technologies to
               create useful software.
             </p>
-
             <p>
               In addition to my coding skills, I am a
               <span className="font-bold"> technical writer </span>with a knack
@@ -57,31 +62,60 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 text-center py-10">
-        <Link href="/projects" className="card">
-          <h2>
-            My projects <span>-&gt;</span>
-          </h2>
-          <p className="code text-xs">Cool stuff I've worked on.</p>
-        </Link>
+      {/* My projects */}
+      <section className="w-full max-w-4xl mx-auto p-5 grid gap-10">
+        <div className="flex justify-between items-center">
+          <div className="grid gap-3">
+            <h2 className="text-3xl">My projects</h2>
+            <p className="code text-xs text-slate-800/90 dark:text-slate-300">
+              Cool stuff I've worked on.
+            </p>
+          </div>
 
-        <Link href="/blog" className="card">
-          <h2>
-            My blog <span>-&gt;</span>
-          </h2>
-          <p className="code text-xs">
-            All my musings on tech tools, developer experience, and a few wacky
-            stories.
-          </p>
-        </Link>
+          <Link
+            href="/projects"
+            className="text-sm text-green-600 hover:font-bold"
+          >
+            See more &#8663;
+          </Link>
+        </div>
 
-        <Link href="/contact" className="card">
-          <h2>
-            Contact me <span>-&gt;</span>
-          </h2>
-          <p className="code text-xs">Let's get schwifty!</p>
-        </Link>
+        <div>{/* The top three projects will be displayed here */}</div>
       </section>
-    </section>
+
+      {/* My blog posts */}
+      <section className="w-full max-w-4xl mx-auto p-5 grid gap-10">
+        <div className="flex justify-between items-center">
+          <div className="grid gap-3">
+            <h2 className="text-3xl">My blog posts</h2>
+            <p className="code text-xs text-slate-800/90 dark:text-slate-300">
+              All my musings on tech tools, developer experience, and a few
+              wacky stories.
+            </p>
+          </div>
+
+          <Link
+            href="/blog"
+            className="text-sm text-green-600 hover:font-bold flex-none"
+          >
+            See more &#8663;
+          </Link>
+        </div>
+
+        <div>{/* The top three blog posts will be displayed here */}</div>
+      </section>
+
+      {/* Contact me */}
+      <section className="w-full max-w-4xl mx-auto p-5 grid gap-10">
+        <div className="grid gap-3">
+          <h2 className="text-3xl">Contact me</h2>
+          <p className="code text-xs text-slate-800/90 dark:text-slate-300">
+            Let's get schwifty!
+          </p>
+        </div>
+
+        <div>{/* The contact form will be displayed here */}</div>
+      </section>
+    </>
   );
 }

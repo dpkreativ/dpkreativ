@@ -111,7 +111,7 @@ a {
 }
 
 .nav-icon {
-  @apply text-black;
+  @apply text-black hover:text-green-600;
 }
 
 .card {
