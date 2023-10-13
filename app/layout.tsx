@@ -1,6 +1,6 @@
 import { fonts, logo } from "@/assets";
 import { AnalyticsWrapper } from "@/components/analytics";
-import { GitHub, LinkedIn, Twitter } from "@/components/icons";
+import { GitHub, Twitter } from "@/components/icons";
 import "@/styles/globals.css";
 import styles from "@/styles/layout.module.css";
 import Image from "next/image";
@@ -32,28 +32,20 @@ export default function RootLayout({
           <nav>
             <div className="flex gap-5">
               <a
-                href="https://github.com/dpkreativ"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="nav-icon"
-              >
-                <GitHub />
-              </a>
-              <a
-                href="https://linkedin.com/in/dpkreativ"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="nav-icon"
-              >
-                <LinkedIn />
-              </a>
-              <a
                 href="https://twitter.com/dpkreativ"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="nav-icon"
               >
                 <Twitter />
+              </a>
+              <a
+                href="https://github.com/dpkreativ"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="nav-icon"
+              >
+                <GitHub />
               </a>
             </div>
           </nav>
