@@ -1,6 +1,9 @@
+import { gitHubRepos } from "@/lib/data";
 import Link from "next/link";
 
-export default function Page() {
+export default async function Page() {
+  const projects = await gitHubRepos();
+
   return (
     <>
       <section className="w-full max-w-4xl mx-auto p-5">
@@ -9,10 +12,19 @@ export default function Page() {
       </section>
 
       {/* All projects here */}
-      <section className="w-full max-w-4xl mx-auto p-5">
-        <p className="text-center">
-          This page is still in development. Please check back later. Thank you!
-        </p>
+      <section className="w-full max-w-4xl mx-auto p-5 grid md:grid-cols-2 gap-10">
+        {projects.map((project: any) => (
+          <a
+            href={project.html_url}
+            target="_blank"
+            rel="noopener noreferrer"
+            key={project.id}
+            className="card"
+          >
+            <h3 className="font-bold text-xl">{project.name}</h3>
+            <p className="text-sm">{project.description}</p>
+          </a>
+        ))}
       </section>
     </>
   );

@@ -1,10 +1,8 @@
-import { getData } from "@/lib/utils";
+import { allPosts } from "@/lib/data";
 import Image from "next/image";
 
 export default async function Page() {
-  const blogData = await getData(
-    "https://dev.to/api/articles?username=dpkreativ"
-  );
+  const posts = await allPosts();
 
   return (
     <>
@@ -27,7 +25,7 @@ export default async function Page() {
 
       {/* All articles here */}
       <section className="w-full max-w-4xl mx-auto p-5 grid md:grid-cols-2 gap-10">
-        {blogData?.map((post: any) => (
+        {posts?.map((post: any) => (
           <a
             href={post.url}
             target="_blank"

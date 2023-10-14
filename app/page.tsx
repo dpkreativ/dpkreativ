@@ -1,14 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { profileImage } from "@/lib/data";
-import { getData } from "@/lib/utils";
+import { allPosts, gitHubRepos, profileImage } from "@/lib/data";
 
 export default async function Home() {
-  const blogData = await getData(
-    "https://dev.to/api/articles?username=dpkreativ"
-  );
-
-  const topXPosts = blogData.slice(0, 6);
+  const posts = await allPosts().then((data) => data.slice(0, 4));
+  const projects = await gitHubRepos().then((data) => data.slice(0, 2));
 
   return (
     <>
@@ -79,7 +75,21 @@ export default async function Home() {
           </p>
         </div>
 
-        <div>{/* The top three projects will be displayed here */}</div>
+        <div className="grid md:grid-cols-2 gap-10">
+          {/* The top three projects will be displayed here */}
+          {projects.map((project: any) => (
+            <a
+              href={project.html_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              key={project.id}
+              className="card"
+            >
+              <h3 className="font-bold text-xl">{project.name}</h3>
+              <p className="text-sm">{project.description}</p>
+            </a>
+          ))}
+        </div>
 
         <Link
           href="/projects"
@@ -99,8 +109,8 @@ export default async function Home() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {topXPosts?.map((post: any) => (
+        <div className="grid md:grid-cols-2 gap-10">
+          {posts?.map((post: any) => (
             <a
               href={post.url}
               key={post.id}
@@ -124,7 +134,7 @@ export default async function Home() {
                 <p>{post.readable_publish_date}</p>
                 <p>{post.reading_time_minutes} mins</p>
               </div>
-              <h3 className="font-bold">{post.title}</h3>
+              <h3 className="font-bold text-xl">{post.title}</h3>
             </a>
           ))}
         </div>
