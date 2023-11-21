@@ -10,7 +10,7 @@ I create technical content on my [blog](https://dpkreativ.vercel.app/blog/), bui
 
 **Here's a quick summary about me**:
 
-- 🌱 I have done a lot of projects, most of them become obsolete; others evolve to become quite useful.
+- 🌱 I build a lot of projects, most of which evolve to become quite useful.
 - 📫 You can [view my resume](https://www.linkedin.com/in/dpkreativ/) and contact me by emailing dpkreativ@gmail.com.
 - 🇳🇬 Proudly Nigerian.
 
