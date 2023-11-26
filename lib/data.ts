@@ -20,3 +20,16 @@ export async function gitHubRepos() {
     .filter((repo: any) => repo.topics.includes("showcase"))
     .sort((a: any, b: any) => a.updated_at - b.updated_at);
 }
+
+// Get showcase data for a specific repo
+export async function showcaseData(repo: string) {
+  try {
+    const res = await getData(
+      `https://github.com/dpkreativ/${repo}/raw/showcase/showcase.json`
+    );
+
+    return res;
+  } catch (error) {
+    console.log(error);
+  }
+}
