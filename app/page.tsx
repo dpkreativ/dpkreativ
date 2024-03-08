@@ -1,20 +1,17 @@
-import { allPosts, gitHubRepos } from "@/lib/data";
-
 export default async function Home() {
-  const posts = await allPosts().then((data) => data.slice(0, 4));
-  const projects = await gitHubRepos().then((data) => data.slice(0, 2));
+  // const posts = await allPosts().then((data) => data.slice(0, 4));
+  // const projects = await gitHubRepos().then((data) => data.slice(0, 2));
 
   return (
     <>
       {/* Hero */}
       <section className="w-full max-w-4xl mx-auto p-5 grid gap-10">
         {/* Intro */}
-        <h1 className="text-5xl text-center code font-semibold">
-          Hi!
-          {/* Animation idea: loop through different languages saying hi */}
+        <h1 className="text-5xl leading-relaxed text-center code font-semibold">
+          I spin delightful and seamless web experiences.
         </h1>
 
-        {/* Code with my name */}
+        {/* Code with my name. Maybe I should animate this? */}
         <div className="card w-max mx-auto">
           <p className="code text-xs font-bold">
             <span className="text-purple-800 dark:text-purple-600">const </span>
@@ -28,7 +25,7 @@ export default async function Home() {
       {/* My projects */}
       <section className="w-full max-w-4xl mx-auto p-5 grid gap-10">
         <div className="grid gap-3">
-          <h2 className="text-3xl">My projects</h2>
+          <h2 className="text-3xl">Projects</h2>
           <p className="code text-xs text-slate-800/90 dark:text-slate-300">
             Cool stuff I've worked on.
           </p>
@@ -42,9 +39,9 @@ export default async function Home() {
       {/* My blog posts */}
       <section className="w-full max-w-4xl mx-auto p-5 grid gap-10">
         <div className="grid gap-3">
-          <h2 className="text-3xl">My blog posts</h2>
+          <h2 className="text-3xl">Blog posts</h2>
           <p className="code text-xs text-slate-800/90 dark:text-slate-300">
-            All my musings on tech tools, developer experience, and a few wacky
+            My musings on tech tools, developer experience, and a few wacky
             stories.
           </p>
         </div>

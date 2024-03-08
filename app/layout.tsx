@@ -59,7 +59,7 @@ export default function RootLayout({
         <footer className="grid gap-16">
           {/* About Me */}
           <section className="w-full max-w-4xl mx-auto p-5 grid gap-10">
-            <h2 className="text-3xl">About Me</h2>
+            <h2 className="text-3xl">About me</h2>
 
             <div className="grid md:flex gap-10">
               {/* Picture */}
@@ -83,8 +83,9 @@ export default function RootLayout({
               {/* Text */}
               <div className="grid gap-5 h-max text-lg text-slate-800/90 dark:text-slate-300">
                 <p>
-                  I am a<span className="font-bold"> web developer </span>with a
-                  passion for creating interactive and engaging websites.
+                  Hi! I'm<span className="font-bold"> Divine</span>, a web
+                  developer passionate about creating interactive and engaging
+                  websites.
                 </p>
                 <p>
                   I have a strong understanding of HTML, CSS, JavaScript, and
@@ -110,7 +111,9 @@ export default function RootLayout({
               </p>
             </div>
 
-            <div>{/* The contact form will be displayed here */}</div>
+            <div className="pb-28">
+              {/* The contact form will be displayed here */}
+            </div>
           </section>
         </footer>
 
