@@ -119,9 +119,6 @@ a {
   border: 1px solid rgba(var(--card-border-rgb), 0.15);
   transition: background 200ms, border 200ms;
 
-  /* Tailwind grid */
-  @apply grid gap-3;
-
   /* Tailwind hover state */
   @apply hover:bg-[rgba(var(--card-rgb),0.1)] hover:border-[1px_solid_rgba(var(--card-border-rgb),0.15)];
 }

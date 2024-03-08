@@ -1,6 +1,7 @@
 import { fonts, logo } from "@/assets";
 import { AnalyticsWrapper } from "@/components/analytics";
 import { GitHub, Twitter } from "@/components/icons";
+import { profileImage } from "@/lib/data";
 import "@/styles/globals.css";
 import styles from "@/styles/layout.module.css";
 import Image from "next/image";
@@ -53,6 +54,65 @@ export default function RootLayout({
 
         {/* Main content */}
         <main className="py-28 grid gap-16">{children}</main>
+
+        {/* Footer */}
+        <footer className="grid gap-16">
+          {/* About Me */}
+          <section className="w-full max-w-4xl mx-auto p-5 grid gap-10">
+            <h2 className="text-3xl">About Me</h2>
+
+            <div className="grid md:flex gap-10">
+              {/* Picture */}
+              <a
+                href="https://linkedin.com/in/dpkreativ"
+                target="_blank"
+                className="relative w-full aspect-square card overflow-clip"
+              >
+                {profileImage ? (
+                  <Image
+                    src={profileImage}
+                    alt="Divine Orji's profile"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover object-center"
+                    priority
+                  />
+                ) : null}
+              </a>
+
+              {/* Text */}
+              <div className="grid gap-5 h-max text-lg text-slate-800/90 dark:text-slate-300">
+                <p>
+                  I am a<span className="font-bold"> web developer </span>with a
+                  passion for creating interactive and engaging websites.
+                </p>
+                <p>
+                  I have a strong understanding of HTML, CSS, JavaScript, and
+                  frontend frameworks. I also have experience with CMS
+                  platforms, backend technologies, and serverless functions.
+                </p>
+                <p>
+                  In addition to my coding skills, I am adept at explaining
+                  complex concepts in a clear and concise way. I am also active
+                  in developer communities, collaborating with others,
+                  documenting my work, and sharing my experiences.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Contact me */}
+          <section className="w-full max-w-4xl mx-auto p-5 grid gap-10">
+            <div className="grid gap-3">
+              <h2 className="text-3xl">Contact me</h2>
+              <p className="code text-xs text-slate-800/90 dark:text-slate-300">
+                Let's get schwifty!
+              </p>
+            </div>
+
+            <div>{/* The contact form will be displayed here */}</div>
+          </section>
+        </footer>
 
         {/* Vercel analytics */}
         <AnalyticsWrapper />
