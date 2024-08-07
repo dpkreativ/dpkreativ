@@ -44,4 +44,39 @@ export const projects = [
     github: "",
     featured: false,
   },
+  {
+    id: 6,
+    title: "Alchemy Of Code",
+    client: "",
+    description: "",
+    url: "https://bit.ly/Alchemy-Of-Code",
+    github: "",
+    featured: true,
+  },
 ];
+
+export const navlinks = [
+  {
+    id: 1,
+    title: "Home",
+    url: "/",
+  },
+  {
+    id: 2,
+    title: "About",
+    url: "/about",
+  },
+  {
+    id: 3,
+    title: "Work",
+    url: "/work",
+  },
+];
+
+const aboutMe = [
+  "An experienced web developer passionate about building dynamic, responsive websites that deliver an exceptional user experience.",
+  "With a background in design and skills in HTML, CSS, and JavaScript, I turn ideas into reality using the right tools and frameworks. Check out my work to see how I do it.",
+  "I am active in various developer communities, where I collaborate with peers and contribute to open source projects. I also enjoy breaking down complex ideas on my blogs at Hashnode, Dev.to, and Medium.",
+];
+
+const heroImgText = "Hello World! I'm Divine.";
