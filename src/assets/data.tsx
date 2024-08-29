@@ -1,3 +1,7 @@
+import logo from "@/assets/images/kreativ-icon.svg";
+
+export { logo };
+
 export const projects = [
   {
     id: 1,

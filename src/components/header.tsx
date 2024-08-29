@@ -1,41 +1,50 @@
-import { GitHub, Twitter } from "@/assets/icons";
+"use client";
+
+import { logo } from "@/assets/data";
+import { CloseIcon, HamburgerIcon } from "@/assets/icons";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+import Socials from "./socials";
 
 export default function Header() {
+  const [viewModal, setViewModal] = useState(false);
+
   return (
-    <header className={`max-w-4xl mx-auto z-50`}>
-      <div>
-        <Link href="/" className="flex gap-3 items-center">
-          {/* <Image
-                src={logo}
-                alt="Divine's logo"
-                className="logo"
-                width={30}
-                height={30}
-              /> */}
-        </Link>
-      </div>
-      <nav>
-        <div className="flex gap-5">
-          <a
-            href="https://twitter.com/dpkreativ"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="nav-icon"
+    <header className={`max-w-6xl mx-auto z-50`}>
+      <div className="flex items-center justify-between gap-5 p-5">
+        <div className="w-max">
+          <Link
+            href="/"
+            className="flex gap-3 items-center p-2 bg-black rounded-full"
           >
-            <Twitter />
-          </a>
-          <a
-            href="https://github.com/dpkreativ"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="nav-icon"
-          >
-            <GitHub />
-          </a>
+            <Image
+              src={logo}
+              alt="Divine's logo"
+              className="logo invert"
+              width={16}
+            />
+          </Link>
         </div>
-      </nav>
+
+        <div>
+          <button onClick={() => setViewModal(!viewModal)}>
+            {viewModal ? <CloseIcon /> : <HamburgerIcon />}
+          </button>
+        </div>
+      </div>
+
+      {viewModal ? (
+        <nav className="px-5 py-20 flex flex-col justify-between h-[calc(100vh-3.5rem)]">
+          <div className="grid justify-end gap-20 text-7xl text-right dm-serif-display-regular">
+            <Link href="/">Home</Link>
+            <Link href="/about">About</Link>
+            <Link href="/work">Work</Link>
+          </div>
+
+          <Socials />
+        </nav>
+      ) : null}
     </header>
   );
 }
