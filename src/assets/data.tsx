@@ -1,6 +1,7 @@
 import logo from "@/assets/images/kreativ-icon.svg";
+import avatar from "@/assets/images/divi.jpg";
 
-export { logo };
+export { avatar, logo };
 
 export const projects = [
   {

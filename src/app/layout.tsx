@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { DM_Mono, DM_Sans, DM_Serif_Display } from "next/font/google";
+import {
+  DM_Mono,
+  DM_Sans,
+  DM_Serif_Display,
+  Give_You_Glory,
+} from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 
@@ -16,6 +21,12 @@ const sans = DM_Sans({
 const serif = DM_Serif_Display({
   weight: "400",
   variable: "--font-serif",
+  style: ["italic", "normal"],
+  subsets: ["latin"],
+});
+const script = Give_You_Glory({
+  weight: "400",
+  variable: "--font-script",
   subsets: ["latin"],
 });
 
@@ -32,7 +43,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${mono.variable} ${sans.variable} ${serif.variable}`}
+      className={`${mono.variable} ${sans.variable} ${script.variable} ${serif.variable}`}
     >
       <body className="font-sans">
         <Header />

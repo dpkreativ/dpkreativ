@@ -11,8 +11,8 @@ export default function Header() {
   const [viewModal, setViewModal] = useState(false);
 
   return (
-    <header className={`max-w-6xl mx-auto z-50`}>
-      <div className="flex items-center justify-between gap-5 p-5">
+    <header className="max-w-6xl mx-auto z-50">
+      <div className="flex items-center justify-between gap-4 p-4">
         <div className="w-max">
           <Link
             href="/"
@@ -35,8 +35,8 @@ export default function Header() {
       </div>
 
       {viewModal ? (
-        <nav className="p-5 flex flex-col justify-between h-[calc(100vh-5rem)]">
-          <div className="grid md:grid-cols-3 justify-end items-center md:h-full gap-20 text-7xl text-right md:text-center font-serif">
+        <nav className="p-5 flex flex-col justify-between h-[calc(100vh-4rem)]">
+          <div className="grid md:grid-cols-3 justify-end items-center md:h-full gap-16 text-7xl text-right md:text-center font-serif">
             <Link onClick={() => setViewModal(!viewModal)} href="/">
               Home
             </Link>
