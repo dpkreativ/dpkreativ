@@ -36,7 +36,7 @@ export default function Header() {
 
       {viewModal ? (
         <nav className="p-5 flex flex-col justify-between h-[calc(100vh-5rem)]">
-          <div className="grid md:grid-cols-3 justify-end items-center md:h-full gap-20 text-7xl text-right md:text-center dm-serif-display-regular">
+          <div className="grid md:grid-cols-3 justify-end items-center md:h-full gap-20 text-7xl text-right md:text-center font-serif">
             <Link onClick={() => setViewModal(!viewModal)} href="/">
               Home
             </Link>
