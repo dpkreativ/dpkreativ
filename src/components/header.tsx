@@ -35,8 +35,8 @@ export default function Header() {
       </div>
 
       {viewModal ? (
-        <nav className="px-5 py-20 flex flex-col justify-between h-[calc(100vh-3.5rem)]">
-          <div className="grid justify-end gap-20 text-7xl text-right dm-serif-display-regular">
+        <nav className="p-5 flex flex-col justify-between h-[calc(100vh-5rem)]">
+          <div className="grid md:grid-cols-3 justify-end items-center md:h-full gap-20 text-7xl text-right md:text-center dm-serif-display-regular">
             <Link href="/">Home</Link>
             <Link href="/about">About</Link>
             <Link href="/work">Work</Link>
