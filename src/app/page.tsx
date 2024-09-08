@@ -10,7 +10,7 @@ export default function Home() {
       {/* Hero section */}
       <section className="p-4 grid gap-8">
         <h1 className="font-serif text-4xl">
-          Hi! I'm <span className="italic">Divine</span>.
+          Hi! I&apos;m <span className="italic">Divine</span>.
         </h1>
 
         <div className="w-full max-w-96 p-4 shadow-lg bg-white">
@@ -34,7 +34,7 @@ export default function Home() {
 
           <div className="grid gap-2">
             <p>
-              I'm an experienced web developer passionate about building
+              I&apos;m an experienced web developer passionate about building
               dynamic, responsive websites that deliver an exceptional user
               experience.
             </p>
