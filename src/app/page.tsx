@@ -1,4 +1,4 @@
-import { avatar } from "@/assets/data";
+import { avatar, projects } from "@/assets/data";
 import { ProjectCard } from "@/components/cards";
 import Socials from "@/components/socials";
 import Image from "next/image";
@@ -89,24 +89,19 @@ export default function Home() {
             My <span className="italic">Work</span>
           </h2>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <ProjectCard
-              title="Crunchies Fried Chicken"
-              image={avatar}
-              link="/"
-            />
-
-            <ProjectCard
-              title="Crunchies Fried Chicken"
-              image={avatar}
-              link="/"
-            />
-
-            <ProjectCard
-              title="Crunchies Fried Chicken"
-              image={avatar}
-              link="/"
-            />
+          <div className="grid gap-8 md:grid-cols-2">
+            {projects
+              .filter((project) => project.featured)
+              .map((project) => (
+                <ProjectCard
+                  key={project.id}
+                  title={project.title}
+                  tags={project.tags}
+                  description={project.description}
+                  image={project.image}
+                  link={project.link}
+                />
+              ))}
           </div>
         </section>
       </section>

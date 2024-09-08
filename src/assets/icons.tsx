@@ -71,3 +71,20 @@ export const CloseIcon = () => {
     </svg>
   );
 };
+
+export const ArrowIcon = () => {
+  return (
+    <svg
+      width="32"
+      height="32"
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M8.25066 23.052L21.7173 9.61071V22H23.0507V7.33337H8.38399V8.66671H20.7747L7.33333 22.1334L8.25066 23.052Z"
+        fill="white"
+      />
+    </svg>
+  );
+};
