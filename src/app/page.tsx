@@ -1,4 +1,5 @@
 import { avatar } from "@/assets/data";
+import { ProjectCard } from "@/components/cards";
 import Socials from "@/components/socials";
 import Image from "next/image";
 import Link from "next/link";
@@ -24,7 +25,7 @@ export default function Home() {
         <Socials />
       </section>
 
-      <section className="md:col-span-2">
+      <section className="md:col-span-2 grid gap-40">
         {/* About section */}
         <section className="p-4 grid gap-8">
           <h2 className="font-serif text-4xl">
@@ -79,6 +80,33 @@ export default function Home() {
               </a>
               .
             </p>
+          </div>
+        </section>
+
+        {/* Work section */}
+        <section className="p-4 grid gap-8">
+          <h2 className="font-serif text-4xl">
+            My <span className="italic">Work</span>
+          </h2>
+
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <ProjectCard
+              title="Crunchies Fried Chicken"
+              image={avatar}
+              link="/"
+            />
+
+            <ProjectCard
+              title="Crunchies Fried Chicken"
+              image={avatar}
+              link="/"
+            />
+
+            <ProjectCard
+              title="Crunchies Fried Chicken"
+              image={avatar}
+              link="/"
+            />
           </div>
         </section>
       </section>
