@@ -1,7 +1,3 @@
-Here’s a simple GitHub README bio based on your information:
-
----
-
 # 👋 Hi, I’m Divine Orji
 
 I’m a web developer with over three years of experience building clean, responsive web applications tailored to business needs. I have a passion for optimizing web performance and creating user-friendly designs that align with client goals.
