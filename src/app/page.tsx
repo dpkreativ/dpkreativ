@@ -6,15 +6,17 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="grid gap-40 md:grid-cols-3 max-w-6xl mx-auto">
+    <main className="grid gap-20 md:grid-cols-3 max-w-6xl mx-auto">
       {/* Hero section */}
-      <section className="p-4 grid gap-8">
+      <section className="p-4 grid gap-8 h-max">
         <h1 className="font-serif text-4xl">
           Hi! I&apos;m <span className="italic">Divine</span>.
         </h1>
 
         <div className="w-full max-w-96 p-4 shadow-lg bg-white">
-          <Image src={avatar} alt="Divine Orji" className="w-full" />
+          <div className="relative aspect-[5/6] overflow-hidden">
+            <Image src={avatar} alt="Divine Orji" className="w-full" />
+          </div>
           <p className="font-script pt-4">My friends call me Divi⚡</p>
         </div>
 
@@ -25,7 +27,7 @@ export default function Home() {
         <Socials />
       </section>
 
-      <section className="md:col-span-2 grid gap-40">
+      <section className="md:col-span-2 grid gap-20">
         {/* About section */}
         <section className="p-4 grid gap-8">
           <h2 className="font-serif text-4xl">
@@ -99,7 +101,7 @@ export default function Home() {
                   tags={project.tags}
                   description={project.description}
                   image={project.image}
-                  link={project.link}
+                  link={project.url}
                 />
               ))}
           </div>

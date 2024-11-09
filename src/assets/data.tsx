@@ -1,5 +1,10 @@
 import logo from "@/assets/images/kreativ-icon.svg";
-import avatar from "@/assets/images/divi.jpg";
+import avatar from "@/assets/images/divine.jpg";
+import crunchies from "@/assets/images/crunchies.png";
+import ighub from "@/assets/images/ighub.png";
+import devmarbook from "@/assets/images/devmarbook.png";
+import philsauto from "@/assets/images/philsauto.png";
+import alchemyofcode from "@/assets/images/alchemyofcode.png";
 
 export { avatar, logo };
 
@@ -7,10 +12,10 @@ export const projects = [
   {
     id: 1,
     title: "Crunchies Online",
-    image: avatar,
+    image: crunchies,
     client: "Crunchies Fried Chicken",
     description: "",
-    url: "crunchiesonline.com",
+    url: "https://crunchiesonline.com",
     github: "",
     featured: true,
     tags: ["UI/UX", "Coding", "Next.js"],
@@ -19,61 +24,50 @@ export const projects = [
   {
     id: 2,
     title: "IGHub Website",
-    image: avatar,
-    client: "Innovation Growth Hubs",
+    image: ighub,
+    client: "Innovation Growth Hub",
     description: "",
-    url: "ighub.ng",
+    url: "https://ighub.ng",
     github: "",
     featured: true,
-    tags: ["UI/UX", "Coding", "Next.js"],
+    tags: ["UI/UX", "Coding", "WordPress"],
     link: "/",
   },
+
   {
     id: 3,
-    title: "Sozonation",
-    image: avatar,
-    client: "Sozonation Org",
-    description: "",
-    url: "sozonation.org",
-    github: "",
-    featured: false,
-    tags: ["UI/UX", "Coding", "Next.js"],
-    link: "/",
-  },
-  {
-    id: 4,
     title: "The Developer Marketing Book",
-    image: avatar,
+    image: devmarbook,
     client: "Decenta LLC",
     description: "",
-    url: "devmarbook.com",
+    url: "https://devmarbook.vercel.app/",
     github: "github.com/dpkreativ/devmarbook",
     featured: true,
     tags: ["UI/UX", "Coding", "Next.js"],
     link: "/",
   },
   {
-    id: 5,
+    id: 4,
     title: "Phil's Auto Sales Website",
-    image: avatar,
+    image: philsauto,
     client: "Phil's Auto Sales LLC",
     description: "",
-    url: "philsautosalesllc.com",
+    url: "https://philsautosalesllc.com",
     github: "",
-    featured: false,
-    tags: ["UI/UX", "Coding", "Next.js"],
+    featured: true,
+    tags: ["UI/UX", "Coding", "WordPress"],
     link: "/",
   },
   {
-    id: 6,
+    id: 5,
     title: "Alchemy Of Code",
-    image: avatar,
+    image: alchemyofcode,
     client: "",
     description: "",
-    url: "https://bit.ly/Alchemy-Of-Code",
+    url: "https://https://bit.ly/Alchemy-Of-Code",
     github: "",
     featured: true,
-    tags: ["UI/UX", "Coding", "Next.js"],
+    tags: ["Documentation", "Notion", "Tutorials"],
     link: "/",
   },
 ];

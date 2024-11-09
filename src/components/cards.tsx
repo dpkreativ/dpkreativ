@@ -22,8 +22,11 @@ export function ProjectCard({
   return (
     <div className="w-full max-w-sm shadow-lg">
       {/* Image, Title, and Link */}
-      <Link href={link} className="relative">
-        <Image src={image} alt={title} width={400} height={300} />
+      <Link
+        href={link}
+        className="relative block aspect-square overflow-hidden"
+      >
+        <Image src={image} alt={title} className="w-full" />
 
         <div className="absolute bottom-0 p-4 w-full h-full bg-black/30 flex justify-between items-end text-white">
           <h3 className="font-mono text-2xl">{title}</h3>
