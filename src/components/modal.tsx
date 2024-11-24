@@ -10,7 +10,10 @@ export default function ContactModal() {
   return (
     <section className="w-max mx-auto">
       <Button onClick={() => dialogRef.current?.showModal()}>start here</Button>
-      <dialog ref={dialogRef} className="p-4 rounded-2xl">
+      <dialog
+        ref={dialogRef}
+        className="p-4 rounded-2xl backdrop:bg-black/85 w-max"
+      >
         <button
           className="flex items-center justify-center w-5 h-5 bg-zinc-200 rounded-full shadow ml-auto"
           onClick={() => dialogRef.current?.close()}

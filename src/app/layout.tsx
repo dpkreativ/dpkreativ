@@ -46,7 +46,7 @@ export default function RootLayout({
       lang="en"
       className={`${mono.variable} ${sans.variable} ${script.variable} ${serif.variable}`}
     >
-      <body className="font-sans">
+      <body className="font-sans bg-[--ghost-white]">
         <Header />
         {children}
         <Footer />

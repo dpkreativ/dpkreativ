@@ -1,3 +1,7 @@
+:root {
+  --ghost-white: #f8f8ff;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
