@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main className="grid gap-20 md:grid-cols-3 max-w-6xl mx-auto">
       {/* Hero section */}
-      <section className="p-4 grid gap-8 h-max">
+      <section className="p-4 grid gap-8 h-max md:sticky md:top-16">
         <h1 className="font-serif text-4xl">
           Hi! I&apos;m <span className="italic">Divine</span>.
         </h1>
@@ -86,7 +86,7 @@ export default function Home() {
         </section>
 
         {/* Work section */}
-        <section className="p-4 grid gap-8">
+        <section className="p-4 pb-20 grid gap-8">
           <h2 className="font-serif text-4xl">
             My <span className="italic">Work</span>
           </h2>
