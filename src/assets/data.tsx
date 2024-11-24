@@ -1,4 +1,5 @@
 import logo from "@/assets/images/kreativ-icon.svg";
+import logoword from "@/assets/images/kreativ-wordmark.svg";
 import avatar from "@/assets/images/divine.jpg";
 import crunchies from "@/assets/images/crunchies.png";
 import ighub from "@/assets/images/ighub.png";
@@ -6,7 +7,7 @@ import devmarbook from "@/assets/images/devmarbook.png";
 import philsauto from "@/assets/images/philsauto.png";
 import alchemyofcode from "@/assets/images/alchemyofcode.png";
 
-export { avatar, logo };
+export { avatar, logo, logoword };
 
 export const projects = [
   {

@@ -5,10 +5,10 @@ export default function Work() {
   return (
     <main className="max-w-6xl mx-auto">
       {/* Work section */}
-      <section className="p-4 grid gap-8">
-        <h2 className="font-serif text-4xl">
+      <section className="p-4 pb-20 grid gap-8">
+        <h1 className="font-serif text-4xl">
           My <span className="italic">Work</span>
-        </h2>
+        </h1>
 
         <div className="grid gap-8 md:grid-cols-2">
           {projects

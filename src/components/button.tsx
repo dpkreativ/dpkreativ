@@ -1,6 +1,23 @@
-export default function Button({ children }: { children: React.ReactNode }) {
+export default function Button({
+  children,
+  onClick,
+  type,
+  disabled,
+  className,
+}: {
+  children: React.ReactNode;
+  onClick?: () => void;
+  type?: "button" | "submit" | "reset";
+  disabled?: boolean;
+  className?: string;
+}) {
   return (
-    <button className="bg-white text-black border border-black px-5 py-2 rounded-full">
+    <button
+      onClick={onClick}
+      className={`bg-white text-black border border-black px-5 py-2 rounded-full ${className}`}
+      type={type}
+      disabled={disabled}
+    >
       {children}
     </button>
   );

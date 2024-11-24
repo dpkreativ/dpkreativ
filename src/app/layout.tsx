@@ -7,6 +7,7 @@ import {
 } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
+import Footer from "@/components/footer";
 
 const mono = DM_Mono({
   weight: "400",
@@ -48,6 +49,7 @@ export default function RootLayout({
       <body className="font-sans">
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
