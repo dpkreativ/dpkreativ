@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="p-4 bg-black text-white">
       <div className="md:flex md:items-center md:justify-between grid justify-center gap-4 p-4 max-w-6xl mx-auto">
         <div className="grid md:flex gap-4 items-center">
-          <h2 className="font-serif text-2xl">Let's work together?</h2>
+          <h2 className="font-serif text-2xl">Let&apos;s work together?</h2>
 
           <ContactModal />
         </div>
