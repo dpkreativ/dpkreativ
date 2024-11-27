@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/nodemailer": "^6.4.17",
     "next": "14.2.5",
+    "nodemailer": "^6.9.16",
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.53.2"

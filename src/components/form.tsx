@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import Button from "./button";
+import { sendEmail } from "@/utils/send-email";
 
-type FormInputs = {
+export type FormInputs = {
   fullName: string;
   email: string;
   phoneNumber: string;
@@ -24,9 +25,7 @@ export default function ContactForm() {
 
   const onSubmit: SubmitHandler<FormInputs> = async (data) => {
     setIsSubmitting(true);
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    console.log(data);
+    await sendEmail(data);
     setIsSubmitting(false);
     setIsSubmitted(true);
   };
@@ -36,7 +35,8 @@ export default function ContactForm() {
       <div className="text-center p-6 bg-green-100 rounded-lg max-w-6xl mx-auto">
         <h2 className="text-2xl font-bold text-green-800 mb-2">Thank You!</h2>
         <p className="text-green-700">
-          Your message has been submitted successfully. I&apos;ll be in touch soon!
+          Your message has been submitted successfully. I&apos;ll be in touch
+          soon!
         </p>
       </div>
     );
