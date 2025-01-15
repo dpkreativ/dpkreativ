@@ -14,7 +14,7 @@ export default function Button({
   return (
     <button
       onClick={onClick}
-      className={`bg-white text-black border border-black px-5 py-2 rounded-full ${className}`}
+      className={`bg-white text-black border border-black px-5 py-2 rounded-full shadow-lg ${className}`}
       type={type}
       disabled={disabled}
     >
