@@ -53,32 +53,14 @@ export default function Home() {
             <p>
               I am active in various developer communities, where I collaborate
               with peers and contribute to open source projects. I also enjoy
-              breaking down complex ideas on my blogs at{" "}
+              breaking down complex ideas on my{" "}
               <a
-                href="https://dpkreativ.hashnode.dev"
+                href="https://dpkreativ.notion.site/Divine-s-Technical-Content-Portfolio-dfdee17cdcb647498fae2f4b9d22a672?pvs=4"
                 target="_blank"
                 rel="noreferrer"
                 className="font-bold underline"
               >
-                Hashnode
-              </a>
-              ,{" "}
-              <a
-                href="https://dev.to/dpkreativ"
-                target="_blank"
-                rel="noreferrer"
-                className="font-bold underline"
-              >
-                Dev.to
-              </a>
-              , and{" "}
-              <a
-                href="https://medium.com/@dpkreativ"
-                target="_blank"
-                rel="noreferrer"
-                className="font-bold underline"
-              >
-                Medium
+                blog
               </a>
               .
             </p>
