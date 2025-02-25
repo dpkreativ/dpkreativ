@@ -20,7 +20,7 @@ export const projects = [
     github: "",
     featured: true,
     tags: ["UI/UX", "Coding", "Next.js"],
-    link: "/",
+    slug: "crunchies-online",
   },
   {
     id: 2,
@@ -32,7 +32,7 @@ export const projects = [
     github: "",
     featured: true,
     tags: ["UI/UX", "Coding", "WordPress"],
-    link: "/",
+    slug: "ighub-website",
   },
 
   {
@@ -45,7 +45,7 @@ export const projects = [
     github: "github.com/dpkreativ/devmarbook",
     featured: true,
     tags: ["UI/UX", "Coding", "Next.js"],
-    link: "/",
+    slug: "the-developer-marketing-book",
   },
   {
     id: 4,
@@ -57,7 +57,7 @@ export const projects = [
     github: "",
     featured: true,
     tags: ["UI/UX", "Coding", "WordPress"],
-    link: "/",
+    slug: "phils-auto-sales-website",
   },
   {
     id: 5,
@@ -69,7 +69,7 @@ export const projects = [
     github: "",
     featured: true,
     tags: ["Documentation", "Notion", "Tutorials"],
-    link: "/",
+    slug: "alchemy-of-code",
   },
 ];
 

@@ -20,7 +20,7 @@ export default function Work() {
                 tags={project.tags}
                 description={project.description}
                 image={project.image}
-                link={project.url}
+                link={project.slug}
               />
             ))}
         </div>

@@ -83,7 +83,7 @@ export default function Home() {
                   tags={project.tags}
                   description={project.description}
                   image={project.image}
-                  link={project.url}
+                  link={`/work/${project.slug}`}
                 />
               ))}
           </div>
