@@ -11,18 +11,16 @@ export default function Work() {
         </h1>
 
         <div className="grid gap-8 md:grid-cols-2">
-          {projects
-            .filter((project) => project.featured)
-            .map((project) => (
-              <ProjectCard
-                key={project.id}
-                title={project.title}
-                tags={project.tags}
-                description={project.description}
-                image={project.image}
-                link={project.slug}
-              />
-            ))}
+          {projects.map((project, idx) => (
+            <ProjectCard
+              key={idx}
+              title={project.title}
+              tags={project.tags}
+              description={project.description}
+              image={project.image}
+              link={project.slug}
+            />
+          ))}
         </div>
       </section>
     </main>

@@ -13,16 +13,27 @@ type ProjectProps = {
 
 export function ProjectCard({ title, tags, image, link }: ProjectProps) {
   return (
-    <div className="w-full max-w-sm shadow-lg rounded-lg overflow-hidden">
-      {/* Image, Title, and Link */}
-      <Link
-        href={link}
-        className="relative block aspect-[16/12] overflow-hidden"
-      >
+    <Link
+      href={link}
+      className="w-full shadow-lg group rounded-lg border border-black/10 overflow-hidden"
+    >
+      {/* Image */}
+      <div className="relative block aspect-[16/12] overflow-hidden">
         <Image src={image} alt={title} className="w-full" />
 
+        <div className="absolute top-0 p-4 w-full h-full  flex justify-end text-white"></div>
+      </div>
+
+      {/* Title & Tags */}
+      <div className="p-4 grid gap-4">
+        <div className="flex justify-between gap-2 items-center">
+          <h3 className="font-mono">{title}</h3>
+          <span className="hidden group-hover:block">
+            <ArrowIcon />
+          </span>
+        </div>
         {tags && (
-          <div className="absolute z-10 top-2 right-2 flex justify-center gap-2 text-[8px]">
+          <div className="flex gap-2 text-[8px]">
             {tags.map((tag) => (
               <span key={tag} className="px-2 py-1 bg-gray-200 rounded-full">
                 {tag}
@@ -30,13 +41,7 @@ export function ProjectCard({ title, tags, image, link }: ProjectProps) {
             ))}
           </div>
         )}
-
-        <div className="absolute bottom-0 p-4 w-full h-full bg-black/65  flex justify-between items-end text-white">
-          <h3 className="font-mono text-2xl">{title}</h3>
-
-          <ArrowIcon />
-        </div>
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 }

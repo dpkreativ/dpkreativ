@@ -1,4 +1,6 @@
 import { avatar, projects } from "@/assets/data";
+import { ArrowIcon } from "@/assets/icons";
+import Button from "@/components/button";
 import { ProjectCard } from "@/components/cards";
 import Socials from "@/components/socials";
 import Image from "next/image";
@@ -76,9 +78,9 @@ export default function Home() {
           <div className="grid gap-8 md:grid-cols-2">
             {projects
               .filter((project) => project.featured)
-              .map((project) => (
+              .map((project, idx) => (
                 <ProjectCard
-                  key={project.id}
+                  key={idx}
                   title={project.title}
                   tags={project.tags}
                   description={project.description}
@@ -86,6 +88,13 @@ export default function Home() {
                   link={`/work/${project.slug}`}
                 />
               ))}
+
+            <Link href="/work" className="w-max mx-auto md:mx-0">
+              <Button className="flex items-center gap-2">
+                <span>click here to see more projects</span>
+                <ArrowIcon />
+              </Button>
+            </Link>
           </div>
         </section>
       </section>

@@ -13,8 +13,10 @@ export default function Page() {
   }
 
   return (
-    <main>
-      <h1>{project.title}</h1>
+    <main className="max-w-6xl mx-auto min-h-[80vh]">
+      <section className="p-4 pb-20 grid gap-8">
+        <h1 className="font-serif text-4xl">{project.title}</h1>
+      </section>
     </main>
   );
 }

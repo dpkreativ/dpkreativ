@@ -11,7 +11,6 @@ export { avatar, logo, logoword };
 
 export const projects = [
   {
-    id: 1,
     title: "Crunchies Online",
     image: crunchies,
     client: "Crunchies Fried Chicken",
@@ -23,7 +22,17 @@ export const projects = [
     slug: "crunchies-online",
   },
   {
-    id: 2,
+    title: "Phil's Auto Sales Website",
+    image: philsauto,
+    client: "Phil's Auto Sales LLC",
+    description: "",
+    url: "https://philsautosalesllc.com",
+    github: "",
+    featured: true,
+    tags: ["UI/UX", "Coding", "WordPress"],
+    slug: "phils-auto-sales-website",
+  },
+  {
     title: "IGHub Website",
     image: ighub,
     client: "Innovation Growth Hub",
@@ -36,31 +45,18 @@ export const projects = [
   },
 
   {
-    id: 3,
     title: "The Developer Marketing Book",
     image: devmarbook,
     client: "Decenta LLC",
     description: "",
     url: "https://devmarbook.vercel.app/",
     github: "github.com/dpkreativ/devmarbook",
-    featured: true,
+    featured: false,
     tags: ["UI/UX", "Coding", "Next.js"],
     slug: "the-developer-marketing-book",
   },
+
   {
-    id: 4,
-    title: "Phil's Auto Sales Website",
-    image: philsauto,
-    client: "Phil's Auto Sales LLC",
-    description: "",
-    url: "https://philsautosalesllc.com",
-    github: "",
-    featured: true,
-    tags: ["UI/UX", "Coding", "WordPress"],
-    slug: "phils-auto-sales-website",
-  },
-  {
-    id: 5,
     title: "Alchemy Of Code",
     image: alchemyofcode,
     client: "",
