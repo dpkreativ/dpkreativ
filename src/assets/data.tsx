@@ -14,11 +14,13 @@ export const projects = [
     title: "Crunchies Online",
     image: crunchies,
     client: "Crunchies Fried Chicken",
-    description: "",
+    description:
+      "I led the UI redesign and implemented features with Next.js and Tailwind. I also integrated a Google Maps location feature, allowing users to select their delivery location and find nearby outlets.",
     url: "https://crunchiesonline.com",
     github: "",
     featured: true,
     tags: ["UI/UX", "Coding", "Next.js"],
+    stack: [""],
     slug: "crunchies-online",
   },
   {
@@ -51,11 +53,10 @@ export const projects = [
     description: "",
     url: "https://devmarbook.vercel.app/",
     github: "github.com/dpkreativ/devmarbook",
-    featured: false,
+    featured: true,
     tags: ["UI/UX", "Coding", "Next.js"],
     slug: "the-developer-marketing-book",
   },
-
   {
     title: "Alchemy Of Code",
     image: alchemyofcode,
@@ -63,7 +64,7 @@ export const projects = [
     description: "",
     url: "https://https://bit.ly/Alchemy-Of-Code",
     github: "",
-    featured: true,
+    featured: false,
     tags: ["Documentation", "Notion", "Tutorials"],
     slug: "alchemy-of-code",
   },

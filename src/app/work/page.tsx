@@ -3,7 +3,7 @@ import { ProjectCard } from "@/components/cards";
 
 export default function Work() {
   return (
-    <main className="max-w-6xl mx-auto">
+    <main className="flex-1 w-full max-w-6xl mx-auto">
       {/* Work section */}
       <section className="p-4 pb-20 grid gap-8">
         <h1 className="font-serif text-4xl">
@@ -18,7 +18,7 @@ export default function Work() {
               tags={project.tags}
               description={project.description}
               image={project.image}
-              link={project.slug}
+              link={`/work/${project.slug}`}
             />
           ))}
         </div>

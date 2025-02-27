@@ -20,8 +20,6 @@ export function ProjectCard({ title, tags, image, link }: ProjectProps) {
       {/* Image */}
       <div className="relative block aspect-[16/12] overflow-hidden">
         <Image src={image} alt={title} className="w-full" />
-
-        <div className="absolute top-0 p-4 w-full h-full  flex justify-end text-white"></div>
       </div>
 
       {/* Title & Tags */}

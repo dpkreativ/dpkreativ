@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="grid gap-20 md:grid-cols-3 max-w-6xl mx-auto">
+    <main className="flex-1 grid gap-20 md:grid-cols-3 max-w-6xl mx-auto">
       {/* Hero section */}
       <section className="p-4 grid gap-8 h-max md:sticky md:top-16">
         <h1 className="font-serif text-4xl">
@@ -90,7 +90,7 @@ export default function Home() {
               ))}
 
             <Link href="/work" className="w-max mx-auto md:mx-0">
-              <Button className="flex items-center gap-2">
+              <Button>
                 <span>click here to see more projects</span>
                 <ArrowIcon />
               </Button>
