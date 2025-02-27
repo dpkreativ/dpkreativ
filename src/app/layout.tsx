@@ -24,6 +24,7 @@ const serif = DM_Serif_Display({
   variable: "--font-serif",
   style: ["italic", "normal"],
   subsets: ["latin"],
+  display: "swap",
 });
 const script = Give_You_Glory({
   weight: "400",
@@ -46,7 +47,7 @@ export default function RootLayout({
       lang="en"
       className={`${mono.variable} ${sans.variable} ${script.variable} ${serif.variable}`}
     >
-      <body className="font-sans bg-[--ghost-white]">
+      <body className="font-sans bg-[--ghost-white] flex flex-col min-h-screen">
         <Header />
         {children}
         <Footer />

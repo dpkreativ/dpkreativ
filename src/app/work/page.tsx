@@ -3,7 +3,7 @@ import { ProjectCard } from "@/components/cards";
 
 export default function Work() {
   return (
-    <main className="max-w-6xl mx-auto">
+    <main className="flex-1 w-full max-w-6xl mx-auto">
       {/* Work section */}
       <section className="p-4 pb-20 grid gap-8">
         <h1 className="font-serif text-4xl">
@@ -11,18 +11,16 @@ export default function Work() {
         </h1>
 
         <div className="grid gap-8 md:grid-cols-2">
-          {projects
-            .filter((project) => project.featured)
-            .map((project) => (
-              <ProjectCard
-                key={project.id}
-                title={project.title}
-                tags={project.tags}
-                description={project.description}
-                image={project.image}
-                link={project.url}
-              />
-            ))}
+          {projects.map((project, idx) => (
+            <ProjectCard
+              key={idx}
+              title={project.title}
+              tags={project.tags}
+              description={project.description}
+              image={project.image}
+              link={`/work/${project.slug}`}
+            />
+          ))}
         </div>
       </section>
     </main>

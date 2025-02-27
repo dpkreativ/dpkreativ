@@ -1,4 +1,6 @@
 import { avatar, projects } from "@/assets/data";
+import { ArrowIcon } from "@/assets/icons";
+import Button from "@/components/button";
 import { ProjectCard } from "@/components/cards";
 import Socials from "@/components/socials";
 import Image from "next/image";
@@ -6,7 +8,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="grid gap-20 md:grid-cols-3 max-w-6xl mx-auto">
+    <main className="flex-1 grid gap-20 md:grid-cols-3 max-w-6xl mx-auto">
       {/* Hero section */}
       <section className="p-4 grid gap-8 h-max md:sticky md:top-16">
         <h1 className="font-serif text-4xl">
@@ -53,32 +55,14 @@ export default function Home() {
             <p>
               I am active in various developer communities, where I collaborate
               with peers and contribute to open source projects. I also enjoy
-              breaking down complex ideas on my blogs at{" "}
+              breaking down complex ideas on my{" "}
               <a
-                href="https://dpkreativ.hashnode.dev"
+                href="https://dpkreativ.notion.site/Divine-s-Technical-Content-Portfolio-dfdee17cdcb647498fae2f4b9d22a672?pvs=4"
                 target="_blank"
                 rel="noreferrer"
                 className="font-bold underline"
               >
-                Hashnode
-              </a>
-              ,{" "}
-              <a
-                href="https://dev.to/dpkreativ"
-                target="_blank"
-                rel="noreferrer"
-                className="font-bold underline"
-              >
-                Dev.to
-              </a>
-              , and{" "}
-              <a
-                href="https://medium.com/@dpkreativ"
-                target="_blank"
-                rel="noreferrer"
-                className="font-bold underline"
-              >
-                Medium
+                blog
               </a>
               .
             </p>
@@ -94,16 +78,23 @@ export default function Home() {
           <div className="grid gap-8 md:grid-cols-2">
             {projects
               .filter((project) => project.featured)
-              .map((project) => (
+              .map((project, idx) => (
                 <ProjectCard
-                  key={project.id}
+                  key={idx}
                   title={project.title}
                   tags={project.tags}
                   description={project.description}
                   image={project.image}
-                  link={project.url}
+                  link={`/work/${project.slug}`}
                 />
               ))}
+
+            <Link href="/work" className="w-max mx-auto md:mx-0">
+              <Button>
+                <span>click here to see more projects</span>
+                <ArrowIcon />
+              </Button>
+            </Link>
           </div>
         </section>
       </section>
