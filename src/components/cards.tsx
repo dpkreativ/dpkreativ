@@ -15,18 +15,22 @@ export function ProjectCard({ title, tags, image, link }: ProjectProps) {
   return (
     <Link
       href={link}
-      className="w-full shadow-lg group rounded-lg border border-black/10 overflow-hidden"
+      className="w-full shadow-lg group ease-out duration-300 transition-all rounded-lg border border-black/10 overflow-hidden"
     >
       {/* Image */}
-      <div className="relative block aspect-[16/12] overflow-hidden">
-        <Image src={image} alt={title} className="w-full" />
+      <div className="relative block aspect-[16/10] overflow-hidden">
+        <Image
+          src={image}
+          alt={title}
+          className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+        />
       </div>
 
       {/* Title & Tags */}
       <div className="p-4 grid gap-4">
         <div className="flex justify-between gap-2 items-center">
           <h3 className="font-mono">{title}</h3>
-          <span className="hidden group-hover:block">
+          <span className="opacity-0 translate-x-[-5px] transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-x-0">
             <ArrowIcon />
           </span>
         </div>
