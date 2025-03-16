@@ -58,7 +58,7 @@ export const projects = [
     image: philsauto,
     client: "Phil's Auto Sales LLC",
     description: [
-      "I creating a clean, user-friendly, and responsive website using WordPress, tailoring it to showcase Mr. Philemon's car inventory in a way that's easy for customers to browse.",
+      "I created a clean, user-friendly, and responsive website using WordPress, tailoring it to showcase Mr. Philemon's car inventory in a way that's easy for customers to browse.",
       "I also implemented SEO best practices to boost the site's visibility online. To streamline customer inquiries, I added features like contact forms and clear calls-to-action, making it simple for visitors to connect with the business.",
     ],
     url: "https://philsautosalesllc.com",
