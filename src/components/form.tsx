@@ -25,7 +25,6 @@ export default function ContactForm() {
   const {
     register,
     handleSubmit,
-    reset,
     formState: { errors, isSubmitSuccessful },
   } = useForm<FormInputs>({
     defaultValues: {
@@ -46,18 +45,10 @@ export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
 
-  // Reset form after successful submission
-  useEffect(() => {
-    if (isSubmitSuccessful) {
-      reset();
-    }
-  }, [isSubmitSuccessful, reset]);
-
   const onSubmit: SubmitHandler<FormInputs> = async (data) => {
     try {
       setIsSubmitting(true);
       setSubmitError(null);
-      // console.log(data);
       await sendEmail(data);
     } catch (error) {
       setSubmitError("Failed to send your message. Please try again later.");
@@ -94,11 +85,8 @@ export default function ContactForm() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           onSubmit={handleSubmit(onSubmit)}
-          className="max-w3xl p-8 bg-white rounded-xl border border-black/10"
+          className="max-w-3xl"
         >
-          <h2 className="text-2xl font-bold mb-6">
-            Let&apos;s Build Something Exceptional Together
-          </h2>
           <p className="mb-8">
             With over 5 years of experience, I specialize in delivering
             high-quality, tailored web solutions. Fill out the form below to get

@@ -2,6 +2,7 @@ import { avatar, brands, projects } from "@/assets/data";
 import { ArrowIcon } from "@/assets/icons";
 import Button from "@/components/button";
 import { ProjectCard } from "@/components/cards";
+import Carousel from "@/components/carousel";
 import Socials from "@/components/socials";
 import Image from "next/image";
 import Link from "next/link";
@@ -73,7 +74,8 @@ export default function Home() {
         <section className="p-4 grid gap-8">
           <h2 className="font-serif text-4xl">Brands I&apos;ve Worked With</h2>
 
-          <div className="md:col-span-2 flex items-center flex-wrap gap-10">
+          {/* <div className="md:col-span-2 flex items-center flex-wrap gap-10"> */}
+          <Carousel>
             {brands.map((brand, idx) => (
               <a
                 href={brand.url}
@@ -88,7 +90,8 @@ export default function Home() {
                 />
               </a>
             ))}
-          </div>
+          </Carousel>
+          {/* </div> */}
         </section>
 
         {/* Work section */}
@@ -105,15 +108,14 @@ export default function Home() {
                   key={idx}
                   title={project.title}
                   tags={project.tags}
-                  description={project.description}
                   image={project.image}
                   link={`/work/${project.slug}`}
                 />
               ))}
 
-            <Link href="/work" className="w-max mx-auto md:mx-0">
+            <Link href="/work" className="w-max mx-auto md:ml-0 mt-16">
               <Button>
-                <span>click here to see more projects</span>
+                <span>see more projects</span>
                 <ArrowIcon />
               </Button>
             </Link>

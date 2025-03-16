@@ -1,7 +1,7 @@
 "use client";
 
 import { projects } from "@/assets/data";
-import { ArrowIcon, GitHub, LinkIcon } from "@/assets/icons";
+import { ArrowIcon, LinkIcon } from "@/assets/icons";
 import Button from "@/components/button";
 import Image from "next/image";
 import Link from "next/link";
@@ -18,46 +18,50 @@ export default function Page() {
 
   return (
     <main className="flex-1 flex flex-col gap-8 w-full max-w-6xl mx-auto p-4">
-      <section className="grid gap-8 w-full max-w-3xl">
-        <h1 className="font-serif text-4xl">{project.title}</h1>
-        {project.description ? <p>{project.description}</p> : null}
-        <div className="flex gap-2">
-          <a href={project.url} target="_blank">
-            <Button>
-              <span>Live link</span>
-              <LinkIcon />
-            </Button>
-          </a>
+      <h1 className="font-serif text-4xl">{project.title}</h1>
 
-          {project.github ? (
-            <a href={project.github} target="_blank">
+      <section className="grid md:grid-cols-2 gap-8">
+        {/* Image */}
+        <div className="relative block aspect-video overflow-hidden rounded-xl shadow-lg w-full max-w-3xl">
+          <Image
+            src={project.image}
+            alt={project.title}
+            className="w-full"
+            // fill
+          />
+        </div>
+
+        <article className="flex flex-col gap-4 h-max justify-between">
+          {project.description.map((x, idx) => (
+            <p key={idx}>{x}</p>
+          ))}
+
+          <div className="flex gap-2">
+            <a href={project.url} target="_blank">
               <Button>
-                <span>GitHub</span>
-                <GitHub />
+                <span>Live link</span>
+                <i className="ri-external-link-line text-2xl"></i>
               </Button>
             </a>
-          ) : null}
-        </div>
+
+            {project.github ? (
+              <a href={project.github} target="_blank">
+                <Button>
+                  <span>GitHub</span>
+                  <i className="ri-github-fill text-2xl"></i>
+                </Button>
+              </a>
+            ) : null}
+          </div>
+        </article>
       </section>
 
-      {/* Image */}
-      <section className="relative block aspect-video overflow-hidden rounded-xl shadow-lg">
-        <Image
-          src={project.image}
-          alt={project.title}
-          className="w-full"
-          // fill
-        />
-      </section>
-
-      <section>
-        <Link href="/work" className="w-max mx-auto md:mx-0">
-          <Button>
-            <span>click here to see more projects</span>
-            <ArrowIcon />
-          </Button>
-        </Link>
-      </section>
+      <Link href="/work" className="w-max mx-auto mt-16">
+        <Button>
+          <span>see more projects</span>
+          <ArrowIcon />
+        </Button>
+      </Link>
     </main>
   );
 }

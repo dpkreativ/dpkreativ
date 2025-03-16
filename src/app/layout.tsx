@@ -6,6 +6,7 @@ import {
   Give_You_Glory,
 } from "next/font/google";
 import "./globals.css";
+import "remixicon/fonts/remixicon.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 
@@ -47,7 +48,7 @@ export default function RootLayout({
       lang="en"
       className={`${mono.variable} ${sans.variable} ${script.variable} ${serif.variable}`}
     >
-      <body className="font-sans bg-[--ghost-white] flex flex-col min-h-screen">
+      <body className="font-sans bg-[--ghost-white] flex flex-col min-h-screen items-center">
         <Header />
         {children}
         <Footer />
