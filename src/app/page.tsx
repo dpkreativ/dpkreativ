@@ -72,7 +72,9 @@ export default function Home() {
 
         {/* Brands I've worked with */}
         <section className="p-4 grid gap-8">
-          <h2 className="font-serif text-4xl">Brands I&apos;ve Worked With</h2>
+          <h2 className="font-serif text-4xl">
+            My <span className="italic">Collabs</span>
+          </h2>
 
           {/* <div className="md:col-span-2 flex items-center flex-wrap gap-10"> */}
           <Carousel>
