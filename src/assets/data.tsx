@@ -41,8 +41,11 @@ export const projects = [
     title: "Crunchies Online",
     image: crunchies,
     client: "Crunchies Fried Chicken",
-    description:
-      "I led the UI redesign and implemented features with Next.js and Tailwind. I also integrated a Google Maps location feature, allowing users to select their delivery location and find nearby outlets.",
+    description: [
+      "I took the lead on this exciting project, where I completely redesigned the UI to make it more intuitive and visually appealing for users.",
+      "Using my skills in Next.js and Tailwind CSS, I built a responsive, fast-loading site that reflects my passion for performance optimization.",
+      "One of my favorite parts was integrating the Google Maps API—I added a feature that lets users pick their delivery location and find nearby Crunchies outlets with ease, enhancing the overall user experience.",
+    ],
     url: "https://crunchiesonline.com",
     github: "",
     featured: true,
@@ -54,8 +57,10 @@ export const projects = [
     title: "Phil's Auto Sales Website",
     image: philsauto,
     client: "Phil's Auto Sales LLC",
-    description:
-      "Designed and developed a responsive website using WordPress to showcase car inventory and streamline customer inquiries. Implemented SEO best practices to improve visibility.",
+    description: [
+      "I creating a clean, user-friendly, and responsive website using WordPress, tailoring it to showcase Mr. Philemon's car inventory in a way that's easy for customers to browse.",
+      "I also implemented SEO best practices to boost the site's visibility online. To streamline customer inquiries, I added features like contact forms and clear calls-to-action, making it simple for visitors to connect with the business.",
+    ],
     url: "https://philsautosalesllc.com",
     github: "",
     featured: true,
@@ -67,11 +72,14 @@ export const projects = [
     title: "IGHub Website",
     image: ighub,
     client: "Innovation Growth Hub",
-    description:
-      "Built a modern website for IGHub to highlight their startup incubation programs, events, and resources. Focused on accessibility and performance optimization.",
+    description: [
+      "I had a blast building this modern website for IGHub, where I used WordPress to highlight their startup incubation programs, upcoming events, and valuable resources.",
+      "My focus was on accessibility—I wanted everyone, regardless of ability, to navigate the site effortlessly. I also optimized its performance to ensure fast load times, reflecting my commitment to creating smooth user experiences.",
+      "Working closely with the IGHub team, I brought their mission to life through a design that's both functional and engaging.",
+    ],
     url: "https://ighub.ng",
     github: "",
-    featured: true,
+    featured: false,
     tags: ["UI/UX", "Coding", "WordPress"],
     stack: ["WordPress", "Custom Theme Development"],
     slug: "ighub-website",
@@ -80,8 +88,11 @@ export const projects = [
     title: "The Developer Marketing Book",
     image: devmarbook,
     client: "Decenta LLC",
-    description:
-      "Developed an interactive website for 'The Developer Marketing Book' using Next.js, allowing users to explore book content and sign up for updates.",
+    description: [
+      "I developed this interactive website using Next.js, and I'm thrilled with how it turned out!",
+      "My aim was to create a platform where users could explore the book's content and sign up for updates seamlessly. I leaned on my UI/UX skills to design an inviting layout, paired with Tailwind CSS for a sleek look, and deployed it on Vercel for top-notch performance.",
+      "It's one of those projects where I got to blend my coding expertise with my love for making complex ideas accessible to everyone.",
+    ],
     url: "https://devmarbook.com/",
     github: "github.com/dpkreativ/devmarbook",
     featured: true,
@@ -93,11 +104,14 @@ export const projects = [
     title: "Alchemy Of Code",
     image: alchemyofcode,
     client: "",
-    description:
-      "A collection of technical documentation, tutorials, and resources for developers, organized in Notion for easy accessibility and learning.",
+    description: [
+      "Alchemy Of Code is my personal passion project, designed as a structured self-learning platform for developers.",
+      "It features programs like Fullstack Forge, which guides you through mastering web development from front to back, and Mobile Maestro, focused on building high-quality mobile applications with React Native.",
+      "My goal is to empower developers to learn practical skills through hands-on projects and curated resources.",
+    ],
     url: "https://alchemyofcode.pages.dev/",
     github: "",
-    featured: false,
+    featured: true,
     tags: ["Documentation", "Notion", "Tutorials"],
     stack: ["Notion", "Markdown", "Technical Writing"],
     slug: "alchemy-of-code",

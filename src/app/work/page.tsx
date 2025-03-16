@@ -16,7 +16,6 @@ export default function Work() {
               key={idx}
               title={project.title}
               tags={project.tags}
-              description={project.description}
               image={project.image}
               link={`/work/${project.slug}`}
             />

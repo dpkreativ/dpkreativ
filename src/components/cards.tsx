@@ -6,7 +6,6 @@ import Link from "next/link";
 type ProjectProps = {
   title: string;
   tags?: string[];
-  description?: string;
   image: string | StaticImport;
   link: string;
 };

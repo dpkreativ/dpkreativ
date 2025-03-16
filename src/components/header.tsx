@@ -1,7 +1,6 @@
 "use client";
 
 import { logo } from "@/assets/data";
-import { CloseIcon, HamburgerIcon } from "@/assets/icons";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -11,7 +10,7 @@ export default function Header() {
   const [viewModal, setViewModal] = useState(false);
 
   return (
-    <header className="w-full max-w-6xl mx-auto z-50 sticky top-0 bg-[--ghost-white]">
+    <header className="w-full max-w-6xl mx-auto z-50 fixed top-0 bg-[--ghost-white]">
       <div className="flex items-center justify-between gap-4 p-4">
         <div className="w-max">
           <Link
@@ -29,19 +28,26 @@ export default function Header() {
 
         <div>
           <button onClick={() => setViewModal(!viewModal)}>
-            {viewModal ? <CloseIcon /> : <HamburgerIcon />}
+            {viewModal ? (
+              <i className="ri-close-large-line text-3xl"></i>
+            ) : (
+              <i className="ri-menu-line text-3xl"></i>
+            )}
           </button>
         </div>
       </div>
 
       {viewModal ? (
-        <nav className="p-5 flex flex-col justify-between h-[calc(100vh-12rem)]">
-          <div className="grid md:grid-cols-2 justify-end items-center md:h-full gap-16 text-7xl text-right md:text-center font-serif">
+        <nav className="p-5 flex flex-col gap-4 justify-between min-h-[calc(100vh-12rem)] h-full rounded-b-3xl bg-black text-white backdrop-blur-2xl">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 md:h-full gap-16 text-7xl text-right md:text-center font-serif">
             <Link onClick={() => setViewModal(!viewModal)} href="/">
               Home
             </Link>
             <Link onClick={() => setViewModal(!viewModal)} href="/work">
               Work
+            </Link>
+            <Link onClick={() => setViewModal(!viewModal)} href="/contact">
+              Contact
             </Link>
           </div>
 
