@@ -6,8 +6,35 @@ import ighub from "@/assets/images/ighub.png";
 import devmarbook from "@/assets/images/devmarbook.png";
 import philsauto from "@/assets/images/philsauto.png";
 import alchemyofcode from "@/assets/images/alchemyofcode.png";
+import ighublogo from "@/assets/images/ighublogo.png";
+import philsautologo from "@/assets/images/philsautologo.png";
+import crunchieslogo from "@/assets/images/crunchieslogo.png";
+import alchemyofcodelogo from "@/assets/images/alchemyofcodelogo.png";
 
 export { avatar, logo, logoword };
+
+export const brands = [
+  {
+    image: philsautologo,
+    url: "https://philsautosalesllc.com",
+    title: "Phil's Auto Sales LLC",
+  },
+  {
+    image: ighublogo,
+    url: "https://ighub.ng",
+    title: "IGHub",
+  },
+  {
+    image: crunchieslogo,
+    url: "https://crunchiesonline.com",
+    title: "Crunchies Fried Chicken",
+  },
+  {
+    image: alchemyofcodelogo,
+    url: "https://alchemyofcode.pages.dev",
+    title: "Alchemy Of Code",
+  },
+];
 
 export const projects = [
   {
@@ -55,7 +82,7 @@ export const projects = [
     client: "Decenta LLC",
     description:
       "Developed an interactive website for 'The Developer Marketing Book' using Next.js, allowing users to explore book content and sign up for updates.",
-    url: "https://devmarbook.vercel.app/",
+    url: "https://devmarbook.com/",
     github: "github.com/dpkreativ/devmarbook",
     featured: true,
     tags: ["UI/UX", "Coding", "Next.js"],
@@ -68,7 +95,7 @@ export const projects = [
     client: "",
     description:
       "A collection of technical documentation, tutorials, and resources for developers, organized in Notion for easy accessibility and learning.",
-    url: "https://bit.ly/Alchemy-Of-Code",
+    url: "https://alchemyofcode.pages.dev/",
     github: "",
     featured: false,
     tags: ["Documentation", "Notion", "Tutorials"],

@@ -1,7 +1,6 @@
 import { logoword } from "@/assets/data";
 import Image from "next/image";
 import Link from "next/link";
-import ContactModal from "./modal";
 
 export default function Footer() {
   return (
@@ -10,7 +9,12 @@ export default function Footer() {
         <div className="grid md:flex gap-4 items-center">
           <h2 className="font-serif text-2xl">Let&apos;s work together?</h2>
 
-          <ContactModal />
+          <Link
+            className={`bg-white text-black border border-black/10 px-5 py-2 flex items-center gap-2 rounded-full shadow mx-auto w-max`}
+            href="/contact"
+          >
+            start here
+          </Link>
         </div>
 
         <div className="flex justify-center gap-8 underline font-bold">
