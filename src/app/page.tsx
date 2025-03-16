@@ -9,7 +9,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex-1 grid gap-20 md:grid-cols-3 max-w-6xl mx-auto">
+    <main className="flex-1 grid gap-20 md:grid-cols-3 max-w-6xl mx-auto mt-16">
       {/* Hero section */}
       <section className="p-4 grid gap-8 h-max md:sticky md:top-16">
         <h1 className="font-serif text-4xl">

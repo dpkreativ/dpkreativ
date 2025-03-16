@@ -10,7 +10,7 @@ export default function Header() {
   const [viewModal, setViewModal] = useState(false);
 
   return (
-    <header className="w-full max-w-6xl mx-auto z-50 fixed top-0 bg-[--ghost-white]">
+    <header className="w-full max-w-6xl mx-auto z-50 fixed top-0 bg-[--ghost-white]/80 backdrop-blur-2xl rounded-b-3xl">
       <div className="flex items-center justify-between gap-4 p-4">
         <div className="w-max">
           <Link

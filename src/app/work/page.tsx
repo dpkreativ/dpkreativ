@@ -3,7 +3,7 @@ import { ProjectCard } from "@/components/cards";
 
 export default function Work() {
   return (
-    <main className="flex-1 w-full max-w-6xl mx-auto">
+    <main className="flex-1 w-full max-w-6xl mx-auto mt-16">
       {/* Work section */}
       <section className="p-4 pb-20 grid gap-8">
         <h1 className="font-serif text-4xl">
