@@ -9,7 +9,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex-1 grid gap-20 md:grid-cols-3 max-w-6xl mx-auto mt-16">
+    <main className="flex-1 grid gap-8 md:grid-cols-3 max-w-6xl mx-auto mt-16">
       {/* Hero section */}
       <section className="p-4 grid gap-8 h-max md:sticky md:top-16">
         <h1 className="font-serif text-4xl">
@@ -30,7 +30,7 @@ export default function Home() {
         <Socials />
       </section>
 
-      <section className="md:col-span-2 grid gap-20">
+      <section className="md:col-span-2 grid gap-8">
         {/* About section */}
         <section className="p-4 grid gap-8">
           <h2 className="font-serif text-4xl">
@@ -72,7 +72,9 @@ export default function Home() {
 
         {/* Brands I've worked with */}
         <section className="p-4 grid gap-8">
-          <h2 className="font-serif text-4xl">Brands I&apos;ve Worked With</h2>
+          <h2 className="font-serif text-4xl">
+            My <span className="italic">Collabs</span>
+          </h2>
 
           {/* <div className="md:col-span-2 flex items-center flex-wrap gap-10"> */}
           <Carousel>

@@ -40,7 +40,7 @@ export default function Page() {
             <a href={project.url} target="_blank">
               <Button>
                 <span>Live link</span>
-                <i className="ri-external-link-line text-2xl"></i>
+                <i className="ri-external-link-line"></i>
               </Button>
             </a>
 
@@ -48,7 +48,7 @@ export default function Page() {
               <a href={project.github} target="_blank">
                 <Button>
                   <span>GitHub</span>
-                  <i className="ri-github-fill text-2xl"></i>
+                  <i className="ri-github-fill"></i>
                 </Button>
               </a>
             ) : null}
