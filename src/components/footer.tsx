@@ -10,7 +10,13 @@ export default function Footer() {
         <div className="grid md:flex gap-4 items-center">
           <h2 className="font-serif text-2xl">Let&apos;s work together?</h2>
 
-          <ContactModal />
+          {/* <ContactModal /> */}
+          <Link
+            className={`bg-white text-black border border-black/10 px-5 py-2 flex items-center gap-2 rounded-full shadow-lg`}
+            href="/contact"
+          >
+            start here
+          </Link>
         </div>
 
         <div className="flex justify-center gap-8 underline font-bold">
