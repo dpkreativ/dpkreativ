@@ -32,8 +32,8 @@ export default function Page() {
         </div>
 
         <article className="flex flex-col gap-4 h-max justify-between">
-          {project.description.map((x) => (
-            <p>{x}</p>
+          {project.description.map((x, idx) => (
+            <p key={idx}>{x}</p>
           ))}
 
           <div className="flex gap-2">
