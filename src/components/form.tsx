@@ -78,7 +78,7 @@ export default function ContactForm() {
         Thank You for Reaching Out!
       </h2>
       <p className="text-green-700 text-lg">
-        Your project details have been received successfully. I'll review your
+        Your project details have been received successfully. I will review your
         submission and get back to you within 24-48 hours to discuss your needs
         in detail.
       </p>
@@ -97,7 +97,7 @@ export default function ContactForm() {
           className="max-w3xl p-8 bg-white rounded-xl border border-black/10"
         >
           <h2 className="text-2xl font-bold mb-6">
-            Let's Build Something Exceptional Together
+            Let&apos;s Build Something Exceptional Together
           </h2>
           <p className="mb-8">
             With over 5 years of experience, I specialize in delivering

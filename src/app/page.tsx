@@ -1,4 +1,4 @@
-import { avatar, projects } from "@/assets/data";
+import { avatar, brands, projects } from "@/assets/data";
 import { ArrowIcon } from "@/assets/icons";
 import Button from "@/components/button";
 import { ProjectCard } from "@/components/cards";
@@ -66,6 +66,28 @@ export default function Home() {
               </a>
               .
             </p>
+          </div>
+        </section>
+
+        {/* Brands I've worked with */}
+        <section className="p-4 grid gap-8">
+          <h2 className="font-serif text-4xl">Brands I&apos;ve Worked With</h2>
+
+          <div className="md:col-span-2 flex items-center flex-wrap gap-10">
+            {brands.map((brand, idx) => (
+              <a
+                href={brand.url}
+                target="_blank"
+                key={idx}
+                className="relative h-14 md:h-16 flex-[0_0_auto] min-w-0 max-w-full"
+              >
+                <Image
+                  src={brand.image}
+                  alt={brand.title}
+                  className="object-contain h-full w-max"
+                />
+              </a>
+            ))}
           </div>
         </section>
 
