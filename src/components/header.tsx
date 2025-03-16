@@ -38,7 +38,7 @@ export default function Header() {
       </div>
 
       {viewModal ? (
-        <nav className="p-5 flex flex-col gap-4 justify-between min-h-[calc(100vh-12rem)] h-full rounded-b-3xl bg-black text-white backdrop-blur-2xl">
+        <nav className="px-5 py-10 flex flex-col gap-10 justify-between min-h-[calc(100vh-12rem)] h-full rounded-b-3xl bg-black text-white backdrop-blur-2xl">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 md:h-full gap-16 text-7xl text-right md:text-center font-serif">
             <Link onClick={() => setViewModal(!viewModal)} href="/">
               Home
@@ -51,7 +51,9 @@ export default function Header() {
             </Link>
           </div>
 
-          <Socials />
+          <div className="w-max ml-auto md:mx-auto px-5">
+            <Socials />
+          </div>
         </nav>
       ) : null}
     </header>

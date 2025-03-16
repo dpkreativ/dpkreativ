@@ -20,7 +20,7 @@ export const CloseIcon = () => {
 };
 
 export const ArrowIcon = () => {
-  return <i className="ri-arrow-right-up-line text-xl"></i>;
+  return <i className="ri-arrow-right-up-line"></i>;
 };
 
 export const BlogIcon = () => {

@@ -2,9 +2,9 @@ import Button from "@/components/button";
 
 export default function Socials() {
   return (
-    <div className="flex gap-5 justify-end items-center">
+    <div className="flex gap-10 justify-end items-center">
       <a href="https://github.com/dpkreativ" target="_blank" rel="noreferrer">
-        <i className="ri-github-fill text-2xl"></i>
+        <i className="ri-github-fill text-xl"></i>
       </a>
 
       <a
@@ -12,14 +12,11 @@ export default function Socials() {
         target="_blank"
         rel="noreferrer"
       >
-        <i className="ri-quill-pen-fill text-2xl"></i>
+        <i className="ri-quill-pen-fill text-xl"></i>
       </a>
 
       <a href="mailto:dpkreativ@gmail.com" rel="noreferrer" target="_blank">
-        <Button>
-          <i className="ri-mail-send-fill text-xl"></i>
-          <span>dpkreativ@gmail.com</span>
-        </Button>
+        <i className="ri-mail-send-fill text-xl"></i>
       </a>
     </div>
   );
