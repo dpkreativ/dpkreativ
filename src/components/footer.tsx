@@ -5,7 +5,7 @@ import Button from "./button";
 
 export default function Footer() {
   return (
-    <footer className="p-4 mt-20 bg-black text-white w-full">
+    <footer className="p-4 mt-10 bg-black text-white w-full">
       <div className="md:flex md:items-center md:justify-between grid justify-center gap-12 p-4 w-full max-w-6xl mx-auto">
         <div className="w-max mx-auto md:mx-0">
           <Link

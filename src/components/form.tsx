@@ -104,14 +104,17 @@ export default function ContactForm() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Full Name */}
             <div>
-              <label htmlFor="fullName" className="block font-semibold mb-2">
+              <label
+                htmlFor="fullName"
+                className="block font-mono font-semibold mb-2"
+              >
                 Full Name <span className="text-red-500">*</span>
               </label>
               <input
                 type="text"
                 id="fullName"
                 {...register("fullName", { required: "Full name is required" })}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
+                className="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
                 placeholder="John Doe"
               />
               {errors.fullName && (
@@ -123,7 +126,10 @@ export default function ContactForm() {
 
             {/* Email */}
             <div>
-              <label htmlFor="email" className="block font-semibold mb-2">
+              <label
+                htmlFor="email"
+                className="font-mono font-semibold block mb-2"
+              >
                 Email Address <span className="text-red-500">*</span>
               </label>
               <input
@@ -136,7 +142,7 @@ export default function ContactForm() {
                     message: "Please enter a valid email",
                   },
                 })}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
+                className="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
                 placeholder="john.doe@example.com"
               />
               {errors.email && (
@@ -148,7 +154,10 @@ export default function ContactForm() {
 
             {/* Phone Number (Optional) */}
             <div>
-              <label htmlFor="phoneNumber" className="block font-semibold mb-2">
+              <label
+                htmlFor="phoneNumber"
+                className="block font-mono font-semibold mb-2"
+              >
                 Phone Number
               </label>
               <input
@@ -160,8 +169,8 @@ export default function ContactForm() {
                     message: "Invalid phone number format",
                   },
                 })}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
-                placeholder="+1 (555) 123-4567"
+                className="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
+                placeholder="+15551234567"
               />
               {errors.phoneNumber && (
                 <p className="text-red-500 text-sm mt-1">
@@ -174,7 +183,7 @@ export default function ContactForm() {
             <div>
               <label
                 htmlFor="businessName"
-                className="block font-semibold mb-2"
+                className="block font-mono font-semibold mb-2"
               >
                 Business Name
               </label>
@@ -182,7 +191,7 @@ export default function ContactForm() {
                 type="text"
                 id="businessName"
                 {...register("businessName")}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
+                className="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
                 placeholder="Acme Corp"
               />
             </div>
@@ -190,7 +199,10 @@ export default function ContactForm() {
 
           {/* Project Type */}
           <div className="mt-6">
-            <label htmlFor="projectType" className="block font-semibold mb-2">
+            <label
+              htmlFor="projectType"
+              className="block font-mono font-semibold mb-2"
+            >
               Project Type <span className="text-red-500">*</span>
             </label>
             <select
@@ -198,7 +210,7 @@ export default function ContactForm() {
               {...register("projectType", {
                 required: "Please select a project type",
               })}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
+              className="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
             >
               <option value="">Select Project Type</option>
               <option value="ecommerce">E-commerce Website</option>
@@ -218,7 +230,7 @@ export default function ContactForm() {
           <div className="mt-6">
             <label
               htmlFor="projectDescription"
-              className="block font-semibold mb-2"
+              className="block font-mono font-semibold mb-2"
             >
               Project Description <span className="text-red-500">*</span>
             </label>
@@ -231,7 +243,7 @@ export default function ContactForm() {
                   message: "Please provide at least 20 characters",
                 },
               })}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all h-40 resize-y"
+              className="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all h-40 resize-y"
               placeholder="Tell me about your project goals, features, and any specific requirements..."
             />
             {errors.projectDescription && (
@@ -244,7 +256,10 @@ export default function ContactForm() {
           {/* Budget and Timeline */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
             <div>
-              <label htmlFor="budgetRange" className="block font-semibold mb-2">
+              <label
+                htmlFor="budgetRange"
+                className="block font-mono font-semibold mb-2"
+              >
                 Budget Range <span className="text-red-500">*</span>
               </label>
               <select
@@ -252,7 +267,7 @@ export default function ContactForm() {
                 {...register("budgetRange", {
                   required: "Please select a budget range",
                 })}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
+                className="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
               >
                 <option value="">Select Budget Range</option>
                 <option value="$1k-$5k">$1,000 - $5,000</option>
@@ -270,7 +285,7 @@ export default function ContactForm() {
             <div>
               <label
                 htmlFor="projectTimeline"
-                className="block font-semibold mb-2"
+                className="block font-mono font-semibold mb-2"
               >
                 Project Timeline <span className="text-red-500">*</span>
               </label>
@@ -279,7 +294,7 @@ export default function ContactForm() {
                 {...register("projectTimeline", {
                   required: "Please select a timeline",
                 })}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
+                className="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
               >
                 <option value="">Select Timeline</option>
                 <option value="1-4 weeks">1-4 Weeks</option>
@@ -297,7 +312,7 @@ export default function ContactForm() {
 
           {/* Preferred Contact Method */}
           <div className="mt-6">
-            <label className="block font-semibold mb-2">
+            <label className="block font-mono font-semibold mb-2">
               Preferred Contact Method <span className="text-red-500">*</span>
             </label>
             <div className="flex flex-wrap gap-6">
@@ -326,14 +341,14 @@ export default function ContactForm() {
           <div className="mt-6">
             <label
               htmlFor="referralSource"
-              className="block font-semibold mb-2"
+              className="block font-mono font-semibold mb-2"
             >
               How Did You Find Me?
             </label>
             <select
               id="referralSource"
               {...register("referralSource")}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
+              className="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
             >
               <option value="">Select an option (optional)</option>
               <option value="portfolio">Portfolio Website</option>
@@ -348,14 +363,14 @@ export default function ContactForm() {
           <div className="mt-6">
             <label
               htmlFor="additionalNotes"
-              className="block font-semibold mb-2"
+              className="block font-mono font-semibold mb-2"
             >
               Additional Notes
             </label>
             <textarea
               id="additionalNotes"
               {...register("additionalNotes")}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all h-32 resize-y"
+              className="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all h-32 resize-y"
               placeholder="Anything else you'd like me to know?"
             />
           </div>
