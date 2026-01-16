@@ -1,6 +1,6 @@
 "use client";
 
-import { logo } from "@/assets/data";
+import { logo, navlinks } from "@/assets/data";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -40,15 +40,15 @@ export default function Header() {
       {viewModal ? (
         <nav className="px-5 py-10 flex flex-col gap-10 justify-between min-h-[calc(100vh-12rem)] h-full rounded-b-3xl bg-black text-white backdrop-blur-2xl">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 md:h-full gap-16 text-7xl text-right md:text-center font-serif">
-            <Link onClick={() => setViewModal(!viewModal)} href="/">
-              Home
-            </Link>
-            <Link onClick={() => setViewModal(!viewModal)} href="/work">
-              Work
-            </Link>
-            <Link onClick={() => setViewModal(!viewModal)} href="/contact">
-              Contact
-            </Link>
+            {navlinks.map((link) => (
+              <Link
+                key={link.id}
+                onClick={() => setViewModal(!viewModal)}
+                href={link.url}
+              >
+                {link.title}
+              </Link>
+            ))}
           </div>
 
           <div className="w-max ml-auto md:mx-auto px-5">
