@@ -1,4 +1,4 @@
-import { logoword } from "@/assets/data";
+import { logoword, navlinks } from "@/assets/data";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "./button";
@@ -17,19 +17,24 @@ export default function Footer() {
               alt="Divine's logo"
               className="logo invert"
               width={100}
+              height={40}
             />
           </Link>
         </div>
 
         <div className="flex font-mono justify-center gap-8 md:gap-16">
-          <Link href="/" className="flex items-baseline gap-2">
-            <i className="ri-home-5-line"></i>
-            <span>Home</span>
-          </Link>
-          <Link href="/work" className="flex items-baseline gap-2">
-            <i className="ri-briefcase-line"></i>
-            <span>Work</span>
-          </Link>
+          {navlinks
+            .filter((l) => ["Home", "Work"].includes(l.title))
+            .map((link) => (
+              <Link
+                key={link.id}
+                href={link.url}
+                className="flex items-baseline gap-2"
+              >
+                <i className={link.icon}></i>
+                <span>{link.title}</span>
+              </Link>
+            ))}
         </div>
 
         <div className="grid md:flex gap-4 items-center">

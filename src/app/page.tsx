@@ -1,4 +1,6 @@
-import { avatar, brands, projects } from "@/assets/data";
+"use client";
+
+import { avatar, brands, projects, aboutMe } from "@/assets/data";
 import { ArrowIcon } from "@/assets/icons";
 import Button from "@/components/button";
 import { ProjectCard } from "@/components/cards";
@@ -6,72 +8,96 @@ import Carousel from "@/components/carousel";
 import Socials from "@/components/socials";
 import Image from "next/image";
 import Link from "next/link";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef } from "react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
+  const container = useRef(null);
+
+  useGSAP(
+    () => {
+      // Hero Animation
+      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+      tl.from(".hero-title", { y: 50, opacity: 0, duration: 1 })
+        .from(".hero-image", { y: 50, opacity: 0, duration: 1 }, "-=0.5")
+        .from(".hero-subtitle", { y: 50, opacity: 0, duration: 1 }, "-=0.5")
+        .from(".hero-socials", { y: 20, opacity: 0, duration: 0.8 }, "-=0.5");
+
+      // Sections Animation
+      gsap.utils.toArray(".reveal-section").forEach((section: any) => {
+        gsap.from(section, {
+          scrollTrigger: {
+            trigger: section,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+          },
+          y: 50,
+          opacity: 0,
+          duration: 1,
+          ease: "power3.out",
+        });
+      });
+    },
+    { scope: container }
+  );
+
   return (
-    <main className="flex-1 grid gap-8 md:grid-cols-3 max-w-6xl mx-auto mt-16">
+    <main
+      ref={container}
+      className="flex-1 grid gap-8 md:grid-cols-3 max-w-6xl mx-auto mt-16"
+    >
       {/* Hero section */}
       <section className="p-4 grid gap-8 h-max md:sticky md:top-16">
-        <h1 className="font-serif text-4xl">
+        <h1 className="hero-title font-serif text-4xl">
           Hi! I&apos;m <span className="italic">Divine</span>.
         </h1>
 
-        <div className="w-full max-w-96 p-4 shadow-lg bg-white">
+        <div className="hero-image w-full max-w-96 p-4 shadow-lg bg-white">
           <div className="relative aspect-[5/6] overflow-hidden">
-            <Image src={avatar} alt="Divine Orji" className="w-full" />
+            <Image
+              src={avatar}
+              alt="Divine Orji"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 384px"
+            />
           </div>
           <p className="font-script pt-4">My friends call me Divi⚡</p>
         </div>
 
-        <h2 className="font-serif text-4xl text-right">
+        <h2 className="hero-subtitle font-serif text-4xl text-right">
           I spin delightful and seamless web experiences...
         </h2>
 
-        <Socials />
+        <div className="hero-socials">
+          <Socials />
+        </div>
       </section>
 
       <section className="md:col-span-2 grid gap-8">
         {/* About section */}
-        <section className="p-4 grid gap-8">
+        <section className="reveal-section p-4 grid gap-8">
           <h2 className="font-serif text-4xl">
             About <span className="italic">Me</span>
           </h2>
 
           <div className="grid gap-2">
-            <p>
-              I&apos;m an experienced web developer passionate about building
-              dynamic, responsive websites that deliver an exceptional user
-              experience.
-            </p>
-            <p>
-              With a background in design and skills in HTML, CSS, and
-              JavaScript, I turn ideas into reality using the right tools and
-              frameworks.{" "}
-              <Link href="/work" className="font-bold underline">
-                Check out my work
-              </Link>{" "}
-              to see how I do it.
-            </p>
-
-            <p>
-              I am active in various developer communities, where I collaborate
-              with peers and contribute to open source projects. I also enjoy
-              breaking down complex ideas on my{" "}
-              <a
-                href="https://dpkreativ.notion.site/Divine-s-Technical-Content-Portfolio-dfdee17cdcb647498fae2f4b9d22a672?pvs=4"
-                target="_blank"
-                rel="noreferrer"
-                className="font-bold underline"
-              >
-                blog
-              </a>
-              .
-            </p>
+            {aboutMe.map((paragraph, idx) => (
+              <p
+                key={idx}
+                dangerouslySetInnerHTML={{ __html: paragraph }}
+              />
+            ))}
           </div>
         </section>
 
         {/* Brands I've worked with */}
-        <section className="p-4 grid gap-8">
+        <section className="reveal-section p-4 grid gap-8">
           <h2 className="font-serif text-4xl">
             My <span className="italic">Collabs</span>
           </h2>
@@ -88,6 +114,8 @@ export default function Home() {
                 <Image
                   src={brand.image}
                   alt={brand.title}
+                  width={brand.width}
+                  height={brand.height}
                   className="object-contain h-full w-max"
                 />
               </a>
@@ -97,7 +125,7 @@ export default function Home() {
         </section>
 
         {/* Work section */}
-        <section className="p-4 pb-20 grid gap-8">
+        <section className="reveal-section p-4 pb-20 grid gap-8">
           <h2 className="font-serif text-4xl">
             My <span className="italic">Work</span>
           </h2>

@@ -9,6 +9,7 @@ import "./globals.css";
 import "remixicon/fonts/remixicon.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import Preloader from "@/components/preloader";
 
 const mono = DM_Mono({
   weight: "400",
@@ -49,6 +50,7 @@ export default function RootLayout({
       className={`${mono.variable} ${sans.variable} ${script.variable} ${serif.variable}`}
     >
       <body className="font-sans bg-[--ghost-white] flex flex-col min-h-screen items-center">
+        <Preloader />
         <Header />
         {children}
         <Footer />
