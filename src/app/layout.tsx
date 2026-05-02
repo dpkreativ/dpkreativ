@@ -3,14 +3,16 @@ import {
   Space_Mono,
   Outfit,
   Archivo_Black,
-  Give_You_Glory,
-} from "next/font/google";
+  Give_You_Glory, Geist } from "next/font/google";
 import "./globals.css";
 import "remixicon/fonts/remixicon.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import Preloader from "@/components/preloader";
 import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeScript } from "@/components/theme-script";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const mono = Space_Mono({
   weight: ["400", "700"],
@@ -47,17 +49,19 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${mono.variable} ${body.variable} ${display.variable} ${script.variable}`}
+      className={cn(mono.variable, body.variable, display.variable, script.variable, "font-sans", geist.variable)}
       suppressHydrationWarning
     >
-      <body className="font-body bg-faxx-light dark:bg-faxx-dark text-faxx-dark dark:text-faxx-light flex flex-col min-h-screen items-center selection:bg-faxx-blue selection:text-white transition-colors duration-300">
-        <ThemeProvider>
-          <Preloader />
+      <head>
+        <ThemeScript />
+      </head>
+      <ThemeProvider>
+        <body className="font-body bg-faxx-light dark:bg-faxx-dark text-faxx-dark dark:text-faxx-light flex flex-col min-h-screen items-center selection:bg-faxx-blue selection:text-white transition-colors duration-300 overflow-x-hidden">
           <Header />
           {children}
           <Footer />
-        </ThemeProvider>
-      </body>
+        </body>
+      </ThemeProvider>
     </html>
   );
 }

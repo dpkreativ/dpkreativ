@@ -23,6 +23,11 @@ jest.mock('@gsap/react', () => ({
   useGSAP: (callback: any) => callback(),
 }));
 
+// Mock theme provider
+jest.mock('@/components/theme-provider', () => ({
+  useTheme: () => ({ theme: 'light', setTheme: jest.fn() }),
+}));
+
 // Mock Next/Image and Link
 jest.mock('next/image', () => ({
   __esModule: true,
@@ -45,9 +50,11 @@ describe('Header', () => {
   it('contains navigation links', () => {
     render(<Header />);
     // Links are always in DOM now, just hidden.
-    expect(screen.getByText('Home')).toBeInTheDocument();
-    expect(screen.getByText('About')).toBeInTheDocument();
-    expect(screen.getByText('Work')).toBeInTheDocument();
-    expect(screen.getByText('Contact')).toBeInTheDocument();
+    const links = screen.getAllByRole('link');
+    expect(links.some(link => link.textContent === 'Home')).toBeTruthy();
+    expect(links.some(link => link.textContent === 'About')).toBeTruthy();
+    expect(links.some(link => link.textContent === 'Work')).toBeTruthy();
+    expect(links.some(link => link.textContent === 'Blog')).toBeTruthy();
+    expect(links.some(link => link.textContent === 'Contact')).toBeTruthy();
   });
 });
