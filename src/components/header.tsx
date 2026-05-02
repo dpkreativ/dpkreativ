@@ -5,8 +5,36 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Image from "next/image";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Socials from "./socials";
+import { useTheme } from "next-themes";
+
+function ThemeToggle() {
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return <div className="w-12 h-12 border-2 border-faxx-dark bg-white" />;
+  }
+
+  return (
+    <button
+      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      aria-label="Toggle dark mode"
+      className="w-12 h-12 flex items-center justify-center bg-white border-2 border-faxx-dark hover:bg-gray-200 transition-colors duration-200 text-faxx-dark"
+    >
+      {theme === "dark" ? (
+        <i className="ri-sun-fill text-2xl"></i>
+      ) : (
+        <i className="ri-moon-fill text-2xl"></i>
+      )}
+    </button>
+  );
+}
 
 export default function Header() {
   const [viewModal, setViewModal] = useState(false);
@@ -70,35 +98,36 @@ export default function Header() {
   return (
     <header
       ref={containerRef}
-      className="w-full max-w-6xl mx-auto z-50 fixed top-0 bg-[--ghost-white] rounded-b-3xl overflow-hidden shadow-sm"
+      className="w-full z-50 fixed top-0 bg-faxx-light dark:bg-gray-900 border-b-4 border-faxx-dark dark:border-gray-700"
     >
-      <div className="flex items-center justify-between gap-4 p-4 relative z-20 bg-[--ghost-white]">
+      <div className="flex items-center justify-between gap-4 px-4 sm:px-6 py-4 relative z-20 bg-faxx-light dark:bg-gray-900 max-w-7xl mx-auto">
         <div className="w-max">
           <Link
             href="/"
-            className="flex gap-3 items-center p-2 bg-black rounded-full"
+            className="flex gap-3 items-center p-2 bg-faxx-dark dark:bg-black"
             onClick={() => setViewModal(false)}
           >
             <Image
               src={logo}
               alt="Divine's logo"
               className="logo invert"
-              width={16}
-              height={16}
+              width={24}
+              height={24}
             />
           </Link>
         </div>
 
-        <div>
+        <div className="flex items-center gap-2 sm:gap-4">
+          <ThemeToggle />
           <button
             onClick={toggleMenu}
             aria-label="Toggle menu"
-            className="w-10 h-10 flex items-center justify-center"
+            className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-faxx-cyan border-2 border-faxx-dark hover:bg-faxx-coral transition-colors duration-200"
           >
             {viewModal ? (
-              <i className="ri-close-large-line text-3xl"></i>
+              <i className="ri-close-large-line text-2xl sm:text-3xl text-faxx-dark font-bold"></i>
             ) : (
-              <i className="ri-menu-line text-3xl"></i>
+              <i className="ri-menu-line text-2xl sm:text-3xl text-faxx-dark font-bold"></i>
             )}
           </button>
         </div>
@@ -106,15 +135,15 @@ export default function Header() {
 
       <nav
         ref={navRef}
-        className="px-5 py-10 flex flex-col gap-10 justify-between min-h-[calc(100vh-12rem)] h-full rounded-b-3xl bg-black text-white"
+        className="px-6 py-12 flex flex-col gap-10 justify-between min-h-[calc(100vh-5rem)] h-full bg-faxx-blue text-white border-t-4 border-faxx-dark dark:border-gray-700"
       >
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 md:h-full gap-16 text-7xl text-right md:text-center font-serif">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 md:h-full gap-8 sm:gap-16 text-4xl sm:text-6xl text-left md:text-center font-display uppercase max-w-7xl mx-auto w-full">
           {navlinks.map((link) => (
             <Link
               key={link.id}
               onClick={toggleMenu}
               href={link.url}
-              className="nav-link inline-block"
+              className="nav-link inline-block hover:text-faxx-cyan transition-colors"
             >
               {link.title}
             </Link>

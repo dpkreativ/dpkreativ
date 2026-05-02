@@ -22,6 +22,31 @@ export type FormInputs = {
   additionalNotes?: string;
 };
 
+function SuccessMessage() {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="text-center grid gap-5 p-8 bg-gradient-to-r from-green-50 to-green-100 rounded-xl max-w-2xl"
+    >
+      <h2 className="text-3xl font-bold text-green-800">
+        Thank You for Reaching Out!
+      </h2>
+      <p className="text-green-700 text-lg">
+        Your project details have been received successfully. I will review your
+        submission and get back to you within 24-48 hours to discuss your needs
+        in detail.
+      </p>
+      <Link href="/" className=" mx-auto">
+        <Button>
+          <i className="ri-home-5-line text-green-800"></i>
+          <span className="text-green-800">Go To Home</span>
+        </Button>
+      </Link>
+    </motion.div>
+  );
+}
+
 export default function ContactForm() {
   const {
     register,
@@ -58,30 +83,6 @@ export default function ContactForm() {
       setIsSubmitting(false);
     }
   };
-
-  // Success message component
-  const SuccessMessage = () => (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="text-center grid gap-5 p-8 bg-gradient-to-r from-green-50 to-green-100 rounded-xl max-w-2xl"
-    >
-      <h2 className="text-3xl font-bold text-green-800">
-        Thank You for Reaching Out!
-      </h2>
-      <p className="text-green-700 text-lg">
-        Your project details have been received successfully. I will review your
-        submission and get back to you within 24-48 hours to discuss your needs
-        in detail.
-      </p>
-      <Link href="/" className=" mx-auto">
-        <Button>
-          <i className="ri-home-5-line text-green-800"></i>
-          <span className="text-green-800">Go To Home</span>
-        </Button>
-      </Link>
-    </motion.div>
-  );
 
   return (
     <div>

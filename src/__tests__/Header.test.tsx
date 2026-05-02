@@ -26,7 +26,7 @@ jest.mock('@gsap/react', () => ({
 // Mock Next/Image and Link
 jest.mock('next/image', () => ({
   __esModule: true,
-  default: (props: any) => <img {...props} />,
+  default: (props: any) => <img alt={props.alt ?? ''} {...props} />,
 }));
 
 jest.mock('next/link', () => ({

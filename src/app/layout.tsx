@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import {
-  DM_Mono,
-  DM_Sans,
-  DM_Serif_Display,
+  Space_Mono,
+  Outfit,
+  Archivo_Black,
   Give_You_Glory,
 } from "next/font/google";
 import "./globals.css";
@@ -10,21 +10,21 @@ import "remixicon/fonts/remixicon.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Preloader from "@/components/preloader";
+import { ThemeProvider } from "@/components/theme-provider";
 
-const mono = DM_Mono({
-  weight: "400",
+const mono = Space_Mono({
+  weight: ["400", "700"],
   variable: "--font-mono",
   subsets: ["latin"],
 });
-const sans = DM_Sans({
-  weight: "400",
-  variable: "--font-sans",
+const body = Outfit({
+  weight: ["300", "400", "500", "700"],
+  variable: "--font-body",
   subsets: ["latin"],
 });
-const serif = DM_Serif_Display({
+const display = Archivo_Black({
   weight: "400",
-  variable: "--font-serif",
-  style: ["italic", "normal"],
+  variable: "--font-display",
   subsets: ["latin"],
   display: "swap",
 });
@@ -47,13 +47,16 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${mono.variable} ${sans.variable} ${script.variable} ${serif.variable}`}
+      className={`${mono.variable} ${body.variable} ${display.variable} ${script.variable}`}
+      suppressHydrationWarning
     >
-      <body className="font-sans bg-[--ghost-white] flex flex-col min-h-screen items-center">
-        <Preloader />
-        <Header />
-        {children}
-        <Footer />
+      <body className="font-body bg-faxx-light dark:bg-faxx-dark text-faxx-dark dark:text-faxx-light flex flex-col min-h-screen items-center selection:bg-faxx-blue selection:text-white transition-colors duration-300">
+        <ThemeProvider>
+          <Preloader />
+          <Header />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

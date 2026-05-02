@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: "class",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -8,12 +9,28 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        mono: ['var(--font-mono)'],
-        sans: ['var(--font-sans)'],
-        script: ['var(--font-script)'],
-        serif: ['var(--font-serif)'],
+      colors: {
+        'faxx-blue': '#4320F6',
+        'faxx-cyan': '#00E5FF',
+        'faxx-coral': '#FF4A5A',
+        'faxx-dark': '#111111',
+        'faxx-light': '#F4F4F9',
       },
+      fontFamily: {
+        display: ['var(--font-display)'],
+        body: ['var(--font-body)'],
+        mono: ['var(--font-mono)'],
+        script: ['var(--font-script)'],
+      },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
+        }
+      },
+      animation: {
+        marquee: 'marquee 20s linear infinite',
+      }
     },
   },
   plugins: [],

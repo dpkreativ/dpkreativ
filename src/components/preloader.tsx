@@ -43,7 +43,7 @@ export default function Preloader() {
       ref={containerRef}
       className="fixed inset-0 z-[9999] flex items-center justify-center bg-black text-white"
     >
-      <h1 className="preloader-text text-4xl md:text-6xl font-serif opacity-0 translate-y-10">
+      <h1 className="preloader-text text-4xl md:text-6xl font-display uppercase tracking-tighter opacity-0 translate-y-10">
         Divine Orji
       </h1>
     </div>
