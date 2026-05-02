@@ -18,6 +18,7 @@ export type FormInputs = {
   budgetRange: string;
   projectTimeline: string;
   preferredContactMethod: string;
+  tierName?: string;
 };
 
 function SuccessMessage() {
@@ -55,9 +56,10 @@ export default function ContactForm({ initialTier, onCancel }: { initialTier?: s
       phoneNumber: "",
       businessName: "",
       projectDescription: "",
-      budgetRange: initialTier === 'lite' ? '$300-$800' : initialTier === 'pro' ? '$800-$2000' : initialTier === 'elite' ? '$2000+' : 'VARIABLE',
+      budgetRange: initialTier === 'lite' ? 'FROM $300' : initialTier === 'pro' ? 'FROM $800' : initialTier === 'elite' ? 'FROM $2000' : 'VARIABLE',
       projectTimeline: "",
       preferredContactMethod: "",
+      tierName: initialTier === 'lite' ? 'ESSENTIALS' : initialTier === 'pro' ? 'DYNAMIC APPS' : initialTier === 'elite' ? 'SAAS & SYSTEMS' : initialTier === 'custom' ? 'BESPOKE' : 'GENERAL INQUIRY',
     },
   });
 

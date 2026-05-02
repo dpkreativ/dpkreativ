@@ -181,8 +181,8 @@ export default function Home() {
               />
             </div>
 
-            <div className="absolute -left-4 sm:-left-12 top-6 sm:top-10 bg-white dark:bg-faxx-dark dark:text-white border-2 sm:border-4 border-faxx-dark dark:border-gray-700 px-3 py-1.5 sm:px-5 sm:py-2.5 font-mono font-bold uppercase shadow-[4px_4px_0px_0px_rgba(17,17,17,1)] md:shadow-[6px_6px_0px_0px_rgba(17,17,17,1)] flex items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs z-20 hover:scale-105 transition-transform cursor-default">
-              <i className="ri-code-slash-line text-base sm:text-lg"></i>
+            <div className="absolute -left-4 sm:-left-12 top-6 sm:top-10 bg-white dark:bg-faxx-dark text-black dark:text-white border-2 sm:border-4 border-faxx-dark dark:border-gray-700 px-3 py-1.5 sm:px-5 sm:py-2.5 font-mono font-bold uppercase shadow-[4px_4px_0px_0px_rgba(17,17,17,1)] md:shadow-[6px_6px_0px_0px_rgba(17,17,17,1)] flex items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs z-20 hover:scale-105 transition-transform cursor-default">
+              <i className="ri-terminal-line text-base sm:text-lg"></i>
               Engineering
             </div>
  
@@ -222,7 +222,7 @@ export default function Home() {
               />
                <RevealText
                  as="p"
-                 className="font-script text-2xl md:text-3xl mt-4 text-faxx-blue dark:text-faxx-lime -rotate-2 origin-left"
+                 className="font-script text-2xl md:text-3xl mt-4 text-faxx-blue dark:text-faxx-lime"
                >
                  My friends call me Divi
                </RevealText>

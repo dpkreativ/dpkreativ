@@ -61,24 +61,32 @@ const projectCaseStudies: Record<ProjectSlug, CaseStudy> = {
     ],
     process: [
       {
-        eyebrow: "Ideation",
-        title: "Start with the moments where customers hesitate.",
+        eyebrow: "Problem Discovery",
+        title: "Find the exact moments where ordering confidence drops.",
         details: [
           "The early framing centered on reducing confusion in the ordering flow, especially around delivery choices and outlet discovery.",
           "Instead of treating the redesign as a visual refresh alone, the product direction focused on making the next action obvious at every step.",
         ],
       },
       {
-        eyebrow: "Experience Design",
-        title: "Reshape the interface around real ordering behavior.",
+        eyebrow: "Friction Mapping",
+        title: "Trace the decisions customers struggle to make mid-journey.",
         details: [
           "The UI was redesigned to create a more intuitive structure, clearer hierarchy, and stronger calls to action across key customer journeys.",
           "Location-aware interactions were brought forward so users could choose delivery points and discover nearby Crunchies outlets with less effort.",
         ],
       },
       {
-        eyebrow: "Build and Launch",
-        title: "Ship a fast frontend that supports the business story.",
+        eyebrow: "Solution Direction",
+        title: "Rebuild the flow around simpler choices and clearer next steps.",
+        details: [
+          "The experience was refined around the moments where customers choose how to receive an order, where it should go, and what outlet makes sense for them.",
+          "That made the product feel less like a generic menu surface and more like a guided ordering journey that answers practical questions early.",
+        ],
+      },
+      {
+        eyebrow: "Build and Rollout",
+        title: "Ship the faster experience and location-aware tools.",
         details: [
           "Next.js and Tailwind CSS provided the foundation for a responsive, performance-minded build that was easier to scale and maintain.",
           "Google Maps integration connected interface decisions to a practical customer need, making delivery planning part of the product experience itself.",
@@ -111,27 +119,43 @@ const projectCaseStudies: Record<ProjectSlug, CaseStudy> = {
     ],
     process: [
       {
-        eyebrow: "Product Framing",
-        title: "Start with identity, because everything else depends on it.",
+        eyebrow: "Problem Discovery",
+        title: "Start where education platforms usually break: fragmented identity.",
         details: [
           "The core product decision was to treat identity as shared across schools, roles, and relationships rather than forcing separate accounts for every context.",
           "That framing made it possible to design around one learner history, one family surface, and one person moving between roles like owner, staff member, parent, or student.",
         ],
       },
       {
-        eyebrow: "Access Model",
-        title: "Turn role-based and tenant-based access into a usable day-to-day experience.",
+        eyebrow: "Constraint Mapping",
+        title: "Define access rules without losing continuity for the user.",
         details: [
           "The platform is being shaped around strict access boundaries so each school only exposes the information relevant to that context while still preserving continuity for the user.",
           "The experience has to make context-switching feel simple for families and administrators without weakening privacy or permission controls behind the scenes.",
         ],
       },
       {
-        eyebrow: "Platform Build",
-        title: "Build operations for today without blocking collaboration later.",
+        eyebrow: "Solution Direction",
+        title: "Turn school operations into product surfaces people can actually navigate.",
+        details: [
+          "The platform is being structured around the daily jobs schools and families need to complete, from classes and assignments to admissions, grades, and finance.",
+          "That keeps the product grounded in operational clarity instead of letting the access model become an abstract architecture exercise.",
+        ],
+      },
+      {
+        eyebrow: "Platform Implementation",
+        title: "Build today's school workflows without blocking tomorrow's network features.",
         details: [
           "Current product work is focused on the workflows schools need immediately, including classes, assignments, grades, academic history, admissions, and finance.",
           "At the same time, the structure is being kept flexible enough to support future network features like tutor discovery, study circles, and resource sharing across education contexts.",
+        ],
+      },
+      {
+        eyebrow: "Current State",
+        title: "Push the platform toward a first cohesive operations release.",
+        details: [
+          "Right now the work is centered on tightening the relationship between identity, permissions, and the operational surfaces schools and families will use most often.",
+          "The immediate goal is to get the core school workflows feeling stable and coherent before broader collaboration features become part of the next phase of the product.",
         ],
       },
     ],
@@ -161,27 +185,43 @@ const projectCaseStudies: Record<ProjectSlug, CaseStudy> = {
     ],
     process: [
       {
-        eyebrow: "Discovery Experience",
-        title: "Start with the question people actually ask: what's happening this weekend?",
+        eyebrow: "Problem Discovery",
+        title: "Start with the messy way people actually discover plans.",
         details: [
           "The public product surface is being shaped around curated event discovery so the browsing experience feels more like reading the city's mood than navigating a cold listings directory.",
           "Event detail pages, related events, and RSVP or checkout flows are designed to keep users moving from interest to action without unnecessary detours.",
         ],
       },
       {
-        eyebrow: "Onboarding and Identity",
-        title: "Use guided signup to turn taste into personalization.",
+        eyebrow: "Insight Layer",
+        title: "Use onboarding to turn personal taste into product context.",
         details: [
           "The onboarding flow asks new users for their city and preferred vibes before account creation so the signed-in experience can feel more personal from the start.",
           "Authentication, password recovery, and protected dashboard access are being treated as part of the product experience, not just background account plumbing.",
         ],
       },
       {
-        eyebrow: "Workspace Design",
-        title: "Extend the product beyond discovery into plans, tickets, wallets, and hosting.",
+        eyebrow: "Solution Direction",
+        title: "Design event pages to keep curiosity moving toward commitment.",
+        details: [
+          "Individual event pages are being designed to balance mood, core logistics, related events, and RSVP or checkout actions without stalling the user.",
+          "That flow matters because discovery products only work when the jump from maybe to I'm in feels short and obvious.",
+        ],
+      },
+      {
+        eyebrow: "Product Build",
+        title: "Extend the fix beyond browsing into plans, tickets, wallets, and hosting.",
         details: [
           "The signed-in product includes upcoming plans, saved and past events, ticket views, wallet activity, and personalized identity details like city and vibe tags.",
           "Host and admin surfaces are being designed alongside the user journey so event creation, attendee visibility, payouts, and summary analytics all live inside the same broader ecosystem.",
+        ],
+      },
+      {
+        eyebrow: "Current State",
+        title: "Tighten the handoff from discovery into the signed-in product.",
+        details: [
+          "The project is currently at the point where public event discovery, onboarding, and dashboard behavior are being refined into a smoother end-to-end flow.",
+          "The focus now is making sure the product feels just as strong after login as it does during first-touch browsing, especially across plans, tickets, wallets, and host tools.",
         ],
       },
     ],
@@ -211,24 +251,32 @@ const projectCaseStudies: Record<ProjectSlug, CaseStudy> = {
     ],
     process: [
       {
-        eyebrow: "Content Strategy",
-        title: "Lead with the operational job the business supports.",
+        eyebrow: "Problem Discovery",
+        title: "Start from the buyer's need for clarity under operational pressure.",
         details: [
           "The site positioning is built around the real environments Kadric serves: marine, offshore, oil and gas, and industrial operations that care about safety, uptime, and delivery reliability.",
           "That pushed the structure away from abstract company language and toward practical explanations of sourcing support, HSE products, recurring supply, and RFQ responsiveness.",
         ],
       },
       {
-        eyebrow: "Structure and Trust",
-        title: "Organize the experience around sourcing confidence.",
+        eyebrow: "Friction Mapping",
+        title: "See where breadth and trust start to feel vague on the site.",
         details: [
           "The content system gives products, services, HSE support, and quote pathways distinct places so buyers can understand breadth without getting lost.",
           "Client logos, sector language, and service explanations were treated as proof points that reduce uncertainty for procurement teams under pressure.",
         ],
       },
       {
-        eyebrow: "Lead Flow",
-        title: "Turn the site into a practical RFQ surface.",
+        eyebrow: "Solution Direction",
+        title: "Reframe the offer around the supply support buyers actually need.",
+        details: [
+          "The service layer was broken out around sourcing support, technical matching, recurring supply planning, and fulfillment coordination so the offering felt actionable instead of vague.",
+          "That helped the site communicate not just what Kadric supplies, but how the team supports ongoing operations when requirements change quickly.",
+        ],
+      },
+      {
+        eyebrow: "Lead Conversion",
+        title: "Turn the fix into a clearer RFQ-driven path to action.",
         details: [
           "Call-to-action placement is centered on quote-driven behavior, guiding buyers toward sending item lists, quantities, timelines, and delivery points with less friction.",
           "The result is a public-facing experience that behaves less like a brochure and more like an operational entry point for supply conversations.",
@@ -261,24 +309,32 @@ const projectCaseStudies: Record<ProjectSlug, CaseStudy> = {
     ],
     process: [
       {
-        eyebrow: "Editorial Structure",
-        title: "Turn the shelf into a navigable editorial system.",
+        eyebrow: "Problem Discovery",
+        title: "Start with the risk of good stories feeling scattered or hard to enter.",
         details: [
           "The site architecture gives distinct space to essays, features, poetry, reviews, and short stories so readers can browse African literature through clear editorial pathways.",
           "Homepage storytelling, featured pieces, and mission framing work together to make the platform feel like a living literary surface rather than a static archive.",
         ],
       },
       {
-        eyebrow: "Community Pathways",
-        title: "Make participation visible from the first visit.",
+        eyebrow: "Friction Mapping",
+        title: "Spot where readers need clearer invitations into the community.",
         details: [
           "Join the Circle, chapters, submissions, donate, and partner pathways are treated as core parts of the experience so visitors can move from reading to belonging.",
           "The community surface is designed to support both casual readers and people who want a deeper role in growing the literary ecosystem.",
         ],
       },
       {
-        eyebrow: "Brand Experience",
-        title: "Balance literary warmth with a disciplined product structure.",
+        eyebrow: "Solution Direction",
+        title: "Restructure discovery so every content type has a clearer path.",
+        details: [
+          "Essays, features, poetry, reviews, and short stories are organized as distinct but connected paths so the platform feels editorially rich without becoming confusing to browse.",
+          "Featured content, shelf structure, and mission-led copy help new visitors understand both what is published and why the platform exists.",
+        ],
+      },
+      {
+        eyebrow: "Experience Build",
+        title: "Carry the fix through brand, publishing, and participation surfaces.",
         details: [
           "The visual and content direction is built to amplify African stories while keeping navigation, submissions, and newsletter touchpoints easy to understand.",
           "That balance matters because community publishing platforms need emotional resonance, but they also need enough structure for readers and contributors to trust the system.",
@@ -311,24 +367,32 @@ const projectCaseStudies: Record<ProjectSlug, CaseStudy> = {
     ],
     process: [
       {
-        eyebrow: "Brand Translation",
-        title: "Start from the emotional promise behind every order.",
+        eyebrow: "Problem Discovery",
+        title: "Start from the gap between handcrafted brand feeling and shopping clarity.",
         details: [
           "The product direction starts from a simple promise: every celebration deserves something that tastes as good as it looks.",
           "That meant translating warmth, freshness, and premium craft into a storefront that still feels practical to shop from.",
         ],
       },
       {
-        eyebrow: "Merchandising",
-        title: "Use category structure to make ordering easier.",
+        eyebrow: "Friction Mapping",
+        title: "See where customers need faster routes into the right product type.",
         details: [
           "The storefront organizes buying around categories like Budget Express Cakes, Classic Express Cakes, Gateaux, Cupcakes, Combos, Kiddies, and Treats so customers can narrow in quickly.",
           "Featured products, flavour options, and category-led browsing help the site support both fast everyday orders and more deliberate celebration purchases.",
         ],
       },
       {
-        eyebrow: "Conversion",
-        title: "Connect visual delight to checkout readiness.",
+        eyebrow: "Solution Direction",
+        title: "Connect appetite, speed, and trust inside one storefront flow.",
+        details: [
+          "Delivery messaging, top selections, and product cards are arranged to reassure buyers that the brand can move from beautiful presentation to actual fulfillment quickly.",
+          "That keeps the storefront persuasive for celebration purchases without making customers work too hard to understand what to buy next.",
+        ],
+      },
+      {
+        eyebrow: "Commerce Build",
+        title: "Carry the fix through to checkout confidence.",
         details: [
           "Fast-delivery messaging, product cards, cart access, and editorial updates are all positioned to keep the journey moving from inspiration to order.",
           "The site treats visual appetite and buying clarity as one product problem, which is critical for a bakery brand that sells both emotion and speed.",
@@ -361,24 +425,32 @@ const projectCaseStudies: Record<ProjectSlug, CaseStudy> = {
     ],
     process: [
       {
-        eyebrow: "Launch Strategy",
-        title: "Center the page on one clear story.",
+        eyebrow: "Problem Discovery",
+        title: "Start with the risk of a launch page saying too much and converting too little.",
         details: [
           "The experience is structured around the book's core promise: a comprehensive approach to reaching and engaging developers.",
           "That meant leading with value, keeping the page lean, and resisting the temptation to bury the main story under extra campaign clutter.",
         ],
       },
       {
-        eyebrow: "Conversion Design",
-        title: "Support interest with proof, not clutter.",
+        eyebrow: "Friction Mapping",
+        title: "Strip the page down to the questions a potential reader actually asks.",
         details: [
           "Paperback and audiobook calls to action, content themes, testimonials, and author context are placed to answer the main reader questions in one continuous scroll.",
           "The design uses proof and pacing to build confidence without forcing users through a heavy funnel or an over-explained purchase journey.",
         ],
       },
       {
-        eyebrow: "Delivery",
-        title: "Keep the experience fast while carrying the book's voice.",
+        eyebrow: "Solution Direction",
+        title: "Let paperback, audiobook, and preview paths all feel intentional.",
+        details: [
+          "The site treats paperback, audiobook, preview listening, and platform availability as parallel conversion paths instead of forcing everyone toward the same action.",
+          "That gives readers more than one way to engage with the book while still keeping the broader launch story focused.",
+        ],
+      },
+      {
+        eyebrow: "Launch Build",
+        title: "Ship the focused story without sacrificing speed or polish.",
         details: [
           "The frontend is intentionally lightweight so the visuals, testimonials, and conversion paths remain smooth across device sizes.",
           "That performance baseline matters for launch pages because the interface should feel polished while staying invisible enough for the content to do its job.",

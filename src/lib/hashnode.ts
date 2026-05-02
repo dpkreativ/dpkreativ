@@ -177,7 +177,7 @@ export async function fetchRecommendedPosts(
       }))
       .filter(({ sharedTagCount }) => sharedTagCount > 0)
       .sort((left, right) => right.sharedTagCount - left.sharedTagCount)
-      .slice(0, 3)
+      .slice(0, 6)
       .map(({ post }) => post);
   } catch (error) {
     console.error("Error fetching recommended posts:", error);

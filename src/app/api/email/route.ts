@@ -12,6 +12,7 @@ export async function POST(request: NextRequest) {
     budgetRange,
     projectTimeline,
     preferredContactMethod,
+    tierName,
   }: FormInputs = await request.json();
 
   const transport = nodemailer.createTransport({
@@ -23,61 +24,80 @@ export async function POST(request: NextRequest) {
   });
 
   const htmlContent = `
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="viewport" content="width=device-width" />
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta charset="utf-8">
+  <style>
+    body { font-family: 'Courier New', Courier, monospace; background-color: #f0f0f0; padding: 20px; color: #111111; }
+    .container { max-width: 600px; margin: 0 auto; background: #ffffff; border: 4px solid #111111; box-shadow: 12px 12px 0px 0px #111111; }
+    .header { background: #BFFF00; border-bottom: 4px solid #111111; padding: 30px; }
+    .header h1 { font-size: 32px; margin: 0; text-transform: uppercase; letter-spacing: -2px; line-height: 0.9; }
+    .section { padding: 30px; border-bottom: 4px solid #111111; }
+    .section-title { font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; color: #666; margin-bottom: 20px; }
+    .tier-badge { display: inline-block; background: #00E5FF; border: 2px solid #111111; padding: 5px 15px; font-weight: bold; margin-bottom: 10px; }
+    .grid { display: block; width: 100%; }
+    .row { border-bottom: 2px solid #eee; padding: 10px 0; }
+    .label { font-weight: bold; text-transform: uppercase; font-size: 11px; color: #4320F6; }
+    .value { font-size: 16px; margin-top: 4px; }
+    .description { background: #fafafa; border: 2px solid #111111; padding: 20px; margin-top: 10px; line-height: 1.6; }
+    .footer { padding: 20px; font-size: 10px; text-transform: uppercase; color: #999; }
+  </style>
 </head>
-<body style="font-family: Arial, sans-serif; background-color: #fafafa;">
-  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border: 1px solid #eeeeee; border-radius: 5px;">
-    <tr>
-      <td style="padding: 20px;">
-        <h1 style="font-size: 24px; margin-bottom: 20px; color: #333333;">New Project Inquiry</h1>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="section-title">New Brief Received</div>
+      <h1>Project<br>Inquiry.</h1>
+    </div>
 
-        <h2 style="font-size: 18px; margin-bottom: 10px; color: #333333;">Contact Details</h2>
-        <table cellpadding="0" cellspacing="0" border="0" style="width: 100%;">
-          <tr>
-            <td style="width: 50%; padding: 5px;"><strong>Full Name:</strong></td>
-            <td style="width: 50%; padding: 5px;">${fullName}</td>
-          </tr>
-          <tr>
-            <td style="width: 50%; padding: 5px;"><strong>Email:</strong></td>
-            <td style="width: 50%; padding: 5px;">${email}</td>
-          </tr>
-          <tr>
-            <td style="width: 50%; padding: 5px;"><strong>Phone Number:</strong></td>
-            <td style="width: 50%; padding: 5px;">${phoneNumber}</td>
-          </tr>
-          <tr>
-            <td style="width: 50%; padding: 5px;"><strong>Business Name:</strong></td>
-            <td style="width: 50%; padding: 5px;">${businessName}</td>
-          </tr>
-        </table>
+    <div class="section">
+      <div class="section-title">Selected Package</div>
+      <div class="tier-badge">${tierName}</div>
+      <div class="value" style="font-weight: bold;">Est. ${budgetRange}</div>
+    </div>
 
-        <h2 style="font-size: 18px; margin-bottom: 10px; color: #333333;">Project Details</h2>
-        <table cellpadding="0" cellspacing="0" border="0" style="width: 100%;">
-          <tr>
-            <td style="width: 50%; padding: 5px;"><strong>Description:</strong></td>
-            <td style="width: 50%; padding: 5px;">${projectDescription}</td>
-          </tr>
-          <tr>
-            <td style="width: 50%; padding: 5px;"><strong>Budget Range:</strong></td>
-            <td style="width: 50%; padding: 5px;">${budgetRange}</td>
-          </tr>
-          <tr>
-            <td style="width: 50%; padding: 5px;"><strong>Project Timeline:</strong></td>
-            <td style="width: 50%; padding: 5px;">${projectTimeline}</td>
-          </tr>
-          <tr>
-            <td style="width: 50%; padding: 5px;"><strong>Preferred Contact Method:</strong></td>
-            <td style="width: 50%; padding: 5px;">${preferredContactMethod}</td>
-          </tr>
-        </table>
+    <div class="section">
+      <div class="section-title">Contact Profile</div>
+      <div class="grid">
+        <div class="row">
+          <div class="label">Client</div>
+          <div class="value">${fullName}</div>
+        </div>
+        <div class="row">
+          <div class="label">Email / Phone</div>
+          <div class="value">${email} ${phoneNumber ? `/ ${phoneNumber}` : ''}</div>
+        </div>
+        <div class="row">
+          <div class="label">Business</div>
+          <div class="value">${businessName || 'NOT SPECIFIED'}</div>
+        </div>
+      </div>
+    </div>
 
-        <p style="margin-top: 20px; font-size: 12px; color: #888888;">This email was automatically generated from your contact form submission.</p>
-      </td>
-    </tr>
-  </table>
+    <div class="section">
+      <div class="section-title">The Vision</div>
+      <div class="description">${projectDescription}</div>
+    </div>
+
+    <div class="section" style="border-bottom: none;">
+      <div class="section-title">Operational Logic</div>
+      <div class="grid">
+        <div class="row">
+          <div class="label">Target Timeline</div>
+          <div class="value">${projectTimeline}</div>
+        </div>
+        <div class="row">
+          <div class="label">Preferred Contact</div>
+          <div class="value">${preferredContactMethod}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      Generated by dpkreativ portfolio system // ${new Date().toISOString()}
+    </div>
+  </div>
 </body>
 </html>`;
 

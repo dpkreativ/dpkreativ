@@ -2,7 +2,7 @@ import { projects, type Project } from "@/assets/data";
 import { ArrowIcon } from "@/assets/icons";
 import BackButton from "@/components/back-button";
 import Button from "@/components/button";
-import { ProjectCard } from "@/components/cards";
+import MoreWorkRecommendations from "@/components/more-work-recommendations";
 import ProjectBrandMark from "@/components/project-brand-mark";
 import RevealText from "@/components/reveal-text";
 import SplitHeading from "@/components/split-heading";
@@ -47,7 +47,7 @@ export default async function Page({ params }: PageProps) {
 
   const liveUrl = normalizeUrl(project.url);
   const githubUrl = normalizeUrl(project.github);
-  const relatedProjects = projects.filter((entry) => entry.slug !== project.slug).slice(0, 2);
+  const relatedProjects = projects.filter((entry) => entry.slug !== project.slug);
   const brandMark = project.brand;
   const hasProjectVisual = project.image !== PLACEHOLDER_IMAGE;
 
@@ -211,7 +211,7 @@ export default async function Page({ params }: PageProps) {
         )}
 
         {/* Overview and Goals Row */}
-        <section className="grid md:grid-cols-2 gap-8 md:gap-10 items-start">
+        <section className="grid gap-8 md:gap-10 items-start lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
           <article className="grid gap-5 bg-white dark:bg-zinc-900 border-4 border-faxx-dark dark:border-gray-700 p-6 md:p-10 shadow-[8px_8px_0px_0px_rgba(60,60,60,1)] dark:shadow-[8px_8px_0px_0px_rgba(0,229,255,0.2)]">
             <SplitHeading
               as="h2"
@@ -302,11 +302,9 @@ export default async function Page({ params }: PageProps) {
                           </span>
                         </div>
 
-                        <SplitHeading
-                          as="h3"
-                          className="font-display text-xl md:text-3xl uppercase tracking-tighter leading-[1.05]"
-                          lines={[step.title]}
-                        />
+                        <h3 className="text-balance font-display text-lg md:text-xl lg:text-2xl tracking-tight leading-[1.2] text-faxx-dark dark:text-white">
+                          {step.title}
+                        </h3>
 
                         <div className="grid gap-4 font-body text-sm md:text-base leading-relaxed dark:text-gray-300">
                           {step.details.map((detail) => (
@@ -378,18 +376,7 @@ export default async function Page({ params }: PageProps) {
             </RevealText>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {relatedProjects.map((entry) => (
-              <ProjectCard
-                key={entry.slug}
-                title={entry.title}
-                tags={entry.tags}
-                image={entry.image}
-                brand={entry.brand}
-                link={`/work/${entry.slug}`}
-              />
-            ))}
-          </div>
+          <MoreWorkRecommendations projects={relatedProjects} />
         </section>
       </div>
     </main>

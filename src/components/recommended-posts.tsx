@@ -1,6 +1,7 @@
 "use client";
 
 import { fetchRecommendedPosts } from "@/lib/hashnode";
+import { pickRandomItems } from "@/lib/utils";
 import BlogCard from "./blog-card";
 import { useState, useEffect } from "react";
 
@@ -11,28 +12,35 @@ export default function RecommendedPosts({
   currentSlug: string; 
   tags: string[] 
 }) {
-  const [posts, setPosts] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [posts, setPosts] = useState<any[] | null>(tags.length > 0 ? null : []);
 
   useEffect(() => {
+    let cancelled = false;
+
     async function getPosts() {
       try {
         const data = await fetchRecommendedPosts("dpkreativ.hashnode.dev", tags, currentSlug);
-        setPosts(data?.slice(0, 2) || []);
+        if (!cancelled) {
+          setPosts(pickRandomItems(data || [], 2));
+        }
       } catch (error) {
         console.error("Error fetching recommended posts:", error);
-      } finally {
-        setLoading(false);
+        if (!cancelled) {
+          setPosts([]);
+        }
       }
     }
+
     if (tags.length > 0) {
       getPosts();
-    } else {
-      setLoading(false);
     }
+
+    return () => {
+      cancelled = true;
+    };
   }, [currentSlug, tags]);
 
-  if (loading) {
+  if (posts === null) {
     return (
       <div className="mt-12 pt-8 border-t-4 border-faxx-dark dark:border-gray-700">
         <h3 className="font-display text-2xl md:text-3xl uppercase tracking-tighter mb-6 text-faxx-dark dark:text-white">
