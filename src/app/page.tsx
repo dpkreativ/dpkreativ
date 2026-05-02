@@ -304,7 +304,7 @@ export default function Home() {
                 </>,
               ]}
             />
-            <Link href="/work" className="w-max shrink-0">
+            <Link href="/work" className="w-max shrink-0 hidden md:block">
               <Button className="!shadow-[4px_4px_0px_0px_rgba(67,32,246,1)] dark:!shadow-[4px_4px_0px_0px_rgba(0,229,255,1)] active:!shadow-[0px_0px_0px_0px_rgba(67,32,246,1)] dark:active:!shadow-[0px_0px_0px_0px_rgba(0,229,255,1)]">
                 <span>VIEW ALL</span>
                 <ArrowIcon />
@@ -315,6 +315,13 @@ export default function Home() {
           <div className="w-full">
             <WorkAccordion projects={projects} />
           </div>
+
+          <Link href="/work" className="w-full md:hidden mt-4">
+            <Button className="w-full !py-5 !shadow-[4px_4px_0px_0px_rgba(67,32,246,1)] dark:!shadow-[4px_4px_0px_0px_rgba(0,229,255,1)]">
+              <span>VIEW ALL PROJECTS</span>
+              <ArrowIcon />
+            </Button>
+          </Link>
         </section>
         {/* Blog section */}
         <section className="reveal-section grid gap-8 md:gap-12">
@@ -340,6 +347,13 @@ export default function Home() {
           </div>
 
           <BlogPreview />
+
+          <Link href="/blog" className="w-full md:hidden mt-4">
+            <Button className="w-full !py-5 !shadow-[4px_4px_0px_0px_rgba(60,60,60,1)] dark:!shadow-[4px_4px_0px_0px_rgba(191,255,0,1)]">
+              <span>VISIT ARCHIVE</span>
+              <ArrowIcon />
+            </Button>
+          </Link>
         </section>
       </div>
     </main>
