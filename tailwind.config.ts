@@ -13,8 +13,10 @@ const config: Config = {
         'faxx-blue': '#4320F6',
         'faxx-cyan': '#00E5FF',
         'faxx-coral': '#FF4A5A',
-        'faxx-dark': '#111111',
+        'faxx-lime': '#BFFF00',
+        'faxx-dark': '#000000',
         'faxx-light': '#F4F4F9',
+        border: 'hsl(var(--border))',
       },
       fontFamily: {
         display: ['var(--font-display)'],
@@ -33,6 +35,8 @@ const config: Config = {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 };
 export default config;
