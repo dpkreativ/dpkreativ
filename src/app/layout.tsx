@@ -38,7 +38,7 @@ const script = Give_You_Glory({
 
 export const metadata: Metadata = {
   title: "Divine Orji | Software Engineer",
-  description: "Divine Orji's portfolio website",
+  description: "Divine Orji is a software engineer building digital products focused on clarity, speed, and real user value.",
 };
 
 export default function RootLayout({

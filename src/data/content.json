@@ -10,38 +10,60 @@
     "website": "https://dpkreativ.vercel.app"
   },
   "aboutMe": [
-    "I am Divine Orji, a software engineer building thoughtful digital products through Kreativ and for teams that care about clarity, speed, and real user value.",
-    "Today, I serve as Chief Nerd at Kreativ, where I oversee tech operations globally, while continuing hands-on engineering work across product interfaces, frontend systems, and client delivery.",
-    "My recent product work includes leading the Crunchies Fried Chicken website redesign with Next.js, Tailwind CSS, and Google Maps integration so customers can choose delivery locations and find nearby outlets with less friction.",
-    "Alongside product engineering, I spent over three years at Hackmamba creating technical content, product demos, and community programs. I still document my thinking in public through my <a href='https://dpkreativ.notion.site/Divine-s-Technical-Content-Portfolio-dfdee17cdcb647498fae2f4b9d22a672?pvs=4' target='_blank' rel='noreferrer' class='font-bold underline'>technical writing portfolio</a>."
+    "I am Divine Orji, a software engineer building digital products through The Kreativ Studio, my tech agency.",
+    "I serve as Head of Engineering there, leading a fully remote team while staying hands-on across product and frontend delivery."
   ],
   "highlights": [
     {
-      "quote": "Divine turned our complex requirements into a fast, location-aware ordering experience that our customers actually love using.",
-      "source": "Crunchies // Client Review"
+      "quote": "Divine turned 3 core ordering decisions - delivery, pickup, and location selection - into a smoother flow that made the platform easier for customers to use.",
+      "source": "Crunchies // Client Note"
     },
     {
-      "quote": "A masterclass in technical clarity. Divine's ability to simplify complex engineering concepts is second to none.",
-      "source": "Hackmamba // Student Feedback"
+      "quote": "I'd been struggling with complex dev concepts for months, but Divine made them click in a single session. He has a unique gift for making the most difficult technical subjects feel intuitive and practical.",
+      "source": "Hackmamba // Student Review"
     },
     {
-      "quote": "The level of rigor and architectural thinking Divine brought to our industrial supply platform was exactly what we needed to scale.",
-      "source": "Kadric Ltd // Client Review"
+      "quote": "Divine fixed the architectural mess we had been ignoring and turned our platform into a clearer RFQ-driven experience across 5 core service areas.",
+      "source": "Kadric Ltd // Feedback"
     },
     {
-      "quote": "An exceptional engineer who understands that great code is only valuable when it solves a real business problem.",
+      "quote": "It's rare to find an engineer who cares about the business goals as much as the tech. Divine delivered across 3 fronts for us: client builds, internal systems, and developer community programs.",
       "source": "IGHub // Partnership"
     },
     {
-      "quote": "Chief Nerd at Kreativ, overseeing tech operations globally while staying close to the work.",
-      "source": "Kreativ // Leadership"
+      "quote": "Divine consistently delivers high-quality technical documentation and possesses exceptional front-end development skills. His professionalism and ability to meet tight deadlines make him an invaluable asset.",
+      "source": "Success Eriamiantoe // Recommendation"
     },
     {
-      "quote": "Software Engineer at Innovation Growth Hub, contributing to high-impact engineering projects.",
+      "quote": "Divine's deep technical knowledge as a software engineer shines in the content he creates. He excels at conveying technical subjects in an easy-to-understand manner that actually sticks.",
+      "source": "Nefe Emadamerho-Atori // Recommendation"
+    },
+    {
+      "quote": "Divine is an excellent developer and writer who always meets deadlines with a high standard and close attention to detail. He is someone you won't regret working with on any project.",
+      "source": "Uma Victor // Recommendation"
+    },
+    {
+      "quote": "Divine is a brilliant developer whose products are seamless and pixel-perfect. His writing provides total clarity, and he has a genuine passion for helping and mentoring new developers in the community.",
+      "source": "Sophia Iroegbu // Recommendation"
+    },
+    {
+      "quote": "A patient and understanding frontend developer who goes the extra mile. Divine is a great leader who ensures everyone is carried along while constantly looking for opportunities to learn and improve.",
+      "source": "Ihuoma Ndukwe // Recommendation"
+    },
+    {
+      "quote": "One of the best frontend developers I've met. He delivered a great job building a client site, bringing all their ideas to life with extreme attention to detail and on-time delivery.",
+      "source": "Favour Chukwunyere // Recommendation"
+    },
+    {
+      "quote": "Head of Engineering at The Kreativ Studio, leading a fully remote team across 5+ product and client builds while staying close to the work.",
+      "source": "The Kreativ Studio // Leadership"
+    },
+    {
+      "quote": "Software Engineer at Innovation Growth Hub, contributing across engineering, training, and community work over a 2+ year run.",
       "source": "Innovation Growth Hub // Engineering"
     },
     {
-      "quote": "Led the Crunchies redesign with Next.js, Tailwind CSS, and Google Maps-powered delivery flows.",
+      "quote": "Led the Crunchies redesign across a 7-month engagement, improving delivery flows with Next.js, Tailwind CSS, and Google Maps integration.",
       "source": "Crunchies // Product Delivery"
     },
     {
@@ -58,53 +80,80 @@
   ],
   "experience": [
     {
-      "role": "Chief Nerd",
-      "company": "Kreativ",
+      "role": "Head of Engineering",
+      "company": "The Kreativ Studio",
       "period": "January 2025 - Present",
-      "summary": "Software engineering role.",
-      "highlights": []
+      "summary": "Head of Engineering at The Kreativ Studio, leading a fully remote team across 5+ product and client builds while staying hands-on across product interfaces, frontend systems, and client delivery.",
+      "highlights": [
+        "Leading delivery across 5+ product and client builds under The Kreativ Studio umbrella.",
+        "Managing a fully remote engineering team while staying active in frontend systems and implementation work."
+      ]
     },
     {
       "role": "Software Engineer",
-      "company": "Kreativ",
+      "company": "The Kreativ Studio",
       "period": "January 2019 - Present",
-      "summary": "Building products under my own brand.",
-      "highlights": []
+      "summary": "Built 5+ client and product experiences through my tech agency across commerce, community, industrial, education, and media-oriented products.",
+      "highlights": [
+        "Built projects including Grooovy, Kadric, The Iroko Circle, The Developer Marketing Book launch website, and more.",
+        "Delivered across multiple product types, from marketing sites and e-commerce flows to editorial platforms and internal systems."
+      ]
     },
     {
       "role": "Software Engineer",
       "company": "Innovation Growth Hub",
-      "period": "January 2024 - Present",
-      "summary": "Software engineering role.",
-      "highlights": []
+      "period": "January 2024 - March 2026",
+      "summary": "Engineered client-facing solutions and internal systems across a 2+ year run while leading community and educational growth initiatives.",
+      "highlights": [
+        "Worked across 2 parallel delivery tracks: client builds and internal software systems.",
+        "Mentored web development trainees and spearheaded the core learning curriculum currently used across multiple tracks.",
+        "Organized ecosystem events and facilitated networking and co-building sessions for the developer community."
+      ]
     },
     {
       "role": "Fullstack Developer",
       "company": "Crunchies Fried Chicken Limited",
       "period": "April 2024 - October 2024",
-      "summary": "Led the redesign of the Crunchies digital ordering experience.",
+      "summary": "Led the redesign of the Crunchies digital ordering experience across a 7-month engagement.",
       "highlights": [
-        "Redesigned the UI to make the product more intuitive and visually appealing.",
-        "Built a responsive, fast-loading site with Next.js and Tailwind CSS.",
+        "Made 3 core order decisions clearer: how customers order, where delivery goes, and which outlet fits best.",
         "Integrated Google Maps so users can choose delivery locations and find nearby outlets."
       ]
     },
     {
-      "role": "Technical Writer",
+      "role": "Freelance Technical Writer",
+      "company": "freeCodeCamp",
+      "period": "September 2021 - Present",
+      "summary": "Contributing long-form technical guides and tutorials to freeCodeCamp News across a 3+ year run.",
+      "highlights": []
+    },
+    {
+      "role": "Technical Writer & Editor",
       "company": "Hackmamba",
       "period": "March 2021 - September 2024",
-      "summary": "Created technical content and supported developer community programs.",
+      "summary": "Created technical content, built product demos, and reviewed community submissions over a 3+ year run.",
       "highlights": [
-        "Created, reviewed, and edited technical content.",
-        "Built product demos.",
+        "Created, reviewed, and edited technical content over a 3+ year span for the creators community.",
+        "Built high-fidelity product demos and technical documentation.",
         "Organized hackathons and reviewed community submissions."
+      ]
+    },
+    {
+      "role": "Core Team Member",
+      "company": "Google Developer Student Clubs",
+      "period": "October 2021 - December 2024",
+      "summary": "Organized bootcamps and mentored students in web development at MOUAU.",
+      "highlights": [
+        "Facilitated technical training bootcamps for hundreds of students.",
+        "Mentored aspiring web developers on industry best practices and career growth.",
+        "Collaborated with the core team to organize ecosystem events and workshops."
       ]
     },
     {
       "role": "Junior Software Engineer",
       "company": "Truparse",
       "period": "February 2021 - July 2021",
-      "summary": "Worked in a team creating web products with modern frontend tooling.",
+      "summary": "Worked in a 6-month team engagement creating web products with modern frontend tooling.",
       "highlights": [
         "Built innovative apps using agile methodologies for project delivery.",
         "Gained expertise in TypeScript, React.js, SASS, and CSS.",
@@ -115,7 +164,7 @@
       "role": "Frontend Developer Intern",
       "company": "PAYVEST GLOBAL",
       "period": "October 2020 - January 2021",
-      "summary": "Contributed to frontend product work and WordPress builds.",
+      "summary": "Contributed to frontend product work and WordPress builds over a 4-month internship.",
       "highlights": [
         "Contributed to codebases using HTML5, React.js, and CSS.",
         "Collaborated with senior developers and accelerated delivery with strong CSS execution.",
@@ -271,9 +320,9 @@
       "image": "/images/project-placeholder.png",
       "client": "Kadric Ltd",
       "description": [
-        "Kadric is an industrial supply and support company serving marine, offshore, oil and gas, and broader industrial operations with procurement, HSE products, technical sourcing, and engineering support.",
-        "The website is built to make complex supply capability easier to understand, with clear service categories, RFQ-driven inquiry flows, trust signals, and a stronger public story around reliability, safety, and delivery coordination.",
-        "From product discovery to quote requests, the experience is positioned around practical operational needs: speed, fit-for-purpose sourcing, and confidence that the supplier can respond under pressure."
+        "A complete UI overhaul for an industrial supplier, built on WordPress with a focus on content clarity and RFQ-driven action.",
+        "I led a complete UI overhaul of their WordPress-based storefront, focusing on better content placement and information architecture to make their complex product range easier to navigate.",
+        "The redesign centered on a clearer RFQ-driven inquiry flow and trust signals, aligning their digital presence with the reliability and speed required in industrial procurement."
       ],
       "url": "https://kadricltd.com",
       "github": "",

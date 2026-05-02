@@ -1,7 +1,7 @@
 import { projects, type Project } from "@/assets/data";
 import { ArrowIcon } from "@/assets/icons";
-import BackButton from "@/components/back-button";
 import Button from "@/components/button";
+import FloatingBackLink from "@/components/floating-back-link";
 import MoreWorkRecommendations from "@/components/more-work-recommendations";
 import ProjectBrandMark from "@/components/project-brand-mark";
 import RevealText from "@/components/reveal-text";
@@ -63,9 +63,7 @@ export default async function Page({ params }: PageProps) {
       ></div>
 
       <div className="w-full max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24 grid gap-12 md:gap-16">
-        <div className="sticky top-28 z-40 mb-8 w-fit">
-          <BackButton href="/work" label="Back to all work" />
-        </div>
+        <FloatingBackLink href="/work" label="Back to all work" />
 
         <div className="flex flex-wrap items-center justify-end gap-4">
 

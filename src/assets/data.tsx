@@ -235,7 +235,7 @@ const projectCaseStudies: Record<ProjectSlug, CaseStudy> = {
   },
   "kadric-ltd": {
     headline:
-      "Positioned an industrial supply company around reliability, technical clarity, and faster RFQ-driven action.",
+      "A complete UI overhaul for an industrial supplier, built on WordPress with a focus on content clarity and RFQ-driven action.",
     timeline: "2024",
     role: "Web Strategist and Product Engineer",
     services: [
