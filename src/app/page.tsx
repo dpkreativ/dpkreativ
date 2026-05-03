@@ -146,16 +146,18 @@ export default function Home() {
                   return (
                     <div
                       key={item.source}
-                      className={`hero-quote-item hero-quote-item-${idx} absolute inset-0 flex flex-col justify-center gap-5 ${idx === 0 ? "opacity-100" : "opacity-0"}`}
+                      className={`hero-quote-item hero-quote-item-${idx} absolute inset-0 flex flex-col justify-center items-center lg:items-start gap-6 ${idx === 0 ? "opacity-100" : "opacity-0"}`}
                     >
-                      <p className={`hero-quote-copy-${idx} text-white font-body text-lg sm:text-xl md:text-2xl font-medium leading-relaxed`}>
+                      <p className={`hero-quote-copy-${idx} text-white font-body text-lg sm:text-xl md:text-2xl font-medium leading-relaxed text-center lg:text-left`}>
                         {item.quote}
                       </p>
 
-                      <div className={`hero-quote-source-${idx} flex flex-wrap gap-3 font-mono text-[11px] sm:text-xs uppercase tracking-[0.2em] text-faxx-cyan font-bold`}>
-                        <span>{source}</span>
-                        {category ? <span aria-hidden="true">{"//"}</span> : null}
-                        {category ? <span>{category}</span> : null}
+                      <div className="flex items-center gap-4 justify-center lg:justify-start">
+                        <div className={`hero-quote-source-${idx} flex flex-wrap gap-2 sm:gap-3 font-mono text-[10px] sm:text-xs uppercase tracking-[0.2em] text-faxx-cyan font-bold`}>
+                          <span>{source}</span>
+                          {category ? <span aria-hidden="true">{"//"}</span> : null}
+                          {category ? <span>{category}</span> : null}
+                        </div>
                       </div>
                     </div>
                   );
