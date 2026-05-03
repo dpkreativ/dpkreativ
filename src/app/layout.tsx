@@ -37,8 +37,65 @@ const script = Give_You_Glory({
 });
 
 export const metadata: Metadata = {
-  title: "Divine Orji | Software Engineer",
-  description: "Divine Orji is a software engineer building digital products focused on clarity, speed, and real user value.",
+  metadataBase: new URL("https://dpkreativ.vercel.app"),
+  title: {
+    default: "Divine Orji | Software Engineer & Product Builder",
+    template: "%s | Divine Orji",
+  },
+  description: "Divine Orji is a software engineer and product leader building high-impact digital experiences. Focused on engineering excellence, technical writing, and community growth.",
+  keywords: [
+    "Divine Orji",
+    "Software Engineer",
+    "Product Engineer",
+    "Frontend Engineer",
+    "Technical Writer",
+    "Next.js Developer",
+    "React Developer",
+    "The Kreativ Studio",
+    "Nigeria",
+    "Abia",
+  ],
+  authors: [{ name: "Divine Orji", url: "https://github.com/dpkreativ" }],
+  creator: "Divine Orji",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://dpkreativ.vercel.app",
+    siteName: "Divine Orji",
+    title: "Divine Orji | Software Engineer & Product Builder",
+    description: "Building high-impact digital experiences with a focus on engineering excellence and user value.",
+    images: [
+      {
+        url: "/og-image.png", // We should probably create or point to an image
+        width: 1200,
+        height: 630,
+        alt: "Divine Orji | Software Engineer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Divine Orji | Software Engineer",
+    description: "Building high-impact digital experiences with a focus on engineering excellence and user value.",
+    creator: "@dpkreativ",
+    images: ["/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({

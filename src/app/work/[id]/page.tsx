@@ -37,6 +37,31 @@ export function generateStaticParams() {
   return projects.map((project) => ({ id: project.slug }));
 }
 
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const { id } = await params;
+  const project = getProject(id);
+
+  if (!project) return {};
+
+  return {
+    title: project.title,
+    description: project.caseStudy.headline,
+    openGraph: {
+      title: `${project.title} | Divine Orji`,
+      description: project.caseStudy.headline,
+      images: [project.image],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.title} | Divine Orji`,
+      description: project.caseStudy.headline,
+      images: [project.image],
+    },
+  };
+}
+
 export default async function Page({ params }: PageProps) {
   const { id } = await params;
   const project = getProject(id);

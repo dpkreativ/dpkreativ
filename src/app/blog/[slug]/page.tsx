@@ -29,7 +29,18 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return {
       title: post.title,
       description: post.brief,
+      alternates: {
+        canonical: `https://${HASHNODE_HOST}/${slug}`,
+      },
       openGraph: {
+        title: post.title,
+        description: post.brief,
+        type: "article",
+        publishedTime: post.publishedAt,
+        images: post.coverImage?.url ? [post.coverImage.url] : [],
+      },
+      twitter: {
+        card: "summary_large_image",
         title: post.title,
         description: post.brief,
         images: post.coverImage?.url ? [post.coverImage.url] : [],
