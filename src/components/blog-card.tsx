@@ -19,8 +19,6 @@ export default function BlogCard({ blog }: { blog: Blog }) {
       href={blog.url}
       className="group relative bg-white dark:bg-zinc-900 border-4 border-faxx-dark dark:border-gray-700 p-6 flex flex-col gap-4 transition-all duration-300 hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_rgba(60,60,60,1)] dark:hover:shadow-[8px_8px_0px_0px_rgba(191,255,0,1)]"
     >
-      {/* Canonical link for SEO */}
-      <link rel="canonical" href={blog.url} />
       <div className="flex justify-between items-start gap-4">
         <span className="bg-gray-700 dark:bg-faxx-lime text-white dark:text-faxx-dark font-mono text-[10px] font-bold uppercase px-2 py-1 border-2 border-faxx-dark">
           {blog.category}

@@ -11,6 +11,14 @@ import Footer from "@/components/footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 import Script from "next/script";
+import {
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_OG_IMAGE,
+  SITE_TITLE,
+  SITE_TWITTER_HANDLE,
+  SITE_URL,
+} from "@/lib/site";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -37,12 +45,15 @@ const script = Give_You_Glory({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://dpkreativ.vercel.app"),
+  metadataBase: new URL(SITE_URL),
+  alternates: {
+    canonical: "/",
+  },
   title: {
-    default: "Divine Orji | Software Engineer & Product Builder",
+    default: SITE_TITLE,
     template: "%s | Divine Orji",
   },
-  description: "Divine Orji is a software engineer and product leader building high-impact digital experiences. Focused on engineering excellence, technical writing, and community growth.",
+  description: SITE_DESCRIPTION,
   keywords: [
     "Divine Orji",
     "Software Engineer",
@@ -60,15 +71,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://dpkreativ.vercel.app",
-    siteName: "Divine Orji",
-    title: "Divine Orji | Software Engineer & Product Builder",
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    title: SITE_TITLE,
     description: "Building high-impact digital experiences with a focus on engineering excellence and user value.",
     images: [
       {
-        url: "/og-image.png", // We should probably create or point to an image
-        width: 1200,
-        height: 630,
+        url: SITE_OG_IMAGE,
         alt: "Divine Orji | Software Engineer",
       },
     ],
@@ -77,8 +86,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Divine Orji | Software Engineer",
     description: "Building high-impact digital experiences with a focus on engineering excellence and user value.",
-    creator: "@dpkreativ",
-    images: ["/og-image.png"],
+    creator: SITE_TWITTER_HANDLE,
+    images: [SITE_OG_IMAGE],
   },
   robots: {
     index: true,
@@ -92,9 +101,8 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    icon: "/icon.jpg",
+    apple: "/icon.jpg",
   },
 };
 

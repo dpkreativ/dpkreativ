@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { projects, type Project } from "@/assets/data";
 import { ArrowIcon } from "@/assets/icons";
 import Button from "@/components/button";
@@ -10,6 +11,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import React, { Fragment } from "react";
+import { SITE_OG_IMAGE, SITE_URL } from "@/lib/site";
 
 const PLACEHOLDER_IMAGE = "/images/project-placeholder.png";
 
@@ -45,19 +47,25 @@ export async function generateMetadata({
 
   if (!project) return {};
 
+  const image = project.image === PLACEHOLDER_IMAGE ? SITE_OG_IMAGE : project.image;
+
   return {
     title: project.title,
     description: project.caseStudy.headline,
+    alternates: {
+      canonical: `/work/${project.slug}`,
+    },
     openGraph: {
+      url: `${SITE_URL}/work/${project.slug}`,
       title: `${project.title} | Divine Orji`,
       description: project.caseStudy.headline,
-      images: [project.image],
+      images: [image],
     },
     twitter: {
       card: "summary_large_image",
       title: `${project.title} | Divine Orji`,
       description: project.caseStudy.headline,
-      images: [project.image],
+      images: [image],
     },
   };
 }

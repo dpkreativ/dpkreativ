@@ -1,20 +1,18 @@
 import { MetadataRoute } from "next";
 import { projects } from "@/assets/data";
 import { fetchAllPostSlugs } from "@/lib/hashnode";
-
-const HASHNODE_HOST = "dpkreativ.hashnode.dev";
-const BASE_URL = "https://dpkreativ.vercel.app";
+import { HASHNODE_HOST, SITE_URL } from "@/lib/site";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes = ["", "/about", "/work", "/blog", "/contact"].map((route) => ({
-    url: `${BASE_URL}${route}`,
+    url: `${SITE_URL}${route}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
     priority: route === "" ? 1 : 0.8,
   }));
 
   const projectRoutes = projects.map((project) => ({
-    url: `${BASE_URL}/work/${project.slug}`,
+    url: `${SITE_URL}/work/${project.slug}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
     priority: 0.7,
@@ -24,7 +22,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   try {
     const slugs = await fetchAllPostSlugs(HASHNODE_HOST);
     blogRoutes = slugs.map((slug) => ({
-      url: `${BASE_URL}/blog/${slug}`,
+      url: `${SITE_URL}/blog/${slug}`,
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: 0.6,
