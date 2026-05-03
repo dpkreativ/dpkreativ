@@ -9,8 +9,8 @@ import "remixicon/fonts/remixicon.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { ThemeProvider } from "@/components/theme-provider";
-import { ThemeScript } from "@/components/theme-script";
 import { cn } from "@/lib/utils";
+import Script from "next/script";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -53,15 +53,29 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        <ThemeScript />
+        <Script id="theme-script" strategy="beforeInteractive">
+          {`
+            (function() {
+              try {
+                var theme = localStorage.getItem("theme");
+                if (!theme) theme = "system";
+                if (theme === "system") {
+                  theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+                }
+                document.documentElement.classList.remove("dark", "light");
+                document.documentElement.classList.add(theme);
+              } catch (e) {}
+            })();
+          `}
+        </Script>
       </head>
-      <ThemeProvider>
-        <body className="font-body bg-faxx-light dark:bg-faxx-dark text-faxx-dark dark:text-faxx-light flex flex-col min-h-screen items-center selection:bg-faxx-blue selection:text-white transition-colors duration-300 overflow-x-hidden">
+      <body className="font-body bg-faxx-light dark:bg-faxx-dark text-faxx-dark dark:text-faxx-light flex flex-col min-h-screen items-center selection:bg-faxx-blue selection:text-white transition-colors duration-300 overflow-x-hidden">
+        <ThemeProvider>
           <Header />
           {children}
           <Footer />
-        </body>
-      </ThemeProvider>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

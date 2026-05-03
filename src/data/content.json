@@ -19,16 +19,12 @@
       "source": "Crunchies // Client Note"
     },
     {
-      "quote": "I'd been struggling with complex dev concepts for months, but Divine made them click in a single session. He has a unique gift for making the most difficult technical subjects feel intuitive and practical.",
-      "source": "Hackmamba // Student Review"
+      "quote": "Divine explains technical topics in a grounded way that makes them easier to understand and apply.",
+      "source": "IGHub // Student Review"
     },
     {
-      "quote": "Divine fixed the architectural mess we had been ignoring and turned our platform into a clearer RFQ-driven experience across 5 core service areas.",
+      "quote": "Divine improved the UI of our existing WordPress and Elementor website, making the experience clearer and giving clients a better path to send enquiries.",
       "source": "Kadric Ltd // Feedback"
-    },
-    {
-      "quote": "It's rare to find an engineer who cares about the business goals as much as the tech. Divine delivered across 3 fronts for us: client builds, internal systems, and developer community programs.",
-      "source": "IGHub // Partnership"
     },
     {
       "quote": "Divine consistently delivers high-quality technical documentation and possesses exceptional front-end development skills. His professionalism and ability to meet tight deadlines make him an invaluable asset.",
@@ -55,12 +51,12 @@
       "source": "Favour Chukwunyere // Recommendation"
     },
     {
-      "quote": "Head of Engineering at The Kreativ Studio, leading a fully remote team across 5+ product and client builds while staying close to the work.",
+      "quote": "Head of Engineering at The Kreativ Studio, leading a fully remote team across multiple product and client builds while staying close to the work.",
       "source": "The Kreativ Studio // Leadership"
     },
     {
-      "quote": "Software Engineer at Innovation Growth Hub, contributing across engineering, training, and community work over a 2+ year run.",
-      "source": "Innovation Growth Hub // Engineering"
+      "quote": "Contributed across client builds, internal systems, training, and community programs at IGHub, bringing strong engineering execution and a clear understanding of the broader work around the product.",
+      "source": "IGHub // Engineering"
     },
     {
       "quote": "Led the Crunchies redesign across a 7-month engagement, improving delivery flows with Next.js, Tailwind CSS, and Google Maps integration.",
@@ -320,15 +316,15 @@
       "image": "/images/project-placeholder.png",
       "client": "Kadric Ltd",
       "description": [
-        "A complete UI overhaul for an industrial supplier, built on WordPress with a focus on content clarity and RFQ-driven action.",
-        "I led a complete UI overhaul of their WordPress-based storefront, focusing on better content placement and information architecture to make their complex product range easier to navigate.",
-        "The redesign centered on a clearer RFQ-driven inquiry flow and trust signals, aligning their digital presence with the reliability and speed required in industrial procurement."
+        "A UI improvement project for an existing industrial supplier website built with WordPress and Elementor.",
+        "I worked on an already-built brochure-style site, improving the interface, content placement, and overall clarity so the company's services and product range were easier to understand.",
+        "The updated forms give potential clients a clearer way to send enquiries, while the improved UI makes the site feel more polished, trustworthy, and easier to use."
       ],
       "url": "https://kadricltd.com",
       "github": "",
       "featured": false,
-      "tags": ["B2B", "Industrial", "RFQ"],
-      "stack": ["WordPress", "RFQ Flow", "Responsive Frontend"],
+      "tags": ["B2B", "Industrial", "Brochure Site"],
+      "stack": ["WordPress", "Elementor", "Responsive UI"],
       "slug": "kadric-ltd"
     },
     {

@@ -374,7 +374,7 @@ export default async function Page({ params }: PageProps) {
             </RevealText>
           </div>
 
-          <MoreWorkRecommendations projects={relatedProjects} />
+          <MoreWorkRecommendations projects={relatedProjects} seed={project.slug} />
         </section>
       </div>
     </main>

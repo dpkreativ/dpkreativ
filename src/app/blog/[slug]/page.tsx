@@ -4,7 +4,7 @@ import Image from "next/image";
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
-import BackButton from "@/components/back-button";
+import BlogArchiveButton from "@/components/blog-archive-button";
 import RecommendedPosts from "@/components/recommended-posts";
 
 const HASHNODE_HOST = "dpkreativ.hashnode.dev";
@@ -66,7 +66,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   return (
     <main className="flex-1 w-full flex flex-col pt-[84px]">
       <article className="mx-auto w-full min-w-0 max-w-5xl px-6 py-16 md:px-12 md:py-24">
-        <BackButton href="/blog" label="Back to Archive" />
+        <BlogArchiveButton />
 
         {/* Header */}
         <header className="mb-12 md:mb-16 space-y-6">
