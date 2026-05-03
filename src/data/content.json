@@ -3,21 +3,156 @@
   "logo": "/images/kreativ-icon.svg",
   "logoword": "/images/kreativ-wordmark.svg",
   "heroImgText": "Hello World! I'm Divine.",
+  "contact": {
+    "email": "dpkreativ@gmail.com",
+    "phone": "09021824073",
+    "linkedin": "https://www.linkedin.com/in/dpkreativ",
+    "website": "https://dpkreativ.vercel.app"
+  },
   "aboutMe": [
-    "I'm an experienced web developer passionate about building dynamic, responsive websites that deliver an exceptional user experience.",
-    "With a background in design and skills in HTML, CSS, and JavaScript, I turn ideas into reality using the right tools and frameworks. <a href='/work' class='font-bold underline'>Check out my work</a> to see how I do it.",
-    "I am active in various developer communities, where I collaborate with peers and contribute to open source projects. I also enjoy breaking down complex ideas on my <a href='https://dpkreativ.notion.site/Divine-s-Technical-Content-Portfolio-dfdee17cdcb647498fae2f4b9d22a672?pvs=4' target='_blank' rel='noreferrer' class='font-bold underline'>blog</a>."
+    "I am Divine Orji, a software engineer building thoughtful digital products through Kreativ and for teams that care about clarity, speed, and real user value.",
+    "Today, I serve as Chief Nerd at Kreativ, where I oversee tech operations globally, while continuing hands-on engineering work across product interfaces, frontend systems, and client delivery.",
+    "My recent product work includes leading the Crunchies Fried Chicken website redesign with Next.js, Tailwind CSS, and Google Maps integration so customers can choose delivery locations and find nearby outlets with less friction.",
+    "Alongside product engineering, I spent over three years at Hackmamba creating technical content, product demos, and community programs. I still document my thinking in public through my <a href='https://dpkreativ.notion.site/Divine-s-Technical-Content-Portfolio-dfdee17cdcb647498fae2f4b9d22a672?pvs=4' target='_blank' rel='noreferrer' class='font-bold underline'>technical writing portfolio</a>."
+  ],
+  "highlights": [
+    {
+      "quote": "Divine turned our complex requirements into a fast, location-aware ordering experience that our customers actually love using.",
+      "source": "Crunchies // Client Review"
+    },
+    {
+      "quote": "A masterclass in technical clarity. Divine's ability to simplify complex engineering concepts is second to none.",
+      "source": "Hackmamba // Student Feedback"
+    },
+    {
+      "quote": "The level of rigor and architectural thinking Divine brought to our industrial supply platform was exactly what we needed to scale.",
+      "source": "Kadric Ltd // Client Review"
+    },
+    {
+      "quote": "An exceptional engineer who understands that great code is only valuable when it solves a real business problem.",
+      "source": "IGHub // Partnership"
+    },
+    {
+      "quote": "Chief Nerd at Kreativ, overseeing tech operations globally while staying close to the work.",
+      "source": "Kreativ // Leadership"
+    },
+    {
+      "quote": "Software Engineer at Innovation Growth Hub, contributing to high-impact engineering projects.",
+      "source": "Innovation Growth Hub // Engineering"
+    },
+    {
+      "quote": "Led the Crunchies redesign with Next.js, Tailwind CSS, and Google Maps-powered delivery flows.",
+      "source": "Crunchies // Product Delivery"
+    },
+    {
+      "quote": "Created technical content, demos, and hackathon programs during a 3+ year run at Hackmamba.",
+      "source": "Hackmamba // Technical Writing"
+    }
+  ],
+  "skills": [
+    "Web Development",
+    "Web Design",
+    "Mobile Development",
+    "Technical Writing",
+    "Software Engineering"
+  ],
+  "experience": [
+    {
+      "role": "Chief Nerd",
+      "company": "Kreativ",
+      "period": "January 2025 - Present",
+      "summary": "Software engineering role.",
+      "highlights": []
+    },
+    {
+      "role": "Software Engineer",
+      "company": "Kreativ",
+      "period": "January 2019 - Present",
+      "summary": "Building products under my own brand.",
+      "highlights": []
+    },
+    {
+      "role": "Software Engineer",
+      "company": "Innovation Growth Hub",
+      "period": "January 2024 - Present",
+      "summary": "Software engineering role.",
+      "highlights": []
+    },
+    {
+      "role": "Fullstack Developer",
+      "company": "Crunchies Fried Chicken Limited",
+      "period": "April 2024 - October 2024",
+      "summary": "Led the redesign of the Crunchies digital ordering experience.",
+      "highlights": [
+        "Redesigned the UI to make the product more intuitive and visually appealing.",
+        "Built a responsive, fast-loading site with Next.js and Tailwind CSS.",
+        "Integrated Google Maps so users can choose delivery locations and find nearby outlets."
+      ]
+    },
+    {
+      "role": "Technical Writer",
+      "company": "Hackmamba",
+      "period": "March 2021 - September 2024",
+      "summary": "Created technical content and supported developer community programs.",
+      "highlights": [
+        "Created, reviewed, and edited technical content.",
+        "Built product demos.",
+        "Organized hackathons and reviewed community submissions."
+      ]
+    },
+    {
+      "role": "Junior Software Engineer",
+      "company": "Truparse",
+      "period": "February 2021 - July 2021",
+      "summary": "Worked in a team creating web products with modern frontend tooling.",
+      "highlights": [
+        "Built innovative apps using agile methodologies for project delivery.",
+        "Gained expertise in TypeScript, React.js, SASS, and CSS.",
+        "Used Git for version control and developed custom CSS for WordPress sites."
+      ]
+    },
+    {
+      "role": "Frontend Developer Intern",
+      "company": "PAYVEST GLOBAL",
+      "period": "October 2020 - January 2021",
+      "summary": "Contributed to frontend product work and WordPress builds.",
+      "highlights": [
+        "Contributed to codebases using HTML5, React.js, and CSS.",
+        "Collaborated with senior developers and accelerated delivery with strong CSS execution.",
+        "Built company product websites in WordPress and gained Bootstrap and SASS experience."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Michael Okpara University of Agriculture Umudike",
+      "degree": "Bachelor of Science - BS, Mathematics",
+      "period": "September 2018 - December 2022"
+    }
+  ],
+  "certifications": [
+    "Create User Stories in Trello",
+    "Hackerrank Skills Certificate for CSS",
+    "Google Africa Developer Training Program"
+  ],
+  "languages": [
+    "English (Full Professional)"
   ],
   "socials": [
-    {
-      "icon": "ri-youtube-fill",
-      "url": "https://www.youtube.com/@dpkreativ",
-      "type": "youtube"
-    },
     {
       "icon": "ri-mail-send-fill",
       "url": "mailto:dpkreativ@gmail.com",
       "type": "email"
+    },
+    {
+      "icon": "ri-linkedin-fill",
+      "url": "https://www.linkedin.com/in/dpkreativ",
+      "type": "linkedin"
+    },
+    {
+      "icon": "ri-github-fill",
+      "url": "https://github.com/dpkreativ",
+      "type": "github"
     },
     {
       "icon": "ri-quill-pen-fill",
@@ -25,19 +160,12 @@
       "type": "blog"
     },
     {
-      "icon": "ri-github-fill",
-      "url": "https://github.com/dpkreativ",
-      "type": "github"
+      "icon": "ri-youtube-fill",
+      "url": "https://www.youtube.com/@dpkreativ",
+      "type": "youtube"
     }
   ],
   "brands": [
-    {
-      "image": "/images/philsautologo.png",
-      "width": 100,
-      "height": 84,
-      "url": "https://philsautosalesllc.com",
-      "title": "Phil's Auto Sales LLC"
-    },
     {
       "image": "/images/ighublogo.png",
       "width": 711,
@@ -58,6 +186,35 @@
       "height": 512,
       "url": "https://alchemyofcode.pages.dev",
       "title": "Alchemy Of Code"
+    },
+    {
+      "image": "/images/merphils-default.svg",
+      "width": 188,
+      "height": 194,
+      "url": "",
+      "title": "Merphils"
+    },
+    {
+      "image": "/images/icon-ff3b3b.svg",
+      "width": 121,
+      "height": 125,
+      "url": "",
+      "title": "Grooovy"
+    },
+    {
+      "image": "/images/philsautologo.png",
+      "width": 100,
+      "height": 84,
+      "url": "",
+      "title": "Phils Auto"
+    },
+    {
+      "image": "/images/tibc_logo.png",
+      "width": 402,
+      "height": 402,
+      "url": "https://theirokocircle.org",
+      "title": "The Iroko Circle",
+      "invertInDarkMode": true
     }
   ],
   "projects": [
@@ -78,67 +235,100 @@
       "slug": "crunchies-online"
     },
     {
-      "title": "Phil's Auto Sales Website",
-      "image": "/images/philsauto.png",
-      "client": "Phil's Auto Sales LLC",
+      "title": "Merphils",
+      "image": "/images/project-placeholder.png",
+      "client": "Merphils",
       "description": [
-        "I created a clean, user-friendly, and responsive website using WordPress, tailoring it to showcase Mr. Philemon's car inventory in a way that's easy for customers to browse.",
-        "I also implemented SEO best practices to boost the site's visibility online. To streamline customer inquiries, I added features like contact forms and clear calls-to-action, making it simple for visitors to connect with the business."
+        "Merphils is a unified education platform designed to connect school operations, family access, learner records, and future cross-school collaboration in one system.",
+        "The product is built around a single-account, context-aware identity model that lets one person move across multiple schools and roles such as owner, staff member, parent, or student without creating duplicate identities.",
+        "It is being shaped to support class management, assignments, grades, admissions, finance, and long-term academic history while keeping school data private by default and learner continuity intact over time."
       ],
-      "url": "https://philsautosalesllc.com",
+      "url": "#",
       "github": "",
       "featured": true,
-      "tags": ["UI/UX", "Coding", "WordPress"],
-      "stack": ["WordPress", "Elementor", "SEO"],
-      "slug": "phils-auto-sales-website"
+      "tags": ["Education", "SaaS", "Multi-tenant"],
+      "stack": ["Next.js", "TypeScript", "Tailwind"],
+      "slug": "merphils"
     },
     {
-      "title": "IGHub Website",
-      "image": "/images/ighub.png",
-      "client": "Innovation Growth Hub",
+      "title": "Grooovy",
+      "image": "/images/project-placeholder.png",
+      "client": "Grooovy",
       "description": [
-        "I had a blast building this modern website for IGHub, where I used WordPress to highlight their startup incubation programs, upcoming events, and valuable resources.",
-        "My focus was on accessibility—I wanted everyone, regardless of ability, to navigate the site effortlessly. I also optimized its performance to ensure fast load times, reflecting my commitment to creating smooth user experiences.",
-        "Working closely with the IGHub team, I brought their mission to life through a design that's both functional and engaging."
+        "Grooovy is a nightlife and social event discovery platform built to surface the plans that usually stay buried in group chats, stories, and word of mouth.",
+        "The experience combines a public vibe-first discovery flow with guided onboarding, Supabase-backed authentication, and a protected dashboard where users can manage plans, tickets, wallet activity, and hosting tools.",
+        "Across public event pages, RSVP and checkout flows, host workspaces, and admin views, the product is being designed to make the path from curiosity to commitment feel warm, cinematic, and fast."
       ],
-      "url": "https://ighub.ng",
+      "url": "#",
+      "github": "",
+      "featured": true,
+      "tags": ["Events", "Consumer", "Platform"],
+      "stack": ["React", "Supabase", "GSAP"],
+      "slug": "grooovy"
+    },
+    {
+      "title": "Kadric Ltd",
+      "image": "/images/project-placeholder.png",
+      "client": "Kadric Ltd",
+      "description": [
+        "Kadric is an industrial supply and support company serving marine, offshore, oil and gas, and broader industrial operations with procurement, HSE products, technical sourcing, and engineering support.",
+        "The website is built to make complex supply capability easier to understand, with clear service categories, RFQ-driven inquiry flows, trust signals, and a stronger public story around reliability, safety, and delivery coordination.",
+        "From product discovery to quote requests, the experience is positioned around practical operational needs: speed, fit-for-purpose sourcing, and confidence that the supplier can respond under pressure."
+      ],
+      "url": "https://kadricltd.com",
       "github": "",
       "featured": false,
-      "tags": ["UI/UX", "Coding", "WordPress"],
-      "stack": ["WordPress", "Custom Theme Development"],
-      "slug": "ighub-website"
+      "tags": ["B2B", "Industrial", "RFQ"],
+      "stack": ["WordPress", "RFQ Flow", "Responsive Frontend"],
+      "slug": "kadric-ltd"
+    },
+    {
+      "title": "The Iroko Circle",
+      "image": "/images/project-placeholder.png",
+      "client": "The Iroko Circle",
+      "description": [
+        "The Iroko Circle is a literary community and editorial platform dedicated to reading, discussing, and amplifying African stories.",
+        "The website brings together essays, features, poetry, reviews, short stories, community join flows, chapter growth, submissions, and newsletter touchpoints in one clear publishing and community experience.",
+        "Its job is not just to publish content, but to make discovery, participation, and literary conversation feel welcoming for readers, writers, and supporters of African literature."
+      ],
+      "url": "https://theirokocircle.org",
+      "github": "",
+      "featured": true,
+      "tags": ["Editorial", "Community", "Publishing"],
+      "stack": ["WordPress", "Editorial CMS", "Community Forms"],
+      "slug": "the-iroko-circle"
+    },
+    {
+      "title": "The Bakistry",
+      "image": "/images/project-placeholder.png",
+      "client": "The Bakistry",
+      "description": [
+        "The Bakistry is a handcrafted cakes and treats brand built around fast delivery, premium presentation, and a warm storefront for everyday celebrations and special occasions.",
+        "The site combines category-led shopping, cart and checkout flows, featured products, and editorial content so customers can move easily from inspiration to order.",
+        "From Budget Express Cakes to custom gateaux, the experience is designed to balance appetite, speed, and visual delight without making the buying path feel heavy."
+      ],
+      "url": "https://thebakistry.ng",
+      "github": "",
+      "featured": true,
+      "tags": ["E-commerce", "Food", "Brand"],
+      "stack": ["WordPress", "WooCommerce", "Custom Theme"],
+      "slug": "the-bakistry"
     },
     {
       "title": "The Developer Marketing Book",
       "image": "/images/devmarbook.png",
       "client": "Decenta LLC",
       "description": [
-        "I developed this interactive website using Next.js, and I'm thrilled with how it turned out!",
-        "My aim was to create a platform where users could explore the book's content and sign up for updates seamlessly. I leaned on my UI/UX skills to design an inviting layout, paired with Tailwind CSS for a sleek look, and deployed it on Vercel for top-notch performance.",
-        "It's one of those projects where I got to blend my coding expertise with my love for making complex ideas accessible to everyone."
+        "The Developer Marketing Book is a focused launch site for a book on reaching and engaging developers through strategy, community, and partnerships.",
+        "The site brings together the core value proposition, book formats, audiobook promotion, testimonials, and author credibility in one fast marketing surface.",
+        "Its structure is intentionally tight: help the right reader understand the promise quickly, browse proof, and take a clear next step toward purchase or listening."
       ],
-      "url": "https://devmarbook.com/",
+      "url": "https://devmarbook.vercel.app",
       "github": "github.com/dpkreativ/devmarbook",
-      "featured": true,
-      "tags": ["UI/UX", "Coding", "Next.js"],
+      "featured": false,
+      "tags": ["Marketing", "Publishing", "Next.js"],
       "stack": ["Next.js", "Tailwind", "Vercel"],
       "slug": "the-developer-marketing-book"
-    },
-    {
-      "title": "Alchemy Of Code",
-      "image": "/images/alchemyofcode.png",
-      "client": "",
-      "description": [
-        "Alchemy Of Code is my personal passion project, designed as a structured self-learning platform for developers.",
-        "It features programs like Fullstack Forge, which guides you through mastering web development from front to back, and Mobile Maestro, focused on building high-quality mobile applications with React Native.",
-        "My goal is to empower developers to learn practical skills through hands-on projects and curated resources."
-      ],
-      "url": "https://alchemyofcode.pages.dev/",
-      "github": "",
-      "featured": true,
-      "tags": ["Documentation", "Notion", "Tutorials"],
-      "stack": ["Notion", "Markdown", "Technical Writing"],
-      "slug": "alchemy-of-code"
     }
   ],
   "navlinks": [
@@ -152,7 +342,7 @@
       "id": 2,
       "title": "About",
       "url": "/about",
-      "icon": ""
+      "icon": "ri-user-line"
     },
     {
       "id": 3,
@@ -162,9 +352,47 @@
     },
     {
       "id": 4,
+      "title": "Blog",
+      "url": "/blog",
+      "icon": "ri-quill-pen-line"
+    },
+    {
+      "id": 5,
       "title": "Contact",
       "url": "/contact",
       "icon": "ri-contacts-line"
+    }
+  ],
+  "blogs": [
+    {
+      "title": "Architecting Scalable Next.js Applications",
+      "excerpt": "Exploring the best practices for building enterprise-grade applications with Next.js 14 and the App Router.",
+      "date": "2024-03-15",
+      "category": "Engineering",
+      "source": "Hashnode",
+      "url": "#",
+      "image": "/images/project-placeholder.png",
+      "slug": "architecting-nextjs-apps"
+    },
+    {
+      "title": "The Impact of Community in Software Engineering",
+      "excerpt": "How mentoring and knowledge sharing accelerates growth for both individuals and organizations.",
+      "date": "2024-02-28",
+      "category": "Community",
+      "source": "Medium",
+      "url": "#",
+      "image": "/images/project-placeholder.png",
+      "slug": "community-impact-engineering"
+    },
+    {
+      "title": "Optimizing Web Performance: From 200k to 3M",
+      "excerpt": "A deep dive into the technical strategies used to scale Crunchies online revenue through performance optimization.",
+      "date": "2024-01-20",
+      "category": "Case Study",
+      "source": "Dev.to",
+      "url": "#",
+      "image": "/images/project-placeholder.png",
+      "slug": "optimizing-web-performance"
     }
   ]
 }

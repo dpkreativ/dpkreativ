@@ -1,7 +1,3 @@
-:root {
-  --ghost-white: #f8f8ff;
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,5 +5,156 @@
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@layer base {
+  .blog-post-markdown {
+    min-width: 0;
+  }
+
+  .blog-post-markdown.prose :where(h1, h2, h3):not(:where([class~="not-prose"] *)) {
+    line-height: 1.4;
+  }
+
+  .blog-post-markdown.prose :where(h1, h2, h3):not(:where([class~="not-prose"] *)) code {
+    line-height: 1.3;
+    padding-top: 0.12em;
+    padding-bottom: 0.12em;
+    white-space: normal;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+
+  .blog-post-markdown.prose :where(h1, h2, h3):not(:where([class~="not-prose"] *)) code::before,
+  .blog-post-markdown.prose :where(h1, h2, h3):not(:where([class~="not-prose"] *)) code::after {
+    line-height: inherit;
+  }
+
+  .blog-post-markdown pre {
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    border: 4px solid rgb(17 17 17);
+    background: #1e1e1e;
+    color: #d4d4d4;
+    padding: 1.25rem;
+    box-shadow: 6px 6px 0 0 rgba(17, 17, 17, 1);
+  }
+
+  .dark .blog-post-markdown pre {
+    border-color: rgb(64 64 64);
+    box-shadow: 6px 6px 0 0 rgba(0, 229, 255, 0.35);
+  }
+
+  .blog-post-markdown pre code {
+    display: block;
+    min-width: 0;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    tab-size: 2;
+    background: transparent;
+    color: inherit;
+    padding: 0;
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .blog-post-markdown :not(pre) > code {
+    border: 1px solid rgba(17, 17, 17, 0.2);
+    background: rgba(17, 17, 17, 0.06);
+    padding: 0.15rem 0.4rem;
+    color: #c7254e;
+    font-size: 0.9em;
+  }
+
+  .dark .blog-post-markdown :not(pre) > code {
+    border-color: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.06);
+    color: #4fc1ff;
+  }
+
+  .blog-post-markdown .hljs-comment,
+  .blog-post-markdown .hljs-quote {
+    color: #6a9955;
+    font-style: italic;
+  }
+
+  .blog-post-markdown .hljs-keyword,
+  .blog-post-markdown .hljs-selector-tag,
+  .blog-post-markdown .hljs-literal,
+  .blog-post-markdown .hljs-section,
+  .blog-post-markdown .hljs-link {
+    color: #c586c0;
+  }
+
+  .blog-post-markdown .hljs-string,
+  .blog-post-markdown .hljs-title,
+  .blog-post-markdown .hljs-name,
+  .blog-post-markdown .hljs-attribute,
+  .blog-post-markdown .hljs-symbol,
+  .blog-post-markdown .hljs-bullet,
+  .blog-post-markdown .hljs-addition {
+    color: #ce9178;
+  }
+
+  .blog-post-markdown .hljs-number,
+  .blog-post-markdown .hljs-built_in,
+  .blog-post-markdown .hljs-builtin-name,
+  .blog-post-markdown .hljs-type,
+  .blog-post-markdown .hljs-template-variable,
+  .blog-post-markdown .hljs-variable,
+  .blog-post-markdown .hljs-params {
+    color: #4ec9b0;
+  }
+
+  .blog-post-markdown .hljs-regexp,
+  .blog-post-markdown .hljs-meta,
+  .blog-post-markdown .hljs-meta-string {
+    color: #d16969;
+  }
+
+  .blog-post-markdown .hljs-function,
+  .blog-post-markdown .hljs-title.function_,
+  .blog-post-markdown .hljs-title.class_ {
+    color: #dcdcaa;
+  }
+
+  .blog-post-markdown .hljs-operator,
+  .blog-post-markdown .hljs-punctuation,
+  .blog-post-markdown .hljs-subst {
+    color: #d4d4d4;
+  }
+
+  .blog-post-markdown .hljs-attr,
+  .blog-post-markdown .hljs-property,
+  .blog-post-markdown .hljs-selector-id,
+  .blog-post-markdown .hljs-selector-class,
+  .blog-post-markdown .hljs-selector-attr,
+  .blog-post-markdown .hljs-selector-pseudo {
+    color: #9cdcfe;
+  }
+
+  @media (max-width: 640px) {
+    .blog-post-markdown pre {
+      padding: 0.875rem;
+      border-width: 3px;
+      box-shadow: 4px 4px 0 0 rgba(17, 17, 17, 1);
+    }
+
+    .dark .blog-post-markdown pre {
+      box-shadow: 4px 4px 0 0 rgba(0, 229, 255, 0.35);
+    }
+
+    .blog-post-markdown pre code {
+      font-size: 0.825rem;
+      line-height: 1.55;
+    }
+
+    .blog-post-markdown :not(pre) > code {
+      overflow-wrap: anywhere;
+    }
   }
 }
