@@ -235,61 +235,61 @@ const projectCaseStudies: Record<ProjectSlug, CaseStudy> = {
   },
   "kadric-ltd": {
     headline:
-      "Positioned an industrial supply company around reliability, technical clarity, and faster RFQ-driven action.",
+      "Improved the UI of an existing WordPress and Elementor brochure site for an industrial supplier, with clearer content and enquiry paths.",
     timeline: "2024",
     role: "Web Strategist and Product Engineer",
     services: [
       "B2B Website Strategy",
-      "Information Architecture",
-      "RFQ Experience",
-      "Content Translation",
+      "UI Improvement",
+      "WordPress and Elementor",
+      "Enquiry Flow",
     ],
     goals: [
-      "Make Kadric's product range and service capability easier for procurement and operations teams to understand quickly.",
-      "Create a clearer path from requirement to quote request without forcing buyers through generic marketing copy.",
-      "Communicate trust through quality signals, sector relevance, and safety-first positioning.",
+      "Improve the UI of the existing brochure-style website without rebuilding the site from scratch.",
+      "Make Kadric's services and product range easier for potential clients to understand quickly.",
+      "Create a clearer path for clients to send enquiries through the site's forms.",
     ],
     process: [
       {
         eyebrow: "Problem Discovery",
-        title: "Start from the buyer's need for clarity under operational pressure.",
+        title: "Start from an existing site that needed much stronger UI clarity.",
         details: [
-          "The site positioning is built around the real environments Kadric serves: marine, offshore, oil and gas, and industrial operations that care about safety, uptime, and delivery reliability.",
-          "That pushed the structure away from abstract company language and toward practical explanations of sourcing support, HSE products, recurring supply, and RFQ responsiveness.",
+          "The website already existed in WordPress and Elementor, so the job was not to reinvent the product but to improve the interface and overall presentation.",
+          "The core issue was clarity: the UI needed to do a better job of presenting Kadric's services, product areas, and credibility in a way potential clients could grasp quickly.",
         ],
       },
       {
         eyebrow: "Friction Mapping",
-        title: "See where breadth and trust start to feel vague on the site.",
+        title: "Find where the brochure experience felt weak or visually unclear.",
         details: [
-          "The content system gives products, services, HSE support, and quote pathways distinct places so buyers can understand breadth without getting lost.",
-          "Client logos, sector language, and service explanations were treated as proof points that reduce uncertainty for procurement teams under pressure.",
+          "The content and interface needed better hierarchy so visitors could move through the site without the layout feeling dated or difficult to scan.",
+          "Visual polish, spacing, and content placement became the main levers for making the brochure site feel more trustworthy and easier to use.",
         ],
       },
       {
         eyebrow: "Solution Direction",
-        title: "Reframe the offer around the supply support buyers actually need.",
+        title: "Improve the structure and presentation without overcomplicating the site.",
         details: [
-          "The service layer was broken out around sourcing support, technical matching, recurring supply planning, and fulfillment coordination so the offering felt actionable instead of vague.",
-          "That helped the site communicate not just what Kadric supplies, but how the team supports ongoing operations when requirements change quickly.",
+          "The UI was refined around clearer sections, better content grouping, and a more readable presentation of Kadric's offer.",
+          "That kept the site true to its brochure-style purpose while making it easier for clients to understand what the business does and why they should reach out.",
         ],
       },
       {
-        eyebrow: "Lead Conversion",
-        title: "Turn the fix into a clearer RFQ-driven path to action.",
+        eyebrow: "Enquiry Path",
+        title: "Make the forms feel like a natural route for client enquiries.",
         details: [
-          "Call-to-action placement is centered on quote-driven behavior, guiding buyers toward sending item lists, quantities, timelines, and delivery points with less friction.",
-          "The result is a public-facing experience that behaves less like a brochure and more like an operational entry point for supply conversations.",
+          "The forms were positioned and framed as a straightforward way for potential clients to send enquiries after understanding the company and its services.",
+          "That gave the site a clearer next step without pretending it was anything more complex than a brochure website meant to start conversations.",
         ],
       },
     ],
     results: [
-      "Created a stronger public story around Kadric's industrial, marine, and HSE supply capability.",
-      "Made the route from browsing to quote request clearer for operations and procurement teams.",
-      "Aligned the digital experience with the trust, reliability, and responsiveness the business needs to communicate.",
+      "Improved the overall UI and presentation of an existing WordPress and Elementor website.",
+      "Made Kadric's services and product information easier for visitors to understand.",
+      "Created a clearer path for potential clients to send enquiries through the site's forms.",
     ],
     reflection:
-      "B2B infrastructure sites work when they reduce ambiguity. The buyer should understand capability, trust the supplier, and know how to proceed in minutes.",
+      "Even a straightforward brochure site does real work when the UI is clear, the content is easy to scan, and the path to enquire feels obvious.",
   },
   "the-iroko-circle": {
     headline:

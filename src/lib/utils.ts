@@ -22,3 +22,19 @@ export function shuffleArray<T>(items: T[]) {
 export function pickRandomItems<T>(items: T[], count: number) {
   return shuffleArray(items).slice(0, count)
 }
+
+export function pickDeterministicItems<T>(items: T[], count: number, seed: string) {
+  if (count <= 0 || items.length === 0) {
+    return []
+  }
+
+  if (items.length <= count) {
+    return [...items]
+  }
+
+  const startIndex =
+    Array.from(seed).reduce((total, char) => total + char.charCodeAt(0), 0) % items.length
+  const rotatedItems = items.slice(startIndex).concat(items.slice(0, startIndex))
+
+  return rotatedItems.slice(0, count)
+}

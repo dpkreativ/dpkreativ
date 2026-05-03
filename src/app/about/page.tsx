@@ -10,6 +10,7 @@ import {
   languages,
   skills,
 } from "@/assets/data";
+import FloatingDownloadLink from "@/components/floating-download-link";
 import RevealText from "@/components/reveal-text";
 import SplitHeading from "@/components/split-heading";
 import Image from "next/image";
@@ -47,14 +48,14 @@ export default function About() {
           <header className="space-y-4">
             <SplitHeading
               as="h1"
-              className="font-display text-4xl sm:text-6xl md:text-8xl lg:text-9xl uppercase tracking-tighter leading-[0.8]"
+              className="font-display text-3xl sm:text-5xl md:text-7xl lg:text-8xl uppercase tracking-tighter leading-[0.85]"
               lines={[
-                <>
+                <span key="about-title-line-1">
                   THE <span className="text-faxx-blue dark:text-faxx-cyan">STORY</span>
-                </>,
-                <>
+                </span>,
+                <span key="about-title-line-2">
                   BEHIND <span className="text-faxx-coral dark:text-faxx-lime">DIVI.</span>
-                </>,
+                </span>,
               ]}
             />
             <RevealText
@@ -63,6 +64,12 @@ export default function About() {
             >
               Software Engineer // Community Builder // Problem Solver
             </RevealText>
+
+            <FloatingDownloadLink
+              href="/divine_linkedin.pdf"
+              downloadName="divine-orji-cv.pdf"
+              label="Download CV PDF"
+            />
           </header>
 
           <div className="space-y-8 font-body text-lg md:text-2xl font-medium leading-relaxed dark:text-gray-300 about-text">
@@ -75,28 +82,25 @@ export default function About() {
             ))}
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 about-text">
-            <div className="bg-faxx-dark text-white p-8 border-4 border-faxx-dark shadow-[8px_8px_0px_0px_rgba(67,32,246,1)] dark:shadow-[8px_8px_0px_0px_rgba(0,229,255,1)]">
-              <RevealText as="h3" className="font-display text-2xl uppercase mb-4">
-                The Philosophy
-              </RevealText>
-              <p className="font-body opacity-80 text-lg">
-                I don&apos;t just build features; I build solutions. I believe in software that is accessible, performant, and, above all, impactful.
-              </p>
-            </div>
-            <div className="bg-white dark:bg-black text-faxx-dark dark:text-white p-8 border-4 border-faxx-dark dark:border-gray-700 shadow-[8px_8px_0px_0px_rgba(255,74,90,1)] dark:shadow-[8px_8px_0px_0px_rgba(191,255,0,1)]">
-              <RevealText as="h3" className="font-display text-2xl uppercase mb-4">
-                The Mission
-              </RevealText>
-              <p className="font-body opacity-80 text-lg">
-                To bridge the gap between complex engineering and human-centric design, one line of code at a time.
-              </p>
+          <div className="about-text grid gap-5 bg-white dark:bg-zinc-900 border-4 border-faxx-dark dark:border-gray-700 p-6 md:p-8 shadow-[8px_8px_0px_0px_rgba(60,60,60,1)] dark:shadow-[8px_8px_0px_0px_rgba(0,229,255,0.2)]">
+            <RevealText as="h3" className="font-display text-3xl uppercase tracking-tighter">
+              Core Skills
+            </RevealText>
+            <div className="flex flex-wrap gap-3">
+              {skills.map((skill) => (
+                <span
+                  key={skill}
+                  className="px-3 py-2 border-2 border-faxx-dark dark:border-gray-700 bg-faxx-light dark:bg-black font-mono text-xs font-bold uppercase tracking-widest text-faxx-dark dark:text-white"
+                >
+                  {skill}
+                </span>
+              ))}
             </div>
           </div>
         </div>
 
         {/* Right: Image/Aesthetic */}
-        <div className="lg:col-span-5 lg:sticky lg:top-32">
+        <div className="lg:col-span-5">
           <div className="relative aspect-[3/4] border-8 border-faxx-dark dark:border-gray-700 shadow-[16px_16px_0px_0px_rgba(67,32,246,1)] dark:shadow-[16px_16px_0px_0px_rgba(0,229,255,1)] overflow-hidden about-image">
             <Image
               src={avatar}
@@ -116,7 +120,7 @@ export default function About() {
             ></div>
           </div>
           
-           <div className="mt-12 bg-faxx-coral dark:bg-faxx-lime text-white dark:text-faxx-dark p-6 border-4 border-faxx-dark rotate-2 about-image">
+           <div className="mt-12 bg-faxx-coral dark:bg-faxx-lime text-white dark:text-faxx-dark p-6 border-4 border-faxx-dark about-image">
                <RevealText as="p" className="font-script text-3xl text-center">
                  &quot;Code is the tool, impact is the goal.&quot;
                </RevealText>
@@ -131,80 +135,86 @@ export default function About() {
               as="h2"
               className="font-display text-4xl md:text-6xl uppercase tracking-tighter leading-none"
               lines={[
-                <>
+                <span key="experience-title-line-1">
                   EXPERIENCE <span className="text-faxx-blue dark:text-faxx-cyan">SNAPSHOT.</span>
-                </>,
+                </span>,
               ]}
             />
             <RevealText
               as="p"
               className="font-mono text-sm md:text-base mt-4 text-faxx-coral dark:text-faxx-lime font-bold uppercase tracking-widest"
             >
-              Roles, responsibilities, and highlights from LinkedIn.
+              Roles, responsibilities, and highlights.
             </RevealText>
           </div>
 
-          <div className="grid gap-6">
-            {experience.map((item) => (
-              <article
-                key={`${item.company}-${item.role}-${item.period}`}
-                className="grid gap-5 bg-white dark:bg-zinc-900 border-4 border-faxx-dark dark:border-gray-700 p-6 md:p-8 shadow-[8px_8px_0px_0px_rgba(60,60,60,1)] dark:shadow-[8px_8px_0px_0px_rgba(0,229,255,0.2)]"
-              >
-                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
-                  <div className="grid gap-2">
-                    <RevealText
-                      as="h3"
-                      className="font-display text-3xl md:text-4xl uppercase tracking-tighter leading-none"
-                      triggerStart="top 92%"
+          <div className="relative">
+            <div className="absolute bottom-0 left-5 top-2 w-1 bg-faxx-dark dark:bg-gray-700 md:left-1/2 md:-translate-x-1/2"></div>
+
+            <div className="grid gap-10 md:gap-14">
+              {experience.map((item, idx) => {
+                const stepNumber = String(idx + 1).padStart(2, "0");
+                const cardOnRight = idx % 2 === 0;
+
+                return (
+                  <article
+                    key={`${item.company}-${item.role}-${item.period}`}
+                    className="relative grid gap-4 pl-16 md:grid-cols-[minmax(0,1fr)_5rem_minmax(0,1fr)] md:items-start md:gap-8 md:pl-0"
+                  >
+                    <div className="absolute left-0 top-1 z-10 flex h-10 w-10 items-center justify-center border-4 border-faxx-dark bg-faxx-coral font-display text-xl uppercase tracking-tighter text-white shadow-[4px_4px_0px_0px_rgba(17,17,17,1)] dark:border-gray-700 dark:bg-faxx-lime dark:text-faxx-dark dark:shadow-[4px_4px_0px_0px_rgba(0,229,255,0.35)] md:left-1/2 md:-translate-x-1/2">
+                      {stepNumber}
+                    </div>
+
+                    <div
+                      className={`md:row-start-1 ${cardOnRight ? "md:col-start-1 md:flex md:justify-end md:pt-2" : "md:col-start-3 md:pt-2"}`}
                     >
-                      {item.role}
-                    </RevealText>
-                    <p className="font-mono text-xs md:text-sm uppercase tracking-[0.18em] text-faxx-blue dark:text-faxx-cyan font-bold">
-                      {item.company}
-                    </p>
-                  </div>
-                  <p className="font-mono text-xs md:text-sm uppercase tracking-[0.18em] text-faxx-coral dark:text-faxx-lime font-bold lg:text-right">
-                    {item.period}
-                  </p>
-                </div>
+                      <div className="inline-flex w-fit items-center gap-3 border-4 border-faxx-dark bg-faxx-blue px-4 py-2 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-white shadow-[6px_6px_0px_0px_rgba(17,17,17,1)] dark:border-gray-700 dark:bg-faxx-cyan dark:text-faxx-dark dark:shadow-[6px_6px_0px_0px_rgba(0,229,255,0.25)]">
+                        <span className="opacity-70">Role {stepNumber}</span>
+                        <span aria-hidden="true">{"//"}</span>
+                        <span>{item.period}</span>
+                      </div>
+                    </div>
 
-                <p className="font-body text-lg leading-relaxed dark:text-gray-300">
-                  {item.summary}
-                </p>
+                    <div className={`md:row-start-1 ${cardOnRight ? "md:col-start-3" : "md:col-start-1"}`}>
+                      <div className="grid gap-5 bg-white dark:bg-zinc-900 border-4 border-faxx-dark dark:border-gray-700 p-6 md:p-8 shadow-[8px_8px_0px_0px_rgba(60,60,60,1)] dark:shadow-[8px_8px_0px_0px_rgba(0,229,255,0.2)]">
+                        <div className="grid gap-2 border-b-2 border-faxx-dark/10 pb-4 dark:border-gray-700">
+                          <RevealText
+                            as="h3"
+                            className="font-display text-2xl md:text-3xl uppercase tracking-tighter leading-none"
+                            triggerStart="top 92%"
+                          >
+                            {item.role}
+                          </RevealText>
+                          <p className="font-mono text-xs md:text-sm uppercase tracking-[0.18em] text-faxx-blue dark:text-faxx-cyan font-bold">
+                            {item.company}
+                          </p>
+                        </div>
 
-                {item.highlights.length > 0 ? (
-                  <ul className="grid gap-3 font-body text-base md:text-lg leading-relaxed dark:text-gray-300">
-                    {item.highlights.map((highlight: string) => (
-                      <li key={highlight} className="flex gap-3 items-start">
-                        <span className="mt-2 h-2.5 w-2.5 shrink-0 bg-faxx-blue dark:bg-faxx-cyan border border-faxx-dark dark:border-gray-700"></span>
-                        <span>{highlight}</span>
-                      </li>
-                    ))}
-                  </ul>
-                ) : null}
-              </article>
-            ))}
+                        <p className="font-body text-lg leading-relaxed dark:text-gray-300">
+                          {item.summary}
+                        </p>
+
+                        {item.highlights.length > 0 ? (
+                          <ul className="grid gap-3 font-body text-base md:text-lg leading-relaxed dark:text-gray-300">
+                            {item.highlights.map((highlight: string) => (
+                              <li key={highlight} className="flex gap-3 items-start">
+                                <span className="mt-2 h-2.5 w-2.5 shrink-0 bg-faxx-blue dark:bg-faxx-cyan border border-faxx-dark dark:border-gray-700"></span>
+                                <span>{highlight}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        ) : null}
+                      </div>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
           </div>
         </section>
 
-        <section className="grid lg:grid-cols-3 gap-6 about-text">
-          <article className="grid gap-5 bg-white dark:bg-zinc-900 border-4 border-faxx-dark dark:border-gray-700 p-6 md:p-8 shadow-[8px_8px_0px_0px_rgba(60,60,60,1)] dark:shadow-[8px_8px_0px_0px_rgba(0,229,255,0.2)]">
-            <RevealText as="h3" className="font-display text-3xl uppercase tracking-tighter">
-              Core Skills
-            </RevealText>
-            <div className="flex flex-wrap gap-3">
-              {skills.map((skill) => (
-                <span
-                  key={skill}
-                  className="px-3 py-2 border-2 border-faxx-dark dark:border-gray-700 bg-faxx-light dark:bg-black font-mono text-xs font-bold uppercase tracking-widest text-faxx-dark dark:text-white"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </article>
-
-          <article className="grid gap-5 bg-white dark:bg-zinc-900 border-4 border-faxx-dark dark:border-gray-700 p-6 md:p-8 shadow-[8px_8px_0px_0px_rgba(60,60,60,1)] dark:shadow-[8px_8px_0px_0px_rgba(0,229,255,0.2)]">
+        <section className="grid items-start gap-6 about-text lg:grid-cols-2">
+          <article className="grid content-start gap-5 bg-white dark:bg-zinc-900 border-4 border-faxx-dark dark:border-gray-700 p-6 md:p-8 shadow-[8px_8px_0px_0px_rgba(60,60,60,1)] dark:shadow-[8px_8px_0px_0px_rgba(0,229,255,0.2)]">
             <RevealText as="h3" className="font-display text-3xl uppercase tracking-tighter">
               Education
             </RevealText>
@@ -225,7 +235,7 @@ export default function About() {
             </div>
           </article>
 
-          <article className="grid gap-6 bg-white dark:bg-zinc-900 border-4 border-faxx-dark dark:border-gray-700 p-6 md:p-8 shadow-[8px_8px_0px_0px_rgba(60,60,60,1)] dark:shadow-[8px_8px_0px_0px_rgba(0,229,255,0.2)]">
+          <article className="grid content-start gap-6 bg-white dark:bg-zinc-900 border-4 border-faxx-dark dark:border-gray-700 p-6 md:p-8 shadow-[8px_8px_0px_0px_rgba(60,60,60,1)] dark:shadow-[8px_8px_0px_0px_rgba(0,229,255,0.2)]">
             <div className="grid gap-3">
               <RevealText as="h3" className="font-display text-3xl uppercase tracking-tighter">
                 Credentials

@@ -1,18 +1,17 @@
-"use client";
-
 import type { Project } from "@/assets/data";
 import { ProjectCard } from "@/components/cards";
-import { pickRandomItems } from "@/lib/utils";
-import { useState } from "react";
+import { pickDeterministicItems } from "@/lib/utils";
 
 export default function MoreWorkRecommendations({
   projects,
   count = 2,
+  seed,
 }: {
   projects: Project[];
   count?: number;
+  seed: string;
 }) {
-  const [recommendedProjects] = useState(() => pickRandomItems(projects, count));
+  const recommendedProjects = pickDeterministicItems(projects, count, seed);
 
   return (
     <div className="grid gap-6 md:grid-cols-2">
