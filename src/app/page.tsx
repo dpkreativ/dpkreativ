@@ -1,6 +1,14 @@
 "use client";
 
-import { avatar, brands, projects, aboutMe, highlights, contact, skills } from "@/assets/data";
+import {
+  avatar,
+  brands,
+  projects,
+  aboutMe,
+  highlights,
+  contact,
+  skills,
+} from "@/assets/data";
 import { fetchPosts } from "@/lib/hashnode";
 import { ArrowIcon } from "@/assets/icons";
 import Button from "@/components/button";
@@ -43,16 +51,8 @@ export default function Home() {
         { y: 100, opacity: 0, duration: 0.8, stagger: 0.05 },
         0,
       )
-        .from(
-          ".hero-cta",
-          { y: 32, opacity: 0, duration: 0.6 },
-          "-=0.25",
-        )
-        .from(
-          ".hero-review",
-          { x: 48, opacity: 0, duration: 0.8 },
-          "-=0.45",
-        );
+        .from(".hero-cta", { y: 32, opacity: 0, duration: 0.6 }, "-=0.25")
+        .from(".hero-review", { x: 48, opacity: 0, duration: 0.8 }, "-=0.45");
 
       gsap.set(".hero-quote-item", { autoAlpha: 0 });
 
@@ -119,8 +119,8 @@ export default function Home() {
       ref={container}
       className="flex flex-col w-full min-h-screen pt-[84px] overflow-hidden"
     >
-       <section className="bg-faxx-blue border-b-8 border-faxx-dark dark:border-gray-700">
-         <div className="w-full max-w-7xl mx-auto px-6 md:px-12 py-10 md:py-24 min-h-[calc(100vh-84px)] grid lg:grid-cols-[minmax(0,1fr)_minmax(320px,440px)] gap-10 md:gap-12 items-center">
+      <section className="bg-faxx-blue border-b-8 border-faxx-dark dark:border-gray-700">
+        <div className="w-full max-w-7xl mx-auto px-6 md:px-12 py-10 md:py-24 min-h-[calc(100vh-84px)] grid lg:grid-cols-[minmax(0,1fr)_minmax(320px,440px)] gap-10 md:gap-12 items-center">
           <div className="max-w-4xl text-center lg:text-left">
             <h1 className="font-display text-white text-[13vw] sm:text-[11vw] md:text-7xl lg:text-[5.5rem] xl:text-[6rem] leading-[1.1] uppercase tracking-tighter mb-10 md:mb-12">
               <span className="block hero-title">DELIVERING</span>
@@ -139,7 +139,7 @@ export default function Home() {
 
           <div className="hero-review min-h-[260px] md:min-h-[320px] flex flex-col justify-center px-8 lg:px-0 lg:pl-10 lg:border-l-4 lg:border-white/20">
             <div className="relative flex-1 min-h-[220px] sm:min-h-[240px]">
-              {highlights.map((item, idx) => (
+              {highlights.map((item, idx) =>
                 (() => {
                   const [source, category] = item.source.split(" // ");
 
@@ -148,29 +148,35 @@ export default function Home() {
                       key={item.source}
                       className={`hero-quote-item hero-quote-item-${idx} absolute inset-0 flex flex-col justify-center items-center lg:items-start gap-6 ${idx === 0 ? "opacity-100" : "opacity-0"}`}
                     >
-                      <p className={`hero-quote-copy-${idx} text-white font-body text-lg sm:text-xl md:text-2xl font-medium leading-relaxed text-center lg:text-left`}>
+                      <p
+                        className={`hero-quote-copy-${idx} text-white font-body text-base sm:text-xl md:text-2xl font-medium leading-relaxed text-center lg:text-left`}
+                      >
                         {item.quote}
                       </p>
 
                       <div className="flex items-center gap-4 justify-center lg:justify-start">
-                        <div className={`hero-quote-source-${idx} flex flex-wrap gap-2 sm:gap-3 font-mono text-[10px] sm:text-xs uppercase tracking-[0.2em] text-faxx-cyan font-bold`}>
+                        <div
+                          className={`hero-quote-source-${idx} flex flex-wrap gap-2 sm:gap-3 font-mono text-[9px] sm:text-xs uppercase tracking-[0.2em] text-faxx-cyan font-bold`}
+                        >
                           <span>{source}</span>
-                          {category ? <span aria-hidden="true">{"//"}</span> : null}
+                          {category ? (
+                            <span aria-hidden="true">{"//"}</span>
+                          ) : null}
                           {category ? <span>{category}</span> : null}
                         </div>
                       </div>
                     </div>
                   );
-                })()
-              ))}
+                })(),
+              )}
             </div>
           </div>
         </div>
       </section>
 
-       <div className="w-full px-6 md:px-12 lg:px-24 py-16 md:py-24 grid gap-16 md:gap-24">
-         {/* About section */}
-         <section className="reveal-section grid lg:grid-cols-[minmax(240px,360px)_minmax(0,1fr)] gap-14 md:gap-20 lg:gap-28 items-center max-w-5xl mx-auto">
+      <div className="w-full px-6 md:px-12 lg:px-24 py-16 md:py-24 grid gap-16 md:gap-24">
+        {/* About section */}
+        <section className="reveal-section grid lg:grid-cols-[minmax(240px,360px)_minmax(0,1fr)] gap-14 md:gap-20 lg:gap-28 items-center max-w-5xl mx-auto">
           <div className="relative w-full max-w-xs md:max-w-sm mx-auto lg:mx-0 lg:mr-8 aspect-[4/5] group transition-all duration-700 hover:scale-[1.01] hover:rotate-[0.5deg]">
             <div className="absolute inset-0 border-4 md:border-8 border-faxx-dark dark:border-gray-700 bg-white shadow-[8px_8px_0px_0px_rgba(67,32,246,1)] md:shadow-[16px_16px_0px_0px_rgba(67,32,246,1)] dark:shadow-[8px_8px_0px_0px_rgba(0,229,255,1)] md:dark:shadow-[16px_16px_0px_0px_rgba(0,229,255,1)] overflow-hidden">
               <Image
@@ -187,12 +193,12 @@ export default function Home() {
               <i className="ri-terminal-line text-base sm:text-lg"></i>
               Engineering
             </div>
- 
+
             <div className="absolute -left-4 sm:-left-16 bottom-20 sm:bottom-32 bg-faxx-coral dark:bg-faxx-lime text-white dark:text-faxx-dark border-2 sm:border-4 border-faxx-dark dark:border-gray-700 px-3 py-1.5 sm:px-5 sm:py-2.5 font-mono font-bold uppercase shadow-[4px_4px_0px_0px_rgba(17,17,17,1)] md:shadow-[6px_6px_0px_0px_rgba(17,17,17,1)] flex items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs z-20 hover:scale-105 transition-transform cursor-default rotate-2">
               <i className="ri-file-text-line text-base sm:text-lg"></i>
               Documentation
             </div>
- 
+
             <div className="absolute -right-4 sm:-right-12 bottom-60 sm:bottom-80 bg-faxx-blue dark:bg-faxx-cyan text-white dark:text-faxx-dark border-2 sm:border-4 border-faxx-dark dark:border-gray-700 px-3 py-1.5 sm:px-5 sm:py-2.5 font-mono font-bold uppercase shadow-[4px_4px_0px_0px_rgba(17,17,17,1)] md:shadow-[6px_6px_0px_0px_rgba(17,17,17,1)] flex items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs z-20 hover:scale-105 transition-transform cursor-default">
               <i className="ri-server-line text-base sm:text-lg"></i>
               Devops
@@ -202,7 +208,7 @@ export default function Home() {
               <i className="ri-robot-line text-base sm:text-lg"></i>
               AI
             </div>
- 
+
             <div className="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 bg-faxx-dark text-faxx-light p-2 sm:p-3 border-2 border-faxx-dark dark:border-gray-700 z-20 w-[calc(100%-8px)] sm:w-[calc(100%-12px)]">
               <div className="scale-90 sm:scale-100 origin-bottom-right">
                 <Socials />
@@ -218,16 +224,19 @@ export default function Home() {
                 lines={[
                   <>
                     WHO
-                    <span className="text-gray-700 dark:text-faxx-cyan"> AM I?</span>
+                    <span className="text-gray-700 dark:text-faxx-cyan">
+                      {" "}
+                      AM I?
+                    </span>
                   </>,
                 ]}
               />
-               <RevealText
-                 as="p"
-                 className="font-script text-2xl md:text-3xl mt-4 text-faxx-blue dark:text-faxx-lime"
-               >
-                 My friends call me Divi
-               </RevealText>
+              <RevealText
+                as="p"
+                className="font-script text-2xl md:text-3xl mt-4 text-faxx-blue dark:text-faxx-lime"
+              >
+                My friends call me Divi
+              </RevealText>
             </div>
 
             <p
@@ -244,7 +253,10 @@ export default function Home() {
                 </span>
               ))}
             </div>
-            <Link href="/about" className="group font-mono text-sm uppercase font-bold text-gray-700 dark:text-faxx-cyan hover:text-faxx-coral dark:hover:text-faxx-lime transition-colors flex items-center gap-2 mt-4 w-max">
+            <Link
+              href="/about"
+              className="group font-mono text-sm uppercase font-bold text-gray-700 dark:text-faxx-cyan hover:text-faxx-coral dark:hover:text-faxx-lime transition-colors flex items-center gap-2 mt-4 w-max"
+            >
               <span>Read Full Story</span>
               <i className="ri-arrow-right-line transition-transform duration-300 group-hover:translate-x-2"></i>
             </Link>
@@ -255,7 +267,7 @@ export default function Home() {
         <section className="reveal-section w-full overflow-hidden">
           <div className="py-4 md:py-6 relative flex overflow-hidden">
             <div className="animate-marquee flex gap-12 sm:gap-16 items-center whitespace-nowrap min-w-full pl-12">
-              {[...brands, ...brands].map((brand, idx) => (
+              {[...brands, ...brands].map((brand, idx) =>
                 brand.url ? (
                   <a
                     href={brand.url}
@@ -285,8 +297,8 @@ export default function Home() {
                       className={`object-contain h-full w-max ${brand.invertInDarkMode ? "dark:invert" : ""}`}
                     />
                   </div>
-                )
-              ))}
+                ),
+              )}
             </div>
           </div>
         </section>
@@ -298,11 +310,11 @@ export default function Home() {
               as="h2"
               className="font-display text-3xl sm:text-6xl md:text-8xl uppercase tracking-tighter text-faxx-dark dark:text-white leading-[1.1]"
               lines={[
+                <>FEATURED</>,
                 <>
-                  FEATURED
-                </>,
-                <>
-                  <span className="text-faxx-blue dark:text-faxx-cyan">PROJECTS.</span>
+                  <span className="text-faxx-blue dark:text-faxx-cyan">
+                    PROJECTS.
+                  </span>
                 </>,
               ]}
             />
@@ -332,11 +344,11 @@ export default function Home() {
               as="h2"
               className="font-display text-3xl sm:text-6xl md:text-8xl uppercase tracking-tighter text-faxx-dark dark:text-white leading-[1.1]"
               lines={[
+                <>LATEST</>,
                 <>
-                  LATEST
-                </>,
-                <>
-                  <span className="text-gray-700 dark:text-faxx-lime">ARTICLES.</span>
+                  <span className="text-gray-700 dark:text-faxx-lime">
+                    ARTICLES.
+                  </span>
                 </>,
               ]}
             />
