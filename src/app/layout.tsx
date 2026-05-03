@@ -11,6 +11,14 @@ import Footer from "@/components/footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 import Script from "next/script";
+import {
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_OG_IMAGE,
+  SITE_TITLE,
+  SITE_TWITTER_HANDLE,
+  SITE_URL,
+} from "@/lib/site";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -37,8 +45,65 @@ const script = Give_You_Glory({
 });
 
 export const metadata: Metadata = {
-  title: "Divine Orji | Software Engineer",
-  description: "Divine Orji is a software engineer building digital products focused on clarity, speed, and real user value.",
+  metadataBase: new URL(SITE_URL),
+  alternates: {
+    canonical: "/",
+  },
+  title: {
+    default: SITE_TITLE,
+    template: "%s | Divine Orji",
+  },
+  description: SITE_DESCRIPTION,
+  keywords: [
+    "Divine Orji",
+    "Software Engineer",
+    "Product Engineer",
+    "Frontend Engineer",
+    "Technical Writer",
+    "Next.js Developer",
+    "React Developer",
+    "The Kreativ Studio",
+    "Nigeria",
+    "Abia",
+  ],
+  authors: [{ name: "Divine Orji", url: "https://github.com/dpkreativ" }],
+  creator: "Divine Orji",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    title: SITE_TITLE,
+    description: "Building high-impact digital experiences with a focus on engineering excellence and user value.",
+    images: [
+      {
+        url: SITE_OG_IMAGE,
+        alt: "Divine Orji | Software Engineer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Divine Orji | Software Engineer",
+    description: "Building high-impact digital experiences with a focus on engineering excellence and user value.",
+    creator: SITE_TWITTER_HANDLE,
+    images: [SITE_OG_IMAGE],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  icons: {
+    icon: "/icon.jpg",
+    apple: "/icon.jpg",
+  },
 };
 
 export default function RootLayout({

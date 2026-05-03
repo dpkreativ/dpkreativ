@@ -1,4 +1,4 @@
-import { fetchAllPostSlugs, fetchPost, fetchRecommendedPosts } from "@/lib/hashnode";
+import { fetchAllPostSlugs, fetchPost } from "@/lib/hashnode";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import ReactMarkdown from 'react-markdown';
@@ -6,8 +6,7 @@ import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
 import BlogArchiveButton from "@/components/blog-archive-button";
 import RecommendedPosts from "@/components/recommended-posts";
-
-const HASHNODE_HOST = "dpkreativ.hashnode.dev";
+import { HASHNODE_HOST, SITE_URL } from "@/lib/site";
 
 export const revalidate = 3600;
 
@@ -29,7 +28,21 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return {
       title: post.title,
       description: post.brief,
+      alternates: {
+        canonical: `/blog/${slug}`,
+      },
       openGraph: {
+        url: `${SITE_URL}/blog/${slug}`,
+        title: post.title,
+        description: post.brief,
+        type: "article",
+        publishedTime: post.publishedAt,
+        authors: ["Divine Orji"],
+        tags: post.tags?.map((tag: { name: string }) => tag.name) || [],
+        images: post.coverImage?.url ? [post.coverImage.url] : [],
+      },
+      twitter: {
+        card: "summary_large_image",
         title: post.title,
         description: post.brief,
         images: post.coverImage?.url ? [post.coverImage.url] : [],
