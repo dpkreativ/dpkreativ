@@ -21,6 +21,12 @@ export default function WorkAccordion({ projects }: { projects: Project[] }) {
           <div
             key={project.slug}
             onClick={() => setActiveIndex(idx)}
+            onTouchEnd={(event) => {
+              if (!isActive) {
+                event.preventDefault();
+                setActiveIndex(idx);
+              }
+            }}
             className={`relative cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] overflow-hidden border-4 border-faxx-dark dark:border-gray-700 group
               ${isActive 
                 ? "flex-[6] md:flex-[5] shadow-[8px_8px_0px_0px_rgba(67,32,246,1)] dark:shadow-[8px_8px_0px_0px_rgba(0,229,255,1)]" 
