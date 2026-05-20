@@ -1,7 +1,11 @@
 {
-  "avatar": "/images/divine.jpg",
-  "logo": "/images/kreativ-icon.svg",
-  "logoword": "/images/kreativ-wordmark.svg",
+  "avatar": "/images/me/divine.jpg",
+  "portraits": [
+    "/images/me/divine.jpg",
+    "/images/me/divi.jpg",
+    "/images/me/IMG_7751.JPG"
+  ],
+  "logo": "/images/brand-logos/kreativ-icon.svg",
   "heroImgText": "Hello World! I'm Divine.",
   "contact": {
     "email": "dpkreativ@gmail.com",
@@ -201,49 +205,49 @@
   ],
   "brands": [
     {
-      "image": "/images/ighublogo.png",
+      "image": "/images/brand-logos/ighublogo.png",
       "width": 711,
       "height": 351,
       "url": "https://ighub.ng",
       "title": "IGHub"
     },
     {
-      "image": "/images/crunchieslogo.png",
+      "image": "/images/brand-logos/crunchieslogo.png",
       "width": 757,
       "height": 522,
       "url": "https://crunchiesonline.com",
       "title": "Crunchies Fried Chicken"
     },
     {
-      "image": "/images/alchemyofcodelogo.png",
+      "image": "/images/brand-logos/alchemyofcodelogo.png",
       "width": 512,
       "height": 512,
       "url": "https://alchemyofcode.pages.dev",
       "title": "Alchemy Of Code"
     },
     {
-      "image": "/images/merphils-default.svg",
+      "image": "/images/brand-logos/merphils-default.svg",
       "width": 188,
       "height": 194,
       "url": "",
       "title": "Merphils"
     },
     {
-      "image": "/images/icon-ff3b3b.svg",
+      "image": "/images/brand-logos/icon-ff3b3b.svg",
       "width": 121,
       "height": 125,
       "url": "",
       "title": "Grooovy"
     },
     {
-      "image": "/images/philsautologo.png",
+      "image": "/images/brand-logos/philsautologo.png",
       "width": 100,
       "height": 84,
       "url": "",
       "title": "Phils Auto"
     },
     {
-      "image": "/images/tibc_logo.png",
+      "image": "/images/brand-logos/tibc_logo.png",
       "width": 402,
       "height": 402,
       "url": "https://theirokocircle.org",
@@ -254,7 +258,7 @@
   "projects": [
     {
       "title": "Crunchies Online",
-      "image": "/images/crunchies.png",
+      "image": "/images/project-demos/crunchies.png",
       "client": "Crunchies Fried Chicken",
       "description": [
         "I took the lead on this exciting project, where I completely redesigned the UI to make it more intuitive and visually appealing for users.",
@@ -270,7 +274,7 @@
     },
     {
       "title": "Merphils",
-      "image": "/images/project-placeholder.png",
+      "image": "/images/project-demos/project-placeholder.png",
       "client": "Merphils",
       "description": [
         "Merphils is a unified education platform designed to connect school operations, family access, learner records, and future cross-school collaboration in one system.",
@@ -286,7 +290,7 @@
     },
     {
       "title": "Grooovy",
-      "image": "/images/project-placeholder.png",
+      "image": "/images/project-demos/project-placeholder.png",
       "client": "Grooovy",
       "description": [
         "Grooovy is a nightlife and social event discovery platform built to surface the plans that usually stay buried in group chats, stories, and word of mouth.",
@@ -302,7 +306,7 @@
     },
     {
       "title": "Kadric Ltd",
-      "image": "/images/project-placeholder.png",
+      "image": "/images/project-demos/project-placeholder.png",
       "client": "Kadric Ltd",
       "description": [
         "A UI improvement project for an existing industrial supplier website built with WordPress and Elementor.",
@@ -318,7 +322,7 @@
     },
     {
       "title": "The Iroko Circle",
-      "image": "/images/project-placeholder.png",
+      "image": "/images/project-demos/project-placeholder.png",
       "client": "The Iroko Circle",
       "description": [
         "The Iroko Circle is a literary community and editorial platform dedicated to reading, discussing, and amplifying African stories.",
@@ -334,7 +338,7 @@
     },
     {
       "title": "The Bakistry",
-      "image": "/images/project-placeholder.png",
+      "image": "/images/project-demos/project-placeholder.png",
       "client": "The Bakistry",
       "description": [
         "The Bakistry is a handcrafted cakes and treats brand built around fast delivery, premium presentation, and a warm storefront for everyday celebrations and special occasions.",
@@ -350,7 +354,7 @@
     },
     {
       "title": "The Developer Marketing Book",
-      "image": "/images/devmarbook.png",
+      "image": "/images/project-demos/devmarbook.png",
       "client": "Decenta LLC",
       "description": [
         "The Developer Marketing Book is a focused launch site for a book on reaching and engaging developers through strategy, community, and partnerships.",
@@ -405,7 +409,7 @@
       "category": "Engineering",
       "source": "Hashnode",
       "url": "#",
-      "image": "/images/project-placeholder.png",
+      "image": "/images/project-demos/project-placeholder.png",
       "slug": "architecting-nextjs-apps"
     },
     {
@@ -415,7 +419,7 @@
       "category": "Community",
       "source": "Medium",
       "url": "#",
-      "image": "/images/project-placeholder.png",
+      "image": "/images/project-demos/project-placeholder.png",
       "slug": "community-impact-engineering"
     },
     {
@@ -425,7 +429,7 @@
       "category": "Case Study",
       "source": "Dev.to",
       "url": "#",
-      "image": "/images/project-placeholder.png",
+      "image": "/images/project-demos/project-placeholder.png",
       "slug": "optimizing-web-performance"
     }
   ]

@@ -4,7 +4,7 @@ import Home from '@/app/page';
 // Mock Next.js Image
 jest.mock('next/image', () => ({
   __esModule: true,
-  default: (props: any) => <img {...props} alt={props.alt ?? ''} />,
+  default: ({ fill, priority, ...props }: any) => <img {...props} alt={props.alt ?? ''} />,
 }));
 
 // Mock GSAP
@@ -33,7 +33,13 @@ describe('Home Page', () => {
   it('renders hero section', () => {
     render(<Home />);
     const heading = screen.getByRole('heading', { level: 1 });
-    expect(heading).toHaveTextContent("DELIVERING");
+    expect(heading).toBeInTheDocument();
+    expect(
+      screen.getByText((_, element) => element?.textContent?.replace(/\s+/g, ' ').trim() === 'Average Delivery Time'),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText((_, element) => element?.textContent?.replace(/\s+/g, ' ').trim() === 'Projects Completed'),
+    ).toBeInTheDocument();
   });
 
   it('renders sections', () => {

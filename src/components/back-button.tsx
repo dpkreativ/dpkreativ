@@ -2,7 +2,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 const buttonClassName =
-  "inline-flex h-11 items-center justify-center gap-2 whitespace-nowrap border-2 border-faxx-dark bg-faxx-light px-4 font-mono text-xs font-bold uppercase tracking-widest text-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-200 hover:bg-faxx-dark hover:text-white active:translate-x-[4px] active:translate-y-[4px] active:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] dark:border-gray-700 dark:bg-zinc-900 dark:text-gray-400 dark:shadow-[4px_4px_0px_0px_rgba(156,163,175,0.4)] dark:hover:bg-zinc-800 dark:hover:text-white dark:active:shadow-[0px_0px_0px_0px_rgba(156,163,175,0.4)]";
+  "inline-flex h-11 items-center justify-center gap-2 whitespace-nowrap rounded-full border-2 border-faxx-dark bg-faxx-light px-4 font-mono text-xs font-bold uppercase tracking-widest text-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-200 hover:bg-faxx-dark hover:text-white active:translate-x-[4px] active:translate-y-[4px] active:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] dark:border-gray-700 dark:bg-zinc-900 dark:text-gray-400 dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] dark:hover:bg-zinc-800 dark:hover:text-white dark:active:shadow-[0px_0px_0px_0px_rgba(255,255,255,1)]";
 
 function BackIcon() {
   return (

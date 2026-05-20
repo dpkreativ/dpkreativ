@@ -8,7 +8,7 @@ export default function FloatingBackLink({
   label: string;
 }) {
   return (
-    <div className="sticky top-24 z-40 mb-8 w-fit self-start md:top-28">
+    <div className="sticky top-24 z-40 mb-4 w-fit self-start md:top-28 md:mb-6">
       <BackButton href={href} label={label} />
     </div>
   );

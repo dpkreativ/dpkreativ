@@ -22,7 +22,7 @@ const tiers = [
       "Conversion Structure",
       "SEO + Performance",
     ],
-    color: "bg-faxx-blue",
+    color: "bg-faxx-coral",
   },
   {
     id: "pro",
@@ -37,7 +37,7 @@ const tiers = [
       "Dashboards or Member Areas",
       "Custom Integrations",
     ],
-    color: "bg-faxx-cyan",
+    color: "bg-faxx-coral",
   },
   {
     id: "elite",
@@ -99,17 +99,13 @@ export default function Page() {
         <div className="border-b-8 border-faxx-dark dark:border-gray-700 pb-8 md:pb-12">
           <SplitHeading
             as="h1"
-            className="font-display text-3xl md:text-7xl lg:text-9xl uppercase tracking-tighter leading-[1.1]"
-            lines={[
-              <span key="line-1">WE BUILD</span>,
-              <span key="line-2" className="text-faxx-blue dark:text-faxx-cyan">
-                EVERYTHING.
-              </span>,
-            ]}
-          />
+            className="font-display text-2xl md:text-5xl lg:text-7xl uppercase tracking-tighter leading-[1.1]"
+          >
+            WE BUILD EVERYTHING.
+          </SplitHeading>
           <RevealText
             as="p"
-            className="font-mono text-sm md:text-base mt-6 text-faxx-blue dark:text-faxx-lime font-bold uppercase tracking-widest"
+            className="font-mono text-sm md:text-base mt-6 text-faxx-coral dark:text-faxx-lime font-bold uppercase tracking-widest"
           >
             Choose a package that fits your needs or request a custom quote.
           </RevealText>
@@ -120,15 +116,12 @@ export default function Page() {
           {tiers.map((tier) => (
             <div
               key={tier.id}
-              className="group relative bg-white dark:bg-zinc-900 border-4 border-faxx-dark dark:border-gray-700 p-8 flex flex-col transition-all duration-300 hover:-translate-y-2 hover:-translate-x-2 hover:shadow-[12px_12px_0px_0px_rgba(17,17,17,1)] dark:hover:shadow-[12px_12px_0px_0px_rgba(0,229,255,1)]"
+              className="relative bg-white dark:bg-zinc-900 border-4 border-faxx-dark dark:border-gray-700 p-8 flex flex-col rounded-[2rem]"
             >
-              <div
-                className={`absolute top-0 left-0 w-full h-2 ${tier.color}`}
-              ></div>
               <h3 className="font-display text-3xl mb-2 dark:text-white">
                 {tier.name}
               </h3>
-              <div className="font-mono text-xl font-bold mb-4 text-faxx-blue dark:text-faxx-cyan">
+              <div className="font-mono text-xl font-bold mb-4 text-faxx-coral dark:text-faxx-lime">
                 {tier.price}
               </div>
               <p className="text-gray-600 dark:text-gray-400 font-body mb-2">
@@ -151,7 +144,7 @@ export default function Page() {
 
               <Button
                 onClick={() => setSelectedTier(tier.id)}
-                className="w-full !py-4 group-hover:bg-white dark:group-hover:bg-black group-hover:text-faxx-dark dark:group-hover:text-white"
+                className="w-full !border-faxx-dark !bg-faxx-dark !py-4 !text-white !shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:!border-faxx-coral hover:!bg-white hover:!text-faxx-dark active:!shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] dark:!border-white dark:!bg-white dark:!text-faxx-dark dark:!shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] dark:hover:!border-faxx-lime dark:hover:!bg-black dark:hover:!text-white dark:active:!shadow-[0px_0px_0px_0px_rgba(255,255,255,1)]"
               >
                 SELECT {tier.name}
               </Button>
@@ -166,7 +159,7 @@ export default function Page() {
       >
         <DialogContent>
           <DialogHeader className="mb-8">
-            <div className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-faxx-blue dark:text-faxx-cyan mb-2">
+            <div className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-faxx-coral dark:text-faxx-lime mb-2">
               Project Brief
             </div>
             <DialogTitle className="text-4xl md:text-5xl">

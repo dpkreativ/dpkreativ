@@ -13,7 +13,7 @@ export default function WorkAccordion({ projects }: { projects: Project[] }) {
   const featuredProjects = projects.filter((p) => p.featured);
 
   return (
-    <div className="flex flex-col md:flex-row w-full h-[540px] md:h-[372px] gap-4">
+    <div className="flex h-[620px] w-full flex-col gap-4 md:h-[460px] md:flex-row">
       {featuredProjects.map((project, idx) => {
         const isActive = activeIndex === idx;
 
@@ -27,10 +27,10 @@ export default function WorkAccordion({ projects }: { projects: Project[] }) {
                 setActiveIndex(idx);
               }
             }}
-            className={`relative cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] overflow-hidden border-4 border-faxx-dark dark:border-gray-700 group
-              ${isActive 
-                ? "flex-[6] md:flex-[5] shadow-[8px_8px_0px_0px_rgba(67,32,246,1)] dark:shadow-[8px_8px_0px_0px_rgba(0,229,255,1)]" 
-                : "flex-[1] grayscale hover:grayscale-0 md:hover:flex-[1.2] shadow-[4px_4px_0px_0px_rgba(17,17,17,1)]"
+            className={`group relative cursor-pointer overflow-hidden rounded-[2rem] border border-black/10 bg-white/75 transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] dark:border-white/10 dark:bg-[#111111]
+              ${isActive
+                ? "flex-[6] md:flex-[5] shadow-[0_30px_90px_-42px_rgba(255,90,88,0.55)]"
+                : "flex-1 saturate-50 hover:saturate-100 md:hover:flex-[1.15]"
               }
             `}
           >
@@ -41,49 +41,64 @@ export default function WorkAccordion({ projects }: { projects: Project[] }) {
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 50vw"
             />
-            
-            {/* Overlay */}
-            <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-500 ${isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-40'}`}></div>
+            <div
+              className={`absolute inset-0 bg-gradient-to-t from-black via-black/45 to-black/10 transition-opacity duration-500 ${
+                isActive ? "opacity-100" : "opacity-70 group-hover:opacity-85"
+              }`}
+            ></div>
 
-            {/* Content for Active Item */}
-            <div className={`absolute bottom-0 left-0 w-full p-6 md:p-10 transition-all duration-500 delay-100 ${isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.tags.map(tag => (
-                  <span key={tag} className="px-3 py-1 bg-faxx-blue dark:bg-faxx-cyan text-white dark:text-faxx-dark font-mono text-[10px] md:text-xs font-bold uppercase border border-faxx-dark">
+            <div
+              className={`absolute left-6 top-6 flex flex-wrap gap-2 transition-all duration-500 ${
+                isActive ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"
+              }`}
+            >
+              {project.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full border border-black/10 bg-white/88 px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.24em] text-[#111111]/72 dark:border-white/15 dark:bg-white/10 dark:text-white/72"
+                >
                     {tag}
-                  </span>
-                ))}
-              </div>
-              <div className="flex items-center gap-4 mb-6">
+                </span>
+              ))}
+            </div>
+
+            <div
+              className={`absolute bottom-0 left-0 w-full p-6 md:p-8 transition-all duration-500 delay-100 ${
+                isActive ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+              }`}
+            >
+              <div className="mb-5 flex items-center gap-4">
                 <ProjectBrandMark
                   brand={project.brand}
                   fallback={project.title}
-                  className="h-12 w-12 md:h-14 md:w-14"
+                  className="h-12 w-12 border-white/15 bg-white/95 md:h-14 md:w-14"
                   imageClassName="max-h-full max-w-full object-contain"
-                  textClassName="font-display text-base uppercase tracking-tight text-faxx-dark"
+                  textClassName="font-display text-base tracking-tight text-[#111111]"
                 />
-                <h3 className="font-display text-3xl md:text-5xl text-white uppercase tracking-tighter leading-none">
+                <h3 className="font-display text-3xl leading-[0.95] tracking-[-0.04em] text-white md:text-[2.75rem]">
                   {project.title}
                 </h3>
               </div>
-              <Link href={`/work/${project.slug}`} className="inline-flex items-center gap-4 bg-white text-faxx-dark px-6 py-3 font-mono font-bold uppercase hover:bg-faxx-blue dark:hover:bg-faxx-cyan hover:text-white dark:hover:text-faxx-dark transition-colors">
+              <Link
+                href={`/work/${project.slug}`}
+                className="inline-flex items-center gap-3 rounded-full border border-black/10 bg-faxx-coral px-5 py-3 font-mono text-[11px] font-bold uppercase tracking-[0.26em] text-white transition-colors hover:border-[#ff5a58]/60 hover:bg-white hover:text-[#111111] dark:border-faxx-lime dark:bg-faxx-lime dark:text-faxx-dark dark:hover:border-faxx-lime dark:hover:bg-black dark:hover:text-white"
+              >
                 <span>View Case Study</span>
                 <ArrowIcon />
               </Link>
             </div>
 
-            {/* Vertical Title for Inactive Items */}
             {!isActive && (
-              <div className="absolute inset-0 flex items-center justify-center md:justify-center pointer-events-none px-4">
-                <div className="flex items-center gap-3 md:rotate-90 opacity-60 group-hover:opacity-100 transition-opacity">
+              <div className="pointer-events-none absolute inset-0 flex items-end justify-start px-6 pb-6 md:items-center md:justify-center md:px-4 md:pb-0">
+                <div className="flex items-center gap-3 opacity-75 transition-opacity group-hover:opacity-100 md:rotate-90">
                   <ProjectBrandMark
                     brand={project.brand}
                     fallback={project.title}
-                    className="h-10 w-10 md:h-11 md:w-11"
+                    className="h-10 w-10 border-white/15 bg-white/95 md:h-11 md:w-11"
                     imageClassName="max-h-full max-w-full object-contain"
-                    textClassName="font-display text-sm uppercase tracking-tight text-faxx-dark"
+                    textClassName="font-display text-sm tracking-tight text-[#111111]"
                   />
-                  <h3 className="font-display text-xl md:text-2xl text-white uppercase tracking-tighter whitespace-nowrap">
+                  <h3 className="whitespace-nowrap font-display text-2xl leading-none tracking-[-0.03em] text-white md:text-3xl">
                     {project.title}
                   </h3>
                 </div>

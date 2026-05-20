@@ -1,36 +1,54 @@
 "use client";
 
 import {
-  avatar,
-  brands,
-  projects,
   aboutMe,
+  brands,
   highlights,
-  contact,
+  portraits,
+  projects,
   skills,
 } from "@/assets/data";
-import { fetchPosts } from "@/lib/hashnode";
 import { ArrowIcon } from "@/assets/icons";
+import { useGSAP } from "@gsap/react";
+import BlogPreview from "@/components/blog-preview";
 import Button from "@/components/button";
-import { ProjectCard } from "@/components/cards";
+import PortraitSlideshow from "@/components/portrait-slideshow";
 import RevealText from "@/components/reveal-text";
 import Socials from "@/components/socials";
 import SplitHeading from "@/components/split-heading";
-import { addSplitTextReveal } from "@/utils/gsap-split-text";
+import WorkAccordion from "@/components/work-accordion";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import Link from "next/link";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { SplitText } from "gsap/SplitText";
 import { useRef } from "react";
-import WorkAccordion from "@/components/work-accordion";
-import BlogPreview from "@/components/blog-preview";
 
-gsap.registerPlugin(ScrollTrigger, SplitText);
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
   const container = useRef(null);
+  const completedProjects = projects.filter(
+    (project) => project.caseStudy?.timeline !== "In Progress",
+  ).length;
+  const heroStats = [
+    {
+      label: "Average Delivery Time",
+      value: "6 weeks",
+    },
+    {
+      label: "Projects Completed",
+      value: `${completedProjects}+`,
+    },
+  ];
+  const aboutTags = [
+    "Web",
+    "Mobile",
+    "Software Engineering",
+    "Technical Writing",
+    "Documentation",
+    "Devops",
+    "AI",
+  ];
 
   useGSAP(
     () => {
@@ -40,19 +58,33 @@ export default function Home() {
         repeat: -1,
         repeatDelay: 0.6,
       });
-      const splitReverts: Array<() => void> = [];
+      gsap.set(".hero-stat-card", { y: 48, autoAlpha: 0 });
+      gsap.set(".hero-stat-label-char", { y: 12, autoAlpha: 0 });
 
-      // Hero title split text animation
-      const titleSplit = new SplitText(".hero-title", { type: "chars" });
-      splitReverts.push(() => titleSplit.revert());
-
-      tl.from(
-        titleSplit.chars,
-        { y: 100, opacity: 0, duration: 0.8, stagger: 0.05 },
-        0,
-      )
-        .from(".hero-cta", { y: 32, opacity: 0, duration: 0.6 }, "-=0.25")
-        .from(".hero-review", { x: 48, opacity: 0, duration: 0.8 }, "-=0.45");
+      tl.from(".hero-review", { x: 40, opacity: 0, duration: 0.8 }, 0)
+        .to(
+          ".hero-stat-card",
+          {
+            y: 0,
+            autoAlpha: 1,
+            duration: 0.85,
+            stagger: 0.16,
+            clearProps: "transform,opacity,visibility",
+          },
+          0.18,
+        )
+        .to(
+          ".hero-stat-label-char",
+          {
+            y: 0,
+            autoAlpha: 1,
+            duration: 0.45,
+            stagger: 0.025,
+            clearProps: "transform,opacity,visibility",
+          },
+          0.72,
+        )
+        .from(".hero-cta", { y: 24, opacity: 0, duration: 0.6 }, 0.95);
 
       gsap.set(".hero-quote-item", { autoAlpha: 0 });
 
@@ -76,10 +108,10 @@ export default function Home() {
             {
               y: 10,
               autoAlpha: 0,
-              duration: 0.4,
+              duration: 0.45,
               ease: "power2.out",
             },
-            0.2,
+            0.18,
           )
           .to({}, { duration: 6 })
           .to(`.hero-quote-item-${idx}`, {
@@ -91,7 +123,6 @@ export default function Home() {
         quoteTl.add(itemTl);
       });
 
-      // Sections Animation
       gsap.utils.toArray(".reveal-section").forEach((section: any) => {
         gsap.from(section, {
           scrollTrigger: {
@@ -99,7 +130,7 @@ export default function Home() {
             start: "top 85%",
             toggleActions: "play none none reverse",
           },
-          y: 100,
+          y: 80,
           opacity: 0,
           duration: 0.8,
           ease: "power3.out",
@@ -108,7 +139,6 @@ export default function Home() {
 
       return () => {
         quoteTl.kill();
-        splitReverts.forEach((revert) => revert());
       };
     },
     { scope: container },
@@ -117,19 +147,42 @@ export default function Home() {
   return (
     <main
       ref={container}
-      className="flex flex-col w-full min-h-screen pt-[84px] overflow-hidden"
+      className="w-full overflow-hidden bg-white text-[#111111] dark:bg-[#050505] dark:text-white"
     >
-      <section className="bg-faxx-blue border-b-8 border-faxx-dark dark:border-gray-700">
-        <div className="w-full max-w-7xl mx-auto px-6 md:px-12 py-10 md:py-24 min-h-[calc(100vh-84px)] grid lg:grid-cols-[minmax(0,1fr)_minmax(320px,440px)] gap-10 md:gap-12 items-center">
-          <div className="max-w-4xl text-center lg:text-left">
-            <h1 className="font-display text-white text-[13vw] sm:text-[11vw] md:text-7xl lg:text-[5.5rem] xl:text-[6rem] leading-[1.1] uppercase tracking-tighter mb-10 md:mb-12">
-              <span className="block hero-title">DELIVERING</span>
-              <span className="block hero-title text-faxx-cyan">IMPACT.</span>
-            </h1>
+      <section className="relative pt-[84px]">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,90,88,0.12),transparent_28%),radial-gradient(circle_at_top_left,rgba(17,17,17,0.06),transparent_20%)] dark:bg-[radial-gradient(circle_at_top_right,rgba(191,255,0,0.14),transparent_28%),radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_20%)]" />
 
-            <div className="hero-cta w-max mx-auto lg:mx-0">
-              <Link href="/contact" className="inline-block">
-                <Button className="!bg-faxx-cyan !text-faxx-dark hover:!bg-white dark:!bg-black dark:!text-white text-base sm:text-lg px-6 py-3 sm:px-8 sm:py-4 transition-all duration-300">
+        <div className="relative mx-auto grid min-h-[calc(100vh-84px)] max-w-7xl gap-16 px-6 py-12 md:px-12 md:py-16 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)] lg:items-center">
+          <div className="max-w-3xl">
+            <h1 className="sr-only">Delivery Stats</h1>
+
+            <div className="hero-stats-shell grid max-w-2xl grid-cols-2 gap-x-10 gap-y-6 sm:gap-x-14 md:gap-x-20">
+              {heroStats.map((stat) => (
+                <div
+                  key={stat.label}
+                  className="hero-stat-card flex min-w-0 flex-col gap-2"
+                >
+                  <p className="font-display text-[clamp(2.5rem,5.5vw,4.5rem)] leading-[0.94] tracking-[-0.04em] text-[#111111] dark:text-white">
+                    {stat.value}
+                  </p>
+
+                  <p className="font-body text-sm leading-6 text-[#111111]/56 dark:text-white/56 md:text-base">
+                    {Array.from(stat.label).map((char, index) => (
+                      <span
+                        key={`${stat.label}-${char}-${index}`}
+                        className="hero-stat-label-char inline-block whitespace-pre"
+                      >
+                        {char === " " ? "\u00A0" : char}
+                      </span>
+                    ))}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div className="hero-cta mt-12 flex flex-col gap-4 sm:mt-14 sm:flex-row sm:items-center">
+              <Link href="/contact" className="w-max">
+                <Button className="!px-6 !py-3 !text-sm">
                   <span>GET IN TOUCH</span>
                   <ArrowIcon />
                 </Button>
@@ -137,223 +190,201 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="hero-review min-h-[260px] md:min-h-[320px] flex flex-col justify-center px-8 lg:px-0 lg:pl-10 lg:border-l-4 lg:border-white/20">
-            <div className="relative flex-1 min-h-[220px] sm:min-h-[240px]">
-              {highlights.map((item, idx) =>
-                (() => {
+          <div className="hero-review relative lg:pl-6">
+            <div className="relative flex min-h-[280px] flex-col rounded-[2.25rem] border border-black/10 bg-black/[0.02] p-8 dark:border-white/10 dark:bg-white/[0.03] md:min-h-[340px] md:p-10">
+              <span
+                className="editorial-star absolute right-7 top-7 hidden md:block md:w-5"
+                aria-hidden="true"
+              ></span>
+
+              <div className="relative min-h-[190px] flex-1 md:min-h-[220px]">
+                {highlights.map((item, idx) => {
                   const [source, category] = item.source.split(" // ");
 
                   return (
                     <div
                       key={item.source}
-                      className={`hero-quote-item hero-quote-item-${idx} absolute inset-0 flex flex-col justify-center items-center lg:items-start gap-6 ${idx === 0 ? "opacity-100" : "opacity-0"}`}
+                      className={`hero-quote-item hero-quote-item-${idx} absolute inset-0 flex flex-col items-end justify-center gap-6 text-right ${idx === 0 ? "opacity-100" : "opacity-0"}`}
                     >
-                      <p
-                        className={`hero-quote-copy-${idx} text-white font-body text-base sm:text-xl md:text-2xl font-medium leading-relaxed text-center lg:text-left`}
-                      >
-                        {item.quote}
+                      <p className={`hero-quote-copy-${idx} max-w-xl font-display text-[clamp(1rem,1.85vw,1.9rem)] leading-[1.08] tracking-[-0.03em] text-[#111111] dark:text-white`}>
+                        &quot;{item.quote}&quot;
                       </p>
 
-                      <div className="flex items-center gap-4 justify-center lg:justify-start">
-                        <div
-                          className={`hero-quote-source-${idx} flex flex-wrap gap-2 sm:gap-3 font-mono text-[9px] sm:text-xs uppercase tracking-[0.2em] text-faxx-cyan font-bold`}
-                        >
-                          <span>{source}</span>
-                          {category ? (
-                            <span aria-hidden="true">{"//"}</span>
-                          ) : null}
-                          {category ? <span>{category}</span> : null}
-                        </div>
+                      <div className={`hero-quote-source-${idx} flex flex-wrap justify-end gap-2 font-mono text-[10px] font-bold uppercase tracking-[0.26em] text-[#111111]/45 dark:text-white/50`}>
+                        <span>{source}</span>
+                        {category ? <span aria-hidden="true">{"//"}</span> : null}
+                        {category ? <span>{category}</span> : null}
                       </div>
                     </div>
                   );
-                })(),
-              )}
+                })}
+              </div>
+
+              <svg
+                className="pointer-events-none absolute bottom-7 left-0 hidden h-24 w-14 text-[#111111]/16 dark:text-white/16 md:block"
+                viewBox="0 0 52 96"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path d="M0 0A48 48 0 0 1 0 96" stroke="currentColor" />
+                <path d="M0 14A34 34 0 0 1 0 82" stroke="currentColor" />
+                <path d="M0 28A20 20 0 0 1 0 68" stroke="currentColor" />
+              </svg>
             </div>
           </div>
         </div>
       </section>
 
-      <div className="w-full px-6 md:px-12 lg:px-24 py-16 md:py-24 grid gap-16 md:gap-24">
-        {/* About section */}
-        <section className="reveal-section grid lg:grid-cols-[minmax(240px,360px)_minmax(0,1fr)] gap-14 md:gap-20 lg:gap-28 items-center max-w-5xl mx-auto">
-          <div className="relative w-full max-w-xs md:max-w-sm mx-auto lg:mx-0 lg:mr-8 aspect-[4/5] group transition-all duration-700 hover:scale-[1.01] hover:rotate-[0.5deg]">
-            <div className="absolute inset-0 border-4 md:border-8 border-faxx-dark dark:border-gray-700 bg-white shadow-[8px_8px_0px_0px_rgba(67,32,246,1)] md:shadow-[16px_16px_0px_0px_rgba(67,32,246,1)] dark:shadow-[8px_8px_0px_0px_rgba(0,229,255,1)] md:dark:shadow-[16px_16px_0px_0px_rgba(0,229,255,1)] overflow-hidden">
-              <Image
-                src={avatar}
+      <section className="py-6">
+        <div className="mx-auto flex max-w-7xl overflow-hidden px-6 md:px-12">
+          <div className="animate-marquee flex w-max whitespace-nowrap will-change-transform">
+            {[0, 1].map((track) => (
+              <div
+                key={track}
+                className="flex shrink-0 items-center gap-10 pr-10 sm:gap-14 sm:pr-14 md:gap-16 md:pr-16"
+                aria-hidden={track === 1 ? "true" : undefined}
+              >
+                {brands.map((brand) => {
+                  const content = (
+                    <div className="flex shrink-0 items-center">
+                      <Image
+                        src={brand.image}
+                        alt={brand.title}
+                        width={brand.width}
+                        height={brand.height}
+                        className={`h-12 w-auto max-w-none object-contain sm:h-14 md:h-16 lg:h-[4.5rem] ${brand.invertInDarkMode ? "dark:invert" : ""}`}
+                      />
+                    </div>
+                  );
+
+                  return brand.url ? (
+                    <a
+                      href={brand.url}
+                      key={`${track}-${brand.title}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="transition-transform hover:-translate-y-0.5"
+                    >
+                      {content}
+                    </a>
+                  ) : (
+                    <div
+                      key={`${track}-${brand.title}`}
+                      className="transition-transform hover:-translate-y-0.5"
+                    >
+                      {content}
+                    </div>
+                  );
+                })}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="reveal-section border-b border-black/10 dark:border-white/10">
+        <div className="mx-auto grid max-w-7xl gap-14 px-6 py-20 md:px-12 lg:grid-cols-[minmax(300px,0.8fr)_minmax(0,1fr)] lg:items-center">
+          <div className="mx-auto flex w-full max-w-sm flex-col items-center gap-6">
+            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] border border-black/10 bg-black/[0.03] dark:border-white/10 dark:bg-white/[0.03]">
+              <PortraitSlideshow
+                images={portraits}
                 alt="Divine Orji"
-                fill
-                className="object-cover object-center transition-all duration-700 group-hover:scale-[1.03]"
-                sizes="(max-width: 1024px) 100vw, 40vw"
                 priority
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                className="object-cover object-center"
               />
             </div>
 
-            <div className="absolute -left-4 sm:-left-12 top-6 sm:top-10 bg-white dark:bg-faxx-dark text-black dark:text-white border-2 sm:border-4 border-faxx-dark dark:border-gray-700 px-3 py-1.5 sm:px-5 sm:py-2.5 font-mono font-bold uppercase shadow-[4px_4px_0px_0px_rgba(17,17,17,1)] md:shadow-[6px_6px_0px_0px_rgba(17,17,17,1)] flex items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs z-20 hover:scale-105 transition-transform cursor-default">
-              <i className="ri-terminal-line text-base sm:text-lg"></i>
-              Engineering
-            </div>
-
-            <div className="absolute -left-4 sm:-left-16 bottom-20 sm:bottom-32 bg-faxx-coral dark:bg-faxx-lime text-white dark:text-faxx-dark border-2 sm:border-4 border-faxx-dark dark:border-gray-700 px-3 py-1.5 sm:px-5 sm:py-2.5 font-mono font-bold uppercase shadow-[4px_4px_0px_0px_rgba(17,17,17,1)] md:shadow-[6px_6px_0px_0px_rgba(17,17,17,1)] flex items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs z-20 hover:scale-105 transition-transform cursor-default rotate-2">
-              <i className="ri-file-text-line text-base sm:text-lg"></i>
-              Documentation
-            </div>
-
-            <div className="absolute -right-4 sm:-right-12 bottom-60 sm:bottom-80 bg-faxx-blue dark:bg-faxx-cyan text-white dark:text-faxx-dark border-2 sm:border-4 border-faxx-dark dark:border-gray-700 px-3 py-1.5 sm:px-5 sm:py-2.5 font-mono font-bold uppercase shadow-[4px_4px_0px_0px_rgba(17,17,17,1)] md:shadow-[6px_6px_0px_0px_rgba(17,17,17,1)] flex items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs z-20 hover:scale-105 transition-transform cursor-default">
-              <i className="ri-server-line text-base sm:text-lg"></i>
-              Devops
-            </div>
-
-            <div className="absolute -right-4 sm:-right-8 bottom-12 sm:bottom-20 bg-faxx-dark text-faxx-cyan dark:bg-white dark:text-faxx-dark border-2 sm:border-4 border-faxx-dark dark:border-gray-700 px-3 py-1.5 sm:px-5 sm:py-2.5 font-mono font-bold uppercase shadow-[4px_4px_0px_0px_rgba(0,229,255,1)] md:shadow-[6px_6px_0px_0px_rgba(0,229,255,1)] flex items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs z-20 hover:scale-105 transition-transform cursor-default -rotate-2">
-              <i className="ri-robot-line text-base sm:text-lg"></i>
-              AI
-            </div>
-
-            <div className="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 bg-faxx-dark text-faxx-light p-2 sm:p-3 border-2 border-faxx-dark dark:border-gray-700 z-20 w-[calc(100%-8px)] sm:w-[calc(100%-12px)]">
-              <div className="scale-90 sm:scale-100 origin-bottom-right">
-                <Socials />
-              </div>
+            <div className="w-max rounded-full border border-black/10 bg-white/78 py-3 backdrop-blur dark:border-white/10 dark:bg-black/75">
+              <Socials
+                className="justify-center"
+                linkClassName="dark:!text-white/72"
+              />
             </div>
           </div>
 
-          <div className="grid gap-5 md:gap-6 font-body text-base sm:text-lg md:text-xl font-medium dark:text-gray-300">
-            <div>
-              <SplitHeading
-                as="h2"
-                className="font-display text-3xl md:text-7xl lg:text-8xl uppercase tracking-tighter text-faxx-dark dark:text-white mb-2 leading-[1.1]"
-                lines={[
-                  <>
-                    WHO
-                    <span className="text-gray-700 dark:text-faxx-cyan">
-                      {" "}
-                      AM I?
-                    </span>
-                  </>,
-                ]}
-              />
-              <RevealText
-                as="p"
-                className="font-script text-2xl md:text-3xl mt-4 text-faxx-blue dark:text-faxx-lime"
-              >
-                My friends call me Divi
-              </RevealText>
-            </div>
+          <div className="max-w-2xl">
+            <SplitHeading
+              as="h2"
+              className="font-display text-[clamp(2.6rem,6vw,4.5rem)] leading-[0.96] tracking-[-0.04em] text-[#111111] dark:text-white"
+            >
+              WHO AM I?
+            </SplitHeading>
+
+            <RevealText
+              as="p"
+              className="mt-4 font-script text-2xl text-[#ff5a58] dark:text-faxx-lime md:text-3xl"
+            >
+              My friends call me Divi
+            </RevealText>
 
             <p
-              dangerouslySetInnerHTML={{ __html: aboutMe[0] }}
-              className="border-l-4 border-gray-700 dark:border-faxx-cyan pl-4 md:pl-6"
+              dangerouslySetInnerHTML={{
+                __html:
+                  "I help businesses ship with confidence, reduce customer friction, and make complex products easier to understand.",
+              }}
+              className="mt-6 text-base leading-8 text-[#111111]/72 dark:text-white/72 md:text-lg"
             />
-            <div className="flex flex-wrap gap-3 mt-2">
-              {skills.map((skill) => (
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              {aboutTags.map((skill) => (
                 <span
                   key={skill}
-                  className="px-2.5 py-1.5 border-2 border-faxx-dark dark:border-gray-700 bg-white dark:bg-black font-mono text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-faxx-dark dark:text-white"
+                  className="rounded-full border border-black/10 bg-black/[0.04] px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-[#111111]/62 dark:border-white/10 dark:bg-white/[0.04] dark:text-white/62"
                 >
                   {skill}
                 </span>
               ))}
             </div>
-            <Link
-              href="/about"
-              className="group font-mono text-sm uppercase font-bold text-gray-700 dark:text-faxx-cyan hover:text-faxx-coral dark:hover:text-faxx-lime transition-colors flex items-center gap-2 mt-4 w-max"
-            >
-              <span>Read Full Story</span>
-              <i className="ri-arrow-right-line transition-transform duration-300 group-hover:translate-x-2"></i>
+
+            <Link href="/about" className="mt-12 inline-block w-max sm:mt-14">
+              <Button className="!px-5 !py-3 !text-[10px]">
+                <span>MORE DETAILS</span>
+                <ArrowIcon />
+              </Button>
             </Link>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Brands I've worked with */}
-        <section className="reveal-section w-full overflow-hidden">
-          <div className="py-4 md:py-6 relative flex overflow-hidden">
-            <div className="animate-marquee flex gap-12 sm:gap-16 items-center whitespace-nowrap min-w-full pl-12">
-              {[...brands, ...brands].map((brand, idx) =>
-                brand.url ? (
-                  <a
-                    href={brand.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    key={idx}
-                    className="relative h-12 sm:h-16 md:h-20 flex-shrink-0 transition-transform hover:scale-105"
-                  >
-                    <Image
-                      src={brand.image}
-                      alt={brand.title}
-                      width={brand.width}
-                      height={brand.height}
-                      className={`object-contain h-full w-max ${brand.invertInDarkMode ? "dark:invert" : ""}`}
-                    />
-                  </a>
-                ) : (
-                  <div
-                    key={idx}
-                    className="relative h-12 sm:h-16 md:h-20 flex-shrink-0 transition-transform hover:scale-105"
-                  >
-                    <Image
-                      src={brand.image}
-                      alt={brand.title}
-                      width={brand.width}
-                      height={brand.height}
-                      className={`object-contain h-full w-max ${brand.invertInDarkMode ? "dark:invert" : ""}`}
-                    />
-                  </div>
-                ),
-              )}
+      <section className="reveal-section border-b border-black/10 dark:border-white/10">
+        <div className="mx-auto max-w-7xl px-6 py-20 md:px-12">
+          <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div className="max-w-3xl">
+              <SplitHeading
+                as="h2"
+                className="font-display text-[clamp(2.4rem,5.8vw,4.5rem)] leading-[0.96] tracking-[-0.04em] text-[#111111] dark:text-white"
+              >
+                FEATURED PROJECTS.
+              </SplitHeading>
             </div>
-          </div>
-        </section>
 
-        {/* Work section */}
-        <section className="reveal-section grid gap-8 md:gap-12">
-          <div className="flex flex-col md:flex-row justify-between items-end gap-4 md:gap-6 border-b-4 border-faxx-dark dark:border-gray-700 pb-4 md:pb-6">
-            <SplitHeading
-              as="h2"
-              className="font-display text-3xl sm:text-6xl md:text-8xl uppercase tracking-tighter text-faxx-dark dark:text-white leading-[1.1]"
-              lines={[
-                <>FEATURED</>,
-                <>
-                  <span className="text-faxx-blue dark:text-faxx-cyan">
-                    PROJECTS.
-                  </span>
-                </>,
-              ]}
-            />
-            <Link href="/work" className="w-max shrink-0 hidden md:block">
-              <Button className="!shadow-[4px_4px_0px_0px_rgba(67,32,246,1)] dark:!shadow-[4px_4px_0px_0px_rgba(0,229,255,1)] active:!shadow-[0px_0px_0px_0px_rgba(67,32,246,1)] dark:active:!shadow-[0px_0px_0px_0px_rgba(0,229,255,1)]">
+            <Link href="/work" className="w-max shrink-0">
+              <Button className="!px-5 !py-3 !text-[10px]">
                 <span>VIEW ALL</span>
                 <ArrowIcon />
               </Button>
             </Link>
           </div>
 
-          <div className="w-full">
-            <WorkAccordion projects={projects} />
-          </div>
+          <WorkAccordion projects={projects} />
+        </div>
+      </section>
 
-          <Link href="/work" className="w-full md:hidden mt-4">
-            <Button className="w-full !py-5 !shadow-[4px_4px_0px_0px_rgba(67,32,246,1)] dark:!shadow-[4px_4px_0px_0px_rgba(0,229,255,1)]">
-              <span>VIEW ALL PROJECTS</span>
-              <ArrowIcon />
-            </Button>
-          </Link>
-        </section>
-        {/* Blog section */}
-        <section className="reveal-section grid gap-8 md:gap-12">
-          <div className="flex flex-col md:flex-row justify-between items-end gap-4 md:gap-6 border-b-4 border-faxx-dark dark:border-gray-700 pb-4 md:pb-6">
-            <SplitHeading
-              as="h2"
-              className="font-display text-3xl sm:text-6xl md:text-8xl uppercase tracking-tighter text-faxx-dark dark:text-white leading-[1.1]"
-              lines={[
-                <>LATEST</>,
-                <>
-                  <span className="text-gray-700 dark:text-faxx-lime">
-                    ARTICLES.
-                  </span>
-                </>,
-              ]}
-            />
-            <Link href="/blog" className="w-max shrink-0 hidden md:block">
-              <Button className="!shadow-[4px_4px_0px_0px_rgba(60,60,60,1)] dark:!shadow-[4px_4px_0px_0px_rgba(191,255,0,1)] active:!shadow-[0px_0px_0px_0px_rgba(60,60,60,1)] dark:active:!shadow-[0px_0px_0px_0px_rgba(191,255,0,1)]">
+      <section className="reveal-section">
+        <div className="mx-auto max-w-7xl px-6 py-20 md:px-12">
+          <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div className="max-w-3xl">
+              <SplitHeading
+                as="h2"
+                className="font-display text-[clamp(2.4rem,5.8vw,4.5rem)] leading-[0.96] tracking-[-0.04em] text-[#111111] dark:text-white"
+              >
+                LATEST ARTICLES.
+              </SplitHeading>
+            </div>
+
+            <Link href="/blog" className="w-max shrink-0">
+              <Button className="!px-5 !py-3 !text-[10px]">
                 <span>VISIT ARCHIVE</span>
                 <ArrowIcon />
               </Button>
@@ -361,15 +392,8 @@ export default function Home() {
           </div>
 
           <BlogPreview />
-
-          <Link href="/blog" className="w-full md:hidden mt-4">
-            <Button className="w-full !py-5 !shadow-[4px_4px_0px_0px_rgba(60,60,60,1)] dark:!shadow-[4px_4px_0px_0px_rgba(191,255,0,1)]">
-              <span>VISIT ARCHIVE</span>
-              <ArrowIcon />
-            </Button>
-          </Link>
-        </section>
-      </div>
+        </div>
+      </section>
     </main>
   );
 }

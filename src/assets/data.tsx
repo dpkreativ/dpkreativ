@@ -469,8 +469,8 @@ const projectCaseStudies: Record<ProjectSlug, CaseStudy> = {
 
 const {
   avatar,
+  portraits,
   logo,
-  logoword,
   contact,
   highlights,
   skills,
@@ -497,8 +497,8 @@ export type Project = (typeof projects)[number];
 
 export {
   avatar,
+  portraits,
   logo,
-  logoword,
   contact,
   highlights,
   skills,

@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { useEffect, useRef, useState } from "react";
 
 const linkClassName =
-  "group inline-flex whitespace-nowrap border-2 border-faxx-dark bg-faxx-dark px-4 py-3 font-mono font-bold uppercase tracking-wider text-white shadow-[4px_4px_0px_0px_rgba(17,17,17,1)] transition-colors duration-200 hover:bg-white hover:text-faxx-dark active:translate-x-[4px] active:translate-y-[4px] active:shadow-[0px_0px_0px_0px_rgba(17,17,17,1)] dark:border-gray-700 dark:bg-white dark:text-faxx-dark dark:shadow-[4px_4px_0px_0px_rgba(0,229,255,1)] dark:hover:bg-black dark:hover:text-white dark:active:shadow-[0px_0px_0px_0px_rgba(0,229,255,1)]";
+  "group inline-flex whitespace-nowrap rounded-full border-2 border-faxx-dark bg-faxx-dark px-4 py-3 font-mono font-bold uppercase tracking-wider text-white shadow-[4px_4px_0px_0px_rgba(17,17,17,1)] transition-colors duration-200 hover:bg-white hover:text-faxx-dark active:translate-x-[4px] active:translate-y-[4px] active:shadow-[0px_0px_0px_0px_rgba(17,17,17,1)] dark:border-gray-700 dark:bg-white dark:text-faxx-dark dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] dark:hover:bg-black dark:hover:text-white dark:active:shadow-[0px_0px_0px_0px_rgba(255,255,255,1)]";
 
 export default function FloatingDownloadLink({
   href,

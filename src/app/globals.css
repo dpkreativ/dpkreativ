@@ -9,6 +9,36 @@
 }
 
 @layer base {
+  html {
+    background-color: #ffffff;
+  }
+
+  html.dark {
+    background-color: #050505;
+  }
+
+  body {
+    min-height: 100vh;
+  }
+
+  .dark body {
+    background-image:
+      radial-gradient(circle at top right, rgba(191, 255, 0, 0.14), transparent 24%),
+      radial-gradient(circle at top left, rgba(255, 255, 255, 0.06), transparent 18%);
+  }
+
+  .editorial-star {
+    display: inline-block;
+    aspect-ratio: 1;
+    width: 1.5rem;
+    background: #ff5a58;
+    clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%);
+  }
+
+  .dark .editorial-star {
+    background: #bfff00;
+  }
+
   .blog-post-markdown {
     min-width: 0;
   }

@@ -31,13 +31,13 @@ export default function ProjectBrandMark({
   fallback,
   className = "h-12 w-12",
   imageClassName = "max-h-full w-auto object-contain",
-  textClassName = "font-display text-sm uppercase tracking-tight text-faxx-dark",
+  textClassName = "font-display text-sm tracking-tight text-[#111111]",
 }: ProjectBrandMarkProps) {
   const label = brand?.title ?? fallback;
 
   return (
     <div
-      className={`shrink-0 border-2 border-faxx-dark dark:border-gray-700 bg-white p-2 flex items-center justify-center overflow-hidden ${className}`}
+      className={`shrink-0 flex items-center justify-center overflow-hidden rounded-full border border-black/10 bg-white/90 p-2 dark:border-white/15 dark:bg-white/95 ${className}`}
     >
       {brand ? (
         <Image

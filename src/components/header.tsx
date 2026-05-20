@@ -1,16 +1,22 @@
 "use client";
 
 import { logo, navlinks } from "@/assets/data";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
+import { useTheme } from "@/components/theme-provider";
 import Image from "next/image";
 import Link from "next/link";
-import { useRef, useState, useSyncExternalStore } from "react";
+import { useState, useSyncExternalStore } from "react";
 import Socials from "./socials";
-import { useTheme } from "@/components/theme-provider";
 
 function ThemeToggle() {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const mounted = useSyncExternalStore(
     () => () => undefined,
     () => true,
@@ -18,130 +24,122 @@ function ThemeToggle() {
   );
 
   if (!mounted) {
-    return <div className="w-12 h-12 border-2 border-faxx-dark bg-white" />;
+    return (
+      <div className="h-11 w-11 rounded-full border border-black/10 bg-black/[0.04] dark:border-white/15 dark:bg-white/[0.04]" />
+    );
   }
+
+  const isDark = resolvedTheme === "dark";
 
   return (
     <button
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      onClick={() => setTheme(isDark ? "light" : "dark")}
       aria-label="Toggle dark mode"
-      className="w-12 h-12 flex items-center justify-center bg-white border-2 border-faxx-dark hover:bg-faxx-cyan transition-colors duration-200 text-faxx-dark"
+      aria-pressed={isDark}
+      className="flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-black/[0.04] text-[#111111] transition-colors duration-300 hover:border-[#ff5a58]/60 hover:text-[#ff5a58] dark:border-white/15 dark:bg-white/[0.04] dark:text-white dark:hover:border-faxx-lime dark:hover:text-faxx-lime"
     >
-      {theme === "dark" ? (
-        <i className="ri-sun-fill text-2xl"></i>
+      {isDark ? (
+        <i className="ri-sun-fill text-lg"></i>
       ) : (
-        <i className="ri-moon-fill text-2xl"></i>
+        <i className="ri-moon-fill text-lg"></i>
       )}
     </button>
   );
 }
 
-import {
-  Drawer,
-  DrawerContent,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-  DrawerClose,
-} from "@/components/ui/drawer";
-
 export default function Header() {
   const [viewModal, setViewModal] = useState(false);
 
   return (
-    <header
-      className="fixed inset-x-0 top-0 z-50 w-full bg-faxx-light border-b-4 border-faxx-dark dark:bg-black dark:border-gray-700"
-    >
-      <div className="flex items-center justify-between gap-4 px-4 sm:px-6 py-4 relative z-50 bg-faxx-light dark:bg-black max-w-7xl mx-auto">
-        <div className="w-max shrink-0">
-          <Link
-            href="/"
-            className="flex gap-3 items-center p-2 bg-faxx-dark dark:bg-black"
-          >
-            <Image
-              src={logo}
-              alt="Divine's logo"
-              className="logo invert"
-              width={24}
-              height={24}
-            />
-            <span className="font-mono text-[10px] sm:text-xs font-bold uppercase tracking-widest text-white pr-2">
-              DIVINE ORJI <span className="hidden md:inline">{"// SOFTWARE ENGINEER"}</span>
-            </span>
-          </Link>
-        </div>
+    <header className="fixed inset-x-0 top-0 z-50 w-full border-b border-black/10 bg-white/85 backdrop-blur-xl dark:border-white/10 dark:bg-black/85">
+      <div className="relative z-50 mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
+        <Link
+          href="/"
+          className="group flex shrink-0 items-center gap-3 rounded-full bg-transparent px-4 py-2.5 text-[#111111] transition-colors hover:bg-black/[0.03] dark:bg-black dark:text-white dark:hover:bg-white/[0.06]"
+        >
+          <Image
+            src={logo}
+            alt="Divine's logo"
+            className="opacity-90 transition-opacity group-hover:opacity-100 dark:invert"
+            width={20}
+            height={20}
+          />
+          <span className="font-mono text-[10px] font-bold uppercase tracking-[0.34em] text-[#111111]/88 dark:text-white/88">
+            DIVINE ORJI
+            <span className="hidden lg:inline text-[#111111]/48 dark:text-white/48">{" // software engineer"}</span>
+          </span>
+        </Link>
 
-        <div className="flex items-center gap-4 sm:gap-8">
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+        <div className="flex items-center gap-3 sm:gap-4">
+          <nav className="hidden items-center gap-6 md:flex lg:gap-8">
             {navlinks.map((link) => (
               <Link
                 key={link.id}
                 href={link.url}
-                className="font-display text-xs uppercase tracking-widest hover:text-faxx-blue transition-colors dark:text-white"
+                className="font-mono text-[11px] font-bold uppercase tracking-[0.28em] text-[#111111]/68 transition-colors hover:text-[#111111] dark:text-white/70 dark:hover:text-white"
               >
                 {link.title}
               </Link>
             ))}
           </nav>
 
-          <div className="flex items-center gap-2 sm:gap-4">
+          <div className="flex items-center gap-2 sm:gap-3">
             <ThemeToggle />
-            
+
             <Drawer direction="right" open={viewModal} onOpenChange={setViewModal}>
               <DrawerTrigger asChild>
                 <button
                   aria-label="Toggle menu"
-                  className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center border-2 border-faxx-dark bg-faxx-cyan hover:bg-faxx-lime shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-1 active:translate-y-1 md:hidden"
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-black/[0.04] text-[#111111] transition-colors duration-300 hover:border-[#ff5a58]/60 hover:text-[#ff5a58] dark:border-white/15 dark:bg-white/[0.04] dark:text-white dark:hover:border-faxx-lime dark:hover:text-faxx-lime md:hidden"
                 >
-                  <i className="ri-menu-line text-2xl sm:text-3xl text-faxx-dark font-bold"></i>
+                  <i className="ri-menu-line text-xl font-bold"></i>
                 </button>
               </DrawerTrigger>
-              <DrawerContent className="!bg-faxx-blue !text-white flex flex-col p-8 pt-8">
-                <DrawerHeader className="p-0 mb-12 flex justify-between items-center">
+              <DrawerContent className="!border-l !border-black/10 !bg-white !text-[#111111] p-8 pt-8 dark:!border-white/10 dark:!bg-[#050505] dark:!text-white sm:!w-[420px]">
+                <DrawerHeader className="mb-10 flex items-center justify-between p-0">
                   <DrawerTitle asChild>
                     <Link
                       href="/"
-                      className="flex gap-3 items-center p-2 bg-black border-2 border-white"
+                      className="flex items-center gap-3 rounded-full border border-black/10 bg-[#111111] px-4 py-2 dark:border-white/10"
                       onClick={() => setViewModal(false)}
                     >
                       <Image
                         src={logo}
                         alt="Divine's logo"
-                        className="logo invert"
+                        className="invert opacity-90"
                         width={20}
                         height={20}
                       />
-                      <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-white pr-1">
+                      <span className="font-mono text-[10px] font-bold uppercase tracking-[0.32em] text-white/88">
                         DIVINE ORJI
                       </span>
                     </Link>
                   </DrawerTitle>
                   <DrawerClose asChild>
-                    <button className="w-10 h-10 flex items-center justify-center border-2 border-white hover:bg-faxx-coral transition-colors">
-                      <i className="ri-close-large-line text-2xl"></i>
+                    <button className="flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-black/[0.04] text-[#111111] transition-colors hover:border-[#ff5a58]/60 hover:text-[#ff5a58] dark:border-white/15 dark:bg-white/[0.04] dark:text-white dark:hover:border-faxx-lime dark:hover:text-faxx-lime">
+                      <i className="ri-close-large-line text-lg"></i>
                     </button>
                   </DrawerClose>
                 </DrawerHeader>
 
-                <div className="flex flex-col gap-8 font-display text-4xl uppercase pb-12">
+                <div className="flex flex-col gap-8 pb-12 font-display text-4xl leading-none tracking-tight">
                   {navlinks.map((link) => (
                     <Link
                       key={link.id}
                       onClick={() => setViewModal(false)}
                       href={link.url}
-                      className="hover:text-faxx-lime transition-colors"
+                      className="text-[#111111] transition-colors hover:text-[#ff5a58] dark:text-white dark:hover:text-faxx-lime"
                     >
                       {link.title}
                     </Link>
                   ))}
                 </div>
 
-                <div className="mt-auto pt-12 border-t-2 border-white/20">
-                  <p className="font-mono text-xs uppercase tracking-widest mb-6 opacity-60">Connect</p>
-                  <div className="w-max">
-                    <Socials />
-                  </div>
+                <div className="mt-auto border-t border-black/10 pt-10 dark:border-white/10">
+                  <p className="mb-5 font-mono text-[11px] font-bold uppercase tracking-[0.32em] text-[#111111]/45 dark:text-white/50">
+                    Connect
+                  </p>
+                  <Socials className="px-0" />
                 </div>
               </DrawerContent>
             </Drawer>

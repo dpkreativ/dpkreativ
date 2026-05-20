@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import {
   Space_Mono,
   Outfit,
-  Archivo_Black,
-  Give_You_Glory, Geist } from "next/font/google";
+  DM_Serif_Display,
+  Give_You_Glory,
+  Geist,
+} from "next/font/google";
 import "./globals.css";
 import "remixicon/fonts/remixicon.css";
 import Header from "@/components/header";
@@ -20,7 +22,7 @@ import {
   SITE_URL,
 } from "@/lib/site";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 const mono = Space_Mono({
   weight: ["400", "700"],
@@ -32,8 +34,9 @@ const body = Outfit({
   variable: "--font-body",
   subsets: ["latin"],
 });
-const display = Archivo_Black({
+const display = DM_Serif_Display({
   weight: "400",
+  style: ["normal", "italic"],
   variable: "--font-display",
   subsets: ["latin"],
   display: "swap",
@@ -114,7 +117,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn(mono.variable, body.variable, display.variable, script.variable, "font-sans", geist.variable)}
+      className={cn(
+        mono.variable,
+        body.variable,
+        display.variable,
+        script.variable,
+        geist.variable,
+        "font-sans",
+      )}
       suppressHydrationWarning
     >
       <head>
@@ -134,13 +144,13 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className="font-body bg-faxx-light dark:bg-faxx-dark text-faxx-dark dark:text-faxx-light flex flex-col min-h-screen items-center selection:bg-faxx-blue selection:text-white transition-colors duration-300 overflow-x-hidden">
-        <ThemeProvider>
-          <Header />
-          {children}
-          <Footer />
-        </ThemeProvider>
-      </body>
+        <body className="flex min-h-screen flex-col overflow-x-hidden bg-white font-body text-faxx-dark antialiased transition-colors duration-300 selection:bg-[#ff5a58] selection:text-[#050505] dark:bg-[#050505] dark:text-white">
+          <ThemeProvider>
+            <Header />
+            {children}
+            <Footer />
+          </ThemeProvider>
+        </body>
     </html>
   );
 }

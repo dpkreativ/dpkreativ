@@ -20,15 +20,13 @@ export default function Work() {
         <div className="border-b-8 border-faxx-dark dark:border-gray-700 pb-8 md:pb-12">
           <SplitHeading
             as="h1"
-            className="font-display text-3xl md:text-8xl lg:text-9xl uppercase tracking-tighter leading-[1.1]"
-            lines={[
-              <span key="work-title-line-1">FEATURED</span>,
-              <span key="work-title-line-2" className="text-faxx-blue dark:text-faxx-cyan">PROJECTS.</span>,
-            ]}
-          />
+            className="font-display text-2xl md:text-6xl lg:text-7xl uppercase tracking-tighter leading-[1.1]"
+          >
+            FEATURED PROJECTS.
+          </SplitHeading>
           <RevealText
             as="p"
-            className="font-mono text-sm md:text-base mt-6 text-faxx-blue dark:text-faxx-cyan font-bold uppercase tracking-widest"
+            className="font-mono text-sm md:text-base mt-6 text-faxx-coral dark:text-faxx-lime font-bold uppercase tracking-widest"
           >
             Crafting digital solutions with precision and purpose.
           </RevealText>

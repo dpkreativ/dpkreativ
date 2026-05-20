@@ -35,10 +35,10 @@ export async function POST(request: NextRequest) {
     .header h1 { font-size: 32px; margin: 0; text-transform: uppercase; letter-spacing: -2px; line-height: 0.9; }
     .section { padding: 30px; border-bottom: 4px solid #111111; }
     .section-title { font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; color: #666; margin-bottom: 20px; }
-    .tier-badge { display: inline-block; background: #00E5FF; border: 2px solid #111111; padding: 5px 15px; font-weight: bold; margin-bottom: 10px; }
+    .tier-badge { display: inline-block; background: #FF4A5A; border: 2px solid #111111; padding: 5px 15px; font-weight: bold; margin-bottom: 10px; color: #ffffff; }
     .grid { display: block; width: 100%; }
     .row { border-bottom: 2px solid #eee; padding: 10px 0; }
-    .label { font-weight: bold; text-transform: uppercase; font-size: 11px; color: #4320F6; }
+    .label { font-weight: bold; text-transform: uppercase; font-size: 11px; color: #FF4A5A; }
     .value { font-size: 16px; margin-top: 4px; }
     .description { background: #fafafa; border: 2px solid #111111; padding: 20px; margin-top: 10px; line-height: 1.6; }
     .footer { padding: 20px; font-size: 10px; text-transform: uppercase; color: #999; }

@@ -50,7 +50,7 @@ function DialogContent({
       <DialogPrimitive.Popup
         data-slot="dialog-content"
         className={cn(
-          "fixed top-1/2 left-1/2 z-[1001] w-[calc(100%-2rem)] md:w-full max-w-4xl max-h-[90vh] overflow-y-auto -translate-x-1/2 -translate-y-1/2 bg-faxx-light dark:bg-black border-4 md:border-8 border-faxx-dark dark:border-gray-800 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] md:shadow-[24px_24px_0px_0px_rgba(0,0,0,1)] dark:md:shadow-[24px_24px_0px_0px_rgba(0,229,255,0.3)] p-6 md:p-12 outline-none duration-300 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-open:slide-in-from-left-1/2 data-open:slide-in-from-top-[48%] data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95 data-closed:slide-out-to-left-1/2 data-closed:slide-out-to-top-[48%]",
+          "fixed top-1/2 left-1/2 z-[1001] w-[calc(100%-2rem)] md:w-full max-w-4xl max-h-[90vh] overflow-y-auto -translate-x-1/2 -translate-y-1/2 bg-faxx-light dark:bg-black border-4 md:border-8 border-faxx-dark dark:border-gray-800 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] md:shadow-[24px_24px_0px_0px_rgba(0,0,0,1)] dark:md:shadow-[24px_24px_0px_0px_rgba(255,74,90,0.3)] p-6 md:p-12 outline-none duration-300 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-open:slide-in-from-left-1/2 data-open:slide-in-from-top-[48%] data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95 data-closed:slide-out-to-left-1/2 data-closed:slide-out-to-top-[48%]",
           className
         )}
         {...props}
@@ -58,7 +58,7 @@ function DialogContent({
         {children}
         {showCloseButton && (
           <DialogPrimitive.Close
-            className="absolute top-4 right-4 w-12 h-12 flex items-center justify-center border-4 border-faxx-dark dark:border-gray-700 bg-white dark:bg-black hover:bg-faxx-coral dark:hover:bg-faxx-coral transition-colors z-10"
+            className="absolute top-4 right-4 z-10 flex h-12 w-12 items-center justify-center border-4 border-faxx-dark bg-white transition-colors hover:bg-faxx-coral dark:border-gray-700 dark:bg-black dark:hover:bg-faxx-lime"
           >
             <i className="ri-close-large-line text-2xl"></i>
             <span className="sr-only">Close</span>

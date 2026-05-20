@@ -24,12 +24,12 @@ export type FormInputs = {
 function SuccessMessage() {
   return (
     <div className="text-center grid gap-8 p-6 md:p-12 bg-white dark:bg-zinc-900 border-4 md:border-8 border-faxx-dark dark:border-faxx-lime shadow-[8px_8px_0px_0px_rgba(17,17,17,1)] dark:shadow-[8px_8px_0px_0px_rgba(191,255,0,1)] max-w-2xl mx-auto">
-      <div className="bg-faxx-lime text-faxx-dark py-1 px-4 w-max mx-auto font-mono font-bold uppercase tracking-widest text-xs">
+      <div className="bg-faxx-coral px-4 py-1 font-mono text-xs font-bold uppercase tracking-widest text-white dark:bg-faxx-lime dark:text-faxx-dark w-max mx-auto">
         Capture Successful
       </div>
       <h2 className="text-3xl md:text-5xl font-display uppercase tracking-tighter text-faxx-dark dark:text-white leading-none">
         LET&apos;S GET <br />
-        <span className="text-faxx-dark dark:text-faxx-lime">STARTED!</span>
+        <span className="text-faxx-coral dark:text-faxx-lime">STARTED!</span>
       </h2>
       <p className="text-gray-600 dark:text-gray-400 text-base md:text-lg font-body">
         I&apos;ve received your project brief. I&apos;ll review it and reach out within 24 hours to schedule a clarity call.
@@ -79,9 +79,9 @@ export default function ContactForm({ initialTier, onCancel }: { initialTier?: s
     }
   };
 
-  const inputClasses = "w-full px-5 py-3 border-4 border-faxx-dark dark:border-gray-800 rounded-none bg-white dark:bg-black text-faxx-dark dark:text-white font-body text-base focus:outline-none focus:border-faxx-blue dark:focus:border-faxx-cyan transition-all shadow-[4px_4px_0px_0px_rgba(17,17,17,1)]";
+  const inputClasses = "w-full px-5 py-3 border-4 border-faxx-dark dark:border-gray-800 rounded-none bg-white dark:bg-black text-faxx-dark dark:text-white font-body text-base focus:outline-none focus:border-faxx-coral dark:focus:border-faxx-lime transition-all shadow-[4px_4px_0px_0px_rgba(17,17,17,1)]";
   const labelClasses = "block font-mono text-xs font-bold uppercase tracking-widest mb-2 text-faxx-dark dark:text-gray-400";
-  const errorClasses = "text-faxx-coral font-mono text-[10px] mt-1 font-bold uppercase";
+  const errorClasses = "font-mono text-[10px] mt-1 font-bold uppercase text-faxx-coral dark:text-faxx-lime";
 
   if (isSubmitSuccessful && !submitError) {
     return <SuccessMessage />;
@@ -180,7 +180,7 @@ export default function ContactForm({ initialTier, onCancel }: { initialTier?: s
         <Button
           type="submit"
           disabled={isSubmitting}
-          className={`flex-1 !py-5 !text-lg ${isSubmitting ? "opacity-50" : ""}`}
+          className={`flex-1 !py-5 !text-lg dark:!border-faxx-lime dark:!bg-faxx-lime dark:!text-faxx-dark dark:!shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] dark:hover:!border-faxx-lime dark:hover:!bg-black dark:hover:!text-white dark:active:!shadow-[0px_0px_0px_0px_rgba(255,255,255,1)] ${isSubmitting ? "opacity-50" : ""}`}
         >
           {isSubmitting ? "TRANSMITTING..." : "SEND PROJECT BRIEF"}
         </Button>

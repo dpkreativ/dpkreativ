@@ -5,6 +5,7 @@ import path from 'path';
 describe('Content Data', () => {
   it('should have required properties', () => {
     expect(content).toHaveProperty('avatar');
+    expect(content).toHaveProperty('portraits');
     expect(content).toHaveProperty('brands');
     expect(content).toHaveProperty('projects');
     expect(content).toHaveProperty('navlinks');
@@ -23,8 +24,8 @@ describe('Content Data', () => {
     };
 
     checkImage(content.avatar);
+    content.portraits.forEach(checkImage);
     checkImage(content.logo);
-    checkImage(content.logoword);
 
     // brands
     content.brands.forEach(brand => checkImage(brand.image));

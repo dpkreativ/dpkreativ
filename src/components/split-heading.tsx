@@ -13,21 +13,26 @@ type HeadingTag = "h1" | "h2" | "h3" | "h4" | "div";
 type SplitHeadingProps = {
   as?: HeadingTag;
   className?: string;
-  lines: ReactNode[];
+  children: ReactNode;
   triggerStart?: string;
 };
 
 export default function SplitHeading({
   as: Tag = "h2",
   className,
-  lines,
+  children,
   triggerStart = "top 85%",
 }: SplitHeadingProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   useGSAP(
     () => {
-      const lineNodes = gsap.utils.toArray<HTMLElement>(".split-heading-line");
+      const headingNode = containerRef.current?.querySelector<HTMLElement>("[data-split-heading]");
+
+      if (!headingNode) {
+        return;
+      }
+
       const timeline = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
@@ -36,16 +41,14 @@ export default function SplitHeading({
         },
       });
 
-      const reverts = lineNodes.map((lineNode, index) =>
-        addSplitTextReveal(timeline, lineNode, {
-          at: index * 0.18,
-          lineDelay: 0.16,
-          charStagger: 0.02,
-        }),
-      );
+      const revert = addSplitTextReveal(timeline, headingNode, {
+        at: 0,
+        lineDelay: 0.16,
+        charStagger: 0.02,
+      });
 
       return () => {
-        reverts.forEach((revert) => revert());
+        revert();
       };
     },
     { scope: containerRef },
@@ -53,12 +56,8 @@ export default function SplitHeading({
 
   return (
     <div ref={containerRef}>
-      <Tag className={className}>
-        {lines.map((line, idx) => (
-          <span key={idx} className="block split-heading-line">
-            {line}
-          </span>
-        ))}
+      <Tag data-split-heading className={className}>
+        {children}
       </Tag>
     </div>
   );

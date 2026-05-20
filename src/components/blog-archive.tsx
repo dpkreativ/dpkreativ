@@ -58,16 +58,10 @@ export default function BlogArchive({ posts }: { posts: HashnodePost[] }) {
         <header className="space-y-6">
           <SplitHeading
             as="h1"
-            className="font-display text-3xl md:text-8xl lg:text-9xl uppercase tracking-tighter leading-[1.1]"
-            lines={[
-              <span key="blog-title-line-1">
-                THE <span className="text-gray-700 dark:text-faxx-lime">TECHNICAL</span>
-              </span>,
-              <span key="blog-title-line-2" className="text-gray-700 dark:text-faxx-lime">
-                ARCHIVE.
-              </span>,
-            ]}
-          />
+            className="font-display text-2xl md:text-6xl lg:text-7xl uppercase tracking-tighter leading-[1.1]"
+          >
+            THE TECHNICAL ARCHIVE.
+          </SplitHeading>
           <RevealText
             as="p"
             className="blog-subtitle font-mono text-sm md:text-base text-zinc-600 dark:text-faxx-lime font-bold uppercase tracking-widest"
@@ -76,7 +70,6 @@ export default function BlogArchive({ posts }: { posts: HashnodePost[] }) {
           </RevealText>
         </header>
 
-        {categories.length > 1 ? (
           <div className="flex flex-col gap-6 border-y-4 border-faxx-dark py-12 dark:border-gray-700 sm:flex-row">
             <div className="flex-1 space-y-6">
               <RevealText
@@ -92,33 +85,34 @@ export default function BlogArchive({ posts }: { posts: HashnodePost[] }) {
                 placeholder="Search by title or content..."
                 value={searchQuery}
                 onChange={(event) => setSearchQuery(event.target.value)}
-                className="filter-item w-full border-4 border-faxx-dark bg-white px-4 py-3 font-mono text-sm uppercase tracking-widest transition-colors focus:border-faxx-cyan focus:outline-none dark:border-gray-700 dark:bg-black"
+                className="filter-item w-full border-4 border-faxx-dark bg-white px-4 py-3 font-mono text-sm uppercase tracking-widest transition-colors focus:border-faxx-coral focus:outline-none dark:border-gray-700 dark:bg-black dark:focus:border-faxx-lime"
               />
             </div>
 
-            <div className="w-full space-y-6 sm:w-auto sm:min-w-[200px]">
-              <RevealText
-                as="h3"
-                className="font-mono text-xs uppercase font-bold tracking-widest opacity-60"
-                triggerStart="top 94%"
-                lineDelay={0.1}
-              >
-                Filter by Category
-              </RevealText>
-              <select
-                value={activeCategory}
-                onChange={(event) => setActiveCategory(event.target.value)}
-                className="filter-item w-full cursor-pointer appearance-none border-4 border-faxx-dark bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220%22%20height%3D%2220%22%20fill%3D%22%23444444%22%3E%3Cpath%20d%3D%22M10%200l10%2010-10%2010z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:12px] bg-[right_12px_center] bg-no-repeat bg-white px-4 py-3 font-mono text-sm uppercase tracking-widest transition-colors focus:border-faxx-cyan focus:outline-none dark:border-gray-700 dark:bg-black"
-              >
-                {categories.map((category) => (
-                  <option key={category} value={category}>
-                    {category}
-                  </option>
-                ))}
-              </select>
-            </div>
+            {categories.length > 1 ? (
+              <div className="w-full space-y-6 sm:w-auto sm:min-w-[200px]">
+                <RevealText
+                  as="h3"
+                  className="font-mono text-xs uppercase font-bold tracking-widest opacity-60"
+                  triggerStart="top 94%"
+                  lineDelay={0.1}
+                >
+                  Filter by Category
+                </RevealText>
+                <select
+                  value={activeCategory}
+                  onChange={(event) => setActiveCategory(event.target.value)}
+                  className="filter-item w-full cursor-pointer appearance-none border-4 border-faxx-dark bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220%22%20height%3D%2220%22%20fill%3D%22%23444444%22%3E%3Cpath%20d%3D%22M10%200l10%2010-10%2010z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:12px] bg-[right_12px_center] bg-no-repeat bg-white px-4 py-3 font-mono text-sm uppercase tracking-widest transition-colors focus:border-faxx-coral focus:outline-none dark:border-gray-700 dark:bg-black dark:focus:border-faxx-lime"
+                >
+                  {categories.map((category) => (
+                    <option key={category} value={category}>
+                      {category}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            ) : null}
           </div>
-        ) : null}
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {filteredPosts.length > 0 ? (
@@ -129,10 +123,9 @@ export default function BlogArchive({ posts }: { posts: HashnodePost[] }) {
                   title: post.title,
                   excerpt: post.brief,
                   date: post.publishedAt,
-                  category: post.tags?.[0]?.name || "General",
                   source: "Hashnode",
-                  url: `/blog/${post.slug}`,
-                  image: post.coverImage?.url || "/images/project-placeholder.png",
+                  url: post.blogUrl || `/blog/${post.slug}`,
+                  image: post.coverImage?.url || "/images/project-demos/project-placeholder.png",
                   slug: post.slug,
                 }}
               />

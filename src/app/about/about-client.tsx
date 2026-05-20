@@ -2,18 +2,18 @@
 
 import {
   aboutMe,
-  avatar,
   certifications,
   contact,
   education,
   experience,
   languages,
+  portraits,
   skills,
 } from "@/assets/data";
 import FloatingDownloadLink from "@/components/floating-download-link";
+import PortraitSlideshow from "@/components/portrait-slideshow";
 import RevealText from "@/components/reveal-text";
 import SplitHeading from "@/components/split-heading";
-import Image from "next/image";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
@@ -45,24 +45,18 @@ export default function About() {
       <div className="w-full max-w-7xl mx-auto px-10 md:px-12 py-16 md:py-24 grid lg:grid-cols-12 gap-12 items-start">
         {/* Left: Content */}
         <div className="lg:col-span-7 space-y-12">
-          <header className="space-y-4">
+          <header className="max-w-4xl space-y-5">
             <SplitHeading
               as="h1"
-              className="font-display text-3xl sm:text-5xl md:text-7xl lg:text-8xl uppercase tracking-tighter leading-[0.85]"
-              lines={[
-                <span key="about-title-line-1">
-                  THE <span className="text-faxx-blue dark:text-faxx-cyan">STORY</span>
-                </span>,
-                <span key="about-title-line-2">
-                  BEHIND <span className="text-faxx-coral dark:text-faxx-lime">DIVI.</span>
-                </span>,
-              ]}
-            />
+              className="font-display text-2xl sm:text-4xl md:text-6xl lg:text-7xl uppercase tracking-tighter leading-[0.85]"
+            >
+              ABOUT DIVI.
+            </SplitHeading>
             <RevealText
               as="p"
-              className="about-kicker font-mono text-sm md:text-base text-faxx-blue dark:text-faxx-cyan font-bold uppercase tracking-widest"
+              className="about-kicker font-mono text-sm md:text-base text-faxx-coral dark:text-faxx-lime font-bold uppercase tracking-widest"
             >
-              Software Engineer // Community Builder // Problem Solver
+              Software Engineer // Product Builder
             </RevealText>
 
             <FloatingDownloadLink
@@ -82,7 +76,7 @@ export default function About() {
             ))}
           </div>
 
-          <div className="about-text grid gap-5 bg-white dark:bg-zinc-900 border-4 border-faxx-dark dark:border-gray-700 p-6 md:p-8 shadow-[8px_8px_0px_0px_rgba(60,60,60,1)] dark:shadow-[8px_8px_0px_0px_rgba(0,229,255,0.2)]">
+          <div className="about-text grid gap-5 rounded-[2rem] border-4 border-faxx-dark bg-white p-6 shadow-[8px_8px_0px_0px_rgba(60,60,60,1)] dark:border-gray-700 dark:bg-zinc-900 dark:shadow-[8px_8px_0px_0px_rgba(191,255,0,0.2)] md:p-8">
             <RevealText as="h3" className="font-display text-3xl uppercase tracking-tighter">
               Core Skills
             </RevealText>
@@ -90,7 +84,7 @@ export default function About() {
               {skills.map((skill) => (
                 <span
                   key={skill}
-                  className="px-3 py-2 border-2 border-faxx-dark dark:border-gray-700 bg-faxx-light dark:bg-black font-mono text-xs font-bold uppercase tracking-widest text-faxx-dark dark:text-white"
+                  className="rounded-full border-2 border-faxx-dark bg-faxx-light px-3 py-2 font-mono text-xs font-bold uppercase tracking-widest text-faxx-dark dark:border-gray-700 dark:bg-black dark:text-white"
                 >
                   {skill}
                 </span>
@@ -101,13 +95,12 @@ export default function About() {
 
         {/* Right: Image/Aesthetic */}
         <div className="lg:col-span-5">
-          <div className="relative aspect-[3/4] border-8 border-faxx-dark dark:border-gray-700 shadow-[16px_16px_0px_0px_rgba(67,32,246,1)] dark:shadow-[16px_16px_0px_0px_rgba(0,229,255,1)] overflow-hidden about-image">
-            <Image
-              src={avatar}
+          <div className="relative aspect-[3/4] overflow-hidden rounded-[2rem] border-8 border-faxx-dark shadow-[16px_16px_0px_0px_rgba(255,74,90,1)] dark:border-gray-700 dark:shadow-[16px_16px_0px_0px_rgba(191,255,0,1)] about-image">
+            <PortraitSlideshow
+              images={portraits}
               alt="Divine Orji"
-              fill
-              className="object-cover transition-all duration-500"
               sizes="(max-width: 1024px) 100vw, 40vw"
+              className="object-cover"
             />
             {/* Overlay Grid */}
             <div
@@ -119,14 +112,8 @@ export default function About() {
               }}
             ></div>
           </div>
-          
-           <div className="mt-12 bg-faxx-coral dark:bg-faxx-lime text-white dark:text-faxx-dark p-6 border-4 border-faxx-dark about-image">
-               <RevealText as="p" className="font-script text-3xl text-center">
-                 &quot;Code is the tool, impact is the goal.&quot;
-               </RevealText>
-           </div>
-         </div>
-       </div>
+        </div>
+        </div>
 
       <div className="w-full max-w-7xl mx-auto px-6 md:px-12 pb-16 md:pb-24 grid gap-12 md:gap-16">
         <section className="grid gap-8 about-text">
@@ -134,12 +121,9 @@ export default function About() {
             <SplitHeading
               as="h2"
               className="font-display text-4xl md:text-6xl uppercase tracking-tighter leading-none"
-              lines={[
-                <span key="experience-title-line-1">
-                  EXPERIENCE <span className="text-faxx-blue dark:text-faxx-cyan">SNAPSHOT.</span>
-                </span>,
-              ]}
-            />
+            >
+              EXPERIENCE SNAPSHOT.
+            </SplitHeading>
             <RevealText
               as="p"
               className="font-mono text-sm md:text-base mt-4 text-faxx-coral dark:text-faxx-lime font-bold uppercase tracking-widest"
@@ -161,22 +145,20 @@ export default function About() {
                     key={`${item.company}-${item.role}-${item.period}`}
                     className="relative grid gap-4 pl-16 md:grid-cols-[minmax(0,1fr)_5rem_minmax(0,1fr)] md:items-start md:gap-8 md:pl-0"
                   >
-                    <div className="absolute left-0 top-1 z-10 flex h-10 w-10 items-center justify-center border-4 border-faxx-dark bg-faxx-coral font-display text-xl uppercase tracking-tighter text-white shadow-[4px_4px_0px_0px_rgba(17,17,17,1)] dark:border-gray-700 dark:bg-faxx-lime dark:text-faxx-dark dark:shadow-[4px_4px_0px_0px_rgba(0,229,255,0.35)] md:left-1/2 md:-translate-x-1/2">
+                    <div className="absolute left-0 top-1 z-10 flex h-10 w-10 items-center justify-center rounded-full border-4 border-faxx-dark bg-faxx-coral font-display text-xl uppercase tracking-tighter text-white shadow-[4px_4px_0px_0px_rgba(17,17,17,1)] dark:border-gray-700 dark:bg-faxx-lime dark:text-faxx-dark dark:shadow-[4px_4px_0px_0px_rgba(191,255,0,0.35)] md:left-1/2 md:-translate-x-1/2">
                       {stepNumber}
                     </div>
 
                     <div
                       className={`md:row-start-1 ${cardOnRight ? "md:col-start-1 md:flex md:justify-end md:pt-2" : "md:col-start-3 md:pt-2"}`}
                     >
-                      <div className="inline-flex w-fit items-center gap-3 border-4 border-faxx-dark bg-faxx-blue px-4 py-2 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-white shadow-[6px_6px_0px_0px_rgba(17,17,17,1)] dark:border-gray-700 dark:bg-faxx-cyan dark:text-faxx-dark dark:shadow-[6px_6px_0px_0px_rgba(0,229,255,0.25)]">
-                        <span className="opacity-70">Role {stepNumber}</span>
-                        <span aria-hidden="true">{"//"}</span>
-                        <span>{item.period}</span>
+                      <div className="inline-flex w-fit items-center gap-3 rounded-full border-4 border-faxx-dark bg-faxx-coral px-4 py-2 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-white shadow-[6px_6px_0px_0px_rgba(17,17,17,1)] dark:border-gray-700 dark:bg-faxx-lime dark:text-faxx-dark dark:shadow-[6px_6px_0px_0px_rgba(191,255,0,0.25)]">
+                        <span className="opacity-70">{item.period}</span>
                       </div>
                     </div>
 
                     <div className={`md:row-start-1 ${cardOnRight ? "md:col-start-3" : "md:col-start-1"}`}>
-                      <div className="grid gap-5 bg-white dark:bg-zinc-900 border-4 border-faxx-dark dark:border-gray-700 p-6 md:p-8 shadow-[8px_8px_0px_0px_rgba(60,60,60,1)] dark:shadow-[8px_8px_0px_0px_rgba(0,229,255,0.2)]">
+                      <div className="grid gap-5 rounded-[2rem] border-4 border-faxx-dark bg-white p-6 shadow-[8px_8px_0px_0px_rgba(60,60,60,1)] dark:border-gray-700 dark:bg-zinc-900 dark:shadow-[8px_8px_0px_0px_rgba(191,255,0,0.2)] md:p-8">
                         <div className="grid gap-2 border-b-2 border-faxx-dark/10 pb-4 dark:border-gray-700">
                           <RevealText
                             as="h3"
@@ -185,7 +167,7 @@ export default function About() {
                           >
                             {item.role}
                           </RevealText>
-                          <p className="font-mono text-xs md:text-sm uppercase tracking-[0.18em] text-faxx-blue dark:text-faxx-cyan font-bold">
+                          <p className="font-mono text-xs md:text-sm uppercase tracking-[0.18em] text-faxx-coral dark:text-faxx-lime font-bold">
                             {item.company}
                           </p>
                         </div>
@@ -198,7 +180,7 @@ export default function About() {
                           <ul className="grid gap-3 font-body text-base md:text-lg leading-relaxed dark:text-gray-300">
                             {item.highlights.map((highlight: string) => (
                               <li key={highlight} className="flex gap-3 items-start">
-                                <span className="mt-2 h-2.5 w-2.5 shrink-0 bg-faxx-blue dark:bg-faxx-cyan border border-faxx-dark dark:border-gray-700"></span>
+                                <span className="mt-2 h-2.5 w-2.5 shrink-0 bg-faxx-coral border border-faxx-dark dark:border-gray-700"></span>
                                 <span>{highlight}</span>
                               </li>
                             ))}
@@ -214,7 +196,7 @@ export default function About() {
         </section>
 
         <section className="grid items-start gap-6 about-text lg:grid-cols-2">
-          <article className="grid content-start gap-5 bg-white dark:bg-zinc-900 border-4 border-faxx-dark dark:border-gray-700 p-6 md:p-8 shadow-[8px_8px_0px_0px_rgba(60,60,60,1)] dark:shadow-[8px_8px_0px_0px_rgba(0,229,255,0.2)]">
+          <article className="grid content-start gap-5 rounded-[2rem] border-4 border-faxx-dark bg-white p-6 shadow-[8px_8px_0px_0px_rgba(60,60,60,1)] dark:border-gray-700 dark:bg-zinc-900 dark:shadow-[8px_8px_0px_0px_rgba(191,255,0,0.2)] md:p-8">
             <RevealText as="h3" className="font-display text-3xl uppercase tracking-tighter">
               Education
             </RevealText>
@@ -227,7 +209,7 @@ export default function About() {
                   <p className="font-body text-lg leading-relaxed dark:text-gray-300">
                     {item.institution}
                   </p>
-                  <p className="font-mono text-xs uppercase tracking-[0.18em] text-faxx-blue dark:text-faxx-cyan font-bold">
+                  <p className="font-mono text-xs uppercase tracking-[0.18em] text-faxx-coral dark:text-faxx-lime font-bold">
                     {item.period}
                   </p>
                 </div>
@@ -235,7 +217,7 @@ export default function About() {
             </div>
           </article>
 
-          <article className="grid content-start gap-6 bg-white dark:bg-zinc-900 border-4 border-faxx-dark dark:border-gray-700 p-6 md:p-8 shadow-[8px_8px_0px_0px_rgba(60,60,60,1)] dark:shadow-[8px_8px_0px_0px_rgba(0,229,255,0.2)]">
+          <article className="grid content-start gap-6 rounded-[2rem] border-4 border-faxx-dark bg-white p-6 shadow-[8px_8px_0px_0px_rgba(60,60,60,1)] dark:border-gray-700 dark:bg-zinc-900 dark:shadow-[8px_8px_0px_0px_rgba(191,255,0,0.2)] md:p-8">
             <div className="grid gap-3">
               <RevealText as="h3" className="font-display text-3xl uppercase tracking-tighter">
                 Credentials
@@ -269,13 +251,13 @@ export default function About() {
                 href={contact.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="font-mono text-xs uppercase tracking-[0.18em] text-faxx-blue dark:text-faxx-cyan font-bold break-all hover:text-faxx-coral dark:hover:text-faxx-lime transition-colors"
+                className="font-mono text-xs uppercase tracking-[0.18em] text-faxx-coral dark:text-faxx-lime font-bold break-all hover:text-faxx-dark dark:hover:text-faxx-lime transition-colors"
               >
                 {contact.linkedin}
               </a>
               <a
                 href={`mailto:${contact.email}`}
-                className="font-body text-lg leading-relaxed dark:text-gray-300 hover:text-faxx-blue dark:hover:text-faxx-cyan transition-colors break-all"
+                className="font-body text-lg leading-relaxed dark:text-gray-300 hover:text-faxx-coral dark:hover:text-faxx-lime transition-colors break-all"
               >
                 {contact.email}
               </a>

@@ -1,6 +1,6 @@
 "use client";
 
-import { fetchRecommendedPosts } from "@/lib/hashnode";
+import type { HashnodePost } from "@/lib/hashnode";
 import { pickRandomItems } from "@/lib/utils";
 import BlogCard from "./blog-card";
 import { useState, useEffect } from "react";
@@ -12,19 +12,36 @@ export default function RecommendedPosts({
   currentSlug: string; 
   tags: string[] 
 }) {
-  const [posts, setPosts] = useState<any[] | null>(tags.length > 0 ? null : []);
+  const [posts, setPosts] = useState<HashnodePost[] | null>(
+    tags.length > 0 ? null : [],
+  );
 
   useEffect(() => {
     let cancelled = false;
 
     async function getPosts() {
       try {
-        const data = await fetchRecommendedPosts("dpkreativ.hashnode.dev", tags, currentSlug);
-        if (!cancelled) {
-          setPosts(pickRandomItems(data || [], 2));
+        const searchParams = new URLSearchParams({ slug: currentSlug });
+
+        tags.forEach((tag) => {
+          searchParams.append("tag", tag);
+        });
+
+        const response = await fetch(`/api/blog/recommended?${searchParams.toString()}`);
+
+        if (!response.ok) {
+          if (!cancelled) {
+            setPosts([]);
+          }
+          return;
         }
-      } catch (error) {
-        console.error("Error fetching recommended posts:", error);
+
+        const data: { posts?: HashnodePost[] } = await response.json();
+
+        if (!cancelled) {
+          setPosts(pickRandomItems(data.posts ?? [], 2));
+        }
+      } catch {
         if (!cancelled) {
           setPosts([]);
         }
@@ -73,10 +90,9 @@ export default function RecommendedPosts({
               title: post.title,
               excerpt: post.brief,
               date: post.publishedAt,
-              category: post.tags?.[0]?.name || "General",
               source: "Hashnode",
-              url: `/blog/${post.slug}`,
-              image: post.coverImage?.url || "/images/project-placeholder.png",
+              url: post.blogUrl || `/blog/${post.slug}`,
+              image: post.coverImage?.url || "/images/project-demos/project-placeholder.png",
               slug: post.slug
             }} 
           />
