@@ -19,10 +19,10 @@ export default function Footer() {
         .map((link) => ({ ...link, external: false })),
     },
     {
-      title: "Connect",
-      links: [
-        ...navlinks
-          .filter((l) => ["Blog", "Contact"].includes(l.title))
+        title: "Connect",
+        links: [
+          ...navlinks
+          .filter((l) => ["Blog"].includes(l.title))
           .map((link) => ({ ...link, external: false })),
         ...(github
           ? [
@@ -69,7 +69,7 @@ export default function Footer() {
             <Link href="/contact" className="w-max">
               <Button className="!px-8 !py-4 text-lg">
                 <i className="ri-rocket-fill text-xl"></i>
-                <span>START A PROJECT</span>
+                <span>GET STARTED</span>
               </Button>
             </Link>
           </div>

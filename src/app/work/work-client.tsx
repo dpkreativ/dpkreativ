@@ -1,7 +1,6 @@
 import { projects } from "@/assets/data";
 import { ProjectCard } from "@/components/cards";
 import RevealText from "@/components/reveal-text";
-import SplitHeading from "@/components/split-heading";
 
 export default function Work() {
   return (
@@ -17,16 +16,13 @@ export default function Work() {
       ></div>
 
       <section className="w-full px-6 md:px-12 lg:px-24 py-16 md:py-24 grid gap-12 md:gap-16">
-        <div className="border-b-8 border-faxx-dark dark:border-gray-700 pb-8 md:pb-12">
-          <SplitHeading
-            as="h1"
-            className="font-display text-2xl md:text-6xl lg:text-7xl uppercase tracking-tighter leading-[1.1]"
-          >
+        <div className="border-b-8 border-faxx-dark pb-8 text-center dark:border-gray-700 md:pb-12 md:text-left">
+          <h1 className="font-display text-[clamp(2rem,8.4vw,4.75rem)] uppercase tracking-tighter leading-none whitespace-nowrap">
             FEATURED PROJECTS.
-          </SplitHeading>
+          </h1>
           <RevealText
             as="p"
-            className="font-mono text-sm md:text-base mt-6 text-faxx-coral dark:text-faxx-lime font-bold uppercase tracking-widest"
+            className="mt-6 font-mono text-sm font-bold uppercase tracking-widest text-faxx-coral dark:text-faxx-lime md:text-base"
           >
             Crafting digital solutions with precision and purpose.
           </RevealText>

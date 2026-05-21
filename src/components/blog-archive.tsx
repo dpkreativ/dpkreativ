@@ -125,7 +125,7 @@ export default function BlogArchive({ posts }: { posts: HashnodePost[] }) {
                   date: post.publishedAt,
                   source: "Hashnode",
                   url: post.blogUrl || `/blog/${post.slug}`,
-                  image: post.coverImage?.url || "/images/project-demos/project-placeholder.png",
+                  image: post.coverImage?.url || "/images/project-demos/placeholder.png",
                   slug: post.slug,
                 }}
               />

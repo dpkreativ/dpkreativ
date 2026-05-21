@@ -13,7 +13,7 @@ import { notFound } from "next/navigation";
 import React from "react";
 import { SITE_OG_IMAGE, SITE_URL } from "@/lib/site";
 
-const PLACEHOLDER_IMAGE = "/images/project-demos/project-placeholder.png";
+const PLACEHOLDER_IMAGE = "/images/project-demos/placeholder.png";
 
 type PageProps = {
   params: Promise<{ id: string }>;
@@ -224,9 +224,6 @@ export default async function Page({ params }: PageProps) {
             <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent"></div>
             <div className="absolute left-6 right-6 bottom-6 flex flex-wrap items-end justify-between gap-4">
               <div>
-                <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-faxx-coral font-bold mb-3">
-                  Project Visual
-                </p>
                 <p className="font-display text-3xl md:text-5xl uppercase tracking-tighter text-white leading-none">
                   {project.title}
                 </p>

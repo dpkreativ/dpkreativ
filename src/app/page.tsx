@@ -153,14 +153,14 @@ export default function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,90,88,0.12),transparent_28%),radial-gradient(circle_at_top_left,rgba(17,17,17,0.06),transparent_20%)] dark:bg-[radial-gradient(circle_at_top_right,rgba(191,255,0,0.14),transparent_28%),radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_20%)]" />
 
         <div className="relative mx-auto grid min-h-[calc(100vh-84px)] max-w-7xl gap-16 px-6 py-12 md:px-12 md:py-16 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)] lg:items-center">
-          <div className="max-w-3xl">
+          <div className="mx-auto max-w-3xl lg:mx-0">
             <h1 className="sr-only">Delivery Stats</h1>
 
-            <div className="hero-stats-shell grid max-w-2xl grid-cols-2 gap-x-10 gap-y-6 sm:gap-x-14 md:gap-x-20">
+            <div className="hero-stats-shell grid max-w-2xl justify-items-center gap-x-10 gap-y-6 sm:grid-cols-2 sm:justify-items-start sm:gap-x-14 md:gap-x-20">
               {heroStats.map((stat) => (
                 <div
                   key={stat.label}
-                  className="hero-stat-card flex min-w-0 flex-col gap-2"
+                  className="hero-stat-card flex min-w-0 flex-col items-center gap-2 text-center sm:items-start sm:text-left"
                 >
                   <p className="font-display text-[clamp(2.5rem,5.5vw,4.5rem)] leading-[0.94] tracking-[-0.04em] text-[#111111] dark:text-white">
                     {stat.value}
@@ -180,7 +180,7 @@ export default function Home() {
               ))}
             </div>
 
-            <div className="hero-cta mt-12 flex flex-col gap-4 sm:mt-14 sm:flex-row sm:items-center">
+            <div className="hero-cta mt-12 flex flex-col items-center gap-4 sm:mt-14 sm:flex-row sm:items-center sm:justify-start">
               <Link href="/contact" className="w-max">
                 <Button className="!px-6 !py-3 !text-sm">
                   <span>GET IN TOUCH</span>
@@ -349,16 +349,18 @@ export default function Home() {
 
       <section className="reveal-section border-b border-black/10 dark:border-white/10">
         <div className="mx-auto max-w-7xl px-6 py-20 md:px-12">
-          <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <div className="max-w-3xl">
-              <SplitHeading
-                as="h2"
-                className="font-display text-[clamp(2.4rem,5.8vw,4.5rem)] leading-[0.96] tracking-[-0.04em] text-[#111111] dark:text-white"
-              >
-                FEATURED PROJECTS.
-              </SplitHeading>
-            </div>
+          <div className="mb-10 max-w-3xl">
+            <SplitHeading
+              as="h2"
+              className="font-display text-[clamp(2.4rem,5.8vw,4.5rem)] leading-[0.96] tracking-[-0.04em] text-[#111111] dark:text-white"
+            >
+              FEATURED PROJECTS.
+            </SplitHeading>
+          </div>
 
+          <WorkAccordion projects={projects} />
+
+          <div className="mt-10 flex justify-center md:justify-end">
             <Link href="/work" className="w-max shrink-0">
               <Button className="!px-5 !py-3 !text-[10px]">
                 <span>VIEW ALL</span>
@@ -366,23 +368,23 @@ export default function Home() {
               </Button>
             </Link>
           </div>
-
-          <WorkAccordion projects={projects} />
         </div>
       </section>
 
       <section className="reveal-section">
         <div className="mx-auto max-w-7xl px-6 py-20 md:px-12">
-          <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <div className="max-w-3xl">
-              <SplitHeading
-                as="h2"
-                className="font-display text-[clamp(2.4rem,5.8vw,4.5rem)] leading-[0.96] tracking-[-0.04em] text-[#111111] dark:text-white"
-              >
-                LATEST ARTICLES.
-              </SplitHeading>
-            </div>
+          <div className="mb-10 max-w-3xl">
+            <SplitHeading
+              as="h2"
+              className="font-display text-[clamp(2.4rem,5.8vw,4.5rem)] leading-[0.96] tracking-[-0.04em] text-[#111111] dark:text-white"
+            >
+              LATEST ARTICLES.
+            </SplitHeading>
+          </div>
 
+          <BlogPreview />
+
+          <div className="mt-10 flex justify-center md:justify-end">
             <Link href="/blog" className="w-max shrink-0">
               <Button className="!px-5 !py-3 !text-[10px]">
                 <span>VISIT ARCHIVE</span>
@@ -390,8 +392,6 @@ export default function Home() {
               </Button>
             </Link>
           </div>
-
-          <BlogPreview />
         </div>
       </section>
     </main>

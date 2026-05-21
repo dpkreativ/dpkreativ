@@ -58,7 +58,7 @@ export function ProjectCard({ title, tags, image, link, brand }: ProjectProps) {
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="rounded-full border border-black/10 bg-black/[0.04] px-3 py-1 tracking-[0.22em] text-black/60 dark:border-white/10 dark:bg-white/[0.06] dark:text-white/64"
+                className="rounded-full border border-black/10 bg-black/[0.04] px-3 py-1 tracking-[0.22em] text-black/60 dark:border-white/20 dark:bg-white/[0.1] dark:text-white/90"
               >
                 {tag}
               </span>

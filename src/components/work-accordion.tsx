@@ -46,6 +46,11 @@ export default function WorkAccordion({ projects }: { projects: Project[] }) {
                 isActive ? "opacity-100" : "opacity-70 group-hover:opacity-85"
               }`}
             ></div>
+            <div
+              className={`absolute inset-0 bg-gradient-to-r from-black/78 via-black/38 to-transparent transition-opacity duration-500 ${
+                isActive ? "opacity-100" : "opacity-85 group-hover:opacity-100"
+              }`}
+            ></div>
 
             <div
               className={`absolute left-6 top-6 flex flex-wrap gap-2 transition-all duration-500 ${
@@ -55,7 +60,7 @@ export default function WorkAccordion({ projects }: { projects: Project[] }) {
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full border border-black/10 bg-white/88 px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.24em] text-[#111111]/72 dark:border-white/15 dark:bg-white/10 dark:text-white/72"
+                  className="rounded-full border border-black/10 bg-white/88 px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.24em] text-[#111111]/72 dark:border-white/20 dark:bg-black/55 dark:text-white/90"
                 >
                     {tag}
                 </span>
@@ -63,42 +68,42 @@ export default function WorkAccordion({ projects }: { projects: Project[] }) {
             </div>
 
             <div
-              className={`absolute bottom-0 left-0 w-full p-6 md:p-8 transition-all duration-500 delay-100 ${
+              className={`absolute inset-y-0 left-0 flex w-full items-center p-6 md:p-8 transition-all duration-500 delay-100 ${
                 isActive ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
               }`}
             >
-              <div className="mb-5 flex items-center gap-4">
-                <ProjectBrandMark
-                  brand={project.brand}
-                  fallback={project.title}
-                  className="h-12 w-12 border-white/15 bg-white/95 md:h-14 md:w-14"
-                  imageClassName="max-h-full max-w-full object-contain"
-                  textClassName="font-display text-base tracking-tight text-[#111111]"
-                />
-                <h3 className="font-display text-3xl leading-[0.95] tracking-[-0.04em] text-white md:text-[2.75rem]">
-                  {project.title}
-                </h3>
+              <div className="w-full">
+                <div className="mb-5 flex items-center gap-4">
+                  <ProjectBrandMark
+                    brand={project.brand}
+                    fallback={project.title}
+                    className="h-12 w-12 border-white/25 shadow-[0_10px_30px_rgba(0,0,0,0.38)] md:h-14 md:w-14"
+                    imageClassName="max-h-full max-w-full object-contain drop-shadow-[0_8px_18px_rgba(0,0,0,0.5)]"
+                  />
+                  <h3 className="font-display text-3xl leading-[0.95] tracking-[-0.04em] text-white drop-shadow-[0_10px_26px_rgba(0,0,0,0.75)] md:text-[2.75rem]">
+                    {project.title}
+                  </h3>
+                </div>
+                <Link
+                  href={`/work/${project.slug}`}
+                  className="inline-flex items-center gap-3 rounded-full border border-black/10 bg-faxx-coral px-5 py-3 font-mono text-[11px] font-bold uppercase tracking-[0.26em] text-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:border-[#ff5a58]/60 hover:bg-white hover:text-[#111111] active:translate-x-[4px] active:translate-y-[4px] active:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] dark:border-faxx-lime dark:bg-faxx-lime dark:text-faxx-dark dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] dark:hover:border-faxx-lime dark:hover:bg-black dark:hover:text-white dark:active:shadow-[0px_0px_0px_0px_rgba(255,255,255,1)]"
+                >
+                  <span>View Case Study</span>
+                  <ArrowIcon />
+                </Link>
               </div>
-              <Link
-                href={`/work/${project.slug}`}
-                className="inline-flex items-center gap-3 rounded-full border border-black/10 bg-faxx-coral px-5 py-3 font-mono text-[11px] font-bold uppercase tracking-[0.26em] text-white transition-colors hover:border-[#ff5a58]/60 hover:bg-white hover:text-[#111111] dark:border-faxx-lime dark:bg-faxx-lime dark:text-faxx-dark dark:hover:border-faxx-lime dark:hover:bg-black dark:hover:text-white"
-              >
-                <span>View Case Study</span>
-                <ArrowIcon />
-              </Link>
             </div>
 
             {!isActive && (
-              <div className="pointer-events-none absolute inset-0 flex items-end justify-start px-6 pb-6 md:items-center md:justify-center md:px-4 md:pb-0">
+              <div className="pointer-events-none absolute inset-0 flex items-center justify-start px-6 md:justify-center md:px-4">
                 <div className="flex items-center gap-3 opacity-75 transition-opacity group-hover:opacity-100 md:rotate-90">
                   <ProjectBrandMark
                     brand={project.brand}
                     fallback={project.title}
-                    className="h-10 w-10 border-white/15 bg-white/95 md:h-11 md:w-11"
-                    imageClassName="max-h-full max-w-full object-contain"
-                    textClassName="font-display text-sm tracking-tight text-[#111111]"
+                    className="h-10 w-10 border-white/25 shadow-[0_10px_30px_rgba(0,0,0,0.38)] md:h-11 md:w-11"
+                    imageClassName="max-h-full max-w-full object-contain drop-shadow-[0_8px_18px_rgba(0,0,0,0.5)]"
                   />
-                  <h3 className="whitespace-nowrap font-display text-2xl leading-none tracking-[-0.03em] text-white md:text-3xl">
+                  <h3 className="whitespace-nowrap font-display text-2xl leading-none tracking-[-0.03em] text-white drop-shadow-[0_10px_26px_rgba(0,0,0,0.75)] md:text-3xl">
                     {project.title}
                   </h3>
                 </div>

@@ -247,6 +247,20 @@
       "title": "Phils Auto"
     },
     {
+      "image": "/images/brand-logos/kadric.png",
+      "width": 1563,
+      "height": 1563,
+      "url": "https://kadricltd.com",
+      "title": "Kadric Ltd"
+    },
+    {
+      "image": "/images/brand-logos/thebakistry.png",
+      "width": 2501,
+      "height": 1921,
+      "url": "https://thebakistry.ng",
+      "title": "The Bakistry"
+    },
+    {
       "image": "/images/brand-logos/tibc_logo.png",
       "width": 402,
       "height": 402,
@@ -274,14 +288,14 @@
     },
     {
       "title": "Merphils",
-      "image": "/images/project-demos/project-placeholder.png",
+      "image": "/images/project-demos/merphils.png",
       "client": "Merphils",
       "description": [
         "Merphils is a unified education platform designed to connect school operations, family access, learner records, and future cross-school collaboration in one system.",
         "The product is built around a single-account, context-aware identity model that lets one person move across multiple schools and roles such as owner, staff member, parent, or student without creating duplicate identities.",
         "It is being shaped to support class management, assignments, grades, admissions, finance, and long-term academic history while keeping school data private by default and learner continuity intact over time."
       ],
-      "url": "https://www.grooovy.fun/",
+      "url": "",
       "github": "",
       "featured": true,
       "tags": ["Education", "SaaS", "Multi-tenant"],
@@ -290,7 +304,7 @@
     },
     {
       "title": "Grooovy",
-      "image": "/images/project-demos/project-placeholder.png",
+      "image": "/images/project-demos/grooovy.png",
       "client": "Grooovy",
       "description": [
         "Grooovy is a nightlife and social event discovery platform built to surface the plans that usually stay buried in group chats, stories, and word of mouth.",
@@ -306,7 +320,7 @@
     },
     {
       "title": "Kadric Ltd",
-      "image": "/images/project-demos/project-placeholder.png",
+      "image": "/images/project-demos/kadric.png",
       "client": "Kadric Ltd",
       "description": [
         "A UI improvement project for an existing industrial supplier website built with WordPress and Elementor.",
@@ -322,7 +336,7 @@
     },
     {
       "title": "The Iroko Circle",
-      "image": "/images/project-demos/project-placeholder.png",
+      "image": "/images/project-demos/theirokocircle.png",
       "client": "The Iroko Circle",
       "description": [
         "The Iroko Circle is a literary community and editorial platform dedicated to reading, discussing, and amplifying African stories.",
@@ -338,7 +352,7 @@
     },
     {
       "title": "The Bakistry",
-      "image": "/images/project-demos/project-placeholder.png",
+      "image": "/images/project-demos/placeholder.png",
       "client": "The Bakistry",
       "description": [
         "The Bakistry is a handcrafted cakes and treats brand built around fast delivery, premium presentation, and a warm storefront for everyday celebrations and special occasions.",
@@ -409,7 +423,7 @@
       "category": "Engineering",
       "source": "Hashnode",
       "url": "#",
-      "image": "/images/project-demos/project-placeholder.png",
+      "image": "/images/project-demos/placeholder.png",
       "slug": "architecting-nextjs-apps"
     },
     {
@@ -419,7 +433,7 @@
       "category": "Community",
       "source": "Medium",
       "url": "#",
-      "image": "/images/project-demos/project-placeholder.png",
+      "image": "/images/project-demos/placeholder.png",
       "slug": "community-impact-engineering"
     },
     {
@@ -429,7 +443,7 @@
       "category": "Case Study",
       "source": "Dev.to",
       "url": "#",
-      "image": "/images/project-demos/project-placeholder.png",
+      "image": "/images/project-demos/placeholder.png",
       "slug": "optimizing-web-performance"
     }
   ]

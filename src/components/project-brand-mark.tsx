@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+const PLACEHOLDER_BRAND_ICON = "/images/brand-logos/kreativ-icon.svg";
+
 type BrandMark = {
   image: string;
   title: string;
@@ -13,31 +15,19 @@ type ProjectBrandMarkProps = {
   fallback: string;
   className?: string;
   imageClassName?: string;
-  textClassName?: string;
 };
-
-function getInitials(value: string) {
-  return value
-    .split(/[^A-Za-z0-9]+/)
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((part) => part[0])
-    .join("")
-    .toUpperCase();
-}
 
 export default function ProjectBrandMark({
   brand,
   fallback,
   className = "h-12 w-12",
   imageClassName = "max-h-full w-auto object-contain",
-  textClassName = "font-display text-sm tracking-tight text-[#111111]",
 }: ProjectBrandMarkProps) {
   const label = brand?.title ?? fallback;
 
   return (
     <div
-      className={`shrink-0 flex items-center justify-center overflow-hidden rounded-full border border-black/10 bg-white/90 p-2 dark:border-white/15 dark:bg-white/95 ${className}`}
+      className={`shrink-0 flex items-center justify-center overflow-hidden rounded-full border border-black/10 p-2 dark:border-white/15 ${className}`}
     >
       {brand ? (
         <Image
@@ -48,7 +38,13 @@ export default function ProjectBrandMark({
           className={`${imageClassName} ${brand.invertInDarkMode ? "dark:invert" : ""}`}
         />
       ) : (
-        <span className={textClassName}>{getInitials(label)}</span>
+        <Image
+          src={PLACEHOLDER_BRAND_ICON}
+          alt={`${label} placeholder logo`}
+          width={595}
+          height={595}
+          className={`${imageClassName} dark:invert`}
+        />
       )}
     </div>
   );
