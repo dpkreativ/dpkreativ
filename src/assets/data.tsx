@@ -407,6 +407,64 @@ const projectCaseStudies: Record<ProjectSlug, CaseStudy> = {
     reflection:
       "Food commerce is emotional, but the path to purchase still has to be obvious. Appetite brings people in; clarity gets the order over the line.",
   },
+  "7star-unisex-beauty-palace": {
+    headline:
+      "Built a brand-driven service site that turns hair care expertise into a seamless booking experience.",
+    timeline: "2026",
+    role: "Web Designer and Developer",
+    services: [
+      "Website Strategy",
+      "Brand Translation",
+      "Service Presentation",
+      "Booking Integration",
+    ],
+    goals: [
+      "Give the studio a professional web presence that reflects its expertise in locs, braiding, and protective styling.",
+      "Make every service easy to understand and schedule from starter dreadlocks to loc extensions and repairs.",
+      "Build trust through client reviews, educational content, and a clean brand presentation.",
+    ],
+    process: [
+      {
+        eyebrow: "Problem Discovery",
+        title: "Start with the gap between salon expertise and online first impressions.",
+        details: [
+          "7Star had strong in-person reputation in Cairo but needed a website that communicated its professionalism, range of services, and client-centered approach to new visitors.",
+          "The product direction centered on translating the studio's hands-on care philosophy into a digital experience that felt trustworthy and easy to navigate.",
+        ],
+      },
+      {
+        eyebrow: "Service Structuring",
+        title: "Organize around what clients actually need to know before booking.",
+        details: [
+          "Each service — starter dreadlocks, loc retwists, extensions, knotless braids, box braids, and afro twists — was given its own presentation space with clear descriptions, imagery, and a direct path to scheduling.",
+          "The client reviews section was positioned prominently so new visitors could see real feedback and build confidence before making an appointment.",
+        ],
+      },
+      {
+        eyebrow: "Solution Direction",
+        title: "Make booking feel like the natural next step after browsing.",
+        details: [
+          "WhatsApp integration was embedded throughout the site so potential clients could move from exploring a service to starting a conversation without friction.",
+          "The design prioritized clean service presentation, mobile-friendly navigation, and a warm brand tone that matched the studio's welcoming atmosphere.",
+        ],
+      },
+      {
+        eyebrow: "Content and Trust Build",
+        title: "Support the booking path with social proof, products, and educational content.",
+        details: [
+          "A blog section was added to position the studio as an educational resource for hair care beyond just styling appointments.",
+          "Products page, newsletter signup, and social media links were integrated to extend the relationship beyond the first appointment.",
+        ],
+      },
+    ],
+    results: [
+      "Delivered a professional web presence that communicates 7Star's hair care expertise and range of services.",
+      "Made service discovery and booking scheduling feel simple through clear categorization and WhatsApp integration.",
+      "Created a brand-aligned digital experience that supports both new client acquisition and ongoing community engagement.",
+    ],
+    reflection:
+      "Service businesses win online when expertise is easy to understand and booking feels like a natural next step. 7Star needed a site that converted browsing into appointments without losing the warmth of the in-person experience.",
+  },
   "the-developer-marketing-book": {
     headline:
       "Built a focused launch site that presents the book, formats, proof, and author credibility without wasting motion.",

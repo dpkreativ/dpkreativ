@@ -267,6 +267,13 @@
       "url": "https://theirokocircle.org",
       "title": "The Iroko Circle",
       "invertInDarkMode": true
+    },
+    {
+      "image": "/images/brand-logos/sevenstarunisexbeautypalace.png",
+      "width": 331,
+      "height": 316,
+      "url": "https://7starunisexbeautypalace.com",
+      "title": "7Star Unisex Beauty Palace"
     }
   ],
   "projects": [
@@ -352,7 +359,7 @@
     },
     {
       "title": "The Bakistry",
-      "image": "/images/project-demos/placeholder.png",
+      "image": "/images/project-demos/thebakistry.png",
       "client": "The Bakistry",
       "description": [
         "The Bakistry is a handcrafted cakes and treats brand built around fast delivery, premium presentation, and a warm storefront for everyday celebrations and special occasions.",
@@ -381,6 +388,22 @@
       "tags": ["Marketing", "Publishing", "Next.js"],
       "stack": ["Next.js", "Tailwind", "Vercel"],
       "slug": "the-developer-marketing-book"
+    },
+    {
+      "title": "7Star Unisex Beauty Palace",
+      "image": "/images/project-demos/sevenstarunisexbeautypalace.png",
+      "client": "7Star Unisex Beauty Palace",
+      "description": [
+        "7Star Unisex Beauty Palace is a Cairo-based hair studio specializing in professional dreadlocks, expert braiding, and dedicated hair care — from starter locs to protective styling.",
+        "The website was built to give the studio a professional digital presence that reflects its emphasis on healthy hair, proper technique, and personalized client care.",
+        "WhatsApp-based booking is integrated throughout the service pages so visitors can move from exploring treatments to scheduling an appointment in one smooth step, while client reviews, blog content, and product listings extend the relationship beyond the first visit."
+      ],
+      "url": "https://7starunisexbeautypalace.com",
+      "github": "",
+      "featured": true,
+      "tags": ["Beauty", "Service Business", "WordPress"],
+      "stack": ["WordPress", "Blocksy Theme", "WhatsApp API"],
+      "slug": "7star-unisex-beauty-palace"
     }
   ],
   "navlinks": [
