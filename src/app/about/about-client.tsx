@@ -60,7 +60,7 @@ export default function About() {
             </RevealText>
 
             <FloatingDownloadLink
-              href="/divine_linkedin.pdf"
+              href="/divine_orji_cv.pdf"
               downloadName="divine-orji-cv.pdf"
               label="Download CV PDF"
             />
