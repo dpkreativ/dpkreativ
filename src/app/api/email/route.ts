@@ -30,7 +30,7 @@ export async function POST(request: NextRequest) {
   <meta charset="utf-8">
   <style>
     body { font-family: 'Courier New', Courier, monospace; background-color: #f0f0f0; padding: 20px; color: #111111; }
-    .container { max-width: 600px; margin: 0 auto; background: #ffffff; border: 4px solid #111111; box-shadow: 12px 12px 0px 0px #111111; }
+    .container { max-width: 600px; margin: 0 auto; background: #ffffff; border: 4px solid #111111; }
     .header { background: #BFFF00; border-bottom: 4px solid #111111; padding: 30px; }
     .header h1 { font-size: 32px; margin: 0; text-transform: uppercase; letter-spacing: -2px; line-height: 0.9; }
     .section { padding: 30px; border-bottom: 4px solid #111111; }

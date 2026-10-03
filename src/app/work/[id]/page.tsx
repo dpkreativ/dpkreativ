@@ -137,7 +137,7 @@ export default async function Page({ params }: PageProps) {
               <div className="flex flex-wrap gap-3">
                 {liveUrl ? (
                   <a href={liveUrl} target="_blank" rel="noreferrer">
-                    <Button className="!shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:!shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] active:!shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] dark:active:!shadow-[0px_0px_0px_0px_rgba(255,255,255,1)]">
+                    <Button>
                       <span>Visit Live Site</span>
                       <i className="ri-external-link-line"></i>
                     </Button>
@@ -146,7 +146,7 @@ export default async function Page({ params }: PageProps) {
 
                 {githubUrl ? (
                   <a href={githubUrl} target="_blank" rel="noreferrer">
-                    <Button className="!bg-white !text-faxx-dark dark:!bg-black dark:!text-white !border-faxx-dark dark:!border-gray-700 !shadow-[4px_4px_0px_0px_rgba(17,17,17,1)] dark:!shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] active:!shadow-none">
+                    <Button className="!bg-white !text-faxx-dark dark:!bg-black dark:!text-white !border-faxx-dark dark:!border-gray-700">
                       <span>View GitHub</span>
                       <i className="ri-github-line"></i>
                     </Button>
@@ -157,7 +157,7 @@ export default async function Page({ params }: PageProps) {
           </div>
 
           <aside className="grid gap-4">
-            <article className="grid gap-5 border-4 border-faxx-dark bg-white p-6 shadow-[8px_8px_0px_0px_rgba(60,60,60,1)] dark:border-gray-700 dark:bg-zinc-900 dark:shadow-[8px_8px_0px_0px_rgba(191,255,0,0.2)]">
+            <article className="grid gap-5 border-4 border-faxx-dark bg-white p-6 dark:border-gray-700 dark:bg-zinc-900">
               <div className="grid gap-2">
                 <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-faxx-coral dark:text-faxx-lime font-bold">
                   Client
@@ -213,7 +213,7 @@ export default async function Page({ params }: PageProps) {
 
         {/* Project Visual Section */}
         {hasProjectVisual && (
-          <section className="relative min-h-[400px] overflow-hidden border-4 border-faxx-dark bg-white shadow-[12px_12px_0px_0px_rgba(255,74,90,1)] dark:border-gray-700 dark:bg-zinc-900 dark:shadow-[12px_12px_0px_0px_rgba(191,255,0,0.2)] md:min-h-[560px]">
+          <section className="relative min-h-[400px] overflow-hidden border-4 border-faxx-dark bg-white dark:border-gray-700 dark:bg-zinc-900 md:min-h-[560px]">
             <Image
               src={project.image}
               alt={project.title}
@@ -234,7 +234,7 @@ export default async function Page({ params }: PageProps) {
 
         {/* Overview and Goals Row */}
         <section className="grid gap-8 md:gap-10 items-start lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
-          <article className="grid gap-5 border-4 border-faxx-dark bg-white p-6 shadow-[8px_8px_0px_0px_rgba(60,60,60,1)] dark:border-gray-700 dark:bg-zinc-900 dark:shadow-[8px_8px_0px_0px_rgba(191,255,0,0.2)] md:p-10">
+          <article className="grid gap-5 border-4 border-faxx-dark bg-white p-6 dark:border-gray-700 dark:bg-zinc-900 md:p-10">
             <SplitHeading
               as="h2"
               className="font-display text-3xl md:text-4xl uppercase tracking-tighter leading-none"
@@ -249,7 +249,7 @@ export default async function Page({ params }: PageProps) {
             </div>
           </article>
 
-          <article className="grid gap-5 border-4 border-faxx-dark bg-white p-6 shadow-[8px_8px_0px_0px_rgba(60,60,60,1)] dark:border-gray-700 dark:bg-zinc-900 dark:shadow-[8px_8px_0px_0px_rgba(191,255,0,0.2)] md:p-10">
+          <article className="grid gap-5 border-4 border-faxx-dark bg-white p-6 dark:border-gray-700 dark:bg-zinc-900 md:p-10">
             <SplitHeading
               as="h2"
               className="font-display text-3xl md:text-4xl uppercase tracking-tighter leading-none"

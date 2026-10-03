@@ -19,6 +19,25 @@ const config: Config = {
       '3xl': '0px',
       full: '0px',
     },
+    boxShadow: {
+      none: 'none',
+      DEFAULT: 'none',
+      sm: 'none',
+      md: 'none',
+      lg: 'none',
+      xl: 'none',
+      '2xl': 'none',
+      inner: 'none',
+    },
+    dropShadow: {
+      none: 'none',
+      DEFAULT: 'none',
+      sm: 'none',
+      md: 'none',
+      lg: 'none',
+      xl: 'none',
+      '2xl': 'none',
+    },
     extend: {
       colors: {
         'faxx-blue': '#4320F6',

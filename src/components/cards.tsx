@@ -23,7 +23,7 @@ export function ProjectCard({ title, tags, image, link, brand }: ProjectProps) {
   return (
     <Link
       href={link}
-      className="group flex w-full flex-col overflow-hidden border border-black/10 bg-white/80 transition-all duration-300 hover:-translate-y-1 hover:border-[#ff5a58]/40 hover:shadow-[0_32px_80px_-38px_rgba(17,17,17,0.38)] dark:border-white/10 dark:bg-white/[0.04] dark:hover:border-faxx-lime/40 dark:hover:bg-white/[0.06]"
+      className="group flex w-full flex-col overflow-hidden border border-black/10 bg-white/80 transition-all duration-300 hover:-translate-y-1 hover:border-[#ff5a58]/40 dark:border-white/10 dark:bg-white/[0.04] dark:hover:border-faxx-lime/40 dark:hover:bg-white/[0.06]"
     >
       <div className="relative block aspect-[4/3] overflow-hidden border-b border-black/10 dark:border-white/10">
         <Image

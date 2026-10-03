@@ -15,7 +15,7 @@ export default function ContactModal() {
         className="p-4 backdrop:bg-black/85 w-max"
       >
         <button
-          className="flex items-center justify-center w-5 h-5 bg-white dark:bg-faxx-dark shadow ml-auto"
+          className="flex items-center justify-center w-5 h-5 bg-white dark:bg-faxx-dark ml-auto"
           onClick={() => dialogRef.current?.close()}
         >
           <svg

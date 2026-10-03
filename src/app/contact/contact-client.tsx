@@ -144,7 +144,7 @@ export default function Page() {
 
               <Button
                 onClick={() => setSelectedTier(tier.id)}
-                className="w-full !border-faxx-dark !bg-faxx-dark !py-4 !text-white !shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:!border-faxx-coral hover:!bg-white hover:!text-faxx-dark active:!shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] dark:!border-white dark:!bg-white dark:!text-faxx-dark dark:!shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] dark:hover:!border-faxx-lime dark:hover:!bg-black dark:hover:!text-white dark:active:!shadow-[0px_0px_0px_0px_rgba(255,255,255,1)]"
+                className="w-full !border-faxx-dark !bg-faxx-dark !py-4 !text-white hover:!border-faxx-coral hover:!bg-white hover:!text-faxx-dark dark:!border-white dark:!bg-white dark:!text-faxx-dark dark:hover:!border-faxx-lime dark:hover:!bg-black dark:hover:!text-white"
               >
                 SELECT {tier.name}
               </Button>

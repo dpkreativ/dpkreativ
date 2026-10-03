@@ -23,7 +23,7 @@ export type FormInputs = {
 
 function SuccessMessage() {
   return (
-    <div className="text-center grid gap-8 p-6 md:p-12 bg-white dark:bg-zinc-900 border-4 md:border-8 border-faxx-dark dark:border-faxx-lime shadow-[8px_8px_0px_0px_rgba(17,17,17,1)] dark:shadow-[8px_8px_0px_0px_rgba(191,255,0,1)] max-w-2xl mx-auto">
+    <div className="text-center grid gap-8 p-6 md:p-12 bg-white dark:bg-zinc-900 border-4 md:border-8 border-faxx-dark dark:border-faxx-lime max-w-2xl mx-auto">
       <div className="bg-faxx-coral px-4 py-1 font-mono text-xs font-bold uppercase tracking-widest text-white dark:bg-faxx-lime dark:text-faxx-dark w-max mx-auto">
         Capture Successful
       </div>
@@ -79,7 +79,7 @@ export default function ContactForm({ initialTier, onCancel }: { initialTier?: s
     }
   };
 
-  const inputClasses = "w-full px-5 py-3 border-4 border-faxx-dark dark:border-gray-800 rounded-none bg-white dark:bg-black text-faxx-dark dark:text-white font-body text-base focus:outline-none focus:border-faxx-coral dark:focus:border-faxx-lime transition-all shadow-[4px_4px_0px_0px_rgba(17,17,17,1)]";
+  const inputClasses = "w-full px-5 py-3 border-4 border-faxx-dark dark:border-gray-800 rounded-none bg-white dark:bg-black text-faxx-dark dark:text-white font-body text-base focus:outline-none focus:border-faxx-coral dark:focus:border-faxx-lime transition-all";
   const labelClasses = "block font-mono text-xs font-bold uppercase tracking-widest mb-2 text-faxx-dark dark:text-gray-400";
   const errorClasses = "font-mono text-[10px] mt-1 font-bold uppercase text-faxx-coral dark:text-faxx-lime";
 
@@ -180,7 +180,7 @@ export default function ContactForm({ initialTier, onCancel }: { initialTier?: s
         <Button
           type="submit"
           disabled={isSubmitting}
-          className={`flex-1 !py-5 !text-lg dark:!border-faxx-lime dark:!bg-faxx-lime dark:!text-faxx-dark dark:!shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] dark:hover:!border-faxx-lime dark:hover:!bg-black dark:hover:!text-white dark:active:!shadow-[0px_0px_0px_0px_rgba(255,255,255,1)] ${isSubmitting ? "opacity-50" : ""}`}
+          className={`flex-1 !py-5 !text-lg dark:!border-faxx-lime dark:!bg-faxx-lime dark:!text-faxx-dark dark:hover:!border-faxx-lime dark:hover:!bg-black dark:hover:!text-white ${isSubmitting ? "opacity-50" : ""}`}
         >
           {isSubmitting ? "TRANSMITTING..." : "SEND PROJECT BRIEF"}
         </Button>
