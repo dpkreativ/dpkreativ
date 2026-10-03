@@ -59,13 +59,13 @@ export default function RecommendedPosts({
 
   if (posts === null) {
     return (
-      <div className="mt-12 pt-8 border-t-4 border-faxx-dark dark:border-gray-700">
-        <h3 className="font-display text-2xl md:text-3xl uppercase tracking-tighter mb-6 text-faxx-dark dark:text-white">
-          Recommended <span className="text-zinc-600 dark:text-faxx-lime">Posts</span>
+      <div className="mt-12 pt-8 border-t-4 border-black dark:border-zinc-700">
+        <h3 className="font-display text-2xl md:text-3xl uppercase tracking-tighter mb-6 text-black dark:text-white">
+          Recommended <span className="text-zinc-500 dark:text-zinc-400">Posts</span>
         </h3>
         <div className="grid gap-6 sm:grid-cols-2">
           {[1, 2].map((i) => (
-            <div key={i} className="border-4 border-faxx-dark dark:border-gray-700 p-6 animate-pulse">
+            <div key={i} className="border-4 border-black dark:border-zinc-700 p-6 animate-pulse">
               <div className="h-4 bg-gray-200 dark:bg-gray-700 mb-4"></div>
               <div className="h-3 bg-gray-200 dark:bg-gray-700 w-2/3"></div>
             </div>
@@ -78,9 +78,9 @@ export default function RecommendedPosts({
   if (posts.length === 0) return null;
 
   return (
-    <div className="mt-12 pt-8 border-t-4 border-faxx-dark dark:border-gray-700">
-      <h3 className="font-display text-2xl md:text-3xl uppercase tracking-tighter mb-6 text-faxx-dark dark:text-white">
-        Recommended <span className="text-zinc-600 dark:text-faxx-lime">Posts</span>
+    <div className="mt-12 pt-8 border-t-4 border-black dark:border-zinc-700">
+      <h3 className="font-display text-2xl md:text-3xl uppercase tracking-tighter mb-6 text-black dark:text-white">
+        Recommended <span className="text-zinc-500 dark:text-zinc-400">Posts</span>
       </h3>
       <div className="grid gap-6 sm:grid-cols-2">
         {posts.map((post) => (

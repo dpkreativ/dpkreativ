@@ -1,90 +1,22 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState } from "react";
 import SplitHeading from "@/components/split-heading";
 import RevealText from "@/components/reveal-text";
-import Button from "@/components/button";
 import ContactForm from "@/components/form";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
+import { contact } from "@/assets/data";
 
-const tiers = [
-  {
-    id: "lite",
-    name: "ESSENTIALS",
-    price: "FROM $300",
-    description:
-      "Focused launch sites, editorial platforms, and polished brand surfaces built to tell one clear story well.",
-    example: "The Developer Marketing Book",
-    features: [
-      "Launch / Editorial Site",
-      "Responsive Frontend",
-      "Conversion Structure",
-      "SEO + Performance",
-    ],
-    color: "bg-faxx-coral",
-  },
-  {
-    id: "pro",
-    name: "DYNAMIC APPS",
-    price: "FROM $800",
-    description:
-      "Commerce, event, community, or customer-facing apps with real user flows, sign-in states, and operational logic.",
-    example: "Crunchies Online Ordering",
-    features: [
-      "Checkout / Booking Flows",
-      "Authentication States",
-      "Dashboards or Member Areas",
-      "Custom Integrations",
-    ],
-    color: "bg-faxx-coral",
-  },
-  {
-    id: "elite",
-    name: "SAAS & SYSTEMS",
-    price: "FROM $2000",
-    description:
-      "Role-based platforms for teams or operations that need structured data, permissions, and long-term workflow design.",
-    example: "Merphils (In Progress)",
-    features: [
-      "RBAC + Multi-Tenant Logic",
-      "Admin / Ops Workflows",
-      "Scalable Data Models",
-      "Platform Architecture",
-    ],
-    color: "bg-faxx-lime",
-  },
-  {
-    id: "custom",
-    name: "BESPOKE",
-    price: "LET'S TALK",
-    description:
-      "Large product ecosystems that span discovery, onboarding, wallets, dashboards, host tools, or phased product rollouts.",
-    example: "Grooovy (In Progress)",
-    features: [
-      "Multi-Surface Product Design",
-      "Customer + Internal Tools",
-      "Custom Integrations",
-      "Long-Term Delivery Partner",
-    ],
-    color: "bg-zinc-800",
-  },
-];
+export default function ContactClient() {
+  const [copied, setCopied] = useState(false);
 
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
-
-export default function Page() {
-  const [selectedTier, setSelectedTier] = useState<string | null>(null);
-
-  const closeModal = () => setSelectedTier(null);
+  const copyEmail = () => {
+    navigator.clipboard.writeText(contact.email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2500);
+  };
 
   return (
-    <main className="flex-1 w-full flex flex-col pt-[84px] relative z-50">
+    <main className="flex-1 w-full flex flex-col pt-[84px] bg-white text-[#111111] dark:bg-[#111111] dark:text-white">
       {/* Decorative Grid Background */}
       <div
         className="fixed inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none -z-10"
@@ -93,86 +25,143 @@ export default function Page() {
             "linear-gradient(rgba(17, 17, 17, 0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(17, 17, 17, 0.5) 1px, transparent 1px)",
           backgroundSize: "40px 40px",
         }}
-      ></div>
+      />
 
-      <section className="w-full px-6 md:px-12 lg:px-24 py-16 md:py-24 grid gap-16">
-        <div className="border-b-8 border-faxx-dark dark:border-gray-700 pb-8 md:pb-12">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20 grid gap-12 md:gap-16">
+        {/* Header */}
+        <header className="border-b border-black/15 pb-8 md:pb-12 dark:border-white/15">
           <SplitHeading
             as="h1"
-            className="font-display text-2xl md:text-5xl lg:text-7xl uppercase tracking-tighter leading-[1.1]"
+            className="font-display text-4xl sm:text-6xl md:text-7xl uppercase tracking-tighter leading-[0.88] text-black dark:text-white"
           >
-            WE BUILD EVERYTHING.
+            START A CONVERSATION.
           </SplitHeading>
+
           <RevealText
-            as="p"
-            className="font-mono text-sm md:text-base mt-6 text-faxx-coral dark:text-faxx-lime font-bold uppercase tracking-widest"
+            as="div"
+            noSplit
+            className="mt-4 max-w-2xl font-body text-base sm:text-lg md:text-xl text-[#111111]/75 dark:text-zinc-300 leading-relaxed space-y-2"
           >
-            Choose a package that fits your needs or request a custom quote.
+            <p>
+              Have a project in mind, an architectural challenge, or need a technical delivery partner?
+            </p>
+            <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400">
+              Submit a project brief below or reach out directly.
+            </p>
           </RevealText>
-        </div>
+        </header>
 
-        {/* Pricing Tiers Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
-          {tiers.map((tier) => (
-            <div
-              key={tier.id}
-              className="relative bg-white dark:bg-zinc-900 border-4 border-faxx-dark dark:border-gray-700 p-8 flex flex-col rounded-[2rem]"
-            >
-              <h3 className="font-display text-3xl mb-2 dark:text-white">
-                {tier.name}
-              </h3>
-              <div className="font-mono text-xl font-bold mb-4 text-faxx-coral dark:text-faxx-lime">
-                {tier.price}
-              </div>
-              <p className="text-gray-600 dark:text-gray-400 font-body mb-2">
-                {tier.description}
-              </p>
-              <div className="font-mono text-[10px] uppercase tracking-widest text-faxx-dark/40 dark:text-white/40 mb-8">
-                Like: {tier.example}
-              </div>
-
-              <div className="flex-1 -mx-8 border-t border-gray-100 dark:border-zinc-800 mb-8">
-                {tier.features.map((feature) => (
-                  <div
-                    key={feature}
-                    className="px-8 py-3 border-b border-gray-100 dark:border-zinc-800 font-mono text-xs sm:text-sm uppercase tracking-tight dark:text-gray-400"
-                  >
-                    {feature}
-                  </div>
-                ))}
-              </div>
-
-              <Button
-                onClick={() => setSelectedTier(tier.id)}
-                className="w-full !border-faxx-dark !bg-faxx-dark !py-4 !text-white !shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:!border-faxx-coral hover:!bg-white hover:!text-faxx-dark active:!shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] dark:!border-white dark:!bg-white dark:!text-faxx-dark dark:!shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] dark:hover:!border-faxx-lime dark:hover:!bg-black dark:hover:!text-white dark:active:!shadow-[0px_0px_0px_0px_rgba(255,255,255,1)]"
-              >
-                SELECT {tier.name}
-              </Button>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <Dialog
-        open={!!selectedTier}
-        onOpenChange={(open) => !open && closeModal()}
-      >
-        <DialogContent>
-          <DialogHeader className="mb-8">
-            <div className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-faxx-coral dark:text-faxx-lime mb-2">
-              Project Brief
-            </div>
-            <DialogTitle className="text-4xl md:text-5xl">
-              Tell me about your <br />
-              <span className="text-faxx-coral dark:text-faxx-lime">
-                next big thing.
+        {/* Two-Column Modern Consultation Suite */}
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+          {/* Left Column: Direct Channels & Telemetry */}
+          <div className="lg:col-span-5 space-y-8">
+            {/* Primary Channel Card */}
+            <div className="border border-black/15 bg-white p-6 dark:border-white/15 dark:bg-[#0A0A0A] space-y-5">
+              <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
+                PRIMARY CONTACT CHANNEL
               </span>
-            </DialogTitle>
-          </DialogHeader>
 
-          <ContactForm initialTier={selectedTier} onCancel={closeModal} />
-        </DialogContent>
-      </Dialog>
+              <div>
+                <p className="font-mono text-xs uppercase tracking-wider text-zinc-400">
+                  Email Address
+                </p>
+                <div className="mt-1 flex items-center justify-between gap-3">
+                  <a
+                    href={`mailto:${contact.email}`}
+                    className="font-display text-xl sm:text-2xl text-black dark:text-white hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors"
+                  >
+                    {contact.email}
+                  </a>
+                  <button
+                    onClick={copyEmail}
+                    className="border border-black/20 bg-black/5 px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-black transition-colors hover:bg-black hover:text-white dark:border-white/20 dark:bg-white/10 dark:text-white dark:hover:bg-white dark:hover:text-black shrink-0"
+                  >
+                    {copied ? "[COPIED]" : "COPY"}
+                  </button>
+                </div>
+              </div>
+
+              <div className="border-t border-black/10 pt-4 dark:border-white/10">
+                <p className="font-mono text-xs uppercase tracking-wider text-zinc-400">
+                  Direct Phone / WhatsApp
+                </p>
+                <a
+                  href={`tel:${contact.phone}`}
+                  className="mt-1 block font-mono text-sm font-bold text-black dark:text-white hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors"
+                >
+                  {contact.phone}
+                </a>
+              </div>
+            </div>
+
+            {/* Direct Profiles Card */}
+            <div className="border border-black/15 bg-white p-6 dark:border-white/15 dark:bg-[#0A0A0A] space-y-4">
+              <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
+                VERIFIED PROFILES
+              </span>
+
+              <div className="grid grid-cols-2 gap-3 pt-1">
+                <a
+                  href={contact.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group flex flex-col justify-between border border-black/10 p-3.5 transition-colors hover:bg-black hover:text-white dark:border-white/10 dark:hover:bg-white dark:hover:text-black"
+                >
+                  <span className="font-mono text-[9px] uppercase tracking-widest opacity-60">NETWORK</span>
+                  <span className="mt-1 font-mono text-xs font-bold uppercase">LinkedIn &rarr;</span>
+                </a>
+
+                <a
+                  href="https://github.com/dpkreativ"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group flex flex-col justify-between border border-black/10 p-3.5 transition-colors hover:bg-black hover:text-white dark:border-white/10 dark:hover:bg-white dark:hover:text-black"
+                >
+                  <span className="font-mono text-[9px] uppercase tracking-widest opacity-60">CODE</span>
+                  <span className="mt-1 font-mono text-xs font-bold uppercase">GitHub &rarr;</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Engagement Telemetry */}
+            <div className="border border-black/15 bg-black/[0.02] p-6 dark:border-white/15 dark:bg-white/[0.02] space-y-3 font-mono text-xs">
+              <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
+                ENGAGEMENT PARAMETERS
+              </span>
+              <div className="grid gap-2 text-[#111111]/70 dark:text-zinc-400 pt-1">
+                <div className="flex justify-between border-b border-black/5 pb-2 dark:border-white/5">
+                  <span>RESPONSE TIME</span>
+                  <span className="font-bold text-black dark:text-white">&lt; 24 HOURS</span>
+                </div>
+                <div className="flex justify-between border-b border-black/5 pb-2 dark:border-white/5">
+                  <span>LOCATION / TIME</span>
+                  <span className="font-bold text-black dark:text-white">WAT (UTC+1)</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>COLLABORATION</span>
+                  <span className="font-bold text-black dark:text-white">REMOTE WORLDWIDE</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: Embedded Project Brief Form */}
+          <div className="lg:col-span-7">
+            <div className="border border-black/15 bg-white p-6 sm:p-8 md:p-10 dark:border-white/15 dark:bg-[#0A0A0A]">
+              <div className="mb-8 border-b border-black/10 pb-6 dark:border-white/10">
+                <span className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400">
+                  PROJECT BRIEF INTAKE
+                </span>
+                <h2 className="mt-2 font-display text-2xl sm:text-3xl uppercase tracking-tight text-black dark:text-white">
+                  Send Your Project Specifications.
+                </h2>
+              </div>
+
+              <ContactForm />
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
   );
 }

@@ -19,7 +19,7 @@ export default function Socials({
           href={social.url}
           rel="noreferrer"
           target="_blank"
-          className={`text-[#111111]/68 transition-colors hover:text-[#ff5a58] dark:text-white/72 dark:hover:text-faxx-lime ${linkClassName}`.trim()}
+          className={`text-[#111111]/68 transition-colors hover:text-black dark:text-white/72 dark:hover:text-white ${linkClassName}`.trim()}
         >
           <i className={`${social.icon} text-xl ${iconClassName}`.trim()}></i>
         </a>

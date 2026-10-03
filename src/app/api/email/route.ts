@@ -30,15 +30,15 @@ export async function POST(request: NextRequest) {
   <meta charset="utf-8">
   <style>
     body { font-family: 'Courier New', Courier, monospace; background-color: #f0f0f0; padding: 20px; color: #111111; }
-    .container { max-width: 600px; margin: 0 auto; background: #ffffff; border: 4px solid #111111; box-shadow: 12px 12px 0px 0px #111111; }
-    .header { background: #BFFF00; border-bottom: 4px solid #111111; padding: 30px; }
+    .container { max-width: 600px; margin: 0 auto; background: #ffffff; border: 4px solid #111111; }
+    .header { background: #E5E7EB; border-bottom: 4px solid #111111; padding: 30px; }
     .header h1 { font-size: 32px; margin: 0; text-transform: uppercase; letter-spacing: -2px; line-height: 0.9; }
     .section { padding: 30px; border-bottom: 4px solid #111111; }
     .section-title { font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; color: #666; margin-bottom: 20px; }
-    .tier-badge { display: inline-block; background: #FF4A5A; border: 2px solid #111111; padding: 5px 15px; font-weight: bold; margin-bottom: 10px; color: #ffffff; }
+    .tier-badge { display: inline-block; background: #111111; border: 2px solid #111111; padding: 5px 15px; font-weight: bold; margin-bottom: 10px; color: #ffffff; }
     .grid { display: block; width: 100%; }
     .row { border-bottom: 2px solid #eee; padding: 10px 0; }
-    .label { font-weight: bold; text-transform: uppercase; font-size: 11px; color: #FF4A5A; }
+    .label { font-weight: bold; text-transform: uppercase; font-size: 11px; color: #555555; }
     .value { font-size: 16px; margin-top: 4px; }
     .description { background: #fafafa; border: 2px solid #111111; padding: 20px; margin-top: 10px; line-height: 1.6; }
     .footer { padding: 20px; font-size: 10px; text-transform: uppercase; color: #999; }

@@ -23,20 +23,20 @@ export type FormInputs = {
 
 function SuccessMessage() {
   return (
-    <div className="text-center grid gap-8 p-6 md:p-12 bg-white dark:bg-zinc-900 border-4 md:border-8 border-faxx-dark dark:border-faxx-lime shadow-[8px_8px_0px_0px_rgba(17,17,17,1)] dark:shadow-[8px_8px_0px_0px_rgba(191,255,0,1)] max-w-2xl mx-auto">
-      <div className="bg-faxx-coral px-4 py-1 font-mono text-xs font-bold uppercase tracking-widest text-white dark:bg-faxx-lime dark:text-faxx-dark w-max mx-auto">
-        Capture Successful
+    <div className="text-center grid gap-6 p-6 md:p-10 bg-white dark:bg-[#0A0A0A] border border-black/15 dark:border-white/15 max-w-2xl mx-auto">
+      <div className="bg-black px-4 py-1 font-mono text-[10px] font-bold uppercase tracking-widest text-white dark:bg-white dark:text-black w-max mx-auto">
+        Transmission Confirmed
       </div>
-      <h2 className="text-3xl md:text-5xl font-display uppercase tracking-tighter text-faxx-dark dark:text-white leading-none">
+      <h2 className="text-3xl md:text-5xl font-display uppercase tracking-tighter text-black dark:text-white leading-none">
         LET&apos;S GET <br />
-        <span className="text-faxx-coral dark:text-faxx-lime">STARTED!</span>
+        <span className="text-zinc-500 dark:text-zinc-400">STARTED.</span>
       </h2>
-      <p className="text-gray-600 dark:text-gray-400 text-base md:text-lg font-body">
-        I&apos;ve received your project brief. I&apos;ll review it and reach out within 24 hours to schedule a clarity call.
+      <p className="text-zinc-600 dark:text-zinc-400 text-base md:text-lg font-body leading-relaxed">
+        I&apos;ve received your project brief. I&apos;ll review the architecture requirements and respond within 24 hours.
       </p>
       <Link href="/" className="mx-auto mt-2">
-        <Button className="!px-8">
-          <span>GO HOME</span>
+        <Button className="!px-8 !py-3 !text-xs font-mono font-bold tracking-widest uppercase">
+          <span>RETURN HOME</span>
         </Button>
       </Link>
     </div>
@@ -79,9 +79,9 @@ export default function ContactForm({ initialTier, onCancel }: { initialTier?: s
     }
   };
 
-  const inputClasses = "w-full px-5 py-3 border-4 border-faxx-dark dark:border-gray-800 rounded-none bg-white dark:bg-black text-faxx-dark dark:text-white font-body text-base focus:outline-none focus:border-faxx-coral dark:focus:border-faxx-lime transition-all shadow-[4px_4px_0px_0px_rgba(17,17,17,1)]";
-  const labelClasses = "block font-mono text-xs font-bold uppercase tracking-widest mb-2 text-faxx-dark dark:text-gray-400";
-  const errorClasses = "font-mono text-[10px] mt-1 font-bold uppercase text-faxx-coral dark:text-faxx-lime";
+  const inputClasses = "w-full px-4 py-3 border border-black/20 dark:border-white/20 rounded-none bg-white dark:bg-black text-black dark:text-white font-body text-sm focus:outline-none focus:border-black dark:focus:border-white transition-all";
+  const labelClasses = "block font-mono text-[11px] font-bold uppercase tracking-widest mb-1.5 text-black dark:text-zinc-400";
+  const errorClasses = "font-mono text-[10px] mt-1 font-bold uppercase text-zinc-600 dark:text-zinc-400";
 
   if (isSubmitSuccessful && !submitError) {
     return <SuccessMessage />;
@@ -180,7 +180,7 @@ export default function ContactForm({ initialTier, onCancel }: { initialTier?: s
         <Button
           type="submit"
           disabled={isSubmitting}
-          className={`flex-1 !py-5 !text-lg dark:!border-faxx-lime dark:!bg-faxx-lime dark:!text-faxx-dark dark:!shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] dark:hover:!border-faxx-lime dark:hover:!bg-black dark:hover:!text-white dark:active:!shadow-[0px_0px_0px_0px_rgba(255,255,255,1)] ${isSubmitting ? "opacity-50" : ""}`}
+          className={`flex-1 !py-5 !text-lg dark:!border-white dark:!bg-white dark:!text-black dark:hover:!border-zinc-200 dark:hover:!bg-zinc-200 ${isSubmitting ? "opacity-50" : ""}`}
         >
           {isSubmitting ? "TRANSMITTING..." : "SEND PROJECT BRIEF"}
         </Button>
@@ -188,7 +188,7 @@ export default function ContactForm({ initialTier, onCancel }: { initialTier?: s
           <button 
             type="button"
             onClick={onCancel}
-            className="px-8 py-4 font-mono font-bold uppercase text-sm border-2 border-transparent hover:border-faxx-dark dark:hover:border-gray-700 transition-all"
+            className="px-8 py-4 font-mono font-bold uppercase text-sm border-2 border-transparent hover:border-black dark:hover:border-zinc-700 transition-all"
           >
             CANCEL
           </button>

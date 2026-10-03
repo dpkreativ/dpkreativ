@@ -64,13 +64,13 @@ export default function BlogArchive({ posts }: { posts: HashnodePost[] }) {
           </SplitHeading>
           <RevealText
             as="p"
-            className="blog-subtitle font-mono text-sm md:text-base text-zinc-600 dark:text-faxx-lime font-bold uppercase tracking-widest"
+            className="blog-subtitle font-mono text-sm md:text-base text-zinc-600 dark:text-zinc-400 font-bold uppercase tracking-widest"
           >
             Insights // Case Studies // Technical Guides
           </RevealText>
         </header>
 
-          <div className="flex flex-col gap-6 border-y-4 border-faxx-dark py-12 dark:border-gray-700 sm:flex-row">
+          <div className="flex flex-col gap-6 border-y-4 border-black py-12 dark:border-zinc-700 sm:flex-row">
             <div className="flex-1 space-y-6">
               <RevealText
                 as="h3"
@@ -85,7 +85,7 @@ export default function BlogArchive({ posts }: { posts: HashnodePost[] }) {
                 placeholder="Search by title or content..."
                 value={searchQuery}
                 onChange={(event) => setSearchQuery(event.target.value)}
-                className="filter-item w-full border-4 border-faxx-dark bg-white px-4 py-3 font-mono text-sm uppercase tracking-widest transition-colors focus:border-faxx-coral focus:outline-none dark:border-gray-700 dark:bg-black dark:focus:border-faxx-lime"
+                className="filter-item w-full border-4 border-black bg-white px-4 py-3 font-mono text-sm uppercase tracking-widest transition-colors focus:border-black focus:outline-none dark:border-zinc-700 dark:bg-black dark:focus:border-white"
               />
             </div>
 
@@ -102,7 +102,7 @@ export default function BlogArchive({ posts }: { posts: HashnodePost[] }) {
                 <select
                   value={activeCategory}
                   onChange={(event) => setActiveCategory(event.target.value)}
-                  className="filter-item w-full cursor-pointer appearance-none border-4 border-faxx-dark bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220%22%20height%3D%2220%22%20fill%3D%22%23444444%22%3E%3Cpath%20d%3D%22M10%200l10%2010-10%2010z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:12px] bg-[right_12px_center] bg-no-repeat bg-white px-4 py-3 font-mono text-sm uppercase tracking-widest transition-colors focus:border-faxx-coral focus:outline-none dark:border-gray-700 dark:bg-black dark:focus:border-faxx-lime"
+                  className="filter-item w-full cursor-pointer appearance-none border-4 border-black bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220%22%20height%3D%2220%22%20fill%3D%22%23444444%22%3E%3Cpath%20d%3D%22M10%200l10%2010-10%2010z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:12px] bg-[right_12px_center] bg-no-repeat bg-white px-4 py-3 font-mono text-sm uppercase tracking-widest transition-colors focus:border-black focus:outline-none dark:border-zinc-700 dark:bg-black dark:focus:border-white"
                 >
                   {categories.map((category) => (
                     <option key={category} value={category}>
@@ -131,7 +131,7 @@ export default function BlogArchive({ posts }: { posts: HashnodePost[] }) {
               />
             ))
           ) : (
-            <div className="col-span-full border-4 border-dashed border-faxx-dark/20 py-24 text-center dark:border-gray-700">
+            <div className="col-span-full border-4 border-dashed border-black/20 py-24 text-center dark:border-zinc-700">
               <p className="font-display text-4xl uppercase opacity-20">No articles found</p>
             </div>
           )}

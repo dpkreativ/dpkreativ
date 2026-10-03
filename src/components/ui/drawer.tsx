@@ -55,15 +55,15 @@ function DrawerContent({
       <DrawerPrimitive.Content
         data-slot="drawer-content"
         className={cn(
-          "group/drawer-content fixed z-[1001] flex h-auto flex-col bg-faxx-light dark:bg-black transition-all duration-300 overflow-y-auto",
-          "data-[vaul-drawer-direction=right]:inset-y-0 data-[vaul-drawer-direction=right]:right-0 data-[vaul-drawer-direction=right]:w-full sm:data-[vaul-drawer-direction=right]:w-[400px] data-[vaul-drawer-direction=right]:border-l-8 data-[vaul-drawer-direction=right]:border-faxx-dark dark:data-[vaul-drawer-direction=right]:border-gray-800",
-          "data-[vaul-drawer-direction=left]:inset-y-0 data-[vaul-drawer-direction=left]:left-0 data-[vaul-drawer-direction=left]:w-full sm:data-[vaul-drawer-direction=left]:w-[400px] data-[vaul-drawer-direction=left]:border-r-8 data-[vaul-drawer-direction=left]:border-faxx-dark dark:data-[vaul-drawer-direction=left]:border-gray-800",
-          "data-[vaul-drawer-direction=bottom]:inset-x-0 data-[vaul-drawer-direction=bottom]:bottom-0 data-[vaul-drawer-direction=bottom]:border-t-8 data-[vaul-drawer-direction=bottom]:border-faxx-dark dark:data-[vaul-drawer-direction=bottom]:border-gray-800",
+          "group/drawer-content fixed z-[1001] flex h-auto flex-col bg-white dark:bg-black transition-all duration-300 overflow-y-auto",
+          "data-[vaul-drawer-direction=right]:inset-y-0 data-[vaul-drawer-direction=right]:right-0 data-[vaul-drawer-direction=right]:w-full sm:data-[vaul-drawer-direction=right]:w-[400px] data-[vaul-drawer-direction=right]:border-l-8 data-[vaul-drawer-direction=right]:border-black dark:data-[vaul-drawer-direction=right]:border-zinc-800",
+          "data-[vaul-drawer-direction=left]:inset-y-0 data-[vaul-drawer-direction=left]:left-0 data-[vaul-drawer-direction=left]:w-full sm:data-[vaul-drawer-direction=left]:w-[400px] data-[vaul-drawer-direction=left]:border-r-8 data-[vaul-drawer-direction=left]:border-black dark:data-[vaul-drawer-direction=left]:border-zinc-800",
+          "data-[vaul-drawer-direction=bottom]:inset-x-0 data-[vaul-drawer-direction=bottom]:bottom-0 data-[vaul-drawer-direction=bottom]:border-t-8 data-[vaul-drawer-direction=bottom]:border-black dark:data-[vaul-drawer-direction=bottom]:border-zinc-800",
           className
         )}
         {...props}
       >
-        <div className="mx-auto mt-4 hidden h-2 w-[80px] shrink-0 rounded-full bg-faxx-dark/20 dark:bg-white/20 group-data-[vaul-drawer-direction=bottom]/drawer-content:block" />
+        <div className="mx-auto mt-4 hidden h-2 w-[80px] shrink-0 bg-black/20 dark:bg-white/20 group-data-[vaul-drawer-direction=bottom]/drawer-content:block" />
         {children}
       </DrawerPrimitive.Content>
     </DrawerPortal>
@@ -101,7 +101,7 @@ function DrawerTitle({
     <DrawerPrimitive.Title
       data-slot="drawer-title"
       className={cn(
-        "font-display text-2xl uppercase tracking-tighter text-faxx-dark dark:text-white",
+        "font-display text-2xl uppercase tracking-tighter text-black dark:text-white",
         className
       )}
       {...props}

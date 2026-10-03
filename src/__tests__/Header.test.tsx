@@ -55,6 +55,8 @@ describe('Header', () => {
     expect(links.some(link => link.textContent === 'About')).toBeTruthy();
     expect(links.some(link => link.textContent === 'Work')).toBeTruthy();
     expect(links.some(link => link.textContent === 'Blog')).toBeTruthy();
-    expect(links.some(link => link.textContent === 'Contact')).toBeTruthy();
+    // Contact nav link is removed in favor of GET IN TOUCH CTA
+    expect(links.some(link => link.textContent === 'Contact')).toBeFalsy();
+    expect(links.some(link => link.getAttribute('href') === '/contact')).toBeTruthy();
   });
 });
