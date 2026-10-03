@@ -38,10 +38,16 @@ export default function ContactClient() {
           </SplitHeading>
 
           <RevealText
-            as="p"
-            className="font-body text-base sm:text-lg md:text-xl mt-4 text-[#111111]/75 dark:text-zinc-300 max-w-2xl leading-relaxed"
+            as="div"
+            noSplit
+            className="mt-4 max-w-2xl font-body text-base sm:text-lg md:text-xl text-[#111111]/75 dark:text-zinc-300 leading-relaxed space-y-2"
           >
-            Have a project in mind, an architectural challenge, or need a technical delivery partner? Submit a project brief below or reach out directly.
+            <p>
+              Have a project in mind, an architectural challenge, or need a technical delivery partner?
+            </p>
+            <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400">
+              Submit a project brief below or reach out directly.
+            </p>
           </RevealText>
         </header>
 
