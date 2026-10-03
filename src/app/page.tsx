@@ -191,7 +191,7 @@ export default function Home() {
           </div>
 
           <div className="hero-review relative lg:pl-6">
-            <div className="relative flex min-h-[280px] flex-col rounded-[2.25rem] border border-black/10 bg-black/[0.02] p-8 dark:border-white/10 dark:bg-white/[0.03] md:min-h-[340px] md:p-10">
+            <div className="relative flex min-h-[280px] flex-col border border-black/10 bg-black/[0.02] p-8 dark:border-white/10 dark:bg-white/[0.03] md:min-h-[340px] md:p-10">
               <span
                 className="editorial-star absolute right-7 top-7 hidden md:block md:w-5"
                 aria-hidden="true"
@@ -285,7 +285,7 @@ export default function Home() {
       <section className="reveal-section border-b border-black/10 dark:border-white/10">
         <div className="mx-auto grid max-w-7xl gap-14 px-6 py-20 md:px-12 lg:grid-cols-[minmax(300px,0.8fr)_minmax(0,1fr)] lg:items-center">
           <div className="mx-auto flex w-full max-w-sm flex-col items-center gap-6">
-            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] border border-black/10 bg-black/[0.03] dark:border-white/10 dark:bg-white/[0.03]">
+            <div className="relative aspect-[4/5] w-full overflow-hidden border border-black/10 bg-black/[0.03] dark:border-white/10 dark:bg-white/[0.03]">
               <PortraitSlideshow
                 images={portraits}
                 alt="Divine Orji"
@@ -295,7 +295,7 @@ export default function Home() {
               />
             </div>
 
-            <div className="w-max rounded-full border border-black/10 bg-white/78 py-3 backdrop-blur dark:border-white/10 dark:bg-black/75">
+            <div className="w-max border border-black/10 bg-white/78 py-3 backdrop-blur dark:border-white/10 dark:bg-black/75">
               <Socials
                 className="justify-center"
                 linkClassName="dark:!text-white/72"
@@ -330,7 +330,7 @@ export default function Home() {
               {aboutTags.map((skill) => (
                 <span
                   key={skill}
-                  className="rounded-full border border-black/10 bg-black/[0.04] px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-[#111111]/62 dark:border-white/10 dark:bg-white/[0.04] dark:text-white/62"
+                  className="border border-black/10 bg-black/[0.04] px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-[#111111]/62 dark:border-white/10 dark:bg-white/[0.04] dark:text-white/62"
                 >
                   {skill}
                 </span>

@@ -126,7 +126,7 @@ export default async function Page({ params }: PageProps) {
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full border-2 border-faxx-dark bg-faxx-coral px-3 py-2 font-mono text-[11px] font-bold uppercase tracking-widest text-white dark:border-gray-700 dark:bg-faxx-lime dark:text-faxx-dark"
+                  className="border-2 border-faxx-dark bg-faxx-coral px-3 py-2 font-mono text-[11px] font-bold uppercase tracking-widest text-white dark:border-gray-700 dark:bg-faxx-lime dark:text-faxx-dark"
                 >
                   {tag}
                 </span>
@@ -157,7 +157,7 @@ export default async function Page({ params }: PageProps) {
           </div>
 
           <aside className="grid gap-4">
-            <article className="grid gap-5 rounded-[2rem] border-4 border-faxx-dark bg-white p-6 shadow-[8px_8px_0px_0px_rgba(60,60,60,1)] dark:border-gray-700 dark:bg-zinc-900 dark:shadow-[8px_8px_0px_0px_rgba(191,255,0,0.2)]">
+            <article className="grid gap-5 border-4 border-faxx-dark bg-white p-6 shadow-[8px_8px_0px_0px_rgba(60,60,60,1)] dark:border-gray-700 dark:bg-zinc-900 dark:shadow-[8px_8px_0px_0px_rgba(191,255,0,0.2)]">
               <div className="grid gap-2">
                 <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-faxx-coral dark:text-faxx-lime font-bold">
                   Client
@@ -184,7 +184,7 @@ export default async function Page({ params }: PageProps) {
                   {project.caseStudy.services.map((service) => (
                     <span
                       key={service}
-                      className="rounded-full border-2 border-faxx-dark bg-faxx-light px-3 py-2 font-mono text-[11px] font-bold uppercase tracking-widest dark:border-gray-700 dark:bg-black"
+                      className="border-2 border-faxx-dark bg-faxx-light px-3 py-2 font-mono text-[11px] font-bold uppercase tracking-widest dark:border-gray-700 dark:bg-black"
                     >
                       {service}
                     </span>
@@ -200,7 +200,7 @@ export default async function Page({ params }: PageProps) {
                   {project.stack.map((item) => (
                     <span
                       key={item}
-                      className="rounded-full border-2 border-faxx-dark bg-white px-3 py-2 font-mono text-[11px] font-bold uppercase tracking-widest dark:border-gray-700 dark:bg-black"
+                      className="border-2 border-faxx-dark bg-white px-3 py-2 font-mono text-[11px] font-bold uppercase tracking-widest dark:border-gray-700 dark:bg-black"
                     >
                       {item}
                     </span>
@@ -213,7 +213,7 @@ export default async function Page({ params }: PageProps) {
 
         {/* Project Visual Section */}
         {hasProjectVisual && (
-          <section className="relative min-h-[400px] overflow-hidden rounded-[2rem] border-4 border-faxx-dark bg-white shadow-[12px_12px_0px_0px_rgba(255,74,90,1)] dark:border-gray-700 dark:bg-zinc-900 dark:shadow-[12px_12px_0px_0px_rgba(191,255,0,0.2)] md:min-h-[560px]">
+          <section className="relative min-h-[400px] overflow-hidden border-4 border-faxx-dark bg-white shadow-[12px_12px_0px_0px_rgba(255,74,90,1)] dark:border-gray-700 dark:bg-zinc-900 dark:shadow-[12px_12px_0px_0px_rgba(191,255,0,0.2)] md:min-h-[560px]">
             <Image
               src={project.image}
               alt={project.title}
@@ -234,7 +234,7 @@ export default async function Page({ params }: PageProps) {
 
         {/* Overview and Goals Row */}
         <section className="grid gap-8 md:gap-10 items-start lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
-          <article className="grid gap-5 rounded-[2rem] border-4 border-faxx-dark bg-white p-6 shadow-[8px_8px_0px_0px_rgba(60,60,60,1)] dark:border-gray-700 dark:bg-zinc-900 dark:shadow-[8px_8px_0px_0px_rgba(191,255,0,0.2)] md:p-10">
+          <article className="grid gap-5 border-4 border-faxx-dark bg-white p-6 shadow-[8px_8px_0px_0px_rgba(60,60,60,1)] dark:border-gray-700 dark:bg-zinc-900 dark:shadow-[8px_8px_0px_0px_rgba(191,255,0,0.2)] md:p-10">
             <SplitHeading
               as="h2"
               className="font-display text-3xl md:text-4xl uppercase tracking-tighter leading-none"
@@ -249,7 +249,7 @@ export default async function Page({ params }: PageProps) {
             </div>
           </article>
 
-          <article className="grid gap-5 rounded-[2rem] border-4 border-faxx-dark bg-white p-6 shadow-[8px_8px_0px_0px_rgba(60,60,60,1)] dark:border-gray-700 dark:bg-zinc-900 dark:shadow-[8px_8px_0px_0px_rgba(191,255,0,0.2)] md:p-10">
+          <article className="grid gap-5 border-4 border-faxx-dark bg-white p-6 shadow-[8px_8px_0px_0px_rgba(60,60,60,1)] dark:border-gray-700 dark:bg-zinc-900 dark:shadow-[8px_8px_0px_0px_rgba(191,255,0,0.2)] md:p-10">
             <SplitHeading
               as="h2"
               className="font-display text-3xl md:text-4xl uppercase tracking-tighter leading-none"

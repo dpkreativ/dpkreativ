@@ -12,10 +12,10 @@ export default function ContactModal() {
       <Button onClick={() => dialogRef.current?.showModal()}>start here</Button>
       <dialog
         ref={dialogRef}
-        className="p-4 rounded-2xl backdrop:bg-black/85 w-max"
+        className="p-4 backdrop:bg-black/85 w-max"
       >
         <button
-          className="flex items-center justify-center w-5 h-5 bg-white dark:bg-faxx-dark rounded-full shadow ml-auto"
+          className="flex items-center justify-center w-5 h-5 bg-white dark:bg-faxx-dark shadow ml-auto"
           onClick={() => dialogRef.current?.close()}
         >
           <svg

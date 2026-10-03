@@ -27,7 +27,7 @@ export default function ProjectBrandMark({
 
   return (
     <div
-      className={`shrink-0 flex items-center justify-center overflow-hidden rounded-full border border-black/10 p-2 dark:border-white/15 ${className}`}
+      className={`shrink-0 flex items-center justify-center overflow-hidden border border-black/10 p-2 dark:border-white/15 ${className}`}
     >
       {brand ? (
         <Image

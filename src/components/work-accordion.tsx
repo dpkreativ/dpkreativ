@@ -27,7 +27,7 @@ export default function WorkAccordion({ projects }: { projects: Project[] }) {
                 setActiveIndex(idx);
               }
             }}
-            className={`group relative cursor-pointer overflow-hidden rounded-[2rem] border border-black/10 bg-white/75 transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] dark:border-white/10 dark:bg-[#111111]
+            className={`group relative cursor-pointer overflow-hidden border border-black/10 bg-white/75 transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] dark:border-white/10 dark:bg-[#111111]
               ${isActive
                 ? "flex-[6] md:flex-[5] shadow-[0_30px_90px_-42px_rgba(255,90,88,0.55)]"
                 : "flex-1 saturate-50 hover:saturate-100 md:hover:flex-[1.15]"
@@ -60,7 +60,7 @@ export default function WorkAccordion({ projects }: { projects: Project[] }) {
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full border border-black/10 bg-white/88 px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.24em] text-[#111111]/72 dark:border-white/20 dark:bg-black/55 dark:text-white/90"
+                  className="border border-black/10 bg-white/88 px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.24em] text-[#111111]/72 dark:border-white/20 dark:bg-black/55 dark:text-white/90"
                 >
                     {tag}
                 </span>
@@ -86,7 +86,7 @@ export default function WorkAccordion({ projects }: { projects: Project[] }) {
                 </div>
                 <Link
                   href={`/work/${project.slug}`}
-                  className="inline-flex items-center gap-3 rounded-full border border-black/10 bg-faxx-coral px-5 py-3 font-mono text-[11px] font-bold uppercase tracking-[0.26em] text-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:border-[#ff5a58]/60 hover:bg-white hover:text-[#111111] active:translate-x-[4px] active:translate-y-[4px] active:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] dark:border-faxx-lime dark:bg-faxx-lime dark:text-faxx-dark dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] dark:hover:border-faxx-lime dark:hover:bg-black dark:hover:text-white dark:active:shadow-[0px_0px_0px_0px_rgba(255,255,255,1)]"
+                  className="inline-flex items-center gap-3 border border-black/10 bg-faxx-coral px-5 py-3 font-mono text-[11px] font-bold uppercase tracking-[0.26em] text-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:border-[#ff5a58]/60 hover:bg-white hover:text-[#111111] active:translate-x-[4px] active:translate-y-[4px] active:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] dark:border-faxx-lime dark:bg-faxx-lime dark:text-faxx-dark dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] dark:hover:border-faxx-lime dark:hover:bg-black dark:hover:text-white dark:active:shadow-[0px_0px_0px_0px_rgba(255,255,255,1)]"
                 >
                   <span>View Case Study</span>
                   <ArrowIcon />

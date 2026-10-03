@@ -116,7 +116,7 @@ export default function Page() {
           {tiers.map((tier) => (
             <div
               key={tier.id}
-              className="relative bg-white dark:bg-zinc-900 border-4 border-faxx-dark dark:border-gray-700 p-8 flex flex-col rounded-[2rem]"
+              className="relative bg-white dark:bg-zinc-900 border-4 border-faxx-dark dark:border-gray-700 p-8 flex flex-col"
             >
               <h3 className="font-display text-3xl mb-2 dark:text-white">
                 {tier.name}

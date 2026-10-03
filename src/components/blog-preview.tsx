@@ -51,12 +51,12 @@ export default function BlogPreview() {
         {[1, 2, 3].map((i) => (
           <div
             key={i}
-            className="animate-pulse rounded-[2rem] border border-black/10 bg-white/70 p-6 dark:border-white/10 dark:bg-white/[0.04]"
+            className="animate-pulse border border-black/10 bg-white/70 p-6 dark:border-white/10 dark:bg-white/[0.04]"
           >
-            <div className="mb-4 h-4 w-1/3 rounded-full bg-black/10 dark:bg-white/10"></div>
-            <div className="mb-3 h-10 rounded-2xl bg-black/10 dark:bg-white/10"></div>
-            <div className="mb-2 h-3 rounded-full bg-black/10 dark:bg-white/10"></div>
-            <div className="h-3 w-2/3 rounded-full bg-black/10 dark:bg-white/10"></div>
+            <div className="mb-4 h-4 w-1/3 bg-black/10 dark:bg-white/10"></div>
+            <div className="mb-3 h-10 bg-black/10 dark:bg-white/10"></div>
+            <div className="mb-2 h-3 bg-black/10 dark:bg-white/10"></div>
+            <div className="h-3 w-2/3 bg-black/10 dark:bg-white/10"></div>
           </div>
         ))}
       </div>

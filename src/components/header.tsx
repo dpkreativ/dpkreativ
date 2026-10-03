@@ -25,7 +25,7 @@ function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <div className="h-11 w-11 rounded-full border border-black/10 bg-black/[0.04] dark:border-white/15 dark:bg-white/[0.04]" />
+      <div className="h-11 w-11 border border-black/10 bg-black/[0.04] dark:border-white/15 dark:bg-white/[0.04]" />
     );
   }
 
@@ -36,7 +36,7 @@ function ThemeToggle() {
       onClick={() => setTheme(isDark ? "light" : "dark")}
       aria-label="Toggle dark mode"
       aria-pressed={isDark}
-      className="flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-black/[0.04] text-[#111111] transition-colors duration-300 hover:border-[#ff5a58]/60 hover:text-[#ff5a58] dark:border-white/15 dark:bg-white/[0.04] dark:text-white dark:hover:border-faxx-lime dark:hover:text-faxx-lime"
+      className="flex h-11 w-11 items-center justify-center border border-black/10 bg-black/[0.04] text-[#111111] transition-colors duration-300 hover:border-[#ff5a58]/60 hover:text-[#ff5a58] dark:border-white/15 dark:bg-white/[0.04] dark:text-white dark:hover:border-faxx-lime dark:hover:text-faxx-lime"
     >
       {isDark ? (
         <i className="ri-sun-fill text-lg"></i>
@@ -55,7 +55,7 @@ export default function Header() {
       <div className="relative z-50 mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
         <Link
           href="/"
-          className="group flex shrink-0 items-center gap-3 rounded-full bg-transparent px-4 py-2.5 text-[#111111] transition-colors hover:bg-black/[0.03] dark:bg-black dark:text-white dark:hover:bg-white/[0.06]"
+          className="group flex shrink-0 items-center gap-3 bg-transparent px-4 py-2.5 text-[#111111] transition-colors hover:bg-black/[0.03] dark:bg-black dark:text-white dark:hover:bg-white/[0.06]"
         >
           <Image
             src={logo}
@@ -90,7 +90,7 @@ export default function Header() {
               <DrawerTrigger asChild>
                 <button
                   aria-label="Toggle menu"
-                  className="flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-black/[0.04] text-[#111111] transition-colors duration-300 hover:border-[#ff5a58]/60 hover:text-[#ff5a58] dark:border-white/15 dark:bg-white/[0.04] dark:text-white dark:hover:border-faxx-lime dark:hover:text-faxx-lime md:hidden"
+                  className="flex h-11 w-11 items-center justify-center border border-black/10 bg-black/[0.04] text-[#111111] transition-colors duration-300 hover:border-[#ff5a58]/60 hover:text-[#ff5a58] dark:border-white/15 dark:bg-white/[0.04] dark:text-white dark:hover:border-faxx-lime dark:hover:text-faxx-lime md:hidden"
                 >
                   <i className="ri-menu-line text-xl font-bold"></i>
                 </button>
@@ -100,7 +100,7 @@ export default function Header() {
                   <DrawerTitle asChild>
                     <Link
                       href="/"
-                      className="flex items-center gap-3 rounded-full border border-black/10 bg-[#111111] px-4 py-2 dark:border-white/10"
+                      className="flex items-center gap-3 border border-black/10 bg-[#111111] px-4 py-2 dark:border-white/10"
                       onClick={() => setViewModal(false)}
                     >
                       <Image
@@ -116,7 +116,7 @@ export default function Header() {
                     </Link>
                   </DrawerTitle>
                   <DrawerClose asChild>
-                    <button className="flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-black/[0.04] text-[#111111] transition-colors hover:border-[#ff5a58]/60 hover:text-[#ff5a58] dark:border-white/15 dark:bg-white/[0.04] dark:text-white dark:hover:border-faxx-lime dark:hover:text-faxx-lime">
+                    <button className="flex h-10 w-10 items-center justify-center border border-black/10 bg-black/[0.04] text-[#111111] transition-colors hover:border-[#ff5a58]/60 hover:text-[#ff5a58] dark:border-white/15 dark:bg-white/[0.04] dark:text-white dark:hover:border-faxx-lime dark:hover:text-faxx-lime">
                       <i className="ri-close-large-line text-lg"></i>
                     </button>
                   </DrawerClose>

@@ -77,7 +77,7 @@ export default function Footer() {
 
         <div className="py-12 md:py-16 grid gap-12 grid-cols-2 md:grid-cols-2 xl:grid-cols-4 md:gap-10 xl:gap-12 text-center md:text-left justify-items-center md:justify-items-start items-start">
           <div className="col-span-2 md:col-span-1 flex justify-center md:justify-start">
-            <Link href="/" className="flex w-max items-center gap-3 rounded-full bg-transparent px-4 py-2 text-faxx-dark transition-colors hover:bg-black/[0.03] dark:bg-black dark:text-white dark:hover:bg-white/[0.06]">
+            <Link href="/" className="flex w-max items-center gap-3 bg-transparent px-4 py-2 text-faxx-dark transition-colors hover:bg-black/[0.03] dark:bg-black dark:text-white dark:hover:bg-white/[0.06]">
               <Image
                 src={logo}
                 alt="Divine Orji logo"
