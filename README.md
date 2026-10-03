@@ -3,18 +3,13 @@
 
 > **"I help make your business grow by building fast, reliable software that is easy to use."**
 
-Lagos, NG // Remote Worldwide
 
-[![Website](https://img.shields.io/badge/Website-dpkreativ.vercel.app-111111?style=for-the-badge&logo=vercel&logoColor=white)](https://dpkreativ.vercel.app)
-[![Portfolio](https://img.shields.io/badge/Portfolio-dpkreativ.vercel.app%2Fwork-111111?style=for-the-badge&logo=googlekeep&logoColor=white)](https://dpkreativ.vercel.app/work)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-dpkreativ-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/dpkreativ)
-[![Twitter/X](https://img.shields.io/badge/X-@dpkreativ-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/dpkreativ)
 [![Email](https://img.shields.io/badge/Direct_Email-dpkreativ@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:dpkreativ@gmail.com)
 [![CV](https://img.shields.io/badge/Download_CV-PDF-333333?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://dpkreativ.vercel.app/divine_orji_cv.pdf)
 
 ---
 
-I am a product-focused software engineer and Head of Engineering at **[The Kreativ Studio](https://dpkreativ.vercel.app)**. Formerly Lead Frontend Engineer at **[Crunchies Online](https://crunchiesonline.com)**, where I re-architected digital ordering and helped scale monthly online revenue from ₦200k to ₦3M (**15x** growth).
+I am a product-focused software engineer and Head of Engineering at **[The Kreativ Studio](https://dpkreativ.vercel.app)**.
 
 I specialize in **Next.js, TypeScript, React, and scalable frontend architectures**, with **50+ technical articles** published across freeCodeCamp and Hackmamba.
 
