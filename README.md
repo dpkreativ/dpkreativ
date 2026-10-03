@@ -9,11 +9,12 @@ Lagos, NG // Remote Worldwide
 
 <br />
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-dpkreativ.com-111111?style=for-the-badge&logo=vercel&logoColor=white)](https://dpkreativ.com)
+[![Website](https://img.shields.io/badge/Website-dpkreativ.vercel.app-111111?style=for-the-badge&logo=vercel&logoColor=white)](https://dpkreativ.vercel.app)
+[![Portfolio](https://img.shields.io/badge/Portfolio-dpkreativ.vercel.app%2Fwork-111111?style=for-the-badge&logo=googlekeep&logoColor=white)](https://dpkreativ.vercel.app/work)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-dpkreativ-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/dpkreativ)
 [![Twitter/X](https://img.shields.io/badge/X-@dpkreativ-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/dpkreativ)
 [![Email](https://img.shields.io/badge/Direct_Email-dpkreativ@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:dpkreativ@gmail.com)
-[![CV](https://img.shields.io/badge/Download_CV-PDF-333333?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://dpkreativ.com/divine_orji_cv.pdf)
+[![CV](https://img.shields.io/badge/Download_CV-PDF-333333?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://dpkreativ.vercel.app/divine_orji_cv.pdf)
 
 </div>
 
@@ -23,7 +24,7 @@ Lagos, NG // Remote Worldwide
 
 I am a product-focused software engineer and technical leader who bridges the gap between complex engineering architectures and seamless, revenue-driving user experiences. 
 
-Currently, I serve as **Head of Engineering** at **[The Kreativ Studio](https://dpkreativ.com)**, directing multi-disciplinary teams across full-lifecycle product engagements. Previously, as Lead Frontend Engineer at **[Crunchies Online](https://crunchiesonline.com)**, I spearheaded the complete re-architecture of their digital ordering systems, increasing digital revenue by **15x** (₦200,000 → ₦3,000,000/mo) across 20+ restaurant locations.
+Currently, I serve as **Head of Engineering** at **[The Kreativ Studio](https://dpkreativ.vercel.app)**, directing multi-disciplinary teams across full-lifecycle product engagements. Previously, as Lead Frontend Engineer at **[Crunchies Online](https://crunchiesonline.com)**, I spearheaded the complete re-architecture of their digital ordering systems, increasing digital revenue by **15x** (₦200,000 → ₦3,000,000/mo) across 20+ restaurant locations.
 
 Beyond code, I am a prolific technical writer with **50+ articles** published across **freeCodeCamp**, **Hackmamba**, and engineering publications, helping over 100,000+ developers master modern frontend ecosystems.
 
@@ -87,7 +88,7 @@ Product & Strategy     ::  Technical Architecture, UX Audits, Performance Optimi
 
 - **[Crunchies Online](https://crunchiesonline.com)** — High-volume digital food ordering platform serving 20+ outlets across Nigeria with Google Maps routing and multi-channel checkout.
 - **[The Iroko Circle](https://theirokocircle.org)** — Editorial publishing network and essay discovery platform engineered for African literature, community building, and reading clarity.
-- **[Grooovy](https://dpkreativ.com/work/grooovy)** — Next-generation event discovery and ticketing platform featuring instant RSVP flows, host analytics dashboards, and Supabase auth.
+- **[Grooovy](https://dpkreativ.vercel.app/work/grooovy)** — Next-generation event discovery and ticketing platform featuring instant RSVP flows, host analytics dashboards, and Supabase auth.
 - **[The Bakistry](https://thebakistry.ng)** — Custom pastry e-commerce storefront balancing high-speed mobile conversion with bespoke confectionery ordering.
 
 ---
@@ -107,8 +108,9 @@ Whether you are an established brand, early-stage venture, or enterprise team, I
 
 Ready to build fast, reliable software for your next initiative?
 
-- 🌐 **Portfolio & Case Studies**: [dpkreativ.com](https://dpkreativ.com)
-- 📝 **Send a Project Brief**: [dpkreativ.com/contact](https://dpkreativ.com/contact)
+- 🌐 **Website**: [dpkreativ.vercel.app](https://dpkreativ.vercel.app)
+- 🗂️ **Portfolio & Work**: [dpkreativ.vercel.app/work](https://dpkreativ.vercel.app/work)
+- 📝 **Send a Project Brief**: [dpkreativ.vercel.app/contact](https://dpkreativ.vercel.app/contact)
 - ✉️ **Direct Email**: [dpkreativ@gmail.com](mailto:dpkreativ@gmail.com)
 - 📱 **Call / WhatsApp**: [+234 902 182 4073](tel:+2349021824073)
 - 🤝 **Connect on LinkedIn**: [/in/dpkreativ](https://linkedin.com/in/dpkreativ)
