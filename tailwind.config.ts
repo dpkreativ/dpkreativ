@@ -40,12 +40,13 @@ const config: Config = {
     },
     extend: {
       colors: {
-        'faxx-blue': '#4320F6',
-        'faxx-cyan': '#00E5FF',
-        'faxx-coral': '#FF4A5A',
-        'faxx-lime': '#BFFF00',
         'faxx-dark': '#000000',
-        'faxx-light': '#F4F4F9',
+        'faxx-light': '#FFFFFF',
+        silver: {
+          light: '#E5E7EB',
+          DEFAULT: '#C0C0C0',
+          dark: '#9CA3AF',
+        },
         border: 'hsl(var(--border))',
       },
       fontFamily: {

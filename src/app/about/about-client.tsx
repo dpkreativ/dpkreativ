@@ -3,7 +3,6 @@
 import {
   aboutMe,
   certifications,
-  contact,
   education,
   experience,
   languages,
@@ -24,14 +23,14 @@ export default function About() {
   useGSAP(
     () => {
       const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
-      tl.from(".about-image", { scale: 0.8, opacity: 0, duration: 1 })
-        .from(".about-text", { y: 50, opacity: 0, duration: 0.8, stagger: 0.2 }, "-=0.5");
+      tl.from(".about-image", { scale: 0.96, opacity: 0, duration: 0.9 })
+        .from(".about-text", { y: 36, opacity: 0, duration: 0.7, stagger: 0.15 }, "-=0.4");
     },
     { scope: container }
   );
 
   return (
-    <main ref={container} className="flex-1 w-full flex flex-col pt-[84px]">
+    <main ref={container} className="flex-1 w-full flex flex-col pt-[84px] bg-white text-[#111111] dark:bg-[#111111] dark:text-white">
       {/* Decorative Grid Background */}
       <div
         className="fixed inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none -z-10"
@@ -40,51 +39,61 @@ export default function About() {
             "linear-gradient(rgba(17, 17, 17, 0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(17, 17, 17, 0.5) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }}
-      ></div>
+      />
 
-      <div className="w-full max-w-7xl mx-auto px-10 md:px-12 py-16 md:py-24 grid lg:grid-cols-12 gap-12 items-start">
-        {/* Left: Content */}
-        <div className="lg:col-span-7 space-y-12">
-          <header className="max-w-4xl space-y-5">
+      {/* Top Profile Grid */}
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20 grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+        {/* Left Column: Narrative & Skills */}
+        <div className="lg:col-span-7 space-y-10">
+          <header className="max-w-4xl space-y-4">
             <SplitHeading
               as="h1"
-              className="font-display text-2xl sm:text-4xl md:text-6xl lg:text-7xl uppercase tracking-tighter leading-[0.85]"
+              className="font-display text-4xl sm:text-6xl md:text-7xl uppercase tracking-tighter leading-[0.88] text-black dark:text-white"
             >
               ABOUT DIVI.
             </SplitHeading>
+
             <RevealText
               as="p"
-              className="about-kicker font-mono text-sm md:text-base text-faxx-coral dark:text-faxx-lime font-bold uppercase tracking-widest"
+              className="about-kicker font-mono text-xs md:text-sm text-zinc-500 dark:text-zinc-400 font-bold uppercase tracking-widest"
             >
-              Software Engineer // Product Builder
+              Software Engineer // Product Builder // Systems Writer
             </RevealText>
 
-            <FloatingDownloadLink
-              href="/divine_orji_cv.pdf"
-              downloadName="divine-orji-cv.pdf"
-              label="Download CV PDF"
-            />
+            <div className="pt-2">
+              <FloatingDownloadLink
+                href="/divine_orji_cv.pdf"
+                downloadName="divine-orji-cv.pdf"
+                label="Download CV PDF"
+              />
+            </div>
           </header>
 
-          <div className="space-y-8 font-body text-lg md:text-2xl font-medium leading-relaxed dark:text-gray-300 about-text">
+          <div className="space-y-6 font-body text-base md:text-xl font-normal leading-relaxed text-[#111111]/80 dark:text-zinc-300 about-text">
             {aboutMe.map((paragraph, idx) => (
               <p
                 key={idx}
                 dangerouslySetInnerHTML={{ __html: paragraph }}
-                className="border-l-8 border-faxx-dark dark:border-gray-700 pl-8"
+                className="border-l-2 border-black/20 dark:border-white/20 pl-6 leading-relaxed"
               />
             ))}
           </div>
 
-          <div className="about-text grid gap-5 border-4 border-faxx-dark bg-white p-6 dark:border-gray-700 dark:bg-zinc-900 md:p-8">
-            <RevealText as="h3" className="font-display text-3xl uppercase tracking-tighter">
-              Core Skills
-            </RevealText>
-            <div className="flex flex-wrap gap-3">
+          {/* Core Skills Matrix */}
+          <div className="about-text grid gap-4 border border-black/15 bg-white p-6 dark:border-white/15 dark:bg-[#0A0A0A] md:p-8">
+            <div className="flex items-center justify-between border-b border-black/10 pb-3 dark:border-white/10">
+              <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
+                TECHNICAL CAPABILITIES
+              </span>
+              <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-zinc-400">
+                [{skills.length} DISCIPLINES]
+              </span>
+            </div>
+            <div className="flex flex-wrap gap-2 pt-2">
               {skills.map((skill) => (
                 <span
                   key={skill}
-                  className="border-2 border-faxx-dark bg-faxx-light px-3 py-2 font-mono text-xs font-bold uppercase tracking-widest text-faxx-dark dark:border-gray-700 dark:bg-black dark:text-white"
+                  className="border border-black/10 bg-black/[0.03] px-3 py-1.5 font-mono text-[11px] font-bold uppercase tracking-wider text-black dark:border-white/15 dark:bg-white/[0.05] dark:text-white"
                 >
                   {skill}
                 </span>
@@ -93,178 +102,143 @@ export default function About() {
           </div>
         </div>
 
-        {/* Right: Image/Aesthetic */}
+        {/* Right Column: Visual Portrait */}
         <div className="lg:col-span-5">
-          <div className="relative aspect-[3/4] overflow-hidden border-8 border-faxx-dark dark:border-gray-700 about-image">
+          <div className="relative aspect-[4/5] overflow-hidden border border-black/15 bg-black/[0.02] dark:border-white/15 dark:bg-white/[0.02] about-image">
             <PortraitSlideshow
               images={portraits}
               alt="Divine Orji"
               sizes="(max-width: 1024px) 100vw, 40vw"
-              className="object-cover"
+              className="object-cover transition-all duration-700"
             />
-            {/* Overlay Grid */}
-            <div
-              className="absolute inset-0 opacity-20 pointer-events-none"
-              style={{
-                backgroundImage:
-                  "radial-gradient(circle at 1px 1px, #111 1px, transparent 0)",
-                backgroundSize: "20px 20px",
-              }}
-            ></div>
           </div>
         </div>
-        </div>
+      </div>
 
-      <div className="w-full max-w-7xl mx-auto px-6 md:px-12 pb-16 md:pb-24 grid gap-12 md:gap-16">
+      {/* Experience & Career Snapshot */}
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 pb-20 md:pb-28 grid gap-14">
         <section className="grid gap-8 about-text">
-          <div className="border-b-4 border-faxx-dark dark:border-gray-700 pb-6">
+          <div className="border-b border-black/15 pb-6 dark:border-white/15">
             <SplitHeading
               as="h2"
-              className="font-display text-4xl md:text-6xl uppercase tracking-tighter leading-none"
+              className="font-display text-3xl md:text-5xl uppercase tracking-tighter leading-none"
             >
               EXPERIENCE SNAPSHOT.
             </SplitHeading>
-            <RevealText
-              as="p"
-              className="font-mono text-sm md:text-base mt-4 text-faxx-coral dark:text-faxx-lime font-bold uppercase tracking-widest"
-            >
-              Roles, responsibilities, and highlights.
-            </RevealText>
           </div>
 
-          <div className="relative">
-            <div className="absolute bottom-0 left-5 top-2 w-1 bg-faxx-dark dark:bg-gray-700 md:left-1/2 md:-translate-x-1/2"></div>
-
-            <div className="grid gap-10 md:gap-14">
-              {experience.map((item, idx) => {
-                const stepNumber = String(idx + 1).padStart(2, "0");
-                const cardOnRight = idx % 2 === 0;
-
-                return (
-                  <article
-                    key={`${item.company}-${item.role}-${item.period}`}
-                    className="relative grid gap-4 pl-16 md:grid-cols-[minmax(0,1fr)_5rem_minmax(0,1fr)] md:items-start md:gap-8 md:pl-0"
-                  >
-                    <div className="absolute left-0 top-1 z-10 flex h-10 w-10 items-center justify-center border-4 border-faxx-dark bg-faxx-coral font-display text-xl uppercase tracking-tighter text-white dark:border-gray-700 dark:bg-faxx-lime dark:text-faxx-dark md:left-1/2 md:-translate-x-1/2">
-                      {stepNumber}
+          <div className="grid gap-6">
+            {experience.map((item, idx) => (
+              <article
+                key={`${item.company}-${item.role}-${item.period}`}
+                className="grid gap-6 border border-black/15 bg-white p-6 dark:border-white/15 dark:bg-[#1a1a1a] md:p-8 lg:grid-cols-12 lg:items-start"
+              >
+                {/* Meta details */}
+                <div className="lg:col-span-4 flex flex-col justify-between gap-3 border-b border-black/10 pb-4 lg:border-b-0 lg:border-r lg:pb-0 lg:pr-6 dark:border-white/10">
+                  <div>
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="inline-flex items-center border border-black/15 bg-black/[0.04] px-2 py-0.5 font-mono text-[10px] font-bold tracking-wider text-black dark:border-white/15 dark:bg-white/[0.06] dark:text-white">
+                        {`0${idx + 1}`}
+                      </span>
+                      <span className="inline-flex items-center border border-black/10 bg-black/[0.02] px-2.5 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wider text-zinc-700 dark:border-white/10 dark:bg-white/[0.03] dark:text-zinc-300">
+                        {item.period}
+                      </span>
                     </div>
+                    <h3 className="mt-2 font-display text-2xl uppercase tracking-tight text-black dark:text-white">
+                      {item.role}
+                    </h3>
+                    <p className="mt-1 font-mono text-xs uppercase tracking-wider text-zinc-600 dark:text-zinc-400 font-bold">
+                      {item.company}
+                    </p>
+                  </div>
+                </div>
 
-                    <div
-                      className={`md:row-start-1 ${cardOnRight ? "md:col-start-1 md:flex md:justify-end md:pt-2" : "md:col-start-3 md:pt-2"}`}
-                    >
-                      <div className="inline-flex w-fit items-center gap-3 border-4 border-faxx-dark bg-faxx-coral px-4 py-2 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-white dark:border-gray-700 dark:bg-faxx-lime dark:text-faxx-dark">
-                        <span className="opacity-70">{item.period}</span>
-                      </div>
-                    </div>
+                {/* Details */}
+                <div className="lg:col-span-8 space-y-4">
+                  <p className="font-body text-base leading-relaxed text-[#111111]/80 dark:text-zinc-300">
+                    {item.summary}
+                  </p>
 
-                    <div className={`md:row-start-1 ${cardOnRight ? "md:col-start-3" : "md:col-start-1"}`}>
-                      <div className="grid gap-5 border-4 border-faxx-dark bg-white p-6 dark:border-gray-700 dark:bg-zinc-900 md:p-8">
-                        <div className="grid gap-2 border-b-2 border-faxx-dark/10 pb-4 dark:border-gray-700">
-                          <RevealText
-                            as="h3"
-                            className="font-display text-2xl md:text-3xl uppercase tracking-tighter leading-none"
-                            triggerStart="top 92%"
-                          >
-                            {item.role}
-                          </RevealText>
-                          <p className="font-mono text-xs md:text-sm uppercase tracking-[0.18em] text-faxx-coral dark:text-faxx-lime font-bold">
-                            {item.company}
-                          </p>
-                        </div>
-
-                        <p className="font-body text-lg leading-relaxed dark:text-gray-300">
-                          {item.summary}
-                        </p>
-
-                        {item.highlights.length > 0 ? (
-                          <ul className="grid gap-3 font-body text-base md:text-lg leading-relaxed dark:text-gray-300">
-                            {item.highlights.map((highlight: string) => (
-                              <li key={highlight} className="flex gap-3 items-start">
-                                <span className="mt-2 h-2.5 w-2.5 shrink-0 bg-faxx-coral border border-faxx-dark dark:border-gray-700"></span>
-                                <span>{highlight}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        ) : null}
-                      </div>
-                    </div>
-                  </article>
-                );
-              })}
-            </div>
+                  {item.highlights.length > 0 && (
+                    <ul className="grid gap-2.5 pt-2 font-body text-sm leading-relaxed text-[#111111]/70 dark:text-zinc-400">
+                      {item.highlights.map((highlight: string) => (
+                        <li key={highlight} className="flex gap-3 items-start">
+                          <span className="mt-1.5 h-1.5 w-1.5 shrink-0 bg-black dark:bg-white" />
+                          <span>{highlight}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </article>
+            ))}
           </div>
         </section>
 
-        <section className="grid items-start gap-6 about-text lg:grid-cols-2">
-          <article className="grid content-start gap-5 border-4 border-faxx-dark bg-white p-6 dark:border-gray-700 dark:bg-zinc-900 md:p-8">
-            <RevealText as="h3" className="font-display text-3xl uppercase tracking-tighter">
-              Education
-            </RevealText>
-            <div className="grid gap-5">
+        {/* Education, Credentials & Languages */}
+        <section className="grid items-start gap-8 about-text lg:grid-cols-2">
+          {/* Education */}
+          <article className="grid content-start gap-6 border border-black/15 bg-white p-6 dark:border-white/15 dark:bg-[#1a1a1a] md:p-8">
+            <div className="border-b border-black/10 pb-4 dark:border-white/10">
+              <RevealText as="h3" className="font-display text-2xl md:text-3xl uppercase tracking-tight">
+                Education
+              </RevealText>
+            </div>
+
+            <div className="grid gap-6">
               {education.map((item) => (
-                <div key={item.institution} className="grid gap-2">
-                  <p className="font-display text-2xl uppercase tracking-tighter leading-none">
+                <div key={item.institution} className="grid gap-1.5">
+                  <p className="font-display text-xl uppercase tracking-tight text-black dark:text-white">
                     {item.degree}
                   </p>
-                  <p className="font-body text-lg leading-relaxed dark:text-gray-300">
+                  <p className="font-body text-base leading-relaxed text-[#111111]/75 dark:text-zinc-300">
                     {item.institution}
                   </p>
-                  <p className="font-mono text-xs uppercase tracking-[0.18em] text-faxx-coral dark:text-faxx-lime font-bold">
+                  <span className="inline-flex w-fit items-center border border-black/10 bg-black/[0.02] px-2.5 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wider text-zinc-700 dark:border-white/10 dark:bg-white/[0.03] dark:text-zinc-300">
                     {item.period}
-                  </p>
+                  </span>
                 </div>
               ))}
             </div>
           </article>
 
-          <article className="grid content-start gap-6 border-4 border-faxx-dark bg-white p-6 dark:border-gray-700 dark:bg-zinc-900 md:p-8">
-            <div className="grid gap-3">
-              <RevealText as="h3" className="font-display text-3xl uppercase tracking-tighter">
-                Credentials
+          {/* Credentials & Languages */}
+          <article className="grid content-start gap-6 border border-black/15 bg-white p-6 dark:border-white/15 dark:bg-[#1a1a1a] md:p-8">
+            <div className="border-b border-black/10 pb-4 dark:border-white/10">
+              <RevealText as="h3" className="font-display text-2xl md:text-3xl uppercase tracking-tight">
+                Credentials & Languages
               </RevealText>
-              <ul className="grid gap-3 font-body text-base md:text-lg leading-relaxed dark:text-gray-300">
+            </div>
+
+            <div className="space-y-6">
+              <ul className="grid gap-2.5 font-body text-sm leading-relaxed text-[#111111]/80 dark:text-zinc-300">
                 {certifications.map((item) => (
                   <li key={item} className="flex gap-3 items-start">
-                    <span className="mt-2 h-2.5 w-2.5 shrink-0 bg-faxx-coral dark:bg-faxx-lime border border-faxx-dark dark:border-gray-700"></span>
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 bg-black dark:bg-white" />
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
-            </div>
 
-            <div className="grid gap-3 border-t-2 border-faxx-dark/10 dark:border-gray-700 pt-6">
-              <RevealText as="h4" className="font-display text-2xl uppercase tracking-tighter">
-                Language
-              </RevealText>
-              {languages.map((item) => (
-                <p key={item} className="font-body text-lg leading-relaxed dark:text-gray-300">
-                  {item}
-                </p>
-              ))}
-            </div>
-
-            <div className="grid gap-3 border-t-2 border-faxx-dark/10 dark:border-gray-700 pt-6">
-              <RevealText as="h4" className="font-display text-2xl uppercase tracking-tighter">
-                Reach Me
-              </RevealText>
-              <a
-                href={contact.linkedin}
-                target="_blank"
-                rel="noreferrer"
-                className="font-mono text-xs uppercase tracking-[0.18em] text-faxx-coral dark:text-faxx-lime font-bold break-all hover:text-faxx-dark dark:hover:text-faxx-lime transition-colors"
-              >
-                {contact.linkedin}
-              </a>
-              <a
-                href={`mailto:${contact.email}`}
-                className="font-body text-lg leading-relaxed dark:text-gray-300 hover:text-faxx-coral dark:hover:text-faxx-lime transition-colors break-all"
-              >
-                {contact.email}
-              </a>
+              <div className="border-t border-black/10 pt-4 dark:border-white/10">
+                <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
+                  SPOKEN & PROFESSIONAL LANGUAGES
+                </span>
+                <div className="flex flex-wrap gap-2 mt-2">
+                  {languages.map((item) => (
+                    <span
+                      key={item}
+                      className="border border-black/10 bg-black/[0.03] px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-wider text-black dark:border-white/15 dark:bg-white/[0.05] dark:text-white"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
           </article>
         </section>
       </div>
-     </main>
+    </main>
   );
 }

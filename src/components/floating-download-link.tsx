@@ -3,8 +3,8 @@
 import { cn } from "@/lib/utils";
 import { useEffect, useRef, useState } from "react";
 
-const linkClassName =
-  "group inline-flex whitespace-nowrap border-2 border-faxx-dark bg-faxx-dark px-4 py-3 font-mono font-bold uppercase tracking-wider text-white transition-colors duration-200 hover:bg-white hover:text-faxx-dark dark:border-gray-700 dark:bg-white dark:text-faxx-dark dark:hover:bg-black dark:hover:text-white";
+const baseButtonClasses =
+  "group inline-flex items-center gap-2 whitespace-nowrap border border-black/20 bg-black px-4 py-2.5 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-white transition-all duration-300 hover:bg-zinc-800 dark:border-white/20 dark:bg-white/10 dark:text-white dark:hover:bg-white/15";
 
 export default function FloatingDownloadLink({
   href,
@@ -43,19 +43,30 @@ export default function FloatingDownloadLink({
   }, []);
 
   return (
-    <div ref={anchorRef} className="h-px w-px">
-      {isFloating ? (
+    <>
+      <div ref={anchorRef} className="inline-block">
         <a
           href={href}
           download={downloadName}
-          className={cn(linkClassName, "fixed bottom-4 left-4 z-40 md:bottom-8 md:left-8")}
+          className={baseButtonClasses}
         >
-          <span className="flex items-center gap-2 whitespace-nowrap transition-colors duration-200 group-hover:text-faxx-dark dark:group-hover:text-white">
-            <span>{label}</span>
-            <i className="ri-download-line"></i>
-          </span>
+          <span>{label}</span>
+          <i className="ri-download-line text-sm transition-transform duration-200 group-hover:translate-y-0.5" />
         </a>
-      ) : null}
-    </div>
+      </div>
+
+      {isFloating && (
+        <a
+          href={href}
+          download={downloadName}
+          className={cn(
+            "group fixed bottom-6 left-6 z-40 inline-flex items-center gap-2 whitespace-nowrap border border-black/20 bg-black/90 px-4 py-2.5 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-white backdrop-blur-md transition-all duration-300 hover:bg-black dark:border-white/20 dark:bg-[#1a1a1a]/95 dark:text-white dark:hover:bg-[#222222] md:bottom-8 md:left-8"
+          )}
+        >
+          <span>{label}</span>
+          <i className="ri-download-line text-sm transition-transform duration-200 group-hover:translate-y-0.5" />
+        </a>
+      )}
+    </>
   );
 }

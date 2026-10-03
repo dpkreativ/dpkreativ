@@ -23,7 +23,7 @@ export function ProjectCard({ title, tags, image, link, brand }: ProjectProps) {
   return (
     <Link
       href={link}
-      className="group flex w-full flex-col overflow-hidden border border-black/10 bg-white/80 transition-all duration-300 hover:-translate-y-1 hover:border-[#ff5a58]/40 dark:border-white/10 dark:bg-white/[0.04] dark:hover:border-faxx-lime/40 dark:hover:bg-white/[0.06]"
+      className="group flex w-full flex-col overflow-hidden border border-black/10 bg-white/80 transition-all duration-300 hover:-translate-y-1 hover:border-black/40 dark:border-white/10 dark:bg-white/[0.04] dark:hover:border-white/40 dark:hover:bg-white/[0.06]"
     >
       <div className="relative block aspect-[4/3] overflow-hidden border-b border-black/10 dark:border-white/10">
         <Image
@@ -49,7 +49,7 @@ export function ProjectCard({ title, tags, image, link, brand }: ProjectProps) {
               {title}
             </RevealText>
           </div>
-          <span className="translate-x-[-10px] opacity-0 text-[#ff5a58] transition-all duration-300 ease-out group-hover:translate-x-0 group-hover:opacity-100 dark:text-faxx-lime">
+          <span className="translate-x-[-10px] opacity-0 text-black transition-all duration-300 ease-out group-hover:translate-x-0 group-hover:opacity-100 dark:text-white">
             <ArrowIcon />
           </span>
         </div>

@@ -1,12 +1,18 @@
+"use client";
+
 import { contact, logo, navlinks, socials } from "@/assets/data";
+import { ArrowIcon } from "@/assets/icons";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Button from "./button";
 import RevealText from "./reveal-text";
 import SplitHeading from "./split-heading";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const pathname = usePathname();
+  const isContactPage = pathname === "/contact";
 
   const github = socials.find((social) => social.type === "github");
   const linkedin = socials.find((social) => social.type === "linkedin");
@@ -19,9 +25,9 @@ export default function Footer() {
         .map((link) => ({ ...link, external: false })),
     },
     {
-        title: "Connect",
-        links: [
-          ...navlinks
+      title: "Connect",
+      links: [
+        ...navlinks
           .filter((l) => ["Blog"].includes(l.title))
           .map((link) => ({ ...link, external: false })),
         ...(github
@@ -51,33 +57,36 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-white dark:bg-black text-faxx-dark dark:text-white w-full">
-      <div className="max-w-7xl mx-auto px-8 md:px-12">
-        <div className="py-12 md:py-16 border-b border-gray-200 dark:border-gray-800">
-          <div className="max-w-4xl mx-auto grid gap-8 text-center justify-items-center">
-            <div>
-              <SplitHeading
-                as="h2"
-                className="font-display uppercase text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] text-center"
-              >
-                LET&apos;S BUILD SOMETHING ICONIC.
-              </SplitHeading>
-              <RevealText noSplit className="mt-4 text-gray-600 dark:text-gray-400 font-body text-lg md:text-xl max-w-2xl mx-auto text-center">
-                Have a project in mind? I&apos;m always open to discussing new opportunities and collaborations.
-              </RevealText>
+    <footer className="bg-white dark:bg-[#111111] text-[#111111] dark:text-white w-full border-t border-black/10 dark:border-white/10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        {/* Conditional Closing CTA Banner (suppressed on /contact) */}
+        {!isContactPage && (
+          <div className="py-14 md:py-20 border-b border-black/10 dark:border-white/10">
+            <div className="max-w-4xl mx-auto grid gap-6 text-center justify-items-center">
+              <div>
+                <SplitHeading
+                  as="h2"
+                  className="font-display uppercase text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.9] text-center"
+                >
+                  LET&apos;S BUILD SOMETHING ICONIC.
+                </SplitHeading>
+                <RevealText noSplit className="mt-4 text-zinc-600 dark:text-zinc-400 font-body text-base md:text-lg max-w-xl mx-auto text-center leading-relaxed">
+                  Have a project in mind, an architectural challenge, or need a technical delivery partner?
+                </RevealText>
+              </div>
+              <Link href="/contact" className="w-max mt-2">
+                <Button className="!px-7 !py-3.5 !text-xs font-mono font-bold tracking-widest uppercase">
+                  <span>GET IN TOUCH</span>
+                  <ArrowIcon />
+                </Button>
+              </Link>
             </div>
-            <Link href="/contact" className="w-max">
-              <Button className="!px-8 !py-4 text-lg">
-                <i className="ri-rocket-fill text-xl"></i>
-                <span>GET STARTED</span>
-              </Button>
-            </Link>
           </div>
-        </div>
+        )}
 
-        <div className="py-12 md:py-16 grid gap-12 grid-cols-2 md:grid-cols-2 xl:grid-cols-4 md:gap-10 xl:gap-12 text-center md:text-left justify-items-center md:justify-items-start items-start">
-          <div className="col-span-2 md:col-span-1 flex justify-center md:justify-start">
-            <Link href="/" className="flex w-max items-center gap-3 bg-transparent px-4 py-2 text-faxx-dark transition-colors hover:bg-black/[0.03] dark:bg-black dark:text-white dark:hover:bg-white/[0.06]">
+        <div className="py-12 md:py-16 grid gap-10 grid-cols-2 md:grid-cols-2 xl:grid-cols-4 md:gap-10 xl:gap-12 text-left items-start">
+          <div className="col-span-2 md:col-span-1 flex flex-col gap-4">
+            <Link href="/" className="flex w-max items-center gap-3">
               <Image
                 src={logo}
                 alt="Divine Orji logo"
@@ -85,28 +94,21 @@ export default function Footer() {
                 height={24}
                 className="dark:invert"
               />
-              <RevealText
-                as="span"
-                className="pr-2 font-mono text-[10px] sm:text-xs font-bold uppercase tracking-widest text-faxx-dark dark:text-white"
-                triggerStart="top 94%"
-                lineDelay={0.1}
-              >
-                Divi
-              </RevealText>
+              <span className="font-mono text-xs font-bold uppercase tracking-widest text-black dark:text-white">
+                Divine Orji
+              </span>
             </Link>
+            <p className="font-body text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed max-w-xs">
+              Full-stack engineer crafting high-performance digital products, developer tools, and scalable web architectures.
+            </p>
           </div>
 
           {navSections.map((section) => (
-            <div key={section.title} className="w-full flex flex-col items-center md:items-start text-center md:text-left">
-              <RevealText
-                as="h3"
-                className="font-mono font-bold uppercase tracking-widest text-sm text-zinc-600 dark:text-faxx-lime mb-6 w-full text-center md:text-left"
-                triggerStart="top 94%"
-                lineDelay={0.1}
-              >
+            <div key={section.title} className="w-full flex flex-col text-left">
+              <span className="font-mono font-bold uppercase tracking-widest text-[10px] text-zinc-500 dark:text-zinc-400 mb-5">
                 {section.title}
-              </RevealText>
-              <ul className="space-y-4">
+              </span>
+              <ul className="space-y-3 font-mono text-xs uppercase">
                 {section.links.map((link) => (
                   <li key={link.id}>
                     {link.external ? (
@@ -114,18 +116,18 @@ export default function Footer() {
                         href={link.url}
                         target="_blank"
                         rel="noreferrer"
-                        className="flex items-center justify-center md:justify-start gap-3 text-faxx-dark dark:text-gray-300 hover:text-faxx-coral dark:hover:text-faxx-lime transition-colors group"
+                        className="flex items-center gap-2 text-black/80 dark:text-zinc-300 hover:text-black dark:hover:text-white transition-colors group"
                       >
-                        <i className={`${link.icon} text-lg group-hover:text-faxx-coral dark:group-hover:text-faxx-lime transition-colors`}></i>
-                        <span className="font-body">{link.title}</span>
+                        <i className={`${link.icon} text-sm group-hover:text-black dark:group-hover:text-white transition-colors`} />
+                        <span>{link.title}</span>
                       </a>
                     ) : (
                       <Link
                         href={link.url}
-                        className="flex items-center justify-center md:justify-start gap-3 text-faxx-dark dark:text-gray-300 hover:text-faxx-coral dark:hover:text-faxx-lime transition-colors group"
+                        className="flex items-center gap-2 text-black/80 dark:text-zinc-300 hover:text-black dark:hover:text-white transition-colors group"
                       >
-                        <i className={`${link.icon} text-lg group-hover:text-faxx-coral dark:group-hover:text-faxx-lime transition-colors`}></i>
-                        <span className="font-body">{link.title}</span>
+                        <i className={`${link.icon} text-sm group-hover:text-black dark:group-hover:text-white transition-colors`} />
+                        <span>{link.title}</span>
                       </Link>
                     )}
                   </li>
@@ -134,45 +136,35 @@ export default function Footer() {
             </div>
           ))}
 
-          <div className="col-span-2 md:col-span-1 w-full flex flex-col items-center md:items-start text-center md:text-left">
-            <RevealText
-              as="h3"
-              className="font-mono font-bold uppercase tracking-widest text-sm text-zinc-600 dark:text-faxx-lime mb-6 w-full text-center md:text-left"
-              triggerStart="top 94%"
-              lineDelay={0.1}
-            >
-              Contact
-            </RevealText>
-            <ul className="space-y-4">
+          <div className="col-span-2 md:col-span-1 w-full flex flex-col text-left">
+            <span className="font-mono font-bold uppercase tracking-widest text-[10px] text-zinc-500 dark:text-zinc-400 mb-5">
+              Direct Contact
+            </span>
+            <ul className="space-y-3 font-mono text-xs">
               <li>
                 <a
                   href={`mailto:${contact.email}`}
-                  className="flex items-start justify-center md:justify-start gap-3 text-faxx-dark dark:text-gray-300 hover:text-faxx-coral dark:hover:text-faxx-lime transition-colors group"
+                  className="flex items-center gap-2 text-black/80 dark:text-zinc-300 hover:text-black dark:hover:text-white transition-colors"
                 >
-                  <i className="ri-mail-send-line text-lg mt-0.5 group-hover:text-faxx-coral dark:group-hover:text-faxx-lime transition-colors"></i>
-                  <span className="font-body break-all">{contact.email}</span>
+                  <i className="ri-mail-send-line text-sm" />
+                  <span className="break-all">{contact.email}</span>
                 </a>
               </li>
               <li>
                 <a
                   href={`tel:${contact.phone}`}
-                  className="flex items-start justify-center md:justify-start gap-3 text-faxx-dark dark:text-gray-300 hover:text-faxx-coral dark:hover:text-faxx-lime transition-colors group"
+                  className="flex items-center gap-2 text-black/80 dark:text-zinc-300 hover:text-black dark:hover:text-white transition-colors"
                 >
-                  <i className="ri-phone-line text-lg mt-0.5 group-hover:text-faxx-coral dark:group-hover:text-faxx-lime transition-colors"></i>
-                  <span className="font-body">{contact.phone}</span>
+                  <i className="ri-phone-line text-sm" />
+                  <span>{contact.phone}</span>
                 </a>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="py-6 border-t border-gray-200 dark:border-gray-800 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-center md:text-left">
-          <p className="text-gray-600 dark:text-gray-500 text-sm font-body">
-            © {currentYear} Divine Orji. All rights reserved.
-          </p>
-          <p className="text-gray-600 dark:text-gray-500 text-sm font-body md:text-right">
-            Built with AI and Next.js
-          </p>
+        <div className="py-6 border-t border-black/10 dark:border-white/10 flex items-center justify-center text-center text-xs font-mono text-zinc-500 dark:text-zinc-400">
+          <p>© {currentYear} Divine Orji. All rights reserved.</p>
         </div>
       </div>
     </footer>

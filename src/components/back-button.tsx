@@ -2,7 +2,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 const buttonClassName =
-  "inline-flex h-11 items-center justify-center gap-2 whitespace-nowrap border-2 border-faxx-dark bg-faxx-light px-4 font-mono text-xs font-bold uppercase tracking-widest text-black transition-all duration-200 hover:bg-faxx-dark hover:text-white dark:border-gray-700 dark:bg-zinc-900 dark:text-gray-400 dark:hover:bg-zinc-800 dark:hover:text-white";
+  "inline-flex h-10 items-center justify-center gap-2 whitespace-nowrap border border-black/15 bg-white px-4 font-mono text-xs font-bold uppercase tracking-wider text-black transition-all duration-200 hover:bg-black hover:text-white dark:border-white/15 dark:bg-[#1a1a1a] dark:text-zinc-300 dark:hover:bg-white/10 dark:hover:text-white";
 
 function BackIcon() {
   return (

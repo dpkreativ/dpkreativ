@@ -30,7 +30,7 @@ export default function WorkAccordion({ projects }: { projects: Project[] }) {
             className={`group relative cursor-pointer overflow-hidden border border-black/10 bg-white/75 transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] dark:border-white/10 dark:bg-[#111111]
               ${isActive
                 ? "flex-[6] md:flex-[5]"
-                : "flex-1 saturate-50 hover:saturate-100 md:hover:flex-[1.15]"
+                : "flex-1 md:hover:flex-[1.15]"
               }
             `}
           >
@@ -41,16 +41,6 @@ export default function WorkAccordion({ projects }: { projects: Project[] }) {
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 50vw"
             />
-            <div
-              className={`absolute inset-0 bg-gradient-to-t from-black via-black/45 to-black/10 transition-opacity duration-500 ${
-                isActive ? "opacity-100" : "opacity-70 group-hover:opacity-85"
-              }`}
-            ></div>
-            <div
-              className={`absolute inset-0 bg-gradient-to-r from-black/78 via-black/38 to-transparent transition-opacity duration-500 ${
-                isActive ? "opacity-100" : "opacity-85 group-hover:opacity-100"
-              }`}
-            ></div>
 
             <div
               className={`absolute left-6 top-6 flex flex-wrap gap-2 transition-all duration-500 ${
@@ -86,7 +76,7 @@ export default function WorkAccordion({ projects }: { projects: Project[] }) {
                 </div>
                 <Link
                   href={`/work/${project.slug}`}
-                  className="inline-flex items-center gap-3 border border-black/10 bg-faxx-coral px-5 py-3 font-mono text-[11px] font-bold uppercase tracking-[0.26em] text-white transition-all duration-300 hover:border-[#ff5a58]/60 hover:bg-white hover:text-[#111111] dark:border-faxx-lime dark:bg-faxx-lime dark:text-faxx-dark dark:hover:border-faxx-lime dark:hover:bg-black dark:hover:text-white"
+                  className="inline-flex items-center gap-3 border border-black/10 bg-black px-5 py-3 font-mono text-[11px] font-bold uppercase tracking-[0.26em] text-white transition-all duration-300 hover:border-black hover:bg-zinc-800 dark:border-white dark:bg-white dark:text-black dark:hover:border-zinc-200 dark:hover:bg-zinc-200"
                 >
                   <span>View Case Study</span>
                   <ArrowIcon />

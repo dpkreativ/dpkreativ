@@ -10,6 +10,7 @@ import "./globals.css";
 import "remixicon/fonts/remixicon.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import SmoothScroll from "@/components/smooth-scroll";
 import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 import Script from "next/script";
@@ -144,11 +145,13 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-        <body className="flex min-h-screen flex-col overflow-x-hidden bg-white font-body text-faxx-dark antialiased transition-colors duration-300 selection:bg-[#ff5a58] selection:text-[#050505] dark:bg-[#050505] dark:text-white">
+        <body className="flex min-h-screen flex-col overflow-x-hidden bg-white font-body text-black antialiased transition-colors duration-300 selection:bg-zinc-800 selection:text-white dark:bg-[#111111] dark:text-white dark:selection:bg-zinc-200 dark:selection:text-black">
           <ThemeProvider>
-            <Header />
-            {children}
-            <Footer />
+            <SmoothScroll>
+              <Header />
+              {children}
+              <Footer />
+            </SmoothScroll>
           </ThemeProvider>
         </body>
     </html>
