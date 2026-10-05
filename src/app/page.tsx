@@ -79,12 +79,21 @@ export default function Home() {
             </p>
 
             <div className="hero-cta mt-8 flex flex-wrap items-center gap-4">
-              <Link href="/work" className="w-max">
+              <a
+                href="#featured-projects"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document
+                    .getElementById("featured-projects")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="w-max"
+              >
                 <Button className="!px-6 !py-3 !text-xs font-mono font-bold tracking-widest uppercase">
                   <span>MY WORK</span>
                   <ArrowIcon />
                 </Button>
-              </Link>
+              </a>
               <Link href="/contact" className="w-max">
                 <Button className="!bg-white !text-black dark:!bg-black dark:!text-white !border-black dark:!border-white/20 hover:!bg-zinc-100 dark:hover:!bg-zinc-900 !px-6 !py-3 !text-xs font-mono font-bold tracking-widest uppercase">
                   <span>GET IN TOUCH</span>
@@ -112,6 +121,22 @@ export default function Home() {
                   priority
                   className="object-cover object-top"
                 />
+
+                {/* Bottom-up Gradient Overlay */}
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/85 via-black/35 to-transparent"
+                />
+
+                {/* Floating About Me CTA */}
+                <div className="absolute bottom-3 right-3 z-10 sm:bottom-4 sm:right-4">
+                  <Link href="/about" className="w-max">
+                    <Button className="!border-white/30 !bg-white !text-black hover:!bg-zinc-100 dark:!bg-zinc-200 dark:!text-zinc-950 dark:hover:!bg-white !px-5 !py-2.5 !text-xs font-mono font-bold tracking-widest uppercase shadow-lg">
+                      <span>ABOUT ME</span>
+                      <ArrowIcon />
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -124,7 +149,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="reveal-section">
+      <section id="featured-projects" className="reveal-section scroll-mt-24">
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
           <div className="mb-10 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
             <div>

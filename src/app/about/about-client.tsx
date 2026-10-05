@@ -15,10 +15,76 @@ import RevealText from "@/components/reveal-text";
 import SplitHeading from "@/components/split-heading";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
+import { useMemo, useRef } from "react";
 
 export default function About() {
   const container = useRef(null);
+
+  const groupedExperience = useMemo(() => {
+    const groups: Array<{
+      company: string;
+      period: string;
+      roles: Array<{
+        role: string;
+        period: string;
+        summary: string;
+        highlights: string[];
+      }>;
+    }> = [];
+
+    for (const item of experience) {
+      const existing = groups.find(
+        (g) => g.company.trim().toLowerCase() === item.company.trim().toLowerCase()
+      );
+
+      if (existing) {
+        existing.roles.push({
+          role: item.role,
+          period: item.period,
+          summary: item.summary,
+          highlights: item.highlights || [],
+        });
+
+        const allPeriods = existing.roles.map((r) => r.period);
+        const starts = allPeriods.map((p) => p.split(" - ")[0]?.trim());
+        const ends = allPeriods.map((p) => p.split(" - ")[1]?.trim());
+        const hasPresent = ends.some((e) => e?.toLowerCase() === "present");
+
+        const sortedStarts = [...starts].sort((a, b) => {
+          const yearA = parseInt(a.match(/\d{4}/)?.[0] || "9999", 10);
+          const yearB = parseInt(b.match(/\d{4}/)?.[0] || "9999", 10);
+          return yearA - yearB;
+        });
+
+        const earliestStart = sortedStarts[0] || starts[0];
+        if (hasPresent) {
+          existing.period = `${earliestStart} - Present`;
+        } else {
+          const sortedEnds = [...ends].sort((a, b) => {
+            const yearA = parseInt(a.match(/\d{4}/)?.[0] || "0", 10);
+            const yearB = parseInt(b.match(/\d{4}/)?.[0] || "0", 10);
+            return yearB - yearA;
+          });
+          existing.period = `${earliestStart} - ${sortedEnds[0]}`;
+        }
+      } else {
+        groups.push({
+          company: item.company,
+          period: item.period,
+          roles: [
+            {
+              role: item.role,
+              period: item.period,
+              summary: item.summary,
+              highlights: item.highlights || [],
+            },
+          ],
+        });
+      }
+    }
+
+    return groups;
+  }, []);
 
   useGSAP(
     () => {
@@ -128,9 +194,9 @@ export default function About() {
           </div>
 
           <div className="grid gap-6">
-            {experience.map((item, idx) => (
+            {groupedExperience.map((item, idx) => (
               <article
-                key={`${item.company}-${item.role}-${item.period}`}
+                key={item.company}
                 className="grid gap-6 border border-black/15 bg-white p-6 dark:border-white/15 dark:bg-[#1a1a1a] md:p-8 lg:grid-cols-12 lg:items-start"
               >
                 {/* Meta details */}
@@ -144,31 +210,64 @@ export default function About() {
                         {item.period}
                       </span>
                     </div>
+
                     <h3 className="mt-2 font-display text-2xl uppercase tracking-tight text-black dark:text-white">
-                      {item.role}
-                    </h3>
-                    <p className="mt-1 font-mono text-xs uppercase tracking-wider text-zinc-600 dark:text-zinc-400 font-bold">
                       {item.company}
-                    </p>
+                    </h3>
+
+                    {item.roles.length === 1 ? (
+                      <p className="mt-1 font-mono text-xs uppercase tracking-wider text-zinc-600 dark:text-zinc-400 font-bold">
+                        {item.roles[0].role}
+                      </p>
+                    ) : (
+                      <div className="mt-2 flex flex-col gap-1">
+                        {item.roles.map((r) => (
+                          <span
+                            key={r.role}
+                            className="font-mono text-xs uppercase tracking-wider text-zinc-600 dark:text-zinc-400 font-bold"
+                          >
+                            {"// "}{r.role}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
 
                 {/* Details */}
-                <div className="lg:col-span-8 space-y-4">
-                  <p className="font-body text-base leading-relaxed text-[#111111]/80 dark:text-zinc-300">
-                    {item.summary}
-                  </p>
+                <div className="lg:col-span-8 space-y-6">
+                  {item.roles.map((roleItem, rIdx) => (
+                    <div
+                      key={`${roleItem.role}-${roleItem.period}`}
+                      className={rIdx > 0 ? "border-t border-black/10 pt-6 dark:border-white/10" : "space-y-4"}
+                    >
+                      {item.roles.length > 1 && (
+                        <div className="mb-3 flex flex-wrap items-center justify-between gap-2 border-b border-black/5 pb-2 dark:border-white/5">
+                          <span className="font-mono text-xs font-bold uppercase tracking-wider text-black dark:text-white">
+                            {roleItem.role}
+                          </span>
+                          <span className="font-mono text-[10px] font-semibold uppercase tracking-wider text-zinc-600 dark:text-zinc-400">
+                            {roleItem.period}
+                          </span>
+                        </div>
+                      )}
 
-                  {item.highlights.length > 0 && (
-                    <ul className="grid gap-2.5 pt-2 font-body text-sm leading-relaxed text-[#111111]/70 dark:text-zinc-400">
-                      {item.highlights.map((highlight: string) => (
-                        <li key={highlight} className="flex gap-3 items-start">
-                          <span className="mt-1.5 h-1.5 w-1.5 shrink-0 bg-black dark:bg-white" />
-                          <span>{highlight}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
+                      <p className="font-body text-base leading-relaxed text-[#111111]/80 dark:text-zinc-300">
+                        {roleItem.summary}
+                      </p>
+
+                      {roleItem.highlights && roleItem.highlights.length > 0 && (
+                        <ul className="mt-3 grid gap-2.5 font-body text-sm leading-relaxed text-[#111111]/70 dark:text-zinc-400">
+                          {roleItem.highlights.map((highlight: string) => (
+                            <li key={highlight} className="flex gap-3 items-start">
+                              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 bg-black dark:bg-white" />
+                              <span>{highlight}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  ))}
                 </div>
               </article>
             ))}
