@@ -13,13 +13,9 @@ type Blog = {
 };
 
 export default function BlogCard({ blog }: { blog: Blog }) {
-  const isExternal = blog.url.startsWith("http://") || blog.url.startsWith("https://");
-
   return (
     <Link
       href={blog.url}
-      target={isExternal ? "_blank" : undefined}
-      rel={isExternal ? "noreferrer" : undefined}
       className="group relative flex h-full flex-col gap-5 border border-black/10 bg-white/80 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-black/40 dark:border-white/10 dark:bg-white/[0.04] dark:hover:border-white/40 dark:hover:bg-white/[0.06]"
     >
       <div className="flex justify-between items-start gap-4">
