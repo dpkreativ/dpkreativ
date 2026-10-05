@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import {
   Space_Mono,
   Outfit,
-  DM_Serif_Display,
+  Momo_Trust_Display,
   Give_You_Glory,
   Geist,
 } from "next/font/google";
@@ -35,12 +35,12 @@ const body = Outfit({
   variable: "--font-body",
   subsets: ["latin"],
 });
-const display = DM_Serif_Display({
+const display = Momo_Trust_Display({
   weight: "400",
-  style: ["normal", "italic"],
   variable: "--font-display",
   subsets: ["latin"],
   display: "swap",
+  adjustFontFallback: false,
 });
 const script = Give_You_Glory({
   weight: "400",
