@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import type { Project } from "@/assets/data";
 import { ArrowIcon } from "@/assets/icons";
+import MiniBrowserIframe from "@/components/mini-browser-iframe";
 
 interface HeroShowreelProps {
   projects: Project[];
@@ -54,7 +55,23 @@ export default function HeroShowreel({ projects }: HeroShowreelProps) {
       <span className="pointer-events-none absolute -bottom-2 -right-1.5 font-mono text-xs font-bold text-black/30 dark:text-white/30" aria-hidden="true">+</span>
 
       {/* Showreel Telemetry Bar & Header Nav Buttons */}
-      <div className="flex items-center justify-end border-b border-black/10 px-4 py-2 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-[#111111]/70 dark:border-white/10 dark:text-white/70">
+      <div className="flex items-center justify-between border-b border-black/10 px-4 py-2 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-[#111111]/70 dark:border-white/10 dark:text-white/70">
+        <div className="flex items-center gap-2">
+          {activeProject.url && activeProject.url !== "#" ? (
+            <div className="flex items-center gap-1.5 font-mono text-[9px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping !rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex h-2 w-2 !rounded-full bg-emerald-500" />
+              </span>
+              <span>LIVE SYSTEM</span>
+            </div>
+          ) : (
+            <span className="font-mono text-[9px] font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
+              [CAPTURE]
+            </span>
+          )}
+        </div>
+
         <div className="flex items-center gap-3">
           {isPaused && (
             <span className="font-mono text-[9px] uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
@@ -95,8 +112,7 @@ export default function HeroShowreel({ projects }: HeroShowreelProps) {
       </div>
 
       {/* Main Visual Display */}
-      <div className="relative aspect-[16/10] w-full overflow-hidden bg-zinc-100 dark:bg-zinc-900 sm:aspect-[16/9] lg:aspect-[16/8]">
-
+      <div className="relative aspect-[16/10] sm:aspect-[16/9] lg:aspect-[16/8] min-h-[380px] sm:min-h-[460px] lg:min-h-[520px] w-full overflow-hidden bg-zinc-100 dark:bg-zinc-900">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeProject.slug}
@@ -106,14 +122,26 @@ export default function HeroShowreel({ projects }: HeroShowreelProps) {
             transition={{ duration: 0.35, ease: "easeOut" }}
             className="absolute inset-0"
           >
-            <Image
-              src={activeProject.image}
-              alt={activeProject.title}
-              fill
-              priority
-              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
-              className="object-cover object-top transition-transform duration-700 hover:scale-105"
-            />
+            {activeProject.url && activeProject.url !== "#" ? (
+              <MiniBrowserIframe
+                url={activeProject.url}
+                title={activeProject.title}
+                fallbackImage={activeProject.image}
+                containerClassName="h-full w-full border-0"
+                showCrosshairs={false}
+                priority
+                onInteractionChange={(active) => setIsPaused(active)}
+              />
+            ) : (
+              <Image
+                src={activeProject.image}
+                alt={activeProject.title}
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+                className="object-cover object-top transition-transform duration-700 hover:scale-105"
+              />
+            )}
           </motion.div>
         </AnimatePresence>
       </div>

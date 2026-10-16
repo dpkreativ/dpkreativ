@@ -6,6 +6,7 @@ import FloatingBackLink from "@/components/floating-back-link";
 import MoreWorkRecommendations from "@/components/more-work-recommendations";
 import RevealText from "@/components/reveal-text";
 import SplitHeading from "@/components/split-heading";
+import MiniBrowserIframe from "@/components/mini-browser-iframe";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -241,16 +242,15 @@ export default async function Page({ params }: PageProps) {
           </div>
         </section>
 
-        {/* Project Visual Display */}
-        {hasProjectVisual && (
-          <section className="relative aspect-[16/10] w-full overflow-hidden border border-black/15 bg-black/[0.02] dark:border-white/15 dark:bg-black/40 sm:aspect-[16/9]">
-            <Image
-              src={project.image}
-              alt={project.title}
-              fill
+        {/* Project Visual Display / Mini Browser Iframe */}
+        {(hasProjectVisual || liveUrl) && (
+          <section className="w-full">
+            <MiniBrowserIframe
+              url={liveUrl}
+              title={project.title}
+              fallbackImage={hasProjectVisual ? project.image : undefined}
+              containerClassName="w-full aspect-[16/10] sm:aspect-[16/9] min-h-[460px] sm:min-h-[580px] lg:min-h-[680px]"
               priority
-              className="object-cover object-top transition-all duration-700 hover:scale-[1.02]"
-              sizes="100vw"
             />
           </section>
         )}
