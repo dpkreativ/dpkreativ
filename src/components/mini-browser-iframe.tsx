@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 
 export interface MiniBrowserIframeProps {
   url?: string;
@@ -54,16 +54,20 @@ export default function MiniBrowserIframe({
   const [reloadKey, setReloadKey] = useState<number>(0);
   const [hasError, setHasError] = useState<boolean>(false);
 
-  // Sync mode when targetUrl or initialMode changes
-  useEffect(() => {
-    if (!hasLiveUrl) {
-      setMode("screenshot");
-    } else {
-      setMode(initialMode);
+  // Reset the preview when the target url or the requested mode changes.
+  // Adjusting during render rather than in an effect keeps React from doing
+  // an extra cascading render pass.
+  const [lastTargetUrl, setLastTargetUrl] = useState(targetUrl);
+  const [lastInitialMode, setLastInitialMode] = useState(initialMode);
+  if (targetUrl !== lastTargetUrl || initialMode !== lastInitialMode) {
+    setLastTargetUrl(targetUrl);
+    setLastInitialMode(initialMode);
+    setMode(hasLiveUrl ? initialMode : "screenshot");
+    if (hasLiveUrl) {
       setIsLoading(true);
       setHasError(false);
     }
-  }, [hasLiveUrl, initialMode, targetUrl]);
+  }
 
   const handleInteractionToggle = useCallback(
     (active: boolean) => {
