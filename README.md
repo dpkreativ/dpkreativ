@@ -5,7 +5,7 @@
 
 
 [![Email](https://img.shields.io/badge/Direct_Email-dpkreativ@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:dpkreativ@gmail.com)
-[![CV](https://img.shields.io/badge/Download_CV-PDF-333333?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://dpkreativ.vercel.app/divine_orji_cv.pdf)
+[![CV](https://img.shields.io/badge/Download_CV-PDF-333333?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://dpkreativ.vercel.app/api/cv)
 
 ---
 
