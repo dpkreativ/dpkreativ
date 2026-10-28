@@ -7,12 +7,14 @@ import {
   experience,
   languages,
   portraits,
+  roleKicker,
   skills,
 } from "@/assets/data";
 import FloatingDownloadLink from "@/components/floating-download-link";
 import PortraitSlideshow from "@/components/portrait-slideshow";
 import RevealText from "@/components/reveal-text";
 import SplitHeading from "@/components/split-heading";
+import { groupExperience, type ExperienceItem } from "@/lib/experience";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useMemo, useRef } from "react";
@@ -20,71 +22,10 @@ import { useMemo, useRef } from "react";
 export default function About() {
   const container = useRef(null);
 
-  const groupedExperience = useMemo(() => {
-    const groups: Array<{
-      company: string;
-      period: string;
-      roles: Array<{
-        role: string;
-        period: string;
-        summary: string;
-        highlights: string[];
-      }>;
-    }> = [];
-
-    for (const item of experience) {
-      const existing = groups.find(
-        (g) => g.company.trim().toLowerCase() === item.company.trim().toLowerCase()
-      );
-
-      if (existing) {
-        existing.roles.push({
-          role: item.role,
-          period: item.period,
-          summary: item.summary,
-          highlights: item.highlights || [],
-        });
-
-        const allPeriods = existing.roles.map((r) => r.period);
-        const starts = allPeriods.map((p) => p.split(" - ")[0]?.trim());
-        const ends = allPeriods.map((p) => p.split(" - ")[1]?.trim());
-        const hasPresent = ends.some((e) => e?.toLowerCase() === "present");
-
-        const sortedStarts = [...starts].sort((a, b) => {
-          const yearA = parseInt(a.match(/\d{4}/)?.[0] || "9999", 10);
-          const yearB = parseInt(b.match(/\d{4}/)?.[0] || "9999", 10);
-          return yearA - yearB;
-        });
-
-        const earliestStart = sortedStarts[0] || starts[0];
-        if (hasPresent) {
-          existing.period = `${earliestStart} - Present`;
-        } else {
-          const sortedEnds = [...ends].sort((a, b) => {
-            const yearA = parseInt(a.match(/\d{4}/)?.[0] || "0", 10);
-            const yearB = parseInt(b.match(/\d{4}/)?.[0] || "0", 10);
-            return yearB - yearA;
-          });
-          existing.period = `${earliestStart} - ${sortedEnds[0]}`;
-        }
-      } else {
-        groups.push({
-          company: item.company,
-          period: item.period,
-          roles: [
-            {
-              role: item.role,
-              period: item.period,
-              summary: item.summary,
-              highlights: item.highlights || [],
-            },
-          ],
-        });
-      }
-    }
-
-    return groups;
-  }, []);
+  const groupedExperience = useMemo(
+    () => groupExperience(experience as ExperienceItem[]),
+    []
+  );
 
   useGSAP(
     () => {
@@ -123,12 +64,12 @@ export default function About() {
               as="p"
               className="about-kicker font-mono text-xs md:text-sm text-zinc-500 dark:text-zinc-400 font-bold uppercase tracking-widest"
             >
-              Software Engineer // Product Builder // Systems Writer
+              {roleKicker}
             </RevealText>
 
             <div className="pt-2">
               <FloatingDownloadLink
-                href="/divine_orji_cv.pdf"
+                href="/api/cv"
                 downloadName="divine-orji-cv.pdf"
                 label="Download CV PDF"
               />

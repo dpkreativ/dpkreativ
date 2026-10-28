@@ -541,6 +541,7 @@ const {
   navlinks,
   aboutMe,
   heroImgText,
+  roleKicker,
   socials,
   blogs,
 } = content;
@@ -568,6 +569,7 @@ export {
   navlinks,
   aboutMe,
   heroImgText,
+  roleKicker,
   socials,
   blogs,
 };
