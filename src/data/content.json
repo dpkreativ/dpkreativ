@@ -315,7 +315,6 @@
   "projects": [
     {
       "title": "Crunchies Online",
-      "image": "/images/project-demos/crunchies.png",
       "client": "Crunchies Fried Chicken",
       "description": [
         "Crunchies Fried Chicken hired me to redesign its online ordering site over seven months. The redesign focused on checkout, especially how customers choose delivery or pickup and find the right outlet."
@@ -329,7 +328,6 @@
     },
     {
       "title": "Bonjour Quick Bites",
-      "image": "/images/project-demos/placeholder.png",
       "client": "Bonjour Quick Bites",
       "description": [
         "An online storefront for ordering fresh bread, pastries, hot meals, and celebration cakes in Port Harcourt, with outlet pickup or doorstep delivery.",
@@ -345,7 +343,6 @@
     },
     {
       "title": "The Iroko Circle",
-      "image": "/images/project-demos/theirokocircle.png",
       "client": "The Iroko Circle",
       "description": [
         "The Iroko Circle brings readers and writers together around African literature. Its website publishes new writing and gives visitors ways to submit work, join a chapter, and sign up for the newsletter."
@@ -359,7 +356,6 @@
     },
     {
       "title": "Noma",
-      "image": "/images/project-demos/placeholder.png",
       "client": "Noma",
       "description": [
         "Noma helps nurses prepare for their exams with flashcards for reviewing key concepts and quizzes for testing what they know."
@@ -373,7 +369,6 @@
     },
     {
       "title": "Merphils",
-      "image": "/images/project-demos/merphils.png",
       "client": "Merphils",
       "description": [
         "Merphils is a school management platform in development. The goal is to give staff tools for daily operations and let families and students access academic records without juggling separate accounts."
@@ -387,7 +382,6 @@
     },
     {
       "title": "Grooovy",
-      "image": "/images/project-demos/grooovy.png",
       "client": "Grooovy",
       "description": [
         "Grooovy is an event platform in development for finding nights out you might otherwise hear about through friends or group chats. It brings public event listings, ticketing, and host tools together."
@@ -402,7 +396,6 @@
     },
     {
       "title": "Alchemy Of Code",
-      "image": "/images/project-demos/alchemyofcode.png",
       "client": "Alchemy Of Code",
       "description": [
         "Alchemy Of Code is a learning platform based on my curriculum. It helps learners master software engineering fundamentals and become well-rounded builders who can take an idea from concept to working software.",
@@ -456,7 +449,6 @@
       "category": "Engineering",
       "source": "Hashnode",
       "url": "#",
-      "image": "/images/project-demos/placeholder.png",
       "slug": "architecting-nextjs-apps"
     },
     {
@@ -466,7 +458,6 @@
       "category": "Community",
       "source": "Medium",
       "url": "#",
-      "image": "/images/project-demos/placeholder.png",
       "slug": "community-impact-engineering"
     },
     {
@@ -476,7 +467,6 @@
       "category": "Case Study",
       "source": "Dev.to",
       "url": "#",
-      "image": "/images/project-demos/placeholder.png",
       "slug": "optimizing-web-performance"
     }
   ]

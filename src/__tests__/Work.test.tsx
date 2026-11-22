@@ -93,6 +93,7 @@ describe("Work Page", () => {
 
     const previewFrame = container.querySelector(".group\\/minibrowser");
     expect(previewFrame).toHaveClass("aspect-[3/4]", "sm:aspect-[16/9]", "min-h-[460px]");
+    expect(screen.queryByRole("button", { name: /capture/i })).not.toBeInTheDocument();
   });
 
   it("adapts telemetry strip layout for 3-metric and 1-metric projects", async () => {

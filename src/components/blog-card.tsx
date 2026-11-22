@@ -8,7 +8,6 @@ type Blog = {
   date: string;
   source: string;
   url: string;
-  image: string;
   slug: string;
 };
 

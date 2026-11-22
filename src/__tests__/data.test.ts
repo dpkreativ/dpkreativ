@@ -38,7 +38,13 @@ describe('Content Data', () => {
 
     // brands
     content.brands.forEach(brand => checkImage(brand.image));
-    // projects
-    content.projects.forEach(project => checkImage(project.image));
+  });
+
+  it('does not include project demo capture images', () => {
+    const demosDir = path.join(process.cwd(), 'public', 'images', 'project-demos');
+    expect(fs.existsSync(demosDir)).toBe(false);
+    content.projects.forEach((project) => {
+      expect(project).not.toHaveProperty('image');
+    });
   });
 });

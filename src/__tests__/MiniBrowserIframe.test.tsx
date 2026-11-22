@@ -1,26 +1,16 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import MiniBrowserIframe from "@/components/mini-browser-iframe";
 
-// Mock Next.js Image
-jest.mock("next/image", () => ({
-  __esModule: true,
-  default: ({ fill, priority, ...props }: any) => (
-    <img {...props} alt={props.alt ?? ""} />
-  ),
-}));
-
 describe("MiniBrowserIframe", () => {
-  it("renders live iframe when url is provided", () => {
-    render(
-      <MiniBrowserIframe
-        url="https://merphils.com"
-        title="Merphils"
-        fallbackImage="/images/project-demos/merphils.png"
-      />
+  it("renders live iframe without capture controls when url is provided", () => {
+    const { container } = render(
+      <MiniBrowserIframe url="https://merphils.com" title="Merphils" />,
     );
 
     expect(screen.getByText("merphils.com")).toBeInTheDocument();
     expect(screen.getByTitle("Merphils Live Site Preview")).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /capture/i })).not.toBeInTheDocument();
+    expect(container.querySelector("img")).not.toBeInTheDocument();
     expect(screen.queryByText("LIVE EMBED")).not.toBeInTheDocument();
   });
 
@@ -31,38 +21,21 @@ describe("MiniBrowserIframe", () => {
     expect(screen.getByRole("link", { name: "Open live site" })).toHaveAttribute("href", "https://grooovy.fun");
   });
 
-  it("renders fallback image when in screenshot mode", () => {
-    render(
-      <MiniBrowserIframe
-        url="https://merphils.com"
-        title="Merphils"
-        fallbackImage="/images/project-demos/merphils.png"
-      />
-    );
-
-    const captureButton = screen.getByRole("button", { name: /capture/i });
-    fireEvent.click(captureButton);
-
-    expect(screen.getByRole("img", { name: "Merphils" })).toBeInTheDocument();
-  });
-
-  it("shows the capture until the deferred live iframe finishes loading", () => {
+  it("waits to mount the live iframe while deferred and shows loading state until loaded", () => {
     const props = {
       url: "https://merphils.com",
       title: "Merphils",
-      fallbackImage: "/images/project-demos/merphils.png",
     };
     const { rerender, container } = render(
       <MiniBrowserIframe {...props} liveLoading="deferred" />,
     );
     expect(screen.queryByTitle("Merphils Live Site Preview")).not.toBeInTheDocument();
-    expect(container.querySelector("img")).toBeInTheDocument();
+    expect(container.querySelector("img")).not.toBeInTheDocument();
 
     rerender(<MiniBrowserIframe {...props} liveLoading="eager" />);
     const iframe = screen.getByTitle("Merphils Live Site Preview");
     expect(iframe).toHaveAttribute("loading", "eager");
     expect(screen.getByRole("status")).toBeInTheDocument();
-    expect(container.querySelector("img")).toBeInTheDocument();
 
     fireEvent.load(iframe);
     expect(screen.queryByRole("status")).not.toBeInTheDocument();
@@ -75,9 +48,8 @@ describe("MiniBrowserIframe", () => {
       <MiniBrowserIframe
         url="https://merphils.com"
         title="Merphils"
-        fallbackImage="/images/project-demos/merphils.png"
         onInteractionChange={handleInteractionChange}
-      />
+      />,
     );
 
     fireEvent.load(screen.getByTitle("Merphils Live Site Preview"));

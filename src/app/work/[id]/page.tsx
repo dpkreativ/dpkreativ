@@ -11,8 +11,6 @@ import React from "react";
 import { SITE_OG_IMAGE, SITE_URL } from "@/lib/site";
 import SparkleBackground from "@/components/sparkle-background";
 
-const PLACEHOLDER_IMAGE = "/images/project-demos/placeholder.png";
-
 type PageProps = {
   params: Promise<{ id: string }>;
 };
@@ -45,8 +43,6 @@ export async function generateMetadata({
 
   if (!project) return {};
 
-  const image = project.image === PLACEHOLDER_IMAGE ? SITE_OG_IMAGE : project.image;
-
   return {
     title: project.title,
     description: project.caseStudy.headline,
@@ -57,13 +53,13 @@ export async function generateMetadata({
       url: `${SITE_URL}/work/${project.slug}`,
       title: `${project.title} | Divine Orji`,
       description: project.caseStudy.headline,
-      images: [image],
+      images: [SITE_OG_IMAGE],
     },
     twitter: {
       card: "summary_large_image",
       title: `${project.title} | Divine Orji`,
       description: project.caseStudy.headline,
-      images: [image],
+      images: [SITE_OG_IMAGE],
     },
   };
 }
@@ -79,7 +75,6 @@ export default async function Page({ params }: PageProps) {
   const liveUrl = normalizeUrl(project.url);
   const githubUrl = normalizeUrl(project.github);
   const relatedProjects = projects.filter((entry) => entry.slug !== project.slug);
-  const hasProjectVisual = project.image !== PLACEHOLDER_IMAGE;
 
   // Next / Previous navigation calculation
   const currentIndex = projects.findIndex((p) => p.slug === project.slug);
@@ -277,15 +272,13 @@ export default async function Page({ params }: PageProps) {
         </section>
 
         {/* Project Visual Display / Mini Browser Iframe */}
-        {(hasProjectVisual || liveUrl) && (
+        {liveUrl && (
           <section className="w-full min-w-0">
             <MiniBrowserIframe
               url={liveUrl}
               title={project.title}
               embeddable={project.embeddable}
-              fallbackImage={hasProjectVisual ? project.image : undefined}
               containerClassName={previewContainerClassName}
-              priority
             />
           </section>
         )}

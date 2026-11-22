@@ -1,20 +1,16 @@
 "use client";
 
-import Image from "next/image";
 import { useCallback, useMemo, useState } from "react";
 
 export interface MiniBrowserIframeProps {
   url?: string;
   title: string;
-  fallbackImage?: string;
   embeddable?: boolean;
   className?: string;
   containerClassName?: string;
-  initialMode?: "live" | "screenshot";
   liveLoading?: "lazy" | "eager" | "deferred";
   onLiveReadyChange?: (isReady: boolean) => void;
   onInteractionChange?: (isInteracting: boolean) => void;
-  priority?: boolean;
   showCrosshairs?: boolean;
 }
 
@@ -37,15 +33,12 @@ function extractDomain(url?: string): string {
 export default function MiniBrowserIframe({
   url,
   title,
-  fallbackImage,
   embeddable = true,
   className = "",
   containerClassName = "",
-  initialMode = "live",
   liveLoading = "lazy",
   onLiveReadyChange,
   onInteractionChange,
-  priority = false,
   showCrosshairs = true,
 }: MiniBrowserIframeProps) {
   const targetUrl = useMemo(() => normalizeUrl(url), [url]);
@@ -53,24 +46,18 @@ export default function MiniBrowserIframe({
   const canEmbed = hasLiveUrl && embeddable;
   const cleanDomain = useMemo(() => extractDomain(targetUrl), [targetUrl]);
 
-  const [mode, setMode] = useState<"live" | "screenshot">(() =>
-    hasLiveUrl ? initialMode : "screenshot",
-  );
-  const [isLoading, setIsLoading] = useState<boolean>(Boolean(hasLiveUrl));
+  const [isLoading, setIsLoading] = useState<boolean>(Boolean(canEmbed));
   const [isInteracting, setIsInteracting] = useState<boolean>(false);
   const [reloadKey, setReloadKey] = useState<number>(0);
   const [hasError, setHasError] = useState<boolean>(false);
 
-  // Reset the preview when the target url or the requested mode changes.
+  // Reset the preview when the target url changes.
   // Adjusting during render rather than in an effect keeps React from doing
   // an extra cascading render pass.
   const [lastTargetUrl, setLastTargetUrl] = useState(targetUrl);
-  const [lastInitialMode, setLastInitialMode] = useState(initialMode);
-  if (targetUrl !== lastTargetUrl || initialMode !== lastInitialMode) {
+  if (targetUrl !== lastTargetUrl) {
     setLastTargetUrl(targetUrl);
-    setLastInitialMode(initialMode);
-    setMode(hasLiveUrl ? initialMode : "screenshot");
-    if (hasLiveUrl) {
+    if (canEmbed) {
       setIsLoading(true);
       setHasError(false);
     }
@@ -91,35 +78,11 @@ export default function MiniBrowserIframe({
     onLiveReadyChange?.(false);
   }, [onLiveReadyChange]);
 
-  const handleSwitchMode = (newMode: "live" | "screenshot") => {
-    if (newMode === "screenshot" && isInteracting) {
-      handleInteractionToggle(false);
-    }
-    if (newMode === "screenshot" && mode === "live") {
-      onLiveReadyChange?.(false);
-    }
-    if (newMode === "live" && mode !== "live") {
-      setIsLoading(true);
-      setHasError(false);
-    }
-    setMode(newMode);
-  };
-
   const isWaitingForLive = isLoading || liveLoading === "deferred";
-  const capture = fallbackImage && (
-    <Image
-      src={fallbackImage}
-      alt={mode === "live" ? "" : title}
-      fill
-      priority={priority}
-      sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
-      className="object-cover object-top transition-transform duration-700 hover:scale-[1.02]"
-    />
-  );
 
   return (
     <div
-      className={`group/minibrowser relative flex min-w-0 max-w-full flex-col border border-black/15 bg-white text-[#111111] dark:border-white/15 dark:bg-[#0c0c0c] dark:text-white ${containerClassName}`}
+      className={`group/minibrowser relative flex flex-col border border-black/15 bg-white text-[#111111] dark:border-white/15 dark:bg-[#0c0c0c] dark:text-white ${containerClassName}`}
       onMouseLeave={() => {
         if (isInteracting) {
           handleInteractionToggle(false);
@@ -160,53 +123,25 @@ export default function MiniBrowserIframe({
       <div className="flex shrink-0 flex-wrap items-center justify-between gap-2 border-b border-black/10 bg-black/[0.02] px-3 py-2 font-mono dark:border-white/10 dark:bg-white/[0.02] sm:px-4 sm:py-2.5">
         {/* Left: Address Bar */}
         {hasLiveUrl ? (
-          <div className="flex min-w-0 flex-1 max-w-[220px] items-center gap-1.5 border border-black/10 bg-white px-2 py-0.5 text-[10px] text-zinc-700 dark:border-white/10 dark:bg-[#141414] dark:text-zinc-300 sm:max-w-[320px]">
+          <div className="flex min-w-0 max-w-[190px] items-center gap-1.5 border border-black/10 bg-white px-2 py-0.5 text-[10px] text-zinc-700 dark:border-white/10 dark:bg-[#141414] dark:text-zinc-300 xs:max-w-[240px] sm:max-w-[320px]">
             <i className="ri-lock-2-line shrink-0 text-[11px] text-emerald-600 dark:text-emerald-400" />
             <span className="truncate font-mono">{cleanDomain}</span>
           </div>
         ) : (
-          <div className="flex min-w-0 flex-1 max-w-[220px] items-center gap-1.5 text-[10px] text-zinc-500 dark:text-zinc-400 sm:max-w-[320px]">
+          <div className="flex min-w-0 max-w-[200px] items-center gap-1.5 text-[10px] text-zinc-500 dark:text-zinc-400 truncate">
             <span className="truncate font-mono">{title}</span>
           </div>
         )}
 
-        {/* Right: Controls (Mode Switch, Reload, External Link) */}
-        <div className="ml-auto flex shrink-0 items-center gap-1.5 sm:gap-2">
-          {(!canEmbed || mode !== "live") && (
+        {/* Right: Controls (Reload, External Link) */}
+        <div className="ml-auto flex items-center gap-1.5 sm:gap-2">
+          {hasLiveUrl && !canEmbed && (
             <span className="font-mono text-[9px] font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
-              {hasLiveUrl && !canEmbed ? "EXTERNAL SITE" : "[CAPTURE]"}
+              EXTERNAL SITE
             </span>
           )}
-          {canEmbed && fallbackImage && (
-            <div className="flex items-center border border-black/15 bg-black/[0.04] p-0.5 dark:border-white/15 dark:bg-white/[0.05]">
-              <button
-                type="button"
-                onClick={() => handleSwitchMode("live")}
-                className={`px-2 py-0.5 font-mono text-[9px] font-bold uppercase tracking-wider transition-colors sm:text-[10px] ${
-                  mode === "live"
-                    ? "bg-black text-white dark:bg-white dark:text-black"
-                    : "text-zinc-600 hover:text-black dark:text-zinc-400 dark:hover:text-white"
-                }`}
-                title="View live interactive website"
-              >
-                Live
-              </button>
-              <button
-                type="button"
-                onClick={() => handleSwitchMode("screenshot")}
-                className={`px-2 py-0.5 font-mono text-[9px] font-bold uppercase tracking-wider transition-colors sm:text-[10px] ${
-                  mode === "screenshot"
-                    ? "bg-black text-white dark:bg-white dark:text-black"
-                    : "text-zinc-600 hover:text-black dark:text-zinc-400 dark:hover:text-white"
-                }`}
-                title="View high-resolution capture"
-              >
-                Capture
-              </button>
-            </div>
-          )}
 
-          {canEmbed && mode === "live" && (
+          {canEmbed && (
             <button
               type="button"
               onClick={handleReload}
@@ -251,10 +186,9 @@ export default function MiniBrowserIframe({
               Open live site <span aria-hidden="true">↗</span>
             </a>
           </div>
-        ) : canEmbed && mode === "live" ? (
+        ) : canEmbed ? (
           <>
             {/* Loading Indicator */}
-            {isWaitingForLive && capture}
             {isLoading && liveLoading !== "deferred" && (
               <div className="pointer-events-none absolute inset-0 z-10 flex items-end justify-center p-4">
                 <p role="status" className="flex items-center gap-2 border border-black/15 bg-white px-3 py-1.5 font-mono text-[10px] uppercase tracking-widest text-zinc-600 dark:border-white/15 dark:bg-black dark:text-zinc-400">
@@ -278,15 +212,6 @@ export default function MiniBrowserIframe({
                   >
                     Retry
                   </button>
-                  {fallbackImage && (
-                    <button
-                      type="button"
-                      onClick={() => handleSwitchMode("screenshot")}
-                      className="border border-black/20 bg-white px-3 py-1 font-mono text-[10px] uppercase text-black dark:border-white/20 dark:bg-black dark:text-white"
-                    >
-                      Show Capture
-                    </button>
-                  )}
                 </div>
               </div>
             )}
@@ -350,8 +275,6 @@ export default function MiniBrowserIframe({
               </div>
             ))}
           </>
-        ) : fallbackImage ? (
-          capture
         ) : (
           <div className="flex h-full w-full items-center justify-center font-mono text-xs uppercase tracking-widest text-zinc-400">
             Preview Unavailable
