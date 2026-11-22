@@ -216,6 +216,13 @@
   ],
   "brands": [
     {
+      "image": "/images/brand-logos/bonjour-logo.webp",
+      "width": 256,
+      "height": 141,
+      "url": "https://bonjourquickbites.com",
+      "title": "Bonjour Quick Bites"
+    },
+    {
       "image": "/images/brand-logos/ighublogo.png",
       "width": 711,
       "height": 351,
