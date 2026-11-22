@@ -72,7 +72,7 @@ export default function ContactForm({ initialTier, onCancel }: { initialTier?: s
     }
   };
 
-  const inputClasses = "w-full px-4 py-3 border border-black/20 dark:border-white/20 rounded-none bg-white dark:bg-black text-black dark:text-white font-body text-sm focus:outline-none focus:border-black dark:focus:border-white transition-all";
+  const inputClasses = "w-full min-w-0 px-3 sm:px-4 py-3 border border-black/20 dark:border-white/20 rounded-none bg-white dark:bg-black text-black dark:text-white font-body text-base md:text-sm focus:outline-none focus:border-black dark:focus:border-white transition-all";
   const labelClasses = "block font-mono text-[11px] font-bold uppercase tracking-widest mb-1.5 text-black dark:text-zinc-400";
   const errorClasses = "font-mono text-[10px] mt-1 font-bold uppercase text-zinc-600 dark:text-zinc-400";
 
@@ -81,9 +81,9 @@ export default function ContactForm({ initialTier, onCancel }: { initialTier?: s
   }
 
   return (
-    <form ref={formRef} onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+    <form ref={formRef} onSubmit={handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6">
       <p className="text-sm text-zinc-600 dark:text-zinc-400">Fields marked with * are required.</p>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
         <div>
           <label htmlFor="fullName" className={labelClasses}>Full name *</label>
           <input
@@ -108,7 +108,7 @@ export default function ContactForm({ initialTier, onCancel }: { initialTier?: s
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
         <div>
           <label htmlFor="phoneNumber" className={labelClasses}>Phone number</label>
           <input
@@ -130,7 +130,7 @@ export default function ContactForm({ initialTier, onCancel }: { initialTier?: s
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
         <div>
           <label htmlFor="projectTimeline" className={labelClasses}>Project timeline</label>
           <select
@@ -171,11 +171,11 @@ export default function ContactForm({ initialTier, onCancel }: { initialTier?: s
         {errors.projectDescription && <p className={errorClasses}>{errors.projectDescription.message}</p>}
       </div>
 
-      <div className="flex flex-col md:flex-row gap-4 pt-4">
+      <div className="flex flex-col md:flex-row gap-4 sm:pt-4">
         <Button
           type="submit"
           disabled={isSubmitting}
-          className={`flex-1 !py-5 !text-lg dark:!border-white dark:!bg-white dark:!text-black dark:hover:!border-zinc-200 dark:hover:!bg-zinc-200 ${isSubmitting ? "opacity-50" : ""}`}
+          className={`flex-1 !whitespace-normal !px-4 !py-4 !text-sm sm:!py-5 sm:!text-lg dark:!border-white dark:!bg-white dark:!text-black dark:hover:!border-zinc-200 dark:hover:!bg-zinc-200 ${isSubmitting ? "opacity-50" : ""}`}
         >
           {isSubmitting ? "Sending…" : "Send project brief"}
         </Button>

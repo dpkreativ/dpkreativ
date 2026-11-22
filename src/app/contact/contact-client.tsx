@@ -27,9 +27,9 @@ export default function ContactClient() {
         }}
       />
 
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20 grid gap-12 md:gap-16">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-12 md:py-20 grid grid-cols-1 gap-6 sm:gap-10 md:gap-16">
         {/* Header */}
-        <header className="border-b border-black/15 pb-8 md:pb-12 dark:border-white/15">
+        <header className="border-b border-black/15 pb-5 sm:pb-8 md:pb-12 dark:border-white/15">
           <SplitHeading
             as="h1"
             className="font-display text-4xl sm:text-6xl md:text-7xl uppercase tracking-tighter leading-[0.88] text-black dark:text-white"
@@ -46,17 +46,31 @@ export default function ContactClient() {
               Get in touch about building a web app, improving an existing one, or planning the technical side of your project.
             </p>
             <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400">
-              Use the form or email me directly.
+              Use the form or{" "}
+              <a href={`mailto:${contact.email}`} className="underline underline-offset-4 hover:text-black dark:hover:text-white">
+                email me directly
+              </a>.
             </p>
           </RevealText>
         </header>
 
-        {/* Two-Column Modern Consultation Suite */}
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-          {/* Left Column: Direct Channels & Telemetry */}
-          <div className="lg:col-span-5 space-y-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10 lg:gap-16 items-start">
+          <section
+            aria-labelledby="project-brief-heading"
+            className="min-w-0 border border-black/15 bg-white p-4 sm:p-8 md:p-10 dark:border-white/15 dark:bg-[#0A0A0A] lg:col-span-7 lg:col-start-6 lg:row-start-1"
+          >
+            <div className="mb-4 border-b border-black/10 pb-4 sm:mb-8 sm:pb-6 dark:border-white/10">
+              <h2 id="project-brief-heading" className="font-display text-2xl sm:text-3xl uppercase tracking-tight text-black dark:text-white">
+                Tell me about your project
+              </h2>
+            </div>
+
+            <ContactForm />
+          </section>
+
+          <div className="min-w-0 space-y-4 sm:space-y-8 lg:col-span-5 lg:col-start-1 lg:row-start-1">
             {/* Primary Channel Card */}
-            <div className="border border-black/15 bg-white p-6 dark:border-white/15 dark:bg-[#0A0A0A] space-y-5">
+            <div className="border border-black/15 bg-white p-4 sm:p-6 dark:border-white/15 dark:bg-[#0A0A0A] space-y-5">
               <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
                 Direct contact
               </span>
@@ -65,16 +79,17 @@ export default function ContactClient() {
                 <p className="font-mono text-xs uppercase tracking-wider text-zinc-400">
                   Email
                 </p>
-                <div className="mt-1 flex items-center justify-between gap-3">
+                <div className="mt-1 flex flex-wrap items-center justify-between gap-2">
                   <a
                     href={`mailto:${contact.email}`}
-                    className="font-display text-xl sm:text-2xl text-black dark:text-white hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors"
+                    className="min-w-0 [overflow-wrap:anywhere] font-display text-xl sm:text-2xl text-black dark:text-white hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors"
                   >
                     {contact.email}
                   </a>
                   <button
+                    type="button"
                     onClick={copyEmail}
-                    className="border border-black/20 bg-black/5 px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-black transition-colors hover:bg-black hover:text-white dark:border-white/20 dark:bg-white/10 dark:text-white dark:hover:bg-white dark:hover:text-black shrink-0"
+                    className="min-h-11 border border-black/20 bg-black/5 px-3 font-mono text-[10px] font-bold uppercase tracking-wider text-black transition-colors hover:bg-black hover:text-white dark:border-white/20 dark:bg-white/10 dark:text-white dark:hover:bg-white dark:hover:text-black shrink-0"
                   >
                     {copied ? "Copied" : "Copy email"}
                   </button>
@@ -95,7 +110,7 @@ export default function ContactClient() {
             </div>
 
             {/* Direct Profiles Card */}
-            <div className="border border-black/15 bg-white p-6 dark:border-white/15 dark:bg-[#0A0A0A] space-y-4">
+            <div className="border border-black/15 bg-white p-4 sm:p-6 dark:border-white/15 dark:bg-[#0A0A0A] space-y-4">
               <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
                 Online profiles
               </span>
@@ -124,33 +139,20 @@ export default function ContactClient() {
             </div>
 
             {/* Engagement Telemetry */}
-            <div className="border border-black/15 bg-black/[0.02] p-6 dark:border-white/15 dark:bg-white/[0.02] space-y-3 font-mono text-xs">
+            <div className="border border-black/15 bg-black/[0.02] p-4 sm:p-6 dark:border-white/15 dark:bg-white/[0.02] space-y-3 font-mono text-xs">
               <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
                 Location and availability
               </span>
               <div className="grid gap-2 text-[#111111]/70 dark:text-zinc-400 pt-1">
-                <div className="flex justify-between border-b border-black/5 pb-2 dark:border-white/5">
+                <div className="flex justify-between gap-3 border-b border-black/5 pb-2 dark:border-white/5">
                   <span>Time zone</span>
-                  <span className="font-bold text-black dark:text-white">West Africa Time (UTC+1)</span>
+                  <span className="text-right font-bold text-black dark:text-white">West Africa Time (UTC+1)</span>
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between gap-3">
                   <span>Collaboration</span>
-                  <span className="font-bold text-black dark:text-white">Remote, worldwide</span>
+                  <span className="text-right font-bold text-black dark:text-white">Remote, worldwide</span>
                 </div>
               </div>
-            </div>
-          </div>
-
-          {/* Right Column: Embedded Project Brief Form */}
-          <div className="lg:col-span-7">
-            <div className="border border-black/15 bg-white p-6 sm:p-8 md:p-10 dark:border-white/15 dark:bg-[#0A0A0A]">
-              <div className="mb-8 border-b border-black/10 pb-6 dark:border-white/10">
-                <h2 className="font-display text-2xl sm:text-3xl uppercase tracking-tight text-black dark:text-white">
-                  Tell me about your project
-                </h2>
-              </div>
-
-              <ContactForm />
             </div>
           </div>
         </div>
