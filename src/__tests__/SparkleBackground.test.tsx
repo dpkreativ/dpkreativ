@@ -69,16 +69,27 @@ describe("SparkleBackground", () => {
     }
   });
 
-  it("positions accents consistently at the bottom right with floating animation", () => {
+  it("positions accents below the heading at the bottom right with smaller mobile sizing", () => {
     const { container } = render(<SparkleBackground variant="code" size={34} />);
     const outer = container.firstElementChild as HTMLElement;
 
     expect(outer).toHaveAttribute("aria-hidden", "true");
     expect(outer).toHaveAttribute("data-sparkle-accent", "code");
     expect(outer).toHaveAttribute("data-sparkle-position", "bottom-right");
-    expect(outer).toHaveClass("-bottom-4", "right-0", "sm:-bottom-3", "sm:-right-10");
-    expect(outer.style.width).toBe("34px");
-    expect(outer.style.height).toBe("34px");
+    expect(outer).toHaveClass(
+      "top-full",
+      "right-0",
+      "mt-1.5",
+      "sm:top-full",
+      "sm:-right-9",
+      "sm:-mt-1",
+      "h-[var(--sparkle-size-mobile)]",
+      "w-[var(--sparkle-size-mobile)]",
+      "sm:h-[var(--sparkle-size)]",
+      "sm:w-[var(--sparkle-size)]",
+    );
+    expect(outer.style.getPropertyValue("--sparkle-size-mobile")).toBe("21px");
+    expect(outer.style.getPropertyValue("--sparkle-size")).toBe("34px");
 
     const inner = outer.firstElementChild as HTMLElement;
     expect(inner).toHaveClass("animate-sparkle-float");

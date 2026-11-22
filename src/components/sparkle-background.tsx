@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { cn } from "@/lib/utils";
 
 export type SparkleVariant =
@@ -198,7 +199,14 @@ export default function SparkleBackground({
   const positionClassName =
     placement === "section"
       ? "bottom-1 right-4 sm:bottom-2 sm:right-10"
-      : "-bottom-4 right-0 sm:-bottom-3 sm:-right-10";
+      : "top-full right-0 mt-1.5 sm:top-full sm:-right-9 sm:-mt-1";
+
+  const mobileSize = Math.max(16, Math.round(size * 0.62));
+  const sizeStyle = {
+    "--sparkle-size-mobile": `${mobileSize}px`,
+    "--sparkle-size": `${size}px`,
+    transform: `rotate(${rotate}deg)`,
+  } as CSSProperties;
 
   return (
     <span
@@ -206,15 +214,11 @@ export default function SparkleBackground({
       data-sparkle-accent={variant}
       data-sparkle-position="bottom-right"
       className={cn(
-        "pointer-events-none select-none absolute text-black/35 dark:text-white/35",
+        "pointer-events-none select-none absolute h-[var(--sparkle-size-mobile)] w-[var(--sparkle-size-mobile)] text-black/35 dark:text-white/35 sm:h-[var(--sparkle-size)] sm:w-[var(--sparkle-size)]",
         positionClassName,
         className,
       )}
-      style={{
-        width: `${size}px`,
-        height: `${size}px`,
-        transform: `rotate(${rotate}deg)`,
-      }}
+      style={sizeStyle}
     >
       <span
         className={`block h-full w-full ${
