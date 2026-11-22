@@ -68,10 +68,10 @@ export default function Footer() {
                   as="h2"
                   className="font-display uppercase text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.9] text-center"
                 >
-                  LET&apos;S BUILD SOMETHING ICONIC.
+                  Work with me
                 </SplitHeading>
                 <RevealText noSplit className="mt-4 text-zinc-600 dark:text-zinc-400 font-body text-base md:text-lg max-w-xl mx-auto text-center leading-relaxed">
-                  Have a project in mind, an architectural challenge, or need a technical delivery partner?
+                  Tell me what you want to build or what isn’t working with your current site.
                 </RevealText>
               </div>
               <Link href="/contact" className="w-max mt-2">
@@ -99,7 +99,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="font-body text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed max-w-xs">
-              Full-stack engineer crafting high-performance digital products, developer tools, and scalable web architectures.
+              Software engineer and technical writer at The Kreativ Studio.
             </p>
           </div>
 

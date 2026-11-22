@@ -330,9 +330,7 @@
       "image": "/images/project-demos/crunchies.png",
       "client": "Crunchies Fried Chicken",
       "description": [
-        "I took the lead on this exciting project, where I completely redesigned the UI to make it more intuitive and visually appealing for users.",
-        "Using my skills in Next.js and Tailwind CSS, I built a responsive, fast-loading site that reflects my passion for performance optimization.",
-        "One of my favorite parts was integrating the Google Maps API—I added a feature that lets users pick their delivery location and find nearby Crunchies outlets with ease, enhancing the overall user experience."
+        "Crunchies Fried Chicken hired me to redesign its online ordering site over seven months. The redesign focused on checkout, especially how customers choose delivery or pickup and find the right outlet."
       ],
       "url": "https://crunchiesonline.com",
       "github": "",
@@ -346,9 +344,7 @@
       "image": "/images/project-demos/merphils.png",
       "client": "Merphils",
       "description": [
-        "Merphils is a unified education platform designed to connect school operations, family access, learner records, and future cross-school collaboration in one system.",
-        "The product is built around a single-account, context-aware identity model that lets one person move across multiple schools and roles such as owner, staff member, parent, or student without creating duplicate identities.",
-        "It is being shaped to support class management, assignments, grades, admissions, finance, and long-term academic history while keeping school data private by default and learner continuity intact over time."
+        "Merphils is a school management platform in development. The goal is to give staff tools for daily operations and let families and students access academic records without juggling separate accounts."
       ],
       "url": "https://merphils.com",
       "github": "",
@@ -362,9 +358,7 @@
       "image": "/images/project-demos/grooovy.png",
       "client": "Grooovy",
       "description": [
-        "Grooovy is a nightlife and social event discovery platform built to surface the plans that usually stay buried in group chats, stories, and word of mouth.",
-        "The experience combines a public vibe-first discovery flow with guided onboarding, Supabase-backed authentication, and a protected dashboard where users can manage plans, tickets, wallet activity, and hosting tools.",
-        "Across public event pages, RSVP and checkout flows, host workspaces, and admin views, the product is being designed to make the path from curiosity to commitment feel warm, cinematic, and fast."
+        "Grooovy is an event platform in development for finding nights out you might otherwise hear about through friends or group chats. It brings public event listings, ticketing, and host tools together."
       ],
       "url": "#",
       "github": "",
@@ -394,9 +388,7 @@
       "image": "/images/project-demos/theirokocircle.png",
       "client": "The Iroko Circle",
       "description": [
-        "The Iroko Circle is a literary community and editorial platform dedicated to reading, discussing, and amplifying African stories.",
-        "The website brings together essays, features, poetry, reviews, short stories, community join flows, chapter growth, submissions, and newsletter touchpoints in one clear publishing and community experience.",
-        "Its job is not just to publish content, but to make discovery, participation, and literary conversation feel welcoming for readers, writers, and supporters of African literature."
+        "The Iroko Circle brings readers and writers together around African literature. Its website publishes new writing and gives visitors ways to submit work, join a chapter, and sign up for the newsletter."
       ],
       "url": "https://theirokocircle.org",
       "github": "",

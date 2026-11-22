@@ -68,14 +68,12 @@ export default function Home() {
 
         <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:py-20 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,0.85fr)] lg:items-center">
           <div className="mx-auto max-w-3xl lg:mx-0">
-            <h2 className="sr-only">WHO AM I?</h2>
-
             <h1 className="hero-headline font-display text-[clamp(3.5rem,8vw,6.5rem)] leading-[0.88] tracking-[-0.04em] text-[#111111] dark:text-white uppercase">
-              Building Software That Works.
+              Web apps for businesses
             </h1>
 
             <p className="hero-subhead mt-6 max-w-xl font-body text-base leading-relaxed text-[#111111]/75 dark:text-white/75 md:text-lg">
-              I help make your business grow by building fast, reliable software that is easy to use.
+              I’m Divine Orji, a software engineer at The Kreativ Studio. I build online ordering systems, school management tools, and other web apps.
             </p>
 
             <div className="hero-cta mt-8 flex flex-wrap items-center gap-4">
@@ -90,7 +88,7 @@ export default function Home() {
                 className="w-max"
               >
                 <Button className="!px-6 !py-3 !text-xs font-mono font-bold tracking-widest uppercase">
-                  <span>MY WORK</span>
+                  <span>See featured projects</span>
                   <ArrowIcon />
                 </Button>
               </a>
@@ -115,7 +113,7 @@ export default function Home() {
               <div className="relative aspect-[4/5] sm:aspect-[3/3.5] lg:aspect-[4/5] w-full overflow-hidden bg-zinc-100 dark:bg-zinc-900">
                 <Image
                   src={portraits[0]}
-                  alt="Divine Orji - Software Engineer"
+                  alt="Portrait of Divine Orji"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 45vw, 480px"
                   priority
@@ -142,11 +140,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Screen-reader metric landmarks */}
-        <div className="sr-only">
-          <span>Average Delivery Time</span>
-          <span>Projects Completed</span>
-        </div>
       </section>
 
       <section id="featured-projects" className="reveal-section scroll-mt-24">
@@ -157,7 +150,7 @@ export default function Home() {
                 as="h2"
                 className="font-display text-[clamp(2.4rem,5.8vw,4.5rem)] leading-[0.96] tracking-[-0.04em] text-[#111111] dark:text-white uppercase"
               >
-                FEATURED PROJECTS.
+                Featured projects
               </SplitHeading>
             </div>
 
@@ -223,9 +216,9 @@ export default function Home() {
           <div className="mb-10 max-w-3xl">
             <SplitHeading
               as="h2"
-              className="font-display text-[clamp(2.4rem,5.8vw,4.5rem)] leading-[0.96] tracking-[-0.04em] text-[#111111] dark:text-white"
+              className="font-display text-[clamp(2.4rem,5.8vw,4.5rem)] leading-[0.96] tracking-[-0.04em] text-[#111111] dark:text-white uppercase"
             >
-              LATEST ARTICLES.
+              Latest articles
             </SplitHeading>
           </div>
 
@@ -234,7 +227,7 @@ export default function Home() {
           <div className="mt-10 flex justify-center md:justify-end">
             <Link href="/blog" className="w-max shrink-0">
               <Button className="!px-5 !py-3 !text-[10px]">
-                <span>VISIT ARCHIVE</span>
+                <span>Browse articles</span>
                 <ArrowIcon />
               </Button>
             </Link>

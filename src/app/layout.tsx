@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     url: SITE_URL,
     siteName: SITE_NAME,
     title: SITE_TITLE,
-    description: "Building high-impact digital experiences with a focus on engineering excellence and user value.",
+    description: SITE_DESCRIPTION,
     images: [
       {
         url: SITE_OG_IMAGE,
@@ -89,7 +89,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Divine Orji | Software Engineer",
-    description: "Building high-impact digital experiences with a focus on engineering excellence and user value.",
+    description: SITE_DESCRIPTION,
     creator: SITE_TWITTER_HANDLE,
     images: [SITE_OG_IMAGE],
   },

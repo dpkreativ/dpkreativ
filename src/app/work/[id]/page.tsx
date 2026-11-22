@@ -4,7 +4,6 @@ import { ArrowIcon } from "@/assets/icons";
 import Button from "@/components/button";
 import FloatingBackLink from "@/components/floating-back-link";
 import MoreWorkRecommendations from "@/components/more-work-recommendations";
-import RevealText from "@/components/reveal-text";
 import SplitHeading from "@/components/split-heading";
 import MiniBrowserIframe from "@/components/mini-browser-iframe";
 import Image from "next/image";
@@ -132,7 +131,7 @@ export default async function Page({ params }: PageProps) {
                 {liveUrl ? (
                   <a href={liveUrl} target="_blank" rel="noreferrer">
                     <Button className="!px-6 !py-3 !text-xs font-mono font-bold tracking-widest uppercase">
-                      <span>Visit Live Site</span>
+                      <span>Visit project website</span>
                       <i className="ri-external-link-line" />
                     </Button>
                   </a>
@@ -141,7 +140,7 @@ export default async function Page({ params }: PageProps) {
                 {githubUrl ? (
                   <a href={githubUrl} target="_blank" rel="noreferrer">
                     <Button className="!bg-white !text-black dark:!bg-black dark:!text-white !border-black dark:!border-white/20 hover:!bg-zinc-100 dark:hover:!bg-zinc-900 !px-6 !py-3 !text-xs font-mono font-bold tracking-widest uppercase">
-                      <span>View GitHub</span>
+                      <span>View source on GitHub</span>
                       <i className="ri-github-line" />
                     </Button>
                   </a>
@@ -189,7 +188,7 @@ export default async function Page({ params }: PageProps) {
 
               <div className="grid gap-2 border-t border-black/10 dark:border-white/10 pt-4">
                 <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-zinc-500 dark:text-zinc-400 font-bold">
-                  Stack
+                  Technologies
                 </p>
                 <div className="flex flex-wrap gap-1.5">
                   {project.stack.map((item) => (
@@ -262,7 +261,7 @@ export default async function Page({ params }: PageProps) {
               as="h2"
               className="font-display text-3xl md:text-4xl uppercase tracking-tighter leading-none"
             >
-              Project Overview.
+              About the project
             </SplitHeading>
 
             <div className="grid gap-4 font-body text-base leading-relaxed text-black/75 dark:text-zinc-300 md:text-lg">
@@ -277,7 +276,7 @@ export default async function Page({ params }: PageProps) {
               as="h2"
               className="font-display text-3xl md:text-4xl uppercase tracking-tighter leading-none"
             >
-              Strategic Goals.
+              Project goals
             </SplitHeading>
 
             <ul className="grid gap-4 font-body text-base leading-relaxed text-black/75 dark:text-zinc-300 md:text-lg">
@@ -301,7 +300,7 @@ export default async function Page({ params }: PageProps) {
                 as="h2"
                 className="font-display text-3xl md:text-5xl uppercase tracking-tighter leading-none"
               >
-                Engineering Process.
+                How I approached the project
               </SplitHeading>
             </div>
 
@@ -337,14 +336,11 @@ export default async function Page({ params }: PageProps) {
         {project.caseStudy.results && project.caseStudy.results.length > 0 && (
           <section className="grid gap-8">
             <div className="flex flex-col gap-2 border-b border-black/15 pb-6 dark:border-white/15">
-              <span className="font-mono text-[10px] font-bold uppercase tracking-[0.24em] text-zinc-500 dark:text-zinc-400">
-                DELIVERABLES & METRICS
-              </span>
               <SplitHeading
                 as="h2"
                 className="font-display text-3xl md:text-5xl uppercase tracking-tighter leading-none"
               >
-                Measurable Outcomes.
+                Project results
               </SplitHeading>
             </div>
 
@@ -370,7 +366,7 @@ export default async function Page({ params }: PageProps) {
         {project.caseStudy.reflection && (
           <section className="border border-black/15 bg-black/[0.02] p-8 dark:border-white/15 dark:bg-white/[0.02] md:p-12">
             <p className="font-display text-xl sm:text-2xl md:text-3xl uppercase tracking-tight leading-snug text-black dark:text-white">
-              &quot;{project.caseStudy.reflection}&quot;
+              {project.caseStudy.reflection}
             </p>
           </section>
         )}
@@ -419,14 +415,8 @@ export default async function Page({ params }: PageProps) {
               as="h2"
               className="font-display text-3xl md:text-5xl uppercase tracking-tighter leading-none"
             >
-              More Work.
+              More projects
             </SplitHeading>
-            <RevealText
-              as="p"
-              className="font-mono text-xs uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400 font-bold"
-            >
-              Explore the rest of the archive.
-            </RevealText>
           </div>
 
           <MoreWorkRecommendations projects={relatedProjects} seed={project.slug} />

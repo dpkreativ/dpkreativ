@@ -5,21 +5,23 @@ import { HASHNODE_HOST, SITE_URL } from "@/lib/site";
 
 export const revalidate = 3600;
 
+const description = "Read Divine Orji’s practical guides on web development and notes on building and shipping software.";
+
 export const metadata: Metadata = {
   title: "Blog",
-  description: "Technical writing and insights on software engineering, product delivery, and community building by Divine Orji.",
+  description,
   alternates: {
     canonical: "/blog",
   },
   openGraph: {
     url: `${SITE_URL}/blog`,
     title: "Blog | Divine Orji",
-    description: "Insights and articles on software engineering by Divine Orji.",
+    description,
   },
   twitter: {
     card: "summary_large_image",
     title: "Blog | Divine Orji",
-    description: "Insights and articles on software engineering by Divine Orji.",
+    description,
   },
 };
 

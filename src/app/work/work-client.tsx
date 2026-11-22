@@ -18,14 +18,14 @@ export default function Work() {
       <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20 grid gap-12 md:gap-16">
         <div className="border-b border-black/15 pb-8 text-left dark:border-white/15 md:pb-12">
           <h1 className="font-display text-[clamp(2.5rem,7vw,5rem)] uppercase tracking-tighter leading-none">
-            FEATURED PROJECTS.
+            Project portfolio
           </h1>
 
           <RevealText
             as="p"
             className="mt-4 font-mono text-xs font-bold uppercase tracking-widest text-zinc-500 dark:text-zinc-400 md:text-sm"
           >
-            Crafting resilient digital solutions with precision and purpose.
+            Explore the web apps I’ve worked on, from restaurant ordering to education, publishing, and events.
           </RevealText>
         </div>
 

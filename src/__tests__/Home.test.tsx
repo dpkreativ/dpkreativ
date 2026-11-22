@@ -32,21 +32,14 @@ jest.mock('gsap/ScrollTrigger', () => ({
 describe('Home Page', () => {
   it('renders hero section', () => {
     render(<Home />);
-    const heading = screen.getByRole('heading', { level: 1 });
+    const heading = screen.getByRole('heading', { level: 1, name: 'Web apps for businesses' });
     expect(heading).toBeInTheDocument();
-    expect(
-      screen.getByText((_, element) => element?.textContent?.replace(/\s+/g, ' ').trim() === 'Average Delivery Time'),
-    ).toBeInTheDocument();
-    expect(
-      screen.getByText((_, element) => element?.textContent?.replace(/\s+/g, ' ').trim() === 'Projects Completed'),
-    ).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'See featured projects' })).toHaveAttribute('href', '#featured-projects');
   });
 
   it('renders sections', () => {
     render(<Home />);
-    const headings = screen.getAllByRole('heading', { level: 2 });
-    expect(headings.some(h => h.textContent?.includes('WHO'))).toBeTruthy();
-    expect(headings.some(h => h.textContent?.includes('FEATURED'))).toBeTruthy();
-    expect(headings.some(h => h.textContent?.includes('LATEST'))).toBeTruthy();
+    expect(screen.getByRole('heading', { level: 2, name: 'Featured projects' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 2, name: 'Latest articles' })).toBeInTheDocument();
   });
 });

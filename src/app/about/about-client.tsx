@@ -59,7 +59,7 @@ export default function About() {
               as="h1"
               className="font-display text-4xl sm:text-6xl md:text-7xl uppercase tracking-tighter leading-[0.88] text-black dark:text-white"
             >
-              ABOUT DIVI.
+              About Divine Orji
             </SplitHeading>
 
             <RevealText
@@ -73,7 +73,7 @@ export default function About() {
               <FloatingDownloadLink
                 href="/api/cv"
                 downloadName="divine-orji-cv.pdf"
-                label="Download CV PDF"
+                label="Download CV (PDF)"
               />
             </div>
           </header>
@@ -93,10 +93,7 @@ export default function About() {
           <div className="about-text grid gap-4 border border-black/15 bg-white p-6 dark:border-white/15 dark:bg-[#0A0A0A] md:p-8">
             <div className="flex items-center justify-between border-b border-black/10 pb-3 dark:border-white/10">
               <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
-                TECHNICAL CAPABILITIES
-              </span>
-              <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-zinc-400">
-                [{skills.length} DISCIPLINES]
+                Skills
               </span>
             </div>
             <div className="flex flex-wrap gap-2 pt-2">
@@ -160,7 +157,7 @@ export default function About() {
               as="h2"
               className="font-display text-3xl md:text-5xl uppercase tracking-tighter leading-none"
             >
-              EXPERIENCE SNAPSHOT.
+              Work experience
             </SplitHeading>
           </div>
 
@@ -250,7 +247,7 @@ export default function About() {
           {/* Education */}
           <article className="grid content-start gap-6 border border-black/15 bg-white p-6 dark:border-white/15 dark:bg-[#1a1a1a] md:p-8">
             <div className="border-b border-black/10 pb-4 dark:border-white/10">
-              <RevealText as="h3" className="font-display text-2xl md:text-3xl uppercase tracking-tight">
+              <RevealText as="h2" className="font-display text-2xl md:text-3xl uppercase tracking-tight">
                 Education
               </RevealText>
             </div>
@@ -275,8 +272,8 @@ export default function About() {
           {/* Credentials & Languages */}
           <article className="grid content-start gap-6 border border-black/15 bg-white p-6 dark:border-white/15 dark:bg-[#1a1a1a] md:p-8">
             <div className="border-b border-black/10 pb-4 dark:border-white/10">
-              <RevealText as="h3" className="font-display text-2xl md:text-3xl uppercase tracking-tight">
-                Credentials & Languages
+              <RevealText as="h2" className="font-display text-2xl md:text-3xl uppercase tracking-tight">
+                Credentials and languages
               </RevealText>
             </div>
 
@@ -292,7 +289,7 @@ export default function About() {
 
               <div className="border-t border-black/10 pt-4 dark:border-white/10">
                 <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
-                  SPOKEN & PROFESSIONAL LANGUAGES
+                  Languages
                 </span>
                 <div className="flex flex-wrap gap-2 mt-2">
                   {languages.map((item) => (
