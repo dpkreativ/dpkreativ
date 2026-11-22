@@ -70,7 +70,11 @@ export default function Home() {
         <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:py-20 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,0.85fr)] lg:items-center">
           <div className="mx-auto max-w-3xl lg:mx-0">
             <div className="relative w-fit max-w-full">
-              <SparkleBackground variant="code" size={34} />
+              <SparkleBackground
+                variant="code"
+                size={34}
+                className="right-1 mt-1.5 sm:-right-6 sm:-mt-1"
+              />
               <h1 className="hero-headline font-display text-[clamp(2.75rem,13vw,3.25rem)] leading-[0.88] tracking-[-0.04em] text-[#111111] dark:text-white uppercase sm:text-[clamp(3.5rem,8vw,6.5rem)]">
                 Web apps for businesses
               </h1>

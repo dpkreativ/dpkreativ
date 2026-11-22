@@ -79,10 +79,10 @@ describe("SparkleBackground", () => {
     expect(outer).toHaveClass(
       "top-full",
       "-right-3",
-      "mt-1.5",
+      "-mt-1",
       "sm:top-full",
       "sm:-right-12",
-      "sm:-mt-1",
+      "sm:-mt-3",
       "h-[var(--sparkle-size-mobile)]",
       "w-[var(--sparkle-size-mobile)]",
       "sm:h-[var(--sparkle-size)]",
