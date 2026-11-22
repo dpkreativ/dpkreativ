@@ -13,6 +13,7 @@ const ALL_VARIANTS: SparkleVariant[] = [
   "terminal",
   "layers",
   "pen",
+  "scroll",
   "mic",
   "briefcase",
   "gradcap",

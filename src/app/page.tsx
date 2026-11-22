@@ -220,7 +220,7 @@ export default function Home() {
       <section className="reveal-section">
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
           <div className="relative mb-10 w-fit max-w-3xl">
-            <SparkleBackground variant="pen" size={30} />
+            <SparkleBackground variant="scroll" size={30} />
             <SplitHeading
               as="h2"
               className="font-display text-[clamp(2.4rem,5.8vw,4.5rem)] leading-[0.96] tracking-[-0.04em] text-[#111111] dark:text-white uppercase"

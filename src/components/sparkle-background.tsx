@@ -10,6 +10,7 @@ export type SparkleVariant =
   | "terminal"
   | "layers"
   | "pen"
+  | "scroll"
   | "mic"
   | "briefcase"
   | "gradcap"
@@ -72,6 +73,22 @@ function renderIcon(variant: SparkleVariant) {
         <svg {...commonProps}>
           <path d="M16.5 3.5L20.5 7.5L8 20H4V16L16.5 3.5Z" {...strokeProps} />
           <path d="M13.5 6.5L17.5 10.5" {...strokeProps} />
+        </svg>
+      );
+    case "scroll":
+      return (
+        <svg {...commonProps}>
+          <path
+            d="M17 7H21V5A2 2 0 0 0 19 3A2 2 0 0 0 17 5V19A2 2 0 0 1 15 21"
+            {...strokeProps}
+          />
+          <path d="M19 3H10A2 2 0 0 0 8 5V17" {...strokeProps} />
+          <path
+            d="M15 21H5A2 2 0 0 1 3 19V17H13V19A2 2 0 0 0 15 21Z"
+            {...strokeProps}
+          />
+          <path d="M11 8.5H14.5" {...strokeProps} />
+          <path d="M11 12.5H14.5" {...strokeProps} />
         </svg>
       );
     case "mic":
