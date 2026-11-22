@@ -1,5 +1,4 @@
-# DIVINE ORJI
-### Full-stack Software Engineer // Engineering Lead // Technical Writer
+## Full-stack Software Engineer // Engineering Lead // Technical Writer
 
 > Hi, I'm Divine Orji. I build web apps that help businesses run smoothly.
 
