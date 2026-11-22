@@ -5,7 +5,7 @@ import { render } from "@testing-library/react";
 import SparkleBackground from "@/components/sparkle-background";
 
 describe("SparkleBackground", () => {
-  it("hydrates SSR HTML without mismatch warnings and renders 5-8 icons on the client", () => {
+  it("hydrates SSR HTML without mismatch warnings and renders 14-18 icons on the client", () => {
     const serverHtml = renderToString(<SparkleBackground />);
     expect(serverHtml).not.toContain("<svg");
 
@@ -26,8 +26,8 @@ describe("SparkleBackground", () => {
       expect(consoleErrorSpy).not.toHaveBeenCalled();
 
       const icons = container.querySelectorAll("svg");
-      expect(icons.length).toBeGreaterThanOrEqual(5);
-      expect(icons.length).toBeLessThanOrEqual(8);
+      expect(icons.length).toBeGreaterThanOrEqual(14);
+      expect(icons.length).toBeLessThanOrEqual(18);
     } finally {
       act(() => {
         root?.unmount();
@@ -46,14 +46,24 @@ describe("SparkleBackground", () => {
     expect(second.container.innerHTML).toBe(firstHtml);
   });
 
-  it("places icons inside the visible viewport with full-size animation wrappers", () => {
+  it("places icons inside the visible viewport with full-size floating animation wrappers", () => {
     const { container } = render(<SparkleBackground />);
-    const wrappers = container.querySelectorAll(".animate-sparkle-float");
+    const rootDiv = container.firstElementChild as HTMLElement;
+    expect(rootDiv).toHaveAttribute("data-sparkle-background", "true");
+    expect(rootDiv).toHaveClass("z-0");
 
-    expect(wrappers.length).toBeGreaterThanOrEqual(5);
+    const wrappers = container.querySelectorAll(
+      ".animate-sparkle-float, .animate-sparkle-float-alt",
+    );
+
+    expect(wrappers.length).toBeGreaterThanOrEqual(14);
     wrappers.forEach((wrapper) => {
-      expect(wrapper).toHaveClass("h-full", "w-full");
-      const parent = wrapper.parentElement as HTMLElement;
+      const el = wrapper as HTMLElement;
+      expect(el).toHaveClass("h-full", "w-full");
+      expect(parseFloat(el.style.animationDuration)).toBeGreaterThanOrEqual(4.5);
+      expect(parseFloat(el.style.animationDelay)).toBeLessThanOrEqual(0);
+
+      const parent = el.parentElement as HTMLElement;
       const left = parseFloat(parent.style.left);
       const top = parseFloat(parent.style.top);
       expect(left).toBeGreaterThanOrEqual(4);

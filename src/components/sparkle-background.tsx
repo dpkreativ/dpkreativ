@@ -11,7 +11,7 @@ const LIGHTNING_SVG = (
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
-      d="M12 2 L8 8 H11 L13 14 H9 L13 6 L10 6 L10 2 Z"
+      d="M13 2L4 14H11L10 22L20 10H13L13 2Z"
       fill="currentColor"
     />
   </svg>
@@ -26,7 +26,7 @@ const SPARKLE_SVG = (
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
-      d="M12 2 L14 7 L19 7 L16 11 L17 16 L12 13 L7 16 L8 11 L5 7 L10 7 L12 2 Z"
+      d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z"
       fill="currentColor"
     />
   </svg>
@@ -40,21 +40,36 @@ interface SparklePosition {
   type: IconType;
   size: number;
   rotate: number;
+  duration: number;
   delay: number;
+  altAnimation: boolean;
 }
 
+const GRID_COLS = 4;
+const GRID_ROWS = 4;
+
 function generatePositions(): SparklePosition[] {
-  const count = 5 + Math.floor(Math.random() * 4); // 5 to 8 icons
+  const count = 14 + Math.floor(Math.random() * 5); // 14 to 18 icons
   const positions: SparklePosition[] = [];
+  const cellWidth = 90 / GRID_COLS;
+  const cellHeight = 80 / GRID_ROWS;
 
   for (let i = 0; i < count; i++) {
+    const col = i % GRID_COLS;
+    const row = Math.floor(i / GRID_COLS) % GRID_ROWS;
+    const x = 4 + col * cellWidth + Math.random() * (cellWidth * 0.8);
+    const y = 10 + row * cellHeight + Math.random() * (cellHeight * 0.8);
+    const duration = 4.5 + Math.random() * 3.5; // 4.5s to 8s
+
     positions.push({
-      x: 4 + Math.random() * 90,
-      y: 10 + Math.random() * 82,
-      type: Math.random() > 0.5 ? "lightning" : "sparkle",
-      size: 14 + Math.random() * 18, // 14px to 32px
+      x,
+      y,
+      type: i % 2 === 0 ? "sparkle" : "lightning",
+      size: 18 + Math.random() * 20, // 18px to 38px
       rotate: Math.random() * 360,
-      delay: Math.random() * 8, // 0s to 8s animation delay
+      duration,
+      delay: -(Math.random() * duration), // negative delay so icons float immediately
+      altAnimation: i % 2 === 1,
     });
   }
 
@@ -90,13 +105,14 @@ export default function SparkleBackground() {
 
   return (
     <div
-      className="fixed inset-0 pointer-events-none -z-10 overflow-hidden"
+      data-sparkle-background="true"
+      className="fixed inset-0 pointer-events-none z-0 overflow-hidden"
       aria-hidden="true"
     >
       {positions.map((pos, i) => (
         <div
           key={i}
-          className="absolute text-black/15 dark:text-white/15"
+          className="absolute text-black/30 dark:text-white/30"
           style={{
             left: `${pos.x}%`,
             top: `${pos.y}%`,
@@ -106,8 +122,15 @@ export default function SparkleBackground() {
           }}
         >
           <div
-            className="h-full w-full animate-sparkle-float"
-            style={{ animationDelay: `${pos.delay}s` }}
+            className={`h-full w-full ${
+              pos.altAnimation
+                ? "animate-sparkle-float-alt"
+                : "animate-sparkle-float"
+            }`}
+            style={{
+              animationDuration: `${pos.duration}s`,
+              animationDelay: `${pos.delay}s`,
+            }}
           >
             {pos.type === "lightning" ? LIGHTNING_SVG : SPARKLE_SVG}
           </div>
