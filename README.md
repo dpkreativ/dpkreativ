@@ -58,7 +58,7 @@ I also write technical guides on **[my blog](https://divineorji.com/blog)** (alo
 **Selected Work**
 
 - **[Bonjour Quick Bites](https://bonjourquickbites.com)** — Online storefront for fresh bread, pastries, hot meals, and celebration cakes in Port Harcourt, with outlet pickup or doorstep delivery. Built end to end with Next.js, TypeScript, Supabase, and Better Auth on GitHub & Vercel CI/CD.
-- **[Crunchies Online](https://crunchiesonline.com)** — Seven-month online food ordering redesign in Next.js and Tailwind CSS with streamlined checkout, pickup/delivery flows, and Google Maps outlet lookup. Monthly online sales grew from ₦200k to ₦3M+.
+- **[Crunchies Online](https://crunchiesonline.com)** — Online food ordering redesign in Next.js and Tailwind CSS with streamlined checkout, pickup/delivery flows, and Google Maps outlet lookup. Monthly online sales grew from ₦200k to ₦3M+.
 - **[Alchemy Of Code](https://aoc.divineorji.com)** — Learning platform powered by my software engineering curriculum, helping learners move from fundamentals to shipping working software. Runs on Cloudflare, Supabase, and Better Auth.
 - **[Noma](https://noma-study-prep.vercel.app)** — Exam prep app for nursing students pairing quick flashcards with practice quizzes.
 - **[The Iroko Circle](https://theirokocircle.org)** — WordPress publishing home for African literature, writer submissions, and local reader chapters.
