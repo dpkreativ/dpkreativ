@@ -14,6 +14,7 @@ import content from "@/data/content.json";
 import FloatingDownloadLink from "@/components/floating-download-link";
 import PortraitSlideshow from "@/components/portrait-slideshow";
 import RevealText from "@/components/reveal-text";
+import SpeakerBio from "@/components/speaker-bio";
 import SplitHeading from "@/components/split-heading";
 import { groupExperience, type ExperienceItem } from "@/lib/experience";
 import gsap from "gsap";
@@ -69,12 +70,15 @@ export default function About() {
               {roleKicker}
             </RevealText>
 
-            <div className="pt-2">
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-3 pt-2">
               <FloatingDownloadLink
                 href="/api/cv"
                 downloadName="divine-orji-cv.pdf"
                 label="Download CV (PDF)"
               />
+              <a href="#speaker-bio" className="font-mono text-xs font-bold uppercase tracking-wider underline underline-offset-4">
+                Speaker bio
+              </a>
             </div>
           </header>
 
@@ -124,6 +128,8 @@ export default function About() {
 
       {/* Selected Work & Career Snapshot */}
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 pb-20 md:pb-28 grid gap-14">
+        <SpeakerBio bio={content.speakerBio} />
+
         <section className="grid gap-8">
           <div className="flex flex-wrap items-end justify-between gap-4 border-b border-black/15 pb-6 dark:border-white/15">
             <SplitHeading
