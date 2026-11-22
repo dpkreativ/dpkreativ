@@ -55,7 +55,7 @@ export default function SplitHeading({
   );
 
   return (
-    <div ref={containerRef}>
+    <div ref={containerRef} className="min-w-0 max-w-full">
       <Tag data-split-heading className={className}>
         {children}
       </Tag>

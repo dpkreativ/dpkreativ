@@ -119,7 +119,7 @@ export default function MiniBrowserIframe({
 
   return (
     <div
-      className={`group/minibrowser relative flex flex-col border border-black/15 bg-white text-[#111111] dark:border-white/15 dark:bg-[#0c0c0c] dark:text-white ${containerClassName}`}
+      className={`group/minibrowser relative flex min-w-0 max-w-full flex-col border border-black/15 bg-white text-[#111111] dark:border-white/15 dark:bg-[#0c0c0c] dark:text-white ${containerClassName}`}
       onMouseLeave={() => {
         if (isInteracting) {
           handleInteractionToggle(false);
@@ -160,18 +160,18 @@ export default function MiniBrowserIframe({
       <div className="flex shrink-0 flex-wrap items-center justify-between gap-2 border-b border-black/10 bg-black/[0.02] px-3 py-2 font-mono dark:border-white/10 dark:bg-white/[0.02] sm:px-4 sm:py-2.5">
         {/* Left: Address Bar */}
         {hasLiveUrl ? (
-          <div className="flex min-w-0 max-w-[190px] items-center gap-1.5 border border-black/10 bg-white px-2 py-0.5 text-[10px] text-zinc-700 dark:border-white/10 dark:bg-[#141414] dark:text-zinc-300 xs:max-w-[240px] sm:max-w-[320px]">
+          <div className="flex min-w-0 flex-1 max-w-[220px] items-center gap-1.5 border border-black/10 bg-white px-2 py-0.5 text-[10px] text-zinc-700 dark:border-white/10 dark:bg-[#141414] dark:text-zinc-300 sm:max-w-[320px]">
             <i className="ri-lock-2-line shrink-0 text-[11px] text-emerald-600 dark:text-emerald-400" />
             <span className="truncate font-mono">{cleanDomain}</span>
           </div>
         ) : (
-          <div className="flex min-w-0 max-w-[200px] items-center gap-1.5 text-[10px] text-zinc-500 dark:text-zinc-400 truncate">
+          <div className="flex min-w-0 flex-1 max-w-[220px] items-center gap-1.5 text-[10px] text-zinc-500 dark:text-zinc-400 sm:max-w-[320px]">
             <span className="truncate font-mono">{title}</span>
           </div>
         )}
 
         {/* Right: Controls (Mode Switch, Reload, External Link) */}
-        <div className="ml-auto flex items-center gap-1.5 sm:gap-2">
+        <div className="ml-auto flex shrink-0 items-center gap-1.5 sm:gap-2">
           {(!canEmbed || mode !== "live") && (
             <span className="font-mono text-[9px] font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
               {hasLiveUrl && !canEmbed ? "EXTERNAL SITE" : "[CAPTURE]"}

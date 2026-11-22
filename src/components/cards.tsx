@@ -21,7 +21,7 @@ type ProjectProps = {
 
 export function ProjectCard({ title, tags, url, embeddable, link, brand }: ProjectProps) {
   return (
-    <article className="flex w-full flex-col overflow-hidden border border-black/10 bg-white/80 transition-colors focus-within:border-black/40 hover:border-black/40 dark:border-white/10 dark:bg-white/[0.04] dark:focus-within:border-white/40 dark:hover:border-white/40">
+    <article className="flex min-w-0 w-full flex-col overflow-hidden border border-black/10 bg-white/80 transition-colors focus-within:border-black/40 hover:border-black/40 dark:border-white/10 dark:bg-white/[0.04] dark:focus-within:border-white/40 dark:hover:border-white/40">
       <MiniBrowserIframe
         url={url}
         title={title}
@@ -30,21 +30,21 @@ export function ProjectCard({ title, tags, url, embeddable, link, brand }: Proje
         showCrosshairs={false}
       />
 
-      <Link href={link} className="group flex flex-1 flex-col gap-4 p-5 sm:p-6">
+      <Link href={link} className="group flex min-w-0 flex-1 flex-col gap-4 p-4 sm:p-6">
         <div className="flex justify-between gap-3 items-start">
           <div className="flex items-center gap-3 min-w-0">
             <ProjectBrandMark brand={brand} fallback={title} />
 
             <RevealText
               as="h3"
-              className="min-w-0 font-display text-xl sm:text-2xl leading-[1.02] tracking-[-0.03em] text-[#111111] dark:text-white"
+              className="min-w-0 break-words font-display text-xl sm:text-2xl leading-[1.02] tracking-[-0.03em] text-[#111111] dark:text-white"
               triggerStart="top 92%"
               lineDelay={0.12}
             >
               {title}
             </RevealText>
           </div>
-          <span className="translate-x-[-10px] opacity-0 text-black transition-all duration-300 ease-out group-hover:translate-x-0 group-hover:opacity-100 dark:text-white">
+          <span className="shrink-0 translate-x-[-10px] opacity-0 text-black transition-all duration-300 ease-out group-hover:translate-x-0 group-hover:opacity-100 dark:text-white">
             <ArrowIcon />
           </span>
         </div>
@@ -53,7 +53,7 @@ export function ProjectCard({ title, tags, url, embeddable, link, brand }: Proje
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="border border-black/10 bg-black/[0.04] px-3 py-1 tracking-[0.22em] text-black/60 dark:border-white/20 dark:bg-white/[0.1] dark:text-white/90"
+                className="border border-black/10 bg-black/[0.04] px-2.5 sm:px-3 py-1 tracking-[0.16em] sm:tracking-[0.22em] text-black/60 dark:border-white/20 dark:bg-white/[0.1] dark:text-white/90"
               >
                 {tag}
               </span>
