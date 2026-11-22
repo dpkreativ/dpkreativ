@@ -65,7 +65,7 @@ export default function Footer() {
                 as="h2"
                 className="font-display uppercase text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.9]"
               >
-                Work with me
+                Let’s talk
               </SplitHeading>
               <RevealText noSplit className="mx-auto mt-4 max-w-xl text-balance font-body text-base leading-relaxed text-zinc-400 md:text-lg md:leading-relaxed lg:mx-0 lg:max-w-none">
                 Tell me what you want to build or what isn’t working with your current site.
