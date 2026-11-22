@@ -1,27 +1,34 @@
 # DIVINE ORJI
-### Software Engineer // Systems Architect // Head of Engineering
+### Full-stack Software Engineer // Engineering Lead // Technical Writer
 
-> **"I help make your business grow by building fast, reliable software that is easy to use."**
-
+> **"I build web apps that help businesses run smoothly."**
 
 [![Email](https://img.shields.io/badge/Direct_Email-dpkreativ@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:dpkreativ@gmail.com)
 [![CV](https://img.shields.io/badge/Download_CV-PDF-333333?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://dpkreativ.vercel.app/api/cv)
 
 ---
 
-I am a product-focused software engineer and Head of Engineering at **[The Kreativ Studio](https://dpkreativ.vercel.app)**.
+I'm Divine Orji, a full-stack software engineer and Head of Engineering at **[The Kreativ Studio](https://dpkreativ.vercel.app)**, where I lead a remote team across 10+ client and internal web products and stay hands-on across frontend, backend, and deployment.
 
-I specialize in **Next.js, TypeScript, React, and scalable frontend architectures**, with **50+ technical articles** published across freeCodeCamp and Hackmamba.
+I also write technical guides on **[my blog](https://divineorji.com/blog)** (alongside 50+ articles published across freeCodeCamp and Hackmamba) and created the software engineering curriculum behind **[Alchemy Of Code](https://aoc.divineorji.com)**.
 
 ---
 
-| Metric | Benchmark | Highlight |
+| Area | Track Record | Highlight |
 |:---|:---:|:---|
-| **Revenue Growth** | **15x** | ₦200k → ₦3M monthly online orders for Crunchies |
-| **Delivery Track Record** | **100%** | On-time delivery across commercial products |
-| **Sprint Velocity** | **4–6 Wks** | End-to-end MVP architecture & deployment |
-| **Technical Writing** | **50+ Articles** | In-depth engineering guides read by 100k+ developers |
-| **Response Time** | **< 24 Hours** | Direct communication for client enquiries |
+| **Revenue Growth** | **15x** | Grew Crunchies Online monthly sales from ₦200k to ₦3M+ over a 7-month redesign |
+| **Products Shipped** | **15+ Apps** | Custom web applications built end to end; leading a remote team across 10+ products |
+| **Technical Writing** | **50+ Articles** | Tutorials, SDK integration guides, and demo apps across freeCodeCamp, Hackmamba, and my blog |
+| **Mentorship & Community** | **300+ Builders** | Trained 100+ students at IGHub, 200+ at GDSC MOUAU, and authored the Alchemy Of Code curriculum |
+
+---
+
+**Core Stack & Capabilities**
+
+- **Frontend**: `React` · `Next.js` · `TypeScript` · `Tailwind CSS` · `GSAP`
+- **Backend & Data**: `Supabase` · `Better Auth` · `WordPress` · `Google Maps API`
+- **Infrastructure & Delivery**: `Cloudflare` · `Git` · `GitHub & Vercel CI/CD`
+- **Writing & Education**: `Technical Writing` · `Curriculum Design`
 
 ---
 
@@ -48,20 +55,28 @@ I specialize in **Next.js, TypeScript, React, and scalable frontend architecture
 
 ---
 
-**Selected Systems & Case Studies**
+**Selected Work**
 
-- **[Crunchies Online](https://crunchiesonline.com)** — Multi-outlet food ordering platform across Nigeria with Google Maps routing.
-- **[The Iroko Circle](https://theirokocircle.org)** — Publishing network and essay engine for African literature.
-- **[Grooovy](https://grooovy.fun)** — Event discovery, ticketing, and host tools, with Better Auth for sign-in.
-- **[Bonjour Quick Bites](https://bonjourquickbites.com)** — Online bakery and hot meal ordering for pickup or delivery in Port Harcourt.
+- **[Bonjour Quick Bites](https://bonjourquickbites.com)** — Online storefront for fresh bread, pastries, hot meals, and celebration cakes in Port Harcourt, with outlet pickup or doorstep delivery. Built end to end with Next.js, TypeScript, Supabase, and Better Auth on GitHub & Vercel CI/CD.
+- **[Crunchies Online](https://crunchiesonline.com)** — Seven-month online food ordering redesign in Next.js and Tailwind CSS with streamlined checkout, pickup/delivery flows, and Google Maps outlet lookup. Monthly online sales grew from ₦200k to ₦3M+.
+- **[Alchemy Of Code](https://aoc.divineorji.com)** — Learning platform powered by my software engineering curriculum, helping learners move from fundamentals to shipping working software. Runs on Cloudflare, Supabase, and Better Auth.
+- **[Noma](https://noma-study-prep.vercel.app)** — Exam prep app for nursing students pairing quick flashcards with practice quizzes.
+- **[The Iroko Circle](https://theirokocircle.org)** — WordPress publishing home for African literature, writer submissions, and local reader chapters.
+
+**In Development**
+
+- **[Merphils](https://merphils.com)** — Multi-tenant school management platform for daily school operations and family/student academic records with one account across schools. Built with Next.js, TypeScript, Tailwind CSS, and Better Auth.
+- **[Grooovy](https://grooovy.fun)** — Event discovery, ticketing, and host tools platform built with React, Supabase, Better Auth, and GSAP.
 
 ---
 
-**Let's build something fast, reliable, and built to scale.**
+**Let's talk — remote worldwide (West Africa Time, UTC+1).**
 
 - 🌐 **Website**: [dpkreativ.vercel.app](https://dpkreativ.vercel.app)
 - 🗂️ **Portfolio**: [dpkreativ.vercel.app/work](https://dpkreativ.vercel.app/work)
+- ✍️ **Blog**: [divineorji.com/blog](https://divineorji.com/blog)
 - 📝 **Send a Brief**: [dpkreativ.vercel.app/contact](https://dpkreativ.vercel.app/contact)
 - ✉️ **Direct Email**: [dpkreativ@gmail.com](mailto:dpkreativ@gmail.com)
 - 📱 **Call / WhatsApp**: [+234 902 182 4073](tel:+2349021824073)
-- 🤝 **LinkedIn**: [/in/dpkreativ](https://linkedin.com/in/dpkreativ)
+- 🤝 **LinkedIn**: [/in/dpkreativ](https://www.linkedin.com/in/dpkreativ)
+- 📺 **YouTube**: [@dpkreativ](https://www.youtube.com/@dpkreativ)
