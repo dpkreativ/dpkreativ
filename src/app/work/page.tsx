@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import WorkClient from "./work-client";
 import { SITE_URL } from "@/lib/site";
 
-const description = "Explore Divine Orji’s web projects in online ordering, education, publishing, and events.";
+const description = "Client builds, shipped products, and work in progress by Divine Orji.";
 
 export const metadata: Metadata = {
   title: "Work",
