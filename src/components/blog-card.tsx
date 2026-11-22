@@ -32,7 +32,7 @@ export default function BlogCard({ blog }: { blog: Blog }) {
         {blog.excerpt}
       </p>
 
-      <div className="mt-auto flex items-center gap-2 pt-2 font-mono text-[11px] font-bold uppercase tracking-[0.24em] text-black/55 transition-colors group-hover:text-black dark:text-white/58 dark:group-hover:text-white">
+      <div className="mt-auto flex items-center gap-2 pt-2 font-mono text-[11px] font-bold uppercase tracking-[0.24em] text-black/55 transition-colors group-hover:text-black dark:text-white/70 dark:group-hover:text-white">
         <span>Read Article</span>
         <i className="ri-arrow-right-up-line transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
       </div>
