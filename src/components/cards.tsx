@@ -1,14 +1,14 @@
 import { ArrowIcon } from "@/assets/icons";
+import MiniBrowserIframe from "@/components/mini-browser-iframe";
 import ProjectBrandMark from "@/components/project-brand-mark";
 import RevealText from "@/components/reveal-text";
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
-import Image from "next/image";
 import Link from "next/link";
 
 type ProjectProps = {
   title: string;
   tags?: string[];
-  image: string | StaticImport;
+  url: string;
+  embeddable: boolean;
   link: string;
   brand?: {
     image: string;
@@ -19,23 +19,18 @@ type ProjectProps = {
   } | null;
 };
 
-export function ProjectCard({ title, tags, image, link, brand }: ProjectProps) {
+export function ProjectCard({ title, tags, url, embeddable, link, brand }: ProjectProps) {
   return (
-    <Link
-      href={link}
-      className="group flex w-full flex-col overflow-hidden border border-black/10 bg-white/80 transition-all duration-300 hover:-translate-y-1 hover:border-black/40 dark:border-white/10 dark:bg-white/[0.04] dark:hover:border-white/40 dark:hover:bg-white/[0.06]"
-    >
-      <div className="relative block aspect-[4/3] overflow-hidden border-b border-black/10 dark:border-white/10">
-        <Image
-          src={image}
-          alt={title}
-          fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
-        />
-      </div>
+    <article className="flex w-full flex-col overflow-hidden border border-black/10 bg-white/80 transition-colors focus-within:border-black/40 hover:border-black/40 dark:border-white/10 dark:bg-white/[0.04] dark:focus-within:border-white/40 dark:hover:border-white/40">
+      <MiniBrowserIframe
+        url={url}
+        title={title}
+        embeddable={embeddable}
+        containerClassName="aspect-[4/3] w-full border-0 border-b"
+        showCrosshairs={false}
+      />
 
-      <div className="flex flex-1 flex-col gap-4 p-5 sm:p-6">
+      <Link href={link} className="group flex flex-1 flex-col gap-4 p-5 sm:p-6">
         <div className="flex justify-between gap-3 items-start">
           <div className="flex items-center gap-3 min-w-0">
             <ProjectBrandMark brand={brand} fallback={title} />
@@ -65,7 +60,7 @@ export function ProjectCard({ title, tags, image, link, brand }: ProjectProps) {
             ))}
           </div>
         )}
-      </div>
-    </Link>
+      </Link>
+    </article>
   );
 }

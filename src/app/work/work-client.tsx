@@ -34,12 +34,13 @@ export default function Work() {
         </div>
 
         <div className="grid gap-8 md:grid-cols-2">
-          {projects.map((project, idx) => (
+          {projects.map((project) => (
             <ProjectCard
-              key={idx}
+              key={project.slug}
               title={project.title}
               tags={project.tags}
-              image={project.image}
+              url={project.url}
+              embeddable={project.embeddable}
               brand={project.brand}
               link={`/work/${project.slug}`}
             />
