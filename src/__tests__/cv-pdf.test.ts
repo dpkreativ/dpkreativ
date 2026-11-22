@@ -1,4 +1,4 @@
-import { PDFDocument } from 'pdf-lib';
+import { PDFDict, PDFDocument, PDFName, PDFString } from 'pdf-lib';
 import { buildCvPdf } from '@/lib/cv/build-cv-pdf';
 import { collectCvData } from '@/lib/cv/collect-cv-data';
 import { toPdfText, stripHtml } from '@/lib/cv/text';
@@ -118,6 +118,24 @@ describe('buildCvPdf', () => {
 
     expect(doc.getPageCount()).toBeGreaterThanOrEqual(1);
     expect(doc.getPageCount()).toBeLessThan(10);
+  });
+
+  it('embeds clickable web links for every selected project', async () => {
+    const data = collectCvData();
+    const doc = await PDFDocument.load(await buildCvPdf(data));
+    const urls = doc.getPages().flatMap(({ node }) =>
+      (node.Annots()?.asArray() ?? []).map((ref) => {
+        const annotation = doc.context.lookup(ref, PDFDict);
+        expect(annotation.get(PDFName.of('Subtype'))).toBe(PDFName.of('Link'));
+
+        const action = annotation.lookup(PDFName.of('A'), PDFDict);
+        expect(action.get(PDFName.of('S'))).toBe(PDFName.of('URI'));
+
+        return action.lookup(PDFName.of('URI'), PDFString).decodeText();
+      }),
+    );
+
+    expect(urls).toEqual(data.selectedWork.map(({ url }) => url));
   });
 
   it('survives content containing unencodable symbols', async () => {

@@ -1,5 +1,6 @@
 import {
   PDFDocument,
+  PDFString,
   StandardFonts,
   rgb,
   type PDFFont,
@@ -33,7 +34,7 @@ export type CvData = {
   contactLine: string;
   profile: string[];
   skills: string[];
-  selectedWork: { title: string; summary: string }[];
+  selectedWork: { title: string; url: string; summary: string }[];
   experience: GroupedExperience[];
   education: CvEducation[];
   certifications: string[];
@@ -381,14 +382,34 @@ class CvBuilder {
     });
   }
 
-  private workEntry({ title, summary }: CvData["selectedWork"][number]) {
+  private workEntry({ title, url, summary }: CvData["selectedWork"][number]) {
     const text = toPdfText(summary);
     const size = 9.5;
     const leading = 13;
     const lines = wrapText(text, this.fonts.regular, size, contentWidth());
 
     this.ensureSpace(14 + lines.length * leading);
-    this.draw(toPdfText(title), { font: this.fonts.bold, size: 10, color: INK });
+    const label = toPdfText(title);
+    const titleSize = 10;
+    const x = PAGE.marginX;
+    const endX = x + this.fonts.bold.widthOfTextAtSize(label, titleSize);
+    this.draw(label, { font: this.fonts.bold, size: titleSize, color: INK });
+    this.page.drawLine({
+      start: { x, y: this.y - 2 },
+      end: { x: endX, y: this.y - 2 },
+      thickness: 0.5,
+      color: INK,
+    });
+
+    const link = this.doc.context.obj({
+      Type: "Annot",
+      Subtype: "Link",
+      Rect: [x, this.y - 3, endX, this.y + titleSize],
+      Border: [0, 0, 0],
+      A: { S: "URI", URI: PDFString.of(url) },
+    });
+    this.page.node.addAnnot(this.doc.context.register(link));
+
     this.y -= 14;
     this.paragraph(text, { size, leading });
     this.y -= 6;

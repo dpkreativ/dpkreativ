@@ -21,22 +21,27 @@
   "selectedWork": [
     {
       "title": "Bonjour Quick Bites",
+      "url": "https://bonjourquickbites.com",
       "summary": "Built an online storefront for a Port Harcourt bakery and restaurant, with outlet pickup and doorstep delivery. Used Next.js and TypeScript, Supabase for data, Better Auth for authentication, and GitHub and Vercel for CI/CD."
     },
     {
       "title": "Crunchies Online",
+      "url": "https://crunchiesonline.com",
       "summary": "Led a Next.js and Tailwind CSS redesign that simplified checkout, pickup, and delivery location selection. Added Google Maps outlet discovery and helped grow monthly online sales from ₦200,000 to over ₦3 million."
     },
     {
       "title": "Alchemy Of Code",
+      "url": "https://aoc.divineorji.com",
       "summary": "Created the curriculum behind a software engineering learning platform that helps learners turn ideas into working software. The platform runs on Cloudflare with Supabase and Better Auth."
     },
     {
       "title": "Noma",
+      "url": "https://noma-study-prep.vercel.app",
       "summary": "Built a nursing exam prep app with flashcards for reviewing key concepts and quizzes for testing understanding."
     },
     {
       "title": "The Iroko Circle",
+      "url": "https://theirokocircle.org",
       "summary": "Designed and developed a WordPress publishing site for African literature, with dedicated paths for discovering stories, submitting work, and joining the community."
     }
   ],

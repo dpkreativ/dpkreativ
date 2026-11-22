@@ -137,12 +137,16 @@ export default function About() {
             </Link>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
-            {content.selectedWork.map(({ title, summary }) => (
+            {content.selectedWork.map(({ title, url, summary }) => (
               <article
                 key={title}
                 className="grid content-start gap-3 border border-black/15 bg-white p-6 dark:border-white/15 dark:bg-[#1a1a1a] md:p-8"
               >
-                <h3 className="font-display text-2xl uppercase tracking-tight">{title}</h3>
+                <h3 className="font-display text-2xl uppercase tracking-tight">
+                  <a href={url} className="underline underline-offset-4">
+                    {title}
+                  </a>
+                </h3>
                 <p className="font-body text-base leading-relaxed text-[#111111]/80 dark:text-zinc-300">
                   {summary}
                 </p>
