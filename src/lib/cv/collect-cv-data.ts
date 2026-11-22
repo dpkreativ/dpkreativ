@@ -10,11 +10,10 @@ import {
   socials,
 } from "@/assets/data";
 import content from "@/data/content.json";
-import { SITE_NAME, SITE_URL } from "@/lib/site";
+import { SITE_BLOG_URL, SITE_NAME, SITE_URL } from "@/lib/site";
 import { groupExperience, type ExperienceItem } from "@/lib/experience";
 import type { CvData, CvSelectedWork } from "./build-cv-pdf";
 
-const BLOG_URL = "https://divineorji.com/blog";
 const LOCATION_NOTE = "Remote (UTC+1)";
 
 export function shortenUrl(url: string) {
@@ -44,7 +43,7 @@ function buildContactLine() {
     contact.email,
     formatInternationalPhone(contact.phone),
     shortenUrl(contact.website || SITE_URL),
-    shortenUrl(BLOG_URL),
+    shortenUrl(SITE_BLOG_URL),
   ]
     .filter(Boolean)
     .join("  ·  ");

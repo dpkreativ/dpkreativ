@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import SparkleBackground from "@/components/sparkle-background";
+import { SITE_BLOG_URL } from "@/lib/site";
 
 const BLOG_PHRASE = "his blog";
-const BLOG_URL = "https://divineorji.com/blog";
 
 function renderBioWithBlogLink(bio: string) {
   const index = bio.indexOf(BLOG_PHRASE);
@@ -19,7 +19,7 @@ function renderBioWithBlogLink(bio: string) {
     <>
       {before}
       <a
-        href={BLOG_URL}
+        href={SITE_BLOG_URL}
         className="underline underline-offset-4 text-black transition-opacity hover:opacity-75 dark:text-white"
       >
         {BLOG_PHRASE}

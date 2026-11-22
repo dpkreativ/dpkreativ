@@ -4,11 +4,11 @@
 > **"I build web apps that help businesses run smoothly."**
 
 [![Email](https://img.shields.io/badge/Direct_Email-dpkreativ@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:dpkreativ@gmail.com)
-[![CV](https://img.shields.io/badge/Download_CV-PDF-333333?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://dpkreativ.vercel.app/api/cv)
+[![CV](https://img.shields.io/badge/Download_CV-PDF-333333?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://divineorji.com/api/cv)
 
 ---
 
-I'm Divine Orji, a full-stack software engineer and Head of Engineering at **[The Kreativ Studio](https://dpkreativ.vercel.app)**, where I lead a remote team across 10+ client and internal web products and stay hands-on across frontend, backend, and deployment.
+I'm Divine Orji, a full-stack software engineer and Head of Engineering at **[The Kreativ Studio](https://divineorji.com)**, where I lead a remote team across 10+ client and internal web products and stay hands-on across frontend, backend, and deployment.
 
 I also write technical guides on **[my blog](https://divineorji.com/blog)** (alongside 50+ articles published across freeCodeCamp and Hackmamba) and created the software engineering curriculum behind **[Alchemy Of Code](https://aoc.divineorji.com)**.
 
@@ -72,10 +72,10 @@ I also write technical guides on **[my blog](https://divineorji.com/blog)** (alo
 
 **Let's talk — remote worldwide (West Africa Time, UTC+1).**
 
-- 🌐 **Website**: [dpkreativ.vercel.app](https://dpkreativ.vercel.app)
-- 🗂️ **Portfolio**: [dpkreativ.vercel.app/work](https://dpkreativ.vercel.app/work)
+- 🌐 **Website**: [divineorji.com](https://divineorji.com) (fallback: [dpkreativ.vercel.app](https://dpkreativ.vercel.app))
+- 🗂️ **Portfolio**: [divineorji.com/work](https://divineorji.com/work)
 - ✍️ **Blog**: [divineorji.com/blog](https://divineorji.com/blog)
-- 📝 **Send a Brief**: [dpkreativ.vercel.app/contact](https://dpkreativ.vercel.app/contact)
+- 📝 **Send a Brief**: [divineorji.com/contact](https://divineorji.com/contact)
 - ✉️ **Direct Email**: [dpkreativ@gmail.com](mailto:dpkreativ@gmail.com)
 - 📱 **Call / WhatsApp**: [+234 902 182 4073](tel:+2349021824073)
 - 🤝 **LinkedIn**: [/in/dpkreativ](https://www.linkedin.com/in/dpkreativ)

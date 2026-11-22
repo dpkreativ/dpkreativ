@@ -22,9 +22,9 @@ import { useGSAP } from "@gsap/react";
 import Link from "next/link";
 import { useMemo, useRef } from "react";
 import SparkleBackground from "@/components/sparkle-background";
+import { SITE_BLOG_URL } from "@/lib/site";
 
 const BLOG_PHRASE = "my blog";
-const BLOG_URL = "https://divineorji.com/blog";
 
 function renderParagraphWithBlogLink(paragraph: string) {
   const index = paragraph.indexOf(BLOG_PHRASE);
@@ -39,7 +39,7 @@ function renderParagraphWithBlogLink(paragraph: string) {
     <>
       {before}
       <a
-        href={BLOG_URL}
+        href={SITE_BLOG_URL}
         className="underline underline-offset-4 text-black transition-opacity hover:opacity-75 dark:text-white"
       >
         {BLOG_PHRASE}

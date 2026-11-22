@@ -1,4 +1,6 @@
-export const SITE_URL = "https://dpkreativ.vercel.app";
+export const SITE_URL = "https://divineorji.com";
+export const SITE_FALLBACK_URL = "https://dpkreativ.vercel.app";
+export const SITE_BLOG_URL = `${SITE_URL}/blog`;
 export const SITE_NAME = "Divine Orji";
 export const SITE_TITLE = "Divine Orji | Software Engineer & Product Builder";
 export const SITE_DESCRIPTION =

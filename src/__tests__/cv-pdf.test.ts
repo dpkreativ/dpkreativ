@@ -110,6 +110,9 @@ describe('buildCvPdf', () => {
     expect(raw.startsWith('%PDF-')).toBe(true);
     expect(raw.trimEnd().endsWith('%%EOF')).toBe(true);
     expect(bytes.byteLength).toBeGreaterThan(5_000);
+
+    const doc = await PDFDocument.load(bytes);
+    expect(doc.getCreator()).toBe('divineorji.com');
   });
 
   it('paginates rather than overflowing a single page', async () => {
@@ -254,11 +257,14 @@ describe('collectCvData', () => {
 
     expect(lines).toHaveLength(2);
     expect(contactLine).toContain('+234 902 182 4073');
+    expect(contactLine).toContain('divineorji.com');
     expect(contactLine).toContain('divineorji.com/blog');
+    expect(contactLine).not.toContain('dpkreativ.vercel.app');
     expect(contactLine).toContain('Remote (UTC+1)');
     expect(contactLine).toContain('linkedin.com/in/dpkreativ');
     expect(contactLine).toContain('github.com/dpkreativ');
     expect(contactLine).not.toContain('notion.site');
     expect(contactLine).not.toContain('?');
+    expect(collectCvData().footerNote).toContain('https://divineorji.com');
   });
 });

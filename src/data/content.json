@@ -12,7 +12,8 @@
     "email": "dpkreativ@gmail.com",
     "phone": "09021824073",
     "linkedin": "https://www.linkedin.com/in/dpkreativ",
-    "website": "https://dpkreativ.vercel.app"
+    "website": "https://divineorji.com",
+    "fallbackWebsite": "https://dpkreativ.vercel.app"
   },
   "aboutMe": [
     "I’m Divine Orji, a full-stack software engineer and Head of Engineering at The Kreativ Studio, where I lead a remote team and stay hands-on across frontend, backend, and deployment.",
