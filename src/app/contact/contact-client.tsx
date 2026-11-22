@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import SplitHeading from "@/components/split-heading";
-import RevealText from "@/components/reveal-text";
 import ContactForm from "@/components/form";
 import { contact } from "@/assets/data";
 
@@ -34,24 +33,8 @@ export default function ContactClient() {
             as="h1"
             className="font-display text-4xl sm:text-6xl md:text-7xl uppercase tracking-tighter leading-[0.88] text-black dark:text-white"
           >
-            Contact Divine Orji
+            Contact
           </SplitHeading>
-
-          <RevealText
-            as="div"
-            noSplit
-            className="mt-4 max-w-2xl font-body text-base sm:text-lg md:text-xl text-[#111111]/75 dark:text-zinc-300 leading-relaxed space-y-2"
-          >
-            <p>
-              Get in touch about building a web app, improving an existing one, or planning the technical side of your project.
-            </p>
-            <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400">
-              Use the form or{" "}
-              <a href={`mailto:${contact.email}`} className="underline underline-offset-4 hover:text-black dark:hover:text-white">
-                email me directly
-              </a>.
-            </p>
-          </RevealText>
         </header>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10 lg:gap-16 items-start">
