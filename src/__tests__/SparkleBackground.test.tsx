@@ -69,14 +69,14 @@ describe("SparkleBackground", () => {
     }
   });
 
-  it("positions accents consistently at the top right with floating animation", () => {
+  it("positions accents consistently at the bottom right with floating animation", () => {
     const { container } = render(<SparkleBackground variant="code" size={34} />);
     const outer = container.firstElementChild as HTMLElement;
 
     expect(outer).toHaveAttribute("aria-hidden", "true");
     expect(outer).toHaveAttribute("data-sparkle-accent", "code");
-    expect(outer).toHaveAttribute("data-sparkle-position", "top-right");
-    expect(outer).toHaveClass("-top-6", "right-0", "sm:-top-5", "sm:-right-10");
+    expect(outer).toHaveAttribute("data-sparkle-position", "bottom-right");
+    expect(outer).toHaveClass("-bottom-4", "right-0", "sm:-bottom-3", "sm:-right-10");
     expect(outer.style.width).toBe("34px");
     expect(outer.style.height).toBe("34px");
 

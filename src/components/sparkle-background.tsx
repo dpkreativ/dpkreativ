@@ -197,14 +197,14 @@ export default function SparkleBackground({
 }: SparkleBackgroundProps) {
   const positionClassName =
     placement === "section"
-      ? "top-1 right-4 sm:top-2 sm:right-10"
-      : "-top-6 right-0 sm:-top-5 sm:-right-10";
+      ? "bottom-1 right-4 sm:bottom-2 sm:right-10"
+      : "-bottom-4 right-0 sm:-bottom-3 sm:-right-10";
 
   return (
     <span
       aria-hidden="true"
       data-sparkle-accent={variant}
-      data-sparkle-position="top-right"
+      data-sparkle-position="bottom-right"
       className={cn(
         "pointer-events-none select-none absolute text-black/35 dark:text-white/35",
         positionClassName,
