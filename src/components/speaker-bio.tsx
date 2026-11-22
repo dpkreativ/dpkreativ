@@ -1,9 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 
 const BLOG_PHRASE = "his blog";
+const BLOG_URL = "https://divineorji.com/blog";
 
 function renderBioWithBlogLink(bio: string) {
   const index = bio.indexOf(BLOG_PHRASE);
@@ -17,12 +17,12 @@ function renderBioWithBlogLink(bio: string) {
   return (
     <>
       {before}
-      <Link
-        href="/blog"
+      <a
+        href={BLOG_URL}
         className="underline underline-offset-4 text-black transition-opacity hover:opacity-75 dark:text-white"
       >
         {BLOG_PHRASE}
-      </Link>
+      </a>
       {after}
     </>
   );

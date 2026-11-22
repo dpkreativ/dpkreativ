@@ -31,7 +31,10 @@ describe('SpeakerBio', () => {
       return element?.tagName === 'P' && element.textContent === content.speakerBio;
     });
     expect(bioParagraph).toBeVisible();
-    expect(within(section).getByRole('link', { name: 'his blog' })).toHaveAttribute('href', '/blog');
+    expect(within(section).getByRole('link', { name: 'his blog' })).toHaveAttribute(
+      'href',
+      'https://divineorji.com/blog'
+    );
     fireEvent.click(within(section).getByRole('button', { name: 'Copy speaker bio' }));
 
     expect(writeText).toHaveBeenCalledWith(content.speakerBio);
