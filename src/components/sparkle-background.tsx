@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { useSyncExternalStore } from "react";
 
 const LIGHTNING_SVG = (
   <svg
@@ -61,12 +61,38 @@ function generatePositions(): SparklePosition[] {
   return positions;
 }
 
+const EMPTY_POSITIONS: SparklePosition[] = [];
+let cachedClientPositions: SparklePosition[] | null = null;
+
+function subscribe() {
+  return () => {};
+}
+
+function getClientPositions(): SparklePosition[] {
+  if (cachedClientPositions === null) {
+    cachedClientPositions = generatePositions();
+  }
+
+  return cachedClientPositions;
+}
+
+function getServerPositions(): SparklePosition[] {
+  return EMPTY_POSITIONS;
+}
+
 export default function SparkleBackground() {
-  // Generate positions once per mount so they stay stable during the session
-  const positions = useMemo(() => generatePositions(), []);
+  // Render empty during SSR and hydration, then populate once per client session
+  const positions = useSyncExternalStore(
+    subscribe,
+    getClientPositions,
+    getServerPositions,
+  );
 
   return (
-    <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
+    <div
+      className="fixed inset-0 pointer-events-none -z-10 overflow-hidden"
+      aria-hidden="true"
+    >
       {positions.map((pos, i) => (
         <div
           key={i}
@@ -77,11 +103,12 @@ export default function SparkleBackground() {
             width: `${pos.size}px`,
             height: `${pos.size}px`,
             transform: `rotate(${pos.rotate}deg)`,
-            animation: `sparkle-float 7s ease-in-out infinite`,
-            animationDelay: `${pos.delay}s`,
           }}
         >
-          <div className="animate-sparkle-float">
+          <div
+            className="animate-sparkle-float"
+            style={{ animationDelay: `${pos.delay}s` }}
+          >
             {pos.type === "lightning" ? LIGHTNING_SVG : SPARKLE_SVG}
           </div>
         </div>
