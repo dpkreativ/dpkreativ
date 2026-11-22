@@ -25,9 +25,9 @@ const ALL_VARIANTS: SparkleVariant[] = [
 ];
 
 describe("SparkleBackground", () => {
-  it("hydrates SSR HTML without mismatch warnings and renders a single icon on the client", () => {
-    const serverHtml = renderToString(<SparkleBackground variant="code" />);
-    expect(serverHtml).toBe("");
+  it("hydrates SSR HTML without mismatch warnings and renders a single icon", () => {
+    const serverHtml = renderToString(<SparkleBackground variant="scroll" />);
+    expect(serverHtml).toContain('data-icon="scroll"');
 
     const container = document.createElement("div");
     container.innerHTML = serverHtml;
@@ -40,14 +40,14 @@ describe("SparkleBackground", () => {
     let root: ReturnType<typeof hydrateRoot> | null = null;
     try {
       act(() => {
-        root = hydrateRoot(container, <SparkleBackground variant="code" />);
+        root = hydrateRoot(container, <SparkleBackground variant="scroll" />);
       });
 
       expect(consoleErrorSpy).not.toHaveBeenCalled();
 
       const icons = container.querySelectorAll("svg");
       expect(icons).toHaveLength(1);
-      expect(icons[0]).toHaveAttribute("data-icon", "code");
+      expect(icons[0]).toHaveAttribute("data-icon", "scroll");
     } finally {
       act(() => {
         root?.unmount();
@@ -69,37 +69,19 @@ describe("SparkleBackground", () => {
     }
   });
 
-  it("randomizes positions across sibling headings without repeating back-to-back slots", () => {
-    const { container } = render(
-      <div>
-        <SparkleBackground variant="code" />
-        <SparkleBackground variant="lightning" />
-        <SparkleBackground variant="pen" />
-        <SparkleBackground variant="layers" />
-      </div>,
-    );
+  it("positions accents consistently at the top right with floating animation", () => {
+    const { container } = render(<SparkleBackground variant="code" size={34} />);
+    const outer = container.firstElementChild as HTMLElement;
 
-    const accents = Array.from(
-      container.querySelectorAll("[data-sparkle-accent]"),
-    );
-    expect(accents).toHaveLength(4);
+    expect(outer).toHaveAttribute("aria-hidden", "true");
+    expect(outer).toHaveAttribute("data-sparkle-accent", "code");
+    expect(outer).toHaveAttribute("data-sparkle-position", "top-right");
+    expect(outer).toHaveClass("-top-6", "right-0", "sm:-top-5", "sm:-right-10");
+    expect(outer.style.width).toBe("34px");
+    expect(outer.style.height).toBe("34px");
 
-    const positions = accents.map((el) =>
-      el.getAttribute("data-sparkle-position"),
-    );
-    expect(positions.every(Boolean)).toBe(true);
-    for (let i = 1; i < positions.length; i++) {
-      expect(positions[i]).not.toBe(positions[i - 1]);
-    }
-
-    accents.forEach((el) => {
-      const inner = el.firstElementChild as HTMLElement;
-      expect(el).toHaveAttribute("aria-hidden", "true");
-      expect(
-        inner.classList.contains("animate-sparkle-float") ||
-          inner.classList.contains("animate-sparkle-float-alt"),
-      ).toBe(true);
-      expect(parseFloat(inner.style.animationDelay)).toBeLessThanOrEqual(0);
-    });
+    const inner = outer.firstElementChild as HTMLElement;
+    expect(inner).toHaveClass("animate-sparkle-float");
+    expect(parseFloat(inner.style.animationDelay)).toBeLessThanOrEqual(0);
   });
 });

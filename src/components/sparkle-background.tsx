@@ -1,6 +1,3 @@
-"use client";
-
-import { useId, useSyncExternalStore } from "react";
 import { cn } from "@/lib/utils";
 
 export type SparkleVariant =
@@ -175,107 +172,15 @@ function renderIcon(variant: SparkleVariant) {
   }
 }
 
-const HEADING_POSITION_SLOTS = [
-  { name: "top-left", className: "-top-7 left-0 sm:-top-6 sm:-left-9" },
-  { name: "top-right", className: "-top-6 right-0 sm:-top-5 sm:-right-10" },
-  {
-    name: "top-mid-left",
-    className: "-top-7 left-[22%] sm:-top-7 sm:left-[26%]",
-  },
-  {
-    name: "top-mid-right",
-    className: "-top-7 right-[18%] sm:-top-7 sm:right-[22%]",
-  },
-  { name: "bottom-right", className: "-bottom-5 right-0 sm:-bottom-3 sm:-right-10" },
-  { name: "bottom-left", className: "-bottom-5 left-2 sm:-bottom-4 sm:-left-9" },
-  { name: "mid-right", className: "top-1/2 -right-7 -mt-3.5 sm:-right-10" },
-  {
-    name: "mid-left",
-    className: "-top-7 left-1/2 -ml-3.5 sm:top-1/2 sm:-left-10 sm:ml-0 sm:-mt-3.5",
-  },
-] as const;
-
-const SECTION_POSITION_SLOTS = [
-  { name: "section-top-left", className: "top-1 left-4 sm:top-2 sm:left-10" },
-  { name: "section-top-right", className: "top-1 right-4 sm:top-2 sm:right-10" },
-  {
-    name: "section-bottom-left",
-    className: "bottom-1 left-6 sm:bottom-2 sm:left-12",
-  },
-  {
-    name: "section-bottom-right",
-    className: "bottom-1 right-6 sm:bottom-2 sm:right-12",
-  },
-] as const;
-
 type PlacementMode = "heading" | "section";
-
-interface AccentLayout {
-  positionName: string;
-  positionClassName: string;
-  rotate: number;
-  duration: number;
-  delay: number;
-  altAnimation: boolean;
-}
-
-const layoutCache = new Map<string, AccentLayout>();
-let lastHeadingSlotIndex = -1;
-let lastSectionSlotIndex = -1;
-
-function pickSlotIndex(length: number, lastIndex: number): number {
-  if (length <= 1) return 0;
-  let nextIndex = Math.floor(Math.random() * length);
-  if (nextIndex === lastIndex) {
-    nextIndex = (nextIndex + 1 + Math.floor(Math.random() * (length - 1))) % length;
-  }
-  return nextIndex;
-}
-
-function getClientLayout(key: string, placement: PlacementMode): AccentLayout {
-  const existing = layoutCache.get(key);
-  if (existing) {
-    return existing;
-  }
-
-  const slots =
-    placement === "section" ? SECTION_POSITION_SLOTS : HEADING_POSITION_SLOTS;
-  const lastIndex =
-    placement === "section" ? lastSectionSlotIndex : lastHeadingSlotIndex;
-  const slotIndex = pickSlotIndex(slots.length, lastIndex);
-
-  if (placement === "section") {
-    lastSectionSlotIndex = slotIndex;
-  } else {
-    lastHeadingSlotIndex = slotIndex;
-  }
-
-  const slot = slots[slotIndex];
-  const duration = 4.8 + Math.random() * 2.8; // 4.8s to 7.6s
-  const layout: AccentLayout = {
-    positionName: slot.name,
-    positionClassName: slot.className,
-    rotate: -20 + Math.random() * 40, // -20deg to +20deg
-    duration,
-    delay: -(Math.random() * duration),
-    altAnimation: Math.random() > 0.5,
-  };
-
-  layoutCache.set(key, layout);
-  return layout;
-}
-
-function subscribe() {
-  return () => {};
-}
-
-function getServerLayout(): AccentLayout | null {
-  return null;
-}
 
 export interface SparkleBackgroundProps {
   variant?: SparkleVariant;
   size?: number;
+  rotate?: number;
+  duration?: number;
+  delay?: number;
+  altAnimation?: boolean;
   placement?: PlacementMode;
   className?: string;
 }
@@ -283,46 +188,41 @@ export interface SparkleBackgroundProps {
 export default function SparkleBackground({
   variant = "sparkle",
   size = 28,
+  rotate = 12,
+  duration = 5.8,
+  delay = -1.5,
+  altAnimation = false,
   placement = "heading",
   className,
 }: SparkleBackgroundProps) {
-  const id = useId();
-  const cacheKey = `${placement}:${variant}:${id}`;
-  const layout = useSyncExternalStore(
-    subscribe,
-    () => getClientLayout(cacheKey, placement),
-    getServerLayout,
-  );
-
-  if (!layout) {
-    return null;
-  }
+  const positionClassName =
+    placement === "section"
+      ? "top-1 right-4 sm:top-2 sm:right-10"
+      : "-top-6 right-0 sm:-top-5 sm:-right-10";
 
   return (
     <span
       aria-hidden="true"
       data-sparkle-accent={variant}
-      data-sparkle-position={layout.positionName}
+      data-sparkle-position="top-right"
       className={cn(
         "pointer-events-none select-none absolute text-black/35 dark:text-white/35",
-        layout.positionClassName,
+        positionClassName,
         className,
       )}
       style={{
         width: `${size}px`,
         height: `${size}px`,
-        transform: `rotate(${layout.rotate}deg)`,
+        transform: `rotate(${rotate}deg)`,
       }}
     >
       <span
         className={`block h-full w-full ${
-          layout.altAnimation
-            ? "animate-sparkle-float-alt"
-            : "animate-sparkle-float"
+          altAnimation ? "animate-sparkle-float-alt" : "animate-sparkle-float"
         }`}
         style={{
-          animationDuration: `${layout.duration}s`,
-          animationDelay: `${layout.delay}s`,
+          animationDuration: `${duration}s`,
+          animationDelay: `${delay}s`,
         }}
       >
         {renderIcon(variant)}
