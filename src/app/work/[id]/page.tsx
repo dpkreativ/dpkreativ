@@ -165,30 +165,34 @@ export default async function Page({ params }: PageProps) {
                 </p>
               </div>
 
-              <div className="grid gap-1 border-t border-black/10 dark:border-white/10 pt-4">
-                <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-zinc-500 dark:text-zinc-400 font-bold">
-                  Role
-                </p>
-                <p className="font-body text-base leading-relaxed text-black/80 dark:text-zinc-300">
-                  {project.caseStudy.role}
-                </p>
-              </div>
-
-              <div className="grid gap-2 border-t border-black/10 dark:border-white/10 pt-4">
-                <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-zinc-500 dark:text-zinc-400 font-bold">
-                  Services
-                </p>
-                <div className="flex flex-wrap gap-1.5">
-                  {project.caseStudy.services.map((service) => (
-                    <span
-                      key={service}
-                      className="border border-black/10 bg-zinc-100 px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-black dark:border-white/15 dark:bg-black dark:text-white"
-                    >
-                      {service}
-                    </span>
-                  ))}
+              {project.caseStudy.role && (
+                <div className="grid gap-1 border-t border-black/10 dark:border-white/10 pt-4">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-zinc-500 dark:text-zinc-400 font-bold">
+                    Role
+                  </p>
+                  <p className="font-body text-base leading-relaxed text-black/80 dark:text-zinc-300">
+                    {project.caseStudy.role}
+                  </p>
                 </div>
-              </div>
+              )}
+
+              {project.caseStudy.services && project.caseStudy.services.length > 0 && (
+                <div className="grid gap-2 border-t border-black/10 dark:border-white/10 pt-4">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-zinc-500 dark:text-zinc-400 font-bold">
+                    Services
+                  </p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {project.caseStudy.services.map((service) => (
+                      <span
+                        key={service}
+                        className="border border-black/10 bg-zinc-100 px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-black dark:border-white/15 dark:bg-black dark:text-white"
+                      >
+                        {service}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               <div className="grid gap-2 border-t border-black/10 dark:border-white/10 pt-4">
                 <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-zinc-500 dark:text-zinc-400 font-bold">
@@ -211,30 +215,36 @@ export default async function Page({ params }: PageProps) {
 
         {/* Telemetry & Impact Metrics Strip */}
         <section className="grid grid-cols-2 gap-4 sm:grid-cols-4 border-y border-black/15 py-6 dark:border-white/15">
-          <div className="flex flex-col gap-1 border-r border-black/10 pr-4 dark:border-white/10">
-            <span className="font-mono text-[10px] uppercase tracking-widest text-zinc-500 dark:text-zinc-400 font-bold">
-              [ TIMELINE ]
-            </span>
-            <span className="font-display text-2xl uppercase tracking-tight text-black dark:text-white">
-              {project.caseStudy.timeline || "2024"}
-            </span>
-          </div>
-          <div className="flex flex-col gap-1 sm:border-r border-black/10 pr-4 dark:border-white/10">
-            <span className="font-mono text-[10px] uppercase tracking-widest text-zinc-500 dark:text-zinc-400 font-bold">
-              [ ROLE SCOPE ]
-            </span>
-            <span className="font-display text-2xl uppercase tracking-tight text-black dark:text-white truncate">
-              {project.caseStudy.role.split(" ")[0]}
-            </span>
-          </div>
-          <div className="flex flex-col gap-1 border-r border-black/10 pr-4 dark:border-white/10">
-            <span className="font-mono text-[10px] uppercase tracking-widest text-zinc-500 dark:text-zinc-400 font-bold">
-              [ SERVICES ]
-            </span>
-            <span className="font-display text-2xl uppercase tracking-tight text-black dark:text-white">
-              {project.caseStudy.services.length} Tracks
-            </span>
-          </div>
+          {project.caseStudy.timeline && (
+            <div className="flex flex-col gap-1 border-r border-black/10 pr-4 dark:border-white/10">
+              <span className="font-mono text-[10px] uppercase tracking-widest text-zinc-500 dark:text-zinc-400 font-bold">
+                [ TIMELINE ]
+              </span>
+              <span className="font-display text-2xl uppercase tracking-tight text-black dark:text-white">
+                {project.caseStudy.timeline}
+              </span>
+            </div>
+          )}
+          {project.caseStudy.role && (
+            <div className="flex flex-col gap-1 sm:border-r border-black/10 pr-4 dark:border-white/10">
+              <span className="font-mono text-[10px] uppercase tracking-widest text-zinc-500 dark:text-zinc-400 font-bold">
+                [ ROLE SCOPE ]
+              </span>
+              <span className="font-display text-2xl uppercase tracking-tight text-black dark:text-white truncate">
+                {project.caseStudy.role.split(" ")[0]}
+              </span>
+            </div>
+          )}
+          {project.caseStudy.services && project.caseStudy.services.length > 0 && (
+            <div className="flex flex-col gap-1 border-r border-black/10 pr-4 dark:border-white/10">
+              <span className="font-mono text-[10px] uppercase tracking-widest text-zinc-500 dark:text-zinc-400 font-bold">
+                [ SERVICES ]
+              </span>
+              <span className="font-display text-2xl uppercase tracking-tight text-black dark:text-white">
+                {project.caseStudy.services.length} Tracks
+              </span>
+            </div>
+          )}
           <div className="flex flex-col gap-1">
             <span className="font-mono text-[10px] uppercase tracking-widest text-zinc-500 dark:text-zinc-400 font-bold">
               [ STATUS ]
@@ -251,6 +261,7 @@ export default async function Page({ params }: PageProps) {
             <MiniBrowserIframe
               url={liveUrl}
               title={project.title}
+              embeddable={project.embeddable}
               fallbackImage={hasProjectVisual ? project.image : undefined}
               containerClassName="w-full aspect-[16/10] sm:aspect-[16/9] min-h-[460px] sm:min-h-[580px] lg:min-h-[680px]"
               priority
@@ -259,7 +270,13 @@ export default async function Page({ params }: PageProps) {
         )}
 
         {/* Overview and Goals Row */}
-        <section className="grid gap-8 md:gap-10 items-start lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
+        <section
+          className={`grid gap-8 md:gap-10 items-start ${
+            project.caseStudy.goals && project.caseStudy.goals.length > 0
+              ? "lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]"
+              : ""
+          }`}
+        >
           <article className="grid gap-5 border border-black/15 bg-white p-6 dark:border-white/15 dark:bg-[#0A0A0A] md:p-10">
             <div className="relative w-fit max-w-full">
               <SparkleBackground variant="target" size={26} />
@@ -278,25 +295,27 @@ export default async function Page({ params }: PageProps) {
             </div>
           </article>
 
-          <article className="grid gap-5 border border-black/15 bg-white p-6 dark:border-white/15 dark:bg-[#0A0A0A] md:p-10">
-            <SplitHeading
-              as="h2"
-              className="font-display text-2xl sm:text-3xl md:text-4xl uppercase tracking-tighter leading-none"
-            >
-              Project goals
-            </SplitHeading>
+          {project.caseStudy.goals && project.caseStudy.goals.length > 0 && (
+            <article className="grid gap-5 border border-black/15 bg-white p-6 dark:border-white/15 dark:bg-[#0A0A0A] md:p-10">
+              <SplitHeading
+                as="h2"
+                className="font-display text-2xl sm:text-3xl md:text-4xl uppercase tracking-tighter leading-none"
+              >
+                Project goals
+              </SplitHeading>
 
-            <ul className="grid gap-4 font-body text-base leading-relaxed text-black/75 dark:text-zinc-300 md:text-lg">
-              {project.caseStudy.goals.map((goal, idx) => (
-                <li key={goal} className="flex gap-3 items-start">
-                  <span className="mt-1 font-mono text-xs font-bold text-zinc-400">
-                    {`[0${idx + 1}]`}
-                  </span>
-                  <span>{goal}</span>
-                </li>
-              ))}
-            </ul>
-          </article>
+              <ul className="grid gap-4 font-body text-base leading-relaxed text-black/75 dark:text-zinc-300 md:text-lg">
+                {project.caseStudy.goals.map((goal, idx) => (
+                  <li key={goal} className="flex gap-3 items-start">
+                    <span className="mt-1 font-mono text-xs font-bold text-zinc-400">
+                      {`[0${idx + 1}]`}
+                    </span>
+                    <span>{goal}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          )}
         </section>
 
         {/* Engineering Process & Architecture Phases */}

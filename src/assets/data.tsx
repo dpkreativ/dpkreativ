@@ -12,13 +12,13 @@ type CaseStudyStep = {
 
 type CaseStudy = {
   headline: string;
-  timeline: string;
-  role: string;
-  services: string[];
-  goals: string[];
-  process: CaseStudyStep[];
-  results: string[];
-  reflection: string;
+  timeline?: string;
+  role?: string;
+  services?: string[];
+  goals?: string[];
+  process?: CaseStudyStep[];
+  results?: string[];
+  reflection?: string;
 };
 
 function normalizeLabel(value: string) {
@@ -43,6 +43,41 @@ function getProjectBrand(project: RawProject, brands: Brand[]) {
 }
 
 const projectCaseStudies: Record<ProjectSlug, CaseStudy> = {
+  "bonjour-quick-bites": {
+    headline:
+      "An online storefront for fresh bakery goods and hot meals, with pickup or delivery in Port Harcourt.",
+    role: "Full-stack Developer",
+    services: ["Full-stack Development", "CI/CD"],
+    goals: [
+      "Help customers order bakery goods, hot meals, and celebration cakes online.",
+      "Let customers choose between outlet pickup and doorstep delivery.",
+    ],
+    process: [
+      {
+        eyebrow: "Application Build",
+        title: "Build the storefront and ordering experience end to end.",
+        details: [
+          "I built the platform with Next.js and TypeScript, used Supabase for the database, and handled authentication with Better Auth.",
+        ],
+      },
+      {
+        eyebrow: "Development Workflow",
+        title: "Set up version control and continuous deployment.",
+        details: [
+          "I used Git for version control and GitHub and Vercel for CI/CD.",
+          "I used AI agents with the Vercel, GitHub, and Mobbin MCP servers to support development.",
+        ],
+      },
+    ],
+  },
+  noma: {
+    headline: "Flashcards and practice quizzes for nursing exam preparation.",
+  },
+  "alchemy-of-code": {
+    headline: "Learn software engineering fundamentals and become a well-rounded builder.",
+    role: "Curriculum Creator",
+    services: ["Curriculum Design"],
+  },
   "crunchies-online": {
     headline:
       "I redesigned online ordering so Crunchies customers could choose delivery or pickup and find a nearby outlet.",
@@ -144,6 +179,7 @@ const projectCaseStudies: Record<ProjectSlug, CaseStudy> = {
         title: "Personalizing the account setup",
         details: [
           "During sign-up, people choose their city and the kinds of events they like.",
+          "Mobbin was a source of design inspiration for the onboarding experience.",
         ],
       },
       {
@@ -255,122 +291,6 @@ const projectCaseStudies: Record<ProjectSlug, CaseStudy> = {
     reflection:
       "A literary site should show people what to read and how to take part.",
   },
-  "the-bakistry": {
-    headline:
-      "Translated a cake brand into a storefront that sells freshness, speed, and celebration from the first scroll.",
-    timeline: "2024",
-    role: "E-commerce Designer and Developer",
-    services: [
-      "Storefront UX",
-      "Merchandising Structure",
-      "Brand Translation",
-      "E-commerce Implementation",
-    ],
-    goals: [
-      "Make the brand feel handcrafted and premium while keeping the buying path simple.",
-      "Help customers browse by occasion, speed, and product type instead of getting lost in a flat catalog.",
-      "Support fast ordering with a storefront that reinforces delivery confidence and visual appetite.",
-    ],
-    process: [
-      {
-        eyebrow: "Problem Discovery",
-        title: "Start from the gap between handcrafted brand feeling and shopping clarity.",
-        details: [
-          "The product direction starts from a simple promise: every celebration deserves something that tastes as good as it looks.",
-          "That meant translating warmth, freshness, and premium craft into a storefront that still feels practical to shop from.",
-        ],
-      },
-      {
-        eyebrow: "Friction Mapping",
-        title: "See where customers need faster routes into the right product type.",
-        details: [
-          "The storefront organizes buying around categories like Budget Express Cakes, Classic Express Cakes, Gateaux, Cupcakes, Combos, Kiddies, and Treats so customers can narrow in quickly.",
-          "Featured products, flavour options, and category-led browsing help the site support both fast everyday orders and more deliberate celebration purchases.",
-        ],
-      },
-      {
-        eyebrow: "Solution Direction",
-        title: "Connect appetite, speed, and trust inside one storefront flow.",
-        details: [
-          "Delivery messaging, top selections, and product cards are arranged to reassure buyers that the brand can move from beautiful presentation to actual fulfillment quickly.",
-          "That keeps the storefront persuasive for celebration purchases without making customers work too hard to understand what to buy next.",
-        ],
-      },
-      {
-        eyebrow: "Commerce Build",
-        title: "Carry the fix through to checkout confidence.",
-        details: [
-          "Fast-delivery messaging, product cards, cart access, and editorial updates are all positioned to keep the journey moving from inspiration to order.",
-          "The site treats visual appetite and buying clarity as one product problem, which is critical for a bakery brand that sells both emotion and speed.",
-        ],
-      },
-    ],
-    results: [
-      "Created a warmer storefront that better matches The Bakistry's handcrafted positioning.",
-      "Made product discovery clearer through category-led browsing and stronger merchandising cues.",
-      "Built a smoother path from first impression to checkout for customers ordering across everyday and special occasions.",
-    ],
-    reflection:
-      "Food commerce is emotional, but the path to purchase still has to be obvious. Appetite brings people in; clarity gets the order over the line.",
-  },
-  "7star-unisex-beauty-palace": {
-    headline:
-      "Built a brand-driven service site that turns hair care expertise into a seamless booking experience.",
-    timeline: "2026",
-    role: "Web Designer and Developer",
-    services: [
-      "Website Strategy",
-      "Brand Translation",
-      "Service Presentation",
-      "Booking Integration",
-    ],
-    goals: [
-      "Give the studio a professional web presence that reflects its expertise in locs, braiding, and protective styling.",
-      "Make every service easy to understand and schedule from starter dreadlocks to loc extensions and repairs.",
-      "Build trust through client reviews, educational content, and a clean brand presentation.",
-    ],
-    process: [
-      {
-        eyebrow: "Problem Discovery",
-        title: "Start with the gap between salon expertise and online first impressions.",
-        details: [
-          "7Star had strong in-person reputation in Cairo but needed a website that communicated its professionalism, range of services, and client-centered approach to new visitors.",
-          "The product direction centered on translating the studio's hands-on care philosophy into a digital experience that felt trustworthy and easy to navigate.",
-        ],
-      },
-      {
-        eyebrow: "Service Structuring",
-        title: "Organize around what clients actually need to know before booking.",
-        details: [
-          "Each service — starter dreadlocks, loc retwists, extensions, knotless braids, box braids, and afro twists — was given its own presentation space with clear descriptions, imagery, and a direct path to scheduling.",
-          "The client reviews section was positioned prominently so new visitors could see real feedback and build confidence before making an appointment.",
-        ],
-      },
-      {
-        eyebrow: "Solution Direction",
-        title: "Make booking feel like the natural next step after browsing.",
-        details: [
-          "WhatsApp integration was embedded throughout the site so potential clients could move from exploring a service to starting a conversation without friction.",
-          "The design prioritized clean service presentation, mobile-friendly navigation, and a warm brand tone that matched the studio's welcoming atmosphere.",
-        ],
-      },
-      {
-        eyebrow: "Content and Trust Build",
-        title: "Support the booking path with social proof, products, and educational content.",
-        details: [
-          "A blog section was added to position the studio as an educational resource for hair care beyond just styling appointments.",
-          "Products page, newsletter signup, and social media links were integrated to extend the relationship beyond the first appointment.",
-        ],
-      },
-    ],
-    results: [
-      "Delivered a professional web presence that communicates 7Star's hair care expertise and range of services.",
-      "Made service discovery and booking scheduling feel simple through clear categorization and WhatsApp integration.",
-      "Created a brand-aligned digital experience that supports both new client acquisition and ongoing community engagement.",
-    ],
-    reflection:
-      "Service businesses win online when expertise is easy to understand and booking feels like a natural next step. 7Star needed a site that converted browsing into appointments without losing the warmth of the in-person experience.",
-  },
   "the-developer-marketing-book": {
     headline:
       "Built a focused launch site that presents the book, formats, proof, and author credibility without wasting motion.",
@@ -454,11 +374,24 @@ const {
 
 export const projects = rawProjects.map((project) => ({
   ...project,
+  embeddable: project.embeddable ?? true,
   brand: getProjectBrand(project, brands),
   caseStudy: projectCaseStudies[project.slug as ProjectSlug],
 }));
 
 export type Project = (typeof projects)[number];
+
+const showreelSlugs = [
+  "bonjour-quick-bites",
+  "alchemy-of-code",
+  "the-iroko-circle",
+  "noma",
+  "crunchies-online",
+];
+
+export const showreelProjects = showreelSlugs.flatMap((slug) =>
+  projects.filter((project) => project.slug === slug),
+);
 
 export {
   avatar,

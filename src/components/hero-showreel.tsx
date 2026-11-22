@@ -20,7 +20,7 @@ function isDataSaverEnabled() {
 }
 
 function hasLivePreview(project: Project) {
-  return Boolean(project.url && project.url !== "#");
+  return project.embeddable !== false && Boolean(project.url && project.url !== "#");
 }
 
 export default function HeroShowreel({ projects }: HeroShowreelProps) {
@@ -215,7 +215,7 @@ export default function HeroShowreel({ projects }: HeroShowreelProps) {
       <div className="border-t border-black/10 bg-white p-5 text-[#111111] dark:border-white/10 dark:bg-[#080808] dark:text-white sm:p-7 md:p-8">
         <div className="flex items-center justify-between gap-4 font-mono text-[10px] font-bold uppercase tracking-[0.24em] text-zinc-500 dark:text-zinc-400">
           <span>{activeProject.client}</span>
-          <span>{activeProject.caseStudy?.timeline || "2024"}</span>
+          {activeProject.caseStudy?.timeline && <span>{activeProject.caseStudy.timeline}</span>}
         </div>
 
         <h3 className="mt-2 font-display text-xl uppercase tracking-tight text-[#111111] dark:text-white sm:text-3xl md:text-4xl">
