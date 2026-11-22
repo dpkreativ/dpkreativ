@@ -61,7 +61,7 @@ export default function Header() {
             <DrawerTrigger asChild>
               <button
                 aria-label="Toggle menu"
-                className="flex h-10 w-10 items-center justify-center border border-black/10 bg-black/[0.04] text-[#111111] transition-colors duration-300 hover:border-black hover:text-black dark:border-white/15 dark:bg-white/[0.04] dark:text-white dark:hover:border-white dark:hover:text-white md:hidden"
+                className="flex h-10 w-10 items-center justify-center text-[#111111] transition-colors duration-300 hover:text-zinc-600 dark:text-white dark:hover:text-zinc-300 md:hidden"
               >
                 <i className="ri-menu-line text-lg font-bold"></i>
               </button>
