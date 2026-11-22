@@ -197,7 +197,7 @@ describe('collectCvData', () => {
     expect(data.languages.length).toBeGreaterThan(0);
   });
 
-  it('includes the shared project summaries in portfolio order', () => {
+  it('includes the shared project summaries and tech stacks in portfolio order', () => {
     const { selectedWork } = collectCvData();
 
     expect(selectedWork.map(({ title }) => title)).toEqual([
@@ -207,7 +207,19 @@ describe('collectCvData', () => {
       'Noma',
       'The Iroko Circle',
     ]);
-    expect(selectedWork).toEqual(content.selectedWork);
+    expect(
+      selectedWork.map(({ title, url, summary }) => ({ title, url, summary }))
+    ).toEqual(content.selectedWork);
+    expect(selectedWork[0].stack).toEqual([
+      'Next.js',
+      'TypeScript',
+      'Supabase',
+      'Better Auth',
+      'Git',
+      'GitHub',
+      'Vercel',
+    ]);
+    expect(selectedWork.every(({ stack }) => Boolean(stack && stack.length > 0))).toBe(true);
   });
 
   it('credits named projects to the same experience roles as the About page', () => {
@@ -236,9 +248,14 @@ describe('collectCvData', () => {
     expect(contactLine).not.toContain('www.');
   });
 
-  it('keeps the contact line to a single line by dropping the notion link', () => {
+  it('formats balanced contact lines with international phone, blog, and remote availability', () => {
     const { contactLine } = collectCvData();
+    const lines = contactLine.split('\n');
 
+    expect(lines).toHaveLength(2);
+    expect(contactLine).toContain('+234 902 182 4073');
+    expect(contactLine).toContain('divineorji.com/blog');
+    expect(contactLine).toContain('Remote (UTC+1)');
     expect(contactLine).toContain('linkedin.com/in/dpkreativ');
     expect(contactLine).toContain('github.com/dpkreativ');
     expect(contactLine).not.toContain('notion.site');

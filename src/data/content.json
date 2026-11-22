@@ -23,7 +23,7 @@
     {
       "title": "Bonjour Quick Bites",
       "url": "https://bonjourquickbites.com",
-      "summary": "Port Harcourt customers use this storefront to order fresh bread, pastries, and hot meals for outlet pickup or doorstep delivery. I built it end to end with Next.js, TypeScript, Supabase, and Better Auth, backed by GitHub and Vercel for CI/CD."
+      "summary": "Port Harcourt customers use this storefront to order fresh bread, pastries, hot meals, and celebration cakes for outlet pickup or doorstep delivery. I built it end to end with Next.js, TypeScript, Supabase, and Better Auth, backed by GitHub and Vercel for CI/CD."
     },
     {
       "title": "Crunchies Online",
@@ -101,11 +101,12 @@
     "Next.js",
     "TypeScript",
     "Tailwind CSS",
+    "GSAP",
     "Supabase",
     "Better Auth",
     "WordPress",
     "Google Maps API",
-    "CI/CD (GitHub, Vercel)",
+    "Git & CI/CD (GitHub, Vercel)",
     "Cloudflare",
     "Technical Writing",
     "Curriculum Design"
@@ -117,7 +118,7 @@
       "period": "January 2025 - Present",
       "summary": "I lead a remote engineering team across 10+ client and internal web products, steering architecture, sprint planning, and code reviews while staying active in the codebase myself.",
       "highlights": [
-        "My week centers on technical roadmaps and sprint planning for products in development, including Merphils (school operations and academic records) and Grooovy (event discovery, ticketing, and host tools).",
+        "My week centers on technical roadmaps and sprint planning for products in development, including Merphils (multi-tenant school operations and academic records in Next.js, TypeScript, and Better Auth) and Grooovy (event discovery, ticketing, and host tools in React, Supabase, Better Auth, and GSAP).",
         "I maintain our engineering standards, code reviews, and GitHub/Vercel CI/CD workflows so releases stay predictable across projects."
       ]
     },
@@ -127,7 +128,7 @@
       "period": "January 2019 - Present",
       "summary": "Working closely with founders from early requirements to launch, I’ve built and shipped 15+ custom web applications.",
       "highlights": [
-        "From database schema to checkout, I built Bonjour Quick Bites end to end in Next.js and TypeScript for outlet pickup and doorstep delivery.",
+        "From database schema to checkout, I built Bonjour Quick Bites end to end with Next.js, TypeScript, Supabase, and Better Auth for outlet pickup and doorstep delivery.",
         "On the education side, I built flashcards and quizzes for nursing students in Noma and authored the software engineering curriculum powering Alchemy Of Code.",
         "For The Iroko Circle, I designed and developed a WordPress home for publishing African literature, accepting submissions, and connecting readers with local chapters."
       ]

@@ -28,13 +28,20 @@ export type CvEducation = {
   period: string;
 };
 
+export type CvSelectedWork = {
+  title: string;
+  url: string;
+  summary: string;
+  stack?: string[];
+};
+
 export type CvData = {
   name: string;
   kicker: string;
   contactLine: string;
   profile: string[];
   skills: string[];
-  selectedWork: { title: string; url: string; summary: string }[];
+  selectedWork: CvSelectedWork[];
   experience: GroupedExperience[];
   education: CvEducation[];
   certifications: string[];
@@ -382,13 +389,21 @@ class CvBuilder {
     });
   }
 
-  private workEntry({ title, url, summary }: CvData["selectedWork"][number]) {
+  private workEntry({ title, url, summary, stack }: CvSelectedWork) {
     const text = toPdfText(summary);
     const size = 9.5;
     const leading = 13;
     const lines = wrapText(text, this.fonts.regular, size, contentWidth());
+    const stackText =
+      stack && stack.length > 0
+        ? toPdfText(stack.join(" · ")).toUpperCase()
+        : "";
+    const stackLines = stackText
+      ? wrapText(stackText, this.fonts.mono, 7.5, contentWidth())
+      : [];
+    const stackHeight = stackLines.length > 0 ? 3 + stackLines.length * 10.5 : 0;
 
-    this.ensureSpace(14 + lines.length * leading);
+    this.ensureSpace(14 + lines.length * leading + stackHeight);
     const label = toPdfText(title);
     const titleSize = 10;
     const x = PAGE.marginX;
@@ -401,6 +416,17 @@ class CvBuilder {
       color: INK,
     });
 
+    const displayUrl = toPdfText(
+      url.replace(/^https?:\/\//, "").replace(/^www\./, "").replace(/\/$/, "")
+    );
+    if (displayUrl) {
+      this.drawRight(displayUrl, {
+        font: this.fonts.mono,
+        size: 7.5,
+        color: MUTED,
+      });
+    }
+
     const link = this.doc.context.obj({
       Type: "Annot",
       Subtype: "Link",
@@ -412,6 +438,20 @@ class CvBuilder {
 
     this.y -= 14;
     this.paragraph(text, { size, leading });
+
+    if (stackLines.length > 0) {
+      this.y -= 2;
+      for (const stackLine of stackLines) {
+        this.ensureSpace(10.5);
+        this.draw(stackLine, {
+          font: this.fonts.mono,
+          size: 7.5,
+          color: MUTED,
+        });
+        this.y -= 10.5;
+      }
+    }
+
     this.y -= 6;
   }
 
@@ -468,18 +508,20 @@ class CvBuilder {
 
     this.y -= 16;
 
-    for (const line of wrapText(
-      toPdfText(data.contactLine),
-      this.fonts.regular,
-      8.5,
-      contentWidth()
-    )) {
-      this.draw(line, {
-        font: this.fonts.regular,
-        size: 8.5,
-        color: CONTENT_INK,
-      });
-      this.y -= 12;
+    for (const segment of data.contactLine.split("\n")) {
+      for (const line of wrapText(
+        toPdfText(segment),
+        this.fonts.regular,
+        8.5,
+        contentWidth()
+      )) {
+        this.draw(line, {
+          font: this.fonts.regular,
+          size: 8.5,
+          color: CONTENT_INK,
+        });
+        this.y -= 12;
+      }
     }
   }
 
