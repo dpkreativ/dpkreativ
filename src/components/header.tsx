@@ -71,7 +71,7 @@ export default function Header() {
                 <DrawerTitle asChild>
                   <Link
                     href="/"
-                    className="group flex items-center gap-2.5 border border-black/10 bg-black/[0.03] px-3.5 py-1.5 transition-colors hover:border-black/30 dark:border-white/15 dark:bg-white/[0.04] dark:hover:border-white/30"
+                    className="group flex items-center gap-2.5 px-3.5 py-1.5"
                     onClick={() => setViewModal(false)}
                   >
                     <Image
@@ -87,7 +87,10 @@ export default function Header() {
                   </Link>
                 </DrawerTitle>
                 <DrawerClose asChild>
-                  <button className="flex h-10 w-10 items-center justify-center border border-black/10 bg-black/[0.04] text-[#111111] transition-colors hover:border-black hover:text-black dark:border-white/15 dark:bg-white/[0.04] dark:text-white dark:hover:border-white dark:hover:text-white">
+                  <button
+                    aria-label="Close menu"
+                    className="flex h-10 w-10 items-center justify-center text-[#111111] transition-colors duration-300 hover:text-zinc-600 dark:text-white dark:hover:text-zinc-300"
+                  >
                     <i className="ri-close-large-line text-lg"></i>
                   </button>
                 </DrawerClose>
