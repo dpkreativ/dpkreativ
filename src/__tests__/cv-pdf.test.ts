@@ -210,6 +210,25 @@ describe('collectCvData', () => {
     expect(selectedWork).toEqual(content.selectedWork);
   });
 
+  it('credits named projects to the same experience roles as the About page', () => {
+    const { experience } = collectCvData();
+    const studio = experience.find(({ company }) => company === 'The Kreativ Studio');
+    const lead = studio?.roles.find(({ role }) => role === 'Head of Engineering');
+    const engineer = studio?.roles.find(({ role }) => role === 'Software Engineer');
+
+    expect(lead?.highlights.join(' ')).toContain('Merphils');
+    expect(lead?.highlights.join(' ')).toContain('Grooovy');
+
+    for (const title of ['Bonjour Quick Bites', 'Noma', 'Alchemy Of Code', 'The Iroko Circle']) {
+      expect(engineer?.highlights.join(' ')).toContain(title);
+    }
+
+    const crunchies = experience.find(({ company }) => company === 'Crunchies Fried Chicken Limited');
+    expect(crunchies?.roles[0].summary).toContain('Crunchies Online');
+    expect(studio?.roles.flatMap(({ summary, highlights }) => [summary, ...highlights]).join(' '))
+      .not.toContain('Crunchies Online');
+  });
+
   it('strips scheme and www from the contact line', () => {
     const { contactLine } = collectCvData();
 

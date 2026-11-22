@@ -16,7 +16,7 @@
   },
   "aboutMe": [
     "I’m Divine Orji, a full-stack software engineer and Head of Engineering at The Kreativ Studio. I lead a remote team and stay hands-on with frontend, backend, and deployment work.",
-    "My work spans food ordering, education, and editorial platforms. I also write technical guides and created the curriculum behind Alchemy Of Code to help learners take an idea from concept to working software."
+    "At The Kreativ Studio, my work includes Bonjour Quick Bites, an online ordering storefront, and Noma, a nursing exam prep app. I also write technical guides and created the curriculum behind Alchemy Of Code to help learners turn ideas into working software."
   ],
   "selectedWork": [
     {
@@ -116,18 +116,19 @@
       "period": "January 2025 - Present",
       "summary": "Lead a remote engineering team across 10+ client and internal web products, guiding architecture, sprint planning, and code reviews while contributing directly to the codebase.",
       "highlights": [
-        "I coordinate technical roadmaps and weekly sprints for distributed engineers across multiple time zones.",
-        "I maintain architectural standards and CI/CD pipelines that keep deployment cycles under 15 minutes."
+        "Guide technical roadmaps and weekly sprints for projects in development, including Merphils (school operations and academic records) and Grooovy (event discovery, ticketing, and host tools).",
+        "Maintain architectural standards and CI/CD pipelines that keep deployment cycles under 15 minutes."
       ]
     },
     {
       "role": "Software Engineer",
       "company": "The Kreativ Studio",
       "period": "January 2019 - Present",
-      "summary": "Built and shipped 15+ custom web applications, from client requirements through launch.",
+      "summary": "Built and shipped 15+ custom web applications, working with founders from requirements through launch.",
       "highlights": [
-        "Build full-stack applications with Next.js and TypeScript, including e-commerce workflows for checkout, pickup, and delivery.",
-        "Partner with founders to turn business requirements into usable interfaces and backend workflows."
+        "Built Bonjour Quick Bites end to end with Next.js and TypeScript, including online ordering for outlet pickup and doorstep delivery.",
+        "Built Noma with flashcards and quizzes for nursing exam prep, and created the software engineering curriculum behind Alchemy Of Code.",
+        "Designed and developed The Iroko Circle’s WordPress site for publishing African literature, accepting submissions, and connecting readers with local chapters."
       ]
     },
     {
@@ -145,7 +146,7 @@
       "role": "Fullstack Developer",
       "company": "Crunchies Fried Chicken Limited",
       "period": "April 2024 - October 2024",
-      "summary": "I led the end-to-end redesign of the Crunchies online ordering platform over a 7-month contract, helping scale monthly digital sales from ₦200k to over ₦3M.",
+      "summary": "I led the end-to-end redesign of Crunchies Online over a 7-month contract, helping scale monthly digital sales from ₦200k to over ₦3M.",
       "highlights": [
         "I resolved 3 major ordering drop-off points by clarifying checkout flow, delivery zone selection, and pickup options.",
         "I integrated the Google Maps API for real-time outlet lookup, cutting delivery address errors significantly.",
