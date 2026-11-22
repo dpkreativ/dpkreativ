@@ -49,8 +49,8 @@ function generatePositions(): SparklePosition[] {
 
   for (let i = 0; i < count; i++) {
     positions.push({
-      x: Math.random() * 100,
-      y: Math.random() * 100,
+      x: 4 + Math.random() * 90,
+      y: 10 + Math.random() * 82,
       type: Math.random() > 0.5 ? "lightning" : "sparkle",
       size: 14 + Math.random() * 18, // 14px to 32px
       rotate: Math.random() * 360,
@@ -106,7 +106,7 @@ export default function SparkleBackground() {
           }}
         >
           <div
-            className="animate-sparkle-float"
+            className="h-full w-full animate-sparkle-float"
             style={{ animationDelay: `${pos.delay}s` }}
           >
             {pos.type === "lightning" ? LIGHTNING_SVG : SPARKLE_SVG}

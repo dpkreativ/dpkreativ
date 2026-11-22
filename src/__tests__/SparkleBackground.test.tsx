@@ -45,4 +45,21 @@ describe("SparkleBackground", () => {
     const second = render(<SparkleBackground />);
     expect(second.container.innerHTML).toBe(firstHtml);
   });
+
+  it("places icons inside the visible viewport with full-size animation wrappers", () => {
+    const { container } = render(<SparkleBackground />);
+    const wrappers = container.querySelectorAll(".animate-sparkle-float");
+
+    expect(wrappers.length).toBeGreaterThanOrEqual(5);
+    wrappers.forEach((wrapper) => {
+      expect(wrapper).toHaveClass("h-full", "w-full");
+      const parent = wrapper.parentElement as HTMLElement;
+      const left = parseFloat(parent.style.left);
+      const top = parseFloat(parent.style.top);
+      expect(left).toBeGreaterThanOrEqual(4);
+      expect(left).toBeLessThanOrEqual(94);
+      expect(top).toBeGreaterThanOrEqual(10);
+      expect(top).toBeLessThanOrEqual(92);
+    });
+  });
 });
