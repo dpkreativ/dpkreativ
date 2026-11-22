@@ -106,13 +106,7 @@ export default async function Page({ params }: PageProps) {
         <section className="grid lg:grid-cols-[minmax(0,1.25fr)_minmax(300px,0.75fr)] gap-10 md:gap-14 items-start">
           <div className="grid gap-6">
             <div className="relative w-fit max-w-full">
-              <SparkleBackground
-                variant="sparkle"
-                size={34}
-                rotate={14}
-                delay={-1.2}
-                className="-top-6 right-0 sm:-top-4 sm:-right-10"
-              />
+              <SparkleBackground variant="lightning" size={34} />
               <SplitHeading
                 as="h1"
                 className="font-display text-4xl sm:text-6xl md:text-7xl uppercase tracking-tighter leading-[0.88] text-black dark:text-white"
@@ -268,13 +262,7 @@ export default async function Page({ params }: PageProps) {
         <section className="grid gap-8 md:gap-10 items-start lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
           <article className="grid gap-5 border border-black/15 bg-white p-6 dark:border-white/15 dark:bg-[#0A0A0A] md:p-10">
             <div className="relative w-fit max-w-full">
-              <SparkleBackground
-                variant="lightning"
-                size={26}
-                rotate={-12}
-                delay={-2.1}
-                className="-top-4 -right-7 sm:-top-3 sm:-right-9"
-              />
+              <SparkleBackground variant="target" size={26} />
               <SplitHeading
                 as="h2"
                 className="font-display text-3xl md:text-4xl uppercase tracking-tighter leading-none"
@@ -316,13 +304,7 @@ export default async function Page({ params }: PageProps) {
           <section className="grid gap-8">
             <div className="border-b border-black/15 pb-6 dark:border-white/15">
               <div className="relative w-fit max-w-full">
-                <SparkleBackground
-                  variant="sparkle"
-                  size={28}
-                  rotate={15}
-                  delay={-1.5}
-                  className="-top-6 right-0 sm:-top-4 sm:-right-10"
-                />
+                <SparkleBackground variant="terminal" size={28} />
                 <SplitHeading
                   as="h2"
                   className="font-display text-3xl md:text-5xl uppercase tracking-tighter leading-none"
@@ -364,13 +346,7 @@ export default async function Page({ params }: PageProps) {
           <section className="grid gap-8">
             <div className="flex flex-col gap-2 border-b border-black/15 pb-6 dark:border-white/15">
               <div className="relative w-fit max-w-full">
-                <SparkleBackground
-                  variant="lightning"
-                  size={28}
-                  rotate={-10}
-                  delay={-2.8}
-                  className="-top-5 -right-7 sm:-top-4 sm:-right-10"
-                />
+                <SparkleBackground variant="trophy" size={28} />
                 <SplitHeading
                   as="h2"
                   className="font-display text-3xl md:text-5xl uppercase tracking-tighter leading-none"
@@ -448,13 +424,7 @@ export default async function Page({ params }: PageProps) {
         <section className="grid gap-8 pt-6">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 border-b border-black/15 pb-6 dark:border-white/15">
             <div className="relative w-fit max-w-full">
-              <SparkleBackground
-                variant="sparkle"
-                size={28}
-                rotate={12}
-                delay={-1.9}
-                className="-top-5 -right-7 sm:-top-4 sm:-right-10"
-              />
+              <SparkleBackground variant="layers" size={28} />
               <SplitHeading
                 as="h2"
                 className="font-display text-3xl md:text-5xl uppercase tracking-tighter leading-none"

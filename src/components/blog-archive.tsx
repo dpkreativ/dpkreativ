@@ -58,13 +58,7 @@ export default function BlogArchive({ posts }: { posts: HashnodePost[] }) {
       <div className="w-full space-y-16 px-6 py-16 md:px-12 md:py-24 lg:px-24">
         <header className="space-y-6">
           <div className="relative w-fit max-w-full">
-            <SparkleBackground
-              variant="sparkle"
-              size={34}
-              rotate={14}
-              delay={-1.3}
-              className="-top-5 -right-8 sm:-top-4 sm:-right-11"
-            />
+            <SparkleBackground variant="pen" size={34} />
             <SplitHeading
               as="h1"
               className="font-display text-4xl sm:text-6xl md:text-7xl uppercase tracking-tighter leading-[0.88]"

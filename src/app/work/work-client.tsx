@@ -19,13 +19,7 @@ export default function Work() {
       <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20 grid gap-12 md:gap-16">
         <div className="border-b border-black/15 pb-8 text-left dark:border-white/15 md:pb-12">
           <div className="relative w-fit max-w-full">
-            <SparkleBackground
-              variant="lightning"
-              size={34}
-              rotate={-12}
-              delay={-1.4}
-              className="-top-6 right-0 sm:-top-4 sm:-right-10"
-            />
+            <SparkleBackground variant="layers" size={34} />
             <h1 className="font-display text-[clamp(2.5rem,7vw,5rem)] uppercase tracking-tighter leading-none">
               Project portfolio
             </h1>

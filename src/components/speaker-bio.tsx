@@ -50,13 +50,7 @@ export default function SpeakerBio({ bio }: { bio: string }) {
       className="grid scroll-mt-28 gap-4 border border-black/15 bg-white p-6 dark:border-white/15 dark:bg-[#1a1a1a] md:p-8"
     >
       <div className="relative w-fit max-w-full">
-        <SparkleBackground
-          variant="lightning"
-          size={26}
-          rotate={-12}
-          delay={-2.0}
-          className="-top-3 -right-7 sm:-top-3 sm:-right-9"
-        />
+        <SparkleBackground variant="mic" size={26} />
         <h2 id="speaker-bio-heading" className="font-display text-3xl uppercase tracking-tighter">
           Speaker bio
         </h2>

@@ -2,13 +2,31 @@ import { act } from "react";
 import { hydrateRoot } from "react-dom/client";
 import { renderToString } from "react-dom/server";
 import { render } from "@testing-library/react";
-import SparkleBackground from "@/components/sparkle-background";
+import SparkleBackground, {
+  type SparkleVariant,
+} from "@/components/sparkle-background";
+
+const ALL_VARIANTS: SparkleVariant[] = [
+  "sparkle",
+  "lightning",
+  "code",
+  "terminal",
+  "layers",
+  "pen",
+  "mic",
+  "briefcase",
+  "gradcap",
+  "mail",
+  "chat",
+  "target",
+  "trophy",
+  "compass",
+];
 
 describe("SparkleBackground", () => {
-  it("renders a single sparkle icon without hydration warnings", () => {
-    const serverHtml = renderToString(<SparkleBackground variant="sparkle" />);
-    expect(serverHtml).toContain('data-icon="sparkle"');
-    expect(serverHtml).not.toContain('data-icon="lightning"');
+  it("hydrates SSR HTML without mismatch warnings and renders a single icon on the client", () => {
+    const serverHtml = renderToString(<SparkleBackground variant="code" />);
+    expect(serverHtml).toBe("");
 
     const container = document.createElement("div");
     container.innerHTML = serverHtml;
@@ -21,14 +39,14 @@ describe("SparkleBackground", () => {
     let root: ReturnType<typeof hydrateRoot> | null = null;
     try {
       act(() => {
-        root = hydrateRoot(container, <SparkleBackground variant="sparkle" />);
+        root = hydrateRoot(container, <SparkleBackground variant="code" />);
       });
 
       expect(consoleErrorSpy).not.toHaveBeenCalled();
 
       const icons = container.querySelectorAll("svg");
       expect(icons).toHaveLength(1);
-      expect(icons[0]).toHaveAttribute("data-icon", "sparkle");
+      expect(icons[0]).toHaveAttribute("data-icon", "code");
     } finally {
       act(() => {
         root?.unmount();
@@ -38,41 +56,49 @@ describe("SparkleBackground", () => {
     }
   });
 
-  it("renders either sparkle or lightning, never both", () => {
-    const { container: sparkleContainer } = render(
-      <SparkleBackground variant="sparkle" />,
-    );
-    expect(
-      sparkleContainer.querySelectorAll('svg[data-icon="sparkle"]'),
-    ).toHaveLength(1);
-    expect(
-      sparkleContainer.querySelectorAll('svg[data-icon="lightning"]'),
-    ).toHaveLength(0);
-
-    const { container: lightningContainer } = render(
-      <SparkleBackground variant="lightning" />,
-    );
-    expect(
-      lightningContainer.querySelectorAll('svg[data-icon="lightning"]'),
-    ).toHaveLength(1);
-    expect(
-      lightningContainer.querySelectorAll('svg[data-icon="sparkle"]'),
-    ).toHaveLength(0);
+  it("renders strictly one icon matching each contextual variant", () => {
+    for (const variant of ALL_VARIANTS) {
+      const { container, unmount } = render(
+        <SparkleBackground variant={variant} />,
+      );
+      const icons = container.querySelectorAll("svg");
+      expect(icons).toHaveLength(1);
+      expect(icons[0]).toHaveAttribute("data-icon", variant);
+      unmount();
+    }
   });
 
-  it("applies floating animation styles and decorative accessibility attributes", () => {
+  it("randomizes positions across sibling headings without repeating back-to-back slots", () => {
     const { container } = render(
-      <SparkleBackground variant="lightning" size={30} rotate={-12} delay={-2} />,
+      <div>
+        <SparkleBackground variant="code" />
+        <SparkleBackground variant="lightning" />
+        <SparkleBackground variant="pen" />
+        <SparkleBackground variant="layers" />
+      </div>,
     );
-    const outer = container.firstElementChild as HTMLElement;
-    expect(outer).toHaveAttribute("aria-hidden", "true");
-    expect(outer).toHaveAttribute("data-sparkle-accent", "lightning");
-    expect(outer.style.width).toBe("30px");
-    expect(outer.style.height).toBe("30px");
-    expect(outer.style.transform).toBe("rotate(-12deg)");
 
-    const inner = outer.firstElementChild as HTMLElement;
-    expect(inner).toHaveClass("animate-sparkle-float-alt");
-    expect(inner.style.animationDelay).toBe("-2s");
+    const accents = Array.from(
+      container.querySelectorAll("[data-sparkle-accent]"),
+    );
+    expect(accents).toHaveLength(4);
+
+    const positions = accents.map((el) =>
+      el.getAttribute("data-sparkle-position"),
+    );
+    expect(positions.every(Boolean)).toBe(true);
+    for (let i = 1; i < positions.length; i++) {
+      expect(positions[i]).not.toBe(positions[i - 1]);
+    }
+
+    accents.forEach((el) => {
+      const inner = el.firstElementChild as HTMLElement;
+      expect(el).toHaveAttribute("aria-hidden", "true");
+      expect(
+        inner.classList.contains("animate-sparkle-float") ||
+          inner.classList.contains("animate-sparkle-float-alt"),
+      ).toBe(true);
+      expect(parseFloat(inner.style.animationDelay)).toBeLessThanOrEqual(0);
+    });
   });
 });

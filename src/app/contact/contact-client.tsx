@@ -31,13 +31,7 @@ export default function ContactClient() {
         {/* Header */}
         <header className="border-b border-black/15 pb-5 sm:pb-8 md:pb-12 dark:border-white/15">
           <div className="relative w-fit max-w-full">
-            <SparkleBackground
-              variant="sparkle"
-              size={34}
-              rotate={14}
-              delay={-1.0}
-              className="-top-5 -right-8 sm:-top-4 sm:-right-11"
-            />
+            <SparkleBackground variant="mail" size={34} />
             <SplitHeading
               as="h1"
               className="font-display text-4xl sm:text-6xl md:text-7xl uppercase tracking-tighter leading-[0.88] text-black dark:text-white"
@@ -54,13 +48,7 @@ export default function ContactClient() {
           >
             <div className="mb-4 border-b border-black/10 pb-4 sm:mb-8 sm:pb-6 dark:border-white/10">
               <div className="relative w-fit max-w-full">
-                <SparkleBackground
-                  variant="lightning"
-                  size={26}
-                  rotate={-10}
-                  delay={-2.3}
-                  className="-top-5 right-0 sm:-top-3 sm:-right-9"
-                />
+                <SparkleBackground variant="chat" size={26} />
                 <h2 id="project-brief-heading" className="font-display text-2xl sm:text-3xl uppercase tracking-tight text-black dark:text-white">
                   Tell me about your project
                 </h2>

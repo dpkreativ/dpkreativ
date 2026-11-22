@@ -14,13 +14,7 @@ export default function NotFound() {
   return (
     <main className="flex flex-col items-center justify-center h-screen p-5 relative overflow-hidden">
       <div className="relative w-fit">
-        <SparkleBackground
-          variant="sparkle"
-          size={28}
-          rotate={14}
-          delay={-1.0}
-          className="-top-5 -right-8"
-        />
+        <SparkleBackground variant="compass" size={28} />
         <h1>Page not found</h1>
       </div>
       <p>The page may have moved, or the address may be incorrect.</p>
