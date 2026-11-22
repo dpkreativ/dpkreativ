@@ -4,7 +4,6 @@ import { contact, logo, navlinks, socials } from "@/assets/data";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import RevealText from "./reveal-text";
 import SplitHeading from "./split-heading";
 
 export default function Footer() {
@@ -59,23 +58,18 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Conditional Closing CTA Banner (suppressed on /contact) */}
         {!isContactPage && (
-          <div className="grid items-center justify-items-center gap-8 border-b border-white/10 py-14 text-center md:py-20 lg:grid-cols-[minmax(0,1fr)_auto] lg:justify-items-start lg:gap-12 lg:text-left">
-            <div className="lg:justify-self-stretch">
-              <SplitHeading
-                as="h2"
-                className="font-display uppercase text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.9]"
-              >
-                Let’s talk
-              </SplitHeading>
-              <RevealText noSplit className="mx-auto mt-4 max-w-xl text-balance font-body text-base leading-relaxed text-zinc-400 md:text-lg md:leading-relaxed lg:mx-0 lg:max-w-none">
-                What can I help with?
-              </RevealText>
-            </div>
+          <div className="items-center justify-center gap-8 border-b border-white/10 py-14 text-center md:py-20 flex flex-col lg:flex-row">
+            <SplitHeading
+              as="h2"
+              className="font-display uppercase text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.9]"
+            >
+              Let’s talk
+            </SplitHeading>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 whitespace-nowrap border border-white/25 bg-zinc-200 px-7 py-3.5 font-mono text-xs font-bold uppercase tracking-widest text-zinc-950 transition-colors hover:border-white/40 hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap border border-white/25 bg-zinc-200 px-7 py-3.5 font-mono text-xs font-bold uppercase tracking-widest text-zinc-950 transition-colors hover:border-white/40 hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
             >
-              Contact me
+              What can I help with?
               <i aria-hidden="true" className="ri-arrow-right-up-line" />
             </Link>
           </div>
