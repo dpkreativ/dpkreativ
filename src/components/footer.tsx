@@ -60,14 +60,14 @@ export default function Footer() {
         {/* Conditional Closing CTA Banner (suppressed on /contact) */}
         {!isContactPage && (
           <div className="grid items-center justify-items-center gap-8 border-b border-white/10 py-14 text-center md:py-20 lg:grid-cols-[minmax(0,1fr)_auto] lg:justify-items-start lg:gap-12 lg:text-left">
-            <div>
+            <div className="lg:justify-self-stretch">
               <SplitHeading
                 as="h2"
                 className="font-display uppercase text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.9]"
               >
                 Work with me
               </SplitHeading>
-              <RevealText noSplit className="mx-auto mt-4 max-w-xl text-balance font-body text-base leading-relaxed text-zinc-400 md:text-lg md:leading-relaxed lg:mx-0">
+              <RevealText noSplit className="mx-auto mt-4 max-w-xl text-balance font-body text-base leading-relaxed text-zinc-400 md:text-lg md:leading-relaxed lg:mx-0 lg:max-w-none">
                 Tell me what you want to build or what isn’t working with your current site.
               </RevealText>
             </div>
