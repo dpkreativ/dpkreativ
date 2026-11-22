@@ -58,7 +58,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Conditional Closing CTA Banner (suppressed on /contact) */}
         {!isContactPage && (
-          <div className="items-center justify-center gap-8 border-b border-white/10 py-14 text-center md:py-20 flex flex-col lg:flex-row">
+          <div className="items-center justify-center gap-8 border-b border-white/10 py-14 text-center md:py-20 flex flex-col">
             <SplitHeading
               as="h2"
               className="font-display uppercase text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.9]"
