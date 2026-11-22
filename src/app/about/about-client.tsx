@@ -7,7 +7,6 @@ import {
   experience,
   languages,
   portraits,
-  roleKicker,
   skills,
 } from "@/assets/data";
 import content from "@/data/content.json";
@@ -62,13 +61,6 @@ export default function About() {
             >
               About Divine Orji
             </SplitHeading>
-
-            <RevealText
-              as="p"
-              className="about-kicker font-mono text-xs md:text-sm text-zinc-500 dark:text-zinc-400 font-bold uppercase tracking-widest"
-            >
-              {roleKicker}
-            </RevealText>
 
             <div className="flex flex-wrap items-center gap-x-6 gap-y-3 pt-2">
               <FloatingDownloadLink
