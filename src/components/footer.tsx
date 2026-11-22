@@ -1,11 +1,9 @@
 "use client";
 
 import { contact, logo, navlinks, socials } from "@/assets/data";
-import { ArrowIcon } from "@/assets/icons";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Button from "./button";
 import RevealText from "./reveal-text";
 import SplitHeading from "./split-heading";
 
@@ -61,26 +59,25 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Conditional Closing CTA Banner (suppressed on /contact) */}
         {!isContactPage && (
-          <div className="py-14 md:py-20 border-b border-black/10 dark:border-white/10">
-            <div className="max-w-4xl mx-auto grid gap-6 text-center justify-items-center">
-              <div>
-                <SplitHeading
-                  as="h2"
-                  className="font-display uppercase text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.9] text-center"
-                >
-                  Work with me
-                </SplitHeading>
-                <RevealText noSplit className="mt-4 text-zinc-600 dark:text-zinc-400 font-body text-base md:text-lg max-w-xl mx-auto text-center leading-relaxed">
-                  Tell me what you want to build or what isn’t working with your current site.
-                </RevealText>
-              </div>
-              <Link href="/contact" className="w-max mt-2">
-                <Button className="!px-7 !py-3.5 !text-xs font-mono font-bold tracking-widest uppercase">
-                  <span>GET IN TOUCH</span>
-                  <ArrowIcon />
-                </Button>
-              </Link>
+          <div className="grid items-center justify-items-center gap-8 border-b border-black/10 py-14 text-center dark:border-white/10 md:py-20 lg:grid-cols-[minmax(0,1fr)_auto] lg:justify-items-start lg:gap-12 lg:text-left">
+            <div>
+              <SplitHeading
+                as="h2"
+                className="font-display uppercase text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.9]"
+              >
+                Work with me
+              </SplitHeading>
+              <RevealText noSplit className="mx-auto mt-4 max-w-xl text-balance font-body text-base leading-relaxed text-zinc-600 dark:text-zinc-400 md:text-lg md:leading-relaxed lg:mx-0">
+                Tell me what you want to build or what isn’t working with your current site.
+              </RevealText>
             </div>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 whitespace-nowrap border border-black bg-black px-7 py-3.5 font-mono text-xs font-bold uppercase tracking-widest text-white transition-colors hover:border-zinc-800 hover:bg-zinc-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black dark:border-white/25 dark:bg-zinc-200 dark:text-zinc-950 dark:hover:border-white/40 dark:hover:bg-white dark:focus-visible:outline-white"
+            >
+              Get in touch
+              <i aria-hidden="true" className="ri-arrow-right-up-line" />
+            </Link>
           </div>
         )}
 
