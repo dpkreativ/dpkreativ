@@ -60,15 +60,15 @@ export default function BlogArchive({ posts }: { posts: HashnodePost[] }) {
         <header className="space-y-6">
           <SplitHeading
             as="h1"
-            className="font-display text-2xl md:text-6xl lg:text-7xl uppercase tracking-tighter leading-[1.1]"
+            className="font-display text-4xl sm:text-6xl md:text-7xl uppercase tracking-tighter leading-[0.88]"
           >
-            Software engineering articles
+            My thoughts
           </SplitHeading>
           <RevealText
             as="p"
             className="blog-subtitle font-mono text-sm md:text-base text-zinc-600 dark:text-zinc-400 font-bold uppercase tracking-widest"
           >
-            Practical guides on web development, plus notes on building and shipping software.
+            Notes, guides, and ideas on building and shipping software.
           </RevealText>
         </header>
 
@@ -81,7 +81,7 @@ export default function BlogArchive({ posts }: { posts: HashnodePost[] }) {
                 triggerStart="top 94%"
                 lineDelay={0.1}
               >
-                <label htmlFor="article-search">Search articles</label>
+                <label htmlFor="article-search">Search posts</label>
               </RevealText>
               <input
                 id="article-search"
@@ -139,7 +139,7 @@ export default function BlogArchive({ posts }: { posts: HashnodePost[] }) {
           ) : (
             <div className="col-span-full border-4 border-dashed border-black/20 py-24 text-center dark:border-zinc-700">
               <p className="font-display text-2xl">
-                {posts.length > 0 ? "No articles match your filters." : "No articles are available here right now."}
+                {posts.length > 0 ? "No posts match your filters." : "No posts are available here right now."}
               </p>
               {posts.length > 0 && <p className="mt-2">Try a different search or topic.</p>}
             </div>

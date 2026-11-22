@@ -1,6 +1,32 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
+
+const BLOG_PHRASE = "his blog";
+
+function renderBioWithBlogLink(bio: string) {
+  const index = bio.indexOf(BLOG_PHRASE);
+  if (index === -1) {
+    return bio;
+  }
+
+  const before = bio.slice(0, index);
+  const after = bio.slice(index + BLOG_PHRASE.length);
+
+  return (
+    <>
+      {before}
+      <Link
+        href="/blog"
+        className="underline underline-offset-4 text-black transition-opacity hover:opacity-75 dark:text-white"
+      >
+        {BLOG_PHRASE}
+      </Link>
+      {after}
+    </>
+  );
+}
 
 export default function SpeakerBio({ bio }: { bio: string }) {
   const [copyStatus, setCopyStatus] = useState("");
@@ -29,7 +55,7 @@ export default function SpeakerBio({ bio }: { bio: string }) {
         Feel free to use this bio in your event program or to introduce me on stage.
       </p>
       <p className="max-w-3xl font-body text-base leading-relaxed text-[#111111]/80 dark:text-zinc-300">
-        {bio}
+        {renderBioWithBlogLink(bio)}
       </p>
       <div className="flex flex-wrap items-center gap-3">
         <button

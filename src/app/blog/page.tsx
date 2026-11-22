@@ -5,7 +5,7 @@ import { HASHNODE_HOST, SITE_URL } from "@/lib/site";
 
 export const revalidate = 3600;
 
-const description = "Read Divine Orji’s practical guides on web development and notes on building and shipping software.";
+const description = "Divine Orji’s thoughts, guides, and notes on building and shipping software.";
 
 export const metadata: Metadata = {
   title: "Blog",

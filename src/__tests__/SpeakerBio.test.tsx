@@ -27,7 +27,11 @@ describe('SpeakerBio', () => {
     render(<SpeakerBio bio={content.speakerBio} />);
 
     const section = screen.getByRole('region', { name: 'Speaker bio' });
-    expect(within(section).getByText(content.speakerBio)).toBeVisible();
+    const bioParagraph = within(section).getByText((_, element) => {
+      return element?.tagName === 'P' && element.textContent === content.speakerBio;
+    });
+    expect(bioParagraph).toBeVisible();
+    expect(within(section).getByRole('link', { name: 'his blog' })).toHaveAttribute('href', '/blog');
     fireEvent.click(within(section).getByRole('button', { name: 'Copy speaker bio' }));
 
     expect(writeText).toHaveBeenCalledWith(content.speakerBio);
