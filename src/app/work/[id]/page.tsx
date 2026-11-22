@@ -305,16 +305,15 @@ export default async function Page({ params }: PageProps) {
             </div>
 
             <div className="grid gap-6 md:grid-cols-2">
-              {project.caseStudy.process.map((step, idx) => (
+              {project.caseStudy.process.map((step) => (
                 <article
                   key={step.title}
                   className="flex flex-col justify-between border border-black/15 bg-white p-6 dark:border-white/15 dark:bg-[#0A0A0A] md:p-8"
                 >
                   <div>
-                    <div className="flex items-center justify-between gap-4 font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-zinc-500 dark:text-zinc-400">
-                      <span>{step.eyebrow}</span>
-                      <span>{`[PHASE 0${idx + 1}]`}</span>
-                    </div>
+                    <p className="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-zinc-500 dark:text-zinc-400">
+                      {step.eyebrow}
+                    </p>
 
                     <h3 className="mt-4 font-display text-2xl uppercase tracking-tight text-black dark:text-white">
                       {step.title}
