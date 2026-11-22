@@ -64,15 +64,23 @@ export default function Home() {
       ref={container}
       className="w-full overflow-hidden bg-white text-[#111111] dark:bg-[#111111] dark:text-white"
     >
-      <SparkleBackground />
       <section className="relative pt-[84px] border-b border-black/10 dark:border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,0,0,0.03),transparent_35%),radial-gradient(circle_at_top_left,rgba(0,0,0,0.02),transparent_25%)] dark:bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.04),transparent_35%),radial-gradient(circle_at_top_left,rgba(255,255,255,0.02),transparent_25%)]" />
 
         <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:py-20 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,0.85fr)] lg:items-center">
           <div className="mx-auto max-w-3xl lg:mx-0">
-            <h1 className="hero-headline font-display text-[clamp(2.75rem,13vw,3.25rem)] leading-[0.88] tracking-[-0.04em] text-[#111111] dark:text-white uppercase sm:text-[clamp(3.5rem,8vw,6.5rem)]">
-              Web apps for businesses
-            </h1>
+            <div className="relative w-fit max-w-full">
+              <SparkleBackground
+                variant="sparkle"
+                size={34}
+                rotate={14}
+                delay={-1.2}
+                className="-top-7 right-0 sm:-top-6 sm:-right-10"
+              />
+              <h1 className="hero-headline font-display text-[clamp(2.75rem,13vw,3.25rem)] leading-[0.88] tracking-[-0.04em] text-[#111111] dark:text-white uppercase sm:text-[clamp(3.5rem,8vw,6.5rem)]">
+                Web apps for businesses
+              </h1>
+            </div>
 
             <p className="hero-subhead mt-6 max-w-xl font-body text-base leading-relaxed text-[#111111]/75 dark:text-white/75 md:text-lg">
               {"Hi, I'm Divine Orji. I build web apps that help businesses run smoothly."}
@@ -147,7 +155,14 @@ export default function Home() {
       <section id="featured-projects" className="reveal-section scroll-mt-24">
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
           <div className="mb-10 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-            <div>
+            <div className="relative w-fit max-w-full">
+              <SparkleBackground
+                variant="lightning"
+                size={30}
+                rotate={-12}
+                delay={-2.4}
+                className="-top-6 right-0 sm:-top-4 sm:-right-10"
+              />
               <SplitHeading
                 as="h2"
                 className="font-display text-[clamp(2.4rem,5.8vw,4.5rem)] leading-[0.96] tracking-[-0.04em] text-[#111111] dark:text-white uppercase"
@@ -168,7 +183,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-full overflow-hidden py-4 sm:py-6">
+      <section className="relative w-full overflow-hidden py-4 sm:py-6">
+        <SparkleBackground
+          variant="sparkle"
+          size={24}
+          rotate={18}
+          delay={-3.1}
+          className="right-6 top-1 sm:right-10 sm:top-2"
+        />
         <div className="animate-marquee flex w-max whitespace-nowrap will-change-transform">
           {[0, 1].map((track) => (
             <div
@@ -215,7 +237,14 @@ export default function Home() {
 
       <section className="reveal-section">
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
-          <div className="mb-10 max-w-3xl">
+          <div className="relative mb-10 w-fit max-w-3xl">
+            <SparkleBackground
+              variant="lightning"
+              size={30}
+              rotate={10}
+              delay={-1.8}
+              className="-top-6 right-0 sm:-top-4 sm:-right-10"
+            />
             <SplitHeading
               as="h2"
               className="font-display text-[clamp(2.4rem,5.8vw,4.5rem)] leading-[0.96] tracking-[-0.04em] text-[#111111] dark:text-white uppercase"

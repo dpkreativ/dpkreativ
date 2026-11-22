@@ -17,7 +17,6 @@ export default function ContactClient() {
 
   return (
     <main className="flex-1 w-full flex flex-col pt-[84px] bg-white text-[#111111] dark:bg-[#111111] dark:text-white">
-      <SparkleBackground />
       {/* Decorative Grid Background */}
       <div
         className="fixed inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none -z-10"
@@ -31,12 +30,21 @@ export default function ContactClient() {
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-12 md:py-20 grid grid-cols-1 gap-6 sm:gap-10 md:gap-16">
         {/* Header */}
         <header className="border-b border-black/15 pb-5 sm:pb-8 md:pb-12 dark:border-white/15">
-          <SplitHeading
-            as="h1"
-            className="font-display text-4xl sm:text-6xl md:text-7xl uppercase tracking-tighter leading-[0.88] text-black dark:text-white"
-          >
-            Contact Me
-          </SplitHeading>
+          <div className="relative w-fit max-w-full">
+            <SparkleBackground
+              variant="sparkle"
+              size={34}
+              rotate={14}
+              delay={-1.0}
+              className="-top-5 -right-8 sm:-top-4 sm:-right-11"
+            />
+            <SplitHeading
+              as="h1"
+              className="font-display text-4xl sm:text-6xl md:text-7xl uppercase tracking-tighter leading-[0.88] text-black dark:text-white"
+            >
+              Contact Me
+            </SplitHeading>
+          </div>
         </header>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10 lg:gap-16 items-start">
@@ -45,9 +53,18 @@ export default function ContactClient() {
             className="min-w-0 border border-black/15 bg-white p-4 sm:p-8 md:p-10 dark:border-white/15 dark:bg-[#0A0A0A] lg:col-span-7 lg:col-start-6 lg:row-start-1"
           >
             <div className="mb-4 border-b border-black/10 pb-4 sm:mb-8 sm:pb-6 dark:border-white/10">
-              <h2 id="project-brief-heading" className="font-display text-2xl sm:text-3xl uppercase tracking-tight text-black dark:text-white">
-                Tell me about your project
-              </h2>
+              <div className="relative w-fit max-w-full">
+                <SparkleBackground
+                  variant="lightning"
+                  size={26}
+                  rotate={-10}
+                  delay={-2.3}
+                  className="-top-5 right-0 sm:-top-3 sm:-right-9"
+                />
+                <h2 id="project-brief-heading" className="font-display text-2xl sm:text-3xl uppercase tracking-tight text-black dark:text-white">
+                  Tell me about your project
+                </h2>
+              </div>
             </div>
 
             <ContactForm />

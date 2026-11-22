@@ -68,7 +68,6 @@ export default function About() {
 
   return (
     <main ref={container} className="flex-1 w-full flex flex-col pt-[84px] bg-white text-[#111111] dark:bg-[#111111] dark:text-white">
-      <SparkleBackground />
       {/* Decorative Grid Background */}
       <div
         className="fixed inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none -z-10"
@@ -84,12 +83,21 @@ export default function About() {
         {/* Left Column: Narrative & Skills */}
         <div className="lg:col-span-7 space-y-10">
           <header className="max-w-4xl space-y-4">
-            <SplitHeading
-              as="h1"
-              className="font-display text-4xl sm:text-6xl md:text-7xl uppercase tracking-tighter leading-[0.88] text-black dark:text-white"
-            >
-              About Me
-            </SplitHeading>
+            <div className="relative w-fit max-w-full">
+              <SparkleBackground
+                variant="sparkle"
+                size={34}
+                rotate={14}
+                delay={-1.1}
+                className="-top-5 -right-8 sm:-top-4 sm:-right-11"
+              />
+              <SplitHeading
+                as="h1"
+                className="font-display text-4xl sm:text-6xl md:text-7xl uppercase tracking-tighter leading-[0.88] text-black dark:text-white"
+              >
+                About Me
+              </SplitHeading>
+            </div>
 
             <RevealText
               as="p"
@@ -160,12 +168,21 @@ export default function About() {
 
         <section className="grid gap-8">
           <div className="flex flex-wrap items-end justify-between gap-4 border-b border-black/15 pb-6 dark:border-white/15">
-            <SplitHeading
-              as="h2"
-              className="font-display text-3xl md:text-5xl uppercase tracking-tighter leading-none"
-            >
-              Selected work
-            </SplitHeading>
+            <div className="relative w-fit max-w-full">
+              <SparkleBackground
+                variant="sparkle"
+                size={28}
+                rotate={-10}
+                delay={-2.2}
+                className="-top-5 -right-7 sm:-top-4 sm:-right-10"
+              />
+              <SplitHeading
+                as="h2"
+                className="font-display text-3xl md:text-5xl uppercase tracking-tighter leading-none"
+              >
+                Selected work
+              </SplitHeading>
+            </div>
             <Link href="/work" className="font-mono text-xs font-bold uppercase tracking-wider underline underline-offset-4">
               Browse all work
             </Link>
@@ -191,12 +208,21 @@ export default function About() {
 
         <section className="grid gap-8 about-text">
           <div className="border-b border-black/15 pb-6 dark:border-white/15">
-            <SplitHeading
-              as="h2"
-              className="font-display text-3xl md:text-5xl uppercase tracking-tighter leading-none"
-            >
-              Work experience
-            </SplitHeading>
+            <div className="relative w-fit max-w-full">
+              <SparkleBackground
+                variant="lightning"
+                size={28}
+                rotate={12}
+                delay={-3.0}
+                className="-top-5 -right-7 sm:-top-4 sm:-right-10"
+              />
+              <SplitHeading
+                as="h2"
+                className="font-display text-3xl md:text-5xl uppercase tracking-tighter leading-none"
+              >
+                Work experience
+              </SplitHeading>
+            </div>
           </div>
 
           <div className="grid gap-6">
@@ -285,9 +311,18 @@ export default function About() {
           {/* Education */}
           <article className="grid content-start gap-6 border border-black/15 bg-white p-6 dark:border-white/15 dark:bg-[#1a1a1a] md:p-8">
             <div className="border-b border-black/10 pb-4 dark:border-white/10">
-              <RevealText as="h2" className="font-display text-2xl md:text-3xl uppercase tracking-tight">
-                Education
-              </RevealText>
+              <div className="relative w-fit max-w-full">
+                <SparkleBackground
+                  variant="sparkle"
+                  size={24}
+                  rotate={16}
+                  delay={-1.6}
+                  className="-top-3 -right-7 sm:-top-3 sm:-right-9"
+                />
+                <RevealText as="h2" className="font-display text-2xl md:text-3xl uppercase tracking-tight">
+                  Education
+                </RevealText>
+              </div>
             </div>
 
             <div className="grid gap-6">

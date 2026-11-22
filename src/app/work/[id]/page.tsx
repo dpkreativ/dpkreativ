@@ -90,7 +90,6 @@ export default async function Page({ params }: PageProps) {
 
   return (
     <main className="flex-1 w-full flex flex-col pt-[84px] bg-white text-[#111111] dark:bg-[#111111] dark:text-white">
-      <SparkleBackground />
       <div
         className="fixed inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none -z-10"
         style={{
@@ -106,12 +105,21 @@ export default async function Page({ params }: PageProps) {
         {/* Case Study Header Grid */}
         <section className="grid lg:grid-cols-[minmax(0,1.25fr)_minmax(300px,0.75fr)] gap-10 md:gap-14 items-start">
           <div className="grid gap-6">
-            <SplitHeading
-              as="h1"
-              className="font-display text-4xl sm:text-6xl md:text-7xl uppercase tracking-tighter leading-[0.88] text-black dark:text-white"
-            >
-              {project.title}
-            </SplitHeading>
+            <div className="relative w-fit max-w-full">
+              <SparkleBackground
+                variant="sparkle"
+                size={34}
+                rotate={14}
+                delay={-1.2}
+                className="-top-6 right-0 sm:-top-4 sm:-right-10"
+              />
+              <SplitHeading
+                as="h1"
+                className="font-display text-4xl sm:text-6xl md:text-7xl uppercase tracking-tighter leading-[0.88] text-black dark:text-white"
+              >
+                {project.title}
+              </SplitHeading>
+            </div>
 
             <p className="max-w-3xl font-body text-base sm:text-lg md:text-xl leading-relaxed text-black/75 dark:text-zinc-300">
               {project.caseStudy.headline}
@@ -259,12 +267,21 @@ export default async function Page({ params }: PageProps) {
         {/* Overview and Goals Row */}
         <section className="grid gap-8 md:gap-10 items-start lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
           <article className="grid gap-5 border border-black/15 bg-white p-6 dark:border-white/15 dark:bg-[#0A0A0A] md:p-10">
-            <SplitHeading
-              as="h2"
-              className="font-display text-3xl md:text-4xl uppercase tracking-tighter leading-none"
-            >
-              About the project
-            </SplitHeading>
+            <div className="relative w-fit max-w-full">
+              <SparkleBackground
+                variant="lightning"
+                size={26}
+                rotate={-12}
+                delay={-2.1}
+                className="-top-4 -right-7 sm:-top-3 sm:-right-9"
+              />
+              <SplitHeading
+                as="h2"
+                className="font-display text-3xl md:text-4xl uppercase tracking-tighter leading-none"
+              >
+                About the project
+              </SplitHeading>
+            </div>
 
             <div className="grid gap-4 font-body text-base leading-relaxed text-black/75 dark:text-zinc-300 md:text-lg">
               {project.description.map((paragraph) => (
@@ -298,12 +315,21 @@ export default async function Page({ params }: PageProps) {
         {project.caseStudy.process && project.caseStudy.process.length > 0 && (
           <section className="grid gap-8">
             <div className="border-b border-black/15 pb-6 dark:border-white/15">
-              <SplitHeading
-                as="h2"
-                className="font-display text-3xl md:text-5xl uppercase tracking-tighter leading-none"
-              >
-                How I approached the project
-              </SplitHeading>
+              <div className="relative w-fit max-w-full">
+                <SparkleBackground
+                  variant="sparkle"
+                  size={28}
+                  rotate={15}
+                  delay={-1.5}
+                  className="-top-6 right-0 sm:-top-4 sm:-right-10"
+                />
+                <SplitHeading
+                  as="h2"
+                  className="font-display text-3xl md:text-5xl uppercase tracking-tighter leading-none"
+                >
+                  How I approached the project
+                </SplitHeading>
+              </div>
             </div>
 
             <div className="grid gap-6 md:grid-cols-2">
@@ -337,12 +363,21 @@ export default async function Page({ params }: PageProps) {
         {project.caseStudy.results && project.caseStudy.results.length > 0 && (
           <section className="grid gap-8">
             <div className="flex flex-col gap-2 border-b border-black/15 pb-6 dark:border-white/15">
-              <SplitHeading
-                as="h2"
-                className="font-display text-3xl md:text-5xl uppercase tracking-tighter leading-none"
-              >
-                Project results
-              </SplitHeading>
+              <div className="relative w-fit max-w-full">
+                <SparkleBackground
+                  variant="lightning"
+                  size={28}
+                  rotate={-10}
+                  delay={-2.8}
+                  className="-top-5 -right-7 sm:-top-4 sm:-right-10"
+                />
+                <SplitHeading
+                  as="h2"
+                  className="font-display text-3xl md:text-5xl uppercase tracking-tighter leading-none"
+                >
+                  Project results
+                </SplitHeading>
+              </div>
             </div>
 
             <div className="grid gap-6 sm:grid-cols-3">
@@ -412,12 +447,21 @@ export default async function Page({ params }: PageProps) {
         {/* More Work Archive */}
         <section className="grid gap-8 pt-6">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 border-b border-black/15 pb-6 dark:border-white/15">
-            <SplitHeading
-              as="h2"
-              className="font-display text-3xl md:text-5xl uppercase tracking-tighter leading-none"
-            >
-              More projects
-            </SplitHeading>
+            <div className="relative w-fit max-w-full">
+              <SparkleBackground
+                variant="sparkle"
+                size={28}
+                rotate={12}
+                delay={-1.9}
+                className="-top-5 -right-7 sm:-top-4 sm:-right-10"
+              />
+              <SplitHeading
+                as="h2"
+                className="font-display text-3xl md:text-5xl uppercase tracking-tighter leading-none"
+              >
+                More projects
+              </SplitHeading>
+            </div>
           </div>
 
           <MoreWorkRecommendations projects={relatedProjects} seed={project.slug} />

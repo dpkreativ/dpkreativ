@@ -46,7 +46,6 @@ export default function BlogArchive({ posts }: { posts: HashnodePost[] }) {
 
   return (
     <main ref={container} className="flex-1 w-full flex flex-col pt-[84px]">
-      <SparkleBackground />
       <div
         className="fixed inset-0 -z-10 opacity-[0.03] dark:opacity-[0.05] pointer-events-none"
         style={{
@@ -58,12 +57,21 @@ export default function BlogArchive({ posts }: { posts: HashnodePost[] }) {
 
       <div className="w-full space-y-16 px-6 py-16 md:px-12 md:py-24 lg:px-24">
         <header className="space-y-6">
-          <SplitHeading
-            as="h1"
-            className="font-display text-4xl sm:text-6xl md:text-7xl uppercase tracking-tighter leading-[0.88]"
-          >
-            My thoughts
-          </SplitHeading>
+          <div className="relative w-fit max-w-full">
+            <SparkleBackground
+              variant="sparkle"
+              size={34}
+              rotate={14}
+              delay={-1.3}
+              className="-top-5 -right-8 sm:-top-4 sm:-right-11"
+            />
+            <SplitHeading
+              as="h1"
+              className="font-display text-4xl sm:text-6xl md:text-7xl uppercase tracking-tighter leading-[0.88]"
+            >
+              My thoughts
+            </SplitHeading>
+          </div>
           <RevealText
             as="p"
             className="blog-subtitle font-mono text-sm md:text-base text-zinc-600 dark:text-zinc-400 font-bold uppercase tracking-widest"
