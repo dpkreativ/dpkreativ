@@ -81,8 +81,8 @@ export default function Footer() {
           </div>
         )}
 
-        <div className="py-12 md:py-16 grid gap-10 grid-cols-2 md:grid-cols-2 xl:grid-cols-4 md:gap-10 xl:gap-12 text-left items-start">
-          <div className="col-span-2 md:col-span-1 flex flex-col gap-4">
+        <div className="py-12 md:py-16 grid gap-10 grid-cols-2 md:grid-cols-2 xl:grid-cols-4 md:gap-10 xl:gap-12 text-center md:text-left items-start">
+          <div className="col-span-2 md:col-span-1 flex flex-col items-center gap-4 md:items-start">
             <Link href="/" className="flex w-max items-center gap-3">
               <Image
                 src={logo}
@@ -101,7 +101,7 @@ export default function Footer() {
           </div>
 
           {navSections.map((section) => (
-            <div key={section.title} className="w-full flex flex-col text-left">
+            <div key={section.title} className="w-full flex flex-col">
               <span className="font-mono font-bold uppercase tracking-widest text-[10px] text-zinc-400 mb-5">
                 {section.title}
               </span>
@@ -113,7 +113,7 @@ export default function Footer() {
                         href={link.url}
                         target="_blank"
                         rel="noreferrer"
-                        className="flex items-center gap-2 text-zinc-300 hover:text-white transition-colors"
+                        className="flex items-center justify-center gap-2 text-zinc-300 hover:text-white transition-colors md:justify-start"
                       >
                         <i className={`${link.icon} text-sm`} />
                         <span>{link.title}</span>
@@ -121,7 +121,7 @@ export default function Footer() {
                     ) : (
                       <Link
                         href={link.url}
-                        className="flex items-center gap-2 text-zinc-300 hover:text-white transition-colors"
+                        className="flex items-center justify-center gap-2 text-zinc-300 hover:text-white transition-colors md:justify-start"
                       >
                         <i className={`${link.icon} text-sm`} />
                         <span>{link.title}</span>
@@ -133,7 +133,7 @@ export default function Footer() {
             </div>
           ))}
 
-          <div className="col-span-2 md:col-span-1 w-full flex flex-col text-left">
+          <div className="col-span-2 md:col-span-1 w-full flex flex-col">
             <span className="font-mono font-bold uppercase tracking-widest text-[10px] text-zinc-400 mb-5">
               Direct Contact
             </span>
@@ -141,7 +141,7 @@ export default function Footer() {
               <li>
                 <a
                   href={`mailto:${contact.email}`}
-                  className="flex items-center gap-2 text-zinc-300 hover:text-white transition-colors"
+                  className="flex items-center justify-center gap-2 text-zinc-300 hover:text-white transition-colors md:justify-start"
                 >
                   <i className="ri-mail-send-line text-sm" />
                   <span className="break-all">{contact.email}</span>
@@ -150,7 +150,7 @@ export default function Footer() {
               <li>
                 <a
                   href={`tel:${contact.phone}`}
-                  className="flex items-center gap-2 text-zinc-300 hover:text-white transition-colors"
+                  className="flex items-center justify-center gap-2 text-zinc-300 hover:text-white transition-colors md:justify-start"
                 >
                   <i className="ri-phone-line text-sm" />
                   <span>{contact.phone}</span>
