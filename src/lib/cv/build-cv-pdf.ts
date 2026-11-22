@@ -33,6 +33,7 @@ export type CvData = {
   contactLine: string;
   profile: string[];
   skills: string[];
+  selectedWork: { title: string; summary: string }[];
   experience: GroupedExperience[];
   education: CvEducation[];
   certifications: string[];
@@ -380,6 +381,19 @@ class CvBuilder {
     });
   }
 
+  private workEntry({ title, summary }: CvData["selectedWork"][number]) {
+    const text = toPdfText(summary);
+    const size = 9.5;
+    const leading = 13;
+    const lines = wrapText(text, this.fonts.regular, size, contentWidth());
+
+    this.ensureSpace(14 + lines.length * leading);
+    this.draw(toPdfText(title), { font: this.fonts.bold, size: 10, color: INK });
+    this.y -= 14;
+    this.paragraph(text, { size, leading });
+    this.y -= 6;
+  }
+
   private educationEntry(entry: CvEducation) {
     this.ensureSpace(42);
 
@@ -499,6 +513,11 @@ class CvBuilder {
     if (data.skills.length > 0) {
       this.sectionHeading("Technical Capabilities");
       this.skillChips(data.skills);
+    }
+
+    if (data.selectedWork.length > 0) {
+      this.sectionHeading("Selected Work");
+      data.selectedWork.forEach((entry) => this.workEntry(entry));
     }
 
     if (data.experience.length > 0) {

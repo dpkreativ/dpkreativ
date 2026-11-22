@@ -3,6 +3,7 @@ import { buildCvPdf } from '@/lib/cv/build-cv-pdf';
 import { collectCvData } from '@/lib/cv/collect-cv-data';
 import { toPdfText, stripHtml } from '@/lib/cv/text';
 import { groupExperience, type ExperienceItem } from '@/lib/experience';
+import content from '@/data/content.json';
 
 const ascii = (bytes: Uint8Array) => Buffer.from(bytes).toString('latin1');
 
@@ -150,6 +151,7 @@ describe('buildCvPdf', () => {
     const bytes = await buildCvPdf({
       ...data,
       skills: [],
+      selectedWork: [],
       education: [],
       certifications: [],
       languages: [],
@@ -175,6 +177,19 @@ describe('collectCvData', () => {
     expect(data.education.length).toBeGreaterThan(0);
     expect(data.certifications.length).toBeGreaterThan(0);
     expect(data.languages.length).toBeGreaterThan(0);
+  });
+
+  it('includes the shared project summaries in portfolio order', () => {
+    const { selectedWork } = collectCvData();
+
+    expect(selectedWork.map(({ title }) => title)).toEqual([
+      'Bonjour Quick Bites',
+      'Crunchies Online',
+      'Alchemy Of Code',
+      'Noma',
+      'The Iroko Circle',
+    ]);
+    expect(selectedWork).toEqual(content.selectedWork);
   });
 
   it('strips scheme and www from the contact line', () => {

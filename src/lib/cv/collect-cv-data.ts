@@ -9,6 +9,7 @@ import {
   skills,
   socials,
 } from "@/assets/data";
+import content from "@/data/content.json";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 import { groupExperience, type ExperienceItem } from "@/lib/experience";
 import type { CvData } from "./build-cv-pdf";
@@ -44,6 +45,7 @@ export function collectCvData(): CvData {
     contactLine: buildContactLine(),
     profile: aboutMe,
     skills,
+    selectedWork: content.selectedWork,
     experience: groupExperience(experience as ExperienceItem[]),
     education: education.map((entry) => ({
       degree: entry.degree,

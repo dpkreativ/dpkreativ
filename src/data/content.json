@@ -7,7 +7,7 @@
   ],
   "logo": "/images/brand-logos/kreativ-icon.svg",
   "heroImgText": "Hello World! I'm Divine.",
-  "roleKicker": "Software Engineer // Product Builder // Systems Writer",
+  "roleKicker": "Full-stack Software Engineer // Engineering Lead // Technical Writer",
   "contact": {
     "email": "dpkreativ@gmail.com",
     "phone": "09021824073",
@@ -15,7 +15,30 @@
     "website": "https://dpkreativ.vercel.app"
   },
   "aboutMe": [
-    "I am Divine Orji, a software engineer building digital products through The Kreativ Studio, my tech agency."
+    "I’m Divine Orji, a full-stack software engineer and Head of Engineering at The Kreativ Studio. I lead a remote team and stay hands-on with frontend, backend, and deployment work.",
+    "My work spans food ordering, education, and editorial platforms. I also write technical guides and created the curriculum behind Alchemy Of Code to help learners take an idea from concept to working software."
+  ],
+  "selectedWork": [
+    {
+      "title": "Bonjour Quick Bites",
+      "summary": "Built an online storefront for a Port Harcourt bakery and restaurant, with outlet pickup and doorstep delivery. Used Next.js and TypeScript, Supabase for data, Better Auth for authentication, and GitHub and Vercel for CI/CD."
+    },
+    {
+      "title": "Crunchies Online",
+      "summary": "Led a Next.js and Tailwind CSS redesign that simplified checkout, pickup, and delivery location selection. Added Google Maps outlet discovery and helped grow monthly online sales from ₦200,000 to over ₦3 million."
+    },
+    {
+      "title": "Alchemy Of Code",
+      "summary": "Created the curriculum behind a software engineering learning platform that helps learners turn ideas into working software. The platform runs on Cloudflare with Supabase and Better Auth."
+    },
+    {
+      "title": "Noma",
+      "summary": "Built a nursing exam prep app with flashcards for reviewing key concepts and quizzes for testing understanding."
+    },
+    {
+      "title": "The Iroko Circle",
+      "summary": "Designed and developed a WordPress publishing site for African literature, with dedicated paths for discovering stories, submitting work, and joining the community."
+    }
   ],
   "highlights": [
     {
@@ -68,18 +91,25 @@
     }
   ],
   "skills": [
-    "Web Development",
-    "Web Design",
-    "Mobile Development",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Tailwind CSS",
+    "Supabase",
+    "Better Auth",
+    "WordPress",
+    "Google Maps API",
+    "CI/CD (GitHub, Vercel)",
+    "Cloudflare",
     "Technical Writing",
-    "Software Engineering"
+    "Curriculum Design"
   ],
   "experience": [
     {
       "role": "Head of Engineering",
       "company": "The Kreativ Studio",
       "period": "January 2025 - Present",
-      "summary": "I direct engineering operations and lead our fully remote team, guiding architecture, sprints, and code reviews across 10+ client and internal web products while staying hands-on in the codebase.",
+      "summary": "Lead a remote engineering team across 10+ client and internal web products, guiding architecture, sprint planning, and code reviews while contributing directly to the codebase.",
       "highlights": [
         "I coordinate technical roadmaps and weekly sprints for distributed engineers across multiple time zones.",
         "I maintain architectural standards and CI/CD pipelines that keep deployment cycles under 15 minutes."
@@ -89,10 +119,10 @@
       "role": "Software Engineer",
       "company": "The Kreativ Studio",
       "period": "January 2019 - Present",
-      "summary": "Over a 7+ year journey, I've built and shipped 15+ bespoke web applications, turning complex client requirements into fast, resilient digital experiences.",
+      "summary": "Built and shipped 15+ custom web applications, from client requirements through launch.",
       "highlights": [
-        "I architect full-stack applications with Next.js, TypeScript, and modern APIs, consistently scoring 95+ on Lighthouse performance benchmarks.",
-        "I partner directly with founders to translate business goals into shipped interfaces and reliable backend workflows."
+        "Build full-stack applications with Next.js and TypeScript, including e-commerce workflows for checkout, pickup, and delivery.",
+        "Partner with founders to turn business requirements into usable interfaces and backend workflows."
       ]
     },
     {

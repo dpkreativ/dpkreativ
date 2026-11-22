@@ -10,6 +10,7 @@ import {
   roleKicker,
   skills,
 } from "@/assets/data";
+import content from "@/data/content.json";
 import FloatingDownloadLink from "@/components/floating-download-link";
 import PortraitSlideshow from "@/components/portrait-slideshow";
 import RevealText from "@/components/reveal-text";
@@ -17,6 +18,7 @@ import SplitHeading from "@/components/split-heading";
 import { groupExperience, type ExperienceItem } from "@/lib/experience";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import Link from "next/link";
 import { useMemo, useRef } from "react";
 
 export default function About() {
@@ -77,12 +79,13 @@ export default function About() {
           </header>
 
           <div className="space-y-6 font-body text-base md:text-xl font-normal leading-relaxed text-[#111111]/80 dark:text-zinc-300 about-text">
-            {aboutMe.map((paragraph, idx) => (
+            {aboutMe.map((paragraph) => (
               <p
-                key={idx}
-                dangerouslySetInnerHTML={{ __html: paragraph }}
+                key={paragraph}
                 className="border-l-2 border-black/20 dark:border-white/20 pl-6 leading-relaxed"
-              />
+              >
+                {paragraph}
+              </p>
             ))}
           </div>
 
@@ -122,8 +125,35 @@ export default function About() {
         </div>
       </div>
 
-      {/* Experience & Career Snapshot */}
+      {/* Selected Work & Career Snapshot */}
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 pb-20 md:pb-28 grid gap-14">
+        <section className="grid gap-8">
+          <div className="flex flex-wrap items-end justify-between gap-4 border-b border-black/15 pb-6 dark:border-white/15">
+            <SplitHeading
+              as="h2"
+              className="font-display text-3xl md:text-5xl uppercase tracking-tighter leading-none"
+            >
+              Selected work
+            </SplitHeading>
+            <Link href="/work" className="font-mono text-xs font-bold uppercase tracking-wider underline underline-offset-4">
+              Browse all work
+            </Link>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2">
+            {content.selectedWork.map(({ title, summary }) => (
+              <article
+                key={title}
+                className="grid content-start gap-3 border border-black/15 bg-white p-6 dark:border-white/15 dark:bg-[#1a1a1a] md:p-8"
+              >
+                <h3 className="font-display text-2xl uppercase tracking-tight">{title}</h3>
+                <p className="font-body text-base leading-relaxed text-[#111111]/80 dark:text-zinc-300">
+                  {summary}
+                </p>
+              </article>
+            ))}
+          </div>
+        </section>
+
         <section className="grid gap-8 about-text">
           <div className="border-b border-black/15 pb-6 dark:border-white/15">
             <SplitHeading
