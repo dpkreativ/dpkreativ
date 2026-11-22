@@ -44,6 +44,14 @@ describe("HeroShowreel preview preloading", () => {
     }
   });
 
+  it("uses portrait proportions on mobile and landscape on larger viewports", () => {
+    const { container } = render(<HeroShowreel projects={featuredProjects} />);
+    const preview = container.querySelector(".aspect-\\[3\\/4\\]");
+
+    expect(preview).toBeInTheDocument();
+    expect(preview).toHaveClass("min-h-[460px]", "sm:aspect-[16/9]", "lg:aspect-[16/8]");
+  });
+
   it("loads the first preview before it is visible and reuses the warmed next iframe", () => {
     const { container } = render(<HeroShowreel projects={featuredProjects} />);
     expect(container.querySelectorAll("iframe")).toHaveLength(0);

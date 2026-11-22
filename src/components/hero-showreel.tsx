@@ -1,6 +1,5 @@
 "use client";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import type { Project } from "@/assets/data";
 import { ArrowIcon } from "@/assets/icons";
@@ -17,10 +16,6 @@ function isDataSaverEnabled() {
   return (navigator as Navigator & {
     connection?: { saveData?: boolean };
   }).connection?.saveData === true;
-}
-
-function hasLivePreview(project: Project) {
-  return project.embeddable !== false && Boolean(project.url && project.url !== "#");
 }
 
 export default function HeroShowreel({ projects }: HeroShowreelProps) {
@@ -126,12 +121,6 @@ export default function HeroShowreel({ projects }: HeroShowreelProps) {
 
       {/* Showreel Telemetry Bar & Header Nav Buttons */}
       <div className="flex items-center justify-between border-b border-black/10 px-4 py-2 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-[#111111]/70 dark:border-white/10 dark:text-white/70">
-        {!hasLivePreview(activeProject) && (
-          <span className="font-mono text-[9px] font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
-            [CAPTURE]
-          </span>
-        )}
-
         <div className="ml-auto flex items-center gap-3">
           {isPaused && (
             <span className="font-mono text-[9px] uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
@@ -172,7 +161,7 @@ export default function HeroShowreel({ projects }: HeroShowreelProps) {
       </div>
 
       {/* Main Visual Display */}
-      <div ref={previewRef} className="relative aspect-[16/10] sm:aspect-[16/9] lg:aspect-[16/8] min-h-[380px] sm:min-h-[460px] lg:min-h-[520px] w-full overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+      <div ref={previewRef} className="relative aspect-[3/4] sm:aspect-[16/9] lg:aspect-[16/8] min-h-[460px] sm:min-h-[460px] lg:min-h-[520px] w-full overflow-hidden bg-zinc-100 dark:bg-zinc-900">
         {/* Keep the next slide in the same DOM position when it becomes active,
             since moving an iframe can reload it even if its React key is stable. */}
         {featured.map((project, index) => {
@@ -186,26 +175,16 @@ export default function HeroShowreel({ projects }: HeroShowreelProps) {
               inert={!isActive}
               className={`absolute inset-0 ${isActive ? "z-10" : "pointer-events-none opacity-0"}`}
             >
-              {hasLivePreview(project) ? (
-                <MiniBrowserIframe
-                  url={project.url}
-                  title={project.title}
-                  containerClassName="h-full w-full border-0"
-                  showCrosshairs={false}
-                  liveLoading={hasApproached ? "eager" : "deferred"}
-                  onLiveReadyChange={(ready) => markReady(project.slug, ready)}
-                  onInteractionChange={isActive ? setIsInteracting : undefined}
-                />
-              ) : (
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  onLoad={() => markReady(project.slug, true)}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
-                  className="object-cover object-top transition-transform duration-700 hover:scale-105"
-                />
-              )}
+              <MiniBrowserIframe
+                url={project.url}
+                title={project.title}
+                embeddable={project.embeddable}
+                containerClassName="h-full w-full border-0"
+                showCrosshairs={false}
+                liveLoading={hasApproached ? "eager" : "deferred"}
+                onLiveReadyChange={(ready) => markReady(project.slug, ready)}
+                onInteractionChange={isActive ? setIsInteracting : undefined}
+              />
             </div>
           );
         })}

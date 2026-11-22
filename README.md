@@ -1,43 +1,38 @@
 # DIVINE ORJI
 ### Full-stack Software Engineer // Engineering Lead // Technical Writer
 
-> **"I build web apps that help businesses run smoothly."**
+> Hi, I'm Divine Orji. I build web apps that help businesses run smoothly.
 
 [![Email](https://img.shields.io/badge/Direct_Email-dpkreativ@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:dpkreativ@gmail.com)
-[![CV](https://img.shields.io/badge/Download_CV-PDF-333333?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://dpkreativ.vercel.app/api/cv)
+[![CV](https://img.shields.io/badge/Download_CV-PDF-333333?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://divineorji.com/api/cv)
 
 ---
 
-I'm Divine Orji, a full-stack software engineer and Head of Engineering at **[The Kreativ Studio](https://dpkreativ.vercel.app)**, where I lead a remote team across 10+ client and internal web products and stay hands-on across frontend, backend, and deployment.
+I'm a full-stack software engineer and Head of Engineering at **[The Kreativ Studio](https://divineorji.com)**, where I lead a remote team and stay hands-on across frontend, backend, and deployment.
 
-I also write technical guides on **[my blog](https://divineorji.com/blog)** (alongside 50+ articles published across freeCodeCamp and Hackmamba) and created the software engineering curriculum behind **[Alchemy Of Code](https://aoc.divineorji.com)**.
-
----
-
-| Area | Track Record | Highlight |
-|:---|:---:|:---|
-| **Revenue Growth** | **15x** | Grew Crunchies Online monthly sales from ₦200k to ₦3M+ over a 7-month redesign |
-| **Products Shipped** | **15+ Apps** | Custom web applications built end to end; leading a remote team across 10+ products |
-| **Technical Writing** | **50+ Articles** | Tutorials, SDK integration guides, and demo apps across freeCodeCamp, Hackmamba, and my blog |
-| **Mentorship & Community** | **300+ Builders** | Trained 100+ students at IGHub, 200+ at GDSC MOUAU, and authored the Alchemy Of Code curriculum |
+I also write hands-on technical guides on **[my blog](https://divineorji.com/blog)** (alongside 50+ articles published across freeCodeCamp and Hackmamba) and created the software engineering curriculum behind **[Alchemy Of Code](https://aoc.divineorji.com)**. My work focuses on building useful software and helping others learn to build their own.
 
 ---
 
-**Core Stack & Capabilities**
+### A few things I've been up to
+
+- **Building & leading**: Shipped 15+ custom web apps from early requirements to launch, and currently lead a remote engineering team across 10+ client and internal products at The Kreativ Studio.
+- **Scaling real businesses**: Redesigned Crunchies Online in Next.js and Tailwind CSS, helping grow monthly online sales from ₦200,000 to over ₦3 million.
+- **Writing for developers**: Wrote and edited 50+ tutorials, SDK guides, and working demo apps across freeCodeCamp, Hackmamba, and [my blog](https://divineorji.com/blog).
+- **Teaching & community**: Trained 100+ web development students at IGHub, introduced 200+ students to software engineering through GDSC MOUAU bootcamps, and wrote the curriculum powering Alchemy Of Code.
+
+---
+
+### Skills
 
 - **Frontend**: `React` · `Next.js` · `TypeScript` · `Tailwind CSS` · `GSAP`
 - **Backend & Data**: `Supabase` · `Better Auth` · `WordPress` · `Google Maps API`
-- **Infrastructure & Delivery**: `Cloudflare` · `Git` · `GitHub & Vercel CI/CD`
-- **Writing & Education**: `Technical Writing` · `Curriculum Design`
+- **Delivery**: `Cloudflare` · `Git & CI/CD (GitHub, Vercel)`
+- **Writing & Teaching**: `Technical Writing` · `Curriculum Design`
 
 ---
 
 <p align="left">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=dpkreativ&show_icons=true&theme=dark&bg_color=111111&title_color=ffffff&text_color=a1a1aa&icon_color=ffffff&border_color=27272a" />
-    <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api?username=dpkreativ&show_icons=true&theme=default&bg_color=fafafa&title_color=111111&text_color=52525b&icon_color=111111&border_color=e4e4e7" />
-    <img src="https://github-readme-stats.vercel.app/api?username=dpkreativ&show_icons=true&theme=default" alt="Divine Orji's GitHub Stats" />
-  </picture>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=dpkreativ&layout=compact&bg_color=111111&title_color=ffffff&text_color=a1a1aa&border_color=27272a" />
     <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=dpkreativ&layout=compact&bg_color=fafafa&title_color=111111&text_color=52525b&border_color=e4e4e7" />
@@ -55,28 +50,32 @@ I also write technical guides on **[my blog](https://divineorji.com/blog)** (alo
 
 ---
 
-**Selected Work**
+### Selected work
 
-- **[Bonjour Quick Bites](https://bonjourquickbites.com)** — Online storefront for fresh bread, pastries, hot meals, and celebration cakes in Port Harcourt, with outlet pickup or doorstep delivery. Built end to end with Next.js, TypeScript, Supabase, and Better Auth on GitHub & Vercel CI/CD.
-- **[Crunchies Online](https://crunchiesonline.com)** — Seven-month online food ordering redesign in Next.js and Tailwind CSS with streamlined checkout, pickup/delivery flows, and Google Maps outlet lookup. Monthly online sales grew from ₦200k to ₦3M+.
-- **[Alchemy Of Code](https://aoc.divineorji.com)** — Learning platform powered by my software engineering curriculum, helping learners move from fundamentals to shipping working software. Runs on Cloudflare, Supabase, and Better Auth.
-- **[Noma](https://noma-study-prep.vercel.app)** — Exam prep app for nursing students pairing quick flashcards with practice quizzes.
-- **[The Iroko Circle](https://theirokocircle.org)** — WordPress publishing home for African literature, writer submissions, and local reader chapters.
+Client builds, shipped products, and work in progress.
 
-**In Development**
+- **[Bonjour Quick Bites](https://bonjourquickbites.com)** — Port Harcourt customers use this storefront to order fresh bread, pastries, hot meals, and celebration cakes for outlet pickup or doorstep delivery. I built it end to end with Next.js, TypeScript, Supabase, and Better Auth, backed by GitHub and Vercel for CI/CD.
+- **[Crunchies Online](https://crunchiesonline.com)** — I redesigned Crunchies Online in Next.js and Tailwind CSS, reworking checkout, pickup, and delivery location selection and wiring up Google Maps outlet discovery. Monthly online sales grew from ₦200,000 to over ₦3 million.
+- **[Alchemy Of Code](https://aoc.divineorji.com)** — Behind this learning platform is a software engineering curriculum I wrote to help people move from fundamentals to shipping their own ideas. Under the hood, it runs on Cloudflare with Supabase and Better Auth.
+- **[Noma](https://noma-study-prep.vercel.app)** — I built Noma for nursing students prepping for exams, pairing quick flashcards for revising key concepts with quizzes that show what's actually sticking.
+- **[The Iroko Circle](https://theirokocircle.org)** — For this African literature community, my focus was designing and building a WordPress publishing home where readers can discover new stories, writers can submit work, and members can find local chapters.
 
-- **[Merphils](https://merphils.com)** — Multi-tenant school management platform for daily school operations and family/student academic records with one account across schools. Built with Next.js, TypeScript, Tailwind CSS, and Better Auth.
-- **[Grooovy](https://grooovy.fun)** — Event discovery, ticketing, and host tools platform built with React, Supabase, Better Auth, and GSAP.
+### Work in progress
+
+- **[Merphils](https://merphils.com)** — A school management platform I'm building with Next.js, TypeScript, Tailwind CSS, and Better Auth. The goal is to give staff tools for daily operations and let families and students access academic records without juggling separate accounts.
+- **[Grooovy](https://grooovy.fun)** — An event platform in development for finding nights out you might otherwise hear about through friends or group chats. It brings public event listings, ticketing, and host tools together with React, Supabase, Better Auth, and GSAP.
 
 ---
 
-**Let's talk — remote worldwide (West Africa Time, UTC+1).**
+### Let's talk
 
-- 🌐 **Website**: [dpkreativ.vercel.app](https://dpkreativ.vercel.app)
-- 🗂️ **Portfolio**: [dpkreativ.vercel.app/work](https://dpkreativ.vercel.app/work)
-- ✍️ **Blog**: [divineorji.com/blog](https://divineorji.com/blog)
-- 📝 **Send a Brief**: [dpkreativ.vercel.app/contact](https://dpkreativ.vercel.app/contact)
-- ✉️ **Direct Email**: [dpkreativ@gmail.com](mailto:dpkreativ@gmail.com)
-- 📱 **Call / WhatsApp**: [+234 902 182 4073](tel:+2349021824073)
-- 🤝 **LinkedIn**: [/in/dpkreativ](https://www.linkedin.com/in/dpkreativ)
-- 📺 **YouTube**: [@dpkreativ](https://www.youtube.com/@dpkreativ)
+What can I help with? I work remotely with teams worldwide from West Africa Time (UTC+1).
+
+- **Website**: [divineorji.com](https://divineorji.com) (fallback: [dpkreativ.vercel.app](https://dpkreativ.vercel.app))
+- **Work**: [divineorji.com/work](https://divineorji.com/work)
+- **Blog**: [divineorji.com/blog](https://divineorji.com/blog)
+- **Project brief**: [divineorji.com/contact](https://divineorji.com/contact)
+- **Email**: [dpkreativ@gmail.com](mailto:dpkreativ@gmail.com)
+- **Phone / WhatsApp**: [+234 902 182 4073](tel:+2349021824073)
+- **LinkedIn**: [/in/dpkreativ](https://www.linkedin.com/in/dpkreativ)
+- **YouTube**: [@dpkreativ](https://www.youtube.com/@dpkreativ)

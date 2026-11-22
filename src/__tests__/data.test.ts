@@ -1,8 +1,17 @@
 import content from '../data/content.json';
+import { SITE_BLOG_URL, SITE_FALLBACK_URL, SITE_URL } from '@/lib/site';
 import fs from 'fs';
 import path from 'path';
 
 describe('Content Data', () => {
+  it('uses divineorji.com as the primary website and dpkreativ.vercel.app as fallback', () => {
+    expect(SITE_URL).toBe('https://divineorji.com');
+    expect(SITE_FALLBACK_URL).toBe('https://dpkreativ.vercel.app');
+    expect(SITE_BLOG_URL).toBe('https://divineorji.com/blog');
+    expect(content.contact.website).toBe('https://divineorji.com');
+    expect(content.contact.fallbackWebsite).toBe('https://dpkreativ.vercel.app');
+  });
+
   it('should have required properties', () => {
     expect(content).toHaveProperty('avatar');
     expect(content).toHaveProperty('portraits');
@@ -29,7 +38,13 @@ describe('Content Data', () => {
 
     // brands
     content.brands.forEach(brand => checkImage(brand.image));
-    // projects
-    content.projects.forEach(project => checkImage(project.image));
+  });
+
+  it('does not include project demo capture images', () => {
+    const demosDir = path.join(process.cwd(), 'public', 'images', 'project-demos');
+    expect(fs.existsSync(demosDir)).toBe(false);
+    content.projects.forEach((project) => {
+      expect(project).not.toHaveProperty('image');
+    });
   });
 });

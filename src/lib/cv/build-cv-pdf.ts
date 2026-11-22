@@ -8,6 +8,7 @@ import {
 } from "pdf-lib";
 
 import type { GroupedExperience } from "@/lib/experience";
+import { SITE_URL } from "@/lib/site";
 import {
   CHIP_FILL,
   CONTENT_INK,
@@ -90,7 +91,7 @@ class CvBuilder {
     doc.setTitle("Divine Orji - Curriculum Vitae", {
       showInWindowTitleBar: true,
     });
-    doc.setCreator("dpkreativ.vercel.app");
+    doc.setCreator(new URL(SITE_URL).hostname);
 
     const [regular, bold, oblique, mono, monoBold] = await Promise.all([
       doc.embedFont(StandardFonts.Helvetica),

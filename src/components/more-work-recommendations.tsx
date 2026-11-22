@@ -14,7 +14,7 @@ export default function MoreWorkRecommendations({
   const recommendedProjects = pickDeterministicItems(projects, count, seed);
 
   return (
-    <div className="grid gap-6 md:grid-cols-2">
+    <div className="grid min-w-0 grid-cols-1 gap-6 md:grid-cols-2">
       {recommendedProjects.map((entry) => (
         <ProjectCard
           key={entry.slug}
