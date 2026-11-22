@@ -7,6 +7,7 @@ export interface MiniBrowserIframeProps {
   url?: string;
   title: string;
   fallbackImage?: string;
+  embeddable?: boolean;
   className?: string;
   containerClassName?: string;
   initialMode?: "live" | "screenshot";
@@ -37,6 +38,7 @@ export default function MiniBrowserIframe({
   url,
   title,
   fallbackImage,
+  embeddable = true,
   className = "",
   containerClassName = "",
   initialMode = "live",
@@ -48,6 +50,7 @@ export default function MiniBrowserIframe({
 }: MiniBrowserIframeProps) {
   const targetUrl = useMemo(() => normalizeUrl(url), [url]);
   const hasLiveUrl = Boolean(targetUrl);
+  const canEmbed = hasLiveUrl && embeddable;
   const cleanDomain = useMemo(() => extractDomain(targetUrl), [targetUrl]);
 
   const [mode, setMode] = useState<"live" | "screenshot">(() =>
@@ -169,12 +172,12 @@ export default function MiniBrowserIframe({
 
         {/* Right: Controls (Mode Switch, Reload, External Link) */}
         <div className="ml-auto flex items-center gap-1.5 sm:gap-2">
-          {(!hasLiveUrl || mode !== "live") && (
+          {(!canEmbed || mode !== "live") && (
             <span className="font-mono text-[9px] font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
-              [CAPTURE]
+              {hasLiveUrl && !canEmbed ? "EXTERNAL SITE" : "[CAPTURE]"}
             </span>
           )}
-          {hasLiveUrl && fallbackImage && (
+          {canEmbed && fallbackImage && (
             <div className="flex items-center border border-black/15 bg-black/[0.04] p-0.5 dark:border-white/15 dark:bg-white/[0.05]">
               <button
                 type="button"
@@ -203,7 +206,7 @@ export default function MiniBrowserIframe({
             </div>
           )}
 
-          {hasLiveUrl && mode === "live" && (
+          {canEmbed && mode === "live" && (
             <button
               type="button"
               onClick={handleReload}
@@ -234,7 +237,21 @@ export default function MiniBrowserIframe({
       <div
         className={`relative flex-1 min-h-0 w-full overflow-hidden bg-zinc-100 dark:bg-zinc-950 ${className}`}
       >
-        {hasLiveUrl && mode === "live" ? (
+        {hasLiveUrl && !canEmbed ? (
+          <div className="flex h-full flex-col items-center justify-center gap-3 p-4 text-center">
+            <p className="font-body text-sm text-zinc-600 dark:text-zinc-300">
+              {title} does not allow embedded previews.
+            </p>
+            <a
+              href={targetUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="border border-black bg-black px-3 py-2 font-mono text-xs uppercase text-white dark:border-white dark:bg-white dark:text-black"
+            >
+              Open live site <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        ) : canEmbed && mode === "live" ? (
           <>
             {/* Loading Indicator */}
             {isWaitingForLive && capture}

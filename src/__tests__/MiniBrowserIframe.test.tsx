@@ -24,6 +24,13 @@ describe("MiniBrowserIframe", () => {
     expect(screen.queryByText("LIVE EMBED")).not.toBeInTheDocument();
   });
 
+  it("links directly to sites that block iframe embedding", () => {
+    render(<MiniBrowserIframe url="https://grooovy.fun" title="Grooovy" embeddable={false} />);
+
+    expect(screen.queryByTitle("Grooovy Live Site Preview")).not.toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Open live site" })).toHaveAttribute("href", "https://grooovy.fun");
+  });
+
   it("renders fallback image when in screenshot mode", () => {
     render(
       <MiniBrowserIframe
