@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import SplitHeading from "./split-heading";
+import SparkleBackground from "./sparkle-background";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -59,12 +60,19 @@ export default function Footer() {
         {/* Conditional Closing CTA Banner (suppressed on /contact) */}
         {!isContactPage && (
           <div className="items-center justify-center gap-8 border-b border-white/10 py-14 text-center md:py-20 flex flex-col">
-            <SplitHeading
-              as="h2"
-              className="font-display uppercase text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.9]"
-            >
-              Let’s talk
-            </SplitHeading>
+            <div className="relative w-fit max-w-full">
+              <SparkleBackground
+                variant="chat"
+                size={32}
+                className="text-white/35"
+              />
+              <SplitHeading
+                as="h2"
+                className="font-display uppercase text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.9]"
+              >
+                Let’s talk
+              </SplitHeading>
+            </div>
             <Link
               href="/contact"
               className="inline-flex items-center justify-center gap-2 whitespace-nowrap border border-white/25 bg-zinc-200 px-7 py-3.5 font-mono text-xs font-bold uppercase tracking-widest text-zinc-950 transition-colors hover:border-white/40 hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"

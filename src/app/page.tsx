@@ -171,8 +171,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative w-full overflow-hidden py-4 sm:py-6">
-        <SparkleBackground variant="sparkle" size={24} placement="section" />
+      <section className="w-full overflow-hidden py-4 sm:py-6">
         <div className="animate-marquee flex w-max whitespace-nowrap will-change-transform">
           {[0, 1].map((track) => (
             <div
