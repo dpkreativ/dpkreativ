@@ -75,7 +75,7 @@ export default function Home() {
                 size={34}
                 className="right-1 mt-1.5 sm:-right-6 sm:-mt-1"
               />
-              <h1 className="hero-headline font-display text-[clamp(2.75rem,13vw,3.25rem)] leading-[0.88] tracking-[-0.04em] text-[#111111] dark:text-white uppercase sm:text-[clamp(3.5rem,8vw,6.5rem)]">
+              <h1 className="hero-headline font-display text-[clamp(3rem,14vw,3.5rem)] leading-[0.88] tracking-[-0.04em] text-[#111111] dark:text-white uppercase sm:text-[clamp(3.5rem,8vw,6.5rem)]">
                 Web apps for businesses
               </h1>
             </div>
