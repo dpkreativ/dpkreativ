@@ -78,11 +78,11 @@ describe("SparkleBackground", () => {
     expect(outer).toHaveAttribute("data-sparkle-position", "bottom-right");
     expect(outer).toHaveClass(
       "top-full",
-      "right-2",
+      "-right-3",
       "mt-1.5",
       "sm:top-full",
-      "sm:right-0",
-      "sm:mt-1",
+      "sm:-right-12",
+      "sm:-mt-1",
       "h-[var(--sparkle-size-mobile)]",
       "w-[var(--sparkle-size-mobile)]",
       "sm:h-[var(--sparkle-size)]",

@@ -199,7 +199,7 @@ export default function SparkleBackground({
   const positionClassName =
     placement === "section"
       ? "bottom-1 right-4 sm:bottom-2 sm:right-10"
-      : "top-full right-2 mt-1.5 sm:top-full sm:right-0 sm:mt-1";
+      : "top-full -right-3 mt-1.5 sm:top-full sm:-right-12 sm:-mt-1";
 
   const mobileSize = Math.max(16, Math.round(size * 0.62));
   const sizeStyle = {
