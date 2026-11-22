@@ -68,14 +68,14 @@ export default function Footer() {
                 Let’s talk
               </SplitHeading>
               <RevealText noSplit className="mx-auto mt-4 max-w-xl text-balance font-body text-base leading-relaxed text-zinc-400 md:text-lg md:leading-relaxed lg:mx-0 lg:max-w-none">
-                Tell me what you want to build or what isn’t working with your current site.
+                Have a project in mind or need a hand with your site?
               </RevealText>
             </div>
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 whitespace-nowrap border border-white/25 bg-zinc-200 px-7 py-3.5 font-mono text-xs font-bold uppercase tracking-widest text-zinc-950 transition-colors hover:border-white/40 hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
             >
-              Get in touch
+              Contact me
               <i aria-hidden="true" className="ri-arrow-right-up-line" />
             </Link>
           </div>
