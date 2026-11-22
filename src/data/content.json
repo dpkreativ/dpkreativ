@@ -15,35 +15,35 @@
     "website": "https://dpkreativ.vercel.app"
   },
   "aboutMe": [
-    "I’m Divine Orji, a full-stack software engineer and Head of Engineering at The Kreativ Studio, where I lead a remote team and stay hands-on with frontend, backend, and deployment work.",
-    "Work at The Kreativ Studio includes Bonjour Quick Bites, an online ordering storefront, and Noma, a nursing exam prep app. I also write technical guides and created the curriculum behind Alchemy Of Code to help learners turn ideas into working software."
+    "I’m Divine Orji, a full-stack software engineer and Head of Engineering at The Kreativ Studio. Leading a remote team keeps my calendar busy, though you’ll still find me deep in the codebase shipping frontend, backend, and deployment work.",
+    "Outside client and studio builds, writing and teaching take up a big part of my week. My technical guides live on freeCodeCamp and beyond, and I put together the Alchemy Of Code curriculum to help people take a rough idea and turn it into working software."
   ],
   "speakerBio": "Divine Orji is a full-stack software engineer, technical writer, and Head of Engineering at The Kreativ Studio, where he leads a remote team and builds web products such as Bonjour Quick Bites and Noma. He writes hands-on guides for freeCodeCamp and created the software engineering curriculum behind Alchemy Of Code. At Innovation Growth Hub in Aba, he trained and mentored more than 100 web development students. His work focuses on building useful software and helping others learn to build their own.",
   "selectedWork": [
     {
       "title": "Bonjour Quick Bites",
       "url": "https://bonjourquickbites.com",
-      "summary": "An online storefront for a Port Harcourt bakery and restaurant, with outlet pickup and doorstep delivery. Built with Next.js and TypeScript, Supabase for data, Better Auth for authentication, and GitHub and Vercel for CI/CD."
+      "summary": "Port Harcourt customers use this storefront to order fresh bread, pastries, and hot meals for outlet pickup or doorstep delivery. I built it end to end with Next.js, TypeScript, Supabase, and Better Auth, backed by GitHub and Vercel for CI/CD."
     },
     {
       "title": "Crunchies Online",
       "url": "https://crunchiesonline.com",
-      "summary": "Led a Next.js and Tailwind CSS redesign that simplified checkout, pickup, and delivery location selection. Added Google Maps outlet discovery and helped grow monthly online sales from ₦200,000 to over ₦3 million."
+      "summary": "Over a seven-month redesign in Next.js and Tailwind CSS, I reworked checkout, pickup, and delivery location selection and wired up Google Maps outlet discovery. Monthly online sales grew from ₦200,000 to over ₦3 million."
     },
     {
       "title": "Alchemy Of Code",
       "url": "https://aoc.divineorji.com",
-      "summary": "Created the curriculum behind a software engineering learning platform that helps learners turn ideas into working software. The platform runs on Cloudflare with Supabase and Better Auth."
+      "summary": "Behind this learning platform is a software engineering curriculum I wrote to help people move from fundamentals to shipping their own ideas. Under the hood, it runs on Cloudflare with Supabase and Better Auth."
     },
     {
       "title": "Noma",
       "url": "https://noma-study-prep.vercel.app",
-      "summary": "Built a nursing exam prep app with flashcards for reviewing key concepts and quizzes for testing understanding."
+      "summary": "I built Noma for nursing students prepping for exams, pairing quick flashcards for revising key concepts with quizzes that show what’s actually sticking."
     },
     {
       "title": "The Iroko Circle",
       "url": "https://theirokocircle.org",
-      "summary": "Designed and developed a WordPress publishing site for African literature, with dedicated paths for discovering stories, submitting work, and joining the community."
+      "summary": "For this African literature community, my focus was designing and building a WordPress publishing home where readers can discover new stories, writers can submit work, and members can find local chapters."
     }
   ],
   "highlights": [
@@ -115,97 +115,97 @@
       "role": "Head of Engineering",
       "company": "The Kreativ Studio",
       "period": "January 2025 - Present",
-      "summary": "Leads a remote engineering team across 10+ client and internal web products, guiding architecture, sprint planning, and code reviews while contributing directly to the codebase.",
+      "summary": "I lead a remote engineering team across 10+ client and internal web products, steering architecture, sprint planning, and code reviews while staying active in the codebase myself.",
       "highlights": [
-        "Coordinates technical roadmaps and weekly sprints for projects in development, including Merphils (school operations and academic records) and Grooovy (event discovery, ticketing, and host tools).",
-        "Maintains architectural standards and CI/CD pipelines that keep deployment cycles under 15 minutes."
+        "My week centers on technical roadmaps and sprint planning for products in development, including Merphils (school operations and academic records) and Grooovy (event discovery, ticketing, and host tools).",
+        "Keeping our architectural standards sharp and our CI/CD pipelines tuned lets the team ship in under 15 minutes."
       ]
     },
     {
       "role": "Software Engineer",
       "company": "The Kreativ Studio",
       "period": "January 2019 - Present",
-      "summary": "Built and shipped 15+ custom web applications, working with founders from requirements through launch.",
+      "summary": "Working closely with founders from early requirements to launch, I’ve built and shipped 15+ custom web applications.",
       "highlights": [
-        "Built Bonjour Quick Bites end to end with Next.js and TypeScript, including online ordering for outlet pickup and doorstep delivery.",
-        "Built Noma with flashcards and quizzes for nursing exam prep, and created the software engineering curriculum behind Alchemy Of Code.",
-        "Designed and developed The Iroko Circle’s WordPress site for publishing African literature, accepting submissions, and connecting readers with local chapters."
+        "From database schema to checkout, I built Bonjour Quick Bites end to end in Next.js and TypeScript for outlet pickup and doorstep delivery.",
+        "On the education side, I built flashcards and quizzes for nursing students in Noma and authored the software engineering curriculum powering Alchemy Of Code.",
+        "For The Iroko Circle, I designed and developed a WordPress home for publishing African literature, accepting submissions, and connecting readers with local chapters."
       ]
     },
     {
       "role": "Software Engineer",
       "company": "Innovation Growth Hub",
       "period": "January 2024 - March 2026",
-      "summary": "Across a 2+ year run, engineered client web solutions, maintained internal software, and spearheaded developer community training in Aba.",
+      "summary": "Over two-plus years in Aba, I split my time between building client web apps, maintaining our internal tools, and teaching the next wave of local developers.",
       "highlights": [
-        "Delivered software across 2 parallel tracks: client-commissioned platforms and internal operations tools.",
-        "Trained and mentored 100+ web development students, designing the foundational curriculum still taught across cohorts.",
-        "Hosted developer ecosystem events and co-building sessions that engaged 300+ local tech builders."
+        "My engineering work ran across two parallel tracks: client-commissioned platforms and the internal tools that kept daily operations moving.",
+        "In the classroom, I trained and mentored 100+ web development students and wrote the foundational curriculum cohorts still learn from today.",
+        "Alongside the team, we hosted meetups and co-building sessions that brought together 300+ local tech builders."
       ]
     },
     {
       "role": "Fullstack Developer",
       "company": "Crunchies Fried Chicken Limited",
       "period": "April 2024 - October 2024",
-      "summary": "Led the end-to-end redesign of Crunchies Online over a 7-month contract, helping scale monthly digital sales from ₦200k to over ₦3M.",
+      "summary": "Crunchies brought me on for a seven-month contract to lead the end-to-end redesign of Crunchies Online, helping grow monthly digital sales from ₦200k to over ₦3M.",
       "highlights": [
-        "Resolved 3 major ordering drop-off points by clarifying checkout flow, delivery zone selection, and pickup options.",
-        "Integrated the Google Maps API for real-time outlet lookup, cutting delivery address errors significantly.",
-        "Rebuilt the frontend in Next.js and Tailwind CSS for sub-2-second load times even on low-bandwidth mobile connections."
+        "Checkout, delivery zones, and pickup options were where orders used to stall, so I smoothed out those three friction points first.",
+        "To cut down on delivery address errors, I integrated the Google Maps API for real-time outlet lookup.",
+        "Rebuilding the frontend in Next.js and Tailwind CSS got load times under two seconds, even on slower mobile connections."
       ]
     },
     {
       "role": "Freelance Technical Writer",
       "company": "freeCodeCamp",
       "period": "September 2021 - Present",
-      "summary": "Writes long-form technical guides on modern React patterns, web performance, and developer tools for freeCodeCamp News, read by tens of thousands of engineers.",
+      "summary": "My long-form guides on React patterns, web performance, and developer tools appear on freeCodeCamp News, where tens of thousands of engineers have read them.",
       "highlights": [
-        "Unpacks complex frontend concepts into practical, project-based tutorials with interactive code examples.",
-        "Published guides consistently rank on Google page 1 for core React and JavaScript topics."
+        "I break down tricky frontend topics through project-based walkthroughs and interactive code examples readers can try right away.",
+        "Several of my published guides consistently rank on Google page 1 for core React and JavaScript searches."
       ]
     },
     {
       "role": "Technical Writer & Editor",
       "company": "Hackmamba",
       "period": "March 2021 - September 2024",
-      "summary": "Authored, edited, and published 50+ technical articles and built interactive demo apps for international developer-tooling companies.",
+      "summary": "Developer-tooling teams around the world relied on the 50+ articles and interactive demo apps I wrote, edited, and built over three-plus years at Hackmamba.",
       "highlights": [
-        "Created 50+ in-depth tutorials, SDK integration guides, and API documentation for SaaS and devtools platforms.",
-        "Built production-grade demo repositories demonstrating third-party tools in real-world scenarios.",
-        "Organized global hackathons, reviewing and evaluating dozens of community project submissions."
+        "My writing covered 50+ in-depth tutorials, SDK integration guides, and API docs for SaaS and devtools platforms.",
+        "Rather than stopping at prose, I built working demo repositories showing how those tools fit into real projects.",
+        "We also ran global hackathons, where I helped review and evaluate dozens of community project submissions."
       ]
     },
     {
       "role": "Core Team Member",
       "company": "Google Developer Student Clubs",
       "period": "October 2021 - December 2024",
-      "summary": "As a core team lead at MOUAU, organized workshops and practical bootcamps that introduced over 200 university students to software engineering.",
+      "summary": "At MOUAU, I helped introduce over 200 university students to software engineering through hands-on workshops and practical bootcamps.",
       "highlights": [
-        "Organized and facilitated hands-on web development bootcamps for 200+ students.",
-        "Provided one-on-one mentorship to aspiring developers preparing for their first tech internships.",
-        "Collaborated to host campus-wide tech conferences, hackathons, and networking sessions."
+        "We organized and ran practical web development bootcamps that took 200+ students from first lines of code to real projects.",
+        "Outside group sessions, I mentored aspiring developers one-on-one as they prepared for their first tech internships.",
+        "Together with fellow leads, I helped host campus-wide tech conferences, hackathons, and networking events."
       ]
     },
     {
       "role": "Junior Software Engineer",
       "company": "Truparse",
       "period": "February 2021 - July 2021",
-      "summary": "In a 6-month team engagement, developed frontend features for web applications using TypeScript and React.js within 2-week agile sprint cycles.",
+      "summary": "On the engineering team at Truparse, I spent six months shipping React and TypeScript frontend features inside two-week agile sprints.",
       "highlights": [
-        "Shipped web features using agile sprint rituals, daily standups, and Git collaboration workflows.",
-        "Built accessible components in React and TypeScript that worked across screen sizes.",
-        "Wrote custom CSS solutions that modernized existing client WordPress platforms."
+        "Day to day, we worked through agile sprint rituals, daily standups, and collaborative Git workflows to get features into production.",
+        "I built responsive, accessible UI components in React and TypeScript that held up across screen sizes.",
+        "When client WordPress sites needed a refresh, I wrote custom CSS to modernize their look and layout."
       ]
     },
     {
       "role": "Frontend Developer Intern",
       "company": "PAYVEST GLOBAL",
       "period": "October 2020 - January 2021",
-      "summary": "Over a 4-month internship, contributed production frontend code, earning team recognition for accelerating feature delivery within the first 2 months.",
+      "summary": "My first taste of production fintech came as a four-month intern, where I earned team recognition within two months for helping get features out faster.",
       "highlights": [
-        "Wrote modular HTML5, React.js, and CSS for client-facing financial product interfaces.",
-        "Paired with senior engineers to refactor legacy styles into clean, reusable CSS components.",
-        "Developed and launched company marketing sites using WordPress, Bootstrap, and Sass."
+        "My day-to-day work focused on modular HTML5, React.js, and CSS for customer-facing financial interfaces.",
+        "Pairing with senior engineers, I refactored legacy stylesheets into cleaner, reusable CSS components.",
+        "We also built and launched company marketing sites using WordPress, Bootstrap, and Sass."
       ]
     }
   ],
@@ -331,8 +331,8 @@
       "client": "Bonjour Quick Bites",
       "description": [
         "An online storefront for ordering fresh bread, pastries, hot meals, and celebration cakes in Port Harcourt, with outlet pickup or doorstep delivery.",
-        "I built the platform end to end with Next.js and TypeScript, using Supabase for the database and Better Auth for authentication. I used Git for version control and GitHub and Vercel for CI/CD.",
-        "I looked to Mobbin for design inspiration and used its MCP server alongside the Vercel and GitHub MCP servers during development."
+        "I built the platform end to end with Next.js and TypeScript, pairing Supabase for the database with Better Auth for authentication, while GitHub and Vercel handle version control and CI/CD.",
+        "For UI direction, I turned to Mobbin and leaned on its MCP server alongside the Vercel and GitHub MCP servers throughout development."
       ],
       "url": "https://bonjourquickbites.com",
       "github": "",
