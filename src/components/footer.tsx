@@ -68,7 +68,7 @@ export default function Footer() {
                 Let’s talk
               </SplitHeading>
               <RevealText noSplit className="mx-auto mt-4 max-w-xl text-balance font-body text-base leading-relaxed text-zinc-400 md:text-lg md:leading-relaxed lg:mx-0 lg:max-w-none">
-                Have a project in mind or need a hand with your site?
+                Have a project in mind or need a hand with your website?
               </RevealText>
             </div>
             <Link
