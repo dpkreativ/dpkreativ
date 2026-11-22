@@ -155,31 +155,7 @@ export default function MiniBrowserIframe({
 
       {/* Mini Browser Chrome Toolbar */}
       <div className="flex shrink-0 flex-wrap items-center justify-between gap-2 border-b border-black/10 bg-black/[0.02] px-3 py-2 font-mono dark:border-white/10 dark:bg-white/[0.02] sm:px-4 sm:py-2.5">
-        {/* Left: Window Controls & Telemetry */}
-        <div className="flex items-center gap-2.5 sm:gap-3">
-          <div className="flex items-center gap-1.5" aria-hidden="true">
-            <span className="h-2 w-2 !rounded-full bg-red-500/80 dark:bg-red-500/70" />
-            <span className="h-2 w-2 !rounded-full bg-amber-500/80 dark:bg-amber-500/70" />
-            <span className="h-2 w-2 !rounded-full bg-emerald-500/80 dark:bg-emerald-500/70" />
-          </div>
-
-          {hasLiveUrl && mode === "live" ? (
-            <div className="flex items-center gap-1.5 font-mono text-[9px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping !rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex h-2 w-2 !rounded-full bg-emerald-500" />
-              </span>
-              <span className="hidden sm:inline">LIVE EMBED</span>
-              <span className="sm:hidden">LIVE</span>
-            </div>
-          ) : (
-            <span className="font-mono text-[9px] font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
-              [CAPTURE]
-            </span>
-          )}
-        </div>
-
-        {/* Center: Address Bar Pill */}
+        {/* Left: Address Bar */}
         {hasLiveUrl ? (
           <div className="flex min-w-0 max-w-[190px] items-center gap-1.5 border border-black/10 bg-white px-2 py-0.5 text-[10px] text-zinc-700 dark:border-white/10 dark:bg-[#141414] dark:text-zinc-300 xs:max-w-[240px] sm:max-w-[320px]">
             <i className="ri-lock-2-line shrink-0 text-[11px] text-emerald-600 dark:text-emerald-400" />
@@ -192,7 +168,12 @@ export default function MiniBrowserIframe({
         )}
 
         {/* Right: Controls (Mode Switch, Reload, External Link) */}
-        <div className="flex items-center gap-1.5 sm:gap-2">
+        <div className="ml-auto flex items-center gap-1.5 sm:gap-2">
+          {(!hasLiveUrl || mode !== "live") && (
+            <span className="font-mono text-[9px] font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
+              [CAPTURE]
+            </span>
+          )}
           {hasLiveUrl && fallbackImage && (
             <div className="flex items-center border border-black/15 bg-black/[0.04] p-0.5 dark:border-white/15 dark:bg-white/[0.05]">
               <button

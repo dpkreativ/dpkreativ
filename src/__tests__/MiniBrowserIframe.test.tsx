@@ -21,7 +21,7 @@ describe("MiniBrowserIframe", () => {
 
     expect(screen.getByText("merphils.com")).toBeInTheDocument();
     expect(screen.getByTitle("Merphils Live Site Preview")).toBeInTheDocument();
-    expect(screen.getByText("LIVE EMBED")).toBeInTheDocument();
+    expect(screen.queryByText("LIVE EMBED")).not.toBeInTheDocument();
   });
 
   it("renders fallback image when in screenshot mode", () => {

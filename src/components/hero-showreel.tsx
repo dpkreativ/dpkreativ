@@ -126,23 +126,13 @@ export default function HeroShowreel({ projects }: HeroShowreelProps) {
 
       {/* Showreel Telemetry Bar & Header Nav Buttons */}
       <div className="flex items-center justify-between border-b border-black/10 px-4 py-2 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-[#111111]/70 dark:border-white/10 dark:text-white/70">
-        <div className="flex items-center gap-2">
-          {activeProject.url && activeProject.url !== "#" ? (
-            <div className="flex items-center gap-1.5 font-mono text-[9px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping !rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex h-2 w-2 !rounded-full bg-emerald-500" />
-              </span>
-              <span>LIVE SYSTEM</span>
-            </div>
-          ) : (
-            <span className="font-mono text-[9px] font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
-              [CAPTURE]
-            </span>
-          )}
-        </div>
+        {!hasLivePreview(activeProject) && (
+          <span className="font-mono text-[9px] font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
+            [CAPTURE]
+          </span>
+        )}
 
-        <div className="flex items-center gap-3">
+        <div className="ml-auto flex items-center gap-3">
           {isPaused && (
             <span className="font-mono text-[9px] uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
               [PAUSED]
