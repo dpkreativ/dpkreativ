@@ -218,7 +218,7 @@ export default function HeroShowreel({ projects }: HeroShowreelProps) {
           <span>{activeProject.caseStudy?.timeline || "2024"}</span>
         </div>
 
-        <h3 className="mt-2 font-display text-2xl uppercase tracking-tight text-[#111111] dark:text-white sm:text-3xl md:text-4xl">
+        <h3 className="mt-2 font-display text-xl uppercase tracking-tight text-[#111111] dark:text-white sm:text-3xl md:text-4xl">
           {activeProject.title}
         </h3>
 

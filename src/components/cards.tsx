@@ -42,7 +42,7 @@ export function ProjectCard({ title, tags, image, link, brand }: ProjectProps) {
 
             <RevealText
               as="h3"
-              className="min-w-0 font-display text-2xl leading-[1.02] tracking-[-0.03em] text-[#111111] dark:text-white"
+              className="min-w-0 font-display text-xl sm:text-2xl leading-[1.02] tracking-[-0.03em] text-[#111111] dark:text-white"
               triggerStart="top 92%"
               lineDelay={0.12}
             >

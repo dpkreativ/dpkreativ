@@ -34,7 +34,7 @@ export default function ContactClient() {
             <SparkleBackground variant="mail" size={34} />
             <SplitHeading
               as="h1"
-              className="font-display text-4xl sm:text-6xl md:text-7xl uppercase tracking-tighter leading-[0.88] text-black dark:text-white"
+              className="font-display text-3xl sm:text-6xl md:text-7xl uppercase tracking-tighter leading-[0.88] text-black dark:text-white"
             >
               Contact Me
             </SplitHeading>
@@ -49,7 +49,7 @@ export default function ContactClient() {
             <div className="mb-4 border-b border-black/10 pb-4 sm:mb-8 sm:pb-6 dark:border-white/10">
               <div className="relative w-fit max-w-full">
                 <SparkleBackground variant="chat" size={26} />
-                <h2 id="project-brief-heading" className="font-display text-2xl sm:text-3xl uppercase tracking-tight text-black dark:text-white">
+                <h2 id="project-brief-heading" className="font-display text-xl sm:text-3xl uppercase tracking-tight text-black dark:text-white">
                   Tell me about your project
                 </h2>
               </div>

@@ -22,7 +22,7 @@ export type FormInputs = {
 function SuccessMessage() {
   return (
     <div className="text-center grid gap-6 p-6 md:p-10 bg-white dark:bg-[#0A0A0A] border border-black/15 dark:border-white/15 max-w-2xl mx-auto">
-      <h2 className="text-3xl md:text-5xl font-display uppercase tracking-tighter text-black dark:text-white leading-none">
+      <h2 className="text-2xl sm:text-3xl md:text-5xl font-display uppercase tracking-tighter text-black dark:text-white leading-none">
         Thanks for getting in touch
       </h2>
       <p className="text-zinc-600 dark:text-zinc-400 text-base md:text-lg font-body leading-relaxed">

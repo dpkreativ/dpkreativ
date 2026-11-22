@@ -61,7 +61,7 @@ export default function BlogArchive({ posts }: { posts: HashnodePost[] }) {
             <SparkleBackground variant="scroll" size={34} />
             <SplitHeading
               as="h1"
-              className="font-display text-4xl sm:text-6xl md:text-7xl uppercase tracking-tighter leading-[0.88]"
+              className="font-display text-3xl sm:text-6xl md:text-7xl uppercase tracking-tighter leading-[0.88]"
             >
               My thoughts
             </SplitHeading>

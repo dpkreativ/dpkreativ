@@ -25,7 +25,7 @@ export default function BlogCard({ blog }: { blog: Blog }) {
         </span>
       </div>
 
-      <h3 className="font-display text-2xl leading-[1.02] tracking-[-0.03em] text-[#111111] transition-colors group-hover:text-zinc-600 dark:text-white dark:group-hover:text-zinc-300 sm:text-[2rem]">
+      <h3 className="font-display text-xl leading-[1.02] tracking-[-0.03em] text-[#111111] transition-colors group-hover:text-zinc-600 dark:text-white dark:group-hover:text-zinc-300 sm:text-[2rem]">
         {blog.title}
       </h3>
 

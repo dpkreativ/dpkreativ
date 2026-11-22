@@ -68,7 +68,7 @@ export default function Footer() {
               />
               <SplitHeading
                 as="h2"
-                className="font-display uppercase text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.9]"
+                className="font-display uppercase text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.9]"
               >
                 Let’s talk
               </SplitHeading>

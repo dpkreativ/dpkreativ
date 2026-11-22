@@ -51,7 +51,7 @@ export default function SpeakerBio({ bio }: { bio: string }) {
     >
       <div className="relative w-fit max-w-full">
         <SparkleBackground variant="mic" size={26} />
-        <h2 id="speaker-bio-heading" className="font-display text-3xl uppercase tracking-tighter">
+        <h2 id="speaker-bio-heading" className="font-display text-2xl sm:text-3xl uppercase tracking-tighter">
           Speaker bio
         </h2>
       </div>

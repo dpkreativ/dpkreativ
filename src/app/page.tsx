@@ -71,7 +71,7 @@ export default function Home() {
           <div className="mx-auto max-w-3xl lg:mx-0">
             <div className="relative w-fit max-w-full">
               <SparkleBackground variant="code" size={34} />
-              <h1 className="hero-headline font-display text-[clamp(2.75rem,13vw,3.25rem)] leading-[0.88] tracking-[-0.04em] text-[#111111] dark:text-white uppercase sm:text-[clamp(3.5rem,8vw,6.5rem)]">
+              <h1 className="hero-headline font-display text-[clamp(2.35rem,11vw,2.85rem)] leading-[0.88] tracking-[-0.04em] text-[#111111] dark:text-white uppercase sm:text-[clamp(3.5rem,8vw,6.5rem)]">
                 Web apps for businesses
               </h1>
             </div>
@@ -153,7 +153,7 @@ export default function Home() {
               <SparkleBackground variant="lightning" size={30} />
               <SplitHeading
                 as="h2"
-                className="font-display text-[clamp(2.4rem,5.8vw,4.5rem)] leading-[0.96] tracking-[-0.04em] text-[#111111] dark:text-white uppercase"
+                className="font-display text-[clamp(2rem,5.8vw,4.5rem)] sm:text-[clamp(2.4rem,5.8vw,4.5rem)] leading-[0.96] tracking-[-0.04em] text-[#111111] dark:text-white uppercase"
               >
                 Featured projects
               </SplitHeading>
@@ -222,7 +222,7 @@ export default function Home() {
             <SparkleBackground variant="scroll" size={30} />
             <SplitHeading
               as="h2"
-              className="font-display text-[clamp(2.4rem,5.8vw,4.5rem)] leading-[0.96] tracking-[-0.04em] text-[#111111] dark:text-white uppercase"
+              className="font-display text-[clamp(2rem,5.8vw,4.5rem)] sm:text-[clamp(2.4rem,5.8vw,4.5rem)] leading-[0.96] tracking-[-0.04em] text-[#111111] dark:text-white uppercase"
             >
               Latest articles
             </SplitHeading>

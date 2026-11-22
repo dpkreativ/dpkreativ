@@ -109,7 +109,7 @@ export default async function Page({ params }: PageProps) {
               <SparkleBackground variant="lightning" size={34} />
               <SplitHeading
                 as="h1"
-                className="font-display text-4xl sm:text-6xl md:text-7xl uppercase tracking-tighter leading-[0.88] text-black dark:text-white"
+                className="font-display text-3xl sm:text-6xl md:text-7xl uppercase tracking-tighter leading-[0.88] text-black dark:text-white"
               >
                 {project.title}
               </SplitHeading>
@@ -265,7 +265,7 @@ export default async function Page({ params }: PageProps) {
               <SparkleBackground variant="target" size={26} />
               <SplitHeading
                 as="h2"
-                className="font-display text-3xl md:text-4xl uppercase tracking-tighter leading-none"
+                className="font-display text-2xl sm:text-3xl md:text-4xl uppercase tracking-tighter leading-none"
               >
                 About the project
               </SplitHeading>
@@ -281,7 +281,7 @@ export default async function Page({ params }: PageProps) {
           <article className="grid gap-5 border border-black/15 bg-white p-6 dark:border-white/15 dark:bg-[#0A0A0A] md:p-10">
             <SplitHeading
               as="h2"
-              className="font-display text-3xl md:text-4xl uppercase tracking-tighter leading-none"
+              className="font-display text-2xl sm:text-3xl md:text-4xl uppercase tracking-tighter leading-none"
             >
               Project goals
             </SplitHeading>
@@ -307,7 +307,7 @@ export default async function Page({ params }: PageProps) {
                 <SparkleBackground variant="terminal" size={28} />
                 <SplitHeading
                   as="h2"
-                  className="font-display text-3xl md:text-5xl uppercase tracking-tighter leading-none"
+                  className="font-display text-2xl sm:text-3xl md:text-5xl uppercase tracking-tighter leading-none"
                 >
                   How I approached the project
                 </SplitHeading>
@@ -325,7 +325,7 @@ export default async function Page({ params }: PageProps) {
                       {step.eyebrow}
                     </p>
 
-                    <h3 className="mt-4 font-display text-2xl uppercase tracking-tight text-black dark:text-white">
+                    <h3 className="mt-4 font-display text-xl sm:text-2xl uppercase tracking-tight text-black dark:text-white">
                       {step.title}
                     </h3>
 
@@ -349,7 +349,7 @@ export default async function Page({ params }: PageProps) {
                 <SparkleBackground variant="trophy" size={28} />
                 <SplitHeading
                   as="h2"
-                  className="font-display text-3xl md:text-5xl uppercase tracking-tighter leading-none"
+                  className="font-display text-2xl sm:text-3xl md:text-5xl uppercase tracking-tighter leading-none"
                 >
                   Project results
                 </SplitHeading>
@@ -427,7 +427,7 @@ export default async function Page({ params }: PageProps) {
               <SparkleBackground variant="layers" size={28} />
               <SplitHeading
                 as="h2"
-                className="font-display text-3xl md:text-5xl uppercase tracking-tighter leading-none"
+                className="font-display text-2xl sm:text-3xl md:text-5xl uppercase tracking-tighter leading-none"
               >
                 More projects
               </SplitHeading>

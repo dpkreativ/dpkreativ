@@ -20,7 +20,7 @@ export default function Work() {
         <div className="border-b border-black/15 pb-8 text-left dark:border-white/15 md:pb-12">
           <div className="relative w-fit max-w-full">
             <SparkleBackground variant="layers" size={34} />
-            <h1 className="font-display text-[clamp(2.5rem,7vw,5rem)] uppercase tracking-tighter leading-none">
+            <h1 className="font-display text-[clamp(2.1rem,7vw,5rem)] sm:text-[clamp(2.5rem,7vw,5rem)] uppercase tracking-tighter leading-none">
               Project portfolio
             </h1>
           </div>

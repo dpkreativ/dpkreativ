@@ -87,7 +87,7 @@ export default function About() {
               <SparkleBackground variant="sparkle" size={34} />
               <SplitHeading
                 as="h1"
-                className="font-display text-4xl sm:text-6xl md:text-7xl uppercase tracking-tighter leading-[0.88] text-black dark:text-white"
+                className="font-display text-3xl sm:text-6xl md:text-7xl uppercase tracking-tighter leading-[0.88] text-black dark:text-white"
               >
                 About Me
               </SplitHeading>
@@ -166,7 +166,7 @@ export default function About() {
               <SparkleBackground variant="layers" size={28} />
               <SplitHeading
                 as="h2"
-                className="font-display text-3xl md:text-5xl uppercase tracking-tighter leading-none"
+                className="font-display text-2xl sm:text-3xl md:text-5xl uppercase tracking-tighter leading-none"
               >
                 Selected work
               </SplitHeading>
@@ -181,7 +181,7 @@ export default function About() {
                 key={title}
                 className="grid content-start gap-3 border border-black/15 bg-white p-6 dark:border-white/15 dark:bg-[#1a1a1a] md:p-8"
               >
-                <h3 className="font-display text-2xl uppercase tracking-tight">
+                <h3 className="font-display text-xl sm:text-2xl uppercase tracking-tight">
                   <a href={url} className="underline underline-offset-4">
                     {title}
                   </a>
@@ -200,7 +200,7 @@ export default function About() {
               <SparkleBackground variant="briefcase" size={28} />
               <SplitHeading
                 as="h2"
-                className="font-display text-3xl md:text-5xl uppercase tracking-tighter leading-none"
+                className="font-display text-2xl sm:text-3xl md:text-5xl uppercase tracking-tighter leading-none"
               >
                 Work experience
               </SplitHeading>
@@ -225,7 +225,7 @@ export default function About() {
                       </span>
                     </div>
 
-                    <h3 className="mt-2 font-display text-2xl uppercase tracking-tight text-black dark:text-white">
+                    <h3 className="mt-2 font-display text-xl sm:text-2xl uppercase tracking-tight text-black dark:text-white">
                       {item.company}
                     </h3>
 
@@ -295,7 +295,7 @@ export default function About() {
             <div className="border-b border-black/10 pb-4 dark:border-white/10">
               <div className="relative w-fit max-w-full">
                 <SparkleBackground variant="gradcap" size={26} />
-                <RevealText as="h2" className="font-display text-2xl md:text-3xl uppercase tracking-tight">
+                <RevealText as="h2" className="font-display text-xl sm:text-2xl md:text-3xl uppercase tracking-tight">
                   Education
                 </RevealText>
               </div>
@@ -321,7 +321,7 @@ export default function About() {
           {/* Credentials & Languages */}
           <article className="grid content-start gap-6 border border-black/15 bg-white p-6 dark:border-white/15 dark:bg-[#1a1a1a] md:p-8">
             <div className="border-b border-black/10 pb-4 dark:border-white/10">
-              <RevealText as="h2" className="font-display text-2xl md:text-3xl uppercase tracking-tight">
+              <RevealText as="h2" className="font-display text-xl sm:text-2xl md:text-3xl uppercase tracking-tight">
                 Credentials and languages
               </RevealText>
             </div>
