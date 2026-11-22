@@ -3,7 +3,7 @@
 import {
   brands,
   portraits,
-  projects,
+  showreelProjects,
 } from "@/assets/data";
 import { ArrowIcon } from "@/assets/icons";
 import { useGSAP } from "@gsap/react";
@@ -73,7 +73,7 @@ export default function Home() {
             </h1>
 
             <p className="hero-subhead mt-6 max-w-xl font-body text-base leading-relaxed text-[#111111]/75 dark:text-white/75 md:text-lg">
-              I’m Divine Orji, a software engineer at The Kreativ Studio. I build online ordering systems, school management tools, and other web apps.
+              Divine Orji is a software engineer at The Kreativ Studio building online ordering systems, school management tools, and other web apps.
             </p>
 
             <div className="hero-cta mt-8 flex flex-wrap items-center gap-4">
@@ -162,7 +162,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <HeroShowreel projects={projects} />
+          <HeroShowreel projects={showreelProjects} />
         </div>
       </section>
 
