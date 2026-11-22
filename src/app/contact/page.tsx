@@ -2,21 +2,23 @@ import type { Metadata } from "next";
 import ContactClient from "./contact-client";
 import { SITE_URL } from "@/lib/site";
 
+const description = "Contact Divine Orji about building a new web app or improving an existing one. Send a project brief or reach out by email.";
+
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Get in touch with Divine Orji for collaboration, speaking engagements, or engineering projects. Let's build something iconic.",
+  description,
   alternates: {
     canonical: "/contact",
   },
   openGraph: {
     url: `${SITE_URL}/contact`,
     title: "Contact | Divine Orji",
-    description: "Connect with Divine Orji for high-impact software engineering projects.",
+    description,
   },
   twitter: {
     card: "summary_large_image",
     title: "Contact | Divine Orji",
-    description: "Connect with Divine Orji for high-impact software engineering projects.",
+    description,
   },
 };
 

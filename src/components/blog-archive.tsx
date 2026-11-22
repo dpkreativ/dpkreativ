@@ -7,6 +7,7 @@ import SplitHeading from "@/components/split-heading";
 import { useMemo, useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import SparkleBackground from "@/components/sparkle-background";
 
 export default function BlogArchive({ posts }: { posts: HashnodePost[] }) {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -56,33 +57,38 @@ export default function BlogArchive({ posts }: { posts: HashnodePost[] }) {
 
       <div className="w-full space-y-16 px-6 py-16 md:px-12 md:py-24 lg:px-24">
         <header className="space-y-6">
-          <SplitHeading
-            as="h1"
-            className="font-display text-2xl md:text-6xl lg:text-7xl uppercase tracking-tighter leading-[1.1]"
-          >
-            THE TECHNICAL ARCHIVE.
-          </SplitHeading>
+          <div className="relative w-fit max-w-full">
+            <SparkleBackground variant="scroll" size={34} />
+            <SplitHeading
+              as="h1"
+              className="font-display text-3xl sm:text-6xl md:text-7xl uppercase tracking-tighter leading-[0.88]"
+            >
+              My thoughts
+            </SplitHeading>
+          </div>
           <RevealText
             as="p"
             className="blog-subtitle font-mono text-sm md:text-base text-zinc-600 dark:text-zinc-400 font-bold uppercase tracking-widest"
           >
-            Insights // Case Studies // Technical Guides
+            Notes, guides, and ideas on building and shipping software.
           </RevealText>
         </header>
 
           <div className="flex flex-col gap-6 border-y-4 border-black py-12 dark:border-zinc-700 sm:flex-row">
             <div className="flex-1 space-y-6">
               <RevealText
-                as="h3"
+                as="div"
+                noSplit
                 className="font-mono text-xs uppercase font-bold tracking-widest opacity-60"
                 triggerStart="top 94%"
                 lineDelay={0.1}
               >
-                Search Articles
+                <label htmlFor="article-search">Search posts</label>
               </RevealText>
               <input
-                type="text"
-                placeholder="Search by title or content..."
+                id="article-search"
+                type="search"
+                placeholder="Search titles and summaries"
                 value={searchQuery}
                 onChange={(event) => setSearchQuery(event.target.value)}
                 className="filter-item w-full border-4 border-black bg-white px-4 py-3 font-mono text-sm uppercase tracking-widest transition-colors focus:border-black focus:outline-none dark:border-zinc-700 dark:bg-black dark:focus:border-white"
@@ -92,14 +98,16 @@ export default function BlogArchive({ posts }: { posts: HashnodePost[] }) {
             {categories.length > 1 ? (
               <div className="w-full space-y-6 sm:w-auto sm:min-w-[200px]">
                 <RevealText
-                  as="h3"
+                  as="div"
+                  noSplit
                   className="font-mono text-xs uppercase font-bold tracking-widest opacity-60"
                   triggerStart="top 94%"
                   lineDelay={0.1}
                 >
-                  Filter by Category
+                  <label htmlFor="article-topic">Filter by topic</label>
                 </RevealText>
                 <select
+                  id="article-topic"
                   value={activeCategory}
                   onChange={(event) => setActiveCategory(event.target.value)}
                   className="filter-item w-full cursor-pointer appearance-none border-4 border-black bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220%22%20height%3D%2220%22%20fill%3D%22%23444444%22%3E%3Cpath%20d%3D%22M10%200l10%2010-10%2010z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:12px] bg-[right_12px_center] bg-no-repeat bg-white px-4 py-3 font-mono text-sm uppercase tracking-widest transition-colors focus:border-black focus:outline-none dark:border-zinc-700 dark:bg-black dark:focus:border-white"
@@ -132,7 +140,10 @@ export default function BlogArchive({ posts }: { posts: HashnodePost[] }) {
             ))
           ) : (
             <div className="col-span-full border-4 border-dashed border-black/20 py-24 text-center dark:border-zinc-700">
-              <p className="font-display text-4xl uppercase opacity-20">No articles found</p>
+              <p className="font-display text-2xl">
+                {posts.length > 0 ? "No posts match your filters." : "No posts are available here right now."}
+              </p>
+              {posts.length > 0 && <p className="mt-2">Try a different search or topic.</p>}
             </div>
           )}
         </div>

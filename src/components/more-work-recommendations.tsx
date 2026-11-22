@@ -20,7 +20,8 @@ export default function MoreWorkRecommendations({
           key={entry.slug}
           title={entry.title}
           tags={entry.tags}
-          image={entry.image}
+          url={entry.url}
+          embeddable={entry.embeddable}
           brand={entry.brand}
           link={`/work/${entry.slug}`}
         />

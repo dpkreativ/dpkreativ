@@ -3,9 +3,10 @@
 import {
   brands,
   portraits,
-  projects,
+  showreelProjects,
 } from "@/assets/data";
 import { ArrowIcon } from "@/assets/icons";
+import SparkleBackground from "@/components/sparkle-background";
 import { useGSAP } from "@gsap/react";
 import BlogPreview from "@/components/blog-preview";
 import Button from "@/components/button";
@@ -68,14 +69,19 @@ export default function Home() {
 
         <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:py-20 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,0.85fr)] lg:items-center">
           <div className="mx-auto max-w-3xl lg:mx-0">
-            <h2 className="sr-only">WHO AM I?</h2>
-
-            <h1 className="hero-headline font-display text-[clamp(3.5rem,8vw,6.5rem)] leading-[0.88] tracking-[-0.04em] text-[#111111] dark:text-white uppercase">
-              Building Software That Works.
-            </h1>
+            <div className="relative w-fit max-w-full">
+              <SparkleBackground
+                variant="code"
+                size={34}
+                className="right-1 mt-1.5 sm:-right-6 sm:-mt-1"
+              />
+              <h1 className="hero-headline font-display text-[clamp(2.75rem,13vw,3.25rem)] leading-[0.88] tracking-[-0.04em] text-[#111111] dark:text-white uppercase sm:text-[clamp(3.5rem,8vw,6.5rem)]">
+                Web apps for businesses
+              </h1>
+            </div>
 
             <p className="hero-subhead mt-6 max-w-xl font-body text-base leading-relaxed text-[#111111]/75 dark:text-white/75 md:text-lg">
-              I help make your business grow by building fast, reliable software that is easy to use.
+              {"Hi, I'm Divine Orji. I build web apps that help businesses run smoothly."}
             </p>
 
             <div className="hero-cta mt-8 flex flex-wrap items-center gap-4">
@@ -90,7 +96,7 @@ export default function Home() {
                 className="w-max"
               >
                 <Button className="!px-6 !py-3 !text-xs font-mono font-bold tracking-widest uppercase">
-                  <span>MY WORK</span>
+                  <span>See featured projects</span>
                   <ArrowIcon />
                 </Button>
               </a>
@@ -115,7 +121,7 @@ export default function Home() {
               <div className="relative aspect-[4/5] sm:aspect-[3/3.5] lg:aspect-[4/5] w-full overflow-hidden bg-zinc-100 dark:bg-zinc-900">
                 <Image
                   src={portraits[0]}
-                  alt="Divine Orji - Software Engineer"
+                  alt="Portrait of Divine Orji"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 45vw, 480px"
                   priority
@@ -142,22 +148,18 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Screen-reader metric landmarks */}
-        <div className="sr-only">
-          <span>Average Delivery Time</span>
-          <span>Projects Completed</span>
-        </div>
       </section>
 
       <section id="featured-projects" className="reveal-section scroll-mt-24">
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
           <div className="mb-10 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-            <div>
+            <div className="relative w-fit max-w-full">
+              <SparkleBackground variant="lightning" size={30} />
               <SplitHeading
                 as="h2"
-                className="font-display text-[clamp(2.4rem,5.8vw,4.5rem)] leading-[0.96] tracking-[-0.04em] text-[#111111] dark:text-white uppercase"
+                className="font-display text-[clamp(2rem,5.8vw,4.5rem)] sm:text-[clamp(2.4rem,5.8vw,4.5rem)] leading-[0.96] tracking-[-0.04em] text-[#111111] dark:text-white uppercase"
               >
-                FEATURED PROJECTS.
+                Featured projects
               </SplitHeading>
             </div>
 
@@ -169,7 +171,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <HeroShowreel projects={projects} />
+          <HeroShowreel projects={showreelProjects} />
         </div>
       </section>
 
@@ -220,12 +222,13 @@ export default function Home() {
 
       <section className="reveal-section">
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
-          <div className="mb-10 max-w-3xl">
+          <div className="relative mb-10 w-fit max-w-3xl">
+            <SparkleBackground variant="scroll" size={30} />
             <SplitHeading
               as="h2"
-              className="font-display text-[clamp(2.4rem,5.8vw,4.5rem)] leading-[0.96] tracking-[-0.04em] text-[#111111] dark:text-white"
+              className="font-display text-[clamp(2rem,5.8vw,4.5rem)] sm:text-[clamp(2.4rem,5.8vw,4.5rem)] leading-[0.96] tracking-[-0.04em] text-[#111111] dark:text-white uppercase"
             >
-              LATEST ARTICLES.
+              Latest articles
             </SplitHeading>
           </div>
 
@@ -234,7 +237,7 @@ export default function Home() {
           <div className="mt-10 flex justify-center md:justify-end">
             <Link href="/blog" className="w-max shrink-0">
               <Button className="!px-5 !py-3 !text-[10px]">
-                <span>VISIT ARCHIVE</span>
+                <span>Browse articles</span>
                 <ArrowIcon />
               </Button>
             </Link>

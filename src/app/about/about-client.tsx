@@ -10,14 +10,44 @@ import {
   roleKicker,
   skills,
 } from "@/assets/data";
+import content from "@/data/content.json";
 import FloatingDownloadLink from "@/components/floating-download-link";
 import PortraitSlideshow from "@/components/portrait-slideshow";
 import RevealText from "@/components/reveal-text";
+import SpeakerBio from "@/components/speaker-bio";
 import SplitHeading from "@/components/split-heading";
 import { groupExperience, type ExperienceItem } from "@/lib/experience";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import Link from "next/link";
 import { useMemo, useRef } from "react";
+import SparkleBackground from "@/components/sparkle-background";
+
+const BLOG_PHRASE = "my blog";
+const BLOG_URL = "https://divineorji.com/blog";
+
+function renderParagraphWithBlogLink(paragraph: string) {
+  const index = paragraph.indexOf(BLOG_PHRASE);
+  if (index === -1) {
+    return paragraph;
+  }
+
+  const before = paragraph.slice(0, index);
+  const after = paragraph.slice(index + BLOG_PHRASE.length);
+
+  return (
+    <>
+      {before}
+      <a
+        href={BLOG_URL}
+        className="underline underline-offset-4 text-black transition-opacity hover:opacity-75 dark:text-white"
+      >
+        {BLOG_PHRASE}
+      </a>
+      {after}
+    </>
+  );
+}
 
 export default function About() {
   const container = useRef(null);
@@ -53,12 +83,15 @@ export default function About() {
         {/* Left Column: Narrative & Skills */}
         <div className="lg:col-span-7 space-y-10">
           <header className="max-w-4xl space-y-4">
-            <SplitHeading
-              as="h1"
-              className="font-display text-4xl sm:text-6xl md:text-7xl uppercase tracking-tighter leading-[0.88] text-black dark:text-white"
-            >
-              ABOUT DIVI.
-            </SplitHeading>
+            <div className="relative w-fit max-w-full">
+              <SparkleBackground variant="sparkle" size={34} />
+              <SplitHeading
+                as="h1"
+                className="font-display text-3xl sm:text-6xl md:text-7xl uppercase tracking-tighter leading-[0.88] text-black dark:text-white"
+              >
+                About Me
+              </SplitHeading>
+            </div>
 
             <RevealText
               as="p"
@@ -67,22 +100,26 @@ export default function About() {
               {roleKicker}
             </RevealText>
 
-            <div className="pt-2">
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-3 pt-2">
               <FloatingDownloadLink
                 href="/api/cv"
                 downloadName="divine-orji-cv.pdf"
-                label="Download CV PDF"
+                label="Download CV (PDF)"
               />
+              <a href="#speaker-bio" className="font-mono text-xs font-bold uppercase tracking-wider underline underline-offset-4">
+                Speaker bio
+              </a>
             </div>
           </header>
 
           <div className="space-y-6 font-body text-base md:text-xl font-normal leading-relaxed text-[#111111]/80 dark:text-zinc-300 about-text">
-            {aboutMe.map((paragraph, idx) => (
+            {aboutMe.map((paragraph) => (
               <p
-                key={idx}
-                dangerouslySetInnerHTML={{ __html: paragraph }}
+                key={paragraph}
                 className="border-l-2 border-black/20 dark:border-white/20 pl-6 leading-relaxed"
-              />
+              >
+                {renderParagraphWithBlogLink(paragraph)}
+              </p>
             ))}
           </div>
 
@@ -90,10 +127,7 @@ export default function About() {
           <div className="about-text grid gap-4 border border-black/15 bg-white p-6 dark:border-white/15 dark:bg-[#0A0A0A] md:p-8">
             <div className="flex items-center justify-between border-b border-black/10 pb-3 dark:border-white/10">
               <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
-                TECHNICAL CAPABILITIES
-              </span>
-              <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-zinc-400">
-                [{skills.length} DISCIPLINES]
+                Skills
               </span>
             </div>
             <div className="flex flex-wrap gap-2 pt-2">
@@ -122,16 +156,55 @@ export default function About() {
         </div>
       </div>
 
-      {/* Experience & Career Snapshot */}
+      {/* Selected Work & Career Snapshot */}
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 pb-20 md:pb-28 grid gap-14">
+        <SpeakerBio bio={content.speakerBio} />
+
+        <section className="grid gap-8">
+          <div className="flex flex-wrap items-end justify-between gap-4 border-b border-black/15 pb-6 dark:border-white/15">
+            <div className="relative w-fit max-w-full">
+              <SparkleBackground variant="layers" size={28} />
+              <SplitHeading
+                as="h2"
+                className="font-display text-2xl sm:text-3xl md:text-5xl uppercase tracking-tighter leading-none"
+              >
+                Selected work
+              </SplitHeading>
+            </div>
+            <Link href="/work" className="font-mono text-xs font-bold uppercase tracking-wider underline underline-offset-4">
+              Browse all work
+            </Link>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2">
+            {content.selectedWork.map(({ title, url, summary }) => (
+              <article
+                key={title}
+                className="grid content-start gap-3 border border-black/15 bg-white p-6 dark:border-white/15 dark:bg-[#1a1a1a] md:p-8"
+              >
+                <h3 className="font-display text-xl sm:text-2xl uppercase tracking-tight">
+                  <a href={url} className="underline underline-offset-4">
+                    {title}
+                  </a>
+                </h3>
+                <p className="font-body text-base leading-relaxed text-[#111111]/80 dark:text-zinc-300">
+                  {summary}
+                </p>
+              </article>
+            ))}
+          </div>
+        </section>
+
         <section className="grid gap-8 about-text">
           <div className="border-b border-black/15 pb-6 dark:border-white/15">
-            <SplitHeading
-              as="h2"
-              className="font-display text-3xl md:text-5xl uppercase tracking-tighter leading-none"
-            >
-              EXPERIENCE SNAPSHOT.
-            </SplitHeading>
+            <div className="relative w-fit max-w-full">
+              <SparkleBackground variant="briefcase" size={28} />
+              <SplitHeading
+                as="h2"
+                className="font-display text-2xl sm:text-3xl md:text-5xl uppercase tracking-tighter leading-none"
+              >
+                Work experience
+              </SplitHeading>
+            </div>
           </div>
 
           <div className="grid gap-6">
@@ -152,7 +225,7 @@ export default function About() {
                       </span>
                     </div>
 
-                    <h3 className="mt-2 font-display text-2xl uppercase tracking-tight text-black dark:text-white">
+                    <h3 className="mt-2 font-display text-xl sm:text-2xl uppercase tracking-tight text-black dark:text-white">
                       {item.company}
                     </h3>
 
@@ -220,9 +293,12 @@ export default function About() {
           {/* Education */}
           <article className="grid content-start gap-6 border border-black/15 bg-white p-6 dark:border-white/15 dark:bg-[#1a1a1a] md:p-8">
             <div className="border-b border-black/10 pb-4 dark:border-white/10">
-              <RevealText as="h3" className="font-display text-2xl md:text-3xl uppercase tracking-tight">
-                Education
-              </RevealText>
+              <div className="relative w-fit max-w-full">
+                <SparkleBackground variant="gradcap" size={26} />
+                <RevealText as="h2" className="font-display text-xl sm:text-2xl md:text-3xl uppercase tracking-tight">
+                  Education
+                </RevealText>
+              </div>
             </div>
 
             <div className="grid gap-6">
@@ -245,8 +321,8 @@ export default function About() {
           {/* Credentials & Languages */}
           <article className="grid content-start gap-6 border border-black/15 bg-white p-6 dark:border-white/15 dark:bg-[#1a1a1a] md:p-8">
             <div className="border-b border-black/10 pb-4 dark:border-white/10">
-              <RevealText as="h3" className="font-display text-2xl md:text-3xl uppercase tracking-tight">
-                Credentials & Languages
+              <RevealText as="h2" className="font-display text-xl sm:text-2xl md:text-3xl uppercase tracking-tight">
+                Credentials and languages
               </RevealText>
             </div>
 
@@ -262,7 +338,7 @@ export default function About() {
 
               <div className="border-t border-black/10 pt-4 dark:border-white/10">
                 <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
-                  SPOKEN & PROFESSIONAL LANGUAGES
+                  Languages
                 </span>
                 <div className="flex flex-wrap gap-2 mt-2">
                   {languages.map((item) => (

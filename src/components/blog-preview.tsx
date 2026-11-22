@@ -63,6 +63,10 @@ export default function BlogPreview() {
     );
   }
 
+  if (posts.length === 0) {
+    return <p>Recent articles aren’t available here right now.</p>;
+  }
+
   return (
     <div className="grid gap-6 md:grid-cols-3">
       {posts.map((post) => (

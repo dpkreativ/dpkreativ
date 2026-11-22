@@ -1,17 +1,13 @@
-import { FormInputs } from "@/components/form";
+import type { FormInputs } from "@/components/form";
 
 export async function sendEmail(data: FormInputs) {
-  const apiEndpoint = "/api/email";
-
-  await fetch(apiEndpoint, {
+  const response = await fetch("/api/email", {
     method: "POST",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
-  })
-    .then((res) => res.json())
-    .then((response) => {
-      alert(response.message);
-    })
-    .catch((err) => {
-      alert(err);
-    });
+  });
+
+  if (!response.ok) {
+    throw new Error("Project brief could not be sent.");
+  }
 }

@@ -1,8 +1,9 @@
-import { PDFDocument } from 'pdf-lib';
+import { PDFDict, PDFDocument, PDFName, PDFString } from 'pdf-lib';
 import { buildCvPdf } from '@/lib/cv/build-cv-pdf';
 import { collectCvData } from '@/lib/cv/collect-cv-data';
 import { toPdfText, stripHtml } from '@/lib/cv/text';
 import { groupExperience, type ExperienceItem } from '@/lib/experience';
+import content from '@/data/content.json';
 
 const ascii = (bytes: Uint8Array) => Buffer.from(bytes).toString('latin1');
 
@@ -119,6 +120,24 @@ describe('buildCvPdf', () => {
     expect(doc.getPageCount()).toBeLessThan(10);
   });
 
+  it('embeds clickable web links for every selected project', async () => {
+    const data = collectCvData();
+    const doc = await PDFDocument.load(await buildCvPdf(data));
+    const urls = doc.getPages().flatMap(({ node }) =>
+      (node.Annots()?.asArray() ?? []).map((ref) => {
+        const annotation = doc.context.lookup(ref, PDFDict);
+        expect(annotation.get(PDFName.of('Subtype'))).toBe(PDFName.of('Link'));
+
+        const action = annotation.lookup(PDFName.of('A'), PDFDict);
+        expect(action.get(PDFName.of('S'))).toBe(PDFName.of('URI'));
+
+        return action.lookup(PDFName.of('URI'), PDFString).decodeText();
+      }),
+    );
+
+    expect(urls).toEqual(data.selectedWork.map(({ url }) => url));
+  });
+
   it('survives content containing unencodable symbols', async () => {
     const data = collectCvData();
 
@@ -150,6 +169,7 @@ describe('buildCvPdf', () => {
     const bytes = await buildCvPdf({
       ...data,
       skills: [],
+      selectedWork: [],
       education: [],
       certifications: [],
       languages: [],
@@ -177,6 +197,50 @@ describe('collectCvData', () => {
     expect(data.languages.length).toBeGreaterThan(0);
   });
 
+  it('includes the shared project summaries and tech stacks in portfolio order', () => {
+    const { selectedWork } = collectCvData();
+
+    expect(selectedWork.map(({ title }) => title)).toEqual([
+      'Bonjour Quick Bites',
+      'Crunchies Online',
+      'Alchemy Of Code',
+      'Noma',
+      'The Iroko Circle',
+    ]);
+    expect(
+      selectedWork.map(({ title, url, summary }) => ({ title, url, summary }))
+    ).toEqual(content.selectedWork);
+    expect(selectedWork[0].stack).toEqual([
+      'Next.js',
+      'TypeScript',
+      'Supabase',
+      'Better Auth',
+      'Git',
+      'GitHub',
+      'Vercel',
+    ]);
+    expect(selectedWork.every(({ stack }) => Boolean(stack && stack.length > 0))).toBe(true);
+  });
+
+  it('credits named projects to the same experience roles as the About page', () => {
+    const { experience } = collectCvData();
+    const studio = experience.find(({ company }) => company === 'The Kreativ Studio');
+    const lead = studio?.roles.find(({ role }) => role === 'Head of Engineering');
+    const engineer = studio?.roles.find(({ role }) => role === 'Software Engineer');
+
+    expect(lead?.highlights.join(' ')).toContain('Merphils');
+    expect(lead?.highlights.join(' ')).toContain('Grooovy');
+
+    for (const title of ['Bonjour Quick Bites', 'Noma', 'Alchemy Of Code', 'The Iroko Circle']) {
+      expect(engineer?.highlights.join(' ')).toContain(title);
+    }
+
+    const crunchies = experience.find(({ company }) => company === 'Crunchies Fried Chicken Limited');
+    expect(crunchies?.roles[0].summary).toContain('Crunchies Online');
+    expect(studio?.roles.flatMap(({ summary, highlights }) => [summary, ...highlights]).join(' '))
+      .not.toContain('Crunchies Online');
+  });
+
   it('strips scheme and www from the contact line', () => {
     const { contactLine } = collectCvData();
 
@@ -184,9 +248,14 @@ describe('collectCvData', () => {
     expect(contactLine).not.toContain('www.');
   });
 
-  it('keeps the contact line to a single line by dropping the notion link', () => {
+  it('formats balanced contact lines with international phone, blog, and remote availability', () => {
     const { contactLine } = collectCvData();
+    const lines = contactLine.split('\n');
 
+    expect(lines).toHaveLength(2);
+    expect(contactLine).toContain('+234 902 182 4073');
+    expect(contactLine).toContain('divineorji.com/blog');
+    expect(contactLine).toContain('Remote (UTC+1)');
     expect(contactLine).toContain('linkedin.com/in/dpkreativ');
     expect(contactLine).toContain('github.com/dpkreativ');
     expect(contactLine).not.toContain('notion.site');

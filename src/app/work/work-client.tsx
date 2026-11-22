@@ -1,6 +1,7 @@
 import { projects } from "@/assets/data";
 import { ProjectCard } from "@/components/cards";
 import RevealText from "@/components/reveal-text";
+import SparkleBackground from "@/components/sparkle-background";
 
 export default function Work() {
   return (
@@ -17,25 +18,29 @@ export default function Work() {
 
       <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20 grid gap-12 md:gap-16">
         <div className="border-b border-black/15 pb-8 text-left dark:border-white/15 md:pb-12">
-          <h1 className="font-display text-[clamp(2.5rem,7vw,5rem)] uppercase tracking-tighter leading-none">
-            FEATURED PROJECTS.
-          </h1>
+          <div className="relative w-fit max-w-full">
+            <SparkleBackground variant="layers" size={34} />
+            <h1 className="font-display text-[clamp(2.1rem,7vw,5rem)] sm:text-[clamp(2.5rem,7vw,5rem)] uppercase tracking-tighter leading-none">
+              Project portfolio
+            </h1>
+          </div>
 
           <RevealText
             as="p"
             className="mt-4 font-mono text-xs font-bold uppercase tracking-widest text-zinc-500 dark:text-zinc-400 md:text-sm"
           >
-            Crafting resilient digital solutions with precision and purpose.
+            Client builds, shipped products, and work in progress.
           </RevealText>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2">
-          {projects.map((project, idx) => (
+          {projects.map((project) => (
             <ProjectCard
-              key={idx}
+              key={project.slug}
               title={project.title}
               tags={project.tags}
-              image={project.image}
+              url={project.url}
+              embeddable={project.embeddable}
               brand={project.brand}
               link={`/work/${project.slug}`}
             />

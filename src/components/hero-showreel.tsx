@@ -1,8 +1,7 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
 import type { Project } from "@/assets/data";
 import { ArrowIcon } from "@/assets/icons";
 import MiniBrowserIframe from "@/components/mini-browser-iframe";
@@ -12,39 +11,110 @@ interface HeroShowreelProps {
 }
 
 const INTERVAL_MS = 5000;
+const PRELOAD_MARGIN = "1200px 0px";
+
+function isDataSaverEnabled() {
+  return (navigator as Navigator & {
+    connection?: { saveData?: boolean };
+  }).connection?.saveData === true;
+}
+
+function hasLivePreview(project: Project) {
+  return project.embeddable !== false && Boolean(project.url && project.url !== "#");
+}
 
 export default function HeroShowreel({ projects }: HeroShowreelProps) {
-  const featured = projects.filter((p) => p.featured).slice(0, 5);
+  const featured = useMemo(() => projects.filter((p) => p.featured).slice(0, 5), [projects]);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isInteracting, setIsInteracting] = useState(false);
+  const [hasApproached, setHasApproached] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const [canPreloadNext, setCanPreloadNext] = useState(false);
+  const [readySlugs, setReadySlugs] = useState<Set<string>>(() => new Set());
+  const previewRef = useRef<HTMLDivElement>(null);
+  const hasProjects = featured.length > 0;
 
   const activeProject = featured[activeIndex] || featured[0];
+  const nextIndex = (activeIndex + 1) % featured.length;
+  const nextProject = featured[nextIndex];
+  const isPaused = isHovered || isInteracting;
+  const isRotating = isVisible && canPreloadNext && !isPaused &&
+    featured.length > 1 && readySlugs.has(activeProject.slug) &&
+    readySlugs.has(nextProject.slug);
 
-  const handlePrev = () => {
-    setActiveIndex((current) => (current - 1 + featured.length) % featured.length);
-  };
+  const goToSlide = useCallback((index: number) => {
+    const activeSlug = featured[index]?.slug;
+    const upcomingSlug = featured[(index + 1) % featured.length]?.slug;
+    setReadySlugs((current) => new Set(
+      [...current].filter((slug) => slug === activeSlug || slug === upcomingSlug),
+    ));
+    setIsInteracting(false);
+    setActiveIndex(index);
+  }, [featured]);
 
-  const handleNext = () => {
-    setActiveIndex((current) => (current + 1) % featured.length);
+  const markReady = (slug: string, ready: boolean) => {
+    if (ready && !isDataSaverEnabled()) setCanPreloadNext(true);
+    setReadySlugs((current) => {
+      if (current.has(slug) === ready) return current;
+      const updated = new Set(current);
+      if (ready) updated.add(slug);
+      else updated.delete(slug);
+      return updated;
+    });
   };
 
   useEffect(() => {
-    if (!activeProject || isPaused || featured.length < 2) return;
+    const preview = previewRef.current;
+    if (!preview) return;
 
-    const timer = setTimeout(() => {
-      setActiveIndex((current) => (current + 1) % featured.length);
-    }, INTERVAL_MS);
+    const saveData = isDataSaverEnabled();
+
+    if (!("IntersectionObserver" in window)) {
+      const timer = setTimeout(() => {
+        setHasApproached(true);
+        setIsVisible(true);
+        setCanPreloadNext(!saveData);
+      }, 0);
+      return () => clearTimeout(timer);
+    }
+
+    const approachObserver = saveData ? null : new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) return;
+      setHasApproached(true);
+      approachObserver?.disconnect();
+    }, { rootMargin: PRELOAD_MARGIN });
+    const visibilityObserver = new IntersectionObserver(([entry]) => {
+      setIsVisible(entry.isIntersecting);
+      if (entry.isIntersecting) {
+        setHasApproached(true);
+        if (!saveData) setCanPreloadNext(true);
+      }
+    });
+
+    approachObserver?.observe(preview);
+    visibilityObserver.observe(preview);
+    return () => {
+      approachObserver?.disconnect();
+      visibilityObserver.disconnect();
+    };
+  }, [hasProjects]);
+
+  useEffect(() => {
+    if (!isRotating) return;
+
+    const timer = setTimeout(() => goToSlide(nextIndex), INTERVAL_MS);
 
     return () => clearTimeout(timer);
-  }, [activeIndex, isPaused, activeProject, featured.length]);
+  }, [goToSlide, isRotating, nextIndex]);
 
   if (!featured.length) return null;
 
   return (
     <div
       className="relative flex flex-col border border-black/15 bg-black/[0.02] dark:border-white/15 dark:bg-white/[0.02]"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
       role="region"
       aria-label="Featured Projects Showreel"
     >
@@ -56,23 +126,13 @@ export default function HeroShowreel({ projects }: HeroShowreelProps) {
 
       {/* Showreel Telemetry Bar & Header Nav Buttons */}
       <div className="flex items-center justify-between border-b border-black/10 px-4 py-2 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-[#111111]/70 dark:border-white/10 dark:text-white/70">
-        <div className="flex items-center gap-2">
-          {activeProject.url && activeProject.url !== "#" ? (
-            <div className="flex items-center gap-1.5 font-mono text-[9px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping !rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex h-2 w-2 !rounded-full bg-emerald-500" />
-              </span>
-              <span>LIVE SYSTEM</span>
-            </div>
-          ) : (
-            <span className="font-mono text-[9px] font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
-              [CAPTURE]
-            </span>
-          )}
-        </div>
+        {!hasLivePreview(activeProject) && (
+          <span className="font-mono text-[9px] font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
+            [CAPTURE]
+          </span>
+        )}
 
-        <div className="flex items-center gap-3">
+        <div className="ml-auto flex items-center gap-3">
           {isPaused && (
             <span className="font-mono text-[9px] uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
               [PAUSED]
@@ -84,14 +144,14 @@ export default function HeroShowreel({ projects }: HeroShowreelProps) {
 
           <div className="flex items-center border border-black/15 dark:border-white/15">
             <button
-              onClick={handlePrev}
+              onClick={() => goToSlide((activeIndex - 1 + featured.length) % featured.length)}
               aria-label="Previous project"
               className="flex h-7 w-7 items-center justify-center border-r border-black/15 bg-white text-black transition-colors hover:bg-black hover:text-white dark:border-white/15 dark:bg-[#1a1a1a] dark:text-zinc-200 dark:hover:bg-white/15 dark:hover:text-white"
             >
               <i className="ri-arrow-left-s-line text-sm"></i>
             </button>
             <button
-              onClick={handleNext}
+              onClick={() => goToSlide(nextIndex)}
               aria-label="Next project"
               className="flex h-7 w-7 items-center justify-center bg-white text-black transition-colors hover:bg-black hover:text-white dark:bg-[#1a1a1a] dark:text-zinc-200 dark:hover:bg-white/15 dark:hover:text-white"
             >
@@ -104,56 +164,61 @@ export default function HeroShowreel({ projects }: HeroShowreelProps) {
       {/* Progress Line */}
       <div className="h-[2px] w-full bg-black/5 dark:bg-white/5 overflow-hidden">
         <div
-          key={`${activeIndex}-${isPaused}`}
+          key={`${activeIndex}-${isRotating}`}
           className={`h-full bg-black dark:bg-white origin-left ${
-            isPaused ? "w-0" : "animate-showreel-progress"
+            isRotating ? "animate-showreel-progress" : "w-0"
           }`}
         />
       </div>
 
       {/* Main Visual Display */}
-      <div className="relative aspect-[16/10] sm:aspect-[16/9] lg:aspect-[16/8] min-h-[380px] sm:min-h-[460px] lg:min-h-[520px] w-full overflow-hidden bg-zinc-100 dark:bg-zinc-900">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeProject.slug}
-            initial={{ opacity: 0, scale: 0.98 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 1.01 }}
-            transition={{ duration: 0.35, ease: "easeOut" }}
-            className="absolute inset-0"
-          >
-            {activeProject.url && activeProject.url !== "#" ? (
-              <MiniBrowserIframe
-                url={activeProject.url}
-                title={activeProject.title}
-                fallbackImage={activeProject.image}
-                containerClassName="h-full w-full border-0"
-                showCrosshairs={false}
-                priority
-                onInteractionChange={(active) => setIsPaused(active)}
-              />
-            ) : (
-              <Image
-                src={activeProject.image}
-                alt={activeProject.title}
-                fill
-                priority
-                sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
-                className="object-cover object-top transition-transform duration-700 hover:scale-105"
-              />
-            )}
-          </motion.div>
-        </AnimatePresence>
+      <div ref={previewRef} className="relative aspect-[16/10] sm:aspect-[16/9] lg:aspect-[16/8] min-h-[380px] sm:min-h-[460px] lg:min-h-[520px] w-full overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+        {/* Keep the next slide in the same DOM position when it becomes active,
+            since moving an iframe can reload it even if its React key is stable. */}
+        {featured.map((project, index) => {
+          const isActive = project === activeProject;
+          const isPreloading = canPreloadNext && index === nextIndex;
+          if (!isActive && !isPreloading) return null;
+
+          return (
+            <div
+              key={project.slug}
+              inert={!isActive}
+              className={`absolute inset-0 ${isActive ? "z-10" : "pointer-events-none opacity-0"}`}
+            >
+              {hasLivePreview(project) ? (
+                <MiniBrowserIframe
+                  url={project.url}
+                  title={project.title}
+                  containerClassName="h-full w-full border-0"
+                  showCrosshairs={false}
+                  liveLoading={hasApproached ? "eager" : "deferred"}
+                  onLiveReadyChange={(ready) => markReady(project.slug, ready)}
+                  onInteractionChange={isActive ? setIsInteracting : undefined}
+                />
+              ) : (
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  onLoad={() => markReady(project.slug, true)}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+                  className="object-cover object-top transition-transform duration-700 hover:scale-105"
+                />
+              )}
+            </div>
+          );
+        })}
       </div>
 
       {/* Project Details Panel */}
       <div className="border-t border-black/10 bg-white p-5 text-[#111111] dark:border-white/10 dark:bg-[#080808] dark:text-white sm:p-7 md:p-8">
         <div className="flex items-center justify-between gap-4 font-mono text-[10px] font-bold uppercase tracking-[0.24em] text-zinc-500 dark:text-zinc-400">
           <span>{activeProject.client}</span>
-          <span>{activeProject.caseStudy?.timeline || "2024"}</span>
+          {activeProject.caseStudy?.timeline && <span>{activeProject.caseStudy.timeline}</span>}
         </div>
 
-        <h3 className="mt-2 font-display text-2xl uppercase tracking-tight text-[#111111] dark:text-white sm:text-3xl md:text-4xl">
+        <h3 className="mt-2 font-display text-xl uppercase tracking-tight text-[#111111] dark:text-white sm:text-3xl md:text-4xl">
           {activeProject.title}
         </h3>
 

@@ -21,7 +21,14 @@ describe("MiniBrowserIframe", () => {
 
     expect(screen.getByText("merphils.com")).toBeInTheDocument();
     expect(screen.getByTitle("Merphils Live Site Preview")).toBeInTheDocument();
-    expect(screen.getByText("LIVE EMBED")).toBeInTheDocument();
+    expect(screen.queryByText("LIVE EMBED")).not.toBeInTheDocument();
+  });
+
+  it("links directly to sites that block iframe embedding", () => {
+    render(<MiniBrowserIframe url="https://grooovy.fun" title="Grooovy" embeddable={false} />);
+
+    expect(screen.queryByTitle("Grooovy Live Site Preview")).not.toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Open live site" })).toHaveAttribute("href", "https://grooovy.fun");
   });
 
   it("renders fallback image when in screenshot mode", () => {
@@ -39,6 +46,29 @@ describe("MiniBrowserIframe", () => {
     expect(screen.getByRole("img", { name: "Merphils" })).toBeInTheDocument();
   });
 
+  it("shows the capture until the deferred live iframe finishes loading", () => {
+    const props = {
+      url: "https://merphils.com",
+      title: "Merphils",
+      fallbackImage: "/images/project-demos/merphils.png",
+    };
+    const { rerender, container } = render(
+      <MiniBrowserIframe {...props} liveLoading="deferred" />,
+    );
+    expect(screen.queryByTitle("Merphils Live Site Preview")).not.toBeInTheDocument();
+    expect(container.querySelector("img")).toBeInTheDocument();
+
+    rerender(<MiniBrowserIframe {...props} liveLoading="eager" />);
+    const iframe = screen.getByTitle("Merphils Live Site Preview");
+    expect(iframe).toHaveAttribute("loading", "eager");
+    expect(screen.getByRole("status")).toBeInTheDocument();
+    expect(container.querySelector("img")).toBeInTheDocument();
+
+    fireEvent.load(iframe);
+    expect(screen.queryByRole("status")).not.toBeInTheDocument();
+    expect(container.querySelector("img")).not.toBeInTheDocument();
+  });
+
   it("toggles interaction shield on click", () => {
     const handleInteractionChange = jest.fn();
     render(
@@ -50,6 +80,7 @@ describe("MiniBrowserIframe", () => {
       />
     );
 
+    fireEvent.load(screen.getByTitle("Merphils Live Site Preview"));
     const interactButton = screen.getByRole("button", { name: /click to interact/i });
     fireEvent.click(interactButton);
 

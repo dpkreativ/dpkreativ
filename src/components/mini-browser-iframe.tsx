@@ -7,9 +7,12 @@ export interface MiniBrowserIframeProps {
   url?: string;
   title: string;
   fallbackImage?: string;
+  embeddable?: boolean;
   className?: string;
   containerClassName?: string;
   initialMode?: "live" | "screenshot";
+  liveLoading?: "lazy" | "eager" | "deferred";
+  onLiveReadyChange?: (isReady: boolean) => void;
   onInteractionChange?: (isInteracting: boolean) => void;
   priority?: boolean;
   showCrosshairs?: boolean;
@@ -35,15 +38,19 @@ export default function MiniBrowserIframe({
   url,
   title,
   fallbackImage,
+  embeddable = true,
   className = "",
   containerClassName = "",
   initialMode = "live",
+  liveLoading = "lazy",
+  onLiveReadyChange,
   onInteractionChange,
   priority = false,
   showCrosshairs = true,
 }: MiniBrowserIframeProps) {
   const targetUrl = useMemo(() => normalizeUrl(url), [url]);
   const hasLiveUrl = Boolean(targetUrl);
+  const canEmbed = hasLiveUrl && embeddable;
   const cleanDomain = useMemo(() => extractDomain(targetUrl), [targetUrl]);
 
   const [mode, setMode] = useState<"live" | "screenshot">(() =>
@@ -81,14 +88,34 @@ export default function MiniBrowserIframe({
     setIsLoading(true);
     setHasError(false);
     setReloadKey((prev) => prev + 1);
-  }, []);
+    onLiveReadyChange?.(false);
+  }, [onLiveReadyChange]);
 
   const handleSwitchMode = (newMode: "live" | "screenshot") => {
     if (newMode === "screenshot" && isInteracting) {
       handleInteractionToggle(false);
     }
+    if (newMode === "screenshot" && mode === "live") {
+      onLiveReadyChange?.(false);
+    }
+    if (newMode === "live" && mode !== "live") {
+      setIsLoading(true);
+      setHasError(false);
+    }
     setMode(newMode);
   };
+
+  const isWaitingForLive = isLoading || liveLoading === "deferred";
+  const capture = fallbackImage && (
+    <Image
+      src={fallbackImage}
+      alt={mode === "live" ? "" : title}
+      fill
+      priority={priority}
+      sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+      className="object-cover object-top transition-transform duration-700 hover:scale-[1.02]"
+    />
+  );
 
   return (
     <div
@@ -131,31 +158,7 @@ export default function MiniBrowserIframe({
 
       {/* Mini Browser Chrome Toolbar */}
       <div className="flex shrink-0 flex-wrap items-center justify-between gap-2 border-b border-black/10 bg-black/[0.02] px-3 py-2 font-mono dark:border-white/10 dark:bg-white/[0.02] sm:px-4 sm:py-2.5">
-        {/* Left: Window Controls & Telemetry */}
-        <div className="flex items-center gap-2.5 sm:gap-3">
-          <div className="flex items-center gap-1.5" aria-hidden="true">
-            <span className="h-2 w-2 !rounded-full bg-red-500/80 dark:bg-red-500/70" />
-            <span className="h-2 w-2 !rounded-full bg-amber-500/80 dark:bg-amber-500/70" />
-            <span className="h-2 w-2 !rounded-full bg-emerald-500/80 dark:bg-emerald-500/70" />
-          </div>
-
-          {hasLiveUrl && mode === "live" ? (
-            <div className="flex items-center gap-1.5 font-mono text-[9px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping !rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex h-2 w-2 !rounded-full bg-emerald-500" />
-              </span>
-              <span className="hidden sm:inline">LIVE EMBED</span>
-              <span className="sm:hidden">LIVE</span>
-            </div>
-          ) : (
-            <span className="font-mono text-[9px] font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
-              [CAPTURE]
-            </span>
-          )}
-        </div>
-
-        {/* Center: Address Bar Pill */}
+        {/* Left: Address Bar */}
         {hasLiveUrl ? (
           <div className="flex min-w-0 max-w-[190px] items-center gap-1.5 border border-black/10 bg-white px-2 py-0.5 text-[10px] text-zinc-700 dark:border-white/10 dark:bg-[#141414] dark:text-zinc-300 xs:max-w-[240px] sm:max-w-[320px]">
             <i className="ri-lock-2-line shrink-0 text-[11px] text-emerald-600 dark:text-emerald-400" />
@@ -168,8 +171,13 @@ export default function MiniBrowserIframe({
         )}
 
         {/* Right: Controls (Mode Switch, Reload, External Link) */}
-        <div className="flex items-center gap-1.5 sm:gap-2">
-          {hasLiveUrl && fallbackImage && (
+        <div className="ml-auto flex items-center gap-1.5 sm:gap-2">
+          {(!canEmbed || mode !== "live") && (
+            <span className="font-mono text-[9px] font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
+              {hasLiveUrl && !canEmbed ? "EXTERNAL SITE" : "[CAPTURE]"}
+            </span>
+          )}
+          {canEmbed && fallbackImage && (
             <div className="flex items-center border border-black/15 bg-black/[0.04] p-0.5 dark:border-white/15 dark:bg-white/[0.05]">
               <button
                 type="button"
@@ -198,7 +206,7 @@ export default function MiniBrowserIframe({
             </div>
           )}
 
-          {hasLiveUrl && mode === "live" && (
+          {canEmbed && mode === "live" && (
             <button
               type="button"
               onClick={handleReload}
@@ -229,14 +237,29 @@ export default function MiniBrowserIframe({
       <div
         className={`relative flex-1 min-h-0 w-full overflow-hidden bg-zinc-100 dark:bg-zinc-950 ${className}`}
       >
-        {hasLiveUrl && mode === "live" ? (
+        {hasLiveUrl && !canEmbed ? (
+          <div className="flex h-full flex-col items-center justify-center gap-3 p-4 text-center">
+            <p className="font-body text-sm text-zinc-600 dark:text-zinc-300">
+              {title} does not allow embedded previews.
+            </p>
+            <a
+              href={targetUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="border border-black bg-black px-3 py-2 font-mono text-xs uppercase text-white dark:border-white dark:bg-white dark:text-black"
+            >
+              Open live site <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        ) : canEmbed && mode === "live" ? (
           <>
             {/* Loading Indicator */}
-            {isLoading && (
-              <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 bg-zinc-100/90 backdrop-blur-sm dark:bg-zinc-950/90">
-                <div className="h-6 w-6 animate-spin border-2 border-black/20 border-t-black dark:border-white/20 dark:border-t-white" />
-                <p className="font-mono text-[10px] uppercase tracking-widest text-zinc-600 dark:text-zinc-400">
-                  Fetching {cleanDomain}...
+            {isWaitingForLive && capture}
+            {isLoading && liveLoading !== "deferred" && (
+              <div className="pointer-events-none absolute inset-0 z-10 flex items-end justify-center p-4">
+                <p role="status" className="flex items-center gap-2 border border-black/15 bg-white px-3 py-1.5 font-mono text-[10px] uppercase tracking-widest text-zinc-600 dark:border-white/15 dark:bg-black dark:text-zinc-400">
+                  <span aria-hidden="true" className="h-3 w-3 animate-spin border-2 border-current border-t-transparent" />
+                  Loading live preview…
                 </p>
               </div>
             )}
@@ -269,25 +292,33 @@ export default function MiniBrowserIframe({
             )}
 
             {/* The Live Iframe */}
-            <iframe
-              key={reloadKey}
-              src={targetUrl}
-              title={`${title} Live Site Preview`}
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
-              onLoad={() => setIsLoading(false)}
-              onError={() => {
-                setIsLoading(false);
-                setHasError(true);
-              }}
-              className={`h-full w-full border-0 transition-opacity duration-500 ${
-                isLoading ? "opacity-0" : "opacity-100"
-              } ${isInteracting ? "pointer-events-auto" : "pointer-events-none"}`}
-            />
+            {liveLoading !== "deferred" && (
+              <iframe
+                key={reloadKey}
+                src={targetUrl}
+                title={`${title} Live Site Preview`}
+                loading={liveLoading}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+                tabIndex={isInteracting && !isWaitingForLive ? 0 : -1}
+                onLoad={() => {
+                  setIsLoading(false);
+                  setHasError(false);
+                  onLiveReadyChange?.(true);
+                }}
+                onError={() => {
+                  setIsLoading(false);
+                  setHasError(true);
+                  onLiveReadyChange?.(false);
+                }}
+                className={`h-full w-full border-0 ${
+                  isLoading ? "opacity-0" : "opacity-100"
+                } ${isInteracting ? "pointer-events-auto" : "pointer-events-none"}`}
+              />
+            )}
 
             {/* Scroll Shield & Interaction Layer */}
-            {!isInteracting ? (
+            {!isWaitingForLive && !hasError && (!isInteracting ? (
               <div
                 onClick={() => handleInteractionToggle(true)}
                 className="group/shield absolute inset-0 z-20 flex cursor-pointer items-end justify-center bg-black/[0.01] p-4 transition-colors hover:bg-black/[0.04] dark:hover:bg-white/[0.03]"
@@ -317,17 +348,10 @@ export default function MiniBrowserIframe({
                   <span>Lock Scroll</span>
                 </button>
               </div>
-            )}
+            ))}
           </>
         ) : fallbackImage ? (
-          <Image
-            src={fallbackImage}
-            alt={title}
-            fill
-            priority={priority}
-            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
-            className="object-cover object-top transition-transform duration-700 hover:scale-[1.02]"
-          />
+          capture
         ) : (
           <div className="flex h-full w-full items-center justify-center font-mono text-xs uppercase tracking-widest text-zinc-400">
             Preview Unavailable

@@ -12,13 +12,13 @@ type CaseStudyStep = {
 
 type CaseStudy = {
   headline: string;
-  timeline: string;
-  role: string;
-  services: string[];
-  goals: string[];
-  process: CaseStudyStep[];
-  results: string[];
-  reflection: string;
+  timeline?: string;
+  role?: string;
+  services?: string[];
+  goals?: string[];
+  process?: CaseStudyStep[];
+  results?: string[];
+  reflection?: string;
 };
 
 function normalizeLabel(value: string) {
@@ -43,67 +43,80 @@ function getProjectBrand(project: RawProject, brands: Brand[]) {
 }
 
 const projectCaseStudies: Record<ProjectSlug, CaseStudy> = {
-  "crunchies-online": {
+  "bonjour-quick-bites": {
     headline:
-      "Rebuilt the ordering experience around speed, clarity, and delivery confidence.",
-    timeline: "2024",
-    role: "Lead Fullstack Developer",
-    services: [
-      "Product Thinking",
-      "UI Redesign",
-      "Frontend Engineering",
-      "Location Experience",
-    ],
+      "An online storefront for fresh bakery goods and hot meals, with pickup or delivery in Port Harcourt.",
+    role: "Full-stack Developer",
+    services: ["Full-stack Development", "CI/CD"],
     goals: [
-      "Make ordering and outlet discovery easier for first-time and returning customers.",
-      "Redesign the interface so the product feels clear, trustworthy, and fast on mobile.",
-      "Turn location selection into a core part of the journey instead of a point of friction.",
+      "Help customers order bakery goods, hot meals, and celebration cakes online.",
+      "Let customers choose between outlet pickup and doorstep delivery.",
     ],
     process: [
       {
-        eyebrow: "Problem Discovery",
-        title: "Find the exact moments where ordering confidence drops.",
+        eyebrow: "Application Build",
+        title: "Build the storefront and ordering experience end to end.",
         details: [
-          "The early framing centered on reducing confusion in the ordering flow, especially around delivery choices and outlet discovery.",
-          "Instead of treating the redesign as a visual refresh alone, the product direction focused on making the next action obvious at every step.",
+          "I built the platform with Next.js and TypeScript, used Supabase for the database, and handled authentication with Better Auth.",
         ],
       },
       {
-        eyebrow: "Friction Mapping",
-        title: "Trace the decisions customers struggle to make mid-journey.",
+        eyebrow: "Development Workflow",
+        title: "Set up version control and continuous deployment.",
         details: [
-          "The UI was redesigned to create a more intuitive structure, clearer hierarchy, and stronger calls to action across key customer journeys.",
-          "Location-aware interactions were brought forward so users could choose delivery points and discover nearby Crunchies outlets with less effort.",
+          "I used Git for version control and GitHub and Vercel for CI/CD.",
+          "I used AI agents with the Vercel, GitHub, and Mobbin MCP servers to support development.",
+        ],
+      },
+    ],
+  },
+  noma: {
+    headline: "Flashcards and practice quizzes for nursing exam preparation.",
+  },
+  "alchemy-of-code": {
+    headline: "Learn software engineering fundamentals and become a well-rounded builder.",
+    role: "Curriculum Creator",
+    services: ["Curriculum Design"],
+  },
+  "crunchies-online": {
+    headline:
+      "I redesigned online ordering so Crunchies customers could choose delivery or pickup and find a nearby outlet.",
+    timeline: "2024",
+    role: "Lead full-stack developer",
+    services: [
+      "Ordering flow design",
+      "Frontend development",
+      "Google Maps integration",
+    ],
+    goals: [
+      "Make delivery, pickup, and outlet selection clear before checkout.",
+      "Keep the ordering site usable on mobile, including on slower connections.",
+    ],
+    process: [
+      {
+        eyebrow: "Checkout design",
+        title: "Clarifying delivery and pickup",
+        details: [
+          "I reorganized checkout around three decisions: how to receive the order, where to deliver it, and which outlet to use.",
         ],
       },
       {
-        eyebrow: "Solution Direction",
-        title: "Rebuild the flow around simpler choices and clearer next steps.",
+        eyebrow: "Maps and mobile",
+        title: "Helping customers find an outlet",
         details: [
-          "The experience was refined around the moments where customers choose how to receive an order, where it should go, and what outlet makes sense for them.",
-          "That made the product feel less like a generic menu surface and more like a guided ordering journey that answers practical questions early.",
-        ],
-      },
-      {
-        eyebrow: "Build and Rollout",
-        title: "Ship the faster experience and location-aware tools.",
-        details: [
-          "Next.js and Tailwind CSS provided the foundation for a responsive, performance-minded build that was easier to scale and maintain.",
-          "Google Maps integration connected interface decisions to a practical customer need, making delivery planning part of the product experience itself.",
+          "I rebuilt the site in Next.js and Tailwind CSS for desktop and mobile. I integrated Google Maps so customers could select a delivery location and find nearby outlets.",
         ],
       },
     ],
     results: [
-      "Delivered a cleaner ordering journey built around the decisions customers actually need to make.",
-      "Made delivery selection and nearby outlet discovery feel like natural parts of the product instead of hidden edge cases.",
-      "Created a faster, more modern digital experience that better matched the brand's ambition and operational needs.",
+      "Crunchies credits the redesign with helping monthly online sales grow from ₦200,000 to ₦3 million.",
     ],
     reflection:
-      "The strongest e-commerce improvements usually come from removing uncertainty. Once customers know what to do next, conversion and trust become much easier to earn.",
+      "For a restaurant, choosing how and where to receive an order is as important as choosing what to eat.",
   },
   merphils: {
     headline:
-      "Designing a unified education platform where schools, families, educators, and learners can move across roles without losing continuity.",
+      "I’m designing a school management platform that lets staff, families, and students use one account across schools.",
     timeline: "In Progress",
     role: "Product Engineer",
     services: [
@@ -113,63 +126,34 @@ const projectCaseStudies: Record<ProjectSlug, CaseStudy> = {
       "Frontend Systems",
     ],
     goals: [
-      "Unify school operations, family access, and learner history in one platform instead of fragmented portals.",
-      "Make one account work across multiple schools, children, and roles while keeping school data private by default.",
-      "Lay the groundwork for future network features such as study circles, resource sharing, and tutor discovery.",
+      "Give schools tools for classes, grades, admissions, and finance.",
+      "Let people switch schools and roles without creating separate accounts or exposing private school records.",
     ],
     process: [
       {
-        eyebrow: "Problem Discovery",
-        title: "Start where education platforms usually break: fragmented identity.",
+        eyebrow: "Account design",
+        title: "One account across schools and roles",
         details: [
-          "The core product decision was to treat identity as shared across schools, roles, and relationships rather than forcing separate accounts for every context.",
-          "That framing made it possible to design around one learner history, one family surface, and one person moving between roles like owner, staff member, parent, or student.",
+          "A person might teach at one school and have a child at another. One account lets them switch roles while the platform checks what they can see at each school.",
         ],
       },
       {
-        eyebrow: "Constraint Mapping",
-        title: "Define access rules without losing continuity for the user.",
+        eyebrow: "Release planning",
+        title: "School workflows before collaboration tools",
         details: [
-          "The platform is being shaped around strict access boundaries so each school only exposes the information relevant to that context while still preserving continuity for the user.",
-          "The experience has to make context-switching feel simple for families and administrators without weakening privacy or permission controls behind the scenes.",
-        ],
-      },
-      {
-        eyebrow: "Solution Direction",
-        title: "Turn school operations into product surfaces people can actually navigate.",
-        details: [
-          "The platform is being structured around the daily jobs schools and families need to complete, from classes and assignments to admissions, grades, and finance.",
-          "That keeps the product grounded in operational clarity instead of letting the access model become an abstract architecture exercise.",
-        ],
-      },
-      {
-        eyebrow: "Platform Implementation",
-        title: "Build today's school workflows without blocking tomorrow's network features.",
-        details: [
-          "Current product work is focused on the workflows schools need immediately, including classes, assignments, grades, academic history, admissions, and finance.",
-          "At the same time, the structure is being kept flexible enough to support future network features like tutor discovery, study circles, and resource sharing across education contexts.",
-        ],
-      },
-      {
-        eyebrow: "Current State",
-        title: "Push the platform toward a first cohesive operations release.",
-        details: [
-          "Right now the work is centered on tightening the relationship between identity, permissions, and the operational surfaces schools and families will use most often.",
-          "The immediate goal is to get the core school workflows feeling stable and coherent before broader collaboration features become part of the next phase of the product.",
+          "The first release focuses on school operations and learner records. Tutor discovery and study circles are planned for later.",
         ],
       },
     ],
     results: [
-      "Established a clearer product direction around one account across schools, children, and roles.",
-      "Defined an access model that protects school boundaries while preserving learner continuity over time.",
-      "Created a platform foundation that can support school operations now and broader education collaboration later.",
+      "Defined how one account can work across schools and roles while keeping each school’s records separate.",
     ],
     reflection:
-      "Education platforms break down when identity is fragmented. The real work is making continuity feel simple without weakening access boundaries.",
+      "Sharing a login across schools doesn’t have to mean sharing access to school records.",
   },
   grooovy: {
     headline:
-      "Designing a vibe-first event platform that turns social discovery, signup, and planning into one fast flow.",
+      "I’m designing a platform for finding nightlife events, making plans, and managing tickets.",
     timeline: "In Progress",
     role: "Product Designer and Frontend Engineer",
     services: [
@@ -179,59 +163,38 @@ const projectCaseStudies: Record<ProjectSlug, CaseStudy> = {
       "Frontend Delivery",
     ],
     goals: [
-      "Make nightlife and social event discovery feel closer to the way people actually decide what to do.",
-      "Connect public browsing, guided onboarding, and signed-in planning tools without losing momentum.",
-      "Build a warm, cinematic, mobile-friendly interface that still supports host, wallet, and admin workflows.",
+      "Let people browse events before signing up.",
+      "Give attendees and hosts separate tools for managing their plans and events.",
     ],
     process: [
       {
-        eyebrow: "Problem Discovery",
-        title: "Start with the messy way people actually discover plans.",
+        eyebrow: "Discovery",
+        title: "Browsing events before sign-up",
         details: [
-          "The public product surface is being shaped around curated event discovery so the browsing experience feels more like reading the city's mood than navigating a cold listings directory.",
-          "Event detail pages, related events, and RSVP or checkout flows are designed to keep users moving from interest to action without unnecessary detours.",
+          "Public event pages are designed to show the details people need to decide whether to go, alongside related events and a way to RSVP or buy a ticket.",
         ],
       },
       {
-        eyebrow: "Insight Layer",
-        title: "Use onboarding to turn personal taste into product context.",
+        eyebrow: "Onboarding",
+        title: "Personalizing the account setup",
         details: [
-          "The onboarding flow asks new users for their city and preferred vibes before account creation so the signed-in experience can feel more personal from the start.",
-          "Authentication, password recovery, and protected dashboard access are being treated as part of the product experience, not just background account plumbing.",
+          "During sign-up, people choose their city and the kinds of events they like.",
+          "Mobbin was a source of design inspiration for the onboarding experience.",
         ],
       },
       {
-        eyebrow: "Solution Direction",
-        title: "Design event pages to keep curiosity moving toward commitment.",
+        eyebrow: "Dashboards",
+        title: "Separate tools for attendees and hosts",
         details: [
-          "Individual event pages are being designed to balance mood, core logistics, related events, and RSVP or checkout actions without stalling the user.",
-          "That flow matters because discovery products only work when the jump from maybe to I'm in feels short and obvious.",
-        ],
-      },
-      {
-        eyebrow: "Product Build",
-        title: "Extend the fix beyond browsing into plans, tickets, wallets, and hosting.",
-        details: [
-          "The signed-in product includes upcoming plans, saved and past events, ticket views, wallet activity, and personalized identity details like city and vibe tags.",
-          "Host and admin surfaces are being designed alongside the user journey so event creation, attendee visibility, payouts, and summary analytics all live inside the same broader ecosystem.",
-        ],
-      },
-      {
-        eyebrow: "Current State",
-        title: "Tighten the handoff from discovery into the signed-in product.",
-        details: [
-          "The project is currently at the point where public event discovery, onboarding, and dashboard behavior are being refined into a smoother end-to-end flow.",
-          "The focus now is making sure the product feels just as strong after login as it does during first-touch browsing, especially across plans, tickets, wallets, and host tools.",
+          "Attendees can view saved events, tickets, and wallet activity. I’m also designing tools for hosts to create events, see who’s coming, and track payouts.",
         ],
       },
     ],
     results: [
-      "Established a product structure that connects discovery, onboarding, and signed-in planning in one coherent experience.",
-      "Built out core flows for event exploration, account creation, personalized dashboards, and host tooling.",
-      "Created a foundation for a multi-surface social product that can grow from weekend plans into a broader event ecosystem.",
+      "Built the core event browsing, sign-up, and dashboard flows. I’m still refining how people move between them.",
     ],
     reflection:
-      "Event products live or die on momentum. Every screen should shorten the distance between curiosity and commitment.",
+      "Show people what they need to decide whether to go before you ask them to sign up.",
   },
   "kadric-ltd": {
     headline:
@@ -293,7 +256,7 @@ const projectCaseStudies: Record<ProjectSlug, CaseStudy> = {
   },
   "the-iroko-circle": {
     headline:
-      "Shaped a literary community platform that makes African stories easier to discover, discuss, and support.",
+      "I designed and built a home for African literature and the community around it.",
     timeline: "2024",
     role: "Web Designer and Developer",
     services: [
@@ -303,167 +266,30 @@ const projectCaseStudies: Record<ProjectSlug, CaseStudy> = {
       "CMS Implementation",
     ],
     goals: [
-      "Give essays, reviews, poetry, features, and short stories a clearer editorial home.",
-      "Support community growth through submissions, chapters, join flows, and newsletter touchpoints.",
-      "Express the mission with enough warmth that readers feel invited, not just informed.",
+      "Let readers browse writing by format, from poetry to reviews.",
+      "Make it clear how to submit work, join a chapter, or support the community.",
     ],
     process: [
       {
-        eyebrow: "Problem Discovery",
-        title: "Start with the risk of good stories feeling scattered or hard to enter.",
+        eyebrow: "Editorial structure",
+        title: "Organizing the site around what people read",
         details: [
-          "The site architecture gives distinct space to essays, features, poetry, reviews, and short stories so readers can browse African literature through clear editorial pathways.",
-          "Homepage storytelling, featured pieces, and mission framing work together to make the platform feel like a living literary surface rather than a static archive.",
+          "I gave essays, features, poetry, reviews, and short stories their own sections. The homepage introduces the Circle’s mission and highlights pieces for readers to start with.",
         ],
       },
       {
-        eyebrow: "Friction Mapping",
-        title: "Spot where readers need clearer invitations into the community.",
+        eyebrow: "Community participation",
+        title: "Making it clear how to take part",
         details: [
-          "Join the Circle, chapters, submissions, donate, and partner pathways are treated as core parts of the experience so visitors can move from reading to belonging.",
-          "The community surface is designed to support both casual readers and people who want a deeper role in growing the literary ecosystem.",
-        ],
-      },
-      {
-        eyebrow: "Solution Direction",
-        title: "Restructure discovery so every content type has a clearer path.",
-        details: [
-          "Essays, features, poetry, reviews, and short stories are organized as distinct but connected paths so the platform feels editorially rich without becoming confusing to browse.",
-          "Featured content, shelf structure, and mission-led copy help new visitors understand both what is published and why the platform exists.",
-        ],
-      },
-      {
-        eyebrow: "Experience Build",
-        title: "Carry the fix through brand, publishing, and participation surfaces.",
-        details: [
-          "The visual and content direction is built to amplify African stories while keeping navigation, submissions, and newsletter touchpoints easy to understand.",
-          "That balance matters because community publishing platforms need emotional resonance, but they also need enough structure for readers and contributors to trust the system.",
+          "I gave submissions, membership, chapters, donations, and partnerships dedicated paths so visitors can choose how to get involved.",
         ],
       },
     ],
     results: [
-      "Created a clearer editorial home for African stories across multiple content formats.",
-      "Made community entry points like joining, submitting, donating, and chapter participation easier to find.",
-      "Aligned the site more closely with The Iroko Circle's mission of reading, discussing, and amplifying African stories.",
+      "The WordPress site gives the Circle one place to publish new work and invite readers to participate.",
     ],
     reflection:
-      "Community publishing platforms need more than content. They need clear invitations into the conversation.",
-  },
-  "the-bakistry": {
-    headline:
-      "Translated a cake brand into a storefront that sells freshness, speed, and celebration from the first scroll.",
-    timeline: "2024",
-    role: "E-commerce Designer and Developer",
-    services: [
-      "Storefront UX",
-      "Merchandising Structure",
-      "Brand Translation",
-      "E-commerce Implementation",
-    ],
-    goals: [
-      "Make the brand feel handcrafted and premium while keeping the buying path simple.",
-      "Help customers browse by occasion, speed, and product type instead of getting lost in a flat catalog.",
-      "Support fast ordering with a storefront that reinforces delivery confidence and visual appetite.",
-    ],
-    process: [
-      {
-        eyebrow: "Problem Discovery",
-        title: "Start from the gap between handcrafted brand feeling and shopping clarity.",
-        details: [
-          "The product direction starts from a simple promise: every celebration deserves something that tastes as good as it looks.",
-          "That meant translating warmth, freshness, and premium craft into a storefront that still feels practical to shop from.",
-        ],
-      },
-      {
-        eyebrow: "Friction Mapping",
-        title: "See where customers need faster routes into the right product type.",
-        details: [
-          "The storefront organizes buying around categories like Budget Express Cakes, Classic Express Cakes, Gateaux, Cupcakes, Combos, Kiddies, and Treats so customers can narrow in quickly.",
-          "Featured products, flavour options, and category-led browsing help the site support both fast everyday orders and more deliberate celebration purchases.",
-        ],
-      },
-      {
-        eyebrow: "Solution Direction",
-        title: "Connect appetite, speed, and trust inside one storefront flow.",
-        details: [
-          "Delivery messaging, top selections, and product cards are arranged to reassure buyers that the brand can move from beautiful presentation to actual fulfillment quickly.",
-          "That keeps the storefront persuasive for celebration purchases without making customers work too hard to understand what to buy next.",
-        ],
-      },
-      {
-        eyebrow: "Commerce Build",
-        title: "Carry the fix through to checkout confidence.",
-        details: [
-          "Fast-delivery messaging, product cards, cart access, and editorial updates are all positioned to keep the journey moving from inspiration to order.",
-          "The site treats visual appetite and buying clarity as one product problem, which is critical for a bakery brand that sells both emotion and speed.",
-        ],
-      },
-    ],
-    results: [
-      "Created a warmer storefront that better matches The Bakistry's handcrafted positioning.",
-      "Made product discovery clearer through category-led browsing and stronger merchandising cues.",
-      "Built a smoother path from first impression to checkout for customers ordering across everyday and special occasions.",
-    ],
-    reflection:
-      "Food commerce is emotional, but the path to purchase still has to be obvious. Appetite brings people in; clarity gets the order over the line.",
-  },
-  "7star-unisex-beauty-palace": {
-    headline:
-      "Built a brand-driven service site that turns hair care expertise into a seamless booking experience.",
-    timeline: "2026",
-    role: "Web Designer and Developer",
-    services: [
-      "Website Strategy",
-      "Brand Translation",
-      "Service Presentation",
-      "Booking Integration",
-    ],
-    goals: [
-      "Give the studio a professional web presence that reflects its expertise in locs, braiding, and protective styling.",
-      "Make every service easy to understand and schedule from starter dreadlocks to loc extensions and repairs.",
-      "Build trust through client reviews, educational content, and a clean brand presentation.",
-    ],
-    process: [
-      {
-        eyebrow: "Problem Discovery",
-        title: "Start with the gap between salon expertise and online first impressions.",
-        details: [
-          "7Star had strong in-person reputation in Cairo but needed a website that communicated its professionalism, range of services, and client-centered approach to new visitors.",
-          "The product direction centered on translating the studio's hands-on care philosophy into a digital experience that felt trustworthy and easy to navigate.",
-        ],
-      },
-      {
-        eyebrow: "Service Structuring",
-        title: "Organize around what clients actually need to know before booking.",
-        details: [
-          "Each service — starter dreadlocks, loc retwists, extensions, knotless braids, box braids, and afro twists — was given its own presentation space with clear descriptions, imagery, and a direct path to scheduling.",
-          "The client reviews section was positioned prominently so new visitors could see real feedback and build confidence before making an appointment.",
-        ],
-      },
-      {
-        eyebrow: "Solution Direction",
-        title: "Make booking feel like the natural next step after browsing.",
-        details: [
-          "WhatsApp integration was embedded throughout the site so potential clients could move from exploring a service to starting a conversation without friction.",
-          "The design prioritized clean service presentation, mobile-friendly navigation, and a warm brand tone that matched the studio's welcoming atmosphere.",
-        ],
-      },
-      {
-        eyebrow: "Content and Trust Build",
-        title: "Support the booking path with social proof, products, and educational content.",
-        details: [
-          "A blog section was added to position the studio as an educational resource for hair care beyond just styling appointments.",
-          "Products page, newsletter signup, and social media links were integrated to extend the relationship beyond the first appointment.",
-        ],
-      },
-    ],
-    results: [
-      "Delivered a professional web presence that communicates 7Star's hair care expertise and range of services.",
-      "Made service discovery and booking scheduling feel simple through clear categorization and WhatsApp integration.",
-      "Created a brand-aligned digital experience that supports both new client acquisition and ongoing community engagement.",
-    ],
-    reflection:
-      "Service businesses win online when expertise is easy to understand and booking feels like a natural next step. 7Star needed a site that converted browsing into appointments without losing the warmth of the in-person experience.",
+      "A literary site should show people what to read and how to take part.",
   },
   "the-developer-marketing-book": {
     headline:
@@ -548,11 +374,24 @@ const {
 
 export const projects = rawProjects.map((project) => ({
   ...project,
+  embeddable: project.embeddable ?? true,
   brand: getProjectBrand(project, brands),
   caseStudy: projectCaseStudies[project.slug as ProjectSlug],
 }));
 
 export type Project = (typeof projects)[number];
+
+const showreelSlugs = [
+  "bonjour-quick-bites",
+  "alchemy-of-code",
+  "the-iroko-circle",
+  "noma",
+  "crunchies-online",
+];
+
+export const showreelProjects = showreelSlugs.flatMap((slug) =>
+  projects.filter((project) => project.slug === slug),
+);
 
 export {
   avatar,

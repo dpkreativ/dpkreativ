@@ -1,7 +1,5 @@
 "use client";
 
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
 import React, { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import Button from "./button";
@@ -24,19 +22,15 @@ export type FormInputs = {
 function SuccessMessage() {
   return (
     <div className="text-center grid gap-6 p-6 md:p-10 bg-white dark:bg-[#0A0A0A] border border-black/15 dark:border-white/15 max-w-2xl mx-auto">
-      <div className="bg-black px-4 py-1 font-mono text-[10px] font-bold uppercase tracking-widest text-white dark:bg-white dark:text-black w-max mx-auto">
-        Transmission Confirmed
-      </div>
-      <h2 className="text-3xl md:text-5xl font-display uppercase tracking-tighter text-black dark:text-white leading-none">
-        LET&apos;S GET <br />
-        <span className="text-zinc-500 dark:text-zinc-400">STARTED.</span>
+      <h2 className="text-2xl sm:text-3xl md:text-5xl font-display uppercase tracking-tighter text-black dark:text-white leading-none">
+        Thanks for getting in touch
       </h2>
       <p className="text-zinc-600 dark:text-zinc-400 text-base md:text-lg font-body leading-relaxed">
-        I&apos;ve received your project brief. I&apos;ll review the architecture requirements and respond within 24 hours.
+        I’ll review your brief and follow up about next steps.
       </p>
       <Link href="/" className="mx-auto mt-2">
         <Button className="!px-8 !py-3 !text-xs font-mono font-bold tracking-widest uppercase">
-          <span>RETURN HOME</span>
+          <span>Return home</span>
         </Button>
       </Link>
     </div>
@@ -47,7 +41,6 @@ export default function ContactForm({ initialTier, onCancel }: { initialTier?: s
   const {
     register,
     handleSubmit,
-    setValue,
     formState: { errors, isSubmitSuccessful },
   } = useForm<FormInputs>({
     defaultValues: {
@@ -72,14 +65,14 @@ export default function ContactForm({ initialTier, onCancel }: { initialTier?: s
       setIsSubmitting(true);
       setSubmitError(null);
       await sendEmail(data);
-    } catch (error) {
-      setSubmitError("Transmission failed. Try again.");
+    } catch {
+      setSubmitError("Your brief couldn’t be sent. Try again or email me directly.");
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  const inputClasses = "w-full px-4 py-3 border border-black/20 dark:border-white/20 rounded-none bg-white dark:bg-black text-black dark:text-white font-body text-sm focus:outline-none focus:border-black dark:focus:border-white transition-all";
+  const inputClasses = "w-full min-w-0 px-3 sm:px-4 py-3 border border-black/20 dark:border-white/20 rounded-none bg-white dark:bg-black text-black dark:text-white font-body text-base md:text-sm focus:outline-none focus:border-black dark:focus:border-white transition-all";
   const labelClasses = "block font-mono text-[11px] font-bold uppercase tracking-widest mb-1.5 text-black dark:text-zinc-400";
   const errorClasses = "font-mono text-[10px] mt-1 font-bold uppercase text-zinc-600 dark:text-zinc-400";
 
@@ -88,101 +81,103 @@ export default function ContactForm({ initialTier, onCancel }: { initialTier?: s
   }
 
   return (
-    <form ref={formRef} onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <form ref={formRef} onSubmit={handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6">
+      <p className="text-sm text-zinc-600 dark:text-zinc-400">Fields marked with * are required.</p>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
         <div>
-          <label htmlFor="fullName" className={labelClasses}>Full Name *</label>
+          <label htmlFor="fullName" className={labelClasses}>Full name *</label>
           <input
             type="text"
             id="fullName"
-            {...register("fullName", { required: "Name is required" })}
+            {...register("fullName", { required: "Enter your name." })}
             className={inputClasses}
-            placeholder="YOUR NAME"
           />
           {errors.fullName && <p className={errorClasses}>{errors.fullName.message}</p>}
         </div>
 
         <div>
-          <label htmlFor="email" className={labelClasses}>Email Address *</label>
+          <label htmlFor="email" className={labelClasses}>Email address *</label>
           <input
             type="email"
             id="email"
-            {...register("email", { required: "Email is required" })}
+            {...register("email", { required: "Enter your email address." })}
             className={inputClasses}
-            placeholder="EMAIL@EXAMPLE.COM"
+            placeholder="you@example.com"
           />
           {errors.email && <p className={errorClasses}>{errors.email.message}</p>}
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
         <div>
-          <label htmlFor="phoneNumber" className={labelClasses}>Phone Number</label>
+          <label htmlFor="phoneNumber" className={labelClasses}>Phone number</label>
           <input
             type="tel"
             id="phoneNumber"
             {...register("phoneNumber")}
             className={inputClasses}
-            placeholder="+1 ..."
+            placeholder="Include country code"
           />
         </div>
         <div>
-          <label htmlFor="businessName" className={labelClasses}>Business Name</label>
+          <label htmlFor="businessName" className={labelClasses}>Business name</label>
           <input
             type="text"
             id="businessName"
             {...register("businessName")}
             className={inputClasses}
-            placeholder="COMPANY NAME"
           />
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
         <div>
-          <label htmlFor="projectTimeline" className={labelClasses}>Timeline</label>
+          <label htmlFor="projectTimeline" className={labelClasses}>Project timeline</label>
           <select
             id="projectTimeline"
             {...register("projectTimeline")}
             className={`${inputClasses} cursor-pointer`}
           >
-            <option value="ASAP">ASAP</option>
-            <option value="1-2 MONTHS">1-2 MONTHS</option>
-            <option value="3+ MONTHS">3+ MONTHS</option>
+            <option value="ASAP">As soon as possible</option>
+            <option value="1-2 MONTHS">1 to 2 months</option>
+            <option value="3+ MONTHS">3 months or more</option>
           </select>
         </div>
         <div>
-          <label htmlFor="preferredContactMethod" className={labelClasses}>Preferred Contact</label>
+          <label htmlFor="preferredContactMethod" className={labelClasses}>Preferred contact method</label>
           <select
             id="preferredContactMethod"
             {...register("preferredContactMethod")}
             className={`${inputClasses} cursor-pointer`}
           >
-            <option value="EMAIL">EMAIL</option>
-            <option value="WHATSAPP">WHATSAPP / PHONE</option>
-            <option value="VIDEO CALL">VIDEO CALL</option>
+            <option value="EMAIL">Email</option>
+            <option value="WHATSAPP">WhatsApp or phone</option>
+            <option value="VIDEO CALL">Video call</option>
           </select>
         </div>
       </div>
 
       <div>
-        <label htmlFor="projectDescription" className={labelClasses}>Project Brief *</label>
+        <label htmlFor="projectDescription" className={labelClasses}>Project brief *</label>
+        <p id="projectDescriptionHint" className="mb-2 text-sm text-zinc-600 dark:text-zinc-400">
+          Describe what you want to build or improve, who it’s for, and what it needs to do. Include a link if you already have a site.
+        </p>
         <textarea
           id="projectDescription"
-          {...register("projectDescription", { required: "Tell me a bit about the project" })}
+          aria-describedby="projectDescriptionHint"
+          {...register("projectDescription", { required: "Enter a short description of your project." })}
           className={`${inputClasses} h-32 md:h-40 resize-none`}
-          placeholder="DESCRIBE YOUR VISION..."
         />
         {errors.projectDescription && <p className={errorClasses}>{errors.projectDescription.message}</p>}
       </div>
 
-      <div className="flex flex-col md:flex-row gap-4 pt-4">
+      <div className="flex flex-col md:flex-row gap-4 sm:pt-4">
         <Button
           type="submit"
           disabled={isSubmitting}
-          className={`flex-1 !py-5 !text-lg dark:!border-white dark:!bg-white dark:!text-black dark:hover:!border-zinc-200 dark:hover:!bg-zinc-200 ${isSubmitting ? "opacity-50" : ""}`}
+          className={`flex-1 !whitespace-normal !px-4 !py-4 !text-sm sm:!py-5 sm:!text-lg dark:!border-white dark:!bg-white dark:!text-black dark:hover:!border-zinc-200 dark:hover:!bg-zinc-200 ${isSubmitting ? "opacity-50" : ""}`}
         >
-          {isSubmitting ? "TRANSMITTING..." : "SEND PROJECT BRIEF"}
+          {isSubmitting ? "Sending…" : "Send project brief"}
         </Button>
         {onCancel && (
           <button 
@@ -194,7 +189,7 @@ export default function ContactForm({ initialTier, onCancel }: { initialTier?: s
           </button>
         )}
       </div>
-      {submitError && <p className={errorClasses}>{submitError}</p>}
+      {submitError && <p role="alert" className={errorClasses}>{submitError}</p>}
     </form>
   );
 }

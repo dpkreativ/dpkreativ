@@ -7,7 +7,7 @@
   ],
   "logo": "/images/brand-logos/kreativ-icon.svg",
   "heroImgText": "Hello World! I'm Divine.",
-  "roleKicker": "Software Engineer // Product Builder // Systems Writer",
+  "roleKicker": "Full-stack Software Engineer // Engineering Lead // Technical Writer",
   "contact": {
     "email": "dpkreativ@gmail.com",
     "phone": "09021824073",
@@ -15,7 +15,36 @@
     "website": "https://dpkreativ.vercel.app"
   },
   "aboutMe": [
-    "I am Divine Orji, a software engineer building digital products through The Kreativ Studio, my tech agency."
+    "I’m Divine Orji, a full-stack software engineer and Head of Engineering at The Kreativ Studio, where I lead a remote team and stay hands-on across frontend, backend, and deployment.",
+    "I also write technical guides on my blog and created the software engineering curriculum behind Alchemy Of Code."
+  ],
+  "speakerBio": "Divine Orji is a full-stack software engineer, technical writer, and Head of Engineering at The Kreativ Studio, where he leads a remote team and builds web products such as Bonjour Quick Bites, Noma, Merphils, and Grooovy. He writes hands-on guides on his blog and created the software engineering curriculum behind Alchemy Of Code. His work focuses on building useful software and helping others learn to build their own.",
+  "selectedWork": [
+    {
+      "title": "Bonjour Quick Bites",
+      "url": "https://bonjourquickbites.com",
+      "summary": "Port Harcourt customers use this storefront to order fresh bread, pastries, hot meals, and celebration cakes for outlet pickup or doorstep delivery. I built it end to end with Next.js, TypeScript, Supabase, and Better Auth, backed by GitHub and Vercel for CI/CD."
+    },
+    {
+      "title": "Crunchies Online",
+      "url": "https://crunchiesonline.com",
+      "summary": "Over a seven-month redesign in Next.js and Tailwind CSS, I reworked checkout, pickup, and delivery location selection and wired up Google Maps outlet discovery. Monthly online sales grew from ₦200,000 to over ₦3 million."
+    },
+    {
+      "title": "Alchemy Of Code",
+      "url": "https://aoc.divineorji.com",
+      "summary": "Behind this learning platform is a software engineering curriculum I wrote to help people move from fundamentals to shipping their own ideas. Under the hood, it runs on Cloudflare with Supabase and Better Auth."
+    },
+    {
+      "title": "Noma",
+      "url": "https://noma-study-prep.vercel.app",
+      "summary": "I built Noma for nursing students prepping for exams, pairing quick flashcards for revising key concepts with quizzes that show what’s actually sticking."
+    },
+    {
+      "title": "The Iroko Circle",
+      "url": "https://theirokocircle.org",
+      "summary": "For this African literature community, my focus was designing and building a WordPress publishing home where readers can discover new stories, writers can submit work, and members can find local chapters."
+    }
   ],
   "highlights": [
     {
@@ -68,107 +97,116 @@
     }
   ],
   "skills": [
-    "Web Development",
-    "Web Design",
-    "Mobile Development",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Tailwind CSS",
+    "GSAP",
+    "Supabase",
+    "Better Auth",
+    "WordPress",
+    "Google Maps API",
+    "Git & CI/CD (GitHub, Vercel)",
+    "Cloudflare",
     "Technical Writing",
-    "Software Engineering"
+    "Curriculum Design"
   ],
   "experience": [
     {
       "role": "Head of Engineering",
       "company": "The Kreativ Studio",
       "period": "January 2025 - Present",
-      "summary": "I direct engineering operations and lead our fully remote team, guiding architecture, sprints, and code reviews across 10+ client and internal web products while staying hands-on in the codebase.",
+      "summary": "I lead a remote engineering team across 10+ client and internal web products, steering architecture, sprint planning, and code reviews while staying active in the codebase myself.",
       "highlights": [
-        "I coordinate technical roadmaps and weekly sprints for distributed engineers across multiple time zones.",
-        "I maintain architectural standards and CI/CD pipelines that keep deployment cycles under 15 minutes."
+        "My week centers on technical roadmaps and sprint planning for products in development, including Merphils (multi-tenant school operations and academic records in Next.js, TypeScript, and Better Auth) and Grooovy (event discovery, ticketing, and host tools in React, Supabase, Better Auth, and GSAP).",
+        "I maintain our engineering standards, code reviews, and GitHub/Vercel CI/CD workflows so releases stay predictable across projects."
       ]
     },
     {
       "role": "Software Engineer",
       "company": "The Kreativ Studio",
       "period": "January 2019 - Present",
-      "summary": "Over a 7+ year journey, I've built and shipped 15+ bespoke web applications, turning complex client requirements into fast, resilient digital experiences.",
+      "summary": "Working closely with founders from early requirements to launch, I’ve built and shipped 15+ custom web applications.",
       "highlights": [
-        "I architect full-stack applications with Next.js, TypeScript, and modern APIs, consistently scoring 95+ on Lighthouse performance benchmarks.",
-        "I partner directly with founders to translate business goals into shipped interfaces and reliable backend workflows."
+        "From database schema to checkout, I built Bonjour Quick Bites end to end with Next.js, TypeScript, Supabase, and Better Auth for outlet pickup and doorstep delivery.",
+        "On the education side, I built flashcards and quizzes for nursing students in Noma and authored the software engineering curriculum powering Alchemy Of Code.",
+        "For The Iroko Circle, I designed and developed a WordPress home for publishing African literature, accepting submissions, and connecting readers with local chapters."
       ]
     },
     {
       "role": "Software Engineer",
       "company": "Innovation Growth Hub",
       "period": "January 2024 - March 2026",
-      "summary": "Across a 2+ year run, I engineered client web solutions, maintained internal software, and spearheaded developer community training in Aba.",
+      "summary": "Over two-plus years in Aba, I split my time between building client web apps, maintaining our internal tools, and teaching the next wave of local developers.",
       "highlights": [
-        "I delivered software across 2 parallel tracks: client-commissioned platforms and internal operations tools.",
-        "I trained and mentored 100+ web development students, designing the foundational curriculum still taught across cohorts.",
-        "We hosted developer ecosystem events and co-building sessions that engaged 300+ local tech builders."
+        "My engineering work ran across two parallel tracks: client-commissioned platforms and the internal tools that kept daily operations moving.",
+        "In the classroom, I trained and mentored 100+ web development students and wrote the foundational curriculum cohorts still learn from today.",
+        "Alongside the team, we hosted meetups and co-building sessions that brought together 300+ local tech builders."
       ]
     },
     {
       "role": "Fullstack Developer",
       "company": "Crunchies Fried Chicken Limited",
       "period": "April 2024 - October 2024",
-      "summary": "I led the end-to-end redesign of the Crunchies online ordering platform over a 7-month contract, helping scale monthly digital sales from ₦200k to over ₦3M.",
+      "summary": "Crunchies brought me on for a seven-month contract to lead the end-to-end redesign of Crunchies Online, helping grow monthly digital sales from ₦200k to over ₦3M.",
       "highlights": [
-        "I resolved 3 major ordering drop-off points by clarifying checkout flow, delivery zone selection, and pickup options.",
-        "I integrated the Google Maps API for real-time outlet lookup, cutting delivery address errors significantly.",
-        "I rebuilt the frontend in Next.js and Tailwind CSS to ensure sub-2-second load times even on low-bandwidth mobile connections."
+        "Checkout, delivery zones, and pickup options were where orders used to stall, so I smoothed out those three friction points first.",
+        "To cut down on delivery address errors, I integrated the Google Maps API for real-time outlet lookup.",
+        "Rebuilding the frontend in Next.js and Tailwind CSS got load times under two seconds, even on slower mobile connections."
       ]
     },
     {
       "role": "Freelance Technical Writer",
       "company": "freeCodeCamp",
       "period": "September 2021 - Present",
-      "summary": "I write long-form technical guides on modern React patterns, web performance, and developer tools, read by tens of thousands of engineers on freeCodeCamp News.",
+      "summary": "My long-form guides on React patterns, web performance, and developer tools appear on freeCodeCamp News, where tens of thousands of engineers have read them.",
       "highlights": [
-        "I unpack complex frontend concepts into practical, project-based tutorials with interactive code examples.",
-        "My published guides consistently rank on Google page 1 for core React and JavaScript topics."
+        "I break down tricky frontend topics through project-based walkthroughs and interactive code examples readers can try right away.",
+        "Several of my published guides consistently rank on Google page 1 for core React and JavaScript searches."
       ]
     },
     {
       "role": "Technical Writer & Editor",
       "company": "Hackmamba",
       "period": "March 2021 - September 2024",
-      "summary": "Over a 3+ year run, I authored, edited, and published 50+ technical articles and built interactive demo apps for international developer-tooling companies.",
+      "summary": "Developer-tooling teams around the world relied on the 50+ articles and interactive demo apps I wrote, edited, and built over three-plus years at Hackmamba.",
       "highlights": [
-        "I created 50+ in-depth tutorials, SDK integration guides, and API documentation for SaaS and devtools platforms.",
-        "I built production-grade demo repositories demonstrating third-party tools in real-world scenarios.",
-        "We organized global hackathons, reviewing and evaluating dozens of community project submissions."
+        "My writing covered 50+ in-depth tutorials, SDK integration guides, and API docs for SaaS and devtools platforms.",
+        "Rather than stopping at prose, I built working demo repositories showing how those tools fit into real projects.",
+        "We also ran global hackathons, where I helped review and evaluate dozens of community project submissions."
       ]
     },
     {
       "role": "Core Team Member",
       "company": "Google Developer Student Clubs",
       "period": "October 2021 - December 2024",
-      "summary": "As a core team lead at MOUAU, I organized workshops and practical bootcamps that introduced over 200 university students to software engineering.",
+      "summary": "At MOUAU, I helped introduce over 200 university students to software engineering through hands-on workshops and practical bootcamps.",
       "highlights": [
-        "I organized and facilitated hands-on web development bootcamps for 200+ students.",
-        "I provided one-on-one mentorship to aspiring developers preparing for their first tech internships.",
-        "We collaborated to host campus-wide tech conferences, hackathons, and networking sessions."
+        "We organized and ran practical web development bootcamps that took 200+ students from first lines of code to real projects.",
+        "Outside group sessions, I mentored aspiring developers one-on-one as they prepared for their first tech internships.",
+        "Together with fellow leads, I helped host campus-wide tech conferences, hackathons, and networking events."
       ]
     },
     {
       "role": "Junior Software Engineer",
       "company": "Truparse",
       "period": "February 2021 - July 2021",
-      "summary": "In a 6-month team engagement, I developed frontend features for web applications using TypeScript and React.js within 2-week agile sprint cycles.",
+      "summary": "On the engineering team at Truparse, I spent six months shipping React and TypeScript frontend features inside two-week agile sprints.",
       "highlights": [
-        "We shipped web features using agile sprint rituals, daily standups, and Git collaboration workflows.",
-        "I built responsive, accessible UI components with TypeScript, React.js, SASS, and CSS.",
-        "I wrote custom CSS solutions that modernized existing client WordPress platforms."
+        "Day to day, we worked through agile sprint rituals, daily standups, and collaborative Git workflows to get features into production.",
+        "I built responsive, accessible UI components in React and TypeScript that held up across screen sizes.",
+        "When client WordPress sites needed a refresh, I wrote custom CSS to modernize their look and layout."
       ]
     },
     {
       "role": "Frontend Developer Intern",
       "company": "PAYVEST GLOBAL",
       "period": "October 2020 - January 2021",
-      "summary": "Over a 4-month internship, I contributed production frontend code, earning team recognition for accelerating feature delivery within my first 2 months.",
+      "summary": "My first taste of production fintech came as a four-month intern, where I earned team recognition within two months for helping get features out faster.",
       "highlights": [
-        "I wrote modular HTML5, React.js, and CSS for client-facing financial product interfaces.",
-        "I paired with senior engineers to refactor legacy styles into clean, reusable CSS components.",
-        "We developed and launched company marketing sites using WordPress, Bootstrap, and SASS."
+        "My day-to-day work focused on modular HTML5, React.js, and CSS for customer-facing financial interfaces.",
+        "Pairing with senior engineers, I refactored legacy stylesheets into cleaner, reusable CSS components.",
+        "We also built and launched company marketing sites using WordPress, Bootstrap, and Sass."
       ]
     }
   ],
@@ -216,6 +254,13 @@
   ],
   "brands": [
     {
+      "image": "/images/brand-logos/bonjour-logo.webp",
+      "width": 256,
+      "height": 141,
+      "url": "https://bonjourquickbites.com",
+      "title": "Bonjour Quick Bites"
+    },
+    {
       "image": "/images/brand-logos/ighublogo.png",
       "width": 711,
       "height": 351,
@@ -233,7 +278,7 @@
       "image": "/images/brand-logos/alchemyofcodelogo.png",
       "width": 512,
       "height": 512,
-      "url": "https://alchemyofcode.pages.dev",
+      "url": "https://aoc.divineorji.com",
       "title": "Alchemy Of Code"
     },
     {
@@ -247,15 +292,8 @@
       "image": "/images/brand-logos/icon-ff3b3b.svg",
       "width": 121,
       "height": 125,
-      "url": "",
+      "url": "https://grooovy.fun",
       "title": "Grooovy"
-    },
-    {
-      "image": "/images/brand-logos/philsautologo.png",
-      "width": 100,
-      "height": 84,
-      "url": "",
-      "title": "Phils Auto"
     },
     {
       "image": "/images/brand-logos/kadric.png",
@@ -265,26 +303,12 @@
       "title": "Kadric Ltd"
     },
     {
-      "image": "/images/brand-logos/thebakistry.png",
-      "width": 2501,
-      "height": 1921,
-      "url": "https://thebakistry.ng",
-      "title": "The Bakistry"
-    },
-    {
       "image": "/images/brand-logos/tibc_logo.png",
       "width": 402,
       "height": 402,
       "url": "https://theirokocircle.org",
       "title": "The Iroko Circle",
       "invertInDarkMode": true
-    },
-    {
-      "image": "/images/brand-logos/sevenstarunisexbeautypalace.png",
-      "width": 331,
-      "height": 316,
-      "url": "https://7starunisexbeautypalace.com",
-      "title": "7Star Unisex Beauty Palace"
     }
   ],
   "projects": [
@@ -293,31 +317,71 @@
       "image": "/images/project-demos/crunchies.png",
       "client": "Crunchies Fried Chicken",
       "description": [
-        "I took the lead on this exciting project, where I completely redesigned the UI to make it more intuitive and visually appealing for users.",
-        "Using my skills in Next.js and Tailwind CSS, I built a responsive, fast-loading site that reflects my passion for performance optimization.",
-        "One of my favorite parts was integrating the Google Maps API—I added a feature that lets users pick their delivery location and find nearby Crunchies outlets with ease, enhancing the overall user experience."
+        "Crunchies Fried Chicken hired me to redesign its online ordering site over seven months. The redesign focused on checkout, especially how customers choose delivery or pickup and find the right outlet."
       ],
       "url": "https://crunchiesonline.com",
       "github": "",
       "featured": true,
       "tags": ["UI/UX", "Coding", "Next.js"],
-      "stack": ["Next.js", "Tailwind", "Google Maps API"],
+      "stack": ["Next.js", "Tailwind CSS", "Google Maps API", "Better Auth"],
       "slug": "crunchies-online"
+    },
+    {
+      "title": "Bonjour Quick Bites",
+      "image": "/images/project-demos/placeholder.png",
+      "client": "Bonjour Quick Bites",
+      "description": [
+        "An online storefront for ordering fresh bread, pastries, hot meals, and celebration cakes in Port Harcourt, with outlet pickup or doorstep delivery.",
+        "I built the platform end to end with Next.js and TypeScript, pairing Supabase for the database with Better Auth for authentication, while GitHub and Vercel handle version control and CI/CD.",
+        "For UI direction, I turned to Mobbin and leaned on its MCP server alongside the Vercel and GitHub MCP servers throughout development."
+      ],
+      "url": "https://bonjourquickbites.com",
+      "github": "",
+      "featured": true,
+      "tags": ["Food Ordering", "E-commerce", "Next.js"],
+      "stack": ["Next.js", "TypeScript", "Supabase", "Better Auth", "Git", "GitHub", "Vercel"],
+      "slug": "bonjour-quick-bites"
+    },
+    {
+      "title": "The Iroko Circle",
+      "image": "/images/project-demos/theirokocircle.png",
+      "client": "The Iroko Circle",
+      "description": [
+        "The Iroko Circle brings readers and writers together around African literature. Its website publishes new writing and gives visitors ways to submit work, join a chapter, and sign up for the newsletter."
+      ],
+      "url": "https://theirokocircle.org",
+      "github": "",
+      "featured": true,
+      "tags": ["Editorial", "Community", "Publishing"],
+      "stack": ["WordPress", "Editorial CMS", "Community Forms", "Better Auth"],
+      "slug": "the-iroko-circle"
+    },
+    {
+      "title": "Noma",
+      "image": "/images/project-demos/placeholder.png",
+      "client": "Noma",
+      "description": [
+        "Noma helps nurses prepare for their exams with flashcards for reviewing key concepts and quizzes for testing what they know."
+      ],
+      "url": "https://noma-study-prep.vercel.app",
+      "github": "",
+      "featured": true,
+      "tags": ["Nursing", "Exam Prep", "Education"],
+      "stack": ["Better Auth"],
+      "slug": "noma"
     },
     {
       "title": "Merphils",
       "image": "/images/project-demos/merphils.png",
       "client": "Merphils",
       "description": [
-        "Merphils is a unified education platform designed to connect school operations, family access, learner records, and future cross-school collaboration in one system.",
-        "The product is built around a single-account, context-aware identity model that lets one person move across multiple schools and roles such as owner, staff member, parent, or student without creating duplicate identities.",
-        "It is being shaped to support class management, assignments, grades, admissions, finance, and long-term academic history while keeping school data private by default and learner continuity intact over time."
+        "Merphils is a school management platform in development. The goal is to give staff tools for daily operations and let families and students access academic records without juggling separate accounts."
       ],
       "url": "https://merphils.com",
       "github": "",
-      "featured": true,
+      "featured": false,
       "tags": ["Education", "SaaS", "Multi-tenant"],
-      "stack": ["Next.js", "TypeScript", "Tailwind"],
+      "stack": ["Next.js", "TypeScript", "Tailwind CSS", "Better Auth"],
       "slug": "merphils"
     },
     {
@@ -325,96 +389,30 @@
       "image": "/images/project-demos/grooovy.png",
       "client": "Grooovy",
       "description": [
-        "Grooovy is a nightlife and social event discovery platform built to surface the plans that usually stay buried in group chats, stories, and word of mouth.",
-        "The experience combines a public vibe-first discovery flow with guided onboarding, Supabase-backed authentication, and a protected dashboard where users can manage plans, tickets, wallet activity, and hosting tools.",
-        "Across public event pages, RSVP and checkout flows, host workspaces, and admin views, the product is being designed to make the path from curiosity to commitment feel warm, cinematic, and fast."
+        "Grooovy is an event platform in development for finding nights out you might otherwise hear about through friends or group chats. It brings public event listings, ticketing, and host tools together."
       ],
-      "url": "#",
+      "url": "https://grooovy.fun",
+      "embeddable": false,
       "github": "",
-      "featured": true,
+      "featured": false,
       "tags": ["Events", "Consumer", "Platform"],
-      "stack": ["React", "Supabase", "GSAP"],
+      "stack": ["React", "Supabase", "Better Auth", "GSAP"],
       "slug": "grooovy"
     },
     {
-      "title": "Kadric Ltd",
-      "image": "/images/project-demos/kadric.png",
-      "client": "Kadric Ltd",
+      "title": "Alchemy Of Code",
+      "image": "/images/project-demos/alchemyofcode.png",
+      "client": "Alchemy Of Code",
       "description": [
-        "A UI improvement project for an existing industrial supplier website built with WordPress and Elementor.",
-        "I worked on an already-built brochure-style site, improving the interface, content placement, and overall clarity so the company's services and product range were easier to understand.",
-        "The updated forms give potential clients a clearer way to send enquiries, while the improved UI makes the site feel more polished, trustworthy, and easier to use."
+        "Alchemy Of Code is a learning platform based on my curriculum. It helps learners master software engineering fundamentals and become well-rounded builders who can take an idea from concept to working software.",
+        "The platform runs on Cloudflare, with Supabase for its database and Better Auth for authentication."
       ],
-      "url": "https://kadricltd.com",
-      "github": "",
-      "featured": false,
-      "tags": ["B2B", "Industrial", "Brochure Site"],
-      "stack": ["WordPress", "Elementor", "Responsive UI"],
-      "slug": "kadric-ltd"
-    },
-    {
-      "title": "The Iroko Circle",
-      "image": "/images/project-demos/theirokocircle.png",
-      "client": "The Iroko Circle",
-      "description": [
-        "The Iroko Circle is a literary community and editorial platform dedicated to reading, discussing, and amplifying African stories.",
-        "The website brings together essays, features, poetry, reviews, short stories, community join flows, chapter growth, submissions, and newsletter touchpoints in one clear publishing and community experience.",
-        "Its job is not just to publish content, but to make discovery, participation, and literary conversation feel welcoming for readers, writers, and supporters of African literature."
-      ],
-      "url": "https://theirokocircle.org",
+      "url": "https://aoc.divineorji.com",
       "github": "",
       "featured": true,
-      "tags": ["Editorial", "Community", "Publishing"],
-      "stack": ["WordPress", "Editorial CMS", "Community Forms"],
-      "slug": "the-iroko-circle"
-    },
-    {
-      "title": "The Bakistry",
-      "image": "/images/project-demos/thebakistry.png",
-      "client": "The Bakistry",
-      "description": [
-        "The Bakistry is a handcrafted cakes and treats brand built around fast delivery, premium presentation, and a warm storefront for everyday celebrations and special occasions.",
-        "The site combines category-led shopping, cart and checkout flows, featured products, and editorial content so customers can move easily from inspiration to order.",
-        "From Budget Express Cakes to custom gateaux, the experience is designed to balance appetite, speed, and visual delight without making the buying path feel heavy."
-      ],
-      "url": "https://thebakistry.ng",
-      "github": "",
-      "featured": true,
-      "tags": ["E-commerce", "Food", "Brand"],
-      "stack": ["WordPress", "WooCommerce", "Custom Theme"],
-      "slug": "the-bakistry"
-    },
-    {
-      "title": "The Developer Marketing Book",
-      "image": "/images/project-demos/devmarbook.png",
-      "client": "Decenta LLC",
-      "description": [
-        "The Developer Marketing Book is a focused launch site for a book on reaching and engaging developers through strategy, community, and partnerships.",
-        "The site brings together the core value proposition, book formats, audiobook promotion, testimonials, and author credibility in one fast marketing surface.",
-        "Its structure is intentionally tight: help the right reader understand the promise quickly, browse proof, and take a clear next step toward purchase or listening."
-      ],
-      "url": "https://devmarbook.vercel.app",
-      "github": "github.com/dpkreativ/devmarbook",
-      "featured": false,
-      "tags": ["Marketing", "Publishing", "Next.js"],
-      "stack": ["Next.js", "Tailwind", "Vercel"],
-      "slug": "the-developer-marketing-book"
-    },
-    {
-      "title": "7Star Unisex Beauty Palace",
-      "image": "/images/project-demos/sevenstarunisexbeautypalace.png",
-      "client": "7Star Unisex Beauty Palace",
-      "description": [
-        "7Star Unisex Beauty Palace is a Cairo-based hair studio specializing in professional dreadlocks, expert braiding, and dedicated hair care — from starter locs to protective styling.",
-        "The website was built to give the studio a professional digital presence that reflects its emphasis on healthy hair, proper technique, and personalized client care.",
-        "WhatsApp-based booking is integrated throughout the service pages so visitors can move from exploring treatments to scheduling an appointment in one smooth step, while client reviews, blog content, and product listings extend the relationship beyond the first visit."
-      ],
-      "url": "https://7starunisexbeautypalace.com",
-      "github": "",
-      "featured": true,
-      "tags": ["Beauty", "Service Business", "WordPress"],
-      "stack": ["WordPress", "Blocksy Theme", "WhatsApp API"],
-      "slug": "7star-unisex-beauty-palace"
+      "tags": ["Software Engineering", "Curriculum", "Education"],
+      "stack": ["Cloudflare", "Supabase", "Better Auth"],
+      "slug": "alchemy-of-code"
     }
   ],
   "navlinks": [

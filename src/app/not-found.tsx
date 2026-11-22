@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import SparkleBackground from "@/components/sparkle-background";
 
 export const metadata: Metadata = {
   title: "Not Found",
@@ -11,10 +12,13 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <main className="flex flex-col items-center justify-center h-screen p-5">
-      <h2>We&apos;re still working on this page</h2>
-      {/* <p>Could not find requested resource</p> */}
-      <Link href="/">Return Home</Link>
+    <main className="flex flex-col items-center justify-center h-screen p-5 relative overflow-hidden">
+      <div className="relative w-fit">
+        <SparkleBackground variant="compass" size={28} />
+        <h1>Page not found</h1>
+      </div>
+      <p>The page may have moved, or the address may be incorrect.</p>
+      <Link href="/">Return home</Link>
     </main>
   );
 }

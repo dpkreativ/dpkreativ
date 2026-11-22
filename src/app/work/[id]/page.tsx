@@ -4,7 +4,6 @@ import { ArrowIcon } from "@/assets/icons";
 import Button from "@/components/button";
 import FloatingBackLink from "@/components/floating-back-link";
 import MoreWorkRecommendations from "@/components/more-work-recommendations";
-import RevealText from "@/components/reveal-text";
 import SplitHeading from "@/components/split-heading";
 import MiniBrowserIframe from "@/components/mini-browser-iframe";
 import Image from "next/image";
@@ -12,6 +11,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import React from "react";
 import { SITE_OG_IMAGE, SITE_URL } from "@/lib/site";
+import SparkleBackground from "@/components/sparkle-background";
 
 const PLACEHOLDER_IMAGE = "/images/project-demos/placeholder.png";
 
@@ -105,12 +105,15 @@ export default async function Page({ params }: PageProps) {
         {/* Case Study Header Grid */}
         <section className="grid lg:grid-cols-[minmax(0,1.25fr)_minmax(300px,0.75fr)] gap-10 md:gap-14 items-start">
           <div className="grid gap-6">
-            <SplitHeading
-              as="h1"
-              className="font-display text-4xl sm:text-6xl md:text-7xl uppercase tracking-tighter leading-[0.88] text-black dark:text-white"
-            >
-              {project.title}
-            </SplitHeading>
+            <div className="relative w-fit max-w-full">
+              <SparkleBackground variant="lightning" size={34} />
+              <SplitHeading
+                as="h1"
+                className="font-display text-3xl sm:text-6xl md:text-7xl uppercase tracking-tighter leading-[0.88] text-black dark:text-white"
+              >
+                {project.title}
+              </SplitHeading>
+            </div>
 
             <p className="max-w-3xl font-body text-base sm:text-lg md:text-xl leading-relaxed text-black/75 dark:text-zinc-300">
               {project.caseStudy.headline}
@@ -132,7 +135,7 @@ export default async function Page({ params }: PageProps) {
                 {liveUrl ? (
                   <a href={liveUrl} target="_blank" rel="noreferrer">
                     <Button className="!px-6 !py-3 !text-xs font-mono font-bold tracking-widest uppercase">
-                      <span>Visit Live Site</span>
+                      <span>Visit project website</span>
                       <i className="ri-external-link-line" />
                     </Button>
                   </a>
@@ -141,7 +144,7 @@ export default async function Page({ params }: PageProps) {
                 {githubUrl ? (
                   <a href={githubUrl} target="_blank" rel="noreferrer">
                     <Button className="!bg-white !text-black dark:!bg-black dark:!text-white !border-black dark:!border-white/20 hover:!bg-zinc-100 dark:hover:!bg-zinc-900 !px-6 !py-3 !text-xs font-mono font-bold tracking-widest uppercase">
-                      <span>View GitHub</span>
+                      <span>View source on GitHub</span>
                       <i className="ri-github-line" />
                     </Button>
                   </a>
@@ -162,34 +165,38 @@ export default async function Page({ params }: PageProps) {
                 </p>
               </div>
 
-              <div className="grid gap-1 border-t border-black/10 dark:border-white/10 pt-4">
-                <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-zinc-500 dark:text-zinc-400 font-bold">
-                  Role
-                </p>
-                <p className="font-body text-base leading-relaxed text-black/80 dark:text-zinc-300">
-                  {project.caseStudy.role}
-                </p>
-              </div>
-
-              <div className="grid gap-2 border-t border-black/10 dark:border-white/10 pt-4">
-                <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-zinc-500 dark:text-zinc-400 font-bold">
-                  Services
-                </p>
-                <div className="flex flex-wrap gap-1.5">
-                  {project.caseStudy.services.map((service) => (
-                    <span
-                      key={service}
-                      className="border border-black/10 bg-zinc-100 px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-black dark:border-white/15 dark:bg-black dark:text-white"
-                    >
-                      {service}
-                    </span>
-                  ))}
+              {project.caseStudy.role && (
+                <div className="grid gap-1 border-t border-black/10 dark:border-white/10 pt-4">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-zinc-500 dark:text-zinc-400 font-bold">
+                    Role
+                  </p>
+                  <p className="font-body text-base leading-relaxed text-black/80 dark:text-zinc-300">
+                    {project.caseStudy.role}
+                  </p>
                 </div>
-              </div>
+              )}
+
+              {project.caseStudy.services && project.caseStudy.services.length > 0 && (
+                <div className="grid gap-2 border-t border-black/10 dark:border-white/10 pt-4">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-zinc-500 dark:text-zinc-400 font-bold">
+                    Services
+                  </p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {project.caseStudy.services.map((service) => (
+                      <span
+                        key={service}
+                        className="border border-black/10 bg-zinc-100 px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-black dark:border-white/15 dark:bg-black dark:text-white"
+                      >
+                        {service}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               <div className="grid gap-2 border-t border-black/10 dark:border-white/10 pt-4">
                 <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-zinc-500 dark:text-zinc-400 font-bold">
-                  Stack
+                  Technologies
                 </p>
                 <div className="flex flex-wrap gap-1.5">
                   {project.stack.map((item) => (
@@ -208,30 +215,36 @@ export default async function Page({ params }: PageProps) {
 
         {/* Telemetry & Impact Metrics Strip */}
         <section className="grid grid-cols-2 gap-4 sm:grid-cols-4 border-y border-black/15 py-6 dark:border-white/15">
-          <div className="flex flex-col gap-1 border-r border-black/10 pr-4 dark:border-white/10">
-            <span className="font-mono text-[10px] uppercase tracking-widest text-zinc-500 dark:text-zinc-400 font-bold">
-              [ TIMELINE ]
-            </span>
-            <span className="font-display text-2xl uppercase tracking-tight text-black dark:text-white">
-              {project.caseStudy.timeline || "2024"}
-            </span>
-          </div>
-          <div className="flex flex-col gap-1 sm:border-r border-black/10 pr-4 dark:border-white/10">
-            <span className="font-mono text-[10px] uppercase tracking-widest text-zinc-500 dark:text-zinc-400 font-bold">
-              [ ROLE SCOPE ]
-            </span>
-            <span className="font-display text-2xl uppercase tracking-tight text-black dark:text-white truncate">
-              {project.caseStudy.role.split(" ")[0]}
-            </span>
-          </div>
-          <div className="flex flex-col gap-1 border-r border-black/10 pr-4 dark:border-white/10">
-            <span className="font-mono text-[10px] uppercase tracking-widest text-zinc-500 dark:text-zinc-400 font-bold">
-              [ SERVICES ]
-            </span>
-            <span className="font-display text-2xl uppercase tracking-tight text-black dark:text-white">
-              {project.caseStudy.services.length} Tracks
-            </span>
-          </div>
+          {project.caseStudy.timeline && (
+            <div className="flex flex-col gap-1 border-r border-black/10 pr-4 dark:border-white/10">
+              <span className="font-mono text-[10px] uppercase tracking-widest text-zinc-500 dark:text-zinc-400 font-bold">
+                [ TIMELINE ]
+              </span>
+              <span className="font-display text-2xl uppercase tracking-tight text-black dark:text-white">
+                {project.caseStudy.timeline}
+              </span>
+            </div>
+          )}
+          {project.caseStudy.role && (
+            <div className="flex flex-col gap-1 sm:border-r border-black/10 pr-4 dark:border-white/10">
+              <span className="font-mono text-[10px] uppercase tracking-widest text-zinc-500 dark:text-zinc-400 font-bold">
+                [ ROLE SCOPE ]
+              </span>
+              <span className="font-display text-2xl uppercase tracking-tight text-black dark:text-white truncate">
+                {project.caseStudy.role.split(" ")[0]}
+              </span>
+            </div>
+          )}
+          {project.caseStudy.services && project.caseStudy.services.length > 0 && (
+            <div className="flex flex-col gap-1 border-r border-black/10 pr-4 dark:border-white/10">
+              <span className="font-mono text-[10px] uppercase tracking-widest text-zinc-500 dark:text-zinc-400 font-bold">
+                [ SERVICES ]
+              </span>
+              <span className="font-display text-2xl uppercase tracking-tight text-black dark:text-white">
+                {project.caseStudy.services.length} Tracks
+              </span>
+            </div>
+          )}
           <div className="flex flex-col gap-1">
             <span className="font-mono text-[10px] uppercase tracking-widest text-zinc-500 dark:text-zinc-400 font-bold">
               [ STATUS ]
@@ -248,6 +261,7 @@ export default async function Page({ params }: PageProps) {
             <MiniBrowserIframe
               url={liveUrl}
               title={project.title}
+              embeddable={project.embeddable}
               fallbackImage={hasProjectVisual ? project.image : undefined}
               containerClassName="w-full aspect-[16/10] sm:aspect-[16/9] min-h-[460px] sm:min-h-[580px] lg:min-h-[680px]"
               priority
@@ -256,14 +270,23 @@ export default async function Page({ params }: PageProps) {
         )}
 
         {/* Overview and Goals Row */}
-        <section className="grid gap-8 md:gap-10 items-start lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
+        <section
+          className={`grid gap-8 md:gap-10 items-start ${
+            project.caseStudy.goals && project.caseStudy.goals.length > 0
+              ? "lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]"
+              : ""
+          }`}
+        >
           <article className="grid gap-5 border border-black/15 bg-white p-6 dark:border-white/15 dark:bg-[#0A0A0A] md:p-10">
-            <SplitHeading
-              as="h2"
-              className="font-display text-3xl md:text-4xl uppercase tracking-tighter leading-none"
-            >
-              Project Overview.
-            </SplitHeading>
+            <div className="relative w-fit max-w-full">
+              <SparkleBackground variant="target" size={26} />
+              <SplitHeading
+                as="h2"
+                className="font-display text-2xl sm:text-3xl md:text-4xl uppercase tracking-tighter leading-none"
+              >
+                About the project
+              </SplitHeading>
+            </div>
 
             <div className="grid gap-4 font-body text-base leading-relaxed text-black/75 dark:text-zinc-300 md:text-lg">
               {project.description.map((paragraph) => (
@@ -272,52 +295,56 @@ export default async function Page({ params }: PageProps) {
             </div>
           </article>
 
-          <article className="grid gap-5 border border-black/15 bg-white p-6 dark:border-white/15 dark:bg-[#0A0A0A] md:p-10">
-            <SplitHeading
-              as="h2"
-              className="font-display text-3xl md:text-4xl uppercase tracking-tighter leading-none"
-            >
-              Strategic Goals.
-            </SplitHeading>
+          {project.caseStudy.goals && project.caseStudy.goals.length > 0 && (
+            <article className="grid gap-5 border border-black/15 bg-white p-6 dark:border-white/15 dark:bg-[#0A0A0A] md:p-10">
+              <SplitHeading
+                as="h2"
+                className="font-display text-2xl sm:text-3xl md:text-4xl uppercase tracking-tighter leading-none"
+              >
+                Project goals
+              </SplitHeading>
 
-            <ul className="grid gap-4 font-body text-base leading-relaxed text-black/75 dark:text-zinc-300 md:text-lg">
-              {project.caseStudy.goals.map((goal, idx) => (
-                <li key={goal} className="flex gap-3 items-start">
-                  <span className="mt-1 font-mono text-xs font-bold text-zinc-400">
-                    {`[0${idx + 1}]`}
-                  </span>
-                  <span>{goal}</span>
-                </li>
-              ))}
-            </ul>
-          </article>
+              <ul className="grid gap-4 font-body text-base leading-relaxed text-black/75 dark:text-zinc-300 md:text-lg">
+                {project.caseStudy.goals.map((goal, idx) => (
+                  <li key={goal} className="flex gap-3 items-start">
+                    <span className="mt-1 font-mono text-xs font-bold text-zinc-400">
+                      {`[0${idx + 1}]`}
+                    </span>
+                    <span>{goal}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          )}
         </section>
 
         {/* Engineering Process & Architecture Phases */}
         {project.caseStudy.process && project.caseStudy.process.length > 0 && (
           <section className="grid gap-8">
             <div className="border-b border-black/15 pb-6 dark:border-white/15">
-              <SplitHeading
-                as="h2"
-                className="font-display text-3xl md:text-5xl uppercase tracking-tighter leading-none"
-              >
-                Engineering Process.
-              </SplitHeading>
+              <div className="relative w-fit max-w-full">
+                <SparkleBackground variant="terminal" size={28} />
+                <SplitHeading
+                  as="h2"
+                  className="font-display text-2xl sm:text-3xl md:text-5xl uppercase tracking-tighter leading-none"
+                >
+                  How I approached the project
+                </SplitHeading>
+              </div>
             </div>
 
             <div className="grid gap-6 md:grid-cols-2">
-              {project.caseStudy.process.map((step, idx) => (
+              {project.caseStudy.process.map((step) => (
                 <article
                   key={step.title}
                   className="flex flex-col justify-between border border-black/15 bg-white p-6 dark:border-white/15 dark:bg-[#0A0A0A] md:p-8"
                 >
                   <div>
-                    <div className="flex items-center justify-between gap-4 font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-zinc-500 dark:text-zinc-400">
-                      <span>{step.eyebrow}</span>
-                      <span>{`[PHASE 0${idx + 1}]`}</span>
-                    </div>
+                    <p className="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-zinc-500 dark:text-zinc-400">
+                      {step.eyebrow}
+                    </p>
 
-                    <h3 className="mt-4 font-display text-2xl uppercase tracking-tight text-black dark:text-white">
+                    <h3 className="mt-4 font-display text-xl sm:text-2xl uppercase tracking-tight text-black dark:text-white">
                       {step.title}
                     </h3>
 
@@ -337,15 +364,15 @@ export default async function Page({ params }: PageProps) {
         {project.caseStudy.results && project.caseStudy.results.length > 0 && (
           <section className="grid gap-8">
             <div className="flex flex-col gap-2 border-b border-black/15 pb-6 dark:border-white/15">
-              <span className="font-mono text-[10px] font-bold uppercase tracking-[0.24em] text-zinc-500 dark:text-zinc-400">
-                DELIVERABLES & METRICS
-              </span>
-              <SplitHeading
-                as="h2"
-                className="font-display text-3xl md:text-5xl uppercase tracking-tighter leading-none"
-              >
-                Measurable Outcomes.
-              </SplitHeading>
+              <div className="relative w-fit max-w-full">
+                <SparkleBackground variant="trophy" size={28} />
+                <SplitHeading
+                  as="h2"
+                  className="font-display text-2xl sm:text-3xl md:text-5xl uppercase tracking-tighter leading-none"
+                >
+                  Project results
+                </SplitHeading>
+              </div>
             </div>
 
             <div className="grid gap-6 sm:grid-cols-3">
@@ -370,7 +397,7 @@ export default async function Page({ params }: PageProps) {
         {project.caseStudy.reflection && (
           <section className="border border-black/15 bg-black/[0.02] p-8 dark:border-white/15 dark:bg-white/[0.02] md:p-12">
             <p className="font-display text-xl sm:text-2xl md:text-3xl uppercase tracking-tight leading-snug text-black dark:text-white">
-              &quot;{project.caseStudy.reflection}&quot;
+              {project.caseStudy.reflection}
             </p>
           </section>
         )}
@@ -415,18 +442,15 @@ export default async function Page({ params }: PageProps) {
         {/* More Work Archive */}
         <section className="grid gap-8 pt-6">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 border-b border-black/15 pb-6 dark:border-white/15">
-            <SplitHeading
-              as="h2"
-              className="font-display text-3xl md:text-5xl uppercase tracking-tighter leading-none"
-            >
-              More Work.
-            </SplitHeading>
-            <RevealText
-              as="p"
-              className="font-mono text-xs uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400 font-bold"
-            >
-              Explore the rest of the archive.
-            </RevealText>
+            <div className="relative w-fit max-w-full">
+              <SparkleBackground variant="layers" size={28} />
+              <SplitHeading
+                as="h2"
+                className="font-display text-2xl sm:text-3xl md:text-5xl uppercase tracking-tighter leading-none"
+              >
+                More projects
+              </SplitHeading>
+            </div>
           </div>
 
           <MoreWorkRecommendations projects={relatedProjects} seed={project.slug} />
