@@ -6,6 +6,7 @@ import {
   showreelProjects,
 } from "@/assets/data";
 import { ArrowIcon } from "@/assets/icons";
+import SparkleBackground from "@/components/sparkle-background";
 import { useGSAP } from "@gsap/react";
 import BlogPreview from "@/components/blog-preview";
 import Button from "@/components/button";
@@ -63,6 +64,7 @@ export default function Home() {
       ref={container}
       className="w-full overflow-hidden bg-white text-[#111111] dark:bg-[#111111] dark:text-white"
     >
+      <SparkleBackground />
       <section className="relative pt-[84px] border-b border-black/10 dark:border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,0,0,0.03),transparent_35%),radial-gradient(circle_at_top_left,rgba(0,0,0,0.02),transparent_25%)] dark:bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.04),transparent_35%),radial-gradient(circle_at_top_left,rgba(255,255,255,0.02),transparent_25%)]" />
 

@@ -20,6 +20,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Link from "next/link";
 import { useMemo, useRef } from "react";
+import SparkleBackground from "@/components/sparkle-background";
 
 export default function About() {
   const container = useRef(null);
@@ -40,6 +41,7 @@ export default function About() {
 
   return (
     <main ref={container} className="flex-1 w-full flex flex-col pt-[84px] bg-white text-[#111111] dark:bg-[#111111] dark:text-white">
+      <SparkleBackground />
       {/* Decorative Grid Background */}
       <div
         className="fixed inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none -z-10"

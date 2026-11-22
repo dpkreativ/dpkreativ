@@ -1,10 +1,12 @@
 import { projects } from "@/assets/data";
 import { ProjectCard } from "@/components/cards";
 import RevealText from "@/components/reveal-text";
+import SparkleBackground from "@/components/sparkle-background";
 
 export default function Work() {
   return (
     <main className="flex-1 w-full flex flex-col pt-[84px] bg-white text-[#111111] dark:bg-[#111111] dark:text-white">
+      <SparkleBackground />
       {/* Decorative Grid Background */}
       <div
         className="fixed inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none -z-10"

@@ -4,6 +4,7 @@ import { useState } from "react";
 import SplitHeading from "@/components/split-heading";
 import ContactForm from "@/components/form";
 import { contact } from "@/assets/data";
+import SparkleBackground from "@/components/sparkle-background";
 
 export default function ContactClient() {
   const [copied, setCopied] = useState(false);
@@ -16,6 +17,7 @@ export default function ContactClient() {
 
   return (
     <main className="flex-1 w-full flex flex-col pt-[84px] bg-white text-[#111111] dark:bg-[#111111] dark:text-white">
+      <SparkleBackground />
       {/* Decorative Grid Background */}
       <div
         className="fixed inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none -z-10"

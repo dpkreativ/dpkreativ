@@ -6,6 +6,18 @@
   .text-balance {
     text-wrap: balance;
   }
+  @keyframes sparkle-float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  .animate-sparkle-float {
+    animation: sparkle-float 7s ease-in-out infinite;
+  }
   @keyframes showreel-progress {
     from {
       transform: scaleX(0);

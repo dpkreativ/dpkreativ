@@ -11,6 +11,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import React from "react";
 import { SITE_OG_IMAGE, SITE_URL } from "@/lib/site";
+import SparkleBackground from "@/components/sparkle-background";
 
 const PLACEHOLDER_IMAGE = "/images/project-demos/placeholder.png";
 
@@ -89,6 +90,7 @@ export default async function Page({ params }: PageProps) {
 
   return (
     <main className="flex-1 w-full flex flex-col pt-[84px] bg-white text-[#111111] dark:bg-[#111111] dark:text-white">
+      <SparkleBackground />
       <div
         className="fixed inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none -z-10"
         style={{

@@ -7,6 +7,7 @@ import SplitHeading from "@/components/split-heading";
 import { useMemo, useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import SparkleBackground from "@/components/sparkle-background";
 
 export default function BlogArchive({ posts }: { posts: HashnodePost[] }) {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -45,6 +46,7 @@ export default function BlogArchive({ posts }: { posts: HashnodePost[] }) {
 
   return (
     <main ref={container} className="flex-1 w-full flex flex-col pt-[84px]">
+      <SparkleBackground />
       <div
         className="fixed inset-0 -z-10 opacity-[0.03] dark:opacity-[0.05] pointer-events-none"
         style={{
