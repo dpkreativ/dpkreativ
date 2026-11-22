@@ -10,6 +10,8 @@ export interface MiniBrowserIframeProps {
   className?: string;
   containerClassName?: string;
   initialMode?: "live" | "screenshot";
+  liveLoading?: "lazy" | "eager" | "deferred";
+  onLiveReadyChange?: (isReady: boolean) => void;
   onInteractionChange?: (isInteracting: boolean) => void;
   priority?: boolean;
   showCrosshairs?: boolean;
@@ -38,6 +40,8 @@ export default function MiniBrowserIframe({
   className = "",
   containerClassName = "",
   initialMode = "live",
+  liveLoading = "lazy",
+  onLiveReadyChange,
   onInteractionChange,
   priority = false,
   showCrosshairs = true,
@@ -81,14 +85,34 @@ export default function MiniBrowserIframe({
     setIsLoading(true);
     setHasError(false);
     setReloadKey((prev) => prev + 1);
-  }, []);
+    onLiveReadyChange?.(false);
+  }, [onLiveReadyChange]);
 
   const handleSwitchMode = (newMode: "live" | "screenshot") => {
     if (newMode === "screenshot" && isInteracting) {
       handleInteractionToggle(false);
     }
+    if (newMode === "screenshot" && mode === "live") {
+      onLiveReadyChange?.(false);
+    }
+    if (newMode === "live" && mode !== "live") {
+      setIsLoading(true);
+      setHasError(false);
+    }
     setMode(newMode);
   };
+
+  const isWaitingForLive = isLoading || liveLoading === "deferred";
+  const capture = fallbackImage && (
+    <Image
+      src={fallbackImage}
+      alt={mode === "live" ? "" : title}
+      fill
+      priority={priority}
+      sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+      className="object-cover object-top transition-transform duration-700 hover:scale-[1.02]"
+    />
+  );
 
   return (
     <div
@@ -232,11 +256,12 @@ export default function MiniBrowserIframe({
         {hasLiveUrl && mode === "live" ? (
           <>
             {/* Loading Indicator */}
-            {isLoading && (
-              <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 bg-zinc-100/90 backdrop-blur-sm dark:bg-zinc-950/90">
-                <div className="h-6 w-6 animate-spin border-2 border-black/20 border-t-black dark:border-white/20 dark:border-t-white" />
-                <p className="font-mono text-[10px] uppercase tracking-widest text-zinc-600 dark:text-zinc-400">
-                  Fetching {cleanDomain}...
+            {isWaitingForLive && capture}
+            {isLoading && liveLoading !== "deferred" && (
+              <div className="pointer-events-none absolute inset-0 z-10 flex items-end justify-center p-4">
+                <p role="status" className="flex items-center gap-2 border border-black/15 bg-white px-3 py-1.5 font-mono text-[10px] uppercase tracking-widest text-zinc-600 dark:border-white/15 dark:bg-black dark:text-zinc-400">
+                  <span aria-hidden="true" className="h-3 w-3 animate-spin border-2 border-current border-t-transparent" />
+                  Loading live preview…
                 </p>
               </div>
             )}
@@ -269,25 +294,33 @@ export default function MiniBrowserIframe({
             )}
 
             {/* The Live Iframe */}
-            <iframe
-              key={reloadKey}
-              src={targetUrl}
-              title={`${title} Live Site Preview`}
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
-              onLoad={() => setIsLoading(false)}
-              onError={() => {
-                setIsLoading(false);
-                setHasError(true);
-              }}
-              className={`h-full w-full border-0 transition-opacity duration-500 ${
-                isLoading ? "opacity-0" : "opacity-100"
-              } ${isInteracting ? "pointer-events-auto" : "pointer-events-none"}`}
-            />
+            {liveLoading !== "deferred" && (
+              <iframe
+                key={reloadKey}
+                src={targetUrl}
+                title={`${title} Live Site Preview`}
+                loading={liveLoading}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+                tabIndex={isInteracting && !isWaitingForLive ? 0 : -1}
+                onLoad={() => {
+                  setIsLoading(false);
+                  setHasError(false);
+                  onLiveReadyChange?.(true);
+                }}
+                onError={() => {
+                  setIsLoading(false);
+                  setHasError(true);
+                  onLiveReadyChange?.(false);
+                }}
+                className={`h-full w-full border-0 ${
+                  isLoading ? "opacity-0" : "opacity-100"
+                } ${isInteracting ? "pointer-events-auto" : "pointer-events-none"}`}
+              />
+            )}
 
             {/* Scroll Shield & Interaction Layer */}
-            {!isInteracting ? (
+            {!isWaitingForLive && !hasError && (!isInteracting ? (
               <div
                 onClick={() => handleInteractionToggle(true)}
                 className="group/shield absolute inset-0 z-20 flex cursor-pointer items-end justify-center bg-black/[0.01] p-4 transition-colors hover:bg-black/[0.04] dark:hover:bg-white/[0.03]"
@@ -317,17 +350,10 @@ export default function MiniBrowserIframe({
                   <span>Lock Scroll</span>
                 </button>
               </div>
-            )}
+            ))}
           </>
         ) : fallbackImage ? (
-          <Image
-            src={fallbackImage}
-            alt={title}
-            fill
-            priority={priority}
-            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
-            className="object-cover object-top transition-transform duration-700 hover:scale-[1.02]"
-          />
+          capture
         ) : (
           <div className="flex h-full w-full items-center justify-center font-mono text-xs uppercase tracking-widest text-zinc-400">
             Preview Unavailable
