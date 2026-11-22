@@ -35,7 +35,7 @@ export default function ContactClient() {
             as="h1"
             className="font-display text-4xl sm:text-6xl md:text-7xl uppercase tracking-tighter leading-[0.88] text-black dark:text-white"
           >
-            Contact
+            Contact Me
           </SplitHeading>
         </header>
 
