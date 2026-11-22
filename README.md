@@ -52,8 +52,8 @@ I specialize in **Next.js, TypeScript, React, and scalable frontend architecture
 
 - **[Crunchies Online](https://crunchiesonline.com)** — Multi-outlet food ordering platform across Nigeria with Google Maps routing.
 - **[The Iroko Circle](https://theirokocircle.org)** — Publishing network and essay engine for African literature.
-- **[Grooovy](https://dpkreativ.vercel.app/work/grooovy)** — Event ticketing and host analytics platform with Supabase auth.
-- **[The Bakistry](https://thebakistry.ng)** — Confectionery storefront balancing rapid mobile conversion and custom ordering.
+- **[Grooovy](https://grooovy.fun)** — Event discovery, ticketing, and host tools, with Better Auth for sign-in.
+- **[Bonjour Quick Bites](https://bonjourquickbites.com)** — Online bakery and hot meal ordering for pickup or delivery in Port Harcourt.
 
 ---
 
