@@ -126,7 +126,7 @@ export default async function Page({ params }: PageProps) {
   const previewContainerClassName =
     liveUrl && !project.embeddable
       ? "w-full min-h-[240px] sm:min-h-[320px] lg:min-h-[400px]"
-      : "w-full aspect-[4/3] sm:aspect-[16/9] min-h-[300px] sm:min-h-[460px] lg:min-h-[640px]";
+      : "w-full aspect-[3/4] sm:aspect-[16/9] min-h-[460px] sm:min-h-[460px] lg:min-h-[640px]";
 
   return (
     <main className="flex-1 w-full min-w-0 flex flex-col pt-[72px] sm:pt-[84px] bg-white text-[#111111] dark:bg-[#111111] dark:text-white">

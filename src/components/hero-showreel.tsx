@@ -172,7 +172,7 @@ export default function HeroShowreel({ projects }: HeroShowreelProps) {
       </div>
 
       {/* Main Visual Display */}
-      <div ref={previewRef} className="relative aspect-[16/10] sm:aspect-[16/9] lg:aspect-[16/8] min-h-[380px] sm:min-h-[460px] lg:min-h-[520px] w-full overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+      <div ref={previewRef} className="relative aspect-[3/4] sm:aspect-[16/9] lg:aspect-[16/8] min-h-[460px] sm:min-h-[460px] lg:min-h-[520px] w-full overflow-hidden bg-zinc-100 dark:bg-zinc-900">
         {/* Keep the next slide in the same DOM position when it becomes active,
             since moving an iframe can reload it even if its React key is stable. */}
         {featured.map((project, index) => {

@@ -32,6 +32,7 @@ describe("Work Page", () => {
 
     const crunchiesIframe = screen.getByTitle("Crunchies Online Live Site Preview");
     expect(crunchiesIframe).toHaveAttribute("src", "https://crunchiesonline.com");
+    expect(crunchiesIframe.closest(".aspect-\\[3\\/4\\]")).toHaveClass("min-h-[440px]", "sm:aspect-[4/3]");
 
     const bonjourIframe = screen.getByTitle("Bonjour Quick Bites Live Site Preview");
     expect(bonjourIframe).toHaveAttribute("src", "https://bonjourquickbites.com");
@@ -91,7 +92,7 @@ describe("Work Page", () => {
     expect(prevLink.querySelector("div")).toHaveClass("flex-col", "lg:flex-row");
 
     const previewFrame = container.querySelector(".group\\/minibrowser");
-    expect(previewFrame).toHaveClass("aspect-[4/3]", "sm:aspect-[16/9]", "min-h-[300px]");
+    expect(previewFrame).toHaveClass("aspect-[3/4]", "sm:aspect-[16/9]", "min-h-[460px]");
   });
 
   it("adapts telemetry strip layout for 3-metric and 1-metric projects", async () => {

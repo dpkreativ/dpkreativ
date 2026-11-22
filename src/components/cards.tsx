@@ -26,7 +26,7 @@ export function ProjectCard({ title, tags, url, embeddable, link, brand }: Proje
         url={url}
         title={title}
         embeddable={embeddable}
-        containerClassName="aspect-[4/3] w-full border-0 border-b"
+        containerClassName="aspect-[3/4] min-h-[440px] sm:aspect-[4/3] sm:min-h-0 w-full border-0 border-b"
         showCrosshairs={false}
       />
 
