@@ -34,11 +34,6 @@ I also write technical guides on **[my blog](https://divineorji.com/blog)** (alo
 
 <p align="left">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=dpkreativ&show_icons=true&theme=dark&bg_color=111111&title_color=ffffff&text_color=a1a1aa&icon_color=ffffff&border_color=27272a" />
-    <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api?username=dpkreativ&show_icons=true&theme=default&bg_color=fafafa&title_color=111111&text_color=52525b&icon_color=111111&border_color=e4e4e7" />
-    <img src="https://github-readme-stats.vercel.app/api?username=dpkreativ&show_icons=true&theme=default" alt="Divine Orji's GitHub Stats" />
-  </picture>
-  <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=dpkreativ&layout=compact&bg_color=111111&title_color=ffffff&text_color=a1a1aa&border_color=27272a" />
     <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=dpkreativ&layout=compact&bg_color=fafafa&title_color=111111&text_color=52525b&border_color=e4e4e7" />
     <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=dpkreativ&layout=compact" alt="Top Languages" />
