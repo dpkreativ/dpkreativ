@@ -55,11 +55,11 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-white dark:bg-[#111111] text-[#111111] dark:text-white w-full border-t border-black/10 dark:border-white/10">
+    <footer className="w-full border-t border-white/10 bg-[#111111] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Conditional Closing CTA Banner (suppressed on /contact) */}
         {!isContactPage && (
-          <div className="grid items-center justify-items-center gap-8 border-b border-black/10 py-14 text-center dark:border-white/10 md:py-20 lg:grid-cols-[minmax(0,1fr)_auto] lg:justify-items-start lg:gap-12 lg:text-left">
+          <div className="grid items-center justify-items-center gap-8 border-b border-white/10 py-14 text-center md:py-20 lg:grid-cols-[minmax(0,1fr)_auto] lg:justify-items-start lg:gap-12 lg:text-left">
             <div>
               <SplitHeading
                 as="h2"
@@ -67,13 +67,13 @@ export default function Footer() {
               >
                 Work with me
               </SplitHeading>
-              <RevealText noSplit className="mx-auto mt-4 max-w-xl text-balance font-body text-base leading-relaxed text-zinc-600 dark:text-zinc-400 md:text-lg md:leading-relaxed lg:mx-0">
+              <RevealText noSplit className="mx-auto mt-4 max-w-xl text-balance font-body text-base leading-relaxed text-zinc-400 md:text-lg md:leading-relaxed lg:mx-0">
                 Tell me what you want to build or what isn’t working with your current site.
               </RevealText>
             </div>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 whitespace-nowrap border border-black bg-black px-7 py-3.5 font-mono text-xs font-bold uppercase tracking-widest text-white transition-colors hover:border-zinc-800 hover:bg-zinc-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black dark:border-white/25 dark:bg-zinc-200 dark:text-zinc-950 dark:hover:border-white/40 dark:hover:bg-white dark:focus-visible:outline-white"
+              className="inline-flex items-center gap-2 whitespace-nowrap border border-white/25 bg-zinc-200 px-7 py-3.5 font-mono text-xs font-bold uppercase tracking-widest text-zinc-950 transition-colors hover:border-white/40 hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
             >
               Get in touch
               <i aria-hidden="true" className="ri-arrow-right-up-line" />
@@ -89,20 +89,20 @@ export default function Footer() {
                 alt="Divine Orji logo"
                 width={24}
                 height={24}
-                className="dark:invert"
+                className="invert"
               />
-              <span className="font-mono text-xs font-bold uppercase tracking-widest text-black dark:text-white">
+              <span className="font-mono text-xs font-bold uppercase tracking-widest">
                 Divine Orji
               </span>
             </Link>
-            <p className="font-body text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed max-w-xs">
+            <p className="font-body text-xs text-zinc-400 leading-relaxed max-w-xs">
               Software engineer and technical writer at The Kreativ Studio.
             </p>
           </div>
 
           {navSections.map((section) => (
             <div key={section.title} className="w-full flex flex-col text-left">
-              <span className="font-mono font-bold uppercase tracking-widest text-[10px] text-zinc-500 dark:text-zinc-400 mb-5">
+              <span className="font-mono font-bold uppercase tracking-widest text-[10px] text-zinc-400 mb-5">
                 {section.title}
               </span>
               <ul className="space-y-3 font-mono text-xs uppercase">
@@ -113,17 +113,17 @@ export default function Footer() {
                         href={link.url}
                         target="_blank"
                         rel="noreferrer"
-                        className="flex items-center gap-2 text-black/80 dark:text-zinc-300 hover:text-black dark:hover:text-white transition-colors group"
+                        className="flex items-center gap-2 text-zinc-300 hover:text-white transition-colors"
                       >
-                        <i className={`${link.icon} text-sm group-hover:text-black dark:group-hover:text-white transition-colors`} />
+                        <i className={`${link.icon} text-sm`} />
                         <span>{link.title}</span>
                       </a>
                     ) : (
                       <Link
                         href={link.url}
-                        className="flex items-center gap-2 text-black/80 dark:text-zinc-300 hover:text-black dark:hover:text-white transition-colors group"
+                        className="flex items-center gap-2 text-zinc-300 hover:text-white transition-colors"
                       >
-                        <i className={`${link.icon} text-sm group-hover:text-black dark:group-hover:text-white transition-colors`} />
+                        <i className={`${link.icon} text-sm`} />
                         <span>{link.title}</span>
                       </Link>
                     )}
@@ -134,14 +134,14 @@ export default function Footer() {
           ))}
 
           <div className="col-span-2 md:col-span-1 w-full flex flex-col text-left">
-            <span className="font-mono font-bold uppercase tracking-widest text-[10px] text-zinc-500 dark:text-zinc-400 mb-5">
+            <span className="font-mono font-bold uppercase tracking-widest text-[10px] text-zinc-400 mb-5">
               Direct Contact
             </span>
             <ul className="space-y-3 font-mono text-xs">
               <li>
                 <a
                   href={`mailto:${contact.email}`}
-                  className="flex items-center gap-2 text-black/80 dark:text-zinc-300 hover:text-black dark:hover:text-white transition-colors"
+                  className="flex items-center gap-2 text-zinc-300 hover:text-white transition-colors"
                 >
                   <i className="ri-mail-send-line text-sm" />
                   <span className="break-all">{contact.email}</span>
@@ -150,7 +150,7 @@ export default function Footer() {
               <li>
                 <a
                   href={`tel:${contact.phone}`}
-                  className="flex items-center gap-2 text-black/80 dark:text-zinc-300 hover:text-black dark:hover:text-white transition-colors"
+                  className="flex items-center gap-2 text-zinc-300 hover:text-white transition-colors"
                 >
                   <i className="ri-phone-line text-sm" />
                   <span>{contact.phone}</span>
@@ -160,7 +160,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="py-6 border-t border-black/10 dark:border-white/10 flex items-center justify-center text-center text-xs font-mono text-zinc-500 dark:text-zinc-400">
+        <div className="py-6 border-t border-white/10 flex items-center justify-center text-center text-xs font-mono text-zinc-400">
           <p>© {currentYear} Divine Orji. All rights reserved.</p>
         </div>
       </div>
